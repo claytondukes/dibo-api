@@ -1,2 +1,2 @@
 [console_scripts]
-dibo-api = dibo_api.main:main
+api = api.main:main

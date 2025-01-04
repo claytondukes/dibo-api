@@ -65,7 +65,7 @@ def main() -> None:
     """Run application with uvicorn."""
     logger.info("Starting uvicorn server")
     uvicorn.run(
-        "dibo_api.main:app",
+        "api.main:app",
         host=settings.HOST,
         port=settings.PORT,
         reload=settings.RELOAD,

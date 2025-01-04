@@ -3,17 +3,14 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from dibo_api.core.config import Settings, get_settings
-from dibo_api.main import app
+from api.core.config import Settings, get_settings
+from api.main import app
 
 
 def get_settings_override():
     """Override settings for testing."""
     return Settings(
         TESTING=True,
-        GITHUB_CLIENT_ID="test-client-id",
-        GITHUB_CLIENT_SECRET="test-client-secret",
-        GITHUB_CALLBACK_URL="http://localhost:8000/api/v1/auth/github",
         SECRET_KEY="test-secret-key",
         BACKEND_CORS_ORIGINS=["http://localhost:3000"]
     )
