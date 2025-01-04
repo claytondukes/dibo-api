@@ -1070,7 +1070,7 @@ class BuildService:
                 "shield",
                 "dodge"
             },
-            BuildFocus.UTILITY: {
+            BuildFocus.BUFF: {
                 "movement_speed",
                 "cooldown_reduction",
                 "crowd_control",
@@ -1129,7 +1129,7 @@ class BuildService:
                     "shield": 0.8,
                     "dodge": 0.7
                 },
-                BuildFocus.UTILITY: {
+                BuildFocus.BUFF: {
                     "movement_speed": 0.9,
                     "cooldown_reduction": 1.0,
                     "crowd_control": 0.7,
@@ -1161,7 +1161,7 @@ class BuildService:
                     "shield": 0.9,
                     "dodge": 0.8
                 },
-                BuildFocus.UTILITY: {
+                BuildFocus.BUFF: {
                     "movement_speed": 1.0,
                     "cooldown_reduction": 0.9,
                     "crowd_control": 1.0,
