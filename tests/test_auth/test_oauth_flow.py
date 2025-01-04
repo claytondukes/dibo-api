@@ -6,7 +6,7 @@ import pytest
 from fastapi.testclient import TestClient
 import httpx
 
-from dibo_api.core.config import Settings
+from api.core.config import Settings
 
 
 @pytest.fixture

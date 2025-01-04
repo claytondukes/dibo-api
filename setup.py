@@ -3,13 +3,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="dibo-api",
+    name="api",
     version="0.1.0",
     description="Diablo Immortal Build Optimizer API",
     author="Charles Dukes",
     author_email="me@csdukes.com",
-    package_dir={"": "src"},
-    packages=find_packages(where="src"),
+    package_dir={"": "."},
+    packages=find_packages(where="."),
     python_requires=">=3.11",
     install_requires=[
         "fastapi>=0.104.1",
@@ -34,7 +34,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "dibo-api=dibo_api.main:main",
+            "api=api.main:main",
         ],
     },
 )

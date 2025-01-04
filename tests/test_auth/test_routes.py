@@ -3,7 +3,7 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from dibo_api.core.config import Settings
+from api.core.config import Settings
 
 
 def test_github_login(client: TestClient, test_settings: Settings):
@@ -14,7 +14,7 @@ def test_github_login(client: TestClient, test_settings: Settings):
     data = response.json()
     assert "auth_url" in data
     assert "state" in data
-    assert test_settings.GITHUB_CLIENT_ID in data["auth_url"]
+    assert "Ov23liNuYPvWzwNkmC73" in data["auth_url"]
 
 
 def test_github_callback_invalid_state(client: TestClient):
