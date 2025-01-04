@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .auth.routes import router as auth_router
 from .builds.routes import router as build_router
+from .data.routes import router as data_router
 from .core.config import get_settings
 
 
@@ -61,6 +62,7 @@ app.add_middleware(
 # Include routers
 app.include_router(auth_router, prefix=settings.API_V1_STR)
 app.include_router(build_router, prefix=settings.API_V1_STR)
+app.include_router(data_router, prefix=settings.API_V1_STR)
 
 
 def main() -> None:

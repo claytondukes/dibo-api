@@ -18,6 +18,10 @@ build
 # Testing
 coverage
 .nyc_output
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
 
 # Environment
 .env.bak
@@ -29,6 +33,28 @@ env_files.tgz
 .env.test.local
 .env.production.local
 .dev.vars
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
 
 # Logs
 npm-debug.log*
@@ -48,14 +74,3 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
-
-# Cloudflare
-.wrangler
-worker-configuration.d.ts
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.Python
-venv/
