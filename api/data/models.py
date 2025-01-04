@@ -3,7 +3,7 @@
 from enum import Enum
 from typing import Dict, List, Optional, TypeVar, Generic
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, RootModel
 
 
 class BuildCategory(str, Enum):
@@ -66,6 +66,61 @@ class Skill(BaseModel):
         ...,
         description="Categories this skill belongs to"
     )
+
+
+class StatValue(BaseModel):
+    """Value information for a stat modifier."""
+
+    conditions: List[str] = Field(
+        default_factory=list,
+        description="Conditions required for this value"
+    )
+    value: float = Field(..., description="Numeric value of the modifier")
+    unit: str = Field(..., description="Unit of measurement (e.g., 'percentage')")
+    scaling: bool = Field(
+        ...,
+        description="Whether this value scales with some factor"
+    )
+
+
+class StatModifier(BaseModel):
+    """Information about how an item modifies a stat."""
+
+    name: str = Field(..., description="Name of the item")
+    stars: Optional[str] = Field(None, description="Star rating if applicable")
+    base_values: List[StatValue] = Field(
+        default_factory=list,
+        description="Values at base level"
+    )
+    rank_10_values: List[StatValue] = Field(
+        default_factory=list,
+        description="Values at rank 10"
+    )
+    conditions: List[str] = Field(
+        default_factory=list,
+        description="General conditions for this modifier"
+    )
+    rank_10_conditions: List[str] = Field(
+        default_factory=list,
+        description="Conditions at rank 10"
+    )
+
+
+class StatInfo(BaseModel):
+    """Information about a game stat."""
+
+    gems: List[StatModifier] = Field(
+        default_factory=list,
+        description="Gem modifiers for this stat"
+    )
+    essences: List[StatModifier] = Field(
+        default_factory=list,
+        description="Essence modifiers for this stat"
+    )
+
+
+StatsResponse = RootModel[Dict[str, StatInfo]]
+"""Response model for stats endpoint."""
 
 
 # Generic type for paginated responses

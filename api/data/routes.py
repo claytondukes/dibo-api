@@ -1,6 +1,6 @@
 """Game data routes."""
 
-from typing import Optional
+from typing import Optional, Union
 from fastapi import APIRouter, Depends, Query, Response
 from fastapi.exceptions import HTTPException
 from starlette import status
@@ -10,7 +10,8 @@ from .models import (
     GemBase,
     EquipmentSet,
     Skill,
-    PaginatedResponse
+    PaginatedResponse,
+    StatInfo
 )
 from .service import DataService, get_data_service
 
@@ -138,3 +139,23 @@ async def list_skills(
         page=page,
         per_page=per_page
     )
+
+
+@router.get(
+    "/stats",
+    response_model=Union[dict[str, StatInfo], StatInfo],
+    summary="Get stat relationships",
+    description="""
+    Get information about how different game elements affect various stats.
+    Can optionally filter to a specific stat.
+    """
+)
+async def list_stats(
+    stat: Optional[str] = Query(
+        None,
+        description="Specific stat to retrieve"
+    ),
+    data_service: DataService = Depends(get_data_service)
+):
+    """List stat relationships with optional filtering."""
+    return data_service.get_stats(stat=stat)

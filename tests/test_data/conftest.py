@@ -92,30 +92,168 @@ def mock_skills_data():
 
 
 @pytest.fixture
+def mock_stats_data():
+    """Mock stats data."""
+    return {
+        "critical_hit_chance": {
+            "gems": [
+                {
+                    "name": "Berserker's Eye",
+                    "stars": "1",
+                    "base_values": [],
+                    "rank_10_values": [
+                        {
+                            "conditions": [],
+                            "value": 2.0,
+                            "unit": "percentage",
+                            "scaling": False
+                        }
+                    ],
+                    "conditions": [],
+                    "rank_10_conditions": []
+                }
+            ],
+            "essences": []
+        },
+        "damage_increase": {
+            "gems": [
+                {
+                    "name": "Ruby",
+                    "stars": "2",
+                    "base_values": [
+                        {
+                            "conditions": [],
+                            "value": 5.0,
+                            "unit": "percentage",
+                            "scaling": False
+                        }
+                    ],
+                    "rank_10_values": [],
+                    "conditions": [],
+                    "rank_10_conditions": []
+                }
+            ],
+            "essences": [
+                {
+                    "name": "Lightning Core",
+                    "base_values": [
+                        {
+                            "conditions": [],
+                            "value": 15.0,
+                            "unit": "percentage",
+                            "scaling": False
+                        }
+                    ],
+                    "rank_10_values": [],
+                    "conditions": [],
+                    "rank_10_conditions": []
+                }
+            ]
+        },
+        "attack_speed": {
+            "gems": [
+                {
+                    "name": "Swift Stone",
+                    "stars": "3",
+                    "base_values": [
+                        {
+                            "conditions": [],
+                            "value": 3.0,
+                            "unit": "percentage",
+                            "scaling": False
+                        }
+                    ],
+                    "rank_10_values": [],
+                    "conditions": [],
+                    "rank_10_conditions": []
+                }
+            ],
+            "essences": []
+        },
+        "movement_speed": {
+            "gems": [
+                {
+                    "name": "Fleet Foot",
+                    "stars": "2",
+                    "base_values": [
+                        {
+                            "conditions": [],
+                            "value": 4.0,
+                            "unit": "percentage",
+                            "scaling": False
+                        }
+                    ],
+                    "rank_10_values": [],
+                    "conditions": [],
+                    "rank_10_conditions": []
+                }
+            ],
+            "essences": []
+        },
+        "life": {
+            "gems": [
+                {
+                    "name": "Ruby of Vitality",
+                    "stars": "3",
+                    "base_values": [
+                        {
+                            "conditions": [],
+                            "value": 10.0,
+                            "unit": "percentage",
+                            "scaling": False
+                        }
+                    ],
+                    "rank_10_values": [],
+                    "conditions": [],
+                    "rank_10_conditions": []
+                }
+            ],
+            "essences": [
+                {
+                    "name": "Life Core",
+                    "base_values": [
+                        {
+                            "conditions": [],
+                            "value": 20.0,
+                            "unit": "percentage",
+                            "scaling": False
+                        }
+                    ],
+                    "rank_10_values": [],
+                    "conditions": [],
+                    "rank_10_conditions": []
+                }
+            ]
+        }
+    }
+
+
+@pytest.fixture
 def mock_data_service(
     mock_gems_data,
     mock_sets_data,
     mock_skills_data,
+    mock_stats_data,
     tmp_path
 ):
     """Mock DataService fixture."""
-    # Create mock data files
+    # Create data directory structure
     data_dir = tmp_path / "data" / "indexed"
     data_dir.mkdir(parents=True)
-
-    # Create gems data
+    
+    # Create gems directory and files
     gems_dir = data_dir / "gems"
     gems_dir.mkdir()
     with open(gems_dir / "gems.json", "w") as f:
         json.dump(mock_gems_data, f)
-
-    # Create sets data
-    sets_dir = data_dir / "equipment"
-    sets_dir.mkdir()
-    with open(sets_dir / "sets.json", "w") as f:
+        
+    # Create equipment directory and files
+    equipment_dir = data_dir / "equipment"
+    equipment_dir.mkdir()
+    with open(equipment_dir / "sets.json", "w") as f:
         json.dump(mock_sets_data, f)
-
-    # Create skills data
+        
+    # Create classes directory and files
     classes_dir = data_dir / "classes"
     classes_dir.mkdir()
     barb_dir = classes_dir / "barbarian"
@@ -123,7 +261,10 @@ def mock_data_service(
     with open(barb_dir / "base_skills.json", "w") as f:
         json.dump(mock_skills_data["barbarian"], f)
 
-    # Create and return service instance
+    # Create stats file
+    with open(data_dir / "stats.json", "w") as f:
+        json.dump(mock_stats_data, f)
+    
     return DataService(data_dir=data_dir)
 
 

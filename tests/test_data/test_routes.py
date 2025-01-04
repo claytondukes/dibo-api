@@ -164,3 +164,45 @@ def test_sets_invalid_pieces(test_client, pieces):
     """Test set listing with invalid piece values."""
     response = test_client.get(f"/api/v1/data/sets?pieces={pieces}")
     assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
+
+
+def test_list_stats_no_filter(test_client):
+    """Test listing all stats without filters."""
+    response = test_client.get("/api/v1/data/stats")
+    assert response.status_code == status.HTTP_200_OK
+    
+    data = response.json()
+    assert "critical_hit_chance" in data
+    assert "damage_increase" in data
+    assert "attack_speed" in data
+    assert "movement_speed" in data
+    assert "life" in data
+
+    # Verify stat structure
+    crit = data["critical_hit_chance"]
+    assert "gems" in crit
+    assert "essences" in crit
+    
+    # Verify gem details
+    gems = crit["gems"]
+    assert len(gems) > 0
+    gem = gems[0]
+    assert all(key in gem for key in ["name", "stars", "base_values", "rank_10_values"])
+
+
+def test_list_stats_filter_by_stat(test_client):
+    """Test listing a specific stat."""
+    response = test_client.get("/api/v1/data/stats?stat=critical_hit_chance")
+    assert response.status_code == status.HTTP_200_OK
+    
+    data = response.json()
+    assert "gems" in data
+    assert "essences" in data
+    assert len(data["gems"]) > 0
+
+
+def test_list_stats_invalid_stat(test_client):
+    """Test listing an invalid stat."""
+    response = test_client.get("/api/v1/data/stats?stat=invalid_stat")
+    assert response.status_code == status.HTTP_404_NOT_FOUND
+    assert "Stat not found" in response.json()["detail"]

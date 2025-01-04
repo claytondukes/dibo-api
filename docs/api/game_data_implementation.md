@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the implementation plan for the Game Data API endpoints, which will provide access to game data such as gems, equipment sets, and skills.
+This document outlines the implementation plan for the Game Data API endpoints, which will provide access to game data such as gems, equipment sets, skills, and stats.
 
 ## Module Structure
 
@@ -20,11 +20,22 @@ api/
 ### 1. Data Models (models.py)
 
 ```python
+class BuildCategory(str, Enum):
+    """Categories for game elements."""
+    MOVEMENT = "movement"
+    PRIMARY_ATTACK = "primary_attack"
+    ATTACK = "attack"
+    DEFENSE = "defense"
+    SUMMON = "summon"
+    CHANNELED = "channeled"
+    UTILITY = "utility"
+
 class GemBase(BaseModel):
     name: str
     stars: int
     base_effect: str
     rank_10_effect: Optional[str]
+    categories: List[BuildCategory]
 
 class SetBonus(BaseModel):
     pieces: int
@@ -36,11 +47,32 @@ class EquipmentSet(BaseModel):
     bonuses: Dict[str, str]  # e.g., "2": "bonus text"
     use_case: str
 
-class PaginatedResponse(BaseModel):
-    items: List[Any]
+class StatValue(BaseModel):
+    conditions: List[str]
+    value: float
+    unit: str
+    scaling: bool
+
+class StatModifier(BaseModel):
+    name: str
+    stars: Optional[str]
+    base_values: List[StatValue]
+    rank_10_values: List[StatValue]
+    conditions: List[str]
+    rank_10_conditions: List[str]
+
+class StatInfo(BaseModel):
+    gems: List[StatModifier]
+    essences: List[StatModifier]
+
+StatsResponse = RootModel[Dict[str, StatInfo]]
+
+class PaginatedResponse(BaseModel, Generic[T]):
+    items: List[T]
     total: int
     page: int
     per_page: int
+    total_pages: int
 ```
 
 ### 2. Data Service (service.py)
@@ -54,10 +86,10 @@ class DataService:
     def get_gems(
         self, 
         stars: Optional[int] = None,
-        category: Optional[str] = None,
+        category: Optional[BuildCategory] = None,
         page: int = 1,
         per_page: int = 20
-    ) -> PaginatedResponse:
+    ) -> PaginatedResponse[GemBase]:
         """Get gems with optional filtering."""
         
     def get_sets(
@@ -65,17 +97,23 @@ class DataService:
         pieces: Optional[int] = None,
         page: int = 1,
         per_page: int = 20
-    ) -> PaginatedResponse:
+    ) -> PaginatedResponse[EquipmentSet]:
         """Get equipment sets with optional filtering."""
         
     def get_skills(
         self,
         character_class: str,
-        category: Optional[str] = None,
+        category: Optional[BuildCategory] = None,
         page: int = 1,
         per_page: int = 20
-    ) -> PaginatedResponse:
+    ) -> PaginatedResponse[Skill]:
         """Get skills for a character class."""
+
+    def get_stats(
+        self,
+        stat: Optional[str] = None
+    ) -> Union[Dict[str, StatInfo], StatInfo]:
+        """Get stats data with optional filtering."""
 ```
 
 ### 3. Routes Implementation (routes.py)
@@ -86,7 +124,7 @@ router = APIRouter(prefix="/data", tags=["game-data"])
 @router.get("/gems", response_model=PaginatedResponse[GemBase])
 async def list_gems(
     stars: Optional[int] = Query(None),
-    category: Optional[str] = Query(None),
+    category: Optional[BuildCategory] = Query(None),
     page: int = Query(1, gt=0),
     per_page: int = Query(20, le=100)
 ):
@@ -103,11 +141,17 @@ async def list_sets(
 @router.get("/skills/{character_class}")
 async def list_skills(
     character_class: str,
-    category: Optional[str] = Query(None),
+    category: Optional[BuildCategory] = Query(None),
     page: int = Query(1, gt=0),
     per_page: int = Query(20, le=100)
 ):
     """List available skills for a character class."""
+
+@router.get("/stats", response_model=Union[Dict[str, StatInfo], StatInfo])
+async def list_stats(
+    stat: Optional[str] = Query(None)
+):
+    """List stat relationships with optional filtering."""
 ```
 
 ### 4. Caching Strategy
@@ -148,6 +192,12 @@ Query Parameters:
 - category: Filter by category
 - page: Page number
 - per_page: Items per page
+
+4. **List Stats**
+GET /data/stats
+
+Query Parameters:
+- stat: Optional specific stat to retrieve
 ```
 
 ### 6. Testing Plan
@@ -161,6 +211,9 @@ def test_list_sets():
     
 def test_list_skills():
     # Test skill listing for different classes
+    
+def test_list_stats():
+    # Test stats listing with and without filters
     
 def test_pagination():
     # Test pagination works correctly
@@ -183,7 +236,7 @@ def test_caching():
 ## Notes
 
 - All endpoints will use proper error handling
-- Responses will be properly paginated
+- Responses will be properly paginated where applicable
 - Data will be cached appropriately
 - Documentation will be kept up to date
 - Tests will be written for all functionality

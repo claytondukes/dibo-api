@@ -167,3 +167,51 @@ def test_pagination(mock_data_service):
     assert result.page == 3
     assert result.per_page == 1
     assert len(result.items) == 0
+
+
+def test_get_stats(mock_data_service):
+    """Test getting all stats without filters."""
+    result = mock_data_service.get_stats()
+
+    # Verify basic structure
+    assert "critical_hit_chance" in result
+    assert "damage_increase" in result
+    assert "attack_speed" in result
+    assert "movement_speed" in result
+    assert "life" in result
+
+    # Verify stat details
+    crit = result["critical_hit_chance"]
+    assert len(crit.gems) > 0
+    assert len(crit.essences) >= 0
+
+    # Verify a specific gem
+    berserker = crit.gems[0]
+    assert berserker.name == "Berserker's Eye"
+    assert berserker.stars == "1"
+    assert len(berserker.rank_10_values) > 0
+    assert berserker.rank_10_values[0].value == 2.0
+
+
+def test_get_stats_filter_by_stat(mock_data_service):
+    """Test getting a specific stat."""
+    result = mock_data_service.get_stats(stat="critical_hit_chance")
+
+    # Verify stat details
+    assert len(result.gems) > 0
+    assert len(result.essences) >= 0
+
+    # Verify a specific gem
+    berserker = result.gems[0]
+    assert berserker.name == "Berserker's Eye"
+    assert berserker.stars == "1"
+    assert len(berserker.rank_10_values) > 0
+    assert berserker.rank_10_values[0].value == 2.0
+
+
+def test_get_stats_invalid_stat(mock_data_service):
+    """Test getting an invalid stat."""
+    with pytest.raises(HTTPException) as exc_info:
+        mock_data_service.get_stats(stat="invalid_stat")
+    assert exc_info.value.status_code == 404
+    assert "Stat not found" in str(exc_info.value.detail)
