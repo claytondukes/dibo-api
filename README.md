@@ -57,13 +57,15 @@ For example:
 ## API Features
 
 - GitHub OAuth authentication (✅ implemented)
+- Inventory Management via GitHub Gists (✅ implemented)
+- Build Generation (🚧 in progress)
 - Cloudflare Workers backend
 
 ## Documentation
 
 ### Setup and Configuration
 - [Cloudflare Setup](docs/cloudflare.md) - Worker and DNS configuration Guide
-- [API v1 Documentation](docs/v1.md) - REST API endpoints and usage
+- [API Documentation](docs/api/v1.md) - Complete API reference with implemented and planned endpoints
 
 ### Game Systems
 - [Game Mechanics](docs/game/mechanics.md) - Core game systems and build types
