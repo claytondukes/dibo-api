@@ -1,0 +1,520 @@
+{
+  "gems_by_skill": {
+    "movement": [
+      {
+        "Stars": "5",
+        "Name": "Blood-Soaked Jade",
+        "Base Effect": "Up to 8% increased damage at full life (min 4% at low life), +10% Movement Speed",
+        "Rank 10 Effect": "Increases all damage you deal by up to 32% and your Movement Speed by 20%. The damage bonus decreases as your Life decreases, but the minimum bonus is 16%. Additionally, your attacks heal you for 2% of damage dealt while the bonus is active.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": "5"
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": "Your Primary Attacks and movement slowly charge you with electricity. When fully charged, your next Primary Attack will release chain lightning, dealing 180% base damage + 1,800 to nearby enemies. Additionally, you gain a 12% increased chance to critically strike while fully charged.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "5",
+        "Name": "Bottled Hope",
+        "Base Effect": "Using a buff increases target's damage and movement speed by 8% for 6s",
+        "Rank 10 Effect": "Using skills to grant buffs increases damage done and Movement Speed of the target by 12% for 8 seconds. Additionally, the duration of all buffs on you is increased by 4 seconds.",
+        "Owned Rank": "8",
+        "Quality (if 5 star)": "5"
+      },
+      {
+        "Stars": "2",
+        "Name": "The Abiding Curse",
+        "Base Effect": "15% chance to curse enemies, reducing Attack and Movement Speeds by 35% for 2.50 seconds",
+        "Rank 10 Effect": "Your attacks have a 30% chance to curse enemies, reducing their Attack and Movement Speeds by 50% for 4 seconds. Additionally, cursed enemies take 12% increased damage from all sources.",
+        "Owned Rank": "8",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Grim Rhythm",
+        "Base Effect": "Dealing damage increases your Attack Speed by 0.8% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 9%.",
+        "Rank 10 Effect": "Dealing damage increases your Attack Speed by 2.4% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 12%.",
+        "Owned Rank": "7",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "The Abiding Curse",
+        "Base Effect": "15% chance to curse enemies, reducing Attack and Movement Speeds by 35% for 2.50 seconds",
+        "Rank 10 Effect": null,
+        "Owned Rank": "7",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "5",
+        "Name": "Blood-Soaked Jade",
+        "Base Effect": "Up to 8% increased damage at full life (min 4% at low life), +10% Movement Speed",
+        "Rank 10 Effect": null,
+        "Owned Rank": "4",
+        "Quality (if 5 star)": "2"
+      },
+      {
+        "Stars": "2",
+        "Name": "Grim Rhythm",
+        "Base Effect": "Dealing damage increases your Attack Speed by 0.8% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 9%.",
+        "Rank 10 Effect": null,
+        "Owned Rank": "3",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": null,
+        "Owned Rank": "3",
+        "Quality (if 5 star)": null
+      }
+    ],
+    "primary attack": [
+      {
+        "Stars": "1",
+        "Name": "Ca'arsen's Invigoration",
+        "Base Effect": "Primary Attack speed increased by 5.50%",
+        "Rank 10 Effect": "Increases the speed of your Primary Attack by 16% and the damage of your Primary Attack by 2%.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": "Your Primary Attacks and movement slowly charge you with electricity. When fully charged, your next Primary Attack will release chain lightning, dealing 180% base damage + 1,800 to nearby enemies. Additionally, you gain a 12% increased chance to critically strike while fully charged.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "1",
+        "Name": "Mocking Laughter",
+        "Base Effect": "Primary Attack forces non-Elite monsters to attack you for 2.00 seconds",
+        "Rank 10 Effect": "Your Primary Attack forces non-Elite monsters it hits to attack you for 2 seconds. Additionally, you take 2% reduced damage from monsters affected by Mocking Laughter.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Power & Command",
+        "Base Effect": "Alternates states every 9s: Power increases Primary Attack damage by 8.00%, Command increases skill damage by 8.00%",
+        "Rank 10 Effect": "Alternates states every 9 seconds. Power increases your Primary Attack damage by 16%. Command increases all other skill damage by 16%. Additionally, you gain 6% increased Movement Speed while either state is active.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Power & Command",
+        "Base Effect": "Alternates states every 9s: Power increases Primary Attack damage by 8.00%, Command increases skill damage by 8.00%",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "5",
+        "Name": "Howler's Call",
+        "Base Effect": "10% chance on Primary Attack to summon spirit wolf dealing 150% base damage + 1,458",
+        "Rank 10 Effect": "Primary Attacks have a 20% chance to summon a spirit wolf that deals 240% base damage to all enemies in its path. Additionally, the spirit wolf howls, increasing your damage by 10% for 6 seconds.",
+        "Owned Rank": "4",
+        "Quality (if 5 star)": "2"
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": null,
+        "Owned Rank": "3",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "5",
+        "Name": "Spiteful Blood",
+        "Base Effect": "Taking damage while below 50% Life causes Spiteful Blood to surge through you for 4 seconds, increasing your damage done by 30% and making you invulnerable to Primary Attacks from other players. Additionally, when Spiteful Blood triggers, you gain an absorb shield equal to 160% of your base damage. This effect cannot occur more often than once every 20 seconds.",
+        "Rank 10 Effect": "Taking damage while below 50% Life causes Spiteful Blood to surge, increasing your damage by 40% for 6 seconds and making you invulnerable to damage. Additionally, you gain an absorb shield equal to 200% of your base damage while the effect is active.",
+        "Owned Rank": "2",
+        "Quality (if 5 star)": "4"
+      },
+      {
+        "Stars": "5",
+        "Name": "Gloom Cask",
+        "Base Effect": "Primary Attack unleashes Aspect of Gloom for 6s, triggering gloom blades dealing 30% base damage + 275",
+        "Rank 10 Effect": "Your Primary Attacks unleash an Aspect of Gloom that lasts 10 seconds, during which your Primary Attacks deal 60% additional AoE damage.",
+        "Owned Rank": "1",
+        "Quality (if 5 star)": "2"
+      }
+    ],
+    "attack": [
+      {
+        "Stars": "1",
+        "Name": "Ca'arsen's Invigoration",
+        "Base Effect": "Primary Attack speed increased by 5.50%",
+        "Rank 10 Effect": "Increases the speed of your Primary Attack by 16% and the damage of your Primary Attack by 2%.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Cutthroat's Grin",
+        "Base Effect": "Gain 8.00% increased Critical Hit Chance when attacking from behind",
+        "Rank 10 Effect": null,
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Kir Sling",
+        "Base Effect": "15% chance when attacked to release burst of light that Blinds enemies for 1.30 seconds",
+        "Rank 10 Effect": "You have a 25% chance when attacked to release a burst of light that Blinds all nearby enemies, reducing their vision and causing total loss of control for 3 seconds. Additionally, you deal 6% increased damage to Blinded enemies.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": "Your Primary Attacks and movement slowly charge you with electricity. When fully charged, your next Primary Attack will release chain lightning, dealing 180% base damage + 1,800 to nearby enemies. Additionally, you gain a 12% increased chance to critically strike while fully charged.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "1",
+        "Name": "Mocking Laughter",
+        "Base Effect": "Primary Attack forces non-Elite monsters to attack you for 2.00 seconds",
+        "Rank 10 Effect": "Your Primary Attack forces non-Elite monsters it hits to attack you for 2 seconds. Additionally, you take 2% reduced damage from monsters affected by Mocking Laughter.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Power & Command",
+        "Base Effect": "Alternates states every 9s: Power increases Primary Attack damage by 8.00%, Command increases skill damage by 8.00%",
+        "Rank 10 Effect": "Alternates states every 9 seconds. Power increases your Primary Attack damage by 16%. Command increases all other skill damage by 16%. Additionally, you gain 6% increased Movement Speed while either state is active.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "1",
+        "Name": "The Black Rose",
+        "Base Effect": "10% chance when attacked to summon vines that Immobilize attacker for 1.10 seconds",
+        "Rank 10 Effect": "Each time you are attacked, you have a 10% chance to summon vines that Immobilize the attacker for 1.1 seconds. Each enemy cannot be affected by this more often than once every 20 seconds. Additionally, you deal 2% increased damage to Immobilized enemies.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "The Abiding Curse",
+        "Base Effect": "15% chance to curse enemies, reducing Attack and Movement Speeds by 35% for 2.50 seconds",
+        "Rank 10 Effect": "Your attacks have a 30% chance to curse enemies, reducing their Attack and Movement Speeds by 50% for 4 seconds. Additionally, cursed enemies take 12% increased damage from all sources.",
+        "Owned Rank": "8",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Grim Rhythm",
+        "Base Effect": "Dealing damage increases your Attack Speed by 0.8% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 9%.",
+        "Rank 10 Effect": "Dealing damage increases your Attack Speed by 2.4% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 12%.",
+        "Owned Rank": "7",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "The Abiding Curse",
+        "Base Effect": "15% chance to curse enemies, reducing Attack and Movement Speeds by 35% for 2.50 seconds",
+        "Rank 10 Effect": null,
+        "Owned Rank": "7",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Cutthroat's Grin",
+        "Base Effect": "Gain 8.00% increased Critical Hit Chance when attacking from behind",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Kir Sling",
+        "Base Effect": "15% chance when attacked to release burst of light that Blinds enemies for 1.30 seconds",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Power & Command",
+        "Base Effect": "Alternates states every 9s: Power increases Primary Attack damage by 8.00%, Command increases skill damage by 8.00%",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Cutthroat's Grin",
+        "Base Effect": "Gain 8.00% increased Critical Hit Chance when attacking from behind",
+        "Rank 10 Effect": "Gain 24% increased Critical Hit Chance when attacking from behind. Additionally, you deal 4% increased damage while attacking from behind.",
+        "Owned Rank": "4",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "5",
+        "Name": "Howler's Call",
+        "Base Effect": "10% chance on Primary Attack to summon spirit wolf dealing 150% base damage + 1,458",
+        "Rank 10 Effect": "Primary Attacks have a 20% chance to summon a spirit wolf that deals 240% base damage to all enemies in its path. Additionally, the spirit wolf howls, increasing your damage by 10% for 6 seconds.",
+        "Owned Rank": "4",
+        "Quality (if 5 star)": "2"
+      },
+      {
+        "Stars": "2",
+        "Name": "Grim Rhythm",
+        "Base Effect": "Dealing damage increases your Attack Speed by 0.8% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 9%.",
+        "Rank 10 Effect": null,
+        "Owned Rank": "3",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Lightning Core",
+        "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+        "Rank 10 Effect": null,
+        "Owned Rank": "3",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "5",
+        "Name": "Zwenson's Haunting",
+        "Base Effect": "On enemy defeat, dark beast attacks dealing 50% base damage + 486",
+        "Rank 10 Effect": null,
+        "Owned Rank": "3",
+        "Quality (if 5 star)": "3"
+      },
+      {
+        "Stars": "5",
+        "Name": "Zwenson's Haunting",
+        "Base Effect": "On enemy defeat, dark beast attacks dealing 50% base damage + 486",
+        "Rank 10 Effect": "Summons a dark beast to attack nearby enemies after defeating an enemy, dealing 200% base damage. Additionally, the dark beast causes enemies to flee in terror for 2 seconds.",
+        "Owned Rank": "3",
+        "Quality (if 5 star)": "2"
+      },
+      {
+        "Stars": "5",
+        "Name": "Spiteful Blood",
+        "Base Effect": "Taking damage while below 50% Life causes Spiteful Blood to surge through you for 4 seconds, increasing your damage done by 30% and making you invulnerable to Primary Attacks from other players. Additionally, when Spiteful Blood triggers, you gain an absorb shield equal to 160% of your base damage. This effect cannot occur more often than once every 20 seconds.",
+        "Rank 10 Effect": "Taking damage while below 50% Life causes Spiteful Blood to surge, increasing your damage by 40% for 6 seconds and making you invulnerable to damage. Additionally, you gain an absorb shield equal to 200% of your base damage while the effect is active.",
+        "Owned Rank": "2",
+        "Quality (if 5 star)": "4"
+      },
+      {
+        "Stars": "5",
+        "Name": "Gloom Cask",
+        "Base Effect": "Primary Attack unleashes Aspect of Gloom for 6s, triggering gloom blades dealing 30% base damage + 275",
+        "Rank 10 Effect": "Your Primary Attacks unleash an Aspect of Gloom that lasts 10 seconds, during which your Primary Attacks deal 60% additional AoE damage.",
+        "Owned Rank": "1",
+        "Quality (if 5 star)": "2"
+      }
+    ],
+    "summon": [
+      {
+        "Stars": "2",
+        "Name": "Follower's Burden",
+        "Base Effect": "Increases damage by 1.00% for each summon, up to maximum increase of 6%",
+        "Rank 10 Effect": "Increases all damage you deal by 3% for each summon you control, up to a maximum increase of 18%. Additionally, your summons take 6% reduced damage.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "1",
+        "Name": "The Black Rose",
+        "Base Effect": "10% chance when attacked to summon vines that Immobilize attacker for 1.10 seconds",
+        "Rank 10 Effect": "Each time you are attacked, you have a 10% chance to summon vines that Immobilize the attacker for 1.1 seconds. Each enemy cannot be affected by this more often than once every 20 seconds. Additionally, you deal 2% increased damage to Immobilized enemies.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Follower's Burden",
+        "Base Effect": "Increases damage by 1.00% for each summon, up to maximum increase of 6%",
+        "Rank 10 Effect": null,
+        "Owned Rank": "8",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "5",
+        "Name": "Echoing Shade",
+        "Base Effect": "15% chance to summon shadow clone for 8s with some abilities",
+        "Rank 10 Effect": "Your attacks have a 20% chance to summon a shadow clone for 12 seconds. Additionally, shadow clones gain 100% of your damage and Life stats.",
+        "Owned Rank": "5",
+        "Quality (if 5 star)": "3"
+      },
+      {
+        "Stars": "2",
+        "Name": "Follower's Burden",
+        "Base Effect": "Increases damage by 1.00% for each summon, up to maximum increase of 6%",
+        "Rank 10 Effect": null,
+        "Owned Rank": "5",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "2",
+        "Name": "Follower's Burden",
+        "Base Effect": "Increases damage by 1.00% for each summon, up to maximum increase of 6%",
+        "Rank 10 Effect": null,
+        "Owned Rank": "4",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "5",
+        "Name": "Howler's Call",
+        "Base Effect": "10% chance on Primary Attack to summon spirit wolf dealing 150% base damage + 1,458",
+        "Rank 10 Effect": "Primary Attacks have a 20% chance to summon a spirit wolf that deals 240% base damage to all enemies in its path. Additionally, the spirit wolf howls, increasing your damage by 10% for 6 seconds.",
+        "Owned Rank": "4",
+        "Quality (if 5 star)": "2"
+      }
+    ],
+    "shield": [
+      {
+        "Stars": "5",
+        "Name": "Frozen Heart",
+        "Base Effect": "When damaged, activates Frigid Shield absorbing 150% base damage + 1,458",
+        "Rank 10 Effect": "Reduces damage taken by 32% while your Life is below 50%. Additionally, periodically freezes nearby enemies, dealing 240% base damage and chilling them.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": "5"
+      },
+      {
+        "Stars": "5",
+        "Name": "Phoenix Ashes",
+        "Base Effect": "Prevents fatal damage and grants shield absorbing 450% base damage",
+        "Rank 10 Effect": "Prevents fatal damage and grants a shield absorbing 800% base damage for 10 seconds. Additionally, while the shield is active, your Movement Speed is increased by 20%.",
+        "Owned Rank": "5",
+        "Quality (if 5 star)": "5"
+      },
+      {
+        "Stars": "5",
+        "Name": "Frozen Heart",
+        "Base Effect": "When damaged, activates Frigid Shield absorbing 150% base damage + 1,458",
+        "Rank 10 Effect": null,
+        "Owned Rank": "3",
+        "Quality (if 5 star)": "3"
+      },
+      {
+        "Stars": "5",
+        "Name": "Phoenix Ashes",
+        "Base Effect": "Prevents fatal damage and grants shield absorbing 450% base damage",
+        "Rank 10 Effect": null,
+        "Owned Rank": "3",
+        "Quality (if 5 star)": "2"
+      },
+      {
+        "Stars": "5",
+        "Name": "Spiteful Blood",
+        "Base Effect": "Taking damage while below 50% Life causes Spiteful Blood to surge through you for 4 seconds, increasing your damage done by 30% and making you invulnerable to Primary Attacks from other players. Additionally, when Spiteful Blood triggers, you gain an absorb shield equal to 160% of your base damage. This effect cannot occur more often than once every 20 seconds.",
+        "Rank 10 Effect": "Taking damage while below 50% Life causes Spiteful Blood to surge, increasing your damage by 40% for 6 seconds and making you invulnerable to damage. Additionally, you gain an absorb shield equal to 200% of your base damage while the effect is active.",
+        "Owned Rank": "2",
+        "Quality (if 5 star)": "4"
+      }
+    ],
+    "channeled": [
+      {
+        "Stars": "1",
+        "Name": "Trickshot Gem",
+        "Base Effect": "Channeled skills consume energy 8.00% slower",
+        "Rank 10 Effect": "Your Channeled skills consume energy 16% slower. Additionally, you take 2% reduced damage while using a Channeled skill.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      },
+      {
+        "Stars": "1",
+        "Name": "Trickshot Gem",
+        "Base Effect": "Channeled skills consume energy 8.00% slower",
+        "Rank 10 Effect": null,
+        "Owned Rank": "6",
+        "Quality (if 5 star)": null
+      }
+    ],
+    "ultimate": [
+      {
+        "Stars": "1",
+        "Name": "Zod Stone",
+        "Base Effect": "Ultimate Skills duration increased by 16.00%",
+        "Rank 10 Effect": "Increases the duration of your Ultimate Skills by 16%. Additionally, your Ultimate Skills deal 2% increased damage.",
+        "Owned Rank": "10",
+        "Quality (if 5 star)": null
+      }
+    ],
+    "buff": [
+      {
+        "Stars": "5",
+        "Name": "Bottled Hope",
+        "Base Effect": "Using a buff increases target's damage and movement speed by 8% for 6s",
+        "Rank 10 Effect": "Using skills to grant buffs increases damage done and Movement Speed of the target by 12% for 8 seconds. Additionally, the duration of all buffs on you is increased by 4 seconds.",
+        "Owned Rank": "8",
+        "Quality (if 5 star)": "5"
+      }
+    ],
+    "dash": [
+      {
+        "Stars": "5",
+        "Name": "Concentrated Will",
+        "Base Effect": "Dash skill calls guardian angel, deals 55% base damage + 547",
+        "Rank 10 Effect": "Using a Dash skill summons a guardian angel to your aid, dealing 120% base damage to all enemies in its path. Additionally, your Dash skills have their cooldowns reduced by 2 seconds.",
+        "Owned Rank": "4",
+        "Quality (if 5 star)": "2"
+      }
+    ]
+  },
+  "essences_by_skill": {},
+  "synergies": {}
+}

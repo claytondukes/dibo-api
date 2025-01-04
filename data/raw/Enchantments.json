@@ -1,0 +1,128 @@
+{
+  "enchantments": [
+    {
+      "Effect": "Maximum Life increased",
+      "Max Roll": "2"
+    },
+    {
+      "Effect": "Damage taken reduced",
+      "Max Roll": "2"
+    },
+    {
+      "Effect": "Beneficial effect duration increased",
+      "Max Roll": "6"
+    },
+    {
+      "Effect": "Nearby enemy damage decreased",
+      "Max Roll": "4"
+    },
+    {
+      "Effect": "Item base Life increased",
+      "Max Roll": "6"
+    },
+    {
+      "Effect": "Damage taken while moving decreased",
+      "Max Roll": "6"
+    },
+    {
+      "Effect": "Damage taken while suffering loss of control decreased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Block Chance increased",
+      "Max Roll": "4"
+    },
+    {
+      "Effect": "Cheat Death chance increased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Critical Hit Damage increased",
+      "Max Roll": "6"
+    },
+    {
+      "Effect": "Critical Hit Chance increased",
+      "Max Roll": "4"
+    },
+    {
+      "Effect": "Primary Attack damage increased",
+      "Max Roll": "6"
+    },
+    {
+      "Effect": "Skill damage increased",
+      "Max Roll": "4"
+    },
+    {
+      "Effect": "Item base Damage increased",
+      "Max Roll": "6"
+    },
+    {
+      "Effect": "Damage done increased per nearby party member",
+      "Max Roll": "2"
+    },
+    {
+      "Effect": "Attack Speed increased",
+      "Max Roll": "4"
+    },
+    {
+      "Effect": "Damage done to demons increased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Damage done to beasts increased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Damage done to undead increased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Damage increased to enemies below 30% Life",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Damage to full Life enemies increased",
+      "Max Roll": "10"
+    },
+    {
+      "Effect": "Accuracy Rating increased",
+      "Max Roll": "12"
+    },
+    {
+      "Effect": "Damage to enemies suffering loss of control increased",
+      "Max Roll": "10"
+    },
+    {
+      "Effect": "Primary Attacks reduce enemy healing",
+      "Max Roll": "6"
+    },
+    {
+      "Effect": "Primary Attacks chance to reduce enemy Attack and Movement Speeds by 20% for 3s",
+      "Max Roll": "12"
+    },
+    {
+      "Effect": "Damage to Elites increased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Damage to shielded enemies increased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Stun resistance increased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Knockback resistance increased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Slow resistance increased",
+      "Max Roll": "8"
+    },
+    {
+      "Effect": "Fear resistance increased",
+      "Max Roll": "8"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+﻿name,base_type,second_base_type,base_cooldown,description
+LACERATE,weapon,,,"Launch a series of attacks that deal 32,590 to 46,929 damage with each hit. The last hit heals you for 15% of damage done."
+FRENZY,weapon,,,"Launch a frenzied attack for 11,390 damage. Each hit increases Frenzy's Attack Speed by 8% for 3 seconds, stacking up to 5 times."
+CLEAVE,damage,,6,"Unleash a powerful attack that deals 16,832 damage to all enemies in front of you, and causes them to Bleed for 5,694 damage over 3 seconds. Maximum 3 charges."
+CHAINED SPEAR,gather,,10,"Hurl 3 chained spears that deal 9,801 damage and then return, dragging impaled enemies back to you and dealing another 2,450 damage."
+DEMORALIZE,control,,12,"Release a ferocious shout that forces nearby monsters to attack you, deals 9,517 damage to all nearby enemies, and reduces their damage done by 30% for 6 seconds."
+FURIOUS CHARGE,dash,,9,"Charge forward, knocking away all enemies in your path and dealing 16,374 damage. Maximum 3 charges. Players may only be affected once every 3 seconds by this skill."
+GRAB,control,multiple-stage,7,"Seize a nearby enemy and wield it as a weapon. Activate again to throw the enemy, dealing 15,736 damage to them and enemies along the throw path, and Stunning the thrown enemy for 2 seconds. Monsters are grabbed for 4 seconds and players for 2 seconds."
+GROUND STOMP,control,charge,9,"Smash the ground, Stunning nearby enemies for 1.5 seconds and dealing 13,289 damage. Charging longer increases range and Stun duration up to 3 seconds."
+HAMMER OF THE ANCIENTS,damage,,9,"Call forth a massive hammer which smashes enemies in front of you for 15,187 damage and shakes the earth itself, dealing 3,028 additional damage over 2 seconds. Maximum 2 charges."
+LEAP,control,dash,9,"Leap to a location, dealing 13,293 damage to all nearby enemies where you land and reducing their movement speed by 50% for 4 seconds. Each full-Life enemy struck by Leap will reduce its cooldown by 1 second. Maximum 2 charges."
+SPRINT,buff,,10,"Increase your Movement Speed by 50% for 4.65 seconds. Sprint also remove all movement-impairing effects when activated, making you immune to their effects and allowing you to move unhindered through enemies."
+SUNDER,dash,,12,"Briefly launch into the air and smash the ground with your weapon, generating a huge shockwave that deals 11,680 damage to all enemies in the area while also increasing all damage they take by 30% for 6 seconds.Players will take increased damage for 3 seconds."
+UNDYING RAGE,buff,,30,Enter a rage for 4 seconds that prevents you from dying and causes all your attacks to heal you for 30% of damage done (reduced to 20% against enemy players). Undying Rage will activate automatically when you take fatal damage.
+WHIRLWIND,damage,channel,0.5,"Become a whirlwind of steel, continually striking all nearby enemies for 5,763 damage while moving at 70% reduced speed. Using Whirlwind slowly consumes its energy, which recovers while Whirlwind is not in use."
+WRATH OF THE BERSERKER,buff,,25,Enter a berserker rage that increases your attack speed by 50% and movement speed by 20% for 6.3 seconds.

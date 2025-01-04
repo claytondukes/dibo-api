@@ -1,0 +1,4124 @@
+{
+  "Berserker's Eye": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 5.5,
+              "conditions": [],
+              "context": "All damage dealt +5.50%, but damage taken +5%"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Increases all damage you deal by 16.00% and increases your Critical Hit Chance by 2%, but also increases all damage you take by 5%."
+  },
+  "Blessed Pebble": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Increases the duration of beneficial effects on you by 12% and increases your Movement Speed by 8% for three seconds after gaining a beneficial effect."
+  },
+  "Blessing of the Worthy": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 20.0,
+              "conditions": [],
+              "context": "20% chance when taking damage to deal 12% of max "
+            }
+          ],
+          "life": [
+            {
+              "value": 20.0,
+              "conditions": [],
+              "context": "20% chance when taking damage to deal 12% of max life to nearby enemies"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 20.0,
+              "conditions": [],
+              "context": "20% chance when taking damage "
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 4.0,
+              "conditions": [],
+              "context": "tribution, you take 4% decreased damage."
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 8.0,
+              "conditions": [],
+              "context": "tribution, you take 8% decreased damage."
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 12.0,
+              "conditions": [],
+              "context": "tribution, you take 12% decreased damage."
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 16.0,
+              "conditions": [],
+              "context": "tribution, you take 16% decreased damage."
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "When you take damage, you have a 20% chance to unleash retribution on all nearby enemies, dealing damage equal to 28% of your current Life and decreasing all damage you take by 16% for 6 seconds. Cannot occur more often than once every 20 seconds."
+  },
+  "Blood-Soaked Jade": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 8.0,
+              "conditions": [],
+              "context": "Up to 8% increased damage at full life (min 4"
+            }
+          ],
+          "life": [
+            {
+              "value": 8.0,
+              "conditions": [],
+              "context": "Up to 8% increased damage at full life (min 4% at low life), +10% Movement Spe"
+            }
+          ],
+          "movement_speed": [
+            {
+              "value": 8.0,
+              "conditions": [],
+              "context": "Up to 8% increased damage at full life (min 4% at low life), +10% Movement Speed"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 2.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": "Take 2% decreased damage while below 50% Lif"
+            }
+          ],
+          "life": [
+            {
+              "value": 2.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": "Take 2% decreased damage while below 50% Life."
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 4.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": "Take 4% decreased damage while below 50% Lif"
+            }
+          ],
+          "life": [
+            {
+              "value": 4.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": "Take 4% decreased damage while below 50% Life."
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 6.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": "Take 6% decreased damage while below 50% Lif"
+            }
+          ],
+          "life": [
+            {
+              "value": 6.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": "Take 6% decreased damage while below 50% Life."
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 8.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": "Take 8% decreased damage while below 50% Lif"
+            }
+          ],
+          "life": [
+            {
+              "value": 8.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": "Take 8% decreased damage while below 50% Life."
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "Increases all damage you deal by up to 24% while at full Life, with a minimum bonus of 12% while at low Life. Increases your Movement Speed by 10%. Additionally, take 8% decreased damage while below 50% Life."
+  },
+  "Ca'arsen's Invigoration": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Increases the speed of your Primary Attack by 16.00%, and the damage of your Primary Attack by 2%."
+  },
+  "Chained Death": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Increases damage done by your attacks by 2.50% per target hit, up to a maximum of 17.5% with 7 targets."
+  },
+  "Chip of Stoned Flesh": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 45.0,
+              "conditions": [],
+              "context": "osive curse dealing 45% of damage taken (max 150% bas"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "When you cause an enemy total loss of control, you also inflict an explosive curse. When the curse expires, enemies will explode for 45% of all damage taken during its duration, up to a maximum of 450.00% base damage. Cannot occur more often than once every 20 seconds per target. Damage taken by victims of the explosive curse increased by 24%."
+  },
+  "Cutthroat's Grin": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "critical_hit_chance": [
+            {
+              "value": 8.0,
+              "conditions": [
+                {
+                  "type": "trigger",
+                  "trigger": "on_attack",
+                  "text": "when (?:you )?attack"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "(?:while |when )?behind"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "from behind"
+                }
+              ],
+              "context": "Gain 8.00% increased Critical Hit Chance when attacki"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 8.0,
+              "conditions": [
+                {
+                  "type": "trigger",
+                  "trigger": "on_attack",
+                  "text": "when (?:you )?attack"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "(?:while |when )?behind"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "from behind"
+                }
+              ],
+              "context": "Gain 8.00% increased Critical Hit Chance when attacking from"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 1.0,
+              "conditions": [
+                {
+                  "type": "trigger",
+                  "trigger": "on_attack",
+                  "text": "when (?:you )?attack"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "(?:while |when )?behind"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "from behind"
+                }
+              ],
+              "context": "Deal 1% increased damage when attacking from"
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 2.0,
+              "conditions": [
+                {
+                  "type": "trigger",
+                  "trigger": "on_attack",
+                  "text": "when (?:you )?attack"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "(?:while |when )?behind"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "from behind"
+                }
+              ],
+              "context": "Deal 2% increased damage when attacking from"
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 3.0,
+              "conditions": [
+                {
+                  "type": "trigger",
+                  "trigger": "on_attack",
+                  "text": "when (?:you )?attack"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "(?:while |when )?behind"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "from behind"
+                }
+              ],
+              "context": "Deal 3% increased damage when attacking from"
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 4.0,
+              "conditions": [
+                {
+                  "type": "trigger",
+                  "trigger": "on_attack",
+                  "text": "when (?:you )?attack"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "(?:while |when )?behind"
+                },
+                {
+                  "type": "state",
+                  "state": "position",
+                  "text": "from behind"
+                }
+              ],
+              "context": "Deal 4% increased damage when attacking from"
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "Gain 24.00% increased Critical Hit Chance and 4% increased damage when attacking from behind."
+  },
+  "Everlasting Torment": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 10.0,
+              "conditions": [],
+              "context": "l hits cause agony: 10% base damage + 122/sec for 6s"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 12.0,
+              "conditions": [],
+              "context": "age is increased to 12% of base damage."
+            }
+          ]
+        }
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 15.0,
+              "conditions": [],
+              "context": "age is increased to 15% of base damage."
+            }
+          ]
+        }
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 20.0,
+              "conditions": [],
+              "context": "age is increased to 20% of base damage."
+            }
+          ]
+        }
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 25.0,
+              "conditions": [],
+              "context": "age is increased to 25% of base damage."
+            }
+          ]
+        }
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": "age is increased to 30% of base damage."
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Your critical hits inflict agony, dealing 30% base damage +122 every second for 6 seconds. Each nearby enemy afflicted with agony increases your Attack Speed by 6%. Each enemy cannot be affected by this more often than once every 20 seconds."
+  },
+  "Fervent Fang": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "Each time you deal damage to an enemy, that enemy now takes 2.40% increased damage from your attacks, up to a maximum increase of 8.0% at 10 stacks. All damage you deal to Elite monsters increased by 6.0%."
+  },
+  "Follower's Burden": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "Increases all damage you deal by 3.00% for each summon you control, up to a maximum increase of 18%. Additionally, your summons take 6% decreased damage."
+  },
+  "Frozen Heart": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 150.0,
+              "conditions": [],
+              "context": "id Shield absorbing 150% base damage + 1,458"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "absorb value increased to 180%.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to chill enemies.",
+            "conditions": []
+          },
+          {
+            "type": "buff_effect",
+            "text": "grants your attacks at 15% chance to chill enemies.",
+            "conditions": []
+          },
+          {
+            "type": "defensive_effect",
+            "text": "Shield grants your attacks at 15% chance to chill enemies.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 15.0,
+              "conditions": [],
+              "context": "nts your attacks at 15% chance to chill enemies."
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to Chill enemies.",
+            "conditions": []
+          },
+          {
+            "type": "buff_effect",
+            "text": "grants your attacks a 30% chance to Chill enemies.",
+            "conditions": []
+          },
+          {
+            "type": "defensive_effect",
+            "text": "Shield grants your attacks a 30% chance to Chill enemies.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": "ants your attacks a 30% chance to Chill enemies."
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to Chill enemies.",
+            "conditions": []
+          },
+          {
+            "type": "buff_effect",
+            "text": "grants your attacks a 45% chance to Chill enemies.",
+            "conditions": []
+          },
+          {
+            "type": "defensive_effect",
+            "text": "Shield grants your attacks a 45% chance to Chill enemies.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 45.0,
+              "conditions": [],
+              "context": "ants your attacks a 45% chance to Chill enemies."
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "absorb value increased to 310%.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to Chill enemies.",
+            "conditions": []
+          },
+          {
+            "type": "buff_effect",
+            "text": "grants your attacks a 60% chance to Chill enemies.",
+            "conditions": []
+          },
+          {
+            "type": "defensive_effect",
+            "text": "Shield also grants your attacks a 60% chance to Chill enemies.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 60.0,
+              "conditions": [],
+              "context": "ants your attacks a 60% chance to Chill enemies."
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "absorb value increased to 360%.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "When you take damage, activate a Frigid Shield for 6 seconds that Chills enemy attackers and absorbs damage equal to 360% of your base damage plus 1,458. Frigid Shield also grants your attacks a 60% chance to Chill enemies. Cannot gain Frigid Shield more than once every 20 seconds."
+  },
+  "Hellfire Fragment": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 45.0,
+              "conditions": [],
+              "context": "fire blazes dealing 45% base damage + 510"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 54.0,
+              "conditions": [],
+              "context": "age is increased to 54% of base damage."
+            }
+          ]
+        }
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 12.5,
+              "conditions": [],
+              "context": "ellfire Blazes take 12.5% additional damage from subsequent hit"
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 67.0,
+              "conditions": [],
+              "context": "age is increased to 67% of base damage."
+            }
+          ]
+        }
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 25.0,
+              "conditions": [],
+              "context": "ellfire Blazes take 25% additional damage from subsequent hit"
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 80.0,
+              "conditions": [],
+              "context": "age is increased to 80% of base damage."
+            }
+          ]
+        }
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 37.5,
+              "conditions": [],
+              "context": "ellfire Blazes take 37.5% additional damage from subsequent hit"
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 94.0,
+              "conditions": [],
+              "context": "age is increased to 94% of base damage."
+            }
+          ]
+        }
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 50.0,
+              "conditions": [],
+              "context": "ellfire Blazes take 50% additional damage from subsequent hit"
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 108.0,
+              "conditions": [],
+              "context": "age is increased to 108% of base damage."
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "Using a skill conjures 3 hellfire blazes around you to seek out enemies within 6 yards, exploding on them dealing 108% base damage + 510 to all nearby enemies. Enemies struck by multiple hellfire blazes take 50% additional damage from subsequent hits. Cannot occur more often than once every 20 seconds."
+  },
+  "Kir Sling": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "damage_effect",
+            "text": "burst of light that Blinds enemies for 1.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 15.0,
+              "conditions": [
+                {
+                  "type": "trigger",
+                  "trigger": "on_attack",
+                  "text": "when (?:you )?attack"
+                }
+              ],
+              "context": "15% chance when attacked to re"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 3.5,
+              "conditions": [],
+              "context": "Deal 3.5% increased damage to Blinded enemies."
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 7.0,
+              "conditions": [],
+              "context": "Deal 7% increased damage to Blinded enemies."
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 10.5,
+              "conditions": [],
+              "context": "Deal 10.5% increased damage to Blinded enemies."
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 14.0,
+              "conditions": [],
+              "context": "Deal 14% increased damage to Blinded enemies."
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "You have a 15% chance when attacked to release a burst of light that Blinds all nearby enemies, reducing their vision and causing total Loss of Control for four seconds. Cannot occur more often than once every 20 seconds. You also deal 14% increased damage to Blinded enemies."
+  },
+  "Lightning Core": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 90.0,
+              "conditions": [],
+              "context": "ctricity, releasing 90% base damage + 1134 chain lightn"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 120.0,
+              "conditions": [],
+              "context": "age is increased to 120% of base damage."
+            }
+          ]
+        }
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 150.0,
+              "conditions": [],
+              "context": "age is increased to 150% of base damage."
+            }
+          ]
+        }
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 190.0,
+              "conditions": [],
+              "context": "age is increased to 190% of base damage."
+            }
+          ]
+        }
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 235.0,
+              "conditions": [],
+              "context": "age is increased to 235% of base damage."
+            }
+          ]
+        }
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 280.0,
+              "conditions": [],
+              "context": "age is increased to 280% of base damage."
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "Your Primary Attacks and movement slowly charge you up with electricity. When fully-charged, your Primary Attacks will release chain lightning, dealing 280% base damage +1134 to nearby enemies. Increases all damage you deal by 12% for 3 seconds. Cannot occur more often than once every 20 seconds."
+  },
+  "Mocking Laughter": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Your Primary Attack forces non-Elite monsters it hits to attack you for 6.00 seconds, decreasing all damage you take by 8% from monsters affected by Mocking Laughter."
+  },
+  "Mother's Lament": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 20.0,
+              "conditions": [],
+              "context": " damage, you have a 20% chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds. This effect cannot occur more often than once every 20 seconds. When Maternal Disdain ends, you release a blood spike toward nearby enemies, dealing base damage and causing them to"
+            }
+          ],
+          "critical_hit_chance": [
+            {
+              "value": 20.0,
+              "conditions": [],
+              "context": " damage, you have a 20% chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 20.0,
+              "conditions": [],
+              "context": " damage, you have a 20% chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 second"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Pain Clasp": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 8.0,
+              "conditions": [],
+              "context": "ses damage dealt by 8.00% to enemies suffering from continuous damage effect"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Pain of Subjugation": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 5.5,
+              "conditions": [],
+              "context": "5.50% increased damage vs enemies sufferin"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "You deal 16.00% increased damage to enemies suffering loss of control, and take 4% decreased damage while you are suffering loss of control."
+  },
+  "Power & Command": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 8.0,
+              "conditions": [],
+              "context": "ry Attack damage by 8.00%, Command increases skill damage by 8.00%"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to dispel a negative effect on you each time Power and Command states alternate.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 7.5,
+              "conditions": [],
+              "context": "You have a 7.5% chance to dispel a negativ"
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to dispel a negative effect on you each time Power and Command states alternate.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 15.0,
+              "conditions": [],
+              "context": "You have a 15.0% chance to dispel a negativ"
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to dispel a negative effect on you each time Power and Command states alternate.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 22.5,
+              "conditions": [],
+              "context": "You have a 22.5% chance to dispel a negativ"
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to dispel a negative effect on you each time Power and Command states alternate.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": "You have a 30.0% chance to dispel a negativ"
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "Power and Command alternate states every 9 seconds. Power increases your Primary Attack damage by 24%. Command increases all other skill damage by 24%. Each time these states alternate, you have a 30% chance to dispel a harmful effect from yourself."
+  },
+  "Respite Stone": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 0.55,
+              "conditions": [],
+              "context": "-0.55% damage taken per 10% missi"
+            }
+          ],
+          "life": [
+            {
+              "value": 0.55,
+              "conditions": [],
+              "context": "-0.55% damage taken per 10% missing Life (max 5.5%)"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "life": [
+            {
+              "value": 1.5,
+              "conditions": [],
+              "context": "Gain 1.5% increased Armor while your Life is below 50%."
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "life": [
+            {
+              "value": 3.0,
+              "conditions": [],
+              "context": "Gain 3% increased Armor while your Life is below 50%."
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "life": [
+            {
+              "value": 4.5,
+              "conditions": [],
+              "context": "Gain 4.5% increased Armor while your Life is below 50%."
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "life": [
+            {
+              "value": 6.0,
+              "conditions": [],
+              "context": "Gain 6% increased Armor while your Life is below 50%."
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Decreases all damage you take by 1.60% for every 10% your Life is below maximum, up to a maximum damage decrease of 16.0%. Additionally, gain 6% increased Armor while your life is below 50%."
+  },
+  "The Black Rose": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [
+          {
+            "type": "summon_effect",
+            "text": "summon vines that Immobilize attacker for 1.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 10.0,
+              "conditions": [
+                {
+                  "type": "trigger",
+                  "trigger": "on_attack",
+                  "text": "when (?:you )?attack"
+                }
+              ],
+              "context": "10% chance when attacked to su"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "Chance to summon vines increased to 13.",
+            "conditions": []
+          },
+          {
+            "type": "summon_effect",
+            "text": "summon vines increased to 13.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "Chance to summon vines increased to 17%.",
+            "conditions": []
+          },
+          {
+            "type": "summon_effect",
+            "text": "summon vines increased to 17%.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "Chance to summon vines increased to 20.",
+            "conditions": []
+          },
+          {
+            "type": "summon_effect",
+            "text": "summon vines increased to 20.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "Chance to summon vines increased to 24.",
+            "conditions": []
+          },
+          {
+            "type": "summon_effect",
+            "text": "summon vines increased to 24.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Each time you are attacked, you have a 24% chance to summon vines that Immobilize the attacker for 3.30 seconds. Each enemy cannot be affected by this more often than once every 20 seconds."
+  },
+  "The Hunger": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 40.0,
+              "conditions": [],
+              "context": "Heal 40% base damage + 567 Life each tim"
+            }
+          ],
+          "life": [
+            {
+              "value": 40.0,
+              "conditions": [],
+              "context": "Heal 40% base damage + 567 Life each time you defea"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "Heal 140% base damage + 567 Life each time you defeat an enemy. Cannot occur more often than once every 20 seconds. Increase your attack speed by 16% for 3 seconds after defeating an enemy."
+  },
+  "Trickshot Gem": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Your Channeled skills consume energy 24.00% slower and you take 2% decreased damage while using them."
+  },
+  "Viper's Bite": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 16.0,
+              "conditions": [],
+              "context": "per's Venom dealing 16% base damage + 120 every second "
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Zod Stone": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Increases the duration of your Ultimate skills by 48.00%, and the damage of your Ultimate skills by 6%."
+  },
+  "Seled's Weakening": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 1,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 6.0,
+              "conditions": [
+                {
+                  "type": "trigger",
+                  "trigger": "on_kill",
+                  "text": "after killing"
+                }
+              ],
+              "context": "6.00% increased damage for 60s after killi"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 1,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "5",
+    "max_effect": "Increases all damage you deal to Elite monsters by 18%. In addition, gain 18.00% increased damage for 60 seconds after killing an Elite monster."
+  },
+  "Battleguard": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "Decreases all melee damage you take by 24.00% from enemies within 3 yards. Additionally, while your health is below 60% you can move unhindered through enemies."
+  },
+  "Bottled Hope": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "When you use a skill to grant a buff, increase the damage and Movement speed of the target by 24.00% for 6 seconds. Cannot occur more often than once every 20 seconds per target. Skill cooldowns decreased 6%."
+  },
+  "Seeping Bile": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 4.0,
+              "conditions": [],
+              "context": "4% chance to poison enemies for 25% base damage + 263/s for 6s, spr"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 4.0,
+              "conditions": [],
+              "context": "4% chance to poison enemies f"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": "age is increased to 30% of base damage."
+            }
+          ]
+        }
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 35.0,
+              "conditions": [],
+              "context": "age is increased to 35% of base damage."
+            }
+          ]
+        }
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 45.0,
+              "conditions": [],
+              "context": "age is increased to 45% of base damage."
+            }
+          ]
+        }
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 55.0,
+              "conditions": [],
+              "context": "age is increased to 55% of base damage."
+            }
+          ]
+        }
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 65.0,
+              "conditions": [],
+              "context": "age is increased to 65% of base damage."
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "Your attacks have a 4% chance to poison enemies, inflicting 65% base damage +263 every second over 6 seconds and decreasing Movement Speed by 24%. This poison spreads to nearby enemies if the victim dies. Cannot affect the same target more often than once every 20 seconds."
+  },
+  "The Abiding Curse": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to curse enemies, reducing Attack and Movement Speeds by 35% for 2.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "movement_speed": [
+            {
+              "value": 15.0,
+              "conditions": [],
+              "context": "15% chance to curse enemies, reducing Attack and Movement Speeds by 35% for 2.50 se"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 15.0,
+              "conditions": [],
+              "context": "15% chance to curse enemies, r"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 10.0,
+              "conditions": [],
+              "context": "d enemies also take 10% increased damage from your attacks."
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "Your attacks have a 15% chance to curse enemies, reducing their Attack and Movement speeds by 35% for 8 seconds. Cursed enemies also take 10% increased damage from your attacks. Cannot curse the same target more than once every 20 seconds."
+  },
+  "Bloody Reach": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "movement_speed": [
+            {
+              "value": 0.3,
+              "conditions": [],
+              "context": "Your attacks have a 0.3% chance to decrease enemy attack and movement speeds by 35% for 3 secon"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 0.3,
+              "conditions": [],
+              "context": "Your attacks have a 0.3% chance to decrease enemy a"
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "movement_speed": [
+            {
+              "value": 0.6,
+              "conditions": [],
+              "context": "Your attacks have a 0.6% chance to decrease enemy attack and movement speeds by 35% for 3 secon"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 0.6,
+              "conditions": [],
+              "context": "Your attacks have a 0.6% chance to decrease enemy a"
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "movement_speed": [
+            {
+              "value": 0.9,
+              "conditions": [],
+              "context": "Your attacks have a 0.9% chance to decrease enemy attack and movement speeds by 35% for 3 secon"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 0.9,
+              "conditions": [],
+              "context": "Your attacks have a 0.9% chance to decrease enemy a"
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "movement_speed": [
+            {
+              "value": 1.2,
+              "conditions": [],
+              "context": "Your attacks have a 1.2% chance to decrease enemy attack and movement speeds by 35% for 3 secon"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 1.2,
+              "conditions": [],
+              "context": "Your attacks have a 1.2% chance to decrease enemy a"
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "Your attacks deal 6.00% increased damage for every 2 yards between you and the enemy hit. Maximum increase of 24% at 8 yards. In addition, your attacks have a 1.2% chance to slow enemy Movement Speed by 35% for 3 seconds."
+  },
+  "Grim Rhythm": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "movement_speed": [
+            {
+              "value": 0.8,
+              "conditions": [],
+              "context": "our Attack Speed by 0.8% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 9%."
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Starfire Shard": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to rain meteorites in an area, dealing 200% base damage in total.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": " damage, you have a 30% chance to rain meteorites in an area, dealing 200% base damage in total. This effe"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": " damage, you have a 30% chance to rain meteorites "
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Unity Crystal": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 0.5,
+              "conditions": [],
+              "context": " party members take 0.50% reduced damage per additional part"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "You and all party members take 1.50% reduced damage per additional party member within 6 yards of you. Each nearby party member increases damage done by all party members by 1.2%."
+  },
+  "Volatility Shard": {
+    "stars": "2",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": "s explosion dealing 30% base damage + 365 to nearby ene"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 40.0,
+              "conditions": [],
+              "context": "age is increased to 40% of base damage."
+            }
+          ]
+        }
+      },
+      "3": {
+        "rank": 3,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 50.0,
+              "conditions": [],
+              "context": "age is increased to 50% of base damage."
+            }
+          ]
+        }
+      },
+      "5": {
+        "rank": 5,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 75.0,
+              "conditions": [],
+              "context": "age is increased to 75% of base damage."
+            }
+          ]
+        }
+      },
+      "9": {
+        "rank": 9,
+        "stars": 2,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 2,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 90.0,
+              "conditions": [],
+              "context": "age is increased to 90% of base damage."
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "10",
+    "max_effect": "When you defeat an enemy you trigger a volatile explosion dealing 90% base damage + 365 to all nearby enemies while granting yourself 8% increased damage for two seconds. Cannot occur more often than once every six seconds."
+  },
+  "Stormvault": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 22.5,
+              "conditions": [],
+              "context": "torm for 6s dealing 22.5% base damage + 203 every 0.5s"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Echoing Shade": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 15.0,
+              "conditions": [],
+              "context": "15% chance to summon shadow cl"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "Your attacks have a 15% chance to summon a shadow clone that lasts 20.00 seconds and gains some of your attributes. You can now have up to 3 shadow clones at one time and their Life is increased by 100%."
+  },
+  "Phoenix Ashes": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 450.0,
+              "conditions": [],
+              "context": "ts shield absorbing 450% base damage"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "absorb value increased to 530%.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "shield expires, heal for 20% of the remaining value.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "absorb value increased to 660%.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "shield expires, heal for 40% of the remaining value.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "absorb value increased to 790%.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "shield expires, heal for 60% of the remaining value.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "absorb value increased to 920%.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "shield expires, heal for 80% of the remaining value.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "absorb value increased to 1050%.",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "Prevents fatal damage, and then grants a shield for 6 seconds that absorbs damage equal to 1050% of your base damage. When the shield expires, heal for 80% of the remaining value. Cannot occur more often than once every 180 seconds."
+  },
+  "Concentrated Will": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 55.0,
+              "conditions": [],
+              "context": "ardian angel, deals 55% base damage + 547"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 65.0,
+              "conditions": [],
+              "context": "age is increased to 65% of base damage."
+            }
+          ]
+        }
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 80.0,
+              "conditions": [],
+              "context": "age is increased to 80% of base damage."
+            }
+          ]
+        }
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 100.0,
+              "conditions": [],
+              "context": "age is increased to 100% of base damage."
+            }
+          ]
+        }
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 115.0,
+              "conditions": [],
+              "context": "age is increased to 115% of base damage."
+            }
+          ]
+        }
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 135.0,
+              "conditions": [],
+              "context": "age is increased to 135% of base damage."
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "Using a Dash skill calls a guardian angel to your aid, unleashing a blast of holy light in your direction dealing 135% base damage + 547 to all enemies in the path. When the guardian angel returns to the High Heavens, it blesses you, increasing your damage and Movement Speed by 16% for two seconds. Cannot occur more often than once every six seconds."
+  },
+  "Howler's Call": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 10.0,
+              "conditions": [],
+              "context": "10% chance on Primary Attack to summon spirit wolf dealing 150% base damage + 1,458"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 10.0,
+              "conditions": [],
+              "context": "10% chance on Primary Attack t"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to Stun enemies for 3 seconds.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 12.0,
+              "conditions": [],
+              "context": "e spirit wolf has a 12% chance to Stun enemies for"
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to Stun enemies for 3 seconds.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 24.0,
+              "conditions": [],
+              "context": "e spirit wolf has a 24% chance to Stun enemies for"
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to Stun enemies for 3 seconds.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 36.0,
+              "conditions": [],
+              "context": "e spirit wolf has a 36% chance to Stun enemies for"
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "proc_effect",
+            "text": "chance to Stun enemies for 3 seconds.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 48.0,
+              "conditions": [],
+              "context": "e spirit wolf has a 48% chance to Stun enemies for"
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "Your Primary Attack has a 10% chance to summon a charging spirit wolf that inflicts 360% base damage + 1,458 to all enemies in its path and has a 48% chance to Stun enemies for 3 seconds. Cannot occur more often than once every 20 seconds."
+  },
+  "Maw of the Deep": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 140.0,
+              "conditions": [],
+              "context": " monster erupts for 140% base damage + 1701"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Roiling Consequence": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 12.0,
+              "conditions": [],
+              "context": "iling rage for 6s, +12% Crit Chance, crits cause explosion dealing 36% base damage over 3s"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 12.0,
+              "conditions": [],
+              "context": "iling rage for 6s, +12% Crit Chance, crits cause explos"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Zwenson's Haunting": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 50.0,
+              "conditions": [],
+              "context": "ast attacks dealing 50% base damage + 486"
+            }
+          ]
+        }
+      },
+      "2": {
+        "rank": 2,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "3": {
+        "rank": 3,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 7.0,
+              "conditions": [],
+              "context": "Gain a 7% chance for a dark beast to"
+            }
+          ]
+        }
+      },
+      "4": {
+        "rank": 4,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "5": {
+        "rank": 5,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 14.0,
+              "conditions": [],
+              "context": "Gain a 14% chance for a dark beast to"
+            }
+          ]
+        }
+      },
+      "6": {
+        "rank": 6,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "7": {
+        "rank": 7,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 21.0,
+              "conditions": [],
+              "context": "Gain a 21% chance for a dark beast to"
+            }
+          ]
+        }
+      },
+      "8": {
+        "rank": 8,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      },
+      "9": {
+        "rank": 9,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "proc_chance": [
+            {
+              "value": 28.0,
+              "conditions": [],
+              "context": "Gain a 28% chance for a dark beast to"
+            }
+          ]
+        }
+      },
+      "10": {
+        "rank": 10,
+        "stars": 5,
+        "effects": [],
+        "stats": {}
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "15",
+    "max_effect": "When you defeat an enemy, a dark beast attacks nearby enemies, dealing 120% base damage +486. Cannot occur more often than once every 6 seconds. You now have a 28% chance for an additional dark beast."
+  },
+  "Spiteful Blood": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "text": "absorb shield equal to 160% of your base damage.",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 50.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": " damage while below 50% Life causes Spiteful Blood to surge through you for 4 seconds, increasing your damage done by 30% and making you invulnerable to Primary Attacks from other players. Additionally, when Spiteful Blood triggers, you gain an absorb shield equal to 160% of your base damage. This effect cannot"
+            }
+          ],
+          "life": [
+            {
+              "value": 50.0,
+              "conditions": [
+                {
+                  "type": "state",
+                  "state": "health_threshold",
+                  "text": "below (\\d+)% (?:life|health)",
+                  "threshold": 50.0
+                }
+              ],
+              "context": " damage while below 50% Life causes Spiteful Blo"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Void Spark": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": " Void Spark for 6s, 30% chance to chain lightning to 8 enemies dealing 45% base damage + 446"
+            }
+          ],
+          "proc_chance": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": " Void Spark for 6s, 30% chance to chain lightning "
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  },
+  "Gloom Cask": {
+    "stars": "5",
+    "ranks": {
+      "1": {
+        "rank": 1,
+        "stars": 5,
+        "effects": [],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 30.0,
+              "conditions": [],
+              "context": "loom blades dealing 30% base damage + 275"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 1,
+    "magic_find": "0",
+    "max_effect": ""
+  }
+}

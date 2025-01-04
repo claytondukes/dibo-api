@@ -1,0 +1,761 @@
+{
+  "Demoralize": [
+    {
+      "essence_name": "Visage of the Living Ancients",
+      "gear_slot": "Helm",
+      "effect": "Demoralize now calls on the power of an Ancient to charge toward you from a targeted location, bringing along any enemies in its path. Damage +18.0%"
+    },
+    {
+      "essence_name": "Pot Metal",
+      "gear_slot": "Helm",
+      "effect": "Demoralize becomes an Ancestral Protector, granting an absorb shield that makes you immune to knockback while active. Shield effect +10.8%"
+    },
+    {
+      "essence_name": "Impending Slaughter",
+      "gear_slot": "Helm",
+      "effect": "Demoralize replaced with an intimidating shout that damages enemies and reduces their attack/move speeds. Damage +18.0%"
+    },
+    {
+      "essence_name": "Bestial Threat",
+      "gear_slot": "Helm",
+      "effect": "Demoralize replaced with a terrifying roar that damages/Immobilizes nearby enemies. Damage +18.0%"
+    },
+    {
+      "essence_name": "Heartless Terror",
+      "gear_slot": "Helm",
+      "effect": "Demoralize unleashes a roar that damages enemies while making you immune to loss of control and knockbacks. Damage +18.0%"
+    },
+    {
+      "essence_name": "Spartusk",
+      "gear_slot": "Helm",
+      "effect": "Demoralize now pulls in all nearby enemies, dealing damage, Stunning them, and removing beneficial effects applied by Skills or Primaries. Damage +18.0%"
+    },
+    {
+      "essence_name": "Yowl of Execration",
+      "gear_slot": "Helm",
+      "effect": "Demoralize now knocks back and damages enemies; those knocked into walls are also Stunned. Damage +18.0%"
+    },
+    {
+      "essence_name": "Battlemaster's Helm",
+      "gear_slot": "Helm",
+      "effect": "Demoralize replaced with a war cry that increases all damage you and nearby allies inflict. Cooldown -7.2%"
+    },
+    {
+      "essence_name": "Lion’s Mane",
+      "gear_slot": "Main Hand",
+      "effect": "Demoralize also detonates DoTs on nearby enemies instantly. Demoralize Cooldown -3.6%"
+    },
+    {
+      "essence_name": "Dishonored Blade",
+      "gear_slot": "Off-Hand",
+      "effect": "Demoralize duration increased by 39%."
+    },
+    {
+      "essence_name": "Burden of Nothingness (Latest)",
+      "gear_slot": "Off-Hand",
+      "effect": "Also grants a Demoralizing Aura for 3s, reducing nearby enemies’ damage by 19%."
+    }
+  ],
+  "Sprint": [
+    {
+      "essence_name": "Spiritbreaker",
+      "gear_slot": "Helm",
+      "effect": "Sprint also leaves tornadoes (7,650 dmg) in your path. Damage +90.0%"
+    },
+    {
+      "essence_name": "Squirmskull",
+      "gear_slot": "Helm",
+      "effect": "While Sprint is active, your Attack Speed increases by 28.5% and projectile speed by 40%."
+    },
+    {
+      "essence_name": "Second Breath",
+      "gear_slot": "Helm",
+      "effect": "Sprint duration increased by 39%."
+    },
+    {
+      "essence_name": "Broken Grasp",
+      "gear_slot": "Shoulder",
+      "effect": "Sprint also increases your Dodge Chance by 20%. Cooldown -3.6%."
+    },
+    {
+      "essence_name": "Hell’s Legacy",
+      "gear_slot": "Shoulder",
+      "effect": "Sprint leaves a trail of flames dealing 19,040 dmg over 4s. Damage +90.0%"
+    },
+    {
+      "essence_name": "Routfinder",
+      "gear_slot": "Shoulder",
+      "effect": "Sprint leaves a wind tunnel letting allies pass through for +30% Move Speed (2s). Sprint Cooldown -3.6%."
+    },
+    {
+      "essence_name": "Juggernaut’s Plan",
+      "gear_slot": "Legs",
+      "effect": "Sprint causes you to run continuously, knocking away and damaging enemies in your path. Sprint Damage increased by 18.0%."
+    },
+    {
+      "essence_name": "Swiftwing",
+      "gear_slot": "Legs",
+      "effect": "Sprint also increases movement speed of nearby allies; Sprint Cooldown reduced by 7.2%."
+    }
+  ],
+  "Undying Rage": [
+    {
+      "essence_name": "Grinning Effigy",
+      "gear_slot": "Helm",
+      "effect": "Taking damage during Undying Rage triggers a 5,882 dmg counterattack (once per 0.5s). Damage +90.0%"
+    },
+    {
+      "essence_name": "Ancestors’ Stele",
+      "gear_slot": "Helm",
+      "effect": "Undying Rage duration +1 second, Cooldown -3.6%"
+    },
+    {
+      "essence_name": "The Trembling",
+      "gear_slot": "Helm",
+      "effect": "Undying Rage also increases your Movement Speed by 50%. Cooldown -3.6%"
+    }
+  ],
+  "Ground Stomp": [
+    {
+      "essence_name": "Splitting Outbreak",
+      "gear_slot": "Helm",
+      "effect": "+1 max charge for Ground Stomp, Cooldown -3.6%"
+    },
+    {
+      "essence_name": "Weighted Brow",
+      "gear_slot": "Helm",
+      "effect": "Ground Stomp range increased by 29%."
+    },
+    {
+      "essence_name": "Chitinous Greaves",
+      "gear_slot": "Legs",
+      "effect": "Ground Stomp unleashes fury within you, Burning enemies. Ground Stomp Damageincreased by 18.0%."
+    },
+    {
+      "essence_name": "Rockspike",
+      "gear_slot": "Legs",
+      "effect": "Ground Stomp now affects all nearby enemies. Ground Stomp Damage increased by 18.0%."
+    },
+    {
+      "essence_name": "Compromise Is Loss",
+      "gear_slot": "Legs",
+      "effect": "Ground Stomp rips open the ground in front of you, dealing damage; max 2 charges. Ground Stomp Damage increased by 18.0%."
+    },
+    {
+      "essence_name": "Pit of Ursus",
+      "gear_slot": "Legs",
+      "effect": "Smashes the ground to erect a ring of rocks, boosting your damage and reducing enemy damage inside; Ground Stomp Cooldown reduced by 7.2%."
+    },
+    {
+      "essence_name": "Indiscriminate Heat",
+      "gear_slot": "Legs",
+      "effect": "Also causes lava to erupt after a short delay, damaging and Stunning enemies. Ground Stomp Damage +18.0%."
+    },
+    {
+      "essence_name": "Dauntless Temper",
+      "gear_slot": "Legs",
+      "effect": "Calls on the power of an Ancient to appear and stomp periodically around you. Ground Stomp Damage +18.0%."
+    },
+    {
+      "essence_name": "Shattered Ground",
+      "gear_slot": "Legs",
+      "effect": "Produces an earthquake damaging enemies in the area but no longer Stuns them. Ground Stomp Damage +18.0%."
+    }
+  ],
+  "Wrath Of The Berserker": [
+    {
+      "essence_name": "Horns of Harrogath",
+      "gear_slot": "Helm",
+      "effect": "Slaying enemies during WotB increases your damage by 1% for 9.6s, up to 10%."
+    },
+    {
+      "essence_name": "Krubask’s Sneer",
+      "gear_slot": "Helm",
+      "effect": "During WotB, your Critical Hit Chance is increased by 19%."
+    },
+    {
+      "essence_name": "Sullen Vow",
+      "gear_slot": "Helm",
+      "effect": "WotB also increases your Primary Attack Speed by 30% for 5.7s."
+    },
+    {
+      "essence_name": "Lasting Hate",
+      "gear_slot": "Helm",
+      "effect": "Wrath of the Berserker duration increased by 39%."
+    },
+    {
+      "essence_name": "Berserker’s Sanity",
+      "gear_slot": "Helm",
+      "effect": "WotB now also dispels loss-of-control effects. Cooldown -3.6%"
+    },
+    {
+      "essence_name": "Brace of Ancestors",
+      "gear_slot": "Helm",
+      "effect": "WotB also causes your Primary Attack to deal 100% of its damage to nearby enemies. Cooldown -3.6%"
+    },
+    {
+      "essence_name": "Broken Calling",
+      "gear_slot": "Shoulder",
+      "effect": "WotB also makes you immune to knockback effects for 4.75s."
+    },
+    {
+      "essence_name": "Nature’s Temper",
+      "gear_slot": "Shoulder",
+      "effect": "WotB causes Primary Attacks to consume 1% Life, dealing +13,601 damage each strike. Damage +90.0%"
+    },
+    {
+      "essence_name": "Doom of the Cowed",
+      "gear_slot": "Shoulder",
+      "effect": "Activating WotB immediately reduces nearby enemies’ Move Speed by 80% for 2s. WotB Cooldown -3.6%."
+    },
+    {
+      "essence_name": "Ramshackle Fight",
+      "gear_slot": "Shoulder",
+      "effect": "During WotB, each Critical Hit reduces its cooldown by 0.6s, up to 3.6s total."
+    },
+    {
+      "essence_name": "The Coming Storm",
+      "gear_slot": "Shoulder",
+      "effect": "WotB cooldown decreased by 18.6%."
+    },
+    {
+      "essence_name": "Loathsome Lamina",
+      "gear_slot": "Shoulder",
+      "effect": "WotB also grants a 6s shield that absorbs 37,743 damage. Shield Effect +54.0%."
+    },
+    {
+      "essence_name": "Bergbreaker",
+      "gear_slot": "Off-Hand",
+      "effect": "Causes you to retaliate when attacked, dealing damage to nearby enemies. Damage +18.0%"
+    },
+    {
+      "essence_name": "Falling Thunder",
+      "gear_slot": "Off-Hand",
+      "effect": "Also enrages you when near a Bleeding enemy, increasing your damage by 28.5%."
+    },
+    {
+      "essence_name": "Broken Soul",
+      "gear_slot": "Off-Hand",
+      "effect": "WotB now increases Critical Hit Chance instead of Attack Speed. WotB Cooldownreduced by 7.2%."
+    },
+    {
+      "essence_name": "Sundered Legacy",
+      "gear_slot": "Off-Hand",
+      "effect": "WotB now causes nearby enemies to Burn. WotB Damage +18.0%"
+    },
+    {
+      "essence_name": "Skull Mill",
+      "gear_slot": "Off-Hand",
+      "effect": "WotB becomes a brawler’s rage: your Primary Attacks are punches; the 3rd punch grabs an enemy and throws them forward for AoE damage. WotB Damage +18.0%"
+    }
+  ],
+  "Sprint Also Increases Your Critical Hit Chance By 19% While Moving.": [
+    {
+      "essence_name": "Hunter's Sight",
+      "gear_slot": "Helm",
+      "effect": null
+    }
+  ],
+  "Hammer Of The Ancients": [
+    {
+      "essence_name": "Scallop Shell Armor",
+      "gear_slot": "Chest",
+      "effect": "HotA deals up to +76% additional damage the farther away enemies are."
+    },
+    {
+      "essence_name": "Umble Drape",
+      "gear_slot": "Chest",
+      "effect": "When HotA hits an enemy, drop additional hammers (50% damage), once every 3s. Damage increased by 90.0%"
+    },
+    {
+      "essence_name": "Davin's Legacy",
+      "gear_slot": "Chest",
+      "effect": "+1 max charge for HotA; Hammer of the Ancients cooldown reduced by 3.6%."
+    },
+    {
+      "essence_name": "Renitent Rage",
+      "gear_slot": "Chest",
+      "effect": "For each negative condition on an enemy, HotA damage +19% (up to +76%)."
+    },
+    {
+      "essence_name": "Truss of Stolen Skin",
+      "gear_slot": "Chest",
+      "effect": "After using HotA, gain +20% Attack Speed for 6.4 seconds."
+    },
+    {
+      "essence_name": "Cold Temper",
+      "gear_slot": "Chest",
+      "effect": "Shatters Frozen enemies for 34,512 extra damage, applying Chill. Damage increased by 90.0%."
+    },
+    {
+      "essence_name": "Luring Club",
+      "gear_slot": "Main Hand",
+      "effect": "Hammer of the Ancients deals +66.5% damage vs. Stunned enemies."
+    },
+    {
+      "essence_name": "Ragecaller",
+      "gear_slot": "Main Hand",
+      "effect": "HotA becomes electrified, slowing enemies by 50% for 3.2s."
+    },
+    {
+      "essence_name": "Stonefall",
+      "gear_slot": "Main Hand",
+      "effect": "HotA Damage +19%"
+    },
+    {
+      "essence_name": "The Last Wail",
+      "gear_slot": "Off-Hand",
+      "effect": "HotA smashes the ground, leaving an unstable area that erupts for extra damage after a delay. Damage +18.0%"
+    },
+    {
+      "essence_name": "Clattersteel",
+      "gear_slot": "Off-Hand",
+      "effect": "Rains hammers from the sky at your location, damaging enemies within the area. Damage +18.0%"
+    },
+    {
+      "essence_name": "Paste and Powder",
+      "gear_slot": "Off-Hand",
+      "effect": "Randomly drops hammers multiple times in the targeted area. Damage +18.0%"
+    },
+    {
+      "essence_name": "Razorgrip",
+      "gear_slot": "Off-Hand",
+      "effect": "Can be charged for more range/damage; deals +50% vs. Stunned foes. Damage +18.0%"
+    },
+    {
+      "essence_name": "Peace and Quietus",
+      "gear_slot": "Off-Hand",
+      "effect": "HotA can be dropped at a targeted spot; when reactivated, you and the hammer rush together—gathering enemies in between. Damage +18.0%"
+    },
+    {
+      "essence_name": "Bonegyre",
+      "gear_slot": "Off-Hand",
+      "effect": "HotA now orbits you for several seconds, damaging enemies it passes through. Damage +18.0%"
+    },
+    {
+      "essence_name": "Flickertonne",
+      "gear_slot": "Off-Hand",
+      "effect": "Each of your other attacks charges HotA, increasing its damage/radius on use. Damage +18.0%"
+    },
+    {
+      "essence_name": "Breaker’s Wheel",
+      "gear_slot": "Off-Hand",
+      "effect": "HotA creates a barrier of earth, preventing enemies from entering or exiting the strike zone. Damage +18.0%"
+    },
+    {
+      "essence_name": "Beggar’s Mallet",
+      "gear_slot": "Off-Hand",
+      "effect": "Throws a whirling hammer that returns to you, damaging enemies in its path. Damage +18.0%"
+    },
+    {
+      "essence_name": "The Forgotten",
+      "gear_slot": "Off-Hand",
+      "effect": "Throws a giant hammer that knocks enemies away; picking it up reduces HotA’s remaining cooldown. Damage +18.0%"
+    },
+    {
+      "essence_name": "The Remembered",
+      "gear_slot": "Off-Hand",
+      "effect": "Summons a Spirit of the Ancients who stuns nearby enemies on arrival and fights alongside you. Damage +18.0%"
+    },
+    {
+      "essence_name": "The Startler",
+      "gear_slot": "Off-Hand",
+      "effect": "HotA strikes the ground multiple times, knocking enemies airborne. Movement speed is reduced while striking. Damage +18.0%"
+    }
+  ],
+  "Sunder (Via Primary Attacks)": [
+    {
+      "essence_name": "Broken Ire",
+      "gear_slot": "Chest",
+      "effect": "Primary Attacks extend Sunder’s duration by 1.6s each (up to 4.8s), also boosting its damage bonus by 3% per stack (max 9%)."
+    }
+  ],
+  "Grab": [
+    {
+      "essence_name": "Direct Diplomacy",
+      "gear_slot": "Chest",
+      "effect": "Grab shatters the enemy’s armor, causing them to take +19% damage for 3s."
+    },
+    {
+      "essence_name": "The Hewer",
+      "gear_slot": "Main Hand",
+      "effect": "Grab now causes you to charge forward and seize the first enemy you hit, carrying them before leaping and slamming them down—damaging and Slowing nearby enemies. You’re immune to loss-of-control and knockback during the skill. Grab Damage +18.0%"
+    },
+    {
+      "essence_name": "Crumblestall",
+      "gear_slot": "Main Hand",
+      "effect": "Grab calls an Ancestral Spirit to hurl a giant mountain at a target location, damaging and Stunning enemies. Grab Damage +18.0%"
+    },
+    {
+      "essence_name": "Strangle Wings",
+      "gear_slot": "Main Hand",
+      "effect": "Grab now targets an enemy and dashes toward them, seizing and continuing the dash—knocking back other foes. Stuns if you hit a wall. Grab Damage +18.0%"
+    }
+  ],
+  "Chained Spear": [
+    {
+      "essence_name": "Temple of Battle",
+      "gear_slot": "Chest",
+      "effect": "Sweeps spears from left/right, gathering enemies in a cluster in front of you. Chained Spear damage +18.0%."
+    },
+    {
+      "essence_name": "Impaler’s Breath",
+      "gear_slot": "Chest",
+      "effect": "Hurls 3 harpoons that knock enemies away and Stun them. Damage +18.0%."
+    },
+    {
+      "essence_name": "Hearth Hook",
+      "gear_slot": "Chest",
+      "effect": "Now throws a piercing spear that applies a stacking Bleed. Damage +18.0%."
+    },
+    {
+      "essence_name": "Cracklefell",
+      "gear_slot": "Chest",
+      "effect": "Hurls 3 electrified spears that damage and immobilize enemies. Damage +18.0%."
+    },
+    {
+      "essence_name": "Charred Iron",
+      "gear_slot": "Chest",
+      "effect": "Hurls 3 flaming spears, each leaving a burning trail. Damage +18.0%."
+    },
+    {
+      "essence_name": "Crusher Rig",
+      "gear_slot": "Chest",
+      "effect": "Hurls giant rocks, damaging all enemies in their path. Chained Spear Damage +18.0%."
+    },
+    {
+      "essence_name": "Scalesunder",
+      "gear_slot": "Legs",
+      "effect": "Chained Spear also shatters armor, increasing all damage enemies take by 8% for 4.8 seconds."
+    },
+    {
+      "essence_name": "Buried Talons",
+      "gear_slot": "Legs",
+      "effect": "Chained Spear also increases your damage by 19% for 3 seconds."
+    },
+    {
+      "essence_name": "Tempo Change",
+      "gear_slot": "Legs",
+      "effect": "+1 max charge for Chained Spear; Chained Spear Cooldown reduced by 3.6%."
+    },
+    {
+      "essence_name": "Steel Lamprey",
+      "gear_slot": "Off-Hand",
+      "effect": "Chained Spear marks enemies for 5s and heals you for 5% of damage caused to marked enemies."
+    },
+    {
+      "essence_name": "Obin’s Many Fingers",
+      "gear_slot": "Off-Hand",
+      "effect": "Chained Spear hurls 2 additional spears. Cooldown reduced by 3.6%."
+    }
+  ],
+  "Whirlwind": [
+    {
+      "essence_name": "Manifold Gore",
+      "gear_slot": "Chest",
+      "effect": "Whirlwind damage +19% per Bleed on the enemy, up to +57%."
+    },
+    {
+      "essence_name": "Ferocious Gale",
+      "gear_slot": "Chest",
+      "effect": "Whirlwind occasionally spawns tornadoes (8,415 dmg). Damage increased by 90.0%"
+    },
+    {
+      "essence_name": "The Gathering",
+      "gear_slot": "Chest",
+      "effect": "Whirlwind pulls in all enemies it hits. Whirlwind Energy Consumption -3.6%."
+    },
+    {
+      "essence_name": "Five Fresh Claws",
+      "gear_slot": "Chest",
+      "effect": "Whirlwind shreds armor, +2% damage taken per hit (stack up to 5x). Whirlwind Energy Consumption -3.6%."
+    },
+    {
+      "essence_name": "Indignant Survivor",
+      "gear_slot": "Chest",
+      "effect": "Each time you’re attacked, Whirlwind’s Critical Hit Chance +12% for 2s (up to +36%)."
+    },
+    {
+      "essence_name": "Weight of War",
+      "gear_slot": "Shoulder",
+      "effect": "Whirlwind makes enemies more vulnerable, increasing Crit Chance against them by 4.8% for 3s, up to 24%."
+    },
+    {
+      "essence_name": "Ox’s Horns",
+      "gear_slot": "Shoulder",
+      "effect": "Striking the same enemy 3 times with Whirlwind causes them to Bleed for 18,936 dmg/s over 2.5s. Damage +90.0%."
+    },
+    {
+      "essence_name": "Lonecastle",
+      "gear_slot": "Shoulder",
+      "effect": "+50% chance to block projectiles during Whirlwind; Whirlwind Energy Consumption -3.6%."
+    },
+    {
+      "essence_name": "Wreckfall",
+      "gear_slot": "Shoulder",
+      "effect": "Whirlwind reduces all damage you take by 20% while channeling. Whirlwind Energy Consumption -3.6%."
+    },
+    {
+      "essence_name": "Ydama’s Cyclone",
+      "gear_slot": "Shoulder",
+      "effect": "Whirlwind damage increased by 19%."
+    },
+    {
+      "essence_name": "Pathraze",
+      "gear_slot": "Main Hand",
+      "effect": "Whirlwind now lets you spin and charge forward, damaging all enemies in your path. Max 3 charges. Whirlwind Damage +18.0%"
+    },
+    {
+      "essence_name": "Eager Maelstrom",
+      "gear_slot": "Main Hand",
+      "effect": "Whirlwind radius increased; Whirlwind movement speed decreased. Whirlwind Damage +18.0%"
+    },
+    {
+      "essence_name": "Fallow Field",
+      "gear_slot": "Main Hand",
+      "effect": "Whirlwind consumes Life instead of Energy, letting you spin as long as you have HP. Whirlwind Damage +18.0%"
+    },
+    {
+      "essence_name": "Widespread Blame",
+      "gear_slot": "Main Hand",
+      "effect": "Whirlwind now shatters armor and gains significantly increased Attack Speed. Whirlwind Damage +18.0%"
+    },
+    {
+      "essence_name": "North Wind",
+      "gear_slot": "Main Hand",
+      "effect": "Whirlwind also inflicts a stacking Chill. Whirlwind Damage +18.0%"
+    },
+    {
+      "essence_name": "Bitterwind",
+      "gear_slot": "Main Hand",
+      "effect": "Whirlwind draws on the wind for increased damage without reducing your Movement Speed. Whirlwind Damage +18.0%"
+    }
+  ],
+  "Furious Charge": [
+    {
+      "essence_name": "Tracker's Rage",
+      "gear_slot": "Chest",
+      "effect": "All damage you deal is increased by +19% after activating Furious Charge."
+    },
+    {
+      "essence_name": "Armor Caste",
+      "gear_slot": "Chest",
+      "effect": "Creates shock waves when colliding with walls, dealing 8,500 dmg and Stunning enemies for 1s. Damage increased by 90.0%."
+    },
+    {
+      "essence_name": "Lumber-cords",
+      "gear_slot": "Chest",
+      "effect": "Decreases all damage you take by 5% for 3s per enemy hit, stacking up to 6 times. Furious Charge Cooldown -3.6%."
+    },
+    {
+      "essence_name": "Death Awaits",
+      "gear_slot": "Chest",
+      "effect": "Also shatters enemies’ armor, increasing damage they take by 19% for 3s."
+    },
+    {
+      "essence_name": "Widow in Waiting",
+      "gear_slot": "Chest",
+      "effect": "Furious Charge now also reduces enemies’ Movement Speed by 50% for 6.4s."
+    },
+    {
+      "essence_name": "Determination",
+      "gear_slot": "Legs",
+      "effect": "Furious Charge can now be charged to increase its range and damage. Furious Charge Damage increased by 18.0%."
+    },
+    {
+      "essence_name": "Ram’s Impasse",
+      "gear_slot": "Legs",
+      "effect": "Furious Charge drags enemies with you, Stunning them. Furious Charge Damageincreased by 18.0%."
+    },
+    {
+      "essence_name": "Crown’s Cowardice (Latest)",
+      "gear_slot": "Legs",
+      "effect": "Furious Charge now dashes to a targeted enemy, damaging and Stunning all nearby enemies. Furious Charge Damage increased by 18.0%."
+    },
+    {
+      "essence_name": "Screaming Fury",
+      "gear_slot": "Legs",
+      "effect": "Furious Charge goes to a location, knocking enemies into the air; max 2 charges. Furious Charge Damage +18.0%."
+    }
+  ],
+  "Cleave": [
+    {
+      "essence_name": "Silver Flash",
+      "gear_slot": "Shoulder",
+      "effect": "Cleave’s knockback can now affect enemy players (once every 2s). Cleave Cooldownreduced by 3.6%."
+    },
+    {
+      "essence_name": "Dread Desecration",
+      "gear_slot": "Shoulder",
+      "effect": "Cleave can be used while suffering loss of control or knockback effects, and grants brief immunity to those effects. Cleave Cooldown -3.6%."
+    },
+    {
+      "essence_name": "Law of the Wild",
+      "gear_slot": "Shoulder",
+      "effect": "Cleave deals +47.5% damage to Slowed enemies."
+    },
+    {
+      "essence_name": "Writhing Mantle",
+      "gear_slot": "Shoulder",
+      "effect": "Cleave damage +29% vs. Chilled enemies, +50% vs. Frozen."
+    },
+    {
+      "essence_name": "Skull Motte",
+      "gear_slot": "Shoulder",
+      "effect": "Cleave tears armor, increasing damage enemies take by 11.4% for 3s, up to 34.2%."
+    },
+    {
+      "essence_name": "Bloodguzzle",
+      "gear_slot": "Shoulder",
+      "effect": "Each time Cleave hits an enemy within 2s, it gains +19% damage vs. that enemy, up to +57%."
+    },
+    {
+      "essence_name": "Hatred’s Reach",
+      "gear_slot": "Shoulder",
+      "effect": "Cleave range increased by 29%."
+    },
+    {
+      "essence_name": "Drop by Drop",
+      "gear_slot": "Shoulder",
+      "effect": "Cleave’s Bleed now spreads to 2 nearby enemies when it expires. Cleave Cooldown -3.6%."
+    },
+    {
+      "essence_name": "Borrowed Might",
+      "gear_slot": "Main Hand",
+      "effect": "Cleave periodically conjures a Spirit of the Ancient to cleave through nearby enemies. Cleave Damage +18.0%"
+    },
+    {
+      "essence_name": "Svot’s Reach",
+      "gear_slot": "Main Hand",
+      "effect": "Cleave now strikes in a full circle around you. Cleave Damage +18.0%"
+    },
+    {
+      "essence_name": "Axe of the Ray",
+      "gear_slot": "Main Hand",
+      "effect": "Cleave now hurls two whirling axes to damage enemies. Cleave Damage +18.0%"
+    },
+    {
+      "essence_name": "Decollater",
+      "gear_slot": "Main Hand",
+      "effect": "Cleave becomes a 3-attack sequence (Bleed + knockup) without multiple charges. Cleave Damage +18.0%"
+    },
+    {
+      "essence_name": "Frigid Grin",
+      "gear_slot": "Main Hand",
+      "effect": "Cleave summons twin rime axes orbiting you, damaging and freezing Chilled enemies. Cleave Damage +18.0%"
+    },
+    {
+      "essence_name": "Shardbreaker",
+      "gear_slot": "Main Hand",
+      "effect": "Cleave now causes you to Dash forward, slicing all enemies in your path. Cleave Damage +18.0%"
+    },
+    {
+      "essence_name": "Lurker’s Last Chance",
+      "gear_slot": "Main Hand",
+      "effect": "Cleave becomes channeled, repeatedly damaging all enemies in front of you. Cleave Damage +18.0%"
+    },
+    {
+      "essence_name": "Virulent Fist",
+      "gear_slot": "Off-Hand",
+      "effect": "Enemies killed by Cleave explode, dealing 8,925 damage to nearby enemies. Damage +90.0%"
+    },
+    {
+      "essence_name": "Flesh Splitter",
+      "gear_slot": "Off-Hand",
+      "effect": "Cleave damage increased by 19%."
+    }
+  ],
+  "Leap": [
+    {
+      "essence_name": "Animal Instinct",
+      "gear_slot": "Shoulder",
+      "effect": "Leap can be charged to increase range/damage. Leap Damage +18.0%."
+    },
+    {
+      "essence_name": "Shocking Chaos",
+      "gear_slot": "Shoulder",
+      "effect": "Leap is electrified, Stunning all nearby enemies on landing. Leap Damage +18.0%."
+    },
+    {
+      "essence_name": "Kar’s Defiance",
+      "gear_slot": "Legs",
+      "effect": "Leap grants a 37,683-damage shield and knockback immunity while active. Shield Effectincreased by 54.0%."
+    },
+    {
+      "essence_name": "Cliff Divers",
+      "gear_slot": "Legs",
+      "effect": "Activating Leap increases your Critical Hit Chance by 19% for 3 seconds."
+    },
+    {
+      "essence_name": "Plummet Proudly",
+      "gear_slot": "Legs",
+      "effect": "Leap also increases your Attack Speed by 28.5% for 3 seconds."
+    },
+    {
+      "essence_name": "Howler’s Lift",
+      "gear_slot": "Legs",
+      "effect": "Leap damage increased by 19%."
+    },
+    {
+      "essence_name": "Metal o’ Mine",
+      "gear_slot": "Legs",
+      "effect": "After using Leap, your damage is increased by 19% for 4 seconds."
+    },
+    {
+      "essence_name": "Haughty Behemoth",
+      "gear_slot": "Legs",
+      "effect": "Leap now knocks enemies into the air when landing. Leap Cooldown -3.6%."
+    },
+    {
+      "essence_name": "Flattener",
+      "gear_slot": "Legs",
+      "effect": "Max charges of Leap +1; Leap Cooldown -3.6%."
+    },
+    {
+      "essence_name": "Selleina’s Iron",
+      "gear_slot": "Main Hand",
+      "effect": "Leap causes the ground to shake for 3s, dealing 22,752 total damage to enemies in the area. Damage +90.0%"
+    }
+  ],
+  "Sunder": [
+    {
+      "essence_name": "Trail of Mourning",
+      "gear_slot": "Legs",
+      "effect": "Sunder now also pulls enemies to you. Sunder Cooldown reduced by 3.6%."
+    }
+  ],
+  "Lacerate": [
+    {
+      "essence_name": "Rending Bite",
+      "gear_slot": "Main Hand",
+      "effect": "Lacerate inflicts a Bleeding of 28,856 damage over 3s. Damage +90.0%"
+    },
+    {
+      "essence_name": "Ardent Fervor",
+      "gear_slot": "Main Hand",
+      "effect": "Lacerate’s Attack Speed +15% for 3.2s each time you take damage, stacking to +45%."
+    }
+  ],
+  "Frenzy": [
+    {
+      "essence_name": "Lunatic Twin",
+      "gear_slot": "Main Hand",
+      "effect": "When Frenzy is fully stacked, each attack unleashes 9,792 damage to all enemies in front of you (0.4s cooldown). Damage +90.0%"
+    },
+    {
+      "essence_name": "The Maddening",
+      "gear_slot": "Main Hand",
+      "effect": "Movement Speed +15% while Frenzy is at max stacks. Frenzy Damage +9.0%"
+    },
+    {
+      "essence_name": "Riddlerue",
+      "gear_slot": "Main Hand",
+      "effect": "When Frenzy Crits, your Attack Speed is +50% for 3.2s."
+    },
+    {
+      "essence_name": "Oncoming Brutality",
+      "gear_slot": "Off-Hand",
+      "effect": "Frenzy increases the damage you deal to that enemy by 6% for 3s, stacking up to 30%. Frenzy Damage +9.0%"
+    }
+  ]
+}

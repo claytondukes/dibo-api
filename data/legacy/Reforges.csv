@@ -1,0 +1,31 @@
+﻿Family Attribute,Attribute List,Family Set Bonus
+Wildfire,- Primary Attack damage increased by [2.0–4.0]%.,You have a 2% chance when you defeat an enemy to summon a fireball-spitting Hydra.
+,- All skill damage increased by [1.0–2.0]%.,
+,- Damage done to enemies below 30% Life increased by [2.0–4.0]%.,
+,- Critical Hit Damage increased by [1.5–3.0]%.,
+,- Heal party members for [1.0–2.0]% on death.,
+Tremor,- Your Primary Attacks reduce enemy healing by [3.0–6.0]%.,"Your Primary Attacks have a 2% chance to inflict 34,736 damage and Stun nearby enemies for 1.5 seconds."
+,- Your Primary Attacks have a [3.0–6.0]% chance to reduce enemy Attack and Movement Speeds by 20% for 3 seconds.,
+,- Continual damage taken reduced by [3.0–6.0]%.,
+,- Stun resistance increased by [3.0–6.0]%.,
+,- Knockback resistance increased by [3.0–6.0]%.,
+Jolt,- Damage taken from players reduced by [0.5–1.0]%.,You have a 2% chance when attacked to Immobilize your attacker.
+,- Damage taken while suffering loss of control decreased by [2.0–4.0]%.,
+,- Cheat Death chance increased by [3.0–6.0]%.,
+,- Duration of beneficial effects increased by [1.5–3.0]%.,
+,- Slow resistance increased by [3.0–6.0]%.,
+Vengeance,- Attack Speed increased by [1.0–2.0]%.,Your Primary Attacks have a 2% chance to increase all damage you deal by 100% for 1 second.
+,- Damage to players increased by [0.5–1.5]%.,
+,- Damage to demons increased by [3.0–6.0]%.,
+,- Damage to enemies suffering loss of control increased by [2.5–5.0]%.,
+,- Damage to shielded enemies increased by [3.0–6.0]%.,
+Barrier,- Damage to undead increased by [3.0–6.0]%.,You have a 2% chance when attacked to gain an absorption shield for 6 seconds.
+,- Maximum Life increased by [0.5–1.0]%.,
+,- Damage taken from nearby enemies decreased by [1.0–2.0]%.,
+,- Block Chance increased by [1.0–2.0]%.,
+,- Fear resistance increased by [3.0–6.0]%.,
+Ravager,- Healing Potion cooldown reduced by [1.0–2.0]%.,"You have a 2% chance when you defeat an enemy to cause the corpse to explode, damaging all nearby enemies."
+,- Life Regeneration increased by [1.0–2.0]%.,
+,- Damage to elite enemies increased by [3.0–6.0]%.,
+,- Damage done by your summons increased by [2.0–4.0]%.,
+,- Damage taken by your summons decreased by [2.0–4.0]%.,

@@ -1,0 +1,58 @@
+{
+  "curses": [
+    {
+      "Positive Property": "Ghosted",
+      "2 Pieces": "Create an illusion with 40% of your Life when you use a Buff skill. The illusion will take a portion of your incoming damage and lasts for 6 seconds. Effect cannot occur more often than once every 90 seconds.",
+      "4 Pieces": "Your Attack and Movement Speed are increased by 8% when near the illusion.",
+      "6 Pieces": "Your Attack and Movement Speed are increased by 16% when near the illusion."
+    },
+    {
+      "Positive Property": "Vexed",
+      "2 Pieces": "When your summons enter the battlefield, you let out a roar dealing 130% of your damage to nearby enemies. Effect cannot occur more often than once every 90 seconds.",
+      "4 Pieces": "The roar drives your summons into a furious rage, increasing their Movement and Attack Speed by 24% for 3 seconds.",
+      "6 Pieces": "The roar drives your summons into a furious rage, increasing their Movement and Attack Speed by 24% for 6 seconds."
+    },
+    {
+      "Positive Property": "Lashed",
+      "2 Pieces": "Your Primary Attack now has a chance to generate three crackling whips that target nearby enemies and deal 24% of your damage per second over 3 seconds to any enemies they hit. Effect cannot occur more often than once every 30 seconds.",
+      "4 Pieces": "When an enemy dies while still taking damage from a whip, it will explode for 12% of your damage.",
+      "6 Pieces": "When an enemy dies while still taking damage from a whip, it will explode for 24% of your damage."
+    },
+    {
+      "Positive Property": "Detested",
+      "2 Pieces": "Create a dark void beneath you that lasts for 6 seconds when you use a skill that causes loss of control. Enemies take 24% of your damage every second they remain within the area. Effect cannot occur more often than once every 90 seconds.",
+      "4 Pieces": "Damage dealt to enemies in the void is increased by 6%.",
+      "6 Pieces": "Damage dealt to enemies in the void is increased by 12%."
+    },
+    {
+      "Positive Property": "Nettled",
+      "2 Pieces": "After you gain a shield, for the next 6 seconds, every time you are hit you will counterattack dealing 40% of your damage to all nearby enemies. Cannot occur more often than once every 90 seconds.",
+      "4 Pieces": "Damage dealt to enemies hit by the counterattack is increased by 8%.",
+      "6 Pieces": "Damage dealt to enemies hit by the counterattack is increased by 16%."
+    },
+    {
+      "Positive Property": "Atrophied",
+      "2 Pieces": "When you deal continuous damage to an enemy, a dark field will appear under them, dealing 24% of your damage every second for 6 seconds to any enemies that remain in the area. Effect cannot occur more often than once every 90 seconds.",
+      "4 Pieces": "Movement Speed of enemies in the dark field is reduced by 60% for 1.5 seconds.",
+      "6 Pieces": "Movement Speed of enemies in the dark field is reduced by 60% for 3 seconds."
+    },
+    {
+      "Positive Property": "Wired",
+      "2 Pieces": "After you kill an enemy, release a surge of lightning that jumps 6 times between nearby enemies and deals 60% of your damage to them. Effect cannot occur more often than once every 30 seconds.",
+      "4 Pieces": "Damage dealt to enemies hit by a surge is increased by 9%.",
+      "6 Pieces": "Damage dealt to enemies hit by a surge is increased by 18%."
+    },
+    {
+      "Positive Property": "Blustered",
+      "2 Pieces": "When Thousand Winds deactivates, you send forth a tornado that targets the nearest enemy, knocking away and dealing 150% of your damage to any enemies in its path. Effect cannot occur more often than once every 90 seconds.",
+      "4 Pieces": "The tornado stuns all nearby enemies for 1 second when it dissipates.",
+      "6 Pieces": "The tornado stuns all nearby enemies for 2 seconds when it dissipates."
+    },
+    {
+      "Positive Property": "Tortured",
+      "2 Pieces": "Leave a trail of lurid flames behind you when you use a Dash skill. The flames last for 3 seconds and deal 36% of your damage per second to any enemy caught in its path. Effect cannot occur more often than once every 30 seconds.",
+      "4 Pieces": "Enemies in the flames are Immobilized for 1 second.",
+      "6 Pieces": "Enemies in the flames are Immobilized for 2 seconds."
+    }
+  ]
+}

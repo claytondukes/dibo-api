@@ -1,0 +1,95 @@
+{
+  "gem_slots": {
+    "total_required": 8,
+    "primary": {
+      "required": 8,
+      "unique": true,
+      "star_ratings": [
+        1,
+        2,
+        5
+      ]
+    },
+    "auxiliary": {
+      "required": 0,
+      "must_match_primary_stars": true,
+      "unique": true
+    }
+  },
+  "essence_slots": {
+    "total_required": 8,
+    "slots": {
+      "Head": 1,
+      "Shoulder": 1,
+      "Chest": 1,
+      "Legs": 1,
+      "Primary weapon": 1,
+      "Secondary weapon": 1,
+      "Off-hand weapon": 1,
+      "Off-hand secondary weapon": 1
+    }
+  },
+  "set_slots": {
+    "total_required": 8,
+    "slots": {
+      "Ring": 2,
+      "Neck": 1,
+      "Hands": 1,
+      "Waist": 1,
+      "Feet": 1,
+      "Bracer": 2
+    },
+    "valid_combinations": [
+      [
+        6,
+        2
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        2,
+        2
+      ],
+      [
+        2,
+        2,
+        2,
+        2
+      ]
+    ]
+  },
+  "skill_slots": {
+    "total_required": 4,
+    "slots": [
+      "skill1",
+      "skill2",
+      "skill3",
+      "skill4"
+    ],
+    "available_skills": [
+      "Hammer of the Ancients",
+      "Cleave",
+      "Whirlwind",
+      "Sprint",
+      "Wrath of the Berserker",
+      "Undying Rage",
+      "Ground Stomp",
+      "Leap",
+      "Furious Charge",
+      "Chained Spear",
+      "Demoralize",
+      "Grab",
+      "Sunder"
+    ]
+  },
+  "weapon_slots": {
+    "total_required": 1,
+    "available_weapons": [
+      "Frenzy",
+      "Lacerate"
+    ]
+  }
+}

@@ -1,0 +1,652 @@
+{
+  "gems": [
+    {
+      "Stars": "1",
+      "Name": "Berserker's Eye",
+      "Base Effect": "All damage dealt +5.50%, but damage taken +5%",
+      "Rank 10 Effect": "Increases all damage you deal by 16%, but also increases all damage you take by 5%. Additionally, your Critical Hit Chance is increased by 2%.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Blessed Pebble",
+      "Base Effect": "Duration of beneficial effects increased by 8.00%",
+      "Rank 10 Effect": "Increases the duration of beneficial effects on you by 12% and increases your Movement Speed by 8% for 3 seconds after gaining a beneficial effect.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Blessing of the Worthy",
+      "Base Effect": "20% chance when taking damage to deal 12% of max life to nearby enemies",
+      "Rank 10 Effect": "When you take damage, you have a 20% chance to unleash retribution on all nearby enemies, dealing damage equal to 24% of your maximum Life. Additionally, your Life recovery rate is increased by 10% for 6 seconds after the effect triggers.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "5",
+      "Name": "Blood-Soaked Jade",
+      "Base Effect": "Up to 8% increased damage at full life (min 4% at low life), +10% Movement Speed",
+      "Rank 10 Effect": "Increases all damage you deal by up to 32% and your Movement Speed by 20%. The damage bonus decreases as your Life decreases, but the minimum bonus is 16%. Additionally, your attacks heal you for 2% of damage dealt while the bonus is active.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "1",
+      "Name": "Ca'arsen's Invigoration",
+      "Base Effect": "Primary Attack speed increased by 5.50%",
+      "Rank 10 Effect": "Increases the speed of your Primary Attack by 16% and the damage of your Primary Attack by 2%.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Chained Death",
+      "Base Effect": "Damage +1.50% per target hit (max 4.5% with 3 targets)",
+      "Rank 10 Effect": "Increases damage done by your attacks by 4.5% per target hit, up to a maximum of 18% with 4 targets.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Chip of Stoned Flesh",
+      "Base Effect": "Loss of control applies explosive curse dealing 45% of damage taken (max 150% base)",
+      "Rank 10 Effect": "Explosive curse deals 300% base damage to nearby enemies when control effects expire. Additionally, enemies hit by the explosion take 10% increased damage for 5 seconds.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "2",
+      "Name": "Cutthroat's Grin",
+      "Base Effect": "Gain 8.00% increased Critical Hit Chance when attacking from behind",
+      "Rank 10 Effect": null,
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Everlasting Torment",
+      "Base Effect": "Critical hits cause agony: 10% base damage + 122/sec for 6s",
+      "Rank 10 Effect": "Your critical hits inflict agony, dealing 16.7% base damage + 202 every second for 3 seconds. Each enemy cannot be affected by this more often than once every 6 seconds. Additionally, you gain 6% increased attack speed while any enemy is suffering from your agony.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Fervent Fang",
+      "Base Effect": "Each hit increases damage by 0.80%, up to 0.80*10% at 10 stacks",
+      "Rank 10 Effect": "Each time you deal damage to an enemy, that enemy now takes 2.4% increased damage from your attacks, up to a maximum increase of 24% at 10 stacks. Additionally, you deal 6% increased damage to Elite monsters.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Follower's Burden",
+      "Base Effect": "Increases damage by 1.00% for each summon, up to maximum increase of 6%",
+      "Rank 10 Effect": "Increases all damage you deal by 3% for each summon you control, up to a maximum increase of 18%. Additionally, your summons take 6% reduced damage.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Frozen Heart",
+      "Base Effect": "When damaged, activates Frigid Shield absorbing 150% base damage + 1,458",
+      "Rank 10 Effect": "Reduces damage taken by 32% while your Life is below 50%. Additionally, periodically freezes nearby enemies, dealing 240% base damage and chilling them.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "5",
+      "Name": "Hellfire Fragment",
+      "Base Effect": "Conjures 3 hellfire blazes dealing 45% base damage + 510",
+      "Rank 10 Effect": "Using a skill conjures 3 hellfire blazes around you to seek out enemies within 6 yards, exploding on them dealing 108% base damage + 510 to all nearby enemies. Enemies struck by multiple hellfire blazes take 50% additional damage from subsequent hits. Cannot occur more often than once every 20 seconds.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "2",
+      "Name": "Kir Sling",
+      "Base Effect": "15% chance when attacked to release burst of light that Blinds enemies for 1.30 seconds",
+      "Rank 10 Effect": "You have a 25% chance when attacked to release a burst of light that Blinds all nearby enemies, reducing their vision and causing total loss of control for 3 seconds. Additionally, you deal 6% increased damage to Blinded enemies.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Lightning Core",
+      "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+      "Rank 10 Effect": "Your Primary Attacks and movement slowly charge you with electricity. When fully charged, your next Primary Attack will release chain lightning, dealing 180% base damage + 1,800 to nearby enemies. Additionally, you gain a 12% increased chance to critically strike while fully charged.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Mocking Laughter",
+      "Base Effect": "Primary Attack forces non-Elite monsters to attack you for 2.00 seconds",
+      "Rank 10 Effect": "Your Primary Attack forces non-Elite monsters it hits to attack you for 2 seconds. Additionally, you take 2% reduced damage from monsters affected by Mocking Laughter.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Mother's Lament",
+      "Base Effect": "When you deal damage, you have a 20% chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds. This effect cannot occur more often than once every 20 seconds. When Maternal Disdain ends, you release a blood spike toward nearby enemies, dealing base damage and causing them to Bleed.",
+      "Rank 10 Effect": "Taking damage while below 50% Life causes Maternal Disdain, increasing your Critical Hit Chance by 20% for 6 seconds. When Maternal Disdain ends, you release a blood spike toward nearby enemies, dealing 300% base damage and causing them to Bleed for 50% base damage over 5 seconds.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Pain Clasp",
+      "Base Effect": "Increases damage dealt by 8.00% to enemies suffering from continuous damage effect",
+      "Rank 10 Effect": "Increases damage dealt by 16% to enemies suffering from a continuous damage effect. Additionally, enemies suffering from continuous damage effects take 8% increased damage from all sources.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Pain of Subjugation",
+      "Base Effect": "5.50% increased damage vs enemies suffering loss of control",
+      "Rank 10 Effect": "You deal 16% increased damage to enemies suffering loss of control. Additionally, you take 2% reduced damage while suffering loss of control.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Power & Command",
+      "Base Effect": "Alternates states every 9s: Power increases Primary Attack damage by 8.00%, Command increases skill damage by 8.00%",
+      "Rank 10 Effect": "Alternates states every 9 seconds. Power increases your Primary Attack damage by 16%. Command increases all other skill damage by 16%. Additionally, you gain 6% increased Movement Speed while either state is active.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Respite Stone",
+      "Base Effect": "-0.55% damage taken per 10% missing Life (max 5.5%)",
+      "Rank 10 Effect": "Decreases all damage you take by 5.5% for every 10% your Life is below maximum, up to a maximum damage decrease of 16.5%. Additionally, you gain 4.5% increased Armor while your Life is below 50%.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "The Black Rose",
+      "Base Effect": "10% chance when attacked to summon vines that Immobilize attacker for 1.10 seconds",
+      "Rank 10 Effect": "Each time you are attacked, you have a 10% chance to summon vines that Immobilize the attacker for 1.1 seconds. Each enemy cannot be affected by this more often than once every 20 seconds. Additionally, you deal 2% increased damage to Immobilized enemies.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "The Hunger",
+      "Base Effect": "Heal 40% base damage + 567 Life each time you defeat an enemy",
+      "Rank 10 Effect": "Heal 120% base damage + 1,200 Life each time you defeat an enemy. Additionally, while above 75% Life, you gain a 10% Movement Speed bonus.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Trickshot Gem",
+      "Base Effect": "Channeled skills consume energy 8.00% slower",
+      "Rank 10 Effect": "Your Channeled skills consume energy 16% slower. Additionally, you take 2% reduced damage while using a Channeled skill.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Viper's Bite",
+      "Base Effect": "Inflicts Viper's Venom dealing 16% base damage + 120 every second for 6 seconds",
+      "Rank 10 Effect": "Your attacks poison enemies, dealing 32% base damage + 480 every second for 6 seconds. Additionally, poisoned enemies have their Attack Speed reduced by 10%.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Zod Stone",
+      "Base Effect": "Ultimate Skills duration increased by 16.00%",
+      "Rank 10 Effect": "Increases the duration of your Ultimate Skills by 16%. Additionally, your Ultimate Skills deal 2% increased damage.",
+      "Owned Rank": "10",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Seled's Weakening",
+      "Base Effect": "6.00% increased damage for 60s after killing Elite monster",
+      "Rank 10 Effect": "Gain 16% increased damage for 60 seconds after killing an Elite monster. Additionally, you deal 2% increased damage to Elite monsters.",
+      "Owned Rank": "9",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Battleguard",
+      "Base Effect": "Decreases melee damage taken by 8.00% from enemies within 3 yards",
+      "Rank 10 Effect": "Reduces all melee damage you take from enemies within 3 yards by 24%. Additionally, you move unhindered through enemies while your Life is below 60%.",
+      "Owned Rank": "8",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Bottled Hope",
+      "Base Effect": "Using a buff increases target's damage and movement speed by 8% for 6s",
+      "Rank 10 Effect": "Using skills to grant buffs increases damage done and Movement Speed of the target by 12% for 8 seconds. Additionally, the duration of all buffs on you is increased by 4 seconds.",
+      "Owned Rank": "8",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "2",
+      "Name": "Follower's Burden",
+      "Base Effect": "Increases damage by 1.00% for each summon, up to maximum increase of 6%",
+      "Rank 10 Effect": null,
+      "Owned Rank": "8",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Seeping Bile",
+      "Base Effect": "4% chance to poison enemies for 25% base damage + 263/s for 6s, spreads on death",
+      "Rank 10 Effect": "Your attacks have a 6% chance to poison enemies, dealing 40% base damage per second for 8 seconds. Additionally, poisoned enemies spread the effect to others on death.",
+      "Owned Rank": "8",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "2",
+      "Name": "The Abiding Curse",
+      "Base Effect": "15% chance to curse enemies, reducing Attack and Movement Speeds by 35% for 2.50 seconds",
+      "Rank 10 Effect": "Your attacks have a 30% chance to curse enemies, reducing their Attack and Movement Speeds by 50% for 4 seconds. Additionally, cursed enemies take 12% increased damage from all sources.",
+      "Owned Rank": "8",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Bloody Reach",
+      "Base Effect": "Increases damage by 2.00% for every 2 yards between you and enemy (max 8% at 8 yards)",
+      "Rank 10 Effect": "Your attacks deal 6% increased damage for every 2 yards between you and the enemy hit, up to a maximum of 24% at 8 yards. Additionally, your attacks have a 1.2% chance to decrease enemy Attack and Movement Speed by 35% for 2 seconds.",
+      "Owned Rank": "7",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Grim Rhythm",
+      "Base Effect": "Dealing damage increases your Attack Speed by 0.8% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 9%.",
+      "Rank 10 Effect": "Dealing damage increases your Attack Speed by 2.4% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 12%.",
+      "Owned Rank": "7",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Starfire Shard",
+      "Base Effect": "When you deal damage, you have a 30% chance to rain meteorites in an area, dealing 200% base damage in total. This effect cannot occur more often than once every 20 seconds.",
+      "Rank 10 Effect": "Your critical hits have a 30% chance to call down meteorites, dealing 400% base damage to all enemies in the area. Additionally, the meteorites leave burning ground that deals 50% base damage per second for 5 seconds.",
+      "Owned Rank": "7",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "2",
+      "Name": "The Abiding Curse",
+      "Base Effect": "15% chance to curse enemies, reducing Attack and Movement Speeds by 35% for 2.50 seconds",
+      "Rank 10 Effect": null,
+      "Owned Rank": "7",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Unity Crystal",
+      "Base Effect": "You and party members take 0.50% reduced damage per additional party member within 6 yards",
+      "Rank 10 Effect": "You and all party members take 2% reduced damage per additional party member within 6 yards of you. Additionally, all party members within range gain 4% increased damage reduction when near the Unity Crystal holder.",
+      "Owned Rank": "7",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Volatility Shard",
+      "Base Effect": "Defeating enemy triggers explosion dealing 30% base damage + 365 to nearby enemies",
+      "Rank 10 Effect": "When you defeat an enemy, you trigger a volatile explosion dealing 60% base damage + 800 to all nearby enemies. Additionally, enemies hit by the explosion take 12% increased damage for 3 seconds.",
+      "Owned Rank": "7",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Battleguard",
+      "Base Effect": "Decreases melee damage taken by 8.00% from enemies within 3 yards",
+      "Rank 10 Effect": null,
+      "Owned Rank": "6",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "1",
+      "Name": "Chained Death",
+      "Base Effect": "Damage +1.50% per target hit (max 4.5% with 3 targets)",
+      "Rank 10 Effect": null,
+      "Owned Rank": "6",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Stormvault",
+      "Base Effect": "Conjures pursuing storm for 6s dealing 22.5% base damage + 203 every 0.5s",
+      "Rank 10 Effect": "Conjures a storm that deals 40% base damage per second to enemies within its radius. Additionally, lightning strikes periodically hit enemies, dealing 100% base damage.",
+      "Owned Rank": "6",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "1",
+      "Name": "Trickshot Gem",
+      "Base Effect": "Channeled skills consume energy 8.00% slower",
+      "Rank 10 Effect": null,
+      "Owned Rank": "6",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Cutthroat's Grin",
+      "Base Effect": "Gain 8.00% increased Critical Hit Chance when attacking from behind",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Echoing Shade",
+      "Base Effect": "15% chance to summon shadow clone for 8s with some abilities",
+      "Rank 10 Effect": "Your attacks have a 20% chance to summon a shadow clone for 12 seconds. Additionally, shadow clones gain 100% of your damage and Life stats.",
+      "Owned Rank": "5",
+      "Quality (if 5 star)": "3"
+    },
+    {
+      "Stars": "2",
+      "Name": "Follower's Burden",
+      "Base Effect": "Increases damage by 1.00% for each summon, up to maximum increase of 6%",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Kir Sling",
+      "Base Effect": "15% chance when attacked to release burst of light that Blinds enemies for 1.30 seconds",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Lightning Core",
+      "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Lightning Core",
+      "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Pain Clasp",
+      "Base Effect": "Increases damage dealt by 8.00% to enemies suffering from continuous damage effect",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Phoenix Ashes",
+      "Base Effect": "Prevents fatal damage and grants shield absorbing 450% base damage",
+      "Rank 10 Effect": "Prevents fatal damage and grants a shield absorbing 800% base damage for 10 seconds. Additionally, while the shield is active, your Movement Speed is increased by 20%.",
+      "Owned Rank": "5",
+      "Quality (if 5 star)": "5"
+    },
+    {
+      "Stars": "2",
+      "Name": "Power & Command",
+      "Base Effect": "Alternates states every 9s: Power increases Primary Attack damage by 8.00%, Command increases skill damage by 8.00%",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "The Hunger",
+      "Base Effect": "Heal 40% base damage + 567 Life each time you defeat an enemy",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Unity Crystal",
+      "Base Effect": "You and party members take 0.50% reduced damage per additional party member within 6 yards",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Volatility Shard",
+      "Base Effect": "Defeating enemy triggers explosion dealing 30% base damage + 365 to nearby enemies",
+      "Rank 10 Effect": null,
+      "Owned Rank": "5",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Blessing of the Worthy",
+      "Base Effect": "20% chance when taking damage to deal 12% of max life to nearby enemies",
+      "Rank 10 Effect": null,
+      "Owned Rank": "4",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Blood-Soaked Jade",
+      "Base Effect": "Up to 8% increased damage at full life (min 4% at low life), +10% Movement Speed",
+      "Rank 10 Effect": null,
+      "Owned Rank": "4",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Concentrated Will",
+      "Base Effect": "Dash skill calls guardian angel, deals 55% base damage + 547",
+      "Rank 10 Effect": "Using a Dash skill summons a guardian angel to your aid, dealing 120% base damage to all enemies in its path. Additionally, your Dash skills have their cooldowns reduced by 2 seconds.",
+      "Owned Rank": "4",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "2",
+      "Name": "Cutthroat's Grin",
+      "Base Effect": "Gain 8.00% increased Critical Hit Chance when attacking from behind",
+      "Rank 10 Effect": "Gain 24% increased Critical Hit Chance when attacking from behind. Additionally, you deal 4% increased damage while attacking from behind.",
+      "Owned Rank": "4",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "2",
+      "Name": "Follower's Burden",
+      "Base Effect": "Increases damage by 1.00% for each summon, up to maximum increase of 6%",
+      "Rank 10 Effect": null,
+      "Owned Rank": "4",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Howler's Call",
+      "Base Effect": "10% chance on Primary Attack to summon spirit wolf dealing 150% base damage + 1,458",
+      "Rank 10 Effect": "Primary Attacks have a 20% chance to summon a spirit wolf that deals 240% base damage to all enemies in its path. Additionally, the spirit wolf howls, increasing your damage by 10% for 6 seconds.",
+      "Owned Rank": "4",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Maw of the Deep",
+      "Base Effect": "Creates whirlpool that pulls enemies, sea monster erupts for 140% base damage + 1701",
+      "Rank 10 Effect": "Conjures a whirlpool that pulls enemies into its center, dealing 200% base damage over 3 seconds. Additionally, the whirlpool summons a sea monster dealing 400% base damage to enemies within its radius.",
+      "Owned Rank": "4",
+      "Quality (if 5 star)": "4"
+    },
+    {
+      "Stars": "5",
+      "Name": "Roiling Consequence",
+      "Base Effect": "Enters roiling rage for 6s, +12% Crit Chance, crits cause explosion dealing 36% base damage over 3s",
+      "Rank 10 Effect": "Dealing damage increases your Critical Hit Chance by 16% for 6 seconds. Additionally, critical hits deal 20% more damage while Roiling Consequence is active.",
+      "Owned Rank": "4",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Stormvault",
+      "Base Effect": "Conjures pursuing storm for 6s dealing 22.5% base damage + 203 every 0.5s",
+      "Rank 10 Effect": null,
+      "Owned Rank": "4",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Blessing of the Worthy",
+      "Base Effect": "20% chance when taking damage to deal 12% of max life to nearby enemies",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Frozen Heart",
+      "Base Effect": "When damaged, activates Frigid Shield absorbing 150% base damage + 1,458",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": "3"
+    },
+    {
+      "Stars": "2",
+      "Name": "Grim Rhythm",
+      "Base Effect": "Dealing damage increases your Attack Speed by 0.8% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 9%.",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Hellfire Fragment",
+      "Base Effect": "Conjures 3 hellfire blazes dealing 45% base damage + 510",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "2",
+      "Name": "Lightning Core",
+      "Base Effect": "Primary Attacks and movement charge electricity, releasing 90% base damage + 1134 chain lightning",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": null
+    },
+    {
+      "Stars": "5",
+      "Name": "Phoenix Ashes",
+      "Base Effect": "Prevents fatal damage and grants shield absorbing 450% base damage",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Seeping Bile",
+      "Base Effect": "4% chance to poison enemies for 25% base damage + 263/s for 6s, spreads on death",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": "3"
+    },
+    {
+      "Stars": "5",
+      "Name": "Seeping Bile",
+      "Base Effect": "4% chance to poison enemies for 25% base damage + 263/s for 6s, spreads on death",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Starfire Shard",
+      "Base Effect": "When you deal damage, you have a 30% chance to rain meteorites in an area, dealing 200% base damage in total. This effect cannot occur more often than once every 20 seconds.",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Zwenson's Haunting",
+      "Base Effect": "On enemy defeat, dark beast attacks dealing 50% base damage + 486",
+      "Rank 10 Effect": null,
+      "Owned Rank": "3",
+      "Quality (if 5 star)": "3"
+    },
+    {
+      "Stars": "5",
+      "Name": "Zwenson's Haunting",
+      "Base Effect": "On enemy defeat, dark beast attacks dealing 50% base damage + 486",
+      "Rank 10 Effect": "Summons a dark beast to attack nearby enemies after defeating an enemy, dealing 200% base damage. Additionally, the dark beast causes enemies to flee in terror for 2 seconds.",
+      "Owned Rank": "3",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Hellfire Fragment",
+      "Base Effect": "Conjures 3 hellfire blazes dealing 45% base damage + 510",
+      "Rank 10 Effect": null,
+      "Owned Rank": "2",
+      "Quality (if 5 star)": "4"
+    },
+    {
+      "Stars": "5",
+      "Name": "Spiteful Blood",
+      "Base Effect": "Taking damage while below 50% Life causes Spiteful Blood to surge through you for 4 seconds, increasing your damage done by 30% and making you invulnerable to Primary Attacks from other players. Additionally, when Spiteful Blood triggers, you gain an absorb shield equal to 160% of your base damage. This effect cannot occur more often than once every 20 seconds.",
+      "Rank 10 Effect": "Taking damage while below 50% Life causes Spiteful Blood to surge, increasing your damage by 40% for 6 seconds and making you invulnerable to damage. Additionally, you gain an absorb shield equal to 200% of your base damage while the effect is active.",
+      "Owned Rank": "2",
+      "Quality (if 5 star)": "4"
+    },
+    {
+      "Stars": "5",
+      "Name": "Void Spark",
+      "Base Effect": "Conjures Void Spark for 6s, 30% chance to chain lightning to 8 enemies dealing 45% base damage + 446",
+      "Rank 10 Effect": null,
+      "Owned Rank": "2",
+      "Quality (if 5 star)": "3"
+    },
+    {
+      "Stars": "5",
+      "Name": "Gloom Cask",
+      "Base Effect": "Primary Attack unleashes Aspect of Gloom for 6s, triggering gloom blades dealing 30% base damage + 275",
+      "Rank 10 Effect": "Your Primary Attacks unleash an Aspect of Gloom that lasts 10 seconds, during which your Primary Attacks deal 60% additional AoE damage.",
+      "Owned Rank": "1",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Maw of the Deep",
+      "Base Effect": "Creates whirlpool that pulls enemies, sea monster erupts for 140% base damage + 1701",
+      "Rank 10 Effect": null,
+      "Owned Rank": "1",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Roiling Consequence",
+      "Base Effect": "Enters roiling rage for 6s, +12% Crit Chance, crits cause explosion dealing 36% base damage over 3s",
+      "Rank 10 Effect": null,
+      "Owned Rank": "1",
+      "Quality (if 5 star)": "2"
+    },
+    {
+      "Stars": "5",
+      "Name": "Seeping Bile",
+      "Base Effect": "4% chance to poison enemies for 25% base damage + 263/s for 6s, spreads on death",
+      "Rank 10 Effect": null,
+      "Owned Rank": "1",
+      "Quality (if 5 star)": "2"
+    }
+  ]
+}

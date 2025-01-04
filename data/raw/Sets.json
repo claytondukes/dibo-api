@@ -1,0 +1,102 @@
+{
+  "sets": [
+    {
+      "Set Name": "Grace of the Flagellant",
+      "2-Piece Bonus": "Increases all continual, channeled, and persistent ground damage by 15%.",
+      "4-Piece Bonus": "Each time you damage an individual enemy 5 times, you deal additional damage to that enemy.",
+      "6-Piece Bonus": "Each time you deal damage, you have a chance to unleash a lightning strike, dealing AoE damage and stunning enemies.",
+      "Use Case": "Best for DoT, channeled, or AoE damage builds."
+    },
+    {
+      "Set Name": "Untouchable Mountebank",
+      "2-Piece Bonus": "Grants a chance to gain a shield that absorbs damage equal to 13% of your maximum Life.",
+      "4-Piece Bonus": "When the shield expires, it deals damage to nearby enemies equal to 40% of the damage absorbed.",
+      "6-Piece Bonus": "Increases all damage you deal by 10% while the shield is active.",
+      "Use Case": "Great for defense-heavy builds."
+    },
+    {
+      "Set Name": "War Rags of Shal'baas",
+      "2-Piece Bonus": "Increases Primary Attack damage by 15%.",
+      "4-Piece Bonus": "Increases Primary Attack Speed by 30%.",
+      "6-Piece Bonus": "Primary Attacks have a 5% chance to increase your Attack Speed for 10 seconds.",
+      "Use Case": "Excellent for single-target DPS builds."
+    },
+    {
+      "Set Name": "Issatar Imbued",
+      "2-Piece Bonus": "Each time you defeat an enemy, you gain 30% increased Movement Speed for 2 seconds.",
+      "4-Piece Bonus": "Damage dealt increased by 2.5% for every 5% increase in your Movement Speed, up to 25%.",
+      "6-Piece Bonus": "Movement Speed bonuses can now stack 10 times, further increasing damage per stack.",
+      "Use Case": "Ideal for high-mobility AoE clearing."
+    },
+    {
+      "Set Name": "Windloft Perfection",
+      "2-Piece Bonus": "Gain Thousand Winds, increasing your Movement Speed by 15%. Thousand Winds deactivates if you take damage.",
+      "4-Piece Bonus": "Thousand Winds also grants a 20% increase in damage dealt.",
+      "6-Piece Bonus": "Gain immunity to damage for 1 second after Thousand Winds deactivates.",
+      "Use Case": "Suited for kiting, mobility builds, or speed-focused gameplay."
+    },
+    {
+      "Set Name": "Shepherd's Call to Wolves",
+      "2-Piece Bonus": "Your summons deal 15% more damage.",
+      "4-Piece Bonus": "Critical Hit Chance increased by 3% for each of your summons, up to a maximum of 18%.",
+      "6-Piece Bonus": "Your summons enter a frenzied state, increasing their Attack Speed by 60% for 10 seconds when they critically hit.",
+      "Use Case": "Best for summoner builds."
+    },
+    {
+      "Set Name": "Feasting Baron's Pack",
+      "2-Piece Bonus": "Increases the duration of your crowd control effects by 30%.",
+      "4-Piece Bonus": "Increases all damage by 15% to enemies suffering from loss of control effects.",
+      "6-Piece Bonus": "Unleashes a nova of ice, damaging and freezing enemies when you defeat a controlled enemy.",
+      "Use Case": "Ideal for crowd control-heavy builds."
+    },
+    {
+      "Set Name": "Vithu's Urges",
+      "2-Piece Bonus": "Increases the duration of beneficial effects on you and your allies by 30%.",
+      "4-Piece Bonus": "Increases Attack Speed by 30% for 3 seconds after using a beneficial effect.",
+      "6-Piece Bonus": "Doubles the duration of beneficial effects applied to you.",
+      "Use Case": "Best for support or team-focused builds."
+    },
+    {
+      "Set Name": "Gloomguide's Prize",
+      "2-Piece Bonus": "Gain bonus damage for 3 seconds after using a dash skill.",
+      "4-Piece Bonus": "Increases Critical Hit Chance for 3 seconds after dashing.",
+      "6-Piece Bonus": "AoE explosion around your dash target, dealing heavy damage.",
+      "Use Case": "Perfect for burst damage builds using mobility."
+    },
+    {
+      "Set Name": "Banquet of Eyes",
+      "2-Piece Bonus": "Increases damage by 15% to enemies who are slowed, stunned, or immobilized.",
+      "4-Piece Bonus": "Increases your Critical Hit Damage by 25%.",
+      "6-Piece Bonus": "Inflicting crowd control effects on enemies triggers a damaging AoE explosion.",
+      "Use Case": "Best for crowd control and critical damage synergies."
+    },
+    {
+      "Set Name": "Seeds of Sown Gold",
+      "2-Piece Bonus": "Enemies drop gold when hit.",
+      "4-Piece Bonus": "Nearby enemies drop bonus gold when you defeat them.",
+      "6-Piece Bonus": "Increases gold find in areas by 50%.",
+      "Use Case": "Focused on gold farming and niche utility."
+    },
+    {
+      "Set Name": "Angmet's Conflagration",
+      "2-Piece Bonus": "Burning effects last 30% longer.",
+      "4-Piece Bonus": "Enemies afflicted by burn take an additional 15% damage.",
+      "6-Piece Bonus": "Burning damage has a chance to chain to nearby enemies.",
+      "Use Case": "Best for fire-focused builds."
+    },
+    {
+      "Set Name": "Prayer for Endwinter",
+      "2-Piece Bonus": "Cold effects last 30% longer.",
+      "4-Piece Bonus": "Enemies afflicted by cold take an additional 15% damage.",
+      "6-Piece Bonus": "Frozen enemies explode upon death, dealing AoE damage.",
+      "Use Case": "Best for ice/cold builds."
+    },
+    {
+      "Set Name": "Wildfire Imperative",
+      "2-Piece Bonus": "Summons flaming allies that attack nearby enemies periodically.",
+      "4-Piece Bonus": "Increases damage dealt while summons are active.",
+      "6-Piece Bonus": "Flaming allies periodically explode, dealing heavy AoE damage.",
+      "Use Case": "Summoner builds with fire synergies."
+    }
+  ]
+}

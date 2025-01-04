@@ -1,0 +1,874 @@
+{
+  "essencelist": [
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Visage of the Living Ancients",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize now calls on the power of an Ancient to charge toward you from a targeted location, bringing along any enemies in its path. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Spiritbreaker",
+      "Modifies Skill": "Sprint",
+      "Short Effect": "Sprint also leaves tornadoes (7,650 dmg) in your path. Damage +90.0%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Pot Metal",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize becomes an Ancestral Protector, granting an absorb shield that makes you immune to knockback while active. Shield effect +10.8%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Squirmskull",
+      "Modifies Skill": "Sprint",
+      "Short Effect": "While Sprint is active, your Attack Speed increases by 28.5% and projectile speed by 40%."
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Impending Slaughter",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize replaced with an intimidating shout that damages enemies and reduces their attack/move speeds. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Second Breath",
+      "Modifies Skill": "Sprint",
+      "Short Effect": "Sprint duration increased by 39%."
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Grinning Effigy",
+      "Modifies Skill": "Undying Rage",
+      "Short Effect": "Taking damage during Undying Rage triggers a 5,882 dmg counterattack (once per 0.5s). Damage +90.0%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Ancestors’ Stele",
+      "Modifies Skill": "Undying Rage",
+      "Short Effect": "Undying Rage duration +1 second, Cooldown -3.6%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Splitting Outbreak",
+      "Modifies Skill": "Ground Stomp",
+      "Short Effect": "+1 max charge for Ground Stomp, Cooldown -3.6%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Horns of Harrogath",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "Slaying enemies during WotB increases your damage by 1% for 9.6s, up to 10%."
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Krubask’s Sneer",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "During WotB, your Critical Hit Chance is increased by 19%."
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Sullen Vow",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB also increases your Primary Attack Speed by 30% for 5.7s."
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Weighted Brow",
+      "Modifies Skill": "Ground Stomp",
+      "Short Effect": "Ground Stomp range increased by 29%."
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Lasting Hate",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "Wrath of the Berserker duration increased by 39%."
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Bestial Threat",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize replaced with a terrifying roar that damages/Immobilizes nearby enemies. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Berserker’s Sanity",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB now also dispels loss-of-control effects. Cooldown -3.6%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Heartless Terror",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize unleashes a roar that damages enemies while making you immune to loss of control and knockbacks. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Spartusk",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize now pulls in all nearby enemies, dealing damage, Stunning them, and removing beneficial effects applied by Skills or Primaries. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Yowl of Execration",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize now knocks back and damages enemies; those knocked into walls are also Stunned. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Brace of Ancestors",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB also causes your Primary Attack to deal 100% of its damage to nearby enemies. Cooldown -3.6%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Battlemaster's Helm",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize replaced with a war cry that increases all damage you and nearby allies inflict. Cooldown -7.2%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "The Trembling",
+      "Modifies Skill": "Undying Rage",
+      "Short Effect": "Undying Rage also increases your Movement Speed by 50%. Cooldown -3.6%"
+    },
+    {
+      "Gear Slot": "Helm",
+      "Essence Name": "Hunter's Sight",
+      "Modifies Skill": "Sprint also increases your Critical Hit Chance by 19% while moving.",
+      "Short Effect": null
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Scallop Shell Armor",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "HotA deals up to +76% additional damage the farther away enemies are."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Broken Ire",
+      "Modifies Skill": "Sunder (via Primary Attacks)",
+      "Short Effect": "Primary Attacks extend Sunder’s duration by 1.6s each (up to 4.8s), also boosting its damage bonus by 3% per stack (max 9%)."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Umble Drape",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "When HotA hits an enemy, drop additional hammers (50% damage), once every 3s. Damage increased by 90.0%"
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Direct Diplomacy",
+      "Modifies Skill": "Grab",
+      "Short Effect": "Grab shatters the enemy’s armor, causing them to take +19% damage for 3s."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Temple of Battle",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Sweeps spears from left/right, gathering enemies in a cluster in front of you. Chained Spear damage +18.0%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Manifold Gore",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind damage +19% per Bleed on the enemy, up to +57%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Davin's Legacy",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "+1 max charge for HotA; Hammer of the Ancients cooldown reduced by 3.6%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Impaler’s Breath",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Hurls 3 harpoons that knock enemies away and Stun them. Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Hearth Hook",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Now throws a piercing spear that applies a stacking Bleed. Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Renitent Rage",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "For each negative condition on an enemy, HotA damage +19% (up to +76%)."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Cracklefell",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Hurls 3 electrified spears that damage and immobilize enemies. Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Charred Iron",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Hurls 3 flaming spears, each leaving a burning trail. Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Tracker's Rage",
+      "Modifies Skill": "Furious Charge",
+      "Short Effect": "All damage you deal is increased by +19% after activating Furious Charge."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Ferocious Gale",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind occasionally spawns tornadoes (8,415 dmg). Damage increased by 90.0%"
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "The Gathering",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind pulls in all enemies it hits. Whirlwind Energy Consumption -3.6%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Five Fresh Claws",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind shreds armor, +2% damage taken per hit (stack up to 5x). Whirlwind Energy Consumption -3.6%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Armor Caste",
+      "Modifies Skill": "Furious Charge",
+      "Short Effect": "Creates shock waves when colliding with walls, dealing 8,500 dmg and Stunning enemies for 1s. Damage increased by 90.0%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Lumber-cords",
+      "Modifies Skill": "Furious Charge",
+      "Short Effect": "Decreases all damage you take by 5% for 3s per enemy hit, stacking up to 6 times. Furious Charge Cooldown -3.6%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Death Awaits",
+      "Modifies Skill": "Furious Charge",
+      "Short Effect": "Also shatters enemies’ armor, increasing damage they take by 19% for 3s."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Crusher Rig",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Hurls giant rocks, damaging all enemies in their path. Chained Spear Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Truss of Stolen Skin",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "After using HotA, gain +20% Attack Speed for 6.4 seconds."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Widow in Waiting",
+      "Modifies Skill": "Furious Charge",
+      "Short Effect": "Furious Charge now also reduces enemies’ Movement Speed by 50% for 6.4s."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Indignant Survivor",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Each time you’re attacked, Whirlwind’s Critical Hit Chance +12% for 2s (up to +36%)."
+    },
+    {
+      "Gear Slot": "Chest",
+      "Essence Name": "Cold Temper",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "Shatters Frozen enemies for 34,512 extra damage, applying Chill. Damage increased by 90.0%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Silver Flash",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave’s knockback can now affect enemy players (once every 2s). Cleave Cooldownreduced by 3.6%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Dread Desecration",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave can be used while suffering loss of control or knockback effects, and grants brief immunity to those effects. Cleave Cooldown -3.6%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Weight of War",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind makes enemies more vulnerable, increasing Crit Chance against them by 4.8% for 3s, up to 24%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Broken Calling",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB also makes you immune to knockback effects for 4.75s."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Nature’s Temper",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB causes Primary Attacks to consume 1% Life, dealing +13,601 damage each strike. Damage +90.0%"
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Ox’s Horns",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Striking the same enemy 3 times with Whirlwind causes them to Bleed for 18,936 dmg/s over 2.5s. Damage +90.0%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Broken Grasp",
+      "Modifies Skill": "Sprint",
+      "Short Effect": "Sprint also increases your Dodge Chance by 20%. Cooldown -3.6%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Doom of the Cowed",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "Activating WotB immediately reduces nearby enemies’ Move Speed by 80% for 2s. WotB Cooldown -3.6%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Law of the Wild",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave deals +47.5% damage to Slowed enemies."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Writhing Mantle",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave damage +29% vs. Chilled enemies, +50% vs. Frozen."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Hell’s Legacy",
+      "Modifies Skill": "Sprint",
+      "Short Effect": "Sprint leaves a trail of flames dealing 19,040 dmg over 4s. Damage +90.0%"
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Animal Instinct",
+      "Modifies Skill": "Leap",
+      "Short Effect": "Leap can be charged to increase range/damage. Leap Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Skull Motte",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave tears armor, increasing damage enemies take by 11.4% for 3s, up to 34.2%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Ramshackle Fight",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "During WotB, each Critical Hit reduces its cooldown by 0.6s, up to 3.6s total."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Bloodguzzle",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Each time Cleave hits an enemy within 2s, it gains +19% damage vs. that enemy, up to +57%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Routfinder",
+      "Modifies Skill": "Sprint",
+      "Short Effect": "Sprint leaves a wind tunnel letting allies pass through for +30% Move Speed (2s). Sprint Cooldown -3.6%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Hatred’s Reach",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave range increased by 29%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "The Coming Storm",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB cooldown decreased by 18.6%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Lonecastle",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "+50% chance to block projectiles during Whirlwind; Whirlwind Energy Consumption -3.6%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Loathsome Lamina",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB also grants a 6s shield that absorbs 37,743 damage. Shield Effect +54.0%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Wreckfall",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind reduces all damage you take by 20% while channeling. Whirlwind Energy Consumption -3.6%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Drop by Drop",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave’s Bleed now spreads to 2 nearby enemies when it expires. Cleave Cooldown -3.6%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Shocking Chaos",
+      "Modifies Skill": "Leap",
+      "Short Effect": "Leap is electrified, Stunning all nearby enemies on landing. Leap Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Shoulder",
+      "Essence Name": "Ydama’s Cyclone",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind damage increased by 19%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Juggernaut’s Plan",
+      "Modifies Skill": "Sprint",
+      "Short Effect": "Sprint causes you to run continuously, knocking away and damaging enemies in your path. Sprint Damage increased by 18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Determination",
+      "Modifies Skill": "Furious Charge",
+      "Short Effect": "Furious Charge can now be charged to increase its range and damage. Furious Charge Damage increased by 18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Chitinous Greaves",
+      "Modifies Skill": "Ground Stomp",
+      "Short Effect": "Ground Stomp unleashes fury within you, Burning enemies. Ground Stomp Damageincreased by 18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Trail of Mourning",
+      "Modifies Skill": "Sunder",
+      "Short Effect": "Sunder now also pulls enemies to you. Sunder Cooldown reduced by 3.6%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Scalesunder",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Chained Spear also shatters armor, increasing all damage enemies take by 8% for 4.8 seconds."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Ram’s Impasse",
+      "Modifies Skill": "Furious Charge",
+      "Short Effect": "Furious Charge drags enemies with you, Stunning them. Furious Charge Damageincreased by 18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Kar’s Defiance",
+      "Modifies Skill": "Leap",
+      "Short Effect": "Leap grants a 37,683-damage shield and knockback immunity while active. Shield Effectincreased by 54.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Rockspike",
+      "Modifies Skill": "Ground Stomp",
+      "Short Effect": "Ground Stomp now affects all nearby enemies. Ground Stomp Damage increased by 18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Compromise Is Loss",
+      "Modifies Skill": "Ground Stomp",
+      "Short Effect": "Ground Stomp rips open the ground in front of you, dealing damage; max 2 charges. Ground Stomp Damage increased by 18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Crown’s Cowardice (Latest)",
+      "Modifies Skill": "Furious Charge",
+      "Short Effect": "Furious Charge now dashes to a targeted enemy, damaging and Stunning all nearby enemies. Furious Charge Damage increased by 18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Cliff Divers",
+      "Modifies Skill": "Leap",
+      "Short Effect": "Activating Leap increases your Critical Hit Chance by 19% for 3 seconds."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Buried Talons",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Chained Spear also increases your damage by 19% for 3 seconds."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Plummet Proudly",
+      "Modifies Skill": "Leap",
+      "Short Effect": "Leap also increases your Attack Speed by 28.5% for 3 seconds."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Pit of Ursus",
+      "Modifies Skill": "Ground Stomp",
+      "Short Effect": "Smashes the ground to erect a ring of rocks, boosting your damage and reducing enemy damage inside; Ground Stomp Cooldown reduced by 7.2%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Howler’s Lift",
+      "Modifies Skill": "Leap",
+      "Short Effect": "Leap damage increased by 19%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Screaming Fury",
+      "Modifies Skill": "Furious Charge",
+      "Short Effect": "Furious Charge goes to a location, knocking enemies into the air; max 2 charges. Furious Charge Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Tempo Change",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "+1 max charge for Chained Spear; Chained Spear Cooldown reduced by 3.6%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Metal o’ Mine",
+      "Modifies Skill": "Leap",
+      "Short Effect": "After using Leap, your damage is increased by 19% for 4 seconds."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Indiscriminate Heat",
+      "Modifies Skill": "Ground Stomp",
+      "Short Effect": "Also causes lava to erupt after a short delay, damaging and Stunning enemies. Ground Stomp Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Dauntless Temper",
+      "Modifies Skill": "Ground Stomp",
+      "Short Effect": "Calls on the power of an Ancient to appear and stomp periodically around you. Ground Stomp Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Swiftwing",
+      "Modifies Skill": "Sprint",
+      "Short Effect": "Sprint also increases movement speed of nearby allies; Sprint Cooldown reduced by 7.2%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Shattered Ground",
+      "Modifies Skill": "Ground Stomp",
+      "Short Effect": "Produces an earthquake damaging enemies in the area but no longer Stuns them. Ground Stomp Damage +18.0%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Haughty Behemoth",
+      "Modifies Skill": "Leap",
+      "Short Effect": "Leap now knocks enemies into the air when landing. Leap Cooldown -3.6%."
+    },
+    {
+      "Gear Slot": "Legs",
+      "Essence Name": "Flattener",
+      "Modifies Skill": "Leap",
+      "Short Effect": "Max charges of Leap +1; Leap Cooldown -3.6%."
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "The Hewer",
+      "Modifies Skill": "Grab",
+      "Short Effect": "Grab now causes you to charge forward and seize the first enemy you hit, carrying them before leaping and slamming them down—damaging and Slowing nearby enemies. You’re immune to loss-of-control and knockback during the skill. Grab Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Borrowed Might",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave periodically conjures a Spirit of the Ancient to cleave through nearby enemies. Cleave Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Crumblestall",
+      "Modifies Skill": "Grab",
+      "Short Effect": "Grab calls an Ancestral Spirit to hurl a giant mountain at a target location, damaging and Stunning enemies. Grab Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Pathraze",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind now lets you spin and charge forward, damaging all enemies in your path. Max 3 charges. Whirlwind Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Luring Club",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "Hammer of the Ancients deals +66.5% damage vs. Stunned enemies."
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Ragecaller",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "HotA becomes electrified, slowing enemies by 50% for 3.2s."
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Svot’s Reach",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave now strikes in a full circle around you. Cleave Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Rending Bite",
+      "Modifies Skill": "Lacerate",
+      "Short Effect": "Lacerate inflicts a Bleeding of 28,856 damage over 3s. Damage +90.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Eager Maelstrom",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind radius increased; Whirlwind movement speed decreased. Whirlwind Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Lunatic Twin",
+      "Modifies Skill": "Frenzy",
+      "Short Effect": "When Frenzy is fully stacked, each attack unleashes 9,792 damage to all enemies in front of you (0.4s cooldown). Damage +90.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Fallow Field",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind consumes Life instead of Energy, letting you spin as long as you have HP. Whirlwind Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Axe of the Ray",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave now hurls two whirling axes to damage enemies. Cleave Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Ardent Fervor",
+      "Modifies Skill": "Lacerate",
+      "Short Effect": "Lacerate’s Attack Speed +15% for 3.2s each time you take damage, stacking to +45%."
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Strangle Wings",
+      "Modifies Skill": "Grab",
+      "Short Effect": "Grab now targets an enemy and dashes toward them, seizing and continuing the dash—knocking back other foes. Stuns if you hit a wall. Grab Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Lion’s Mane",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize also detonates DoTs on nearby enemies instantly. Demoralize Cooldown -3.6%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Decollater",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave becomes a 3-attack sequence (Bleed + knockup) without multiple charges. Cleave Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Frigid Grin",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave summons twin rime axes orbiting you, damaging and freezing Chilled enemies. Cleave Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Widespread Blame",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind now shatters armor and gains significantly increased Attack Speed. Whirlwind Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Selleina’s Iron",
+      "Modifies Skill": "Leap",
+      "Short Effect": "Leap causes the ground to shake for 3s, dealing 22,752 total damage to enemies in the area. Damage +90.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "The Maddening",
+      "Modifies Skill": "Frenzy",
+      "Short Effect": "Movement Speed +15% while Frenzy is at max stacks. Frenzy Damage +9.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Shardbreaker",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave now causes you to Dash forward, slicing all enemies in your path. Cleave Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Riddlerue",
+      "Modifies Skill": "Frenzy",
+      "Short Effect": "When Frenzy Crits, your Attack Speed is +50% for 3.2s."
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Stonefall",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "HotA Damage +19%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "North Wind",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind also inflicts a stacking Chill. Whirlwind Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Bitterwind",
+      "Modifies Skill": "Whirlwind",
+      "Short Effect": "Whirlwind draws on the wind for increased damage without reducing your Movement Speed. Whirlwind Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Main Hand",
+      "Essence Name": "Lurker’s Last Chance",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave becomes channeled, repeatedly damaging all enemies in front of you. Cleave Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Bergbreaker",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "Causes you to retaliate when attacked, dealing damage to nearby enemies. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Falling Thunder",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "Also enrages you when near a Bleeding enemy, increasing your damage by 28.5%."
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "The Last Wail",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "HotA smashes the ground, leaving an unstable area that erupts for extra damage after a delay. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Clattersteel",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "Rains hammers from the sky at your location, damaging enemies within the area. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Virulent Fist",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Enemies killed by Cleave explode, dealing 8,925 damage to nearby enemies. Damage +90.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Broken Soul",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB now increases Critical Hit Chance instead of Attack Speed. WotB Cooldownreduced by 7.2%."
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Paste and Powder",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "Randomly drops hammers multiple times in the targeted area. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Steel Lamprey",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Chained Spear marks enemies for 5s and heals you for 5% of damage caused to marked enemies."
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Razorgrip",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "Can be charged for more range/damage; deals +50% vs. Stunned foes. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Flesh Splitter",
+      "Modifies Skill": "Cleave",
+      "Short Effect": "Cleave damage increased by 19%."
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Sundered Legacy",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB now causes nearby enemies to Burn. WotB Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Peace and Quietus",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "HotA can be dropped at a targeted spot; when reactivated, you and the hammer rush together—gathering enemies in between. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Bonegyre",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "HotA now orbits you for several seconds, damaging enemies it passes through. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Flickertonne",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "Each of your other attacks charges HotA, increasing its damage/radius on use. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Dishonored Blade",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Demoralize duration increased by 39%."
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Burden of Nothingness (Latest)",
+      "Modifies Skill": "Demoralize",
+      "Short Effect": "Also grants a Demoralizing Aura for 3s, reducing nearby enemies’ damage by 19%."
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Breaker’s Wheel",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "HotA creates a barrier of earth, preventing enemies from entering or exiting the strike zone. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Beggar’s Mallet",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "Throws a whirling hammer that returns to you, damaging enemies in its path. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "The Forgotten",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "Throws a giant hammer that knocks enemies away; picking it up reduces HotA’s remaining cooldown. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "The Remembered",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "Summons a Spirit of the Ancients who stuns nearby enemies on arrival and fights alongside you. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Oncoming Brutality",
+      "Modifies Skill": "Frenzy",
+      "Short Effect": "Frenzy increases the damage you deal to that enemy by 6% for 3s, stacking up to 30%. Frenzy Damage +9.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "The Startler",
+      "Modifies Skill": "Hammer of the Ancients",
+      "Short Effect": "HotA strikes the ground multiple times, knocking enemies airborne. Movement speed is reduced while striking. Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Skull Mill",
+      "Modifies Skill": "Wrath of the Berserker",
+      "Short Effect": "WotB becomes a brawler’s rage: your Primary Attacks are punches; the 3rd punch grabs an enemy and throws them forward for AoE damage. WotB Damage +18.0%"
+    },
+    {
+      "Gear Slot": "Off-Hand",
+      "Essence Name": "Obin’s Many Fingers",
+      "Modifies Skill": "Chained Spear",
+      "Short Effect": "Chained Spear hurls 2 additional spears. Cooldown reduced by 3.6%."
+    }
+  ]
+}

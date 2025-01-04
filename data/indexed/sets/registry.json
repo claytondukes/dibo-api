@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "bonus_thresholds": [2, 4, 6],
+    "bonus_rules": "Set bonuses are additive. For example, with 6 pieces equipped, you get the 2-piece, 4-piece, and 6-piece bonuses."
+  },
+  "registry": {
+    "Grace of the Flagellant": {
+      "pieces": 6,
+      "description": "A set focused on DoT, channeled, and AoE damage builds.",
+      "bonuses": {
+        "2": "Increases all continual, channeled, and persistent ground damage by 15%.",
+        "4": "Each time you damage an individual enemy 5 times, you deal additional damage to that enemy.",
+        "6": "Each time you deal damage, you have a chance to unleash a lightning strike, dealing AoE damage and stunning enemies."
+      },
+      "use_case": "Best for DoT, channeled, or AoE damage builds."
+    },
+    "Untouchable Mountebank": {
+      "pieces": 6,
+      "description": "A defensive set that provides shields and damage reflection.",
+      "bonuses": {
+        "2": "Grants a chance to gain a shield that absorbs damage equal to 13% of your maximum Life.",
+        "4": "When the shield expires, it deals damage to nearby enemies equal to 40% of the damage absorbed.",
+        "6": "Increases all damage you deal by 10% while the shield is active."
+      },
+      "use_case": "Great for defense-heavy builds."
+    },
+    "War Rags of Shal'baas": {
+      "pieces": 6,
+      "description": "A set focused on Primary Attack damage and speed.",
+      "bonuses": {
+        "2": "Increases Primary Attack damage by 15%.",
+        "4": "Increases Primary Attack Speed by 30%.",
+        "6": "Primary Attacks have a 5% chance to increase your Attack Speed for 10 seconds."
+      },
+      "use_case": "Excellent for single-target DPS builds."
+    },
+    "Issatar Imbued": {
+      "pieces": 6,
+      "description": "A set focused on movement speed and damage scaling.",
+      "bonuses": {
+        "2": "Each time you defeat an enemy, you gain 30% increased Movement Speed for 2 seconds.",
+        "4": "Damage dealt increased by 2.5% for every 5% increase in your Movement Speed, up to 25%.",
+        "6": "Movement Speed bonuses can now stack 10 times, further increasing damage per stack."
+      },
+      "use_case": "Ideal for high-mobility AoE clearing."
+    },
+    "Windloft Perfection": {
+      "pieces": 6,
+      "description": "A set focused on movement and damage avoidance.",
+      "bonuses": {
+        "2": "Gain Thousand Winds, increasing your Movement Speed by 15%. Thousand Winds deactivates if you take damage.",
+        "4": "Thousand Winds also grants a 20% increase in damage dealt.",
+        "6": "Gain immunity to damage for 1 second after Thousand Winds deactivates."
+      },
+      "use_case": "Suited for kiting, mobility builds, or speed-focused gameplay."
+    },
+    "Shepherd's Call to Wolves": {
+      "pieces": 6,
+      "description": "A set focused on summons and critical hits.",
+      "bonuses": {
+        "2": "Your summons deal 15% more damage.",
+        "4": "Critical Hit Chance increased by 3% for each of your summons, up to a maximum of 18%.",
+        "6": "Your summons enter a frenzied state, increasing their Attack Speed by 60% for 10 seconds when they critically hit."
+      },
+      "use_case": "Best for summoner builds."
+    },
+    "Feasting Baron's Pack": {
+      "pieces": 6,
+      "description": "A set focused on crowd control and bonus damage.",
+      "bonuses": {
+        "2": "Increases the duration of your crowd control effects by 30%.",
+        "4": "Increases all damage by 15% to enemies suffering from loss of control effects.",
+        "6": "Unleashes a nova of ice, damaging and freezing enemies when you defeat a controlled enemy."
+      },
+      "use_case": "Ideal for crowd control-heavy builds."
+    },
+    "Vithu's Urges": {
+      "pieces": 6,
+      "description": "A set focused on beneficial effects and attack speed.",
+      "bonuses": {
+        "2": "Increases the duration of beneficial effects on you and your allies by 30%.",
+        "4": "Increases Attack Speed by 30% for 3 seconds after using a beneficial effect.",
+        "6": "Doubles the duration of beneficial effects applied to you."
+      },
+      "use_case": "Best for support or team-focused builds."
+    },
+    "Gloomguide's Prize": {
+      "pieces": 6,
+      "description": "A set focused on dash skills and burst damage.",
+      "bonuses": {
+        "2": "Gain bonus damage for 3 seconds after using a dash skill.",
+        "4": "Increases Critical Hit Chance for 3 seconds after dashing.",
+        "6": "AoE explosion around your dash target, dealing heavy damage."
+      },
+      "use_case": "Perfect for burst damage builds using mobility."
+    },
+    "Banquet of Eyes": {
+      "pieces": 6,
+      "description": "A set focused on crowd control and critical damage.",
+      "bonuses": {
+        "2": "Increases damage by 15% to enemies who are slowed, stunned, or immobilized.",
+        "4": "Increases your Critical Hit Damage by 25%.",
+        "6": "Inflicting crowd control effects on enemies triggers a damaging AoE explosion."
+      },
+      "use_case": "Best for crowd control and critical damage synergies."
+    },
+    "Seeds of Sown Gold": {
+      "pieces": 6,
+      "description": "A set focused on gold finding.",
+      "bonuses": {
+        "2": "Enemies drop gold when hit.",
+        "4": "Nearby enemies drop bonus gold when you defeat them.",
+        "6": "Increases gold find in areas by 50%."
+      },
+      "use_case": "Focused on gold farming and niche utility."
+    },
+    "Angmet's Conflagration": {
+      "pieces": 6,
+      "description": "A set focused on fire and burn damage.",
+      "bonuses": {
+        "2": "Burning effects last 30% longer.",
+        "4": "Enemies afflicted by burn take an additional 15% damage.",
+        "6": "Burning damage has a chance to chain to nearby enemies."
+      },
+      "use_case": "Best for fire-focused builds."
+    },
+    "Prayer for Endwinter": {
+      "pieces": 6,
+      "description": "A set focused on cold damage and control.",
+      "bonuses": {
+        "2": "Cold effects last 30% longer.",
+        "4": "Enemies afflicted by cold take an additional 15% damage.",
+        "6": "Frozen enemies explode upon death, dealing AoE damage."
+      },
+      "use_case": "Best for cold-based control builds."
+    }
+  }
+}

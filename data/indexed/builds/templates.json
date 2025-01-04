@@ -1,0 +1,238 @@
+{
+  "pvp": {
+    "burst_damage": {
+      "name": "Burst Assassin",
+      "primary_skills": [
+        "Hammer of the Ancients",
+        "Whirlwind"
+      ],
+      "gem_setup": {
+        "required": {
+          "damage": [
+            "Blood-Soaked Jade",
+            "Chip of Stoned Flesh",
+            "Power and Command"
+          ],
+          "defense": [
+            "Blessing of the Worthy"
+          ]
+        },
+        "options": {
+          "budget": {
+            "damage": [
+              "Berserker's Eye",
+              "Pain of Subjugation",
+              "Ca'arsen's Invigoration"
+            ],
+            "defense": [
+              "The Black Rose"
+            ]
+          },
+          "premium": {
+            "damage": [
+              "Bottled Hope",
+              "Howler's Call"
+            ],
+            "defense": [
+              "Phoenix Ashes"
+            ]
+          }
+        },
+        "notes": [
+          "BSJ can use Seeping Bile as aux for more DoT pressure",
+          "Phoenix Ashes works well as aux in Blessing slot for more survival"
+        ]
+      },
+      "recommended_essences": {
+        "primary": [
+          "Davin's Legacy",
+          "Rage of the Ancients"
+        ],
+        "alternatives": [
+          "The Gathering",
+          "Death Awaits"
+        ]
+      },
+      "playstyle_notes": [
+        "Focus on burst damage windows with HotA",
+        "Use Whirlwind for mobility and chip damage",
+        "Coordinate CC with team for maximum burst"
+      ]
+    },
+    "control": {
+      "name": "CC Controller",
+      "primary_skills": [
+        "Ground Stomp",
+        "Sprint"
+      ],
+      "gem_setup": {
+        "required": {
+          "control": [
+            "Chip of Stoned Flesh",
+            "Pain of Subjugation"
+          ],
+          "defense": [
+            "Phoenix Ashes",
+            "Blessing of the Worthy"
+          ]
+        },
+        "options": {
+          "budget": {
+            "control": [
+              "The Black Rose",
+              "Bloody Reach"
+            ],
+            "defense": [
+              "Berserker's Eye"
+            ]
+          },
+          "premium": {
+            "control": [
+              "Seeping Bile"
+            ],
+            "defense": [
+              "Blood-Soaked Jade"
+            ]
+          }
+        },
+        "notes": [
+          "Use Chip of Stoned Flesh as aux for more CC",
+          "Phoenix Ashes works well as aux in Blessing slot for more survival"
+        ]
+      },
+      "recommended_essences": {
+        "primary": [
+          "Broken Soul",
+          "The Gathering"
+        ],
+        "alternatives": [
+          "Pot Metal",
+          "Spiritbreaker"
+        ]
+      },
+      "playstyle_notes": [
+        "Focus on setting up team fights with CC",
+        "Use mobility to stay safe while cooldowns refresh",
+        "Coordinate CC chains with team"
+      ]
+    }
+  },
+  "pve": {
+    "speed_farm": {
+      "name": "Speed Farmer",
+      "primary_skills": [
+        "Whirlwind",
+        "Sprint"
+      ],
+      "gem_setup": {
+        "required": {
+          "damage": [
+            "Blood-Soaked Jade",
+            "Seeping Bile"
+          ],
+          "utility": [
+            "Bottled Hope"
+          ]
+        },
+        "options": {
+          "budget": {
+            "damage": [
+              "Berserker's Eye",
+              "Ca'arsen's Invigoration",
+              "Power and Command"
+            ],
+            "utility": [
+              "Everlasting Torment"
+            ]
+          },
+          "premium": {
+            "damage": [
+              "Howler's Call"
+            ],
+            "utility": [
+              "Phoenix Ashes"
+            ]
+          }
+        },
+        "notes": [
+          "Use Seeping Bile as aux for more DoT pressure",
+          "Phoenix Ashes works well as aux in Blessing slot for more survival"
+        ]
+      },
+      "recommended_essences": {
+        "primary": [
+          "Ferocious Gale",
+          "Hell's Legacy"
+        ],
+        "alternatives": [
+          "Eager Maelstrom",
+          "Routfinder"
+        ]
+      },
+      "playstyle_notes": [
+        "Maintain maximum movement speed",
+        "Group mobs efficiently",
+        "Skip elites unless they're directly in path"
+      ]
+    },
+    "challenge_rift": {
+      "name": "Rift Pusher",
+      "primary_skills": [
+        "Hammer of the Ancients",
+        "Undying Rage"
+      ],
+      "gem_setup": {
+        "required": {
+          "damage": [
+            "Blood-Soaked Jade",
+            "Chip of Stoned Flesh",
+            "Power and Command"
+          ],
+          "defense": [
+            "Phoenix Ashes"
+          ]
+        },
+        "options": {
+          "budget": {
+            "damage": [
+              "Berserker's Eye",
+              "Pain of Subjugation",
+              "Lightning Core"
+            ],
+            "defense": [
+              "The Black Rose"
+            ]
+          },
+          "premium": {
+            "damage": [
+              "Bottled Hope",
+              "Howler's Call"
+            ],
+            "defense": [
+              "Blessing of the Worthy"
+            ]
+          }
+        },
+        "notes": [
+          "Use Chip of Stoned Flesh as aux for more CC",
+          "Phoenix Ashes works well as aux in Blessing slot for more survival"
+        ]
+      },
+      "recommended_essences": {
+        "primary": [
+          "Davin's Legacy",
+          "The Last Wail"
+        ],
+        "alternatives": [
+          "Bonegyre",
+          "The Remembered"
+        ]
+      },
+      "playstyle_notes": [
+        "Focus on elite packs for progress",
+        "Balance survival with damage output",
+        "Use terrain to group mobs"
+      ]
+    }
+  }
+}
