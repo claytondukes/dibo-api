@@ -68,28 +68,9 @@
       "skill2",
       "skill3",
       "skill4"
-    ],
-    "available_skills": [
-      "Hammer of the Ancients",
-      "Cleave",
-      "Whirlwind",
-      "Sprint",
-      "Wrath of the Berserker",
-      "Undying Rage",
-      "Ground Stomp",
-      "Leap",
-      "Furious Charge",
-      "Chained Spear",
-      "Demoralize",
-      "Grab",
-      "Sunder"
     ]
   },
   "weapon_slots": {
-    "total_required": 1,
-    "available_weapons": [
-      "Frenzy",
-      "Lacerate"
-    ]
+    "total_required": 1
   }
 }
