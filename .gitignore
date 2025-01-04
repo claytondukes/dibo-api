@@ -56,6 +56,14 @@ wheels/
 MANIFEST
 venv/
 
+# Python package build artifacts
+*.egg-info/
+*.egg
+dist/
+build/
+__pycache__/
+*.pyc
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

@@ -26,22 +26,21 @@ This document outlines the implementation plan for DIBO's build generation syste
    - Build type specific scoring
    - Percentage bonus handling
    - Attack speed modifiers
+   - Weapon skill validation
+   - Mobility skill validation
+   - Control/buff validation
 
 ### Missing/Incomplete Components:
 
 1. Core Selection Algorithms:
-   - `_select_skills`: Control/buff validation
    - `_select_equipment`: Equipment selection system
    - `_calculate_stats`: Stats aggregation
    - `_find_synergies`: Synergy detection
-   - `_calculate_equipment_score`: Equipment scoring
-   - `_calculate_set_score`: Set bonus evaluation
 
 2. Analysis Systems:
-   - Synergy analysis
-   - Stats calculation
    - Equipment optimization
    - Set piece combinations
+   - Build recommendations
 
 ### Implementation Status:
 
@@ -49,26 +48,25 @@ This document outlines the implementation plan for DIBO's build generation syste
 ✅ Complete
 - Data loading and validation
 - Basic gem selection
-- Inventory validation
-- API endpoint structure
-- GitHub Gist integration
-- Gem synergy scoring
-- Basic skill scoring
-- DPS focus essence scoring
-- Percentage bonus scoring
-- RAID build scoring
+- Skill type validation
+- Essence scoring
+- Build type scoring
+- Percentage bonus handling
 - Attack speed modifiers
+- Weapon skill validation
+- Mobility skill validation
+- Control/buff validation
 
-🚧 In Progress
-- Control/buff skill validation
-- Equipment selection (stub)
-- Stats calculation (stub)
+🔄 In Progress
+- Equipment selection
+- Set bonus evaluation
+- Stats calculation
+- Synergy detection
 
 ❌ Not Started
-- Set piece optimization
-- Equipment scoring
-- Build recommendations
-- Integration testing
+- Equipment optimization
+- Set piece combinations
+- Final build recommendations
 ```
 
 ## Core Components
@@ -81,7 +79,11 @@ graph TD
     B --> C[Load Data]
     C --> D[Select Gems]
     D --> E[Select Skills]
-    E --> F[Select Equipment]
+    E --> |Validate Types| E1[Check Weapon]
+    E1 --> |First Skill| E2[Check Damage]
+    E2 --> |Secondary Skills| E3[Check Control/Buff]
+    E3 --> |Required Types| E4[Check Mobility]
+    E4 --> F[Select Equipment]
     F --> G[Calculate Stats]
     G --> H[Find Synergies]
     H --> I[Generate Recommendations]
@@ -96,15 +98,24 @@ class BuildRequest:
     build_type: BuildType      # raid, pve, pvp, farm
     focus: BuildFocus         # dps, survival, buff
     character_class: str      # e.g., "barbarian"
-    use_inventory: bool = False
+    inventory: Optional[Dict] = None
 ```
 
-#### Response Model
+#### Skill Model
 ```python
-class BuildResponse:
-    build: BuildRecommendation
-    stats: BuildStats
-    recommendations: List[str]
+class Skill:
+    name: str
+    base_type: str           # weapon, damage, control, buff, dash
+    second_base_type: Optional[str]
+    base_cooldown: str
+    description: str
+```
+
+#### Class Constraints
+```python
+class ClassConstraints:
+    skill_slots: Dict[str, List[str]]  # available_skills
+    weapon_slots: Dict[str, List[str]]  # available_weapons
 ```
 
 ## Implementation Phases
@@ -224,6 +235,83 @@ class BuildResponse:
      - Suggest minimal changes for improvement
      - Consider upgrade paths
      - Balance immediate vs long-term goals
+
+## Implementation Details
+
+### 1. Skill Selection System
+
+#### Current Implementation (2025-01-04)
+The skill selection system now properly validates:
+
+1. Weapon Skills:
+   - First skill must be a weapon skill
+   - Uses weapon_slots from class constraints
+   - Validates against available weapons
+
+2. Secondary Skills:
+   - Must be from available_skills list
+   - Validates skill types:
+     - At least one damage skill
+     - At least one control or buff skill
+     - At least one mobility skill (dash)
+
+3. Data Structure:
+   - Uses class-specific constraints
+   - Properly structured skill registry
+   - Includes skill type metadata
+
+#### Next Steps
+1. Equipment Selection:
+   - Implement base equipment scoring
+   - Add set bonus evaluation
+   - Consider skill synergies
+
+2. Stats Calculation:
+   - Aggregate stats from all sources
+   - Apply percentage modifiers
+   - Calculate final values
+
+3. Synergy Detection:
+   - Implement skill-to-skill synergies
+   - Add equipment-to-skill synergies
+   - Consider gem interactions
+
+## Testing Strategy
+
+### Unit Tests
+- ✅ Skill validation
+- ✅ Essence scoring
+- ✅ Gem selection
+- 🔄 Equipment selection
+- ❌ Stats calculation
+- ❌ Synergy detection
+
+### Integration Tests
+- 🔄 Full build generation
+- ❌ Equipment optimization
+- ❌ Set combinations
+
+### Performance Tests
+- ❌ Large inventory handling
+- ❌ Complex build scenarios
+- ❌ Multiple concurrent requests
+
+## Timeline
+
+1. Week 1 (Current):
+   - ✅ Complete skill validation
+   - ✅ Fix essence scoring
+   - 🔄 Start equipment selection
+
+2. Week 2:
+   - Equipment scoring system
+   - Set bonus evaluation
+   - Basic stats calculation
+
+3. Week 3:
+   - Synergy detection
+   - Performance optimization
+   - Documentation updates
 
 ## Next Steps
 

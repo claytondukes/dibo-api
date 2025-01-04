@@ -122,13 +122,45 @@ def mock_essence_data():
 def mock_constraints():
     """Mock constraints for testing."""
     return {
-        "max_skills": 4,
-        "required_types": {
-            "control_or_buff": 1,
-            "damage": 1
+        "skill_slots": {
+            "total_required": 5,  # 1 weapon skill + 4 secondary skills
+            "primary": {
+                "required": 1,
+                "unique": True,
+                "type": "weapon"
+            },
+            "secondary": {
+                "required": 4,
+                "unique": True,
+                "types": ["damage", "control", "buff", "dash", "channel"]
+            }
         },
-        "gem_slots": 3,
-        "essence_slots": 2
+        "gem_slots": {
+            "total_required": 8,
+            "primary": {
+                "required": 8,
+                "unique": True,
+                "star_ratings": [1, 2, 5]
+            },
+            "auxiliary": {
+                "required": 0,
+                "must_match_primary_stars": True,
+                "unique": True
+            }
+        },
+        "essence_slots": {
+            "total_required": 8,
+            "slots": {
+                "head": 1,
+                "chest": 1,
+                "shoulders": 1,
+                "legs": 1,
+                "main_hand": 1,
+                "off_hand": 1,
+                "secondary_hand": 1,
+                "secondary_off_hand": 1
+            }
+        }
     }
 
 
@@ -242,14 +274,55 @@ def mock_data_dir(tmp_path):
     class_dir = data_dir / "classes" / "barbarian"
     gem_dir = data_dir / "gems"
     equipment_dir = data_dir / "equipment"
-    class_dir.mkdir(parents=True)
+    class_dir.mkdir(parents=True, exist_ok=True)
     gem_dir.mkdir(parents=True)
     equipment_dir.mkdir(parents=True)
     
     # Core data files
     constraints = {
-        "gem_slots": {"min": 1, "max": 3},
-        "essence_slots": {"min": 1, "max": 3}
+        "gem_slots": {
+            "total_required": 8,
+            "primary": {
+                "required": 8,
+                "unique": True,
+                "star_ratings": [1, 2, 5]
+            },
+            "auxiliary": {
+                "required": 0,
+                "must_match_primary_stars": True,
+                "unique": True
+            }
+        },
+        "essence_slots": {
+            "total_required": 8,
+            "slots": {
+                "Head": 1,
+                "Shoulder": 1,
+                "Chest": 1,
+                "Legs": 1,
+                "Primary weapon": 1,
+                "Secondary weapon": 1,
+                "Off-hand weapon": 1,
+                "Off-hand secondary weapon": 1
+            }
+        },
+        "set_slots": {
+            "total_required": 8,
+            "slots": {
+                "Ring": 2,
+                "Neck": 1,
+                "Hands": 1,
+                "Waist": 1,
+                "Feet": 1,
+                "Bracer": 2
+            },
+            "valid_combinations": [
+                [6, 2],
+                [4, 4],
+                [4, 2, 2],
+                [2, 2, 2, 2]
+            ]
+        }
     }
     with open(data_dir / "constraints.json", "w") as f:
         json.dump(constraints, f)
@@ -318,22 +391,61 @@ def mock_data_dir(tmp_path):
     # Class data files
     base_skills = {
         "registry": {
-            "Cleave": create_test_skill("damage", "short", ["melee", "aoe"]),
-            "Ground_Stomp": create_test_skill("control", "medium", ["control", "stun"]),
-            "Sprint": create_test_skill("buff", "short", ["movement", "speed"], "mobility"),
-            "War_Cry": create_test_skill("buff", "long", ["buff", "aoe"])
+            "Frenzy": {
+                "base_type": "weapon",
+                "second_base_type": None,
+                "base_cooldown": "none",
+                "description": "Basic attack that builds up attack speed."
+            },
+            "Lacerate": {
+                "base_type": "weapon",
+                "second_base_type": None,
+                "base_cooldown": "none",
+                "description": "Basic attack that causes bleeding."
+            },
+            "Cleave": {
+                "base_type": "damage",
+                "second_base_type": None,
+                "base_cooldown": "6",
+                "description": "Cleave enemies in front of you."
+            },
+            "Ground_Stomp": {
+                "base_type": "control",
+                "second_base_type": "charge",
+                "base_cooldown": "9",
+                "description": "Stun nearby enemies."
+            },
+            "Sprint": {
+                "base_type": "dash",
+                "second_base_type": None,
+                "base_cooldown": "10",
+                "description": "Increase movement speed."
+            },
+            "War_Cry": {
+                "base_type": "buff",
+                "second_base_type": None,
+                "base_cooldown": "15",
+                "description": "Buff allies and intimidate enemies."
+            }
         }
     }
     with open(class_dir / "base_skills.json", "w") as f:
         json.dump(base_skills, f)
         
     class_constraints = {
-        "min_skills": 3,
-        "max_skills": 6,
-        "required_types": {
-            "damage": 1,
-            "control_or_buff": 1,
-            "mobility": 1
+        "skill_slots": {
+            "available_skills": [
+                "Cleave",
+                "Ground_Stomp",
+                "Sprint",
+                "War_Cry"
+            ]
+        },
+        "weapon_slots": {
+            "available_weapons": [
+                "Frenzy",
+                "Lacerate"
+            ]
         }
     }
     with open(class_dir / "constraints.json", "w") as f:
@@ -345,60 +457,52 @@ def mock_data_dir(tmp_path):
             "class": "barbarian"
         },
         "essences": {
-            "cleave_bleed": create_test_essence(
-                "Cleave deals 30% increased damage",
-                ["damage", "bleed"],
-                "damage"
-            ),
-            "stomp_duration": create_test_essence(
-                "Ground Stomp stuns for 50% longer",
-                ["control", "duration"],
-                "control"
-            ),
-            "cry_duration": create_test_essence(
-                "War Cry duration increased by 20%",
-                ["buff", "duration"],
-                "buff"
-            ),
-            "stomp_range": create_test_essence(
-                "Ground Stomp has increased range",
-                ["control", "range"],
-                "control"
-            ),
-            "whirl_speed": create_test_essence(
-                "Whirlwind movement speed increased by 30%",
-                ["movement", "speed"],
-                "mobility"
-            ),
-            "whirl_crit": create_test_essence(
-                "Whirlwind critical strike chance increased",
-                ["damage", "critical"],
-                "damage"
-            )
+            "cleave_bleed": {
+                "name": "Cleave Bleed",
+                "effect": "Increase bleed damage",
+                "effect_tags": ["damage", "bleed"],
+                "skill_type": "damage"
+            },
+            "stomp_duration": {
+                "name": "Ground Stomp Duration",
+                "effect": "Increase stun duration",
+                "effect_tags": ["control", "duration"],
+                "skill_type": "control"
+            },
+            "stomp_range": {
+                "name": "Ground Stomp Range",
+                "effect": "Increase range",
+                "effect_tags": ["control", "range"],
+                "skill_type": "control"
+            },
+            "cry_duration": {
+                "name": "War Cry Duration",
+                "effect": "Increase duration",
+                "effect_tags": ["buff", "duration"],
+                "skill_type": "buff"
+            }
         },
         "indexes": {
             "by_skill": {
                 "Cleave": ["cleave_bleed"],
                 "Ground_Stomp": ["stomp_duration", "stomp_range"],
-                "War_Cry": ["cry_duration"],
-                "Whirlwind": ["whirl_speed", "whirl_crit"]
+                "War_Cry": ["cry_duration"]
             },
             "by_type": {
-                "damage": ["cleave_bleed", "whirl_crit"],
+                "damage": ["cleave_bleed"],
                 "control": ["stomp_duration", "stomp_range"],
-                "buff": ["cry_duration"],
-                "mobility": ["whirl_speed"]
+                "buff": ["cry_duration"]
             },
             "by_slot": {
-                "weapon": ["cleave_bleed", "whirl_crit"],
+                "weapon": ["cleave_bleed"],
                 "armor": ["stomp_duration", "stomp_range"],
-                "jewelry": ["cry_duration", "whirl_speed"]
+                "chest": ["cry_duration"]
             }
         }
     }
     with open(class_dir / "essences.json", "w") as f:
         json.dump(essences, f)
-    
+        
     return data_dir
 
 
@@ -597,23 +701,53 @@ def test_validate_skill_selection_invalid_skills(mock_build_service):
 def test_validate_skill_selection_types(mock_build_service):
     """Test skill type requirements validation."""
     # Valid selection with all required types
-    valid_skills = ["Cleave", "Ground_Stomp", "Sprint"]  # damage, control, mobility
+    valid_skills = [
+        "Frenzy",  # weapon skill
+        "Cleave",  # damage
+        "Ground_Stomp",  # control
+        "Sprint",  # mobility
+        "War_Cry"  # buff
+    ]
     assert mock_build_service._validate_skill_selection(valid_skills, "barbarian")
     
     # Missing damage type
-    no_damage = ["Ground_Stomp", "Sprint", "War_Cry"]  # control, mobility, buff
+    no_damage = [
+        "Frenzy",  # weapon skill
+        "Ground_Stomp",  # control
+        "Sprint",  # mobility
+        "War_Cry",  # buff
+        "War_Cry"  # buff (duplicate)
+    ]
     assert not mock_build_service._validate_skill_selection(no_damage, "barbarian")
     
     # Missing control/buff type
-    no_control_buff = ["Cleave", "Cleave", "Furious_Charge"]  # damage, damage, dash
+    no_control_buff = [
+        "Frenzy",  # weapon skill
+        "Cleave",  # damage
+        "Cleave",  # damage
+        "Sprint",  # mobility
+        "Sprint"  # mobility
+    ]
     assert not mock_build_service._validate_skill_selection(no_control_buff, "barbarian")
     
     # Missing mobility type
-    no_mobility = ["Cleave", "Ground_Stomp", "War_Cry"]  # damage, control, buff
+    no_mobility = [
+        "Frenzy",  # weapon skill
+        "Cleave",  # damage
+        "Ground_Stomp",  # control
+        "War_Cry",  # buff
+        "War_Cry"  # buff
+    ]
     assert not mock_build_service._validate_skill_selection(no_mobility, "barbarian")
     
     # Using buff instead of control is valid
-    with_buff = ["Cleave", "War_Cry", "Sprint"]  # damage, buff, mobility
+    with_buff = [
+        "Frenzy",  # weapon skill
+        "Cleave",  # damage
+        "War_Cry",  # buff
+        "Sprint",  # mobility
+        "War_Cry"  # another buff
+    ]
     assert mock_build_service._validate_skill_selection(with_buff, "barbarian")
 
 
