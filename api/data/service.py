@@ -3,7 +3,7 @@
 import json
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional, TypeVar, Generic
+from typing import Dict, List, Optional, TypeVar, Generic, Union
 
 from fastapi import HTTPException, status
 
@@ -13,7 +13,8 @@ from .models import (
     GemBase,
     EquipmentSet,
     Skill,
-    PaginatedResponse
+    PaginatedResponse,
+    StatInfo
 )
 
 
@@ -228,6 +229,36 @@ class DataService:
             ))
 
         return self._paginate(skills, page, per_page)
+
+    def get_stats(self, stat: Optional[str] = None) -> Union[Dict[str, StatInfo], StatInfo]:
+        """Get stats data with optional filtering.
+
+        Args:
+            stat: Optional stat name to filter by
+
+        Returns:
+            If stat is specified, returns StatInfo for that stat.
+            Otherwise returns dictionary mapping stat names to their info.
+
+        Raises:
+            HTTPException: If stat specified but not found
+        """
+        stats_file = self.data_dir / "stats.json"
+        if not stats_file.exists():
+            raise FileNotFoundError(f"Stats data file not found: {stats_file}")
+
+        with open(stats_file, "r") as f:
+            data = json.load(f)
+
+        if stat:
+            if stat not in data:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail=f"Stat not found: {stat}"
+                )
+            return StatInfo(**data[stat])
+
+        return {name: StatInfo(**info) for name, info in data.items()}
 
 
 # Singleton instance
