@@ -14,7 +14,7 @@ def test_github_login(client: TestClient, test_settings: Settings):
     data = response.json()
     assert "auth_url" in data
     assert "state" in data
-    assert "Ov23liNuYPvWzwNkmC73" in data["auth_url"]
+    assert test_settings.DEV_GITHUB_CLIENT_ID in data["auth_url"]
 
 
 def test_github_callback_invalid_state(client: TestClient):

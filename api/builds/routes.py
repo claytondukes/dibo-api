@@ -4,7 +4,7 @@ from typing import Optional
 from fastapi import APIRouter, Depends, Query
 
 from ..auth.service import AuthService, get_auth_service
-from .models import BuildFocus, BuildResponse, BuildType
+from .models import BuildFocus, BuildResponse, BuildType, BuildRecommendation
 from .service import BuildService
 
 
@@ -44,3 +44,17 @@ async def generate_build(
         focus=focus,
         inventory=inventory
     )
+
+
+@router.post(
+    "/analyze",
+    response_model=BuildResponse,
+    summary="Analyze build",
+    description="Analyze a specific build configuration for synergies and effectiveness"
+)
+async def analyze_build(
+    build: BuildRecommendation,
+    build_service: BuildService = Depends(get_build_service)
+) -> BuildResponse:
+    """Analyze a specific build configuration."""
+    return await build_service.analyze_build(build)
