@@ -296,6 +296,54 @@ The skill selection system now properly validates:
 - ❌ Complex build scenarios
 - ❌ Multiple concurrent requests
 
+## Testing Infrastructure
+
+1. Test Data Management:
+   - Centralized test fixtures in conftest.py
+   - Shared data structures for common test scenarios
+   - Realistic mock data matching production structure
+
+2. Test Coverage:
+   - Core validation tests complete
+   - Skill validation tests improved
+   - Edge case coverage expanded
+   - Integration test in progress
+
+3. Test Organization:
+   ```
+   tests/
+   ├── conftest.py           # Global fixtures
+   ├── test_builds/
+   │   ├── conftest.py       # Build-specific fixtures
+   │   └── test_*.py         # Test modules
+   └── test_data/
+       └── conftest.py       # Data service fixtures
+   ```
+
+4. Test Data Structure:
+   ```python
+   {
+       "base_skills": {
+           "registry": {
+               "skill_name": {
+                   "base_type": str,      # damage/control/dash/weapon
+                   "second_base_type": str,
+                   "base_cooldown": str,
+                   "description": str
+               }
+           }
+       },
+       "constraints": {
+           "skill_slots": {
+               "available_skills": List[str]
+           },
+           "weapon_slots": {
+               "available_weapons": List[str]
+           }
+       }
+   }
+   ```
+
 ## Timeline
 
 1. Week 1 (Current):
@@ -329,3 +377,13 @@ The skill selection system now properly validates:
    - Add more build type specific logic
    - Implement advanced synergy detection
    - Improve recommendation generation
+
+4. Testing Improvements:
+   - Complete integration test fixes
+   - Add more complex test scenarios
+   - Expand test data coverage
+
+5. Documentation:
+   - Update API documentation
+   - Document test data structure
+   - Add example configurations
