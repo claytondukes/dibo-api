@@ -1,0 +1,25 @@
+{
+  "skill_slots": {
+    "available_skills": [
+      "Hammer of the Ancients",
+      "Cleave",
+      "Whirlwind",
+      "Sprint",
+      "Wrath of the Berserker",
+      "Undying Rage",
+      "Ground Stomp",
+      "Leap",
+      "Furious Charge",
+      "Chained Spear",
+      "Demoralize",
+      "Grab",
+      "Sunder"
+    ]
+  },
+  "weapon_slots": {
+    "available_weapons": [
+      "Frenzy",
+      "Lacerate"
+    ]
+  }
+}

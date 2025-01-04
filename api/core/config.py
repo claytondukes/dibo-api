@@ -24,6 +24,9 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "DIBO API"
     VERSION: str = "0.1.0"
     API_V1_STR: str = "/api/v1"
+    PROJECT_ROOT: Path = Field(
+        default_factory=lambda: Path(__file__).parent.parent.parent
+    )
     
     # Server
     HOST: str = "0.0.0.0"

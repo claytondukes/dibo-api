@@ -71,6 +71,7 @@ For example:
 - [Game Mechanics](docs/game/mechanics.md) - Core game systems and build types
 - [Skills Guide](docs/game/skills.md) - Comprehensive skill system documentation
 - [Auxiliary Gems](docs/game/aux_gems.md) - Detailed explanation of the auxiliary gem system
+- [Equipment Sets](docs/game/sets.md) - Complete guide to equipment sets and their bonuses
 
 ## Managing Your Inventory with GitHub Gists
 

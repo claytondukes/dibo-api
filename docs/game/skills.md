@@ -66,6 +66,50 @@ Provide stat boosts to:
 - Beneficial effect duration
 - Overall damage output
 
+## Skill Modifications
+
+Skills can be modified through various systems:
+
+### 1. Essence Modifications
+   - Legendary essences that modify skill behavior
+   - Each skill can have multiple essence options
+   - Only one essence per skill can be active
+   - Essences are categorized by:
+     - Gear slot (e.g., Helm, Chest)
+     - Modified skill
+     - Effect type (e.g., damage, control)
+   - Effects can include:
+     - Behavior changes (e.g., skill becomes a projectile)
+     - Damage modifiers
+     - Added effects (e.g., stun, knockback)
+     - Resource modifications
+
+### 2. Gem Effects
+   - Legendary gems that enhance skills
+   - Can affect specific skills or all skills
+   - Multiple gems can affect the same skill
+
+### 3. Set Bonuses
+   - Equipment set combinations
+   - Provide skill-specific or general bonuses
+   - Stack with essence modifications
+
+## Skill Synergies
+
+Skills can synergize through:
+### 1. Direct Combinations
+   - Skills that work well together (e.g., control + damage)
+   - Movement skills into damage skills
+
+### 2. Essence Synergies
+   - Essences that complement each other
+   - Effects that chain together
+
+### 3. Build Focus
+   - PvE vs PvP optimization
+   - Single target vs AoE damage
+   - Burst vs sustained damage
+
 ## Skill Data Structure
 
 The skill system data is organized in several JSON files:
