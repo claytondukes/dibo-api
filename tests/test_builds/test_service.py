@@ -51,29 +51,52 @@ def mock_data_dir(tmp_path):
                 "max": 100.0
             }
         },
-        "cross_references.json": {
-            "gems": {
-                "Berserker's Eye": ["critical_hit"]
-            }
-        },
+
         
         # Gem data
         "gems/progression.json": {
-            "Berserker's Eye": {
-                "ranks": [1, 2, 5, 10],
-                "resonance": [10, 20, 50, 100]
+            "metadata": {
+                "version": "1.0"
+            },
+            "gems": {
+                "Berserker's Eye": {
+                    "ranks": [1, 2, 5, 10],
+                    "resonance": [10, 20, 50, 100]
+                }
             }
         },
         "gems/stat_boosts.json": {
-            "critical_hit": {
-                "Berserker's Eye": {
-                    "rank_10": 2.0,
-                    "scaling": True
+            "metadata": {
+                "version": "1.0"
+            },
+            "stats": {
+                "critical_hit": {
+                    "Berserker's Eye": {
+                        "rank_10": 2.0,
+                        "scaling": True
+                    }
                 }
             }
         },
         "gems/synergies.json": {
-            "critical_hit": ["Berserker's Eye", "Cutthroat's Grin"]
+            "metadata": {
+                "version": "1.0"
+            },
+            "synergies": {
+                "critical_hit": ["Berserker's Eye", "Cutthroat's Grin"]
+            }
+        },
+        "gems/gems.json": {
+            "metadata": {
+                "version": "1.0"
+            },
+            "effects": {
+                "Berserker's Eye": {
+                    "critical_hit": "2.0%",
+                    "type": "legendary",
+                    "slot": "primary"
+                }
+            }
         },
         
         # Skill data
@@ -110,9 +133,9 @@ def mock_data_dir(tmp_path):
         # Equipment data
         "equipment/sets.json": {
             "metadata": {
-                "version": 1
+                "version": "1.0"
             },
-            "registry": {
+            "sets": {
                 "Grace of the Flagellant": {
                     "pieces": ["chest", "legs"],
                     "bonuses": {
@@ -127,23 +150,34 @@ def mock_data_dir(tmp_path):
         
         # Class-specific data
         "classes/barbarian/base_skills.json": {
+            "metadata": {
+                "version": "1.0"
+            },
             "Whirlwind": {
                 "base_type": "primary",
                 "description": "A primary skill for the barbarian"
             }
         },
         "classes/barbarian/essences.json": {
-            "Whirlwind": {
-                "Gale Force": {
-                    "type": "legendary",
-                    "slot": "chest"
+            "metadata": {
+                "version": "1.0"
+            },
+            "essences": {
+                "Whirlwind": {
+                    "Gale Force": {
+                        "type": "legendary",
+                        "slot": "chest",
+                        "effect": "critical_hit:2.0%"
+                    }
                 }
-            }
-        },
-        "classes/barbarian/essence_registry.json": {
-            "Gale Force": {
-                "type": "legendary",
-                "slot": "chest"
+            },
+            "indexes": {
+                "by_slot": {
+                    "chest": ["Gale Force"]
+                },
+                "by_skill": {
+                    "Whirlwind": ["Gale Force"]
+                }
             }
         },
         "classes/barbarian/constraints.json": {
@@ -170,22 +204,13 @@ def test_load_indexed_data(build_service):
     assert build_service.synergies is not None
     assert build_service.constraints is not None
     assert build_service.stats is not None
-    assert build_service.cross_references is not None
     
     # Check gem data
-    assert build_service.gems_data is not None
-    assert "progression" in build_service.gems_data
-    assert "stat_boosts" in build_service.gems_data
-    assert "synergies" in build_service.gems_data
-    
-    # Check skill data
-    assert build_service.skills_data is not None
-    assert "registry" in build_service.skills_data
-    
-    # Check essence data
-    assert build_service.essences_data is not None
-    assert "registry" in build_service.essences_data
-    assert "effects" in build_service.essences_data
+    assert build_service.gem_data is not None
+    assert "progression" in build_service.gem_data
+    assert "stat_boosts" in build_service.gem_data
+    assert "synergies" in build_service.gem_data
+    assert "effects" in build_service.gem_data
     
     # Check equipment data
     assert build_service.equipment_data is not None
@@ -196,8 +221,11 @@ def test_load_indexed_data(build_service):
     assert "barbarian" in build_service.class_data
     assert "base_skills" in build_service.class_data["barbarian"]
     assert "essences" in build_service.class_data["barbarian"]
-    assert "essence_registry" in build_service.class_data["barbarian"]
-    assert "constraints" in build_service.class_data["barbarian"]
+    
+    # Check class constraints
+    assert build_service.class_constraints is not None
+    assert "barbarian" in build_service.class_constraints
+    assert "essence_slots" in build_service.class_constraints["barbarian"]
 
 
 def test_missing_class_data(mock_data_dir):
@@ -268,18 +296,15 @@ def test_class_data_consistency(mock_data_dir):
     
     # Get Whirlwind skill mapping
     skill_mapping = service.class_data["barbarian"]["base_skills"]["Whirlwind"]
+    assert skill_mapping["base_type"] == "primary"
     
-    # Verify skill exists in registry
-    assert "Whirlwind" in service.skills_data["registry"]["barbarian"]
-    
-    # Verify essence exists in registry
+    # Verify essence exists in class data
     assert "Gale Force" in service.class_data["barbarian"]["essences"]["Whirlwind"]
-    assert "Gale Force" in service.essences_data["registry"]["barbarian"]["Whirlwind"]
     
-    # Verify essence effects match
-    essence_name = "Gale Force"
-    essence_effects = service.essences_data["effects"]["barbarian"]["Whirlwind"][essence_name]
-    assert essence_effects["critical_hit"] == 2.0
+    # Verify essence data structure
+    essence_data = service.class_data["barbarian"]["essences"]["Whirlwind"]["Gale Force"]
+    assert essence_data["type"] == "legendary"
+    assert essence_data["slot"] == "chest"
 
 
 def test_class_data_structure(mock_data_dir):

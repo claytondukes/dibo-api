@@ -2,12 +2,10 @@
 
 import json
 import logging
+import os
 from pathlib import Path
-from typing import Dict, List, Optional, Set
+from typing import Dict, List, Optional, Set, Union
 
-from fastapi import HTTPException, status
-
-from ..core.config import get_settings
 from .models import (
     BuildFocus,
     BuildResponse,
@@ -18,6 +16,30 @@ from .models import (
     Skill,
     Equipment
 )
+
+# Build type weights for scoring
+type_weights = {
+    BuildType.RAID: {
+        "primary": {"dps": 1.0, "survival": 0.7, "buff": 0.3},
+        "secondary": {"dps": 0.8, "survival": 0.6, "buff": 0.4},
+        "utility": {"dps": 0.5, "survival": 0.8, "buff": 0.7}
+    },
+    BuildType.PVE: {
+        "primary": {"dps": 0.9, "survival": 0.6, "buff": 0.4},
+        "secondary": {"dps": 0.7, "survival": 0.5, "buff": 0.5},
+        "utility": {"dps": 0.6, "survival": 0.7, "buff": 0.6}
+    },
+    BuildType.PVP: {
+        "primary": {"dps": 0.8, "survival": 0.8, "buff": 0.5},
+        "secondary": {"dps": 0.7, "survival": 0.7, "buff": 0.6},
+        "utility": {"dps": 0.6, "survival": 0.6, "buff": 0.8}
+    },
+    BuildType.FARM: {
+        "primary": {"dps": 1.0, "survival": 0.5, "buff": 0.3},
+        "secondary": {"dps": 0.8, "survival": 0.4, "buff": 0.4},
+        "utility": {"dps": 0.7, "survival": 0.6, "buff": 0.5}
+    }
+}
 
 
 logger = logging.getLogger(__name__)
@@ -61,15 +83,11 @@ class BuildService:
         Raises:
             HTTPException: If required data files are missing or invalid.
         """
-        self.settings = get_settings()
-        self.data_dir = data_dir or Path(self.settings.PROJECT_ROOT) / "data" / "indexed"
+        self.data_dir = data_dir or Path(os.getenv("DATA_DIR", str(Path(__file__).parent.parent.parent / "data" / "indexed")))
         
         # Validate data directory exists
         if not self.data_dir.exists():
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=f"Data directory not found: {self.data_dir}"
-            )
+            raise ValueError(f"Data directory not found: {self.data_dir}")
         
         # Load all indexed data
         try:
@@ -133,10 +151,7 @@ class BuildService:
                 ]
             
         except Exception as e:
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=f"Error loading data files: {str(e)}"
-            )
+            raise ValueError(f"Error loading data files: {str(e)}")
         
         # Validate loaded data
         self._validate_data_structure()
@@ -150,42 +165,27 @@ class BuildService:
         # Validate synergies structure
         for category, data in self.synergies.items():
             if not isinstance(data, dict):
-                raise HTTPException(
-                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                    detail=f"Invalid synergy category structure: {category}"
-                )
+                raise ValueError(f"Invalid synergy category structure: {category}")
             required_keys = {"gems", "essences", "skills"}
             if not all(key in data for key in required_keys):
-                raise HTTPException(
-                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                    detail=f"Missing required keys in synergy category: {category}"
-                )
+                raise ValueError(f"Missing required keys in synergy category: {category}")
         
         # Validate constraints structure
         required_constraints = {"gem_slots", "essence_slots"}
         if not all(key in self.constraints for key in required_constraints):
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail="Missing required constraint categories"
-            )
+            raise ValueError("Missing required constraint categories")
             
         # Validate essence structure
         for class_name, data in self.class_data.items():
             essence_data = data["essences"]
             required_essence_keys = {"metadata", "essences", "indexes"}
             if not all(key in essence_data for key in required_essence_keys):
-                raise HTTPException(
-                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                    detail=f"Missing required essence keys for class {class_name}"
-                )
+                raise ValueError(f"Missing required essence keys for class {class_name}")
             
             # Validate essence indexes
             required_indexes = {"by_slot", "by_skill"}
             if not all(key in essence_data["indexes"] for key in required_indexes):
-                raise HTTPException(
-                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                    detail=f"Missing required essence indexes for class {class_name}"
-                )
+                raise ValueError(f"Missing required essence indexes for class {class_name}")
     
     async def generate_build(
         self,
@@ -267,10 +267,7 @@ class BuildService:
             
         except Exception as e:
             logger.error(f"Error generating build: {str(e)}")
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=f"Failed to generate build: {str(e)}"
-            )
+            raise ValueError(f"Failed to generate build: {str(e)}")
     
     def _validate_inventory(self, inventory: Dict) -> None:
         """Validate inventory format and contents.
@@ -282,29 +279,17 @@ class BuildService:
             HTTPException: If inventory format is invalid
         """
         if not isinstance(inventory, dict):
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Inventory must be a dictionary"
-            )
+            raise ValueError("Inventory must be a dictionary")
         
         for item_name, item_data in inventory.items():
             if not isinstance(item_data, dict):
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=f"Invalid data for item: {item_name}"
-                )
+                raise ValueError(f"Invalid data for item: {item_name}")
             
             if "owned_rank" not in item_data:
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=f"Missing owned_rank for item: {item_name}"
-                )
+                raise ValueError(f"Missing owned_rank for item: {item_name}")
             
             if not isinstance(item_data["owned_rank"], (int, type(None))):
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=f"Invalid owned_rank for item: {item_name}"
-                )
+                raise ValueError(f"Invalid owned_rank for item: {item_name}")
     
     def _select_gems(
         self,
@@ -482,10 +467,7 @@ class BuildService:
         
         # Validate skill selection against class constraints
         if not self._validate_skill_selection(all_skills, character_class):
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Invalid skill selection for character class"
-            )
+            raise ValueError("Invalid skill selection for character class")
         
         # Sort skills by effectiveness
         all_skills.sort(
@@ -580,10 +562,7 @@ class BuildService:
         
         # Validate equipment selection against class constraints
         if not self._validate_weapon_selection(equipment["hands"], character_class):
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Invalid equipment selection for character class"
-            )
+            raise ValueError("Invalid equipment selection for character class")
         
         return equipment
     
@@ -1282,6 +1261,32 @@ class BuildService:
         
         return list(set(categories))  # Remove duplicates
     
+    def _parse_effect(self, effect_str: str) -> Dict[str, float]:
+        """Parse an effect string into a dictionary of stat modifications.
+        
+        Args:
+            effect_str: Effect string in format "stat:value%,stat2:value2%"
+            
+        Returns:
+            Dictionary mapping stat names to their values
+        """
+        effects = {}
+        if not effect_str:
+            return effects
+            
+        for effect in effect_str.split(","):
+            if ":" not in effect:
+                continue
+            stat, value = effect.split(":")
+            try:
+                # Remove % and convert to float
+                value = float(value.rstrip("%"))
+                effects[stat] = value
+            except ValueError:
+                continue
+                
+        return effects
+
     def _calculate_essence_score(
         self,
         essence: Dict,

@@ -38,35 +38,41 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logger.info("Shutting down %s", settings.PROJECT_NAME)
 
 
-# Create FastAPI app
-app = FastAPI(
-    title=settings.PROJECT_NAME,
-    description="Diablo Immortal Build Optimizer API",
-    version=settings.VERSION,
-    docs_url=f"{settings.API_V1_STR}/docs",
-    redoc_url=f"{settings.API_V1_STR}/redoc",
-    openapi_url=f"{settings.API_V1_STR}/openapi.json",
-    debug=settings.DEBUG,
-    lifespan=lifespan
-)
+# Initialize FastAPI only when not in testing mode
+app = None
+if not settings.TESTING:
+    app = FastAPI(
+        title=settings.PROJECT_NAME,
+        description="Diablo Immortal Build Optimizer API",
+        version=settings.VERSION,
+        docs_url=f"{settings.API_V1_STR}/docs",
+        redoc_url=f"{settings.API_V1_STR}/redoc",
+        openapi_url=f"{settings.API_V1_STR}/openapi.json",
+        debug=settings.DEBUG,
+        lifespan=lifespan
+    )
 
-# Add CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
-    allow_credentials=settings.ALLOW_CREDENTIALS,
-    allow_methods=settings.ALLOW_METHODS,
-    allow_headers=settings.ALLOW_HEADERS,
-)
+    # Add CORS middleware
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
+        allow_credentials=settings.ALLOW_CREDENTIALS,
+        allow_methods=settings.ALLOW_METHODS,
+        allow_headers=settings.ALLOW_HEADERS,
+    )
 
-# Include routers
-app.include_router(auth_router, prefix=settings.API_V1_STR)
-app.include_router(build_router, prefix=settings.API_V1_STR)
-app.include_router(data_router, prefix=settings.API_V1_STR)
+    # Include routers
+    app.include_router(auth_router, prefix=settings.API_V1_STR)
+    app.include_router(build_router, prefix=settings.API_V1_STR)
+    app.include_router(data_router, prefix=settings.API_V1_STR)
 
 
 def main() -> None:
     """Run application with uvicorn."""
+    if app is None:
+        logger.error("Cannot start server: FastAPI app not initialized")
+        return
+    
     logger.info("Starting uvicorn server")
     uvicorn.run(
         "api.main:app",
