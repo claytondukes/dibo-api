@@ -1241,3 +1241,128 @@ class BuildService:
                 categories.append(category)
         
         return list(set(categories))  # Remove duplicates
+    
+    def _calculate_essence_score(
+        self,
+        essence: Dict,
+        build_type: BuildType,
+        focus: BuildFocus,
+        selected_gems: List[Gem]
+    ) -> float:
+        """Calculate effectiveness score for an essence.
+        
+        Args:
+            essence: Essence data
+            build_type: Type of build
+            focus: Build focus
+            selected_gems: Previously selected gems
+            
+        Returns:
+            Score between 0 and 1
+        """
+        skill_type = essence.get("skill_type", "")
+        effect = essence.get("effect", "")
+        effect_tags = essence.get("effect_tags", [])
+        
+        base_score = 0.0
+        focus_bonus = 0.0
+        build_type_bonus = 0.0
+        gem_bonus = 0.0
+        
+        # Score based on effect type
+        if skill_type:
+            if focus == BuildFocus.DPS:
+                if skill_type == "damage":
+                    base_score = 0.4  # Increased base score for damage
+                    focus_bonus = 0.3  # Focus bonus for damage
+                    # Higher scores for percentage-based effects
+                    if isinstance(effect, str):
+                        if "increased" in effect.lower() or "more" in effect.lower():
+                            base_score = max(base_score, 0.6)  # Higher base score for percentage bonuses
+                            focus_bonus = max(focus_bonus, 0.4)  # Increased bonus for percentage effects
+                        if "attack_speed" in effect_tags:
+                            base_score = max(base_score, 0.6)  # Higher base score for attack speed
+                            focus_bonus = max(focus_bonus, 0.4)  # Increased bonus for attack speed
+                elif skill_type in ["control", "buff"]:
+                    base_score = 0.1  # Lower score for non-damage essences
+                    focus_bonus = 0.0  # No focus bonus for non-damage essences
+            elif focus == BuildFocus.SURVIVAL:
+                if skill_type in ["control", "buff"]:
+                    base_score = 0.4  # Base score for defensive essences
+                    focus_bonus = 0.3  # Focus bonus for survival
+                elif skill_type == "damage":
+                    base_score = 0.1  # Lower score for damage essences
+                    focus_bonus = 0.1  # Lower focus bonus
+                    
+        # Build type bonuses
+        if build_type == BuildType.PVP:
+            # In PvP, control and utility skills are more valuable
+            if skill_type == "control" or "utility" in effect_tags:
+                build_type_bonus = 0.4  # Higher bonus for control/utility in PvP
+                base_score = max(base_score, 0.3)  # Higher minimum score for control/utility
+            elif "pvp" in effect_tags:
+                build_type_bonus = 0.3  # Higher bonus for PvP effects
+                base_score = max(base_score, 0.5)  # Higher minimum score for PvP effects
+            elif "pve" in effect_tags:
+                base_score = min(base_score, 0.1)  # Lower score for PvE effects in PvP
+                focus_bonus = 0.0  # No focus bonus for PvE effects
+                build_type_bonus = 0.0  # No build type bonus for PvE effects
+            elif skill_type == "damage":
+                # Reduce score for pure damage skills in PvP unless they have PvP tag
+                base_score = min(base_score, 0.15)  # Lower base score for damage
+                focus_bonus = min(focus_bonus, 0.1)  # Lower focus bonus for damage
+        elif build_type == BuildType.FARM:
+            if "farm" in effect_tags:
+                build_type_bonus = 0.2
+                base_score = max(base_score, 0.3)  # Higher minimum score for farming effects
+        elif build_type == BuildType.RAID:
+            if skill_type == "damage":
+                build_type_bonus = 0.4  # Increased bonus for damage skills in raids
+                base_score = max(base_score, 0.5)  # Higher minimum score for damage
+                # Additional bonus for attack speed in raids
+                if "attack_speed" in effect_tags:
+                    build_type_bonus += 0.3  # Extra bonus for attack speed in raids
+                # Additional bonus for percentage-based effects in raids
+                if isinstance(effect, str) and ("increased" in effect.lower() or "more" in effect.lower()):
+                    build_type_bonus += 0.3  # Extra bonus for percentage-based effects in raids
+                
+        # Percentage bonus
+        if isinstance(effect, str):
+            if "increased" in effect.lower() or "more" in effect.lower():
+                # Only apply percentage bonus if it's aligned with the focus and build type
+                if (focus == BuildFocus.DPS and skill_type == "damage"):
+                    # In PvP, only give percentage bonus to PvP-tagged skills
+                    if build_type == BuildType.PVP and "pvp" not in effect_tags:
+                        pass  # No percentage bonus for non-PvP damage skills
+                    else:
+                        base_score = max(base_score, 0.4)  # Higher minimum score for percentage bonuses
+                        focus_bonus = max(focus_bonus, 0.3)  # Increased bonus for percentage effects
+                elif (focus == BuildFocus.SURVIVAL and skill_type in ["control", "buff"]):
+                    base_score = max(base_score, 0.3)  # Higher minimum score for percentage bonuses
+                    focus_bonus = max(focus_bonus, 0.2)  # Increased bonus for percentage effects
+            
+            # Cooldown reduction bonus
+            if "cooldown" in effect.lower() and "reduced" in effect.lower():
+                base_score = max(base_score, 0.3)  # Higher minimum score for cooldown reduction
+            
+        # Attack speed bonus (separate from percentage bonus)
+        if "attack_speed" in effect_tags:
+            base_score = max(base_score, 0.4)  # Higher minimum score for attack speed
+            focus_bonus = max(focus_bonus, 0.3)  # Increased bonus for attack speed
+        
+        # Calculate initial score before gem bonus
+        initial_score = base_score + focus_bonus + build_type_bonus
+        
+        # Gem synergies
+        for gem in selected_gems:
+            if gem.name in self.gem_data["synergies"]:
+                gem_synergies = self.gem_data["synergies"][gem.name].get("skills", [])
+                if essence.get("skill") in gem_synergies:
+                    gem_bonus = 0.3  # Fixed bonus for gem synergy
+                    break  # Only apply one gem bonus
+                    
+        # Calculate final score
+        total_score = initial_score + gem_bonus
+        
+        # Normalize score to 0-1 range
+        return min(max(total_score, 0.0), 1.0)

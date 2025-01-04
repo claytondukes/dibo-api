@@ -172,3 +172,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Manual Builder
 - Build sharing via GitHub Gists
 - Community build library
+- Update all test cases to use the character class given instead of hard-coded barb items/skills, etc. 
