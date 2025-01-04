@@ -3,6 +3,7 @@
 import secrets
 from typing import Dict, Optional, ClassVar
 from urllib.parse import urlencode
+import json
 
 import httpx
 from fastapi import HTTPException, status
@@ -45,7 +46,7 @@ class AuthService:
         params = {
             "client_id": self.settings.active_github_client_id,
             "redirect_uri": str(self.settings.active_github_callback_url),
-            "scope": "read:user user:email",
+            "scope": "read:user user:email gist",
             "state": state,
         }
         
@@ -158,3 +159,70 @@ class AuthService:
                 )
             
             return GitHubUser(**response.json())
+
+    async def get_inventory_gist(self, token: str, gist_id: Optional[str] = None) -> Dict:
+        """Get user's inventory gist.
+        
+        Args:
+            token: GitHub access token
+            gist_id: Optional specific gist ID to fetch
+            
+        Returns:
+            dict: Inventory data from gist
+            
+        Raises:
+            HTTPException: If gist fetch fails
+        """
+        async with httpx.AsyncClient() as client:
+            # If no specific gist_id, search for one named gems.json
+            if not gist_id:
+                response = await client.get(
+                    "https://api.github.com/gists",
+                    headers={
+                        "Authorization": f"token {token}",
+                        "Accept": "application/json"
+                    }
+                )
+                
+                if response.status_code != 200:
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail="Failed to fetch gists"
+                    )
+                
+                gists = response.json()
+                for gist in gists:
+                    if "gems.json" in gist["files"]:
+                        gist_id = gist["id"]
+                        break
+                
+                if not gist_id:
+                    return {}  # No inventory gist found
+            
+            # Fetch specific gist
+            response = await client.get(
+                f"https://api.github.com/gists/{gist_id}",
+                headers={
+                    "Authorization": f"token {token}",
+                    "Accept": "application/json"
+                }
+            )
+            
+            if response.status_code != 200:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Failed to fetch inventory gist"
+                )
+            
+            gist_data = response.json()
+            if "gems.json" not in gist_data["files"]:
+                return {}
+            
+            content = gist_data["files"]["gems.json"]["content"]
+            try:
+                return json.loads(content)
+            except json.JSONDecodeError:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Invalid inventory gist format"
+                )

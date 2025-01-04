@@ -1,0 +1,415 @@
+{
+  "owned_gems": {
+    "5_star": [
+      {
+        "name": "Blessing of the Worthy",
+        "rank": 10,
+        "quality": "5"
+      },
+      {
+        "name": "Blood-Soaked Jade",
+        "rank": 10,
+        "quality": "5"
+      },
+      {
+        "name": "Chip of Stoned Flesh",
+        "rank": 10,
+        "quality": "5"
+      },
+      {
+        "name": "Frozen Heart",
+        "rank": 10,
+        "quality": "5"
+      },
+      {
+        "name": "Hellfire Fragment",
+        "rank": 10,
+        "quality": "5"
+      },
+      {
+        "name": "Bottled Hope",
+        "rank": 8,
+        "quality": "5"
+      },
+      {
+        "name": "Seeping Bile",
+        "rank": 8,
+        "quality": "5"
+      },
+      {
+        "name": "Starfire Shard",
+        "rank": 7,
+        "quality": "5"
+      },
+      {
+        "name": "Stormvault",
+        "rank": 6,
+        "quality": "5"
+      },
+      {
+        "name": "Echoing Shade",
+        "rank": 5,
+        "quality": "3"
+      },
+      {
+        "name": "Phoenix Ashes",
+        "rank": 5,
+        "quality": "5"
+      },
+      {
+        "name": "Blessing of the Worthy",
+        "rank": 4,
+        "quality": "2"
+      },
+      {
+        "name": "Blood-Soaked Jade",
+        "rank": 4,
+        "quality": "2"
+      },
+      {
+        "name": "Concentrated Will",
+        "rank": 4,
+        "quality": "2"
+      },
+      {
+        "name": "Howler's Call",
+        "rank": 4,
+        "quality": "2"
+      },
+      {
+        "name": "Maw of the Deep",
+        "rank": 4,
+        "quality": "4"
+      },
+      {
+        "name": "Roiling Consequence",
+        "rank": 4,
+        "quality": "2"
+      },
+      {
+        "name": "Stormvault",
+        "rank": 4,
+        "quality": "2"
+      },
+      {
+        "name": "Blessing of the Worthy",
+        "rank": 3,
+        "quality": "2"
+      },
+      {
+        "name": "Frozen Heart",
+        "rank": 3,
+        "quality": "3"
+      },
+      {
+        "name": "Hellfire Fragment",
+        "rank": 3,
+        "quality": "2"
+      },
+      {
+        "name": "Phoenix Ashes",
+        "rank": 3,
+        "quality": "2"
+      },
+      {
+        "name": "Seeping Bile",
+        "rank": 3,
+        "quality": "3"
+      },
+      {
+        "name": "Seeping Bile",
+        "rank": 3,
+        "quality": "2"
+      },
+      {
+        "name": "Starfire Shard",
+        "rank": 3,
+        "quality": "2"
+      },
+      {
+        "name": "Zwenson's Haunting",
+        "rank": 3,
+        "quality": "3"
+      },
+      {
+        "name": "Zwenson's Haunting",
+        "rank": 3,
+        "quality": "2"
+      },
+      {
+        "name": "Hellfire Fragment",
+        "rank": 2,
+        "quality": "4"
+      },
+      {
+        "name": "Spiteful Blood",
+        "rank": 2,
+        "quality": "4"
+      },
+      {
+        "name": "Void Spark",
+        "rank": 2,
+        "quality": "3"
+      },
+      {
+        "name": "Gloom Cask",
+        "rank": 1,
+        "quality": "2"
+      },
+      {
+        "name": "Maw of the Deep",
+        "rank": 1,
+        "quality": "2"
+      },
+      {
+        "name": "Roiling Consequence",
+        "rank": 1,
+        "quality": "2"
+      },
+      {
+        "name": "Seeping Bile",
+        "rank": 1,
+        "quality": "2"
+      }
+    ],
+    "2_star": [
+      {
+        "name": "Cutthroat's Grin",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Fervent Fang",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Follower's Burden",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Kir Sling",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Lightning Core",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Mother's Lament",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Pain Clasp",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Power & Command",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "The Hunger",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Viper's Bite",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Battleguard",
+        "rank": 8,
+        "quality": null
+      },
+      {
+        "name": "Follower's Burden",
+        "rank": 8,
+        "quality": null
+      },
+      {
+        "name": "The Abiding Curse",
+        "rank": 8,
+        "quality": null
+      },
+      {
+        "name": "Bloody Reach",
+        "rank": 7,
+        "quality": null
+      },
+      {
+        "name": "Grim Rhythm",
+        "rank": 7,
+        "quality": null
+      },
+      {
+        "name": "The Abiding Curse",
+        "rank": 7,
+        "quality": null
+      },
+      {
+        "name": "Unity Crystal",
+        "rank": 7,
+        "quality": null
+      },
+      {
+        "name": "Volatility Shard",
+        "rank": 7,
+        "quality": null
+      },
+      {
+        "name": "Battleguard",
+        "rank": 6,
+        "quality": null
+      },
+      {
+        "name": "Cutthroat's Grin",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "Follower's Burden",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "Kir Sling",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "Lightning Core",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "Lightning Core",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "Pain Clasp",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "Power & Command",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "The Hunger",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "Unity Crystal",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "Volatility Shard",
+        "rank": 5,
+        "quality": null
+      },
+      {
+        "name": "Cutthroat's Grin",
+        "rank": 4,
+        "quality": null
+      },
+      {
+        "name": "Follower's Burden",
+        "rank": 4,
+        "quality": null
+      },
+      {
+        "name": "Grim Rhythm",
+        "rank": 3,
+        "quality": null
+      },
+      {
+        "name": "Lightning Core",
+        "rank": 3,
+        "quality": null
+      }
+    ],
+    "1_star": [
+      {
+        "name": "Berserker's Eye",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Blessed Pebble",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Ca'arsen's Invigoration",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Chained Death",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Everlasting Torment",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Mocking Laughter",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Pain of Subjugation",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Respite Stone",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "The Black Rose",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Trickshot Gem",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Zod Stone",
+        "rank": 10,
+        "quality": null
+      },
+      {
+        "name": "Seled's Weakening",
+        "rank": 9,
+        "quality": null
+      },
+      {
+        "name": "Chained Death",
+        "rank": 6,
+        "quality": null
+      },
+      {
+        "name": "Trickshot Gem",
+        "rank": 6,
+        "quality": null
+      }
+    ]
+  }
+}

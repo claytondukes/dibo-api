@@ -1,28 +1,10 @@
 {
   "registry": {
-    "Lacerate": {
-      "base_type": "weapon",
-      "second_base_type": null,
-      "base_cooldown": null,
-      "description": "Launch a series of attacks that deal 32,590 to 46,929 damage with each hit. The last hit heals you for 15% of damage done."
-    },
-    "Frenzy": {
-      "base_type": "weapon",
-      "second_base_type": null,
-      "base_cooldown": null,
-      "description": "Launch a frenzied attack for 11,390 damage. Each hit increases Frenzy's Attack Speed by 8% for 3 seconds, stacking up to 5 times."
-    },
     "Cleave": {
       "base_type": "damage",
       "second_base_type": null,
       "base_cooldown": "6",
       "description": "Unleash a powerful attack that deals 16,832 damage to all enemies in front of you, and causes them to Bleed for 5,694 damage over 3 seconds. Maximum 3 charges."
-    },
-    "Chained Spear": {
-      "base_type": "gather",
-      "second_base_type": null,
-      "base_cooldown": "10",
-      "description": "Hurl 3 chained spears that deal 9,801 damage and then return, dragging impaled enemies back to you and dealing another 2,450 damage."
     },
     "Demoralize": {
       "base_type": "control",
@@ -92,17 +74,10 @@
     }
   },
   "by_type": {
-    "weapon": [
-      "Lacerate",
-      "Frenzy"
-    ],
     "damage": [
       "Cleave",
       "Hammer Of The Ancients",
       "Whirlwind"
-    ],
-    "gather": [
-      "Chained Spear"
     ],
     "control": [
       "Demoralize",
@@ -112,39 +87,26 @@
     ],
     "dash": [
       "Furious Charge",
-      "Leap",
       "Sunder"
-    ],
-    "multiple-stage": [
-      "Grab"
-    ],
-    "charge": [
-      "Ground Stomp"
     ],
     "buff": [
       "Sprint",
       "Undying Rage",
       "Wrath Of The Berserker"
-    ],
-    "channel": [
-      "Whirlwind"
     ]
   },
   "by_cooldown": {
     "no_cooldown": [
-      "Lacerate",
-      "Frenzy"
+      "Whirlwind"
     ],
     "short": [
       "Cleave",
-      "Chained Spear",
       "Furious Charge",
       "Grab",
       "Ground Stomp",
       "Hammer Of The Ancients",
       "Leap",
-      "Sprint",
-      "Whirlwind"
+      "Sprint"
     ],
     "medium": [
       "Demoralize",

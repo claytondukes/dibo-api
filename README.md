@@ -70,6 +70,58 @@ For example:
 - [Skills Guide](docs/game/skills.md) - Comprehensive skill system documentation
 - [Auxiliary Gems](docs/game/aux_gems.md) - Detailed explanation of the auxiliary gem system
 
+## Managing Your Inventory with GitHub Gists
+
+DIBO uses GitHub Gists to store and manage your personal inventory. This provides a secure, version-controlled way to maintain your inventory data.
+
+### Setting Up Your Inventory
+
+1. Create a new GitHub Gist named `gems.json` with your inventory data:
+
+```json
+{
+  "Berserker's Eye": {
+    "owned_rank": 10,
+    "quality": null
+  },
+  "Blessing of the Worthy": {
+    "owned_rank": 3,
+    "quality": "2"
+  }
+}
+```
+
+2. The gist can be either public or private
+3. When you authenticate with DIBO, it will automatically find and use your `gems.json` gist
+
+### Authentication Flow
+
+1. Click the "Login with GitHub" button
+2. Authorize DIBO to access your GitHub account (requires `gist` scope)
+3. Your inventory will be automatically loaded from your gist
+
+### API Endpoints
+
+#### Get Inventory
+
+```http
+GET /auth/inventory
+Authorization: Bearer <your_token>
+```
+
+Response:
+```json
+{
+  "Berserker's Eye": {
+    "owned_rank": 10,
+    "quality": null
+  },
+  ...
+}
+```
+
+If no inventory gist is found, an empty object `{}` will be returned.
+
 ## Project Structure
 
 ```

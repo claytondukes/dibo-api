@@ -1,0 +1,17 @@
+feat: GitHub Gist inventory system
+
+- Add GitHub Gist integration for storing user inventories
+- Add gist scope to OAuth permissions
+- Add /auth/inventory endpoint to fetch user inventory
+- Add comprehensive tests for inventory functionality
+- Update documentation with Gist setup instructions
+- Remove local registry.json in favor of Gist storage
+
+This change moves user inventories from a local file to GitHub Gists,
+providing a more secure and user-specific storage solution. Each user's
+inventory is stored in their own gist named gems.json, which can be
+either public or private.
+
+Breaking Changes:
+- Removed data/indexed/gems/registry.json
+- OAuth now requires gist scope

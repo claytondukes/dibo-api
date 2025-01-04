@@ -81,3 +81,26 @@ async def get_user_profile(
         name=user.name,
         email=user.email
     )
+
+
+@router.get(
+    "/inventory",
+    summary="Get user's gem inventory",
+    description="Fetch the user's gem inventory from their GitHub gist"
+)
+async def get_inventory(
+    request: Request,
+    auth_service: AuthService = Depends(get_auth_service)
+) -> dict:
+    """Get user's gem inventory from GitHub gist."""
+    # Get token from request
+    token = request.headers.get("Authorization")
+    if not token or not token.startswith("Bearer "):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Missing or invalid authorization token"
+        )
+    token = token.split(" ")[1]
+    
+    # Get inventory from gist
+    return await auth_service.get_inventory_gist(token)

@@ -21,7 +21,13 @@
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "cooldown",
+                "cooldown": 20.0,
+                "text": "cannot occur more often than once every 20 seconds"
+              }
+            ],
             "value": 12.0,
             "unit": "percentage",
             "scaling": false
@@ -33,7 +39,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -42,12 +48,18 @@
             "scaling": false
           }
         ],
-        "conditions": [],
+        "conditions": [
+          {
+            "type": "cooldown",
+            "cooldown": 20.0,
+            "text": "cannot occur more often than once every 20 seconds"
+          }
+        ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "text": "below 50% Life",
             "threshold": 50.0
           }
         ]
@@ -62,12 +74,12 @@
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "when (?:you )?attack"
+                "text": "when attack"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "(?:while |when )?behind"
+                "text": "behind"
               },
               {
                 "type": "state",
@@ -84,12 +96,12 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "text": "when attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "(?:while |when )?behind"
+            "text": "behind"
           },
           {
             "type": "state",
@@ -101,12 +113,12 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "text": "when attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "(?:while |when )?behind"
+            "text": "behind"
           },
           {
             "type": "state",
@@ -207,20 +219,53 @@
         ],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_hit",
+                "text": "When you take damage"
+              },
+              {
+                "type": "state",
+                "state": "target_count",
+                "text": "all nearby enemies"
+              }
+            ],
             "value": 20.0,
             "unit": "percentage",
             "scaling": false
           },
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_hit",
+                "text": "When you take damage"
+              },
+              {
+                "type": "state",
+                "state": "target_count",
+                "text": "all nearby enemies"
+              }
+            ],
             "value": 24.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "conditions": [],
-        "rank_10_conditions": []
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_hit",
+            "text": "When you take damage"
+          },
+          {
+            "type": "state",
+            "state": "target_count",
+            "text": "all nearby enemies"
+          }
+        ]
       },
       {
         "name": "Blood-Soaked Jade",
@@ -235,19 +280,37 @@
         ],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "your attacks"
+              }
+            ],
             "value": 32.0,
             "unit": "percentage",
             "scaling": false
           },
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "your attacks"
+              }
+            ],
             "value": 16.0,
             "unit": "percentage",
             "scaling": false
           },
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "your attacks"
+              }
+            ],
             "max_value": 32.0,
             "min_value": 16.0,
             "unit": "percentage",
@@ -255,7 +318,13 @@
           }
         ],
         "conditions": [],
-        "rank_10_conditions": []
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "your attacks"
+          }
+        ]
       },
       {
         "name": "Ca'arsen's Invigoration",
@@ -285,14 +354,26 @@
         ],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "your attacks"
+              }
+            ],
             "value": 4.5,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "conditions": [],
-        "rank_10_conditions": []
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "your attacks"
+          }
+        ]
       },
       {
         "name": "Chip of Stoned Flesh",
@@ -321,7 +402,14 @@
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "at 10 stacks",
+                "threshold": 10.0
+              }
+            ],
             "value": 0.8,
             "unit": "percentage",
             "scaling": false
@@ -329,20 +417,63 @@
         ],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "your attacks"
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "at 10 stacks",
+                "threshold": 10.0
+              }
+            ],
             "value": 2.4,
             "unit": "percentage",
             "scaling": false
           },
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "your attacks"
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "at 10 stacks",
+                "threshold": 10.0
+              }
+            ],
             "value": 24.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
-        "conditions": [],
-        "rank_10_conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "at 10 stacks",
+            "threshold": 10.0
+          }
+        ],
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "your attacks"
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "at 10 stacks",
+            "threshold": 10.0
+          }
+        ]
       },
       {
         "name": "Follower's Burden",
@@ -393,7 +524,13 @@
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "cooldown",
+                "cooldown": 20.0,
+                "text": "cannot occur more often than once every 20 seconds"
+              }
+            ],
             "value": 20.0,
             "unit": "percentage",
             "scaling": false
@@ -405,7 +542,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -418,7 +555,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -427,12 +564,18 @@
             "scaling": false
           }
         ],
-        "conditions": [],
+        "conditions": [
+          {
+            "type": "cooldown",
+            "cooldown": 20.0,
+            "text": "cannot occur more often than once every 20 seconds"
+          }
+        ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "text": "below 50% Life",
             "threshold": 50.0
           }
         ]
@@ -547,15 +690,36 @@
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "position",
+                "text": "within 3 yards",
+                "threshold": 3.0
+              }
+            ],
             "value": 8.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "rank_10_values": [],
-        "conditions": [],
-        "rank_10_conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "position",
+            "text": "within 3 yards",
+            "threshold": 3.0
+          }
+        ],
+        "rank_10_conditions": [
+          {
+            "type": "state",
+            "state": "position",
+            "text": "within 3 yards",
+            "threshold": 3.0
+          }
+        ]
       },
       {
         "name": "Bottled Hope",
@@ -598,22 +762,60 @@
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "position",
+                "text": "at 8 yards",
+                "threshold": 8.0
+              }
+            ],
             "value": 2.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "rank_10_values": [],
-        "conditions": [],
-        "rank_10_conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "position",
+            "text": "at 8 yards",
+            "threshold": 8.0
+          }
+        ],
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "Your attacks"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "at 8 yards",
+            "threshold": 8.0
+          }
+        ]
       },
       {
         "name": "Grim Rhythm",
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "stacking up to 10 times",
+                "threshold": 10.0
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "While at full stacks"
+              }
+            ],
             "value": 0.8,
             "unit": "percentage",
             "scaling": false
@@ -621,21 +823,63 @@
         ],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "stacking up to 10 times",
+                "threshold": 10.0
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "While at full stacks"
+              }
+            ],
             "value": 2.4,
             "unit": "percentage",
             "scaling": false
           }
         ],
-        "conditions": [],
-        "rank_10_conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "stacking up to 10 times",
+            "threshold": 10.0
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "While at full stacks"
+          }
+        ],
+        "rank_10_conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "stacking up to 10 times",
+            "threshold": 10.0
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "While at full stacks"
+          }
+        ]
       },
       {
         "name": "Starfire Shard",
         "stars": "5",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "cooldown",
+                "cooldown": 20.0,
+                "text": "cannot occur more often than once every 20 seconds"
+              }
+            ],
             "value": 30.0,
             "unit": "percentage",
             "scaling": false
@@ -649,7 +893,13 @@
             "scaling": false
           }
         ],
-        "conditions": [],
+        "conditions": [
+          {
+            "type": "cooldown",
+            "cooldown": 20.0,
+            "text": "cannot occur more often than once every 20 seconds"
+          }
+        ],
         "rank_10_conditions": []
       },
       {
@@ -657,14 +907,28 @@
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "position",
+                "text": "within 3 yards",
+                "threshold": 3.0
+              }
+            ],
             "value": 8.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "rank_10_values": [],
-        "conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "position",
+            "text": "within 3 yards",
+            "threshold": 3.0
+          }
+        ]
       },
       {
         "name": "Chained Death",
@@ -870,14 +1134,38 @@
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "stacking up to 10 times",
+                "threshold": 10.0
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "While at full stacks"
+              }
+            ],
             "value": 0.8,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "rank_10_values": [],
-        "conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "stacking up to 10 times",
+            "threshold": 10.0
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "While at full stacks"
+          }
+        ]
       },
       {
         "name": "Phoenix Ashes",
@@ -898,14 +1186,26 @@
         "stars": "5",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "cooldown",
+                "cooldown": 20.0,
+                "text": "cannot occur more often than once every 20 seconds"
+              }
+            ],
             "value": 30.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "rank_10_values": [],
-        "conditions": []
+        "conditions": [
+          {
+            "type": "cooldown",
+            "cooldown": 20.0,
+            "text": "cannot occur more often than once every 20 seconds"
+          }
+        ]
       },
       {
         "name": "Spiteful Blood",
@@ -916,8 +1216,13 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
+              },
+              {
+                "type": "cooldown",
+                "cooldown": 20.0,
+                "text": "cannot occur more often than once every 20 seconds"
               }
             ],
             "value": 50.0,
@@ -929,8 +1234,13 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
+              },
+              {
+                "type": "cooldown",
+                "cooldown": 20.0,
+                "text": "cannot occur more often than once every 20 seconds"
               }
             ],
             "value": 30.0,
@@ -944,7 +1254,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -957,7 +1267,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -970,7 +1280,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -983,15 +1293,20 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "text": "below 50% Life",
             "threshold": 50.0
+          },
+          {
+            "type": "cooldown",
+            "cooldown": 20.0,
+            "text": "cannot occur more often than once every 20 seconds"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "text": "below 50% Life",
             "threshold": 50.0
           }
         ]
@@ -1022,21 +1337,45 @@
         "base_values": [],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "Your attacks"
+              }
+            ],
             "value": 10.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "conditions": [],
-        "rank_10_conditions": []
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "Your attacks"
+          }
+        ]
       },
       {
         "name": "Grim Rhythm",
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "stacking up to 10 times",
+                "threshold": 10.0
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "While at full stacks"
+              }
+            ],
             "value": 0.8,
             "unit": "percentage",
             "scaling": false
@@ -1044,28 +1383,88 @@
         ],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "stacking up to 10 times",
+                "threshold": 10.0
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "While at full stacks"
+              }
+            ],
             "value": 2.4,
             "unit": "percentage",
             "scaling": false
           }
         ],
-        "conditions": [],
-        "rank_10_conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "stacking up to 10 times",
+            "threshold": 10.0
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "While at full stacks"
+          }
+        ],
+        "rank_10_conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "stacking up to 10 times",
+            "threshold": 10.0
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "While at full stacks"
+          }
+        ]
       },
       {
         "name": "Grim Rhythm",
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "stacking up to 10 times",
+                "threshold": 10.0
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "While at full stacks"
+              }
+            ],
             "value": 0.8,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "rank_10_values": [],
-        "conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "stacking up to 10 times",
+            "threshold": 10.0
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "While at full stacks"
+          }
+        ]
       }
     ],
     "essences": []
@@ -1093,14 +1492,26 @@
         "base_values": [],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "your attacks"
+              }
+            ],
             "value": 20.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "conditions": [],
-        "rank_10_conditions": []
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "your attacks"
+          }
+        ]
       },
       {
         "name": "Bottled Hope",
@@ -1137,14 +1548,26 @@
         ],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "Your attacks"
+              }
+            ],
             "value": 50.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "conditions": [],
-        "rank_10_conditions": []
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "Your attacks"
+          }
+        ]
       },
       {
         "name": "Bloody Reach",
@@ -1152,21 +1575,64 @@
         "base_values": [],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "Your attacks"
+              },
+              {
+                "type": "state",
+                "state": "position",
+                "text": "at 8 yards",
+                "threshold": 8.0
+              }
+            ],
             "value": 35.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
-        "conditions": [],
-        "rank_10_conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "position",
+            "text": "at 8 yards",
+            "threshold": 8.0
+          }
+        ],
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "Your attacks"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "at 8 yards",
+            "threshold": 8.0
+          }
+        ]
       },
       {
         "name": "Grim Rhythm",
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "stacking up to 10 times",
+                "threshold": 10.0
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "While at full stacks"
+              }
+            ],
             "value": 9.0,
             "unit": "percentage",
             "scaling": false
@@ -1174,14 +1640,50 @@
         ],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "stacking up to 10 times",
+                "threshold": 10.0
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "While at full stacks"
+              }
+            ],
             "value": 12.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
-        "conditions": [],
-        "rank_10_conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "stacking up to 10 times",
+            "threshold": 10.0
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "While at full stacks"
+          }
+        ],
+        "rank_10_conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "stacking up to 10 times",
+            "threshold": 10.0
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "While at full stacks"
+          }
+        ]
       },
       {
         "name": "The Abiding Curse",
@@ -1217,14 +1719,38 @@
         "stars": "2",
         "base_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "stacking up to 10 times",
+                "threshold": 10.0
+              },
+              {
+                "type": "state",
+                "state": "stacks",
+                "text": "While at full stacks"
+              }
+            ],
             "value": 9.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "rank_10_values": [],
-        "conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "stacking up to 10 times",
+            "threshold": 10.0
+          },
+          {
+            "type": "state",
+            "state": "stacks",
+            "text": "While at full stacks"
+          }
+        ]
       }
     ],
     "essences": []
@@ -1237,14 +1763,36 @@
         "base_values": [],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_hit",
+                "text": "When you take damage"
+              },
+              {
+                "type": "state",
+                "state": "target_count",
+                "text": "all nearby enemies"
+              }
+            ],
             "value": 10.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "conditions": [],
-        "rank_10_conditions": []
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_hit",
+            "text": "When you take damage"
+          },
+          {
+            "type": "state",
+            "state": "target_count",
+            "text": "all nearby enemies"
+          }
+        ]
       },
       {
         "name": "Blood-Soaked Jade",
@@ -1265,14 +1813,26 @@
         ],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "trigger",
+                "trigger": "on_attack",
+                "text": "your attacks"
+              }
+            ],
             "value": 16.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "conditions": [],
-        "rank_10_conditions": []
+        "rank_10_conditions": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "your attacks"
+          }
+        ]
       },
       {
         "name": "Frozen Heart",
@@ -1299,7 +1859,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -1308,12 +1868,18 @@
             "scaling": false
           }
         ],
-        "conditions": [],
+        "conditions": [
+          {
+            "type": "cooldown",
+            "cooldown": 20.0,
+            "text": "cannot occur more often than once every 20 seconds"
+          }
+        ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "text": "below 50% Life",
             "threshold": 50.0
           }
         ]
@@ -1356,7 +1922,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "above (\\d+)% (?:life|health)",
+                "text": "above 75% Life",
                 "threshold": 75.0
               }
             ],
@@ -1369,7 +1935,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "above (\\d+)% (?:life|health)",
+                "text": "above 75% Life",
                 "threshold": 75.0
               }
             ],
@@ -1383,7 +1949,7 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "above (\\d+)% (?:life|health)",
+            "text": "above 75% Life",
             "threshold": 75.0
           }
         ]
@@ -1394,14 +1960,35 @@
         "base_values": [],
         "rank_10_values": [
           {
-            "conditions": [],
+            "conditions": [
+              {
+                "type": "state",
+                "state": "position",
+                "text": "within 3 yards",
+                "threshold": 3.0
+              }
+            ],
             "value": 60.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
-        "conditions": [],
-        "rank_10_conditions": []
+        "conditions": [
+          {
+            "type": "state",
+            "state": "position",
+            "text": "within 3 yards",
+            "threshold": 3.0
+          }
+        ],
+        "rank_10_conditions": [
+          {
+            "type": "state",
+            "state": "position",
+            "text": "within 3 yards",
+            "threshold": 3.0
+          }
+        ]
       },
       {
         "name": "Blood-Soaked Jade",
@@ -1433,7 +2020,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below (\\d+)% (?:life|health)",
+                "text": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -1446,15 +2033,20 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "text": "below 50% Life",
             "threshold": 50.0
+          },
+          {
+            "type": "cooldown",
+            "cooldown": 20.0,
+            "text": "cannot occur more often than once every 20 seconds"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "text": "below 50% Life",
             "threshold": 50.0
           }
         ]
