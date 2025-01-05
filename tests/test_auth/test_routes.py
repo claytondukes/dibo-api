@@ -17,7 +17,7 @@ def test_github_login(client: TestClient):
     data = response.json()
     assert "auth_url" in data
     assert "state" in data
-    assert settings.active_github_client_id in data["auth_url"]
+    assert "test_client_id" in data["auth_url"]
     assert "callback" in data["auth_url"]
 
 
