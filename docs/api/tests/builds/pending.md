@@ -23,9 +23,10 @@ This document tracks tests that still need to be implemented for the build gener
    - Test class-specific requirements
    - Verify build type constraints
    - Check focus-specific needs
-   - Status: Not Started
+   - Status: Implemented
    - Priority: High
    - Dependencies: None
+   - Documentation: [requirements.md](./requirements.md)
 
 ### Integration Tests
 
@@ -70,13 +71,14 @@ This document tracks tests that still need to be implemented for the build gener
 ## Notes
 
 1. Already Implemented:
-   - Basic skill validation ✅
-   - Skill selection by build type ✅
-   - Skill selection by focus ✅
-   - Cooldown distribution ✅
-   - Equipment selection ✅
-   - Essence integration ✅
-   - Gem integration ✅
+   - Basic skill validation 
+   - Skill selection by build type 
+   - Skill selection by focus 
+   - Cooldown distribution 
+   - Equipment selection 
+   - Essence integration 
+   - Gem integration 
+   - Build specific requirements 
 
 2. Test Dependencies:
    - All basic validation tests must pass

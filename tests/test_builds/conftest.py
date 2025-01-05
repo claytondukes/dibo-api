@@ -6,6 +6,12 @@ from pathlib import Path
 
 
 @pytest.fixture
+def mock_auth_token():
+    """Mock authentication token for testing."""
+    return "test_token"
+
+
+@pytest.fixture
 def base_test_data(tmp_path: Path) -> dict:
     """Create base test data structure used across tests.
     
@@ -13,190 +19,174 @@ def base_test_data(tmp_path: Path) -> dict:
         dict: Dictionary containing the base test data structures
     """
     return {
-        "base_skills": {
-            "registry": {
-                "Cleave": {
-                    "base_type": "damage",
-                    "second_base_type": None,
-                    "base_cooldown": "6",
-                    "description": "Test skill description"
-                },
-                "Ground_Stomp": {
-                    "base_type": "control",
-                    "second_base_type": None,
-                    "base_cooldown": "9",
-                    "description": "Test skill description"
-                },
-                "Leap": {
-                    "base_type": "dash",
-                    "second_base_type": None,
-                    "base_cooldown": "12",
-                    "description": "Test skill description"
-                },
-                "Frenzy": {
-                    "base_type": "weapon",
-                    "second_base_type": None,
-                    "base_cooldown": "0",
-                    "description": "Test weapon skill"
+        "metadata": {
+            "version": "1.0",
+            "last_updated": "2025-01-04",
+            "total_count": 4
+        },
+        "stats": {
+            "metadata": {
+                "version": "1.0",
+                "last_updated": "2025-01-04"
+            },
+            "stats": {
+                "critical_hit_chance": {
+                    "base": 5.0,
+                    "max": 100.0
                 }
             }
         },
-        "stats": {
-            "critical_hit_chance": {
-                "gems": [
-                    {
-                        "name": "Berserker's Eye",
-                        "stars": "1",
-                        "base_values": [],
-                        "rank_10_values": [
-                            {
-                                "conditions": [],
-                                "value": 2.0,
-                                "unit": "percentage",
-                                "scaling": False
-                            }
-                        ]
-                    }
-                ],
-                "essences": []
-            },
-            "damage_increase": {
-                "gems": [],
-                "essences": []
-            },
-            "attack_speed": {
-                "gems": [],
-                "essences": []
-            },
-            "movement_speed": {
-                "gems": [],
-                "essences": []
-            }
-        },
         "synergies": {
-            "critical_hit": {
-                "gems": ["Berserker's Eye"],
-                "essences": [],
-                "skills": []
+            "metadata": {
+                "version": "1.0",
+                "last_updated": "2025-01-04"
             },
-            "damage_boost": {
-                "gems": ["Berserker's Eye"],
-                "essences": [],
-                "skills": ["Cleave"]
-            },
-            "control_boost": {
-                "gems": [],
-                "essences": [],
-                "skills": ["Ground_Stomp"]
+            "synergies": {
+                "critical_hit": {
+                    "gems": ["test_gem"],
+                    "essences": ["test_essence"],
+                    "skills": ["cleave"]
+                }
             }
         },
         "constraints": {
-            "skill_types": {
-                "damage": {"min": 1, "max": 3},
-                "control": {"min": 1, "max": 2}
-            },
             "gem_slots": {
                 "total_required": 8,
                 "primary": {
                     "required": 8,
                     "unique": True,
                     "star_ratings": [1, 2, 5]
-                },
-                "auxiliary": {
-                    "required": 0,
-                    "must_match_primary_stars": True,
-                    "unique": True
                 }
             },
             "essence_slots": {
-                "total_required": 8,
-                "slots": {}
+                "total_required": 6,
+                "unique": True
             }
         },
-        "gem_data": {
-            "progression": {
-                "Berserker's Eye": {
-                    "stars": "1",
-                    "ranks": {
-                        "1": {
-                            "effects": [
-                                {
-                                    "type": "stat_effect",
-                                    "text": "Increases all damage you deal by 5",
-                                    "conditions": []
-                                }
-                            ]
-                        }
-                    }
-                }
-            },
-            "stat_boosts": {},
-            "synergies": {},
-            "gems": {}
-        },
-        "equipment_data": {
-            "sets": {}
-        },
-        "class_data": {
-            "essences": {
-                "metadata": {
-                    "version": "1.0.0",
-                    "last_updated": "2025-01-04",
-                    "class": "Barbarian",
-                    "total_essences": 2,
+        "classes": {
+            "barbarian": {
+                "base_skills": {
+                    "metadata": {
+                        "version": "1.0",
+                        "last_updated": "2025-01-04"
+                    },
                     "skills": {
-                        "Cleave": {
-                            "description": "Test skill",
-                            "essence_count": 1
-                        },
-                        "Ground_Stomp": {
-                            "description": "Test skill",
-                            "essence_count": 1
+                        "cleave": {
+                            "skill_name": "Cleave",
+                            "base_type": "damage",
+                            "second_base_type": None,
+                            "categories": ["damage", "melee"],
+                            "cooldown": 6,
+                            "slot": "primary"
                         }
                     }
                 },
                 "essences": {
-                    "test_essence_1": {
-                        "essence_name": "Test Essence 1",
-                        "gear_slot": "Helm",
-                        "modifies_skill": "Cleave",
-                        "effect": "Test effect"
+                    "metadata": {
+                        "version": "1.0",
+                        "last_updated": "2025-01-04"
                     },
-                    "test_essence_2": {
-                        "essence_name": "Test Essence 2",
-                        "gear_slot": "Chest",
-                        "modifies_skill": "Ground_Stomp",
-                        "effect": "Test effect"
+                    "essences": {
+                        "test_essence": {
+                            "name": "Test Essence",
+                            "type": "legendary",
+                            "slot": "weapon"
+                        }
+                    },
+                    "indexes": {
+                        "by_slot": {
+                            "weapon": ["test_essence"]
+                        }
                     }
                 },
-                "indexes": {
-                    "by_slot": {
-                        "Helm": ["test_essence_1"],
-                        "Chest": ["test_essence_2"]
+                "constraints": {
+                    "gem_slots": {
+                        "total_required": 8,
+                        "unique": True
                     },
-                    "by_skill": {
-                        "Cleave": ["test_essence_1"],
-                        "Ground_Stomp": ["test_essence_2"]
+                    "essence_slots": {
+                        "total_required": 6,
+                        "unique": True
+                    }
+                }
+            }
+        },
+        "equipment": {
+            "sets": {
+                "metadata": {
+                    "version": "1.0",
+                    "last_updated": "2025-01-04"
+                },
+                "sets": {
+                    "test_set": {
+                        "name": "Test Set",
+                        "pieces": ["test_helm", "test_chest"],
+                        "bonuses": {
+                            "2": ["critical_hit_chance+5"]
+                        }
+                    }
+                },
+                "gear": {
+                    "head": {
+                        "test_helm": {
+                            "name": "Test Helm",
+                            "slot": "head",
+                            "set": "test_set",
+                            "stats": ["critical_hit_chance+2"]
+                        }
+                    }
+                }
+            }
+        },
+        "gems": {
+            "progression": {
+                "metadata": {
+                    "version": "1.0",
+                    "last_updated": "2025-01-04"
+                },
+                "progression": {
+                    "test_gem": {
+                        "ranks": {
+                            "1": {"power": 1},
+                            "10": {"power": 10}
+                        }
                     }
                 }
             },
-            "constraints": {
-                "max_skills": 4,
-                "required_types": {
-                    "damage": 1,
-                    "control": 1
+            "stat_boosts": {
+                "metadata": {
+                    "version": "1.0",
+                    "last_updated": "2025-01-04"
                 },
-                "skill_slots": {
-                    "available_skills": [
-                        "Cleave",
-                        "Ground_Stomp",
-                        "Leap"
-                    ]
+                "boosts": {
+                    "test_gem": {
+                        "critical_hit_chance": 2.0
+                    }
+                }
+            },
+            "synergies": {
+                "metadata": {
+                    "version": "1.0",
+                    "last_updated": "2025-01-04"
                 },
-                "weapon_slots": {
-                    "available_weapons": [
-                        "Frenzy"
-                    ]
+                "synergies": {
+                    "test_gem": {
+                        "skills": ["cleave"],
+                        "essences": ["test_essence"]
+                    }
+                }
+            },
+            "gems": {
+                "metadata": {
+                    "version": "1.0",
+                    "last_updated": "2025-01-04"
+                },
+                "gems": {
+                    "test_gem": {
+                        "name": "Test Gem",
+                        "type": "legendary",
+                        "stats": ["critical_hit_chance"]
+                    }
                 }
             }
         }
@@ -205,38 +195,45 @@ def base_test_data(tmp_path: Path) -> dict:
 
 @pytest.fixture
 def test_data_dir(tmp_path: Path, base_test_data: dict) -> Path:
-    """Create test data directory with minimal required data.
-    
-    Args:
-        tmp_path: Pytest fixture providing temporary directory
-        base_test_data: Base test data structure
-        
-    Returns:
-        Path: Path to the indexed data directory
-    """
-    # Create data/indexed directory structure
+    """Create test data directory with minimal required data."""
+    # Create indexed directory
     indexed_dir = tmp_path / "data" / "indexed"
     indexed_dir.mkdir(parents=True)
-    
-    # Define file mapping
-    files_to_create = {
-        "stats.json": base_test_data["stats"],
-        "synergies.json": base_test_data["synergies"],
-        "constraints.json": base_test_data["constraints"],
-        "gems/progression.json": base_test_data["gem_data"]["progression"],
-        "gems/stat_boosts.json": base_test_data["gem_data"]["stat_boosts"],
-        "gems/synergies.json": base_test_data["gem_data"]["synergies"],
-        "gems/gems.json": base_test_data["gem_data"]["gems"],
-        "equipment/sets.json": base_test_data["equipment_data"]["sets"],
-        "classes/barbarian/base_skills.json": base_test_data["base_skills"],
-        "classes/barbarian/essences.json": base_test_data["class_data"]["essences"],
-        "classes/barbarian/constraints.json": base_test_data["class_data"]["constraints"]
-    }
-    
-    # Write all files
-    for filename, content in files_to_create.items():
-        file_path = indexed_dir / filename
-        file_path.parent.mkdir(parents=True, exist_ok=True)
-        file_path.write_text(json.dumps(content))
-    
+
+    # Create required directories
+    (indexed_dir / "classes").mkdir()
+    (indexed_dir / "classes/barbarian").mkdir()
+    (indexed_dir / "equipment").mkdir()
+    (indexed_dir / "gems").mkdir()
+
+    # Write core data files
+    with open(indexed_dir / "synergies.json", "w") as f:
+        json.dump(base_test_data["synergies"], f)
+    with open(indexed_dir / "constraints.json", "w") as f:
+        json.dump(base_test_data["constraints"], f)
+    with open(indexed_dir / "stats.json", "w") as f:
+        json.dump(base_test_data["stats"], f)
+
+    # Write class data files
+    with open(indexed_dir / "classes/barbarian/base_skills.json", "w") as f:
+        json.dump(base_test_data["classes"]["barbarian"]["base_skills"], f)
+    with open(indexed_dir / "classes/barbarian/essences.json", "w") as f:
+        json.dump(base_test_data["classes"]["barbarian"]["essences"], f)
+    with open(indexed_dir / "classes/barbarian/constraints.json", "w") as f:
+        json.dump(base_test_data["classes"]["barbarian"]["constraints"], f)
+
+    # Write equipment data files
+    with open(indexed_dir / "equipment/sets.json", "w") as f:
+        json.dump(base_test_data["equipment"]["sets"], f)
+
+    # Write gem data files
+    with open(indexed_dir / "gems/progression.json", "w") as f:
+        json.dump(base_test_data["gems"]["progression"], f)
+    with open(indexed_dir / "gems/stat_boosts.json", "w") as f:
+        json.dump(base_test_data["gems"]["stat_boosts"], f)
+    with open(indexed_dir / "gems/synergies.json", "w") as f:
+        json.dump(base_test_data["gems"]["synergies"], f)
+    with open(indexed_dir / "gems/gems.json", "w") as f:
+        json.dump(base_test_data["gems"]["gems"], f)
+
     return indexed_dir

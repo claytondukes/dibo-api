@@ -1,19 +1,32 @@
 """Build routes."""
 
 from typing import Optional
-from fastapi import APIRouter, Depends, Query
-
+from fastapi import APIRouter, Depends, Query, HTTPException, status
 from ..auth.service import AuthService, get_auth_service
+from ..core.config import get_settings
 from .models import BuildFocus, BuildResponse, BuildType, BuildRecommendation
 from .service import BuildService
-
+from pathlib import Path
 
 router = APIRouter(prefix="/builds", tags=["builds"])
-_build_service = BuildService()
 
+# Initialize build service lazily
+def get_build_service():
+    """Get build service instance."""
+    settings = get_settings()
+    if settings.TESTING:
+        if settings.TEST_DATA_DIR:
+            return BuildService(data_dir=Path(settings.TEST_DATA_DIR))
+        return None
+    return BuildService()
 
-def get_build_service() -> BuildService:
-    """Get BuildService instance."""
+_build_service = None
+
+def get_service():
+    """Get or create build service instance."""
+    global _build_service
+    if _build_service is None:
+        _build_service = get_build_service()
     return _build_service
 
 
@@ -30,10 +43,16 @@ async def generate_build(
         False,
         description="Whether to consider user's inventory"
     ),
-    build_service: BuildService = Depends(get_build_service),
+    build_service: BuildService = Depends(get_service),
     auth_service: AuthService = Depends(get_auth_service)
 ) -> BuildResponse:
     """Generate a build based on specified criteria."""
+    if build_service is None:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Build service not available"
+        )
+    
     inventory = None
     if use_inventory:
         # Get user's inventory from GitHub gist
@@ -54,7 +73,13 @@ async def generate_build(
 )
 async def analyze_build(
     build: BuildRecommendation,
-    build_service: BuildService = Depends(get_build_service)
+    build_service: BuildService = Depends(get_service)
 ) -> BuildResponse:
     """Analyze a specific build configuration."""
+    if build_service is None:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="Build service not available"
+        )
+    
     return await build_service.analyze_build(build)
