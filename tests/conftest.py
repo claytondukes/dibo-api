@@ -8,6 +8,14 @@ from fastapi.testclient import TestClient
 from api.core.config import Settings, get_settings
 from api.main import app
 
+# Define custom markers
+def pytest_configure(config):
+    """Configure custom pytest markers."""
+    config.addinivalue_line(
+        "markers",
+        "stable: mark test as stable and well-maintained"
+    )
+
 # Set test environment variables
 os.environ.update({
     'PROJECT_ROOT': str(Path(__file__).parent.parent),

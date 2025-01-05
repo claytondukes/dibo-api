@@ -31,6 +31,7 @@ def mock_github_token_response():
     }
 
 
+@pytest.mark.stable
 def test_complete_oauth_flow(
     client: TestClient,
     test_settings: Settings,
@@ -88,6 +89,7 @@ def test_complete_oauth_flow(
             assert profile_response.json()["username"] == mock_github_user_response["login"]
 
 
+@pytest.mark.stable
 def test_github_token_exchange_failure(client: TestClient, test_settings: Settings):
     """Test handling of GitHub token exchange failure."""
     # Get valid state token first
@@ -107,6 +109,7 @@ def test_github_token_exchange_failure(client: TestClient, test_settings: Settin
         assert "Failed to exchange code for token" in response.json()["detail"]
 
 
+@pytest.mark.stable
 def test_github_user_info_failure(
     client: TestClient,
     test_settings: Settings,
