@@ -79,6 +79,52 @@ dibo-api/
 - [API Reference](docs/api/v1.md) - Complete API documentation
 - [Game Mechanics](docs/game/mechanics.md) - Core game systems
 
+## Roadmap
+
+### Build Management
+- [ ] Enhanced build metadata and statistics
+  - Combat rating breakdown
+  - Resonance calculations
+  - Skill synergy analysis
+  - Damage type distribution
+  - Stat priority recommendations
+  
+- [ ] Build comparison features
+  - Side-by-side stat comparison
+  - Gear upgrade recommendations
+  - Cost/benefit analysis
+  - Performance metrics
+  - Visual comparisons
+
+- [ ] Build sharing and collaboration
+  - Build forking
+  - Community ratings and reviews
+  - Build versioning
+  - Build templates
+  - Build collections/folders
+
+- [ ] Advanced build analytics
+  - DPS simulations
+  - Survivability metrics
+  - Resource management analysis
+  - PvP effectiveness scoring
+  - Boss fight optimization
+
+### Inventory Management
+- [ ] Enhanced inventory tracking
+  - Item history
+  - Upgrade tracking
+  - Resource management
+  - Market value estimates
+  - Farming recommendations
+
+### API Improvements
+- [ ] Performance optimizations
+- [ ] Rate limiting and caching
+- [ ] Webhook support for build updates
+- [ ] GraphQL endpoint
+- [ ] WebSocket real-time updates
+
 ## Contributing
 
 1. Fork the repository

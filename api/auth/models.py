@@ -1,41 +1,27 @@
 """Authentication models."""
 
-from typing import Optional
-
-from pydantic import BaseModel, EmailStr, HttpUrl, ConfigDict
+from pydantic import BaseModel, EmailStr, HttpUrl, Field
 
 
 class GitHubUser(BaseModel):
-    """GitHub user profile data."""
-    
-    model_config = ConfigDict(extra='allow')  # Allow extra fields from GitHub API
-    
+    """GitHub user model."""
     id: int
     login: str
-    name: Optional[str] = None
-    email: Optional[EmailStr] = None
-    avatar_url: Optional[HttpUrl] = None
-
-
-class UserProfile(BaseModel):
-    """User profile response model."""
-    
-    id: str
-    username: str
-    avatar_url: Optional[str] = None
-    name: Optional[str] = None
-    email: Optional[str] = None
-
-
-class OAuthState(BaseModel):
-    """OAuth state data for CSRF protection."""
-    
-    state: str
-    redirect_uri: Optional[HttpUrl] = None
+    name: str | None = None
+    email: EmailStr | None = None
+    avatar_url: HttpUrl | None = None
 
 
 class OAuthCallback(BaseModel):
-    """OAuth callback request data."""
-    
-    code: str
-    state: str
+    """OAuth callback parameters."""
+    code: str = Field(description="OAuth code from GitHub")
+    state: str = Field(description="State parameter for CSRF protection")
+
+
+class UserProfile(BaseModel):
+    """User profile model."""
+    id: str
+    username: str
+    name: str | None = None
+    email: EmailStr | None = None
+    avatar_url: HttpUrl | None = None

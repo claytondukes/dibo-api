@@ -9,17 +9,15 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .auth.routes import router as auth_router
-from .builds.routes import router as build_router
-from .data.routes import router as data_router
-from .core.config import get_settings
+from .core.config import Settings, get_settings
 
 
 settings = get_settings()
 
 # Configure logging
 logging.basicConfig(
-    level=settings.LOG_LEVEL,
-    format=settings.LOG_FORMAT
+    level="INFO",
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
 
@@ -38,42 +36,56 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logger.info("Shutting down %s", settings.PROJECT_NAME)
 
 
-# Create FastAPI app
-app = FastAPI(
-    title=settings.PROJECT_NAME,
-    description="Diablo Immortal Build Optimizer API",
-    version=settings.VERSION,
-    docs_url=f"{settings.API_V1_STR}/docs",
-    redoc_url=f"{settings.API_V1_STR}/redoc",
-    openapi_url=f"{settings.API_V1_STR}/openapi.json",
-    debug=settings.DEBUG,
-    lifespan=lifespan
-)
+def create_app() -> FastAPI:
+    """Create FastAPI application."""
+    settings = get_settings()
+    
+    app = FastAPI(
+        title=settings.PROJECT_NAME,
+        description="Diablo Immortal Build Optimizer API",
+        version=settings.VERSION,
+        docs_url=f"{settings.API_V1_STR}/docs",
+        redoc_url=f"{settings.API_V1_STR}/redoc",
+        openapi_url=f"{settings.API_V1_STR}/openapi.json",
+        lifespan=lifespan
+    )
 
-# Add CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
-    allow_credentials=settings.ALLOW_CREDENTIALS,
-    allow_methods=settings.ALLOW_METHODS,
-    allow_headers=settings.ALLOW_HEADERS,
-)
+    # Set CORS middleware
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],  # TODO: Configure this for production
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
-# Include routers
-app.include_router(auth_router, prefix=settings.API_V1_STR)
-app.include_router(build_router, prefix=settings.API_V1_STR)
-app.include_router(data_router, prefix=settings.API_V1_STR)
+    # Add routers
+    app.include_router(auth_router, prefix=settings.API_V1_STR)
+
+    return app
 
 
-def main() -> None:
+app = create_app()
+
+
+@app.get("/")
+async def root():
+    """Root endpoint."""
+    return {
+        "name": settings.PROJECT_NAME,
+        "version": settings.VERSION,
+        "docs": f"{settings.API_V1_STR}/docs",
+        "redoc": f"{settings.API_V1_STR}/redoc"
+    }
+
+
+def main():
     """Run application with uvicorn."""
-    logger.info("Starting uvicorn server")
     uvicorn.run(
         "api.main:app",
-        host=settings.HOST,
-        port=settings.PORT,
-        reload=settings.RELOAD,
-        log_level=settings.LOG_LEVEL.lower()
+        host="0.0.0.0",
+        port=8000,
+        reload=True
     )
 
 

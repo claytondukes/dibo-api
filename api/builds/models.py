@@ -1,7 +1,7 @@
 """Build models and schemas."""
 
 from enum import Enum
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 from pydantic import BaseModel, Field
 
@@ -69,3 +69,12 @@ class BuildResponse(BaseModel):
     build: BuildRecommendation
     stats: BuildStats
     recommendations: List[str] = Field(default_factory=list)
+    name: str
+    type: BuildType
+    focus: BuildFocus
+    gear: Dict[str, Dict]
+    sets: Dict[str, Dict]
+    skills: Dict[str, Dict]
+    paragon: Dict[str, Dict]
+    gist_url: Optional[str] = None  # URL to view the saved build
+    raw_url: Optional[str] = None   # URL to get the raw JSON

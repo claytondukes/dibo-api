@@ -1,106 +1,176 @@
 """Authentication routes."""
 
-from fastapi import APIRouter, Depends, Request, status, HTTPException
-from fastapi.security import OAuth2PasswordBearer
+from typing import Dict, List, Optional
+from fastapi import APIRouter, Depends, HTTPException, Header, Query, status, Body
+from pydantic import BaseModel
 
-from ..core.config import get_settings
-from .models import GitHubUser, OAuthCallback, UserProfile
-from .service import AuthService
+from api.core.config import Settings, get_settings
+from api.auth.service import AuthService, get_auth_service
 
 
-settings = get_settings()
 router = APIRouter(prefix="/auth", tags=["auth"])
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
-
-# Singleton instance
-_auth_service = AuthService(settings)
 
 
-def get_auth_service() -> AuthService:
-    """Get AuthService instance."""
-    return _auth_service
+class GitHubLoginResponse(BaseModel):
+    """Response model for GitHub login."""
+    auth_url: str
+    state: str
 
 
-@router.get(
-    "/github/login",
-    summary="Start GitHub OAuth flow",
-    description="Generate OAuth URL and state for GitHub authentication"
-)
+class GitHubCallbackResponse(BaseModel):
+    """Response model for GitHub callback."""
+    access_token: str
+    token_type: str
+    scope: str
+
+
+class GistCreate(BaseModel):
+    """Schema for creating a gist."""
+    filename: str
+    content: str
+    description: Optional[str] = None
+
+
+class GistUpdate(BaseModel):
+    """Schema for updating a gist."""
+    filename: str
+    content: str
+    description: Optional[str] = None
+
+
+def get_token(authorization: str = Header(None)) -> str:
+    """Extract token from Authorization header."""
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Could not validate credentials"
+        )
+    return authorization.split(" ")[1]
+
+
+@router.get("/login", response_model=GitHubLoginResponse)
 async def github_login(
     auth_service: AuthService = Depends(get_auth_service)
-) -> dict:
-    """Generate GitHub OAuth URL and state."""
-    return auth_service.generate_oauth_url()
+) -> Dict[str, str]:
+    """Get GitHub login URL."""
+    return auth_service.generate_github_login_url()
 
 
-@router.post(
-    "/github",
-    summary="Complete GitHub OAuth flow",
-    description="Exchange OAuth code for access token"
-)
+@router.get("/github/callback", response_model=GitHubCallbackResponse)
 async def github_callback(
-    data: OAuthCallback,
+    code: str = Query(..., description="GitHub OAuth code"),
+    state: str = Query(..., description="CSRF state token"),
     auth_service: AuthService = Depends(get_auth_service)
-) -> dict:
+) -> Dict[str, str]:
     """Handle GitHub OAuth callback."""
-    return await auth_service.exchange_code_for_token(
-        data.code,
-        data.state
-    )
+    try:
+        return await auth_service.exchange_code_for_token(code, state)
+    except ValueError as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(e)
+        )
 
 
-@router.get(
-    "/user",
-    response_model=UserProfile,
-    summary="Get user profile",
-    description="Get current user's GitHub profile"
-)
-async def get_user_profile(
-    request: Request,
+@router.get("/gists")
+async def get_gists(
+    token: str = Depends(get_token),
     auth_service: AuthService = Depends(get_auth_service)
-) -> UserProfile:
-    """Get current user's GitHub profile."""
-    token = request.headers.get("Authorization")
-    if not token or not token.startswith("Bearer "):
+) -> List[Dict]:
+    """Get user's gists."""
+    try:
+        return await auth_service.get_user_gists(token)
+    except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Not authenticated"
+            detail="Could not validate credentials"
         )
-    
-    # Extract token
-    token = token.split(" ")[1]
-    
-    # Get user profile
-    user = await auth_service._get_github_user(token)
-    
-    # Convert to response format
-    return UserProfile(
-        id=str(user.id),
-        username=user.login,
-        avatar_url=str(user.avatar_url) if user.avatar_url else None,
-        name=user.name,
-        email=user.email
-    )
 
 
-@router.get(
-    "/inventory",
-    summary="Get user's gem inventory",
-    description="Fetch the user's gem inventory from their GitHub gist"
-)
+@router.post("/gists", status_code=status.HTTP_201_CREATED)
+async def create_gist(
+    gist: GistCreate,
+    token: str = Depends(get_token),
+    auth_service: AuthService = Depends(get_auth_service)
+) -> Dict:
+    """Create a new gist."""
+    try:
+        return await auth_service.create_gist(
+            token,
+            gist.filename,
+            gist.content,
+            gist.description
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail="Failed to create gist"
+        )
+
+
+@router.patch("/gists/{gist_id}")
+async def update_gist(
+    gist_id: str,
+    gist: GistUpdate,
+    token: str = Depends(get_token),
+    auth_service: AuthService = Depends(get_auth_service)
+) -> Dict:
+    """Update a gist."""
+    try:
+        return await auth_service.update_gist(
+            token,
+            gist_id,
+            gist.filename,
+            gist.content,
+            gist.description
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        if "not found" in str(e).lower():
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Gist not found"
+            )
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail="Failed to update gist"
+        )
+
+
+@router.get("/inventory")
 async def get_inventory(
-    request: Request,
+    token: str = Depends(get_token),
     auth_service: AuthService = Depends(get_auth_service)
-) -> dict:
-    """Get user's gem inventory from GitHub gist."""
-    # Get token from request
-    token = request.headers.get("Authorization")
-    if not token or not token.startswith("Bearer "):
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Missing or invalid authorization token"
+) -> Dict:
+    """Get user's DIBO inventory from gists."""
+    try:
+        gists = await auth_service.get_gists(token)
+        
+        # Find DIBO inventory gist
+        inventory_gist = next(
+            (g for g in gists if g["description"] == "DIBO Inventory"),
+            None
         )
-    token = token.split(" ")[1]
-    
-    # Get inventory from gist
-    return await auth_service.get_inventory_gist(token)
+        if not inventory_gist:
+            return {
+                "builds": [],
+                "profile": None,
+                "gems": [],
+                "sets": []
+            }
+        
+        # Return inventory data
+        return {
+            "builds": inventory_gist["files"].get("builds.json", {"content": '{"builds":[]}'})["content"],
+            "profile": inventory_gist["files"].get("profile.json", {"content": None})["content"],
+            "gems": inventory_gist["files"].get("gems.json", {"content": '{"gems":[]}'})["content"],
+            "sets": inventory_gist["files"].get("sets.json", {"content": '{"sets":[]}'})["content"]
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(e)
+        )

@@ -1,0 +1,226 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-05T11:51:33-05:00",
+  "gems": {
+    "Berserker's Eye": [{
+      "rank": 10,
+      "quality": 1
+    }],
+    "Blessed Pebble": [{
+      "rank": 10,
+      "quality": 1
+    }],
+    "Blessing of the Worthy": [{
+      "rank": 10,
+      "quality": 5
+    }, {
+      "rank": 4,
+      "quality": 2
+    }, {
+      "rank": 3,
+      "quality": 2
+    }],
+    "Blood-Soaked Jade": [{
+      "rank": 10,
+      "quality": 5
+    }, {
+      "rank": 4,
+      "quality": 2
+    }],
+    "Ca'arsen's Invigoration": [{
+      "rank": 10,
+      "quality": 1
+    }],
+    "Chained Death": [{
+      "rank": 10,
+      "quality": 1
+    }, {
+      "rank": 6,
+      "quality": 1
+    }],
+    "Chip of Stoned Flesh": [{
+      "rank": 10,
+      "quality": 5
+    }],
+    "Concentrated Will": [{
+      "rank": 4,
+      "quality": 2
+    }],
+    "Cutthroat's Grin": [{
+      "rank": 10,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }, {
+      "rank": 4,
+      "quality": 2
+    }],
+    "Echoing Shade": [{
+      "rank": 5,
+      "quality": 3
+    }],
+    "Everlasting Torment": [{
+      "rank": 10,
+      "quality": 1
+    }],
+    "Fervent Fang": [{
+      "rank": 10,
+      "quality": 2
+    }],
+    "Follower's Burden": [{
+      "rank": 10,
+      "quality": 2
+    }, {
+      "rank": 8,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }, {
+      "rank": 4,
+      "quality": 2
+    }],
+    "Frozen Heart": [{
+      "rank": 10,
+      "quality": 5
+    }, {
+      "rank": 3,
+      "quality": 3
+    }],
+    "Grim Rhythm": [{
+      "rank": 7,
+      "quality": 2
+    }],
+    "Hellfire Fragment": [{
+      "rank": 10,
+      "quality": 5
+    }],
+    "Howler's Call": [{
+      "rank": 4,
+      "quality": 2
+    }],
+    "Kir Sling": [{
+      "rank": 10,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }],
+    "Lightning Core": [{
+      "rank": 10,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }],
+    "Maw of the Deep": [{
+      "rank": 4,
+      "quality": 4
+    }],
+    "Mocking Laughter": [{
+      "rank": 10,
+      "quality": 1
+    }],
+    "Mother's Lament": [{
+      "rank": 10,
+      "quality": 2
+    }],
+    "Pain Clasp": [{
+      "rank": 10,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }],
+    "Pain of Subjugation": [{
+      "rank": 10,
+      "quality": 1
+    }],
+    "Phoenix Ashes": [{
+      "rank": 5,
+      "quality": 5
+    }],
+    "Power & Command": [{
+      "rank": 10,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }],
+    "Respite Stone": [{
+      "rank": 10,
+      "quality": 1
+    }],
+    "Roiling Consequence": [{
+      "rank": 4,
+      "quality": 2
+    }],
+    "Seled's Weakening": [{
+      "rank": 9,
+      "quality": 1
+    }],
+    "Seeping Bile": [{
+      "rank": 8,
+      "quality": 5
+    }],
+    "Starfire Shard": [{
+      "rank": 7,
+      "quality": 5
+    }],
+    "Stormvault": [{
+      "rank": 6,
+      "quality": 5
+    }, {
+      "rank": 4,
+      "quality": 2
+    }],
+    "The Abiding Curse": [{
+      "rank": 7,
+      "quality": 2
+    }],
+    "The Black Rose": [{
+      "rank": 10,
+      "quality": 1
+    }],
+    "The Hunger": [{
+      "rank": 10,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }],
+    "Trickshot Gem": [{
+      "rank": 10,
+      "quality": 1
+    }, {
+      "rank": 6,
+      "quality": 1
+    }],
+    "Unity Crystal": [{
+      "rank": 7,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }],
+    "Viper's Bite": [{
+      "rank": 10,
+      "quality": 2
+    }],
+    "Volatility Shard": [{
+      "rank": 7,
+      "quality": 2
+    }, {
+      "rank": 5,
+      "quality": 2
+    }],
+    "Zod Stone": [{
+      "rank": 10,
+      "quality": 1
+    }]
+  }
+}
