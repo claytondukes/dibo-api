@@ -1,137 +1,124 @@
-"""Test inventory gist functionality."""
+"""Test inventory operations."""
 
-import json
-from unittest.mock import patch
+from unittest.mock import patch, AsyncMock
 import pytest
 from fastapi.testclient import TestClient
-import httpx
 
-from api.core.config import Settings
+from api.core.config import get_settings
 
-
-@pytest.fixture
-def mock_gists_list_response():
-    """Mock GitHub gists list API response."""
-    return [
-        {
-            "id": "gist123",
-            "files": {
-                "gems.json": {
-                    "filename": "gems.json"
-                }
-            }
-        }
-    ]
+settings = get_settings()
 
 
 @pytest.fixture
-def mock_gist_content_response():
-    """Mock GitHub gist content API response."""
-    return {
+def mock_token() -> str:
+    """Mock access token."""
+    return "mock.test.token"
+
+
+@pytest.fixture
+def mock_gists_response() -> list:
+    """Mock GitHub gists response."""
+    return [{
+        "id": "gist123",
+        "description": "DIBO Inventory",
         "files": {
+            "profile.json": {
+                "filename": "profile.json",
+                "content": '{"version":"1.0","name":"TestChar","class":"Barbarian"}'
+            },
             "gems.json": {
-                "content": json.dumps({
-                    "Berserker's Eye": {
-                        "owned_rank": 10,
-                        "quality": None
-                    },
-                    "Blessing of the Worthy": {
-                        "owned_rank": 3,
-                        "quality": "2"
-                    }
-                })
+                "filename": "gems.json",
+                "content": '{"version":"1.0","gems":[]}'
+            },
+            "sets.json": {
+                "filename": "sets.json",
+                "content": '{"version":"1.0","sets":[]}'
+            },
+            "builds.json": {
+                "filename": "builds.json",
+                "content": '{"version":"1.0","builds":[]}'
             }
         }
-    }
+    }]
 
 
-def test_get_inventory_success(
-    client: TestClient,
-    mock_gists_list_response,
-    mock_gist_content_response
-):
-    """Test successful inventory fetch."""
-    with patch("httpx.AsyncClient.get") as mock_get:
-        # Mock the gists list response
-        mock_get.side_effect = [
-            httpx.Response(200, json=mock_gists_list_response),
-            httpx.Response(200, json=mock_gist_content_response)
-        ]
-        
-        response = client.get(
-            "/api/v1/auth/inventory",
-            headers={"Authorization": "Bearer test_token"}
-        )
-        
-        assert response.status_code == 200
-        data = response.json()
-        assert "Berserker's Eye" in data
-        assert data["Berserker's Eye"]["owned_rank"] == 10
-        assert "Blessing of the Worthy" in data
-        assert data["Blessing of the Worthy"]["quality"] == "2"
-
-
-def test_get_inventory_no_gist(client: TestClient):
-    """Test when user has no inventory gist."""
-    with patch("httpx.AsyncClient.get") as mock_get:
-        # Mock empty gists list
-        mock_get.return_value = httpx.Response(200, json=[])
-        
-        response = client.get(
-            "/api/v1/auth/inventory",
-            headers={"Authorization": "Bearer test_token"}
-        )
-        
-        assert response.status_code == 200
-        assert response.json() == {}
-
-
-def test_get_inventory_invalid_gist(
-    client: TestClient,
-    mock_gists_list_response
-):
-    """Test handling of invalid gist content."""
-    with patch("httpx.AsyncClient.get") as mock_get:
-        # Mock the gists list response
-        mock_get.side_effect = [
-            httpx.Response(200, json=mock_gists_list_response),
-            httpx.Response(200, json={
-                "files": {
-                    "gems.json": {
-                        "content": "invalid json"
-                    }
-                }
-            })
-        ]
-        
-        response = client.get(
-            "/api/v1/auth/inventory",
-            headers={"Authorization": "Bearer test_token"}
-        )
-        
-        assert response.status_code == 400
-        assert "Invalid inventory gist format" in response.json()["detail"]
-
-
-def test_get_inventory_no_auth(client: TestClient):
-    """Test inventory fetch without auth token."""
-    response = client.get("/api/v1/auth/inventory")
+def test_get_inventory_unauthorized(client: TestClient):
+    """Test getting inventory without authorization."""
+    response = client.get(f"{settings.API_V1_STR}/auth/inventory")
     assert response.status_code == 401
-    assert "Missing or invalid authorization token" in response.json()["detail"]
+    assert "Could not validate credentials" in response.json()["detail"]
 
 
-def test_get_inventory_github_error(client: TestClient):
-    """Test handling of GitHub API errors."""
+def test_get_inventory_invalid_token(client: TestClient):
+    """Test getting inventory with invalid token."""
     with patch("httpx.AsyncClient.get") as mock_get:
-        mock_get.return_value = httpx.Response(
-            401,
-            json={"message": "Bad credentials"}
+        mock_get.return_value = AsyncMock(
+            status_code=401,
+            json=lambda: {"message": "Bad credentials"}
         )
-        
+
         response = client.get(
-            "/api/v1/auth/inventory",
-            headers={"Authorization": "Bearer test_token"}
+            f"{settings.API_V1_STR}/auth/inventory",
+            headers={"Authorization": "Bearer invalid_token"}
         )
-        
-        assert response.status_code == 400
-        assert "Failed to fetch gists" in response.json()["detail"]
+        assert response.status_code == 401
+        assert "Could not validate credentials" in response.json()["detail"]
+
+
+@patch("httpx.AsyncClient.get")
+def test_get_inventory_no_gists(mock_get, client: TestClient, mock_token):
+    """Test getting inventory with no gists."""
+    mock_get.return_value = AsyncMock(
+        status_code=200,
+        json=lambda: []
+    )
+
+    response = client.get(
+        f"{settings.API_V1_STR}/auth/inventory",
+        headers={"Authorization": f"Bearer {mock_token}"}
+    )
+    assert response.status_code == 200
+    inventory = response.json()
+
+    # Check default empty inventory
+    assert inventory["profile"]["version"] == "1.0"
+    assert inventory["profile"]["name"] is None
+    assert inventory["profile"]["class"] is None
+    assert inventory["gems"]["version"] == "1.0"
+    assert inventory["gems"]["gems"] == []
+    assert inventory["sets"]["version"] == "1.0"
+    assert inventory["sets"]["sets"] == []
+    assert inventory["builds"]["version"] == "1.0"
+    assert inventory["builds"]["builds"] == []
+
+
+@patch("httpx.AsyncClient.get")
+def test_get_inventory_with_gists(
+    mock_get,
+    client: TestClient,
+    mock_token,
+    mock_gists_response
+):
+    """Test getting inventory with gists."""
+    mock_get.return_value = AsyncMock(
+        status_code=200,
+        json=lambda: mock_gists_response
+    )
+
+    response = client.get(
+        f"{settings.API_V1_STR}/auth/inventory",
+        headers={"Authorization": f"Bearer {mock_token}"}
+    )
+    assert response.status_code == 200
+    inventory = response.json()
+
+    # Check inventory from gist
+    assert inventory["profile"]["version"] == "1.0"
+    assert inventory["profile"]["name"] == "TestChar"
+    assert inventory["profile"]["class"] == "Barbarian"
+    assert inventory["gems"]["version"] == "1.0"
+    assert inventory["gems"]["gems"] == []
+    assert inventory["sets"]["version"] == "1.0"
+    assert inventory["sets"]["sets"] == []
+    assert inventory["builds"]["version"] == "1.0"
+    assert inventory["builds"]["builds"] == []

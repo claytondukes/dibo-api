@@ -1,7 +1,7 @@
 """Build routes."""
 
 from typing import Optional
-from fastapi import APIRouter, Depends, Query, HTTPException, status
+from fastapi import APIRouter, Depends, Query, HTTPException, status, Request
 from ..auth.service import AuthService, get_auth_service
 from ..core.config import get_settings
 from .models import BuildFocus, BuildResponse, BuildType, BuildRecommendation
@@ -30,7 +30,7 @@ def get_service():
     return _build_service
 
 
-@router.get(
+@router.post(
     "/generate",
     response_model=BuildResponse,
     summary="Generate build",
@@ -39,12 +39,14 @@ def get_service():
 async def generate_build(
     build_type: BuildType = Query(..., description="Type of build to generate"),
     focus: BuildFocus = Query(..., description="Primary focus of the build"),
+    save: bool = Query(False, description="Whether to save the build to a gist"),
     use_inventory: bool = Query(
         False,
         description="Whether to consider user's inventory"
     ),
     build_service: BuildService = Depends(get_service),
-    auth_service: AuthService = Depends(get_auth_service)
+    auth_service: AuthService = Depends(get_auth_service),
+    request: Request = None
 ) -> BuildResponse:
     """Generate a build based on specified criteria."""
     if build_service is None:
@@ -55,14 +57,39 @@ async def generate_build(
     
     inventory = None
     if use_inventory:
-        # Get user's inventory from GitHub gist
-        inventory = await auth_service.get_inventory()
+        token = request.headers.get("Authorization")
+        if not token or not token.startswith("Bearer "):
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Authorization required to use inventory"
+            )
+        token = token.split(" ")[1]
+        inventory = await auth_service.get_inventory_gist(token)
     
-    return await build_service.generate_build(
+    # Generate the build
+    build = await build_service.generate_build(
         build_type=build_type,
         focus=focus,
+        character_class=inventory.get("profile", {}).get("class") if inventory else None,
         inventory=inventory
     )
+    
+    # Save build if requested
+    if save:
+        token = request.headers.get("Authorization")
+        if not token or not token.startswith("Bearer "):
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Authorization required to save build"
+            )
+        token = token.split(" ")[1]
+        
+        # Save to a new gist
+        gist_data = await auth_service.save_generated_build(token, build.dict())
+        build.gist_url = gist_data["url"]
+        build.raw_url = gist_data["raw_url"]
+    
+    return build
 
 
 @router.post(
@@ -83,3 +110,66 @@ async def analyze_build(
         )
     
     return await build_service.analyze_build(build)
+
+
+@router.get(
+    "/{gist_id}",
+    response_model=BuildResponse,
+    summary="Get saved build",
+    description="Get a previously saved build from a gist"
+)
+async def get_build(
+    gist_id: str,
+    request: Request,
+    auth_service: AuthService = Depends(get_auth_service)
+) -> BuildResponse:
+    """Get a previously saved build."""
+    # Get token from request
+    token = request.headers.get("Authorization")
+    if not token or not token.startswith("Bearer "):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Authorization required to fetch build"
+        )
+    token = token.split(" ")[1]
+    
+    # Get the build
+    build_data = await auth_service.get_generated_build(token, gist_id)
+    return BuildResponse(**build_data["build"])
+
+
+@router.put(
+    "/{gist_id}",
+    response_model=BuildResponse,
+    summary="Update saved build",
+    description="Update a previously saved build in a gist"
+)
+async def update_build(
+    gist_id: str,
+    build_update: BuildResponse,
+    request: Request,
+    auth_service: AuthService = Depends(get_auth_service)
+) -> BuildResponse:
+    """Update a previously saved build."""
+    # Get token from request
+    token = request.headers.get("Authorization")
+    if not token or not token.startswith("Bearer "):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Authorization required to update build"
+        )
+    token = token.split(" ")[1]
+    
+    # Update the build
+    gist_data = await auth_service.save_generated_build(
+        token, 
+        build_update.dict(),
+        gist_id=gist_id
+    )
+    
+    # Return updated build with URLs
+    return BuildResponse(
+        **build_update.dict(),
+        gist_url=gist_data["url"],
+        raw_url=gist_data["raw_url"]
+    )

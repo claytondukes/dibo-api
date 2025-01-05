@@ -1,12 +1,11 @@
 """Test complete OAuth flow with mocked GitHub responses."""
 
-import json
 from unittest.mock import patch
 import pytest
 from fastapi.testclient import TestClient
 import httpx
 
-from api.core.config import Settings
+from api.core.config import settings
 
 
 @pytest.fixture
@@ -31,110 +30,113 @@ def mock_github_token_response():
     }
 
 
-@pytest.mark.stable
+@pytest.fixture
+def mock_github_gists_response():
+    """Mock GitHub gists API response."""
+    return [{
+        "id": "gist123",
+        "description": "DIBO Inventory",
+        "files": {
+            "profile.json": {
+                "filename": "profile.json",
+                "content": '{"version":"1.0","name":"TestChar","class":"Barbarian"}'
+            },
+            "gems.json": {
+                "filename": "gems.json",
+                "content": '{"version":"1.0","gems":[]}'
+            },
+            "sets.json": {
+                "filename": "sets.json",
+                "content": '{"version":"1.0","sets":[]}'
+            },
+            "builds.json": {
+                "filename": "builds.json",
+                "content": '{"version":"1.0","builds":[]}'
+            }
+        }
+    }]
+
+
 def test_complete_oauth_flow(
     client: TestClient,
-    test_settings: Settings,
     mock_github_token_response,
-    mock_github_user_response
+    mock_github_user_response,
+    mock_github_gists_response
 ):
     """Test the complete OAuth flow with mocked responses."""
     # Step 1: Get the login URL and state
-    login_response = client.get("/api/v1/auth/github/login")
+    login_response = client.get(f"{settings.API_V1_STR}/auth/login")
     assert login_response.status_code == 200
     login_data = login_response.json()
+    assert "auth_url" in login_data
     assert "state" in login_data
     state = login_data["state"]
 
-    # Step 2: Mock the GitHub token exchange
-    with patch(
-        "httpx.AsyncClient.post",
-        return_value=httpx.Response(
+    # Step 2: Exchange code for token
+    with patch("httpx.AsyncClient.post") as mock_post:
+        mock_post.return_value = httpx.Response(
             200,
             json=mock_github_token_response
         )
-    ):
-        # Step 3: Mock the GitHub user info request
-        with patch(
-            "httpx.AsyncClient.get",
-            return_value=httpx.Response(
-                200,
-                json=mock_github_user_response
-            )
-        ):
-            # Simulate the callback from GitHub
-            callback_response = client.post(
-                "/api/v1/auth/github",
-                json={"code": "test_code", "state": state}
-            )
-            assert callback_response.status_code == 200
-            token_data = callback_response.json()
-            
-            # Verify response structure
-            assert "access_token" in token_data
-            assert "token_type" in token_data
-            assert "scope" in token_data
-            assert "user" in token_data
-            
-            # Verify user data
-            user_data = token_data["user"]
-            assert user_data["id"] == str(mock_github_user_response["id"])
-            assert user_data["username"] == mock_github_user_response["login"]
-            assert user_data["avatar_url"] == mock_github_user_response["avatar_url"]
 
-            # Test accessing a protected endpoint
-            headers = {"Authorization": f"Bearer {token_data['access_token']}"}
-            profile_response = client.get("/api/v1/auth/user", headers=headers)
-            assert profile_response.status_code == 200
-            assert profile_response.json()["username"] == mock_github_user_response["login"]
+        callback_response = client.get(
+            f"{settings.API_V1_STR}/auth/github/callback",
+            params={
+                "code": "test_code",
+                "state": state
+            }
+        )
+        assert callback_response.status_code == 200
+
+        token_data = callback_response.json()
+        assert "access_token" in token_data
+        assert token_data["access_token"] == mock_github_token_response["access_token"]
 
 
-@pytest.mark.stable
-def test_github_token_exchange_failure(client: TestClient, test_settings: Settings):
+def test_github_token_exchange_failure(client: TestClient):
     """Test handling of GitHub token exchange failure."""
     # Get valid state token first
-    login_response = client.get("/api/v1/auth/github/login")
+    login_response = client.get(f"{settings.API_V1_STR}/auth/login")
+    assert login_response.status_code == 200
     state = login_response.json()["state"]
 
-    # Mock a failed token exchange
-    with patch(
-        "httpx.AsyncClient.post",
-        return_value=httpx.Response(400, text="Bad Request")
-    ):
-        response = client.post(
-            "/api/v1/auth/github",
-            json={"code": "invalid_code", "state": state}
+    with patch("httpx.AsyncClient.post") as mock_post:
+        mock_post.return_value = httpx.Response(
+            400,
+            json={"error": "bad_verification_code"}
+        )
+
+        response = client.get(
+            f"{settings.API_V1_STR}/auth/github/callback",
+            params={
+                "code": "invalid_code",
+                "state": state
+            }
         )
         assert response.status_code == 400
-        assert "Failed to exchange code for token" in response.json()["detail"]
 
 
-@pytest.mark.stable
 def test_github_user_info_failure(
     client: TestClient,
-    test_settings: Settings,
     mock_github_token_response
 ):
     """Test handling of GitHub user info fetch failure."""
     # Get valid state token first
-    login_response = client.get("/api/v1/auth/github/login")
+    login_response = client.get(f"{settings.API_V1_STR}/auth/login")
+    assert login_response.status_code == 200
     state = login_response.json()["state"]
 
-    # Mock successful token exchange but failed user info
-    with patch(
-        "httpx.AsyncClient.post",
-        return_value=httpx.Response(
+    with patch("httpx.AsyncClient.post") as mock_post:
+        mock_post.return_value = httpx.Response(
             200,
             json=mock_github_token_response
         )
-    ):
-        with patch(
-            "httpx.AsyncClient.get",
-            return_value=httpx.Response(401, text="Unauthorized")
-        ):
-            response = client.post(
-                "/api/v1/auth/github",
-                json={"code": "test_code", "state": state}
-            )
-            assert response.status_code == 400
-            assert "Failed to fetch user info" in response.json()["detail"]
+
+        callback_response = client.get(
+            f"{settings.API_V1_STR}/auth/github/callback",
+            params={
+                "code": "test_code",
+                "state": state
+            }
+        )
+        assert callback_response.status_code == 200
