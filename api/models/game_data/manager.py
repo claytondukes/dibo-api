@@ -14,7 +14,8 @@ from .schemas import (
     GameDataMetadata,
     GameDataCache,
     GemData,
-    EquipmentSets
+    EquipmentSets,
+    GameStats
 )
 
 T = TypeVar("T")
@@ -26,6 +27,7 @@ class GameDataManager:
     CATEGORY_LOADERS = {
         "gems": (GemData, "gems/gems.json"),
         "equipment_sets": (EquipmentSets, "equipment/sets.json"),
+        "stats": (GameStats, "stats.json"),
     }
 
     def __init__(self, data_dir: Path) -> None:

@@ -97,11 +97,88 @@ def sample_equipment_sets_data() -> Dict[str, Any]:
 
 
 @pytest.fixture
+def sample_stat_value() -> Dict[str, Any]:
+    """Sample stat value for testing."""
+    return {
+        "conditions": [],
+        "value": 15.0,
+        "unit": "percentage",
+        "scaling": False
+    }
+
+
+@pytest.fixture
+def sample_stat_source() -> Dict[str, Any]:
+    """Sample stat source for testing."""
+    return {
+        "name": "Berserker's Eye",
+        "stars": 1,
+        "base_values": [
+            {
+                "conditions": [],
+                "value": 8.0,
+                "unit": "percentage",
+                "scaling": False
+            }
+        ],
+        "rank_10_values": [
+            {
+                "conditions": [],
+                "value": 16.0,
+                "unit": "percentage",
+                "scaling": False
+            }
+        ],
+        "conditions": [],
+        "rank_10_conditions": []
+    }
+
+
+@pytest.fixture
+def sample_stats_data() -> Dict[str, Any]:
+    """Sample stats collection for testing."""
+    return {
+        "critical_hit_chance": {
+            "gems": [
+                {
+                    "name": "Berserker's Eye",
+                    "stars": 1,
+                    "base_values": [
+                        {
+                            "conditions": [],
+                            "value": 8.0,
+                            "unit": "percentage",
+                            "scaling": False
+                        }
+                    ],
+                    "rank_10_values": [
+                        {
+                            "conditions": [],
+                            "value": 16.0,
+                            "unit": "percentage",
+                            "scaling": False
+                        }
+                    ],
+                    "conditions": [],
+                    "rank_10_conditions": []
+                }
+            ],
+            "essences": []
+        },
+        "damage_increase": {
+            "gems": [],
+            "essences": []
+        }
+    }
+
+
+@pytest.fixture
 def mock_data_dir(
     tmp_path_factory: TempPathFactory,
     sample_metadata: Dict[str, Any],
     sample_gems_data: Dict[str, Any],
-    sample_equipment_sets_data: Dict[str, Any]
+    sample_equipment_sets_data: Dict[str, Any],
+    sample_stats_data: Dict[str, Any]
 ) -> Path:
     """Create a temporary data directory with mock files."""
     base_dir = tmp_path_factory.mktemp("data")
@@ -121,5 +198,9 @@ def mock_data_dir(
     equipment_dir.mkdir()
     with open(equipment_dir / "sets.json", "w") as f:
         json.dump(sample_equipment_sets_data, f)
+    
+    # Create stats file
+    with open(base_dir / "stats.json", "w") as f:
+        json.dump(sample_stats_data, f)
     
     return base_dir

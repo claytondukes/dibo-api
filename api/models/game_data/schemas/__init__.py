@@ -10,6 +10,13 @@ from .equipment import (
     EquipmentSet,
     EquipmentSets
 )
+from .stats import (
+    StatCondition,
+    StatValue,
+    StatSource,
+    StatCategory,
+    GameStats
+)
 
 __all__ = [
     "GameDataMetadata",
@@ -21,4 +28,9 @@ __all__ = [
     "SetBonuses",
     "EquipmentSet",
     "EquipmentSets",
+    "StatCondition",
+    "StatValue",
+    "StatSource",
+    "StatCategory",
+    "GameStats",
 ]

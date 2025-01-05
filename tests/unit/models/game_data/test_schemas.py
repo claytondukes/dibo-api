@@ -13,7 +13,10 @@ from api.models.game_data.schemas import (
     GemsBySkill,
     GemData,
     EquipmentSet,
-    EquipmentSets
+    EquipmentSets,
+    StatValue,
+    StatSource,
+    GameStats
 )
 
 
@@ -109,3 +112,43 @@ class TestEquipmentSets:
         assert sets.metadata.bonus_thresholds == [2, 4, 6]
         assert "Grace of the Flagellant" in sets.registry
         assert sets.registry["Grace of the Flagellant"].pieces == 6
+
+
+class TestStatValue:
+    """Tests for the StatValue model."""
+
+    def test_valid_stat_value(self, sample_stat_value):
+        """Test creating a stat value with valid data."""
+        value = StatValue.model_validate(sample_stat_value)
+        assert value.value == 15.0
+        assert value.unit == "percentage"
+        assert not value.scaling
+        assert len(value.conditions) == 0
+
+
+class TestStatSource:
+    """Tests for the StatSource model."""
+
+    def test_valid_stat_source(self, sample_stat_source):
+        """Test creating a stat source with valid data."""
+        source = StatSource.model_validate(sample_stat_source)
+        assert source.name == "Berserker's Eye"
+        assert source.stars == 1
+        assert len(source.base_values) == 1
+        assert len(source.rank_10_values) == 1
+        assert source.has_rank_10_bonus
+
+
+class TestGameStats:
+    """Tests for the GameStats model."""
+
+    def test_valid_stats_data(self, sample_stats_data):
+        """Test creating GameStats with valid data."""
+        stats = GameStats.model_validate(sample_stats_data)
+        assert len(stats.critical_hit_chance.gems) == 1
+        assert len(stats.damage_increase.gems) == 0
+        
+        crit_gem = stats.critical_hit_chance.gems[0]
+        assert crit_gem.name == "Berserker's Eye"
+        assert crit_gem.base_values[0].value == 8.0
+        assert crit_gem.rank_10_values[0].value == 16.0
