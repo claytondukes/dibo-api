@@ -68,7 +68,7 @@ class Settings(BaseSettings):
         description="GitHub OAuth client secret for development"
     )
     DEV_GITHUB_CALLBACK_URL: Optional[AnyHttpUrl] = Field(
-        default=None,
+        default="http://localhost:8000/api/v1/auth/github",
         description="GitHub OAuth callback URL for development"
     )
     
@@ -101,6 +101,10 @@ class Settings(BaseSettings):
     DATA_DIR: Path = Field(
         default=Path(__file__).parent.parent / "data",
         description="Directory containing data files"
+    )
+    TEST_DATA_DIR: Optional[Path] = Field(
+        default=None,
+        description="Directory containing test data files"
     )
     GEMS_FILE: Path = Field(
         default=None,

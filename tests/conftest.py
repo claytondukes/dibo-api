@@ -20,6 +20,7 @@ def pytest_configure(config):
 os.environ.update({
     'PROJECT_ROOT': str(Path(__file__).parent.parent),
     'DATA_DIR': str(Path(__file__).parent.parent / 'data' / 'indexed'),
+    'TEST_DATA_DIR': str(Path(__file__).parent / 'test_data' / 'indexed'),
     'TESTING': 'true',
     'ENVIRONMENT': 'development',
     'LOG_LEVEL': 'INFO',

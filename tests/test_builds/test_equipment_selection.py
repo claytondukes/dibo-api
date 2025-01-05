@@ -1,6 +1,7 @@
 import pytest
 from pathlib import Path
 from typing import Dict, List, Optional
+import json
 
 from api.builds.models import BuildFocus, BuildType, Equipment, Gem, Skill
 from api.builds.service import BuildService
@@ -14,26 +15,33 @@ def build_service(tmp_path: Path) -> BuildService:
     
     # Create test equipment data
     gear_data = {
-        "head": {
-            "test_helm": {
-                "base_stats": {
-                    "life": 100,
-                    "armor": 50
-                },
-                "essence_mods": {
-                    "test_essence": {
-                        "damage": 20,
-                        "critical_hit": 10
-                    }
-                },
-                "skill_mods": {
-                    "test_skill": {
-                        "damage": 30
-                    }
-                },
-                "gem_mods": {
-                    "test_gem": {
-                        "effect_bonus": 20
+        "metadata": {
+            "version": "1.0",
+            "last_updated": "2025-01-04",
+            "total_count": 1
+        },
+        "gear": {
+            "head": {
+                "test_helm": {
+                    "base_stats": {
+                        "life": 100,
+                        "armor": 50
+                    },
+                    "essence_mods": {
+                        "test_essence": {
+                            "damage": 20,
+                            "critical_hit": 10
+                        }
+                    },
+                    "skill_mods": {
+                        "test_skill": {
+                            "damage": 30
+                        }
+                    },
+                    "gem_mods": {
+                        "test_gem": {
+                            "effect_bonus": 20
+                        }
                     }
                 }
             }
@@ -42,52 +50,153 @@ def build_service(tmp_path: Path) -> BuildService:
     
     # Create test set data
     set_data = {
-        "test_set": {
-            "bonus_2pc": {
-                "damage": 10,
-                "life": 5
-            },
-            "bonus_4pc": {
-                "critical_hit": 20,
-                "attack_speed": 15
-            },
-            "bonus_6pc": {
-                "damage": 40,
-                "penetration": 30
-            },
-            "pieces": {
-                "test_ring": {
-                    "base_stats": {
-                        "damage": 50,
-                        "critical_hit": 20
+        "metadata": {
+            "version": "1.0",
+            "last_updated": "2025-01-04",
+            "total_count": 1
+        },
+        "sets": {
+            "test_set": {
+                "bonus_2pc": {
+                    "damage": 10,
+                    "life": 5
+                },
+                "bonus_4pc": {
+                    "critical_hit": 20,
+                    "attack_speed": 15
+                },
+                "bonus_6pc": {
+                    "damage": 40,
+                    "penetration": 30
+                },
+                "pieces": {
+                    "test_ring": {
+                        "base_stats": {
+                            "damage": 50,
+                            "critical_hit": 20
+                        }
+                    },
+                    "test_neck": {
+                        "base_stats": {
+                            "damage": 40,
+                            "life": 30
+                        }
                     }
                 },
-                "test_neck": {
-                    "base_stats": {
-                        "damage": 40,
-                        "life": 30
+                "skill_synergies": {
+                    "test_skill": {
+                        "damage": 20
                     }
-                }
-            },
-            "skill_synergies": {
-                "test_skill": {
-                    "damage": 20
-                }
-            },
-            "gem_synergies": {
-                "test_gem": {
-                    "effect_bonus": 15
+                },
+                "gem_synergies": {
+                    "test_gem": {
+                        "effect_bonus": 15
+                    }
                 }
             }
         }
     }
     
-    # Write test data files
+    # Create test data directories
     (data_dir / "equipment").mkdir()
-    (data_dir / "equipment" / "gear.json").write_text(str(gear_data))
-    (data_dir / "equipment" / "sets.json").write_text(str(set_data))
+    (data_dir / "gems").mkdir()
+    (data_dir / "classes" / "barbarian").mkdir(parents=True)
+
+    # Write equipment test data
+    with open(data_dir / "equipment" / "gear.json", "w") as f:
+        json.dump(gear_data, f)
+    with open(data_dir / "equipment" / "sets.json", "w") as f:
+        json.dump(set_data, f)
+        
+    # Write gem test data
+    gem_data = {
+        "metadata": {
+            "version": "1.0",
+            "last_updated": "2025-01-04",
+            "total_count": 1
+        },
+        "progression": {
+            "test_gem": {
+                "stars": 2,
+                "ranks": {
+                    "1": {
+                        "effects": [],
+                        "stats": {}
+                    }
+                },
+                "max_rank": 10
+            }
+        },
+        "stat_boosts": {
+            "test_stat": {
+                "gems": [],
+                "essences": []
+            }
+        },
+        "synergies": [
+            {
+                "name": "test_synergy",
+                "gems": ["test_gem"],
+                "essences": [],
+                "skills": []
+            }
+        ],
+        "gems": {
+            "test_gem": {
+                "name": "Test Gem",
+                "effects": ["Test effect"]
+            }
+        }
+    }
     
-    return BuildService(data_dir=data_dir)
+    # Write gem data files
+    with open(data_dir / "gems" / "progression.json", "w") as f:
+        json.dump({"metadata": gem_data["metadata"], "progression": gem_data["progression"]}, f)
+    with open(data_dir / "gems" / "stat_boosts.json", "w") as f:
+        json.dump({"metadata": gem_data["metadata"], "stat_boosts": gem_data["stat_boosts"]}, f)
+    with open(data_dir / "gems" / "synergies.json", "w") as f:
+        json.dump({"metadata": gem_data["metadata"], "synergies": gem_data["synergies"]}, f)
+    with open(data_dir / "gems" / "gems.json", "w") as f:
+        json.dump({"metadata": gem_data["metadata"], "gems": gem_data["gems"]}, f)
+    
+    # Write core test data
+    core_data = {
+        "metadata": {
+            "version": "1.0",
+            "last_updated": "2025-01-04",
+            "total_count": 3
+        },
+        "synergies": [
+            {
+                "name": "test_synergy",
+                "gems": ["test_gem"],
+                "essences": [],
+                "skills": []
+            }
+        ],
+        "constraints": {
+            "gem_slots": {"total": 5},
+            "essence_slots": {"total": 3}
+        },
+        "stats": {
+            "test_stat": {
+                "base": 100,
+                "max": 200
+            }
+        }
+    }
+    
+    with open(data_dir / "synergies.json", "w") as f:
+        json.dump({"metadata": core_data["metadata"], "synergies": core_data["synergies"]}, f)
+    with open(data_dir / "constraints.json", "w") as f:
+        json.dump({"metadata": core_data["metadata"], "constraints": core_data["constraints"]}, f)
+    with open(data_dir / "stats.json", "w") as f:
+        json.dump({"metadata": core_data["metadata"], "stats": core_data["stats"]}, f)
+    
+    # Create BuildService instance
+    service = BuildService()
+    service.data_dir = data_dir
+    return service
 
 def test_select_gear_piece(build_service: BuildService):
     """Test selecting a gear piece."""

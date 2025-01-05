@@ -29,23 +29,27 @@ class BuildService:
     # Required data files that must exist
     REQUIRED_FILES = {
         # Core data files
-        "synergies.json",
-        "constraints.json",
-        "stats.json",
+        "synergies": "synergies.json",
+        "constraints": "constraints.json",
+        "stats": "stats.json",
+        "cross_references": "cross_references.json",
         
         # Gem data
-        "gems/progression.json",
-        "gems/stat_boosts.json",
-        "gems/synergies.json",
-        "gems/gems.json",
+        "gems/progression": "gems/progression.json",
+        "gems/stat_boosts": "gems/stat_boosts.json",
+        "gems/synergies": "gems/synergies.json",
+        "gems/gems": "gems/gems.json",
+        
+        # Skills data
+        "skills": "skills.json",
         
         # Equipment data
-        "equipment/sets.json",
+        "equipment": "equipment.json",  # Update equipment data file
         
         # Class-specific data
-        "classes/barbarian/essences.json",
-        "classes/barbarian/constraints.json",
-        "classes/barbarian/base_skills.json"
+        "classes/barbarian/essences": "classes/barbarian/essences.json",
+        "classes/barbarian/constraints": "classes/barbarian/constraints.json",
+        "classes/barbarian/base_skills": "classes/barbarian/base_skills.json"
     }
     
     # Supported character classes
@@ -79,7 +83,7 @@ class BuildService:
             # Load core files
             core_files = {f for f in self.REQUIRED_FILES if not f.startswith("classes/")}
             for filename in core_files:
-                file_path = self.data_dir / filename
+                file_path = self.data_dir / self.REQUIRED_FILES[filename]
                 if not file_path.exists():
                     raise FileNotFoundError(
                         f"Required data file not found: {file_path}"
@@ -94,7 +98,7 @@ class BuildService:
                     if f.startswith(f"classes/{class_name}/")
                 }
                 for filename in class_files:
-                    file_path = self.data_dir / filename
+                    file_path = self.data_dir / self.REQUIRED_FILES[filename]
                     if not file_path.exists():
                         raise FileNotFoundError(
                             f"Required class data file not found: {file_path}"
@@ -103,33 +107,35 @@ class BuildService:
                         data_files[filename] = json.load(f)
             
             # Store loaded data in instance variables
-            self.constraints = data_files["constraints.json"]
-            self.synergies = data_files["synergies.json"]
-            self.stats = data_files["stats.json"]
+            self.synergies = data_files["synergies"]
+            self.constraints = data_files["constraints"]
+            self.stats = data_files["stats"]
+            self.cross_references = data_files["cross_references"]
+            
+            # Store skills data
+            self.skills_data = data_files["skills"]
             
             # Store gem data
             self.gem_data = {
-                "progression": data_files["gems/progression.json"],
-                "stat_boosts": data_files["gems/stat_boosts.json"],
-                "synergies": data_files["gems/synergies.json"],
-                "effects": data_files["gems/gems.json"]
+                "progression": data_files["gems/progression"],
+                "stat_boosts": data_files["gems/stat_boosts"],
+                "synergies": data_files["gems/synergies"],
+                "gems": data_files["gems/gems"]
             }
             
             # Store equipment data
-            self.equipment_data = {
-                "sets": data_files["equipment/sets.json"]
-            }
+            self.equipment_data = data_files["equipment"]  # Update equipment data
             
             # Store class-specific data
             self.class_data = {}
             self.class_constraints = {}
             for class_name in self.CHARACTER_CLASSES:
                 self.class_data[class_name] = {
-                    "essences": data_files[f"classes/{class_name}/essences.json"],
-                    "base_skills": data_files[f"classes/{class_name}/base_skills.json"]
+                    "essences": data_files[f"classes/{class_name}/essences"],
+                    "base_skills": data_files[f"classes/{class_name}/base_skills"]
                 }
                 self.class_constraints[class_name] = data_files[
-                    f"classes/{class_name}/constraints.json"
+                    f"classes/{class_name}/constraints"
                 ]
             
         except Exception as e:
@@ -148,18 +154,18 @@ class BuildService:
             HTTPException: If data structure is invalid.
         """
         # Validate synergies structure
-        for category, data in self.synergies.items():
-            if not isinstance(data, dict):
-                raise HTTPException(
-                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                    detail=f"Invalid synergy category structure: {category}"
-                )
-            required_keys = {"gems", "essences", "skills"}
-            if not all(key in data for key in required_keys):
-                raise HTTPException(
-                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                    detail=f"Missing required keys in synergy category: {category}"
-                )
+        if not isinstance(self.synergies, dict):
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Synergies must be a dictionary"
+            )
+        
+        required_synergy_keys = {"metadata", "synergies"}
+        if not all(key in self.synergies for key in required_synergy_keys):
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Missing required keys in synergies data"
+            )
         
         # Validate constraints structure
         required_constraints = {"gem_slots", "essence_slots"}
@@ -168,25 +174,41 @@ class BuildService:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Missing required constraint categories"
             )
-            
-        # Validate essence structure
+        
+        # Validate stats structure
+        required_stats_keys = {"metadata", "stats"}
+        if not all(key in self.stats for key in required_stats_keys):
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Missing required keys in stats data"
+            )
+        
+        # Validate equipment data structure
+        required_equipment_keys = {"metadata", "gear", "sets"}  # Update equipment data keys
+        if not all(key in self.equipment_data for key in required_equipment_keys):
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Missing required keys in equipment data"
+            )
+        
+        # Validate class data structure
         for class_name, data in self.class_data.items():
-            essence_data = data["essences"]
+            # Validate base skills
+            required_skill_keys = {"metadata", "skills"}
+            if not all(key in data["base_skills"] for key in required_skill_keys):
+                raise HTTPException(
+                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    detail=f"Missing required keys in base skills for class {class_name}"
+                )
+            
+            # Validate essences
             required_essence_keys = {"metadata", "essences", "indexes"}
-            if not all(key in essence_data for key in required_essence_keys):
+            if not all(key in data["essences"] for key in required_essence_keys):
                 raise HTTPException(
                     status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                     detail=f"Missing required essence keys for class {class_name}"
                 )
-            
-            # Validate essence indexes
-            required_indexes = {"by_slot", "by_skill"}
-            if not all(key in essence_data["indexes"] for key in required_indexes):
-                raise HTTPException(
-                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                    detail=f"Missing required essence indexes for class {class_name}"
-                )
-    
+
     async def generate_build(
         self,
         build_type: BuildType,
@@ -206,23 +228,36 @@ class BuildService:
             BuildResponse containing the generated build
         """
         try:
-            # 1. Validate inventory if provided
+            # Validate character class
+            if character_class not in self.CHARACTER_CLASSES:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail=f"Invalid character class: {character_class}"
+                )
+                
+            # Validate inventory if provided
             if inventory:
                 self._validate_inventory(inventory)
-            
-            # 2. Select gems based on build type and focus
+                
+            # Select gems first
             selected_gems = self._select_gems(build_type, focus, inventory)
             
-            # 3. Select skills that synergize with the gems
-            selected_skills = self._select_skills(
-                build_type,
-                focus,
-                selected_gems,
-                inventory,
-                character_class
-            )
+            # Select skills that work with the gems
+            try:
+                selected_skills = self._select_skills(
+                    build_type,
+                    focus,
+                    selected_gems,
+                    inventory,
+                    character_class
+                )
+            except HTTPException as e:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail=str(e.detail)
+                )
             
-            # 4. Select equipment that complements the build
+            # Select equipment that complements skills and gems
             selected_equipment = self._select_equipment(
                 build_type,
                 focus,
@@ -232,14 +267,14 @@ class BuildService:
                 character_class
             )
             
-            # 5. Calculate build stats
+            # Calculate build stats
             stats = self._calculate_stats(
                 selected_gems,
                 selected_skills,
                 selected_equipment
             )
             
-            # 6. Generate recommendations
+            # Generate recommendations
             recommendations = self._generate_recommendations(
                 build_type,
                 focus,
@@ -250,21 +285,24 @@ class BuildService:
                 character_class
             )
             
-            return BuildResponse(
-                build=BuildRecommendation(
-                    gems=selected_gems,
-                    skills=selected_skills,
-                    equipment=list(selected_equipment.values()),
-                    synergies=self._find_synergies(
-                        selected_gems,
-                        selected_skills,
-                        list(selected_equipment.values())
-                    )
-                ),
-                stats=stats,
-                recommendations=recommendations
+            # Find synergies
+            synergies = self._find_synergies(
+                selected_gems,
+                selected_skills,
+                list(selected_equipment.values())
             )
             
+            return BuildResponse(
+                gems=selected_gems,
+                skills=selected_skills,
+                equipment=selected_equipment,
+                stats=stats,
+                recommendations=recommendations,
+                synergies=synergies
+            )
+            
+        except HTTPException:
+            raise
         except Exception as e:
             logger.error(f"Error generating build: {str(e)}")
             raise HTTPException(
@@ -355,7 +393,23 @@ class BuildService:
                 owned_rank = inventory[gem]["owned_rank"]
                 quality = inventory[gem].get("quality")
             else:
-                owned_rank = None
+                # Get rank from gem data
+                gem_data = None
+                for skill_gems in self.gem_data["effects"]["gems_by_skill"].values():
+                    for g in skill_gems:
+                        if g["Name"] == gem:
+                            gem_data = g
+                            break
+                    if gem_data:
+                        break
+                
+                if not gem_data:
+                    raise HTTPException(
+                        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                        detail=f"Gem data not found: {gem}"
+                    )
+                
+                owned_rank = int(gem_data["Rank"])
                 quality = None
             
             # Find best aux gem for this primary gem
@@ -463,77 +517,269 @@ class BuildService:
             
         Returns:
             List of selected skills
+            
+        Raises:
+            HTTPException: If unable to select valid skills
         """
-        # Get skills that match the build focus
-        focus_skills = []
-        for category, data in self.synergies.items():
-            if self._matches_focus(category, focus):
-                focus_skills.extend(data["skills"])
+        # Get available skills and weapons from constraints
+        class_constraints = self.class_constraints[character_class]
+        available_skills = class_constraints["skill_slots"]["available_skills"]
+        available_weapons = class_constraints["weapon_slots"]["available_weapons"]
         
-        # Get skills that synergize with selected gems
-        gem_skills = []
-        for gem in selected_gems:
-            for category in self._get_gem_categories(gem.name):
-                if category in self.synergies:
-                    gem_skills.extend(self.synergies[category]["skills"])
-        
-        # Combine and deduplicate skills
-        all_skills = list(set(focus_skills + gem_skills))
-        
-        # Validate skill selection against class constraints
-        if not self._validate_skill_selection(all_skills, character_class):
+        if not available_weapons:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Invalid skill selection for character class"
+                detail="No weapon skills available"
             )
+            
+        # Get build type requirements
+        build_constraints = self.constraints["build_types"][build_type.value.lower()]
+        build_required_categories = build_constraints.get("required_categories", {})
         
-        # Sort skills by effectiveness
-        all_skills.sort(
-            key=lambda s: self._calculate_skill_score(
-                s, build_type, focus, selected_gems
-            ),
-            reverse=True
-        )
+        # Get skill registry
+        skill_registry = self.class_data[character_class]["base_skills"]["registry"]
         
-        # Select top 5 skills with essences
-        selected_skills = []
+        # First check if we can meet build type requirements with available skills
+        available_categories = {}
+        for skill in available_skills + available_weapons:
+            skill_data = skill_registry[skill]
+            for category in skill_data.get("categories", []):
+                available_categories[category] = available_categories.get(category, 0) + 1
+                
+        # Verify build type requirements can be met
+        for category, count in build_required_categories.items():
+            if available_categories.get(category, 0) < count:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail=f"Required skill categories not met for build type {build_type.value}. Category {category} needs {count}, but only {available_categories.get(category, 0)} available"
+                )
+        
+        # Get skills that match focus and have gem synergies
+        skill_scores = {}
+        for skill in available_skills + available_weapons:
+            # Calculate base score from focus match
+            base_score = self._calculate_skill_score(skill, build_type, focus, selected_gems)
+            
+            # Add bonus for gem synergies
+            gem_synergy_bonus = 0
+            for gem in selected_gems:
+                gem_categories = self._get_gem_categories(gem.name)
+                skill_categories = skill_registry[skill].get("categories", [])
+                matching_categories = set(gem_categories) & set(skill_categories)
+                if matching_categories:
+                    gem_synergy_bonus += 0.2 * len(matching_categories)
+            
+            # Add bonus for essence availability
+            essence_data = self.class_data[character_class]["essences"]
+            skill_essences = essence_data.get("indexes", {}).get("by_skill", {}).get(skill, [])
+            if skill_essences:
+                best_essence_score = 0
+                for essence_slug in skill_essences[:10]:  # Limit essence search
+                    essence = essence_data["essences"].get(essence_slug)
+                    if essence:
+                        score = self._calculate_essence_score(essence, build_type, focus, selected_gems)
+                        best_essence_score = max(best_essence_score, score)
+                base_score += best_essence_score * 0.3  # Weight essence contribution
+            
+            final_score = base_score + gem_synergy_bonus
+            skill_scores[skill] = final_score
+        
+        # Sort skills by score
+        sorted_skills = sorted(skill_scores.items(), key=lambda x: x[1], reverse=True)
+        
+        # First select a weapon skill with highest score
+        weapon_skill = None
+        for skill, _ in sorted_skills:
+            if skill in available_weapons:
+                weapon_skill = skill
+                break
+                
+        if not weapon_skill:
+            # If no weapon skill found in synergies, take first available
+            weapon_skill = available_weapons[0]
+            
+        selected_skills = [Skill(name=weapon_skill, essence=None)]
+        used_skills = {weapon_skill}
+        
+        # Then select secondary skills prioritizing synergies and essences
         essence_data = self.class_data[character_class]["essences"]
+        secondary_skills = []
         
-        for skill in all_skills[:5]:
+        for skill, _ in sorted_skills:
+            if skill in used_skills:
+                continue
+                
             # Find best essence for this skill
             best_essence = None
             best_score = -1
             
-            # Get all essences for this skill from the index
-            skill_essences = essence_data["indexes"]["by_skill"].get(skill, [])
+            # Get essences for this skill
+            skill_essences = essence_data.get("indexes", {}).get("by_skill", {}).get(skill, [])
             
-            for essence_slug in skill_essences:
-                essence = essence_data["essences"][essence_slug]
-                
-                # Calculate score based on effect type and tags
-                score = 0
-                if "effect_type" in essence:
-                    if build_type == BuildType.PVE and essence["effect_type"] == "pve":
-                        score += 0.5
-                    elif build_type == BuildType.PVP and essence["effect_type"] == "pvp":
-                        score += 0.5
-                
-                if "effect_tags" in essence:
-                    if focus == BuildFocus.DPS and "damage" in essence["effect_tags"]:
-                        score += 0.3
-                    elif focus == BuildFocus.SURVIVAL and "defense" in essence["effect_tags"]:
-                        score += 0.3
-                
+            for essence_slug in skill_essences[:10]:  # Limit essence search
+                essence = essence_data["essences"].get(essence_slug)
+                if not essence:
+                    continue
+                    
+                score = self._calculate_essence_score(essence, build_type, focus, selected_gems)
                 if score > best_score:
                     best_score = score
                     best_essence = essence
-            
-            selected_skills.append(Skill(
+                    
+            secondary_skills.append(Skill(
                 name=skill,
                 essence=best_essence["essence_name"] if best_essence else None
             ))
+            used_skills.add(skill)
+            
+            if len(secondary_skills) >= 4:
+                break
+                
+        # Add secondary skills
+        selected_skills.extend(secondary_skills)
         
+        # If we still need more skills, add from available_skills
+        remaining_slots = 5 - len(selected_skills)
+        if remaining_slots > 0:
+            for skill, _ in sorted_skills:
+                if skill not in used_skills:
+                    selected_skills.append(Skill(name=skill, essence=None))
+                    used_skills.add(skill)
+                    remaining_slots -= 1
+                    if remaining_slots == 0:
+                        break
+                        
+        # Validate final selection
+        skill_names = [s.name for s in selected_skills]
+        if not self._validate_skill_selection(skill_names, character_class, build_type):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Unable to create valid skill selection"
+            )
+            
         return selected_skills
+    
+    def _validate_skill_selection(
+        self,
+        selected_skills: List[str],
+        character_class: str,
+        build_type: BuildType = None
+    ) -> bool:
+        """Validate skill selection against constraints.
+        
+        Args:
+            selected_skills: List of selected skills
+            character_class: Character class
+            build_type: Optional build type for additional validation
+            
+        Returns:
+            True if valid, False otherwise
+            
+        Raises:
+            HTTPException: If validation fails with specific reason
+        """
+        try:
+            # Get class constraints and skill data
+            class_constraints = self.class_constraints[character_class]
+            skill_registry = self.class_data[character_class]["base_skills"]["registry"]
+            
+            # Check if all selected skills exist in registry
+            for skill in selected_skills:
+                if skill not in skill_registry:
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail=f"Selected skill {skill} not found in registry"
+                    )
+                    
+            # Get categories for selected skills
+            skill_categories = {}
+            for skill in selected_skills:
+                skill_data = skill_registry[skill]
+                categories = skill_data.get("categories", [])
+                for category in categories:
+                    skill_categories[category] = skill_categories.get(category, 0) + 1
+                    
+            # Check build type specific requirements first
+            if build_type:
+                build_constraints = self.constraints["build_types"][build_type.value.lower()]
+                build_required_categories = build_constraints.get("required_categories", {})
+                
+                for category, count in build_required_categories.items():
+                    if skill_categories.get(category, 0) < count:
+                        raise HTTPException(
+                            status_code=status.HTTP_400_BAD_REQUEST,
+                            detail=f"Required skill categories not met for build type {build_type.value}. Category {category} needs {count}, has {skill_categories.get(category, 0)}"
+                        )
+                    
+            # Then check required categories from class constraints
+            required_categories = class_constraints.get("required_categories", {})
+            for category, count in required_categories.items():
+                if skill_categories.get(category, 0) < count:
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail=f"Required class category {category} not met. Need {count}, have {skill_categories.get(category, 0)}"
+                    )
+                    
+            # Check incompatible skills
+            incompatible_skills = class_constraints.get("incompatible_skills", [])
+            for incompatible_pair in incompatible_skills:
+                if all(skill in selected_skills for skill in incompatible_pair):
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail=f"Incompatible skills selected: {incompatible_pair}"
+                    )
+                    
+            # Check weapon slot requirements
+            weapon_slots = class_constraints.get("weapon_slots", {})
+            available_weapons = weapon_slots.get("available_weapons", [])
+            weapon_skill_found = False
+            
+            for skill in selected_skills:
+                if skill in available_weapons:
+                    weapon_skill_found = True
+                    break
+                    
+            if not weapon_skill_found and available_weapons:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="No weapon skill selected"
+                )
+            
+            return True
+            
+        except HTTPException:
+            raise
+        except Exception as e:
+            logger.error(f"Error validating skill selection: {str(e)}")
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Error validating skill selection: {str(e)}"
+            )
+
+    def _validate_weapon_selection(
+        self,
+        selected_weapon: str,
+        character_class: str
+    ) -> bool:
+        """Validate weapon selection against constraints.
+        
+        Args:
+            selected_weapon: Selected weapon
+            character_class: Character class
+            
+        Returns:
+            True if valid, False otherwise
+        """
+        try:
+            # Get class constraints
+            class_constraints = self.class_constraints[character_class]
+            available_weapons = class_constraints["weapon_slots"]["available_weapons"]
+            
+            # Check weapon is available
+            return selected_weapon in available_weapons
+            
+        except (KeyError, TypeError):
+            return False
     
     def _select_equipment(
         self,
@@ -587,100 +833,6 @@ class BuildService:
         
         return equipment
     
-    def _validate_skill_selection(
-        self,
-        selected_skills: List[str],
-        character_class: str
-    ) -> bool:
-        """Validate skill selection against constraints.
-        
-        Args:
-            selected_skills: List of selected skills
-            character_class: Character class
-            
-        Returns:
-            True if valid, False otherwise
-        """
-        try:
-            # Get class data and constraints
-            class_data = self.class_data[character_class]
-            skill_registry = class_data["base_skills"]["registry"]
-            class_constraints = self.class_constraints[character_class]
-            
-            # Get available skills
-            available_skills = class_constraints["skill_slots"]["available_skills"]
-            available_weapons = class_constraints["weapon_slots"]["available_weapons"]
-            
-            # Check total number of skills (1 weapon + 4 secondary)
-            if len(selected_skills) != 5:
-                return False
-                
-            # First skill must be a weapon skill
-            if not selected_skills or selected_skills[0] not in available_weapons:
-                return False
-                
-            # Rest must be non-weapon skills
-            secondary_skills = selected_skills[1:]
-            for skill in secondary_skills:
-                if skill not in available_skills:
-                    return False
-            
-            # Check skill types
-            has_damage = False
-            has_control_or_buff = False
-            has_mobility = False
-            
-            for skill in secondary_skills:  # Only check secondary skills for type requirements
-                # Get skill data and validate types
-                skill_data = skill_registry.get(skill)
-                if not skill_data:
-                    return False
-                    
-                base_type = skill_data["base_type"].lower()
-                second_type = skill_data.get("second_base_type")
-                
-                # Check skill types
-                if base_type == "damage":
-                    has_damage = True
-                elif base_type in {"control", "buff"}:
-                    has_control_or_buff = True
-                
-                # Check mobility from either base or second type
-                if base_type == "dash" or second_type == "dash":
-                    has_mobility = True
-            
-            # Must have at least one of each required type
-            return has_damage and has_control_or_buff and has_mobility
-            
-        except (KeyError, TypeError) as e:
-            logger.error(f"Error validating skill selection: {e}")
-            return False
-    
-    def _validate_weapon_selection(
-        self,
-        selected_weapon: str,
-        character_class: str
-    ) -> bool:
-        """Validate weapon selection against constraints.
-        
-        Args:
-            selected_weapon: Selected weapon
-            character_class: Character class
-            
-        Returns:
-            True if valid, False otherwise
-        """
-        try:
-            # Get class constraints
-            class_constraints = self.class_constraints[character_class]
-            available_weapons = class_constraints["weapon_slots"]["available_weapons"]
-            
-            # Check weapon is available
-            return selected_weapon in available_weapons
-            
-        except (KeyError, TypeError):
-            return False
-    
     def _select_set_pieces(
         self,
         build_type: BuildType,
@@ -703,7 +855,7 @@ class BuildService:
         """
         try:
             # Get available sets
-            available_sets = self.equipment_data["sets"]
+            available_sets = self.equipment_data["sets"]  # Update equipment data
             
             # Calculate scores for each set
             set_scores = []
@@ -765,7 +917,7 @@ class BuildService:
     
     def _calculate_equipment_score(
         self,
-        piece_name: str,
+        equipment_name: str,
         slot: str,
         data: Dict,
         build_type: BuildType,
@@ -773,64 +925,73 @@ class BuildService:
         selected_gems: List[Gem],
         selected_skills: List[Skill]
     ) -> float:
-        """Calculate an equipment piece's effectiveness score.
+        """Calculate score for a piece of equipment.
         
         Args:
-            piece_name: Name of the piece
-            slot: Equipment slot
+            equipment_name: Name of the equipment
+            slot: Slot of the equipment
             data: Equipment data
-            build_type: Type of build
-            focus: Build focus
-            selected_gems: Previously selected gems
-            selected_skills: Previously selected skills
+            build_type: Type of build (PVE, PVP, etc)
+            focus: Build focus (DPS, Survival, etc)
+            selected_gems: List of selected gems
+            selected_skills: List of selected skills
             
         Returns:
-            Score from 0.0 to 1.0
+            Score between 0 and 1
         """
-        score = 0.0
-        total_weight = 0.0
+        total_score = 0.0
         
-        try:
-            # Base stats weight
-            base_stats = data.get("base_stats", {})
-            for stat, value in base_stats.items():
-                if self._matches_focus(stat, focus):
-                    stat_score = min(value / 100.0, 1.0)
-                    score += stat_score
-                    total_weight += 1.0
-            
-            # Essence modification weight
-            essence_mods = data.get("essence_mods", {})
-            for mod_name, mod_data in essence_mods.items():
-                for stat, value in mod_data.items():
-                    if self._matches_focus(stat, focus):
-                        mod_score = min(value / 100.0, 1.0)
-                        score += mod_score * 0.8  # Weight essence mods slightly less
-                        total_weight += 0.8
-            
-            # Skill synergy weight
-            skill_mods = data.get("skill_mods", {})
-            for skill in selected_skills:
-                if skill.name in skill_mods:
-                    score += 0.5
-                    total_weight += 0.5
-            
-            # Gem synergy weight
-            gem_mods = data.get("gem_mods", {})
-            for gem in selected_gems:
-                if gem.name in gem_mods:
-                    score += 0.5
-                    total_weight += 0.5
-        
-        except (KeyError, AttributeError) as e:
-            logger.warning(
-                f"Error calculating score for {piece_name}: {str(e)}"
+        # Score base stats
+        base_stats = data.get("base_stats", {})
+        if focus == BuildFocus.DPS:
+            total_score += (
+                base_stats.get("damage", 0) * 0.4 +
+                base_stats.get("critical_hit", 0) * 0.3 +
+                base_stats.get("attack_speed", 0) * 0.3
             )
-            return 0.0
-        
-        # Normalize final score
-        return score / max(total_weight, 1.0) if total_weight > 0 else 0.0
-    
+        else:  # Survival focus
+            total_score += (
+                base_stats.get("life", 0) * 0.4 +
+                base_stats.get("armor", 0) * 0.3 +
+                base_stats.get("resistance", 0) * 0.3
+            )
+            
+        # Score essence mods
+        essence_mods = data.get("essence_mods", {})
+        for essence_name, mods in essence_mods.items():
+            if focus == BuildFocus.DPS:
+                total_score += (
+                    mods.get("damage", 0) * 0.4 +
+                    mods.get("critical_hit", 0) * 0.3 +
+                    mods.get("attack_speed", 0) * 0.3
+                )
+            else:  # Survival focus
+                total_score += (
+                    mods.get("life", 0) * 0.4 +
+                    mods.get("armor", 0) * 0.3 +
+                    mods.get("resistance", 0) * 0.3
+                )
+                
+        # Score skill mods
+        skill_mods = data.get("skill_mods", {})
+        for skill in selected_skills:
+            if skill.name in skill_mods:
+                mods = skill_mods[skill.name]
+                if focus == BuildFocus.DPS:
+                    total_score += mods.get("damage", 0) * 0.5
+                else:  # Survival focus
+                    total_score += mods.get("defense", 0) * 0.5
+                    
+        # Score gem mods
+        gem_mods = data.get("gem_mods", {})
+        for gem in selected_gems:
+            if gem.name in gem_mods:
+                mods = gem_mods[gem.name]
+                total_score += mods.get("effect_bonus", 0) * 0.3
+                
+        # Normalize score to 0-1 range
+        return min(max(total_score / 100.0, 0.0), 1.0)
+
     def _calculate_set_score(
         self,
         set_name: str,
@@ -840,69 +1001,56 @@ class BuildService:
         selected_gems: List[Gem],
         selected_skills: List[Skill]
     ) -> float:
-        """Calculate a set's effectiveness score.
+        """Calculate score for a set.
         
         Args:
             set_name: Name of the set
             data: Set data
-            build_type: Type of build
-            focus: Build focus
-            selected_gems: Previously selected gems
-            selected_skills: Previously selected skills
+            build_type: Type of build (PVE, PVP, etc)
+            focus: Build focus (DPS, Survival, etc)
+            selected_gems: List of selected gems
+            selected_skills: List of selected skills
             
         Returns:
-            Score from 0.0 to 1.0
+            Score between 0 and 1
         """
-        score = 0.0
-        total_weight = 0.0
+        total_score = 0.0
         
-        try:
-            # Score 2-piece bonus
-            bonus_2pc = data.get("bonus_2pc", {})
-            for stat, value in bonus_2pc.items():
-                if self._matches_focus(stat, focus):
-                    stat_score = min(value / 100.0, 1.0)
-                    score += stat_score
-                    total_weight += 1.0
-            
-            # Score 4-piece bonus (weighted higher)
-            bonus_4pc = data.get("bonus_4pc", {})
-            for stat, value in bonus_4pc.items():
-                if self._matches_focus(stat, focus):
-                    stat_score = min(value / 100.0, 1.0)
-                    score += stat_score * 1.5  # Weight 4pc bonus higher
-                    total_weight += 1.5
-            
-            # Score 6-piece bonus (weighted highest)
-            bonus_6pc = data.get("bonus_6pc", {})
-            for stat, value in bonus_6pc.items():
-                if self._matches_focus(stat, focus):
-                    stat_score = min(value / 100.0, 1.0)
-                    score += stat_score * 2.0  # Weight 6pc bonus highest
-                    total_weight += 2.0
-            
-            # Score skill synergies
-            skill_synergies = data.get("skill_synergies", {})
-            for skill in selected_skills:
-                if skill.name in skill_synergies:
-                    score += 0.5
-                    total_weight += 0.5
-            
-            # Score gem synergies
-            gem_synergies = data.get("gem_synergies", {})
-            for gem in selected_gems:
-                if gem.name in gem_synergies:
-                    score += 0.5
-                    total_weight += 0.5
-        
-        except (KeyError, AttributeError) as e:
-            logger.warning(
-                f"Error calculating score for set {set_name}: {str(e)}"
-            )
-            return 0.0
-        
-        # Normalize final score
-        return score / max(total_weight, 1.0) if total_weight > 0 else 0.0
+        # Score set bonuses
+        for bonus_key in ["bonus_2pc", "bonus_4pc", "bonus_6pc"]:
+            bonus = data.get(bonus_key, {})
+            if focus == BuildFocus.DPS:
+                total_score += (
+                    bonus.get("damage", 0) * 0.4 +
+                    bonus.get("critical_hit", 0) * 0.3 +
+                    bonus.get("attack_speed", 0) * 0.3
+                )
+            else:  # Survival focus
+                total_score += (
+                    bonus.get("life", 0) * 0.4 +
+                    bonus.get("armor", 0) * 0.3 +
+                    bonus.get("resistance", 0) * 0.3
+                )
+                
+        # Score skill synergies
+        skill_synergies = data.get("skill_synergies", {})
+        for skill in selected_skills:
+            if skill.name in skill_synergies:
+                synergies = skill_synergies[skill.name]
+                if focus == BuildFocus.DPS:
+                    total_score += synergies.get("damage", 0) * 0.5
+                else:  # Survival focus
+                    total_score += synergies.get("defense", 0) * 0.5
+                    
+        # Score gem synergies
+        gem_synergies = data.get("gem_synergies", {})
+        for gem in selected_gems:
+            if gem.name in gem_synergies:
+                synergies = gem_synergies[gem.name]
+                total_score += synergies.get("effect_bonus", 0) * 0.3
+                
+        # Normalize score to 0-1 range
+        return min(max(total_score / 100.0, 0.0), 1.0)
     
     def _get_best_set_pieces(
         self,
@@ -922,7 +1070,7 @@ class BuildService:
         """
         try:
             pieces = []
-            set_data = self.equipment_data["sets"][set_name]["pieces"]
+            set_data = self.equipment_data["sets"][set_name]  # Update equipment data
             
             # Sort pieces by their base stats
             sorted_pieces = sorted(
@@ -1225,29 +1373,75 @@ class BuildService:
             Score between 0 and 1
         """
         try:
+            # Define type weights for different build types and focuses
+            type_weights = {
+                BuildType.PVE: {
+                    BuildFocus.DPS: {
+                        "damage": 1.0,
+                        "aoe": 0.9,
+                        "control": 0.5,
+                        "mobility": 0.3
+                    },
+                    BuildFocus.SURVIVAL: {
+                        "damage": 0.4,
+                        "control": 0.8,
+                        "mobility": 0.6,
+                        "defense": 1.0
+                    },
+                    BuildFocus.BUFF: {
+                        "damage": 0.3,
+                        "control": 0.7,
+                        "mobility": 0.5,
+                        "support": 1.0
+                    }
+                },
+                BuildType.PVP: {
+                    BuildFocus.DPS: {
+                        "damage": 0.9,
+                        "control": 0.7,
+                        "mobility": 0.8,
+                        "aoe": 0.5
+                    },
+                    BuildFocus.SURVIVAL: {
+                        "damage": 0.5,
+                        "control": 0.8,
+                        "mobility": 0.7,
+                        "defense": 1.0
+                    },
+                    BuildFocus.BUFF: {
+                        "damage": 0.4,
+                        "control": 0.9,
+                        "mobility": 0.8,
+                        "support": 1.0
+                    }
+                }
+            }
+            
             # Get skill data
             skill_data = self.class_data["barbarian"]["base_skills"]["registry"][skill_name]
-            skill_type = skill_data.get("type")
-            damage_type = skill_data.get("damage_type")
-            
-            # Initialize scoring variables
             score = 0.0
             weight = 0.0
             
-            # Get base weight for skill type
-            if skill_type in type_weights[build_type]:
-                weight = type_weights[build_type][skill_type][focus]
-                score = weight
+            # Calculate score based on base type
+            base_type = skill_data.get("base_type")
+            if base_type in type_weights[build_type][focus]:
+                type_score = type_weights[build_type][focus][base_type]
+                score += type_score
+                weight += 1.0
             
-            # Check essence modifications from class data
-            if skill_name in self.class_data["barbarian"]["essences"]:
-                for essence in self.class_data["barbarian"]["essences"][skill_name]:
-                    effect = essence.get("effect", "")
-                    for category, value in self._parse_effect(effect).items():
-                        if self._matches_focus(category, focus):
-                            mod_score = min(value / 100.0, 1.0)
-                            score += mod_score * 0.5  # Weight essence mods less
-                            weight += 0.5
+            # Add score for secondary type if present
+            second_type = skill_data.get("second_base_type")
+            if second_type and second_type in type_weights[build_type][focus]:
+                type_score = type_weights[build_type][focus][second_type] * 0.5  # Half weight for secondary
+                score += type_score
+                weight += 0.5
+            
+            # Check categories
+            categories = skill_data.get("categories", [])
+            for category in categories:
+                if self._matches_focus(category, focus):
+                    score += 0.3  # Bonus for matching category
+                    weight += 0.3
             
             # Check gem synergies
             for gem in selected_gems:
@@ -1256,14 +1450,13 @@ class BuildService:
                         if skill_name in self.synergies[category]["skills"]:
                             score += 0.5  # Bonus for gem synergy
                             weight += 0.5
-        
+            
+            # Normalize final score
+            return score / max(weight, 1.0) if weight > 0 else 0.0
+            
         except (KeyError, AttributeError) as e:
-            logger.warning(
-                f"Error calculating skill score for {skill_name}: {str(e)}")
+            logger.warning(f"Error calculating skill score for {skill_name}: {str(e)}")
             return 0.0
-        
-        # Normalize final score
-        return score / max(weight, 1.0) if weight > 0 else 0.0
     
     def _get_gem_categories(self, gem_name: str) -> List[str]:
         """Get categories that a gem belongs to.
@@ -1363,8 +1556,9 @@ class BuildService:
                 if "attack_speed" in effect_tags:
                     build_type_bonus += 0.3  # Extra bonus for attack speed in raids
                 # Additional bonus for percentage-based effects in raids
-                if isinstance(effect, str) and ("increased" in effect.lower() or "more" in effect.lower()):
-                    build_type_bonus += 0.3  # Extra bonus for percentage-based effects in raids
+                if isinstance(effect, str):
+                    if "increased" in effect.lower() or "more" in effect.lower():
+                        build_type_bonus += 0.3  # Extra bonus for percentage-based effects in raids
                 
         # Percentage bonus
         if isinstance(effect, str):
@@ -1406,3 +1600,69 @@ class BuildService:
         
         # Normalize score to 0-1 range
         return min(max(total_score, 0.0), 1.0)
+
+    def _select_gear_piece(
+        self,
+        slot: str,
+        build_type: BuildType,
+        focus: BuildFocus,
+        selected_gems: List[Gem],
+        selected_skills: List[Skill],
+        inventory: Optional[Dict] = None
+    ) -> Equipment:
+        """Select the best gear piece for a given slot.
+        
+        Args:
+            slot: Equipment slot to select for
+            build_type: Type of build (PVE, PVP, etc)
+            focus: Build focus (DPS, Survival, etc)
+            selected_gems: List of selected gems
+            selected_skills: List of selected skills
+            inventory: Optional inventory data
+            
+        Returns:
+            Selected Equipment piece
+        """
+        # Get gear data for slot
+        gear_data = self.equipment_data.get("gear", {}).get(slot, {})  # Update equipment data
+        if not gear_data:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"No gear data found for slot: {slot}"
+            )
+        
+        # If inventory provided, filter to available pieces
+        if inventory and slot in inventory:
+            gear_data = {
+                name: data for name, data in gear_data.items()
+                if name in inventory[slot]
+            }
+            
+        # Score each piece
+        piece_scores = []
+        for piece_name, data in gear_data.items():
+            score = self._calculate_equipment_score(
+                equipment_name=piece_name,
+                slot=slot,
+                data=data,
+                build_type=build_type,
+                focus=focus,
+                selected_gems=selected_gems,
+                selected_skills=selected_skills
+            )
+            
+            piece_scores.append((piece_name, score))
+        
+        if not piece_scores:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"No valid gear pieces found for slot: {slot}"
+            )
+        
+        # Select highest scoring piece
+        piece_name, _ = max(piece_scores, key=lambda x: x[1])
+        return Equipment(
+            name=piece_name,
+            slot=slot,
+            set_name=gear_data[piece_name]["set"]
+        )

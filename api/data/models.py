@@ -34,6 +34,14 @@ class GemBase(BaseModel):
     )
 
 
+class Gem(GemBase):
+    """Gem information with rank and quality."""
+
+    rank: int = Field(..., description="Current rank of the gem")
+    quality: Optional[int] = Field(None, description="Quality level if applicable")
+    aux_gem: Optional[str] = Field(None, description="Name of auxiliary gem if any")
+
+
 class SetBonus(BaseModel):
     """Equipment set bonus information."""
 
