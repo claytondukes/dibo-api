@@ -1,175 +1,95 @@
-# DIBO (Diablo Immortal Build Optimizer)
+# DIBO API (Diablo Immortal Build Optimizer)
 
-A comprehensive API for analyzing Diablo Immortal game data and generating optimal build recommendations. The tool considers various game elements including gems, essences, and their interactions to suggest the most effective character builds.
+A RESTful API for analyzing Diablo Immortal game data and generating optimal build recommendations. The API processes game data including gems, essences, and their interactions to suggest the most effective character builds.
 
 ## Features
 
-The main purpose of the project is to provide a tool that may be used
-to generate builds based on the user's request. 
-For example:
+- **Build Generation & Analysis**
+  - Generate optimized builds based on playstyle (Raid, PvP, PvE)
+  - Analyze existing builds for optimization opportunities
+  - Consider synergies between skills, gems, and equipment
 
-- Raid build
-- PVE
-- PvP
-- Fast Farm
-- Survivabilty
-- Single-Target DPS
-- Maximum buff uptime
-- etc.
+- **Game Data Access**
+  - Class-specific skills and essences
+  - Equipment sets and bonuses
+  - Gem stats and synergies
+  - Build constraints and requirements
 
-The system takes into account the base descriptions of weapons, 
-skills, sets, etc. and then analyzes the synergies between all 
-components including enchantments, curses, gems, auxillary gems, reforges, and skill essences. 
+- **Inventory Management**
+  - Store personal inventory in GitHub Gists
+  - Track owned gems and their ranks
+  - Consider available items for build recommendations
 
-It can also allow an input of player inventory so that it can generate a personalized build based on what you own or don't own. 
+- **Authentication**
+  - Secure GitHub OAuth 2.0
+  - JWT-based authorization
+  - User profile management
 
-For example:
+## Quick Start
 
-```
-{
-  "owned_gems": {
-    "5_star": [
-      {
-        "name": "Blessing of the Worthy",
-        "rank": 6,
-        "quality": 5
-      },
-    "2_star": [
-      {
-        "name": "Cutthroat's Grin",
-        "rank": 8,
-      },
-      {
-        "name": "Fervent Fang",
-        "rank": 9,
-      },
-      "1_star": [
-      {
-        "name": "Berserker's Eye",
-        "rank": 7,
-      }
-    ]
-  }
-}
-```
+1. **Prerequisites**
+   - GitHub account for authentication
+   - Python 3.13+
+   - Valid GitHub OAuth credentials
 
+2. **Setup**
+   ```bash
+   # Clone the repository
+   git clone https://github.com/yourusername/dibo-api.git
+   cd dibo-api
 
-## API Features
+   # Create and activate virtual environment
+   python -m venv venv
+   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 
-- GitHub OAuth authentication (✅ implemented)
-- Inventory Management via GitHub Gists (✅ implemented)
-- Build Generation (🚧 in progress)
-- Cloudflare Workers backend
+   # Install dependencies
+   pip install -r requirements.txt
 
-## Documentation
+   # Set up environment variables
+   cp .env.example .env
+   ```
 
-### Setup and Configuration
-- [Cloudflare Setup](docs/cloudflare.md) - Worker and DNS configuration Guide
-- [API Documentation](docs/api/v1.md) - Complete API reference with implemented and planned endpoints
-
-### Game Systems
-- [Game Mechanics](docs/game/mechanics.md) - Core game systems and build types
-- [Skills Guide](docs/game/skills.md) - Comprehensive skill system documentation
-- [Auxiliary Gems](docs/game/aux_gems.md) - Detailed explanation of the auxiliary gem system
-- [Equipment Sets](docs/game/sets.md) - Complete guide to equipment sets and their bonuses
-
-## Managing Your Inventory with GitHub Gists
-
-DIBO uses GitHub Gists to store and manage your personal inventory. This provides a secure, version-controlled way to maintain your inventory data.
-
-### Setting Up Your Inventory
-
-1. Create a new GitHub Gist named `gems.json` with your inventory data:
-
-```json
-{
-  "Berserker's Eye": {
-    "owned_rank": 10,
-    "quality": null
-  },
-  "Blessing of the Worthy": {
-    "owned_rank": 3,
-    "quality": "2"
-  }
-}
-```
-
-2. The gist can be either public or private
-3. When you authenticate with DIBO, it will automatically find and use your `gems.json` gist
-
-### Authentication Flow
-
-1. Click the "Login with GitHub" button
-2. Authorize DIBO to access your GitHub account (requires `gist` scope)
-3. Your inventory will be automatically loaded from your gist
-
-### API Endpoints
-
-#### Get Inventory
-
-```http
-GET /auth/inventory
-Authorization: Bearer <your_token>
-```
-
-Response:
-```json
-{
-  "Berserker's Eye": {
-    "owned_rank": 10,
-    "quality": null
-  },
-  ...
-}
-```
-
-If no inventory gist is found, an empty object `{}` will be returned.
+3. **Configuration**
+   ```env
+   # Required environment variables
+   GITHUB_CLIENT_ID=your_github_client_id
+   GITHUB_CLIENT_SECRET=your_github_client_secret
+   GITHUB_CALLBACK_URL=https://your-api-domain/auth/github/callback
+   ```
 
 ## Project Structure
 
 ```
-.
-├── api/                      # API
-├── data                      # Input Data
-│   ├── indexed               # JSON Indexed data from raw inputs
-│   ├── legacy                # Original CSV files
-│   └── raw                   # Raw JSON files used for generating indexes
-├── docs/                     # Documentation
-│   ├── api/                  # API documentation
-│   ├── game/                 # Game mechanics documentation
-├── tests/                    # Tests
-│   ├── api/                  # API tests
-│   └── fixtures/             # Test fixtures
+dibo-api/
+├── api/                 # API implementation
+│   ├── auth/           # Authentication endpoints
+│   ├── builds/         # Build generation logic
+│   └── data/           # Data management
+├── data/               # Game data
+│   └── indexed/        # Processed game data
+├── tests/              # Test suites
+└── docs/               # Documentation
+    └── api/            # API documentation
 ```
 
+## Documentation
 
-## Development
-
-### Prerequisites
-- Python 3.13+
-- Cloudflare account
-- GitHub account (for OAuth)
-
-### Quick Start
-1. Clone the repository
-2. `cp .env.example .env`
-3. Profit! (I should probably document this more ;))
+- [API Reference](docs/api/v1.md) - Complete API documentation
+- [Game Mechanics](docs/game/mechanics.md) - Core game systems
 
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Acknowledgments
 
-## [TODO] UI Features
-
-- Manual Builder
-- Build sharing via GitHub Gists
-- Community build library
-- Update all test cases to use the character class given instead of hard-coded barb items/skills, etc. 
+- Blizzard Entertainment for Diablo Immortal
+- The Diablo Immortal community for their support and feedback
