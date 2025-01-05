@@ -11,7 +11,9 @@ from api.models.game_data.schemas import (
     GameDataMetadata,
     Gem,
     GemsBySkill,
-    GemData
+    GemData,
+    EquipmentSet,
+    EquipmentSets
 )
 
 
@@ -77,3 +79,33 @@ class TestGemData:
         data = GemData(gems_by_skill=GemsBySkill())
         assert len(data.gems_by_skill.movement) == 0
         assert len(data.gems_by_skill.primary_attack) == 0
+
+
+class TestEquipmentSet:
+    """Tests for the EquipmentSet model."""
+
+    def test_valid_set(self, sample_equipment_set):
+        """Test creating an equipment set with valid data."""
+        set_data = EquipmentSet.model_validate(sample_equipment_set)
+        assert set_data.pieces == 6
+        assert set_data.bonuses.two == "Increases DoT damage by 15%"
+        assert set_data.bonuses.four == "Additional DoT damage"
+        assert set_data.bonuses.six == "Unleash lightning strikes"
+
+    def test_missing_bonus(self, sample_equipment_set):
+        """Test validation with missing optional bonuses."""
+        set_data = sample_equipment_set.copy()
+        del set_data["bonuses"]["6"]
+        set_model = EquipmentSet.model_validate(set_data)
+        assert set_model.bonuses.six is None
+
+
+class TestEquipmentSets:
+    """Tests for the EquipmentSets model."""
+
+    def test_valid_sets_data(self, sample_equipment_sets_data):
+        """Test creating EquipmentSets with valid data."""
+        sets = EquipmentSets.model_validate(sample_equipment_sets_data)
+        assert sets.metadata.bonus_thresholds == [2, 4, 6]
+        assert "Grace of the Flagellant" in sets.registry
+        assert sets.registry["Grace of the Flagellant"].pieces == 6

@@ -59,10 +59,49 @@ def sample_gems_data() -> Dict[str, Any]:
 
 
 @pytest.fixture
+def sample_equipment_set() -> Dict[str, Any]:
+    """Sample equipment set data for testing."""
+    return {
+        "pieces": 6,
+        "description": "A set focused on DoT damage",
+        "bonuses": {
+            "2": "Increases DoT damage by 15%",
+            "4": "Additional DoT damage",
+            "6": "Unleash lightning strikes"
+        },
+        "use_case": "Best for DoT builds"
+    }
+
+
+@pytest.fixture
+def sample_equipment_sets_data() -> Dict[str, Any]:
+    """Sample equipment sets collection for testing."""
+    return {
+        "metadata": {
+            "bonus_thresholds": [2, 4, 6],
+            "bonus_rules": "Set bonuses are additive"
+        },
+        "registry": {
+            "Grace of the Flagellant": {
+                "pieces": 6,
+                "description": "A set focused on DoT damage",
+                "bonuses": {
+                    "2": "Increases DoT damage by 15%",
+                    "4": "Additional DoT damage",
+                    "6": "Unleash lightning strikes"
+                },
+                "use_case": "Best for DoT builds"
+            }
+        }
+    }
+
+
+@pytest.fixture
 def mock_data_dir(
     tmp_path_factory: TempPathFactory,
     sample_metadata: Dict[str, Any],
-    sample_gems_data: Dict[str, Any]
+    sample_gems_data: Dict[str, Any],
+    sample_equipment_sets_data: Dict[str, Any]
 ) -> Path:
     """Create a temporary data directory with mock files."""
     base_dir = tmp_path_factory.mktemp("data")
@@ -76,5 +115,11 @@ def mock_data_dir(
     gems_dir.mkdir()
     with open(gems_dir / "gems.json", "w") as f:
         json.dump(sample_gems_data, f)
+    
+    # Create equipment directory and file
+    equipment_dir = base_dir / "equipment"
+    equipment_dir.mkdir()
+    with open(equipment_dir / "sets.json", "w") as f:
+        json.dump(sample_equipment_sets_data, f)
     
     return base_dir

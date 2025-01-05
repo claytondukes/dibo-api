@@ -13,7 +13,8 @@ from typing import Any, Dict, Optional, TypeVar, Type
 from .schemas import (
     GameDataMetadata,
     GameDataCache,
-    GemData
+    GemData,
+    EquipmentSets
 )
 
 T = TypeVar("T")
@@ -24,6 +25,7 @@ class GameDataManager:
 
     CATEGORY_LOADERS = {
         "gems": (GemData, "gems/gems.json"),
+        "equipment_sets": (EquipmentSets, "equipment/sets.json"),
     }
 
     def __init__(self, data_dir: Path) -> None:
