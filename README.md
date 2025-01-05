@@ -33,6 +33,7 @@ A RESTful API for analyzing Diablo Immortal game data and generating optimal bui
    - Valid GitHub OAuth credentials
 
 2. **Setup**
+   
    ```bash
    # Clone the repository
    git clone https://github.com/yourusername/dibo-api.git
@@ -50,6 +51,7 @@ A RESTful API for analyzing Diablo Immortal game data and generating optimal bui
    ```
 
 3. **Configuration**
+   
    ```env
    # Required environment variables
    GITHUB_CLIENT_ID=your_github_client_id
