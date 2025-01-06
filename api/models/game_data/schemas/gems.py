@@ -6,6 +6,21 @@ from typing import Dict, List, Optional
 from pydantic import BaseModel, Field, field_validator
 
 
+class GemConfig(BaseModel):
+    """Configuration for a gem in a build."""
+    
+    type: str = Field(
+        ...,
+        description="Type of gem"
+    )
+    level: int = Field(
+        ...,
+        description="Level of the gem",
+        ge=1,
+        le=10
+    )
+
+
 class Gem(BaseModel):
     """Represents a single gem in the game."""
     
@@ -49,10 +64,13 @@ class Gem(BaseModel):
 
     @field_validator("quality", mode="before")
     def validate_quality(cls, v: Optional[str | int]) -> Optional[int]:
-        """Convert quality to integer if present."""
+        """Convert quality to integer."""
         if v is None:
             return None
-        return int(v)
+        quality = int(v)
+        if quality < 1 or quality > 5:
+            raise ValueError("Quality must be between 1 and 5")
+        return quality
 
 
 class GemsBySkill(BaseModel):

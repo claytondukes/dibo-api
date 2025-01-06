@@ -2,8 +2,20 @@
 Pydantic models for equipment-related data structures.
 """
 
+from enum import Enum
 from typing import Dict, List, Optional
 from pydantic import BaseModel, Field
+
+
+class EquipmentSlot(str, Enum):
+    """Valid equipment slot types."""
+    
+    WEAPON = "weapon"
+    ARMOR = "armor"
+    HELMET = "helmet"
+    GLOVES = "gloves"
+    BOOTS = "boots"
+    ACCESSORY = "accessory"
 
 
 class SetMetadata(BaseModel):
@@ -49,7 +61,7 @@ class EquipmentSet(BaseModel):
 
 
 class EquipmentSets(BaseModel):
-    """Collection of all equipment sets."""
+    """Collection of equipment sets."""
     
     metadata: SetMetadata = Field(
         ...,

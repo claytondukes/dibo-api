@@ -6,6 +6,31 @@ from typing import Dict, List, Optional, Union
 from pydantic import BaseModel, Field
 
 
+class StatBlock(BaseModel):
+    """Character stat allocation."""
+    
+    strength: int = Field(
+        ...,
+        description="Strength stat value",
+        ge=0
+    )
+    dexterity: int = Field(
+        ...,
+        description="Dexterity stat value",
+        ge=0
+    )
+    intelligence: int = Field(
+        ...,
+        description="Intelligence stat value",
+        ge=0
+    )
+    vitality: int = Field(
+        ...,
+        description="Vitality stat value",
+        ge=0
+    )
+
+
 class StatCondition(BaseModel):
     """A condition that must be met for a stat value to apply."""
 
