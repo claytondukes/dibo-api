@@ -34,32 +34,38 @@ All endpoints are prefixed with `/api/v1`
     - `use_inventory`: Whether to consider user's inventory (default: false)
 
 ## Game Data Endpoints
-**Base path:** `/data`
+**Base path:** `/game`
 
-### Equipment and Items
-- `GET /data/sets` - List available equipment sets
+### Equipment Sets
+- `GET /game/equipment/sets` - List available equipment sets
   - Query Parameters:
     - `pieces`: Filter by number of pieces (2, 4, or 6)
     - `page`: Page number (default: 1)
     - `per_page`: Items per page (default: 20, max: 100)
 
 ### Gems
-- `GET /data/gems` - List available gems
+- `GET /game/gems` - List all gems
   - Query Parameters:
+    - `skill_type`: Filter by skill type (e.g., movement, attack)
     - `stars`: Filter by star rating (1, 2, or 5)
-    - `category`: Filter by category
-    - `page`: Page number (default: 1)
-    - `per_page`: Items per page (default: 20, max: 100)
+- `GET /game/gems/{name}` - Get a specific gem by name
+  - Response includes:
+    - `name`: Name of the gem
+    - `stars`: Star rating (1, 2, or 5)
+    - `base_effect`: Base effect at rank 1
+    - `rank_10_effect`: Effect at rank 10 (optional)
+    - `owned_rank`: Current rank if owned (optional)
+    - `quality`: Quality rating for 5-star gems (optional)
 
 ### Skills
-- `GET /data/skills/{character_class}` - List available skills for a character class
+- `GET /game/skills/{character_class}` - List available skills for a character class
   - Query Parameters:
     - `category`: Filter by category
     - `page`: Page number (default: 1)
     - `per_page`: Items per page (default: 20, max: 100)
 
 ### Stats
-- `GET /data/stats` - List stat relationships
+- `GET /game/stats` - List stat relationships
   - Query Parameters:
     - `stat`: Specific stat to retrieve
 
