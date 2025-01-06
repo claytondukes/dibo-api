@@ -17,14 +17,14 @@ def test_github_login(client: TestClient):
     data = response.json()
     assert "auth_url" in data
     assert "state" in data
-    assert settings.active_github_client_id in data["auth_url"]
-    assert "callback" in data["auth_url"]
+    assert "test_client_id" in data["auth_url"]
+    assert "http://localhost:8000/api/v1/auth/github" in data["auth_url"]
 
 
 def test_github_callback_no_code(client: TestClient):
     """Test GitHub callback route with missing code."""
     response = client.get(
-        f"{settings.API_V1_STR}/auth/github/callback",
+        f"{settings.API_V1_STR}/auth/github",
         params={"state": "test_state"}
     )
     assert response.status_code == 422
@@ -36,7 +36,7 @@ def test_github_callback_no_code(client: TestClient):
 def test_github_callback_no_state(client: TestClient):
     """Test GitHub callback route with missing state."""
     response = client.get(
-        f"{settings.API_V1_STR}/auth/github/callback",
+        f"{settings.API_V1_STR}/auth/github",
         params={"code": "test_code"}
     )
     assert response.status_code == 422
@@ -54,7 +54,7 @@ def test_github_callback_invalid_state(client: TestClient):
 
     # Then try with a different state
     response = client.get(
-        f"{settings.API_V1_STR}/auth/github/callback",
+        f"{settings.API_V1_STR}/auth/github",
         params={
             "code": "test_code",
             "state": "invalid_state"
@@ -83,7 +83,7 @@ def test_github_callback_success(client: TestClient):
         )
 
         response = client.get(
-            f"{settings.API_V1_STR}/auth/github/callback",
+            f"{settings.API_V1_STR}/auth/github",
             params={
                 "code": "test_code",
                 "state": valid_state

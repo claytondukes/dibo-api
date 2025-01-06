@@ -3,6 +3,7 @@
 from typing import Dict, List, Optional
 from fastapi import APIRouter, Depends, HTTPException, Header, Query, status, Body
 from pydantic import BaseModel
+import json
 
 from api.core.config import Settings, get_settings
 from api.auth.service import AuthService, get_auth_service
@@ -56,7 +57,7 @@ async def github_login(
     return auth_service.generate_github_login_url()
 
 
-@router.get("/github/callback", response_model=GitHubCallbackResponse)
+@router.get("/github", response_model=GitHubCallbackResponse)
 async def github_callback(
     code: str = Query(..., description="GitHub OAuth code"),
     state: str = Query(..., description="CSRF state token"),
@@ -147,30 +148,35 @@ async def get_inventory(
 ) -> Dict:
     """Get user's DIBO inventory from gists."""
     try:
-        gists = await auth_service.get_gists(token)
+        gists = await auth_service.get_user_gists(token)
         
         # Find DIBO inventory gist
         inventory_gist = next(
             (g for g in gists if g["description"] == "DIBO Inventory"),
             None
         )
+        
+        # Return empty inventory if no gist found
         if not inventory_gist:
             return {
-                "builds": [],
-                "profile": None,
-                "gems": [],
-                "sets": []
+                "profile": {"version": "1.0", "name": None, "class": None},
+                "gems": {"version": "1.0", "gems": []},
+                "sets": {"version": "1.0", "sets": []},
+                "builds": {"version": "1.0", "builds": []}
             }
         
-        # Return inventory data
+        # Parse inventory data from files
+        files = inventory_gist["files"]
         return {
-            "builds": inventory_gist["files"].get("builds.json", {"content": '{"builds":[]}'})["content"],
-            "profile": inventory_gist["files"].get("profile.json", {"content": None})["content"],
-            "gems": inventory_gist["files"].get("gems.json", {"content": '{"gems":[]}'})["content"],
-            "sets": inventory_gist["files"].get("sets.json", {"content": '{"sets":[]}'})["content"]
+            "profile": json.loads(files.get("profile.json", {"content": '{"version":"1.0","name":null,"class":null}'})["content"]),
+            "gems": json.loads(files.get("gems.json", {"content": '{"version":"1.0","gems":[]}'})["content"]),
+            "sets": json.loads(files.get("sets.json", {"content": '{"version":"1.0","sets":[]}'})["content"]),
+            "builds": json.loads(files.get("builds.json", {"content": '{"version":"1.0","builds":[]}'})["content"])
         }
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=str(e)
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Could not validate credentials"
         )
