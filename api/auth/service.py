@@ -10,9 +10,9 @@ from api.core.config import Settings, get_settings
 
 class AuthService:
     """Service for handling GitHub authentication."""
-
+    
     # Class-level state storage
-    states = {}
+    _states = {}
 
     def __init__(self, settings: Settings):
         """Initialize the auth service."""
@@ -21,7 +21,7 @@ class AuthService:
     def generate_github_login_url(self) -> Dict[str, str]:
         """Generate GitHub OAuth login URL with state."""
         state = secrets.token_urlsafe(32)
-        AuthService.states[state] = True  # Store state
+        self.__class__._states[state] = True  # Store state
 
         auth_url = (
             "https://github.com/login/oauth/authorize"
@@ -38,9 +38,9 @@ class AuthService:
 
     def validate_state(self, state: str) -> bool:
         """Validate the state parameter."""
-        is_valid = AuthService.states.get(state, False)
+        is_valid = self.__class__._states.get(state, False)
         if is_valid:
-            del AuthService.states[state]  # Remove used state
+            del self.__class__._states[state]  # Remove used state
         return is_valid
 
     async def exchange_code_for_token(
@@ -56,31 +56,44 @@ class AuthService:
             )
 
         async with httpx.AsyncClient() as client:
-            response = await client.post(
-                "https://github.com/login/oauth/access_token",
-                headers={"Accept": "application/json"},
-                json={
-                    "client_id": self.settings.DEV_GITHUB_CLIENT_ID,
-                    "client_secret": self.settings.DEV_GITHUB_CLIENT_SECRET,
-                    "code": code,
-                    "redirect_uri": str(self.settings.DEV_GITHUB_CALLBACK_URL)
-                }
-            )
-
-            if response.status_code != 200:
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail="Failed to exchange code for token"
+            try:
+                response = await client.post(
+                    "https://github.com/login/oauth/access_token",
+                    headers={"Accept": "application/json"},
+                    json={
+                        "client_id": self.settings.DEV_GITHUB_CLIENT_ID,
+                        "client_secret": self.settings.DEV_GITHUB_CLIENT_SECRET,
+                        "code": code,
+                        "redirect_uri": str(self.settings.DEV_GITHUB_CALLBACK_URL)
+                    }
                 )
 
-            data = response.json()
-            if "error" in data:
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=data.get("error_description", "Token exchange failed")
-                )
+                # Parse response first to handle GitHub error responses
+                data = response.json()
+                
+                if "error" in data:
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail=data.get("error_description", "Token exchange failed")
+                    )
 
-            return data
+                if response.status_code == 401:
+                    raise HTTPException(
+                        status_code=status.HTTP_401_UNAUTHORIZED,
+                        detail="Invalid GitHub credentials"
+                    )
+                elif response.status_code != 200:
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail="Failed to exchange code for token"
+                    )
+
+                return data
+            except httpx.RequestError as e:
+                raise HTTPException(
+                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    detail=f"Failed to connect to GitHub: {str(e)}"
+                )
 
     async def get_user_gists(self, access_token: str) -> list:
         """Get user's gists from GitHub."""

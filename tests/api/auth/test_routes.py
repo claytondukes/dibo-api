@@ -18,7 +18,11 @@ def test_github_login(client: TestClient):
     assert "auth_url" in data
     assert "state" in data
     assert "test_client_id" in data["auth_url"]
+<<<<<<< HEAD:tests/test_auth/test_routes.py
     assert "http://localhost:8000/api/v1/auth/github" in data["auth_url"]
+=======
+    assert "callback" in data["auth_url"]
+>>>>>>> origin/main:tests/api/auth/test_routes.py
 
 
 def test_github_callback_no_code(client: TestClient):

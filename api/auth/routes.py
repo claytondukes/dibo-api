@@ -66,10 +66,12 @@ async def github_callback(
     """Handle GitHub OAuth callback."""
     try:
         return await auth_service.exchange_code_for_token(code, state)
-    except ValueError as e:
+    except HTTPException:
+        raise  # Re-raise HTTP exceptions with their original status codes
+    except Exception as e:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=str(e)
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to process GitHub callback: {str(e)}"
         )
 
 
@@ -156,27 +158,30 @@ async def get_inventory(
             None
         )
         
-        # Return empty inventory if no gist found
         if not inventory_gist:
             return {
+                "builds": {"version": "1.0", "builds": []},
                 "profile": {"version": "1.0", "name": None, "class": None},
                 "gems": {"version": "1.0", "gems": []},
-                "sets": {"version": "1.0", "sets": []},
-                "builds": {"version": "1.0", "builds": []}
+                "sets": {"version": "1.0", "sets": []}
             }
         
-        # Parse inventory data from files
-        files = inventory_gist["files"]
+        # Parse inventory data
         return {
-            "profile": json.loads(files.get("profile.json", {"content": '{"version":"1.0","name":null,"class":null}'})["content"]),
-            "gems": json.loads(files.get("gems.json", {"content": '{"version":"1.0","gems":[]}'})["content"]),
-            "sets": json.loads(files.get("sets.json", {"content": '{"version":"1.0","sets":[]}'})["content"]),
-            "builds": json.loads(files.get("builds.json", {"content": '{"version":"1.0","builds":[]}'})["content"])
+            "builds": json.loads(inventory_gist["files"].get("builds.json", {"content": '{"version":"1.0","builds":[]}'})["content"]),
+            "profile": json.loads(inventory_gist["files"].get("profile.json", {"content": '{"version":"1.0","name":null,"class":null}'})["content"]),
+            "gems": json.loads(inventory_gist["files"].get("gems.json", {"content": '{"version":"1.0","gems":[]}'})["content"]),
+            "sets": json.loads(inventory_gist["files"].get("sets.json", {"content": '{"version":"1.0","sets":[]}'})["content"])
         }
     except HTTPException:
-        raise
+        raise  # Re-raise HTTP exceptions
     except Exception as e:
+        if "Bad credentials" in str(e):
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Could not validate credentials"
+            )
         raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Could not validate credentials"
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error fetching inventory: {str(e)}"
         )
