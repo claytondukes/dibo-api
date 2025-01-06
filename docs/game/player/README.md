@@ -7,21 +7,33 @@ This directory contains the JSON schema for tracking your Diablo Immortal invent
 ### `profile.json`
 Contains your player information and currently equipped items:
 - Player details (battle.net ID, class, paragon level)
-- Equipped gear (weapons, armor) with their legendary essences and gems
-- Equipped set items with their socket counts
+- Primary gear:
+  - Head, Shoulders, Chest, Legs
+  - Main Hand and Off-Hand (both weapon sets)
+  - Legendary essences
+  - Legendary gem slots
+- Set items:
+  - Neck, Waist, Hands, Feet
+  - Rings (2 slots)
+  - Bracers (2 slots)
+  - Normal gem sockets
 
 ### `gems.json`
 Tracks all legendary gems you own:
 - Organized by gem name
 - Each gem can have multiple copies at different:
   - Ranks (1-10)
-  - Quality levels (1-5 stars)
+  - Quality levels (2-5/5 for 5★ gems)
+  - Auxiliary (Aux) status
 
 ### `sets.json`
 Lists all set items in your inventory:
-- Green set items
-- Each item includes relevant attributes
-- Socket counts (2-3 per item)
+- Organized by set name
+- Each item includes:
+  - Slot type
+  - Attributes (strength, fortitude, willpower)
+  - Socket count (2-3 per item)
+  - Combat rating
 
 ### `builds.json`
 Stores your saved builds:

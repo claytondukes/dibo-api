@@ -99,14 +99,46 @@ All endpoints are prefixed with `/api/v1`
 ## Game Data Endpoints
 **Base path:** `/game`
 
-### Equipment Sets
-- `GET /game/equipment/sets` - List available equipment sets
+### Equipment and Sets
+- `GET /game/gear` - List all available primary gear items
+  - Query Parameters:
+    - `class`: Filter by class name (optional)
+    - `slot`: Filter by gear slot (optional)
+    - `page`: Page number (default: 1)
+    - `per_page`: Items per page (default: 20, max: 100)
+  - Response:
+    - List of gear items with attributes and essence slots
+
+- `GET /game/gear/{class}/essences` - List available essences for a specific class
+  - Path Parameters:
+    - `class`: Class name (e.g., "barbarian")
+  - Query Parameters:
+    - `slot`: Filter by gear slot (optional)
+    - `skill`: Filter by modified skill (optional)
+    - `page`: Page number (default: 1)
+    - `per_page`: Items per page (default: 20, max: 100)
+  - Response:
+    - List of essences with their effects and requirements
+
+- `GET /game/sets` - List all available equipment sets
   - Query Parameters:
     - `pieces`: Filter by number of pieces (2, 4, or 6)
     - `page`: Page number (default: 1)
     - `per_page`: Items per page (default: 20, max: 100)
   - Response:
-    - List of equipment sets with their bonuses and requirements
+    - List of sets with their bonuses and piece requirements
+
+- `GET /game/sets/{set_name}` - Get detailed information about a specific set
+  - Path Parameters:
+    - `set_name`: Name of the set
+  - Response:
+    - Detailed set information including bonuses and items
+
+- `GET /game/sets/bonuses` - Calculate active set bonuses for equipped items
+  - Query Parameters:
+    - `equipped_sets`: List of equipped set pieces (format: "set_name:count")
+  - Response:
+    - Active set bonuses and thresholds
 
 ### Gems
 - `GET /game/gems` - List all gems
