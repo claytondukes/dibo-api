@@ -6,7 +6,7 @@ ensuring type safety and validation.
 """
 
 from datetime import datetime
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 from pydantic import BaseModel, Field
 
 
@@ -39,3 +39,19 @@ class GameDataCache(BaseModel):
         default=None,
         description="Timestamp when the cache was last loaded"
     )
+
+
+class GemsBySkill(BaseModel):
+    """Model for gems organized by skill type."""
+
+    movement: List[Gem] = Field(default_factory=list)
+    primary_attack: List[Gem] = Field(default_factory=list, alias="primary attack")
+    attack: List[Gem] = Field(default_factory=list)
+    summon: List[Gem] = Field(default_factory=list)
+    channeled: List[Gem] = Field(default_factory=list)
+
+
+class GemData(BaseModel):
+    """Model for all gem data."""
+
+    gems_by_skill: GemsBySkill = Field(..., description="Gems organized by skill type")
