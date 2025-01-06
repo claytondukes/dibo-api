@@ -12,14 +12,14 @@ def test_github_login(client: TestClient, test_settings: Settings):
 
     data = response.json()
     assert "auth_url" in data
-    assert test_settings.ACTIVE_GITHUB_CLIENT_ID in data["auth_url"]
-    assert "callback" in data["auth_url"]
+    assert test_settings.DEV_GITHUB_CLIENT_ID in data["auth_url"]
+    assert str(test_settings.DEV_GITHUB_CALLBACK_URL) in data["auth_url"]
 
 
 def test_github_callback_invalid_state(client: TestClient, test_settings: Settings):
     """Test GitHub callback with invalid state."""
     response = client.get(
-        f"{test_settings.API_V1_STR}/auth/github/callback",
+        f"{test_settings.API_V1_STR}/auth/github",
         params={"code": "test-code", "state": "invalid-state"}
     )
     assert response.status_code == 400

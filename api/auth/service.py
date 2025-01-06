@@ -25,8 +25,8 @@ class AuthService:
 
         auth_url = (
             "https://github.com/login/oauth/authorize"
-            f"?client_id={self.settings.ACTIVE_GITHUB_CLIENT_ID}"
-            f"&redirect_uri={self.settings.ACTIVE_GITHUB_CALLBACK_URL}"
+            f"?client_id={self.settings.DEV_GITHUB_CLIENT_ID}"
+            f"&redirect_uri={str(self.settings.DEV_GITHUB_CALLBACK_URL)}"
             "&scope=read:user user:email gist read:gist write:gist"
             f"&state={state}"
         )
@@ -61,10 +61,10 @@ class AuthService:
                     "https://github.com/login/oauth/access_token",
                     headers={"Accept": "application/json"},
                     json={
-                        "client_id": self.settings.ACTIVE_GITHUB_CLIENT_ID,
-                        "client_secret": self.settings.ACTIVE_GITHUB_CLIENT_SECRET,
+                        "client_id": self.settings.DEV_GITHUB_CLIENT_ID,
+                        "client_secret": self.settings.DEV_GITHUB_CLIENT_SECRET,
                         "code": code,
-                        "redirect_uri": self.settings.ACTIVE_GITHUB_CALLBACK_URL
+                        "redirect_uri": str(self.settings.DEV_GITHUB_CALLBACK_URL)
                     }
                 )
 
@@ -113,7 +113,7 @@ class AuthService:
                 )
             elif response.status_code != 200:
                 raise HTTPException(
-                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    status_code=status.HTTP_400_BAD_REQUEST,
                     detail="Failed to fetch gists"
                 )
 

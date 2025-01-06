@@ -80,7 +80,7 @@ def test_complete_oauth_flow(
         )
 
         callback_response = client.get(
-            f"{settings.API_V1_STR}/auth/github/callback",
+            f"{settings.API_V1_STR}/auth/github",
             params={
                 "code": "test_code",
                 "state": state
@@ -107,7 +107,7 @@ def test_github_token_exchange_failure(client: TestClient):
         )
 
         response = client.get(
-            f"{settings.API_V1_STR}/auth/github/callback",
+            f"{settings.API_V1_STR}/auth/github",
             params={
                 "code": "invalid_code",
                 "state": state
@@ -133,7 +133,7 @@ def test_github_user_info_failure(
         )
 
         callback_response = client.get(
-            f"{settings.API_V1_STR}/auth/github/callback",
+            f"{settings.API_V1_STR}/auth/github",
             params={
                 "code": "test_code",
                 "state": state

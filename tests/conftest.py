@@ -15,9 +15,9 @@ def get_settings_override() -> Settings:
         API_V1_STR="/api/v1",
         PROJECT_ROOT="/Users/cdukes/sourcecode/dibo-api",
         TESTING=True,
-        ACTIVE_GITHUB_CLIENT_ID="test_client_id",
-        ACTIVE_GITHUB_CLIENT_SECRET="test_client_secret",
-        ACTIVE_GITHUB_CALLBACK_URL="http://localhost:8000/api/v1/auth/github/callback"
+        DEV_GITHUB_CLIENT_ID="test_client_id",
+        DEV_GITHUB_CLIENT_SECRET="test_client_secret",
+        DEV_GITHUB_CALLBACK_URL="http://localhost:8000/api/v1/auth/github"
     )
 
 

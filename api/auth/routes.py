@@ -57,7 +57,7 @@ async def github_login(
     return auth_service.generate_github_login_url()
 
 
-@router.get("/github/callback", response_model=GitHubCallbackResponse)
+@router.get("/github", response_model=GitHubCallbackResponse)
 async def github_callback(
     code: str = Query(..., description="GitHub OAuth code"),
     state: str = Query(..., description="CSRF state token"),
