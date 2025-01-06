@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .auth.routes import router as auth_router
 from .core.config import Settings, get_settings
+from .routes import router as api_router
 
 
 settings = get_settings()
@@ -61,6 +62,7 @@ def create_app() -> FastAPI:
 
     # Add routers
     app.include_router(auth_router, prefix=settings.API_V1_STR)
+    app.include_router(api_router, prefix=settings.API_V1_STR)
 
     return app
 
