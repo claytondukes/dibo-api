@@ -8,16 +8,53 @@ All endpoints are prefixed with `/api/v1`
 
 ### OAuth Authentication
 - `GET /auth/login` - Get GitHub login URL
-- `GET /auth/callback` - Handle GitHub OAuth callback
+  - Response:
+    - `auth_url`: GitHub authorization URL
+    - `state`: CSRF state token for validation
+- `GET /auth/github` - Handle GitHub OAuth callback
   - Query Parameters:
     - `code`: GitHub OAuth code
     - `state`: CSRF state token
+  - Response:
+    - `access_token`: GitHub access token
+    - `token_type`: Token type (always "bearer")
+    - `scope`: Granted scopes
 
 ### Gist Management
 - `GET /auth/gists` - Get user's gists
+  - Requires: Bearer token
+  - Response: List of user's GitHub gists
 - `POST /auth/gists` - Create a new gist
+  - Requires: Bearer token
+  - Body:
+    - `filename`: Name of the file
+    - `content`: Content of the gist
+    - `description`: Optional description
 - `GET /auth/inventory` - Get user's DIBO inventory from gists
 - `PUT /auth/gists/{gist_id}` - Update a gist
+  - Requires: Bearer token
+  - Body:
+    - `filename`: Name of the file
+    - `content`: Content of the gist
+    - `description`: Optional description
+
+### DIBO Inventory
+- `GET /auth/inventory` - Get user's DIBO inventory from gists
+  - Requires: Bearer token
+  - Response:
+    - `profile`: User profile data
+      - `version`: Schema version (1.0)
+      - `name`: Character name
+      - `class`: Character class
+    - `gems`: Gem collection data
+      - `version`: Schema version (1.0)
+      - `gems`: List of owned gems
+    - `sets`: Equipment set data
+      - `version`: Schema version (1.0)
+      - `sets`: List of owned sets
+    - `builds`: Build data
+      - `version`: Schema version (1.0)
+      - `builds`: List of saved builds
 
 ## Build Endpoints
 **Base path:** `/builds`
