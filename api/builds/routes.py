@@ -163,13 +163,14 @@ async def update_build(
     # Update the build
     gist_data = await auth_service.save_generated_build(
         token, 
-        build_update.dict(),
-        gist_id=gist_id
+        gist_id,
+        build_update.dict()
     )
     
     # Return updated build with URLs
-    return BuildResponse(
-        **build_update.dict(),
-        gist_url=gist_data["url"],
-        raw_url=gist_data["raw_url"]
-    )
+    build_dict = build_update.dict()
+    build_dict.update({
+        "gist_url": f"https://gist.github.com/{gist_id}",
+        "raw_url": f"https://gist.githubusercontent.com/raw/{gist_id}/build.json"
+    })
+    return BuildResponse(**build_dict)

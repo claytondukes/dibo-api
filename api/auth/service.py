@@ -1,5 +1,6 @@
 """Authentication service."""
 
+import json
 import secrets
 from typing import Dict, Optional
 import httpx
@@ -191,6 +192,104 @@ class AuthService:
                 )
 
             return response.json()
+
+    async def get_generated_build(self, access_token: str, gist_id: str) -> Dict:
+        """Get a generated build from a gist."""
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                f"https://api.github.com/gists/{gist_id}",
+                headers={
+                    "Authorization": f"Bearer {access_token}",
+                    "Accept": "application/vnd.github.v3+json"
+                }
+            )
+            
+            if response.status_code == 401:
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Invalid GitHub token"
+                )
+            elif response.status_code == 404:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail="Build not found"
+                )
+            elif response.status_code != 200:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Failed to fetch build"
+                )
+            
+            gist_data = response.json()
+            if not gist_data["files"]:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail="Build file not found in gist"
+                )
+            
+            # Get the first file's content
+            first_file = next(iter(gist_data["files"].values()))
+            try:
+                import json
+                build_data = json.loads(first_file["content"])
+                return {"build": build_data}
+            except json.JSONDecodeError:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Invalid build data format"
+                )
+
+    async def save_generated_build(self, access_token: str, gist_id: str, build_data: Dict) -> Dict:
+        """Save a generated build to a gist."""
+        async with httpx.AsyncClient() as client:
+            response = await client.patch(
+                f"https://api.github.com/gists/{gist_id}",
+                headers={
+                    "Authorization": f"Bearer {access_token}",
+                    "Accept": "application/vnd.github.v3+json"
+                },
+                json={
+                    "files": {
+                        "build.json": {
+                            "content": json.dumps(build_data, indent=2)
+                        }
+                    }
+                }
+            )
+            
+            if response.status_code == 401:
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Invalid GitHub token"
+                )
+            elif response.status_code == 404:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail="Build not found"
+                )
+            elif response.status_code != 200:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Failed to update build"
+                )
+            
+            gist_data = response.json()
+            if not gist_data["files"]:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail="Build file not found in gist"
+                )
+            
+            # Get the first file's content
+            first_file = next(iter(gist_data["files"].values()))
+            try:
+                updated_build = json.loads(first_file["content"])
+                return {"build": updated_build}
+            except json.JSONDecodeError:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Invalid build data format"
+                )
 
 
 def get_auth_service(settings: Settings = Depends(get_settings)) -> AuthService:
