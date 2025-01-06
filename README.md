@@ -25,6 +25,10 @@ A RESTful API for analyzing Diablo Immortal game data and generating optimal bui
   - JWT-based authorization
   - User profile management
 
+## Implementation Plans
+
+- [Equipment System](docs/implementation/EQUIPMENT_SYSTEM.md) - Comprehensive plan for the equipment and set bonus system
+
 ## Quick Start
 
 1. **Prerequisites**

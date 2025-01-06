@@ -2,29 +2,38 @@
 
 ## Equipment Systems
 
-### Gear Slots (8)
+### Primary Gear (8 slots)
+Primary gear pieces can have legendary gems socketed and skill modifications through essences:
 - Head
-- Shoulder
+- Shoulders
 - Chest
 - Legs
-- Primary weapon
-- Secondary weapon
-- Off-hand weapon
-- Off-hand secondary weapon
+- Main Hand (Slot 1) - Primary weapon
+- Off-Hand (Slot 1) - Shield/Off-hand weapon
+- Main Hand (Slot 2) - Secondary weapon
+- Off-Hand (Slot 2) - Secondary shield/off-hand
 
-### Set Items (8)
-- 2 Rings
+### Set Items (8 slots)
+Set items provide bonuses when multiple pieces from the same set are equipped:
 - Neck
-- Hands
 - Waist
+- Hands
 - Feet
-- 2 Bracers
+- Ring (Slot 1)
+- Ring (Slot 2)
+- Bracer (Slot 1)
+- Bracer (Slot 2)
 
-Valid combinations:
-- 6+2 pieces
-- 4+4 pieces
-- 4+2+2 pieces
-- 2+2+2+2 pieces
+Valid set combinations:
+- 6 + 2 pieces from different sets
+- 4 + 4 pieces from different sets
+- 4 + 2 + 2 pieces from different sets
+- 2 + 2 + 2 + 2 pieces from different sets
+
+Each set provides bonuses at specific thresholds:
+- 2-piece bonus: Basic effect
+- 4-piece bonus: Intermediate effect
+- 6-piece bonus: Powerful effect
 
 ### Skill System
 See [Skills Guide](skills.md) for detailed information about:
