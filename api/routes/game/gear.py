@@ -28,8 +28,10 @@ STANDARD_GEAR_SLOTS = {
         "waist",
         "feet",
         "hands",
-        "rings_1",
-        "rings_2"
+        "ring_1",
+        "ring_2",
+        "bracer_1",
+        "bracer_2"
     ]
 }
 

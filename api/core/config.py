@@ -2,7 +2,7 @@
 
 from functools import lru_cache
 from pathlib import Path
-from typing import Optional
+from typing import Optional, List
 
 from pydantic import AnyHttpUrl, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -23,6 +23,33 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = Field(
         default="development",
         description="deployment environment"
+    )
+    
+    # CORS Settings
+    BACKEND_CORS_ORIGINS: str = Field(
+        default="",
+        description="Comma-separated list of origins that are allowed to make cross-site HTTP requests"
+    )
+
+    @property
+    def cors_origins(self) -> List[str]:
+        """Get list of allowed CORS origins."""
+        if not self.BACKEND_CORS_ORIGINS:
+            return []
+        return [origin.strip() for origin in self.BACKEND_CORS_ORIGINS.split(",") if origin.strip()]
+
+    # Allow credentials in CORS requests
+    ALLOW_CREDENTIALS: bool = Field(
+        default=True,
+        description="Allow credentials in CORS requests"
+    )
+    ALLOW_METHODS: str = Field(
+        default="*",
+        description="HTTP methods allowed in CORS requests"
+    )
+    ALLOW_HEADERS: str = Field(
+        default="*",
+        description="HTTP headers allowed in CORS requests"
     )
     
     # GitHub OAuth - Development
