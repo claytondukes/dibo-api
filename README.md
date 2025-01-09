@@ -133,10 +133,14 @@ template for details on how to contribute.
 
 Current status:
 
-- Barbarian - Complete reference implementation
-- Wizard - Not started
-- Necromancer - Not started
-- Sader - Not started
+- [x] Barbarian - Complete reference implementation
+- [ ] Wizard - Not started
+- [ ] Necromancer - Not started
+- [ ] Crusader - Not started
+- [ ] Blood Knight - Not started
+- [ ] Tempest - Not started
+- [ ] Demon Hunter - Not started
+- [ ] Monk - Not started
 
 ### Commit Message Format
 

@@ -87,7 +87,7 @@ reference implementation:
 
 ## How to Contribute
 
-1. Pick an unimplemented class (Wizard, Necromancer, Sader, etc.)
+1. Pick an unimplemented class
 2. Create a new directory in `data/indexed/classes/[class_name]/`
 3. Create all three JSON files following our Barbarian template
 4. Ensure JSON is valid and properly formatted
