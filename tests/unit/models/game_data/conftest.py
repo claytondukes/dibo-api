@@ -26,12 +26,49 @@ def sample_metadata() -> Dict[str, Any]:
 def sample_gem() -> Dict[str, Any]:
     """Sample gem data for testing."""
     return {
-        "Stars": 5,
-        "Name": "Blood-Soaked Jade",
-        "Base Effect": "Up to 8% increased damage",
-        "Rank 10 Effect": "Increases all damage by 32%",
-        "Owned Rank": 10,
-        "Quality (if 5 star)": 5
+        "stars": "5",
+        "name": "Blood-Soaked Jade",
+        "ranks": {
+            "1": {
+                "effects": [
+                    {
+                        "type": "damage",
+                        "text": "Up to 8% increased damage",
+                        "conditions": []
+                    }
+                ],
+                "stats": {
+                    "damage_increase": [
+                        {
+                            "value": 8.0,
+                            "conditions": [],
+                            "context": None
+                        }
+                    ]
+                }
+            },
+            "10": {
+                "effects": [
+                    {
+                        "type": "damage",
+                        "text": "Increases all damage by 32%",
+                        "conditions": []
+                    }
+                ],
+                "stats": {
+                    "damage_increase": [
+                        {
+                            "value": 32.0,
+                            "conditions": [],
+                            "context": None
+                        }
+                    ]
+                }
+            }
+        },
+        "max_rank": 10,
+        "magic_find": "5",
+        "max_effect": "Increases all damage by 32%"
     }
 
 
@@ -40,20 +77,16 @@ def sample_gems_data() -> Dict[str, Any]:
     """Sample gems collection for testing."""
     return {
         "gems_by_skill": {
-            "movement": [
-                {
-                    "Stars": 5,
-                    "Name": "Blood-Soaked Jade",
-                    "Base Effect": "Up to 8% increased damage",
-                    "Rank 10 Effect": "Increases all damage by 32%",
-                    "Owned Rank": 10,
-                    "Quality (if 5 star)": 5
-                }
-            ],
+            "movement": ["Blood-Soaked Jade"],
             "primary attack": [],
             "attack": [],
+            "damage": [],
             "summon": [],
-            "channeled": []
+            "defense": [],
+            "channeling": [],
+            "ultimate": [],
+            "buff": [],
+            "dash": []
         }
     }
 

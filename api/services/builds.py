@@ -31,29 +31,22 @@ class BuildService:
         self._gist_service = gist_service
 
     async def validate_build(self, build: BuildConfig) -> List[str]:
-        """Validate a build configuration against game data.
-        
-        Args:
-            build: Build configuration to validate
-
-        Returns:
-            List of validation errors, empty if valid
-        """
-        errors: List[str] = []
-
-        # Validate equipment
-        for slot, item_id in build.equipment.items():
-            if not await self._data_manager.item_exists(item_id):
-                errors.append(f"Invalid item '{item_id}' in slot {slot}")
-
-        # Validate gems
-        for socket_id, gem in build.gems.items():
-            if not await self._data_manager.gem_exists(gem.type):
-                errors.append(f"Invalid gem type '{gem.type}' in socket {socket_id}")
+        """Validate a build configuration."""
+        errors = []
 
         # Validate class type
         if not await self._data_manager.class_exists(build.class_type):
             errors.append(f"Invalid class type: {build.class_type}")
+
+        # Validate equipment
+        for slot, item_name in build.equipment.items():
+            if not await self._data_manager.item_exists(item_name):
+                errors.append(f"Invalid item '{item_name}' in slot {slot}")
+
+        # Validate gems
+        for socket, gem_name in build.gems.items():
+            if not await self._data_manager.gem_exists(gem_name):
+                errors.append(f"Invalid gem type: {gem_name}")
 
         return errors
 

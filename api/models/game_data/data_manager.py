@@ -104,17 +104,20 @@ class GameDataManager:
         
         # Apply filters if specified
         if slot:
+            # Convert slot to lowercase for case-insensitive comparison
+            slot_lower = slot.lower()
             essences = {
                 id_: essence
                 for id_, essence in essences.items()
-                if essence.gear_slot.lower() == slot.lower()
+                if essence.gear_slot.lower() == slot_lower
             }
         
         if skill:
+            # Convert skill to exact case from data for comparison
             essences = {
                 id_: essence
                 for id_, essence in essences.items()
-                if essence.modifies_skill.lower() == skill.lower()
+                if essence.modifies_skill == skill
             }
         
         return essences
@@ -140,5 +143,44 @@ class GameDataManager:
         Raises:
             FileNotFoundError: If required data files are missing
         """
-        # Return empty list since gear.json doesn't exist yet
-        return [], 0
+        # Load gear data if not already loaded
+        if self._gear_items is None:
+            gear_path = self.base_path / "equipment" / "gear.json"
+            if not gear_path.exists():
+                raise FileNotFoundError(f"Gear data not found at {gear_path}")
+            
+            with open(gear_path) as f:
+                data = json.load(f)
+                self._gear_items = data
+
+        # Get all items as a flat list with class info
+        all_items = []
+        for item_class, class_items in self._gear_items.items():
+            for item_id, item_data in class_items.items():
+                item = {
+                    "id": item_id,
+                    "class": item_class,
+                    **item_data
+                }
+                all_items.append(item)
+
+        # Apply filters
+        filtered_items = all_items
+        if class_name:
+            filtered_items = [
+                item for item in filtered_items
+                if item["class"].lower() == class_name.lower()
+            ]
+        if slot:
+            filtered_items = [
+                item for item in filtered_items
+                if item["slot"].lower() == slot.lower()
+            ]
+
+        # Calculate pagination
+        total = len(filtered_items)
+        start_idx = (page - 1) * per_page
+        end_idx = start_idx + per_page
+        page_items = filtered_items[start_idx:end_idx]
+
+        return page_items, total

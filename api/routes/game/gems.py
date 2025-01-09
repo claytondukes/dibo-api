@@ -11,7 +11,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 
 from api.models.game_data.data_manager import GameDataManager
 from api.models.game_data.schemas.gems import (
-    Gem, GemData, GemProgression, GemsBySkill, GemStatsByType, GemStatValue, GemSynergyGroup,
+    Gem, GemSkillMap, GemsBySkill, GemStatValue,
     GemRank, GemEffect, GemRankStats
 )
 from api.core.config import settings
@@ -31,12 +31,12 @@ async def get_data_manager() -> GameDataManager:
 def transform_gem_data(gem_dict: dict) -> dict:
     """Transform gem data to match our schema."""
     return {
-        "Stars": gem_dict.get("Stars"),
-        "Name": gem_dict.get("Name"),
-        "Base Effect": gem_dict.get("Base Effect"),
-        "Rank 10 Effect": gem_dict.get("Rank 10 Effect"),
-        "Owned Rank": gem_dict.get("Owned Rank"),
-        "Quality (if 5 star)": gem_dict.get("Quality (if 5 star)")
+        "Stars": gem_dict.get("stars"),
+        "Name": gem_dict.get("name"),
+        "ranks": gem_dict.get("ranks", {}),
+        "max_rank": gem_dict.get("max_rank"),
+        "magic_find": gem_dict.get("magic_find"),
+        "max_effect": gem_dict.get("max_effect")
     }
 
 
@@ -46,16 +46,13 @@ def get_gem_from_progression(gem_name: str, progression_data: dict) -> Optional[
         return None
     
     prog = progression_data[gem_name]
-    rank_1 = prog["ranks"]["1"]
-    rank_10 = prog["ranks"]["10"]
-    
     return {
         "Stars": prog["stars"],
         "Name": gem_name,
-        "BaseEffect": rank_1["effects"][0]["text"] if rank_1["effects"] else None,
-        "Rank 10 Effect": rank_10["effects"][0]["text"] if rank_10["effects"] else None,
-        "Owned Rank": "1",  # Default to rank 1
-        "Quality (if 5 star)": None
+        "ranks": prog["ranks"],
+        "max_rank": prog["max_rank"],
+        "magic_find": prog["magic_find"],
+        "max_effect": prog["max_effect"]
     }
 
 
@@ -176,7 +173,10 @@ async def list_gems(
         
         # Apply star filter if specified
         if stars:
-            all_gems = [gem for gem in all_gems if int(gem["Stars"]) == stars]
+            all_gems = [
+                gem for gem in all_gems 
+                if gem and str(stars) == gem["Stars"]
+            ]
         
         # Convert to Gem models
         return [Gem.model_validate(gem) for gem in all_gems if gem]
@@ -255,17 +255,17 @@ async def list_gem_synergies(
         )
 
 
-@router.get("/skills", response_model=List[str])
+@router.get("/skills", response_model=GemSkillMap)
 async def list_gem_skills(
     data_manager: GameDataManager = Depends(get_data_manager)
-) -> List[str]:
-    """List all available gem skill types.
+) -> GemSkillMap:
+    """List all available gem skill types and their associated gems.
 
     Args:
         data_manager: Game data manager instance
 
     Returns:
-        List of unique skill types
+        Mapping of skill types to their gems
     """
     try:
         logger.info("Getting all gem skill types")
@@ -278,8 +278,7 @@ async def list_gem_skills(
         with open(skillmap_file) as f:
             skillmap_data = json.load(f)
             
-        # Get unique skill types
-        return list(skillmap_data.get("gems_by_skill", {}).keys())
+        return GemSkillMap.model_validate(skillmap_data)
         
     except Exception as e:
         logger.error(f"Error getting gem skill types: {e}")

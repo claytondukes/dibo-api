@@ -3,7 +3,7 @@ Game data schema models.
 """
 
 from .base import GameDataMetadata, GameDataCache
-from .gems import Gem, GemsBySkill, GemData
+from .gems import Gem, GemsBySkill, GemSkillMap
 from .equipment import (
     SetMetadata,
     SetBonuses,
@@ -23,7 +23,7 @@ __all__ = [
     "GameDataCache",
     "Gem",
     "GemsBySkill",
-    "GemData",
+    "GemSkillMap",
     "SetMetadata",
     "SetBonuses",
     "EquipmentSet",

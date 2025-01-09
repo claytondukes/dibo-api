@@ -1,13 +1,20 @@
 """API routes for gear-related endpoints."""
-from typing import Annotated, List, Optional
+from typing import Annotated, List, Optional, Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from pydantic import BaseModel, Field
 
 from api.models.game_data.data_manager import GameDataManager
+from api.models.game_data.schemas.gear import GearSlot
 
 
 router = APIRouter(tags=["game"])
+
+
+class GearSlotsResponse(BaseModel):
+    """Response model for gear slots endpoint."""
+    
+    slots: List[str] = Field(description="List of available gear slots")
 
 
 class GearListResponse(BaseModel):
@@ -42,6 +49,60 @@ class EssenceListResponse(BaseModel):
 def get_data_manager(request: Request) -> GameDataManager:
     """Get the GameDataManager instance from app state."""
     return request.app.state.data_manager
+
+
+@router.get("/gear/slots", response_model=GearSlotsResponse)
+async def list_gear_slots(
+    gear_type: Optional[Literal["primary", "set"]] = Query(
+        None, 
+        alias="type",
+        description="Filter by gear type (primary or set)"
+    )
+) -> GearSlotsResponse:
+    """List available gear slots.
+    
+    Args:
+        gear_type: Optional filter by gear type (primary or set)
+        
+    Returns:
+        List of available gear slots
+    """
+    # Get all slots from the enum
+    all_slots = [slot.value for slot in GearSlot]
+    
+    # Filter by type if specified
+    if gear_type == "primary":
+        slots = [
+            slot for slot in all_slots 
+            if slot in {
+                GearSlot.HEAD.value,
+                GearSlot.SHOULDERS.value,
+                GearSlot.CHEST.value,
+                GearSlot.LEGS.value,
+                GearSlot.MAIN_HAND_1.value,
+                GearSlot.OFF_HAND_1.value,
+                GearSlot.MAIN_HAND_2.value,
+                GearSlot.OFF_HAND_2.value,
+            }
+        ]
+    elif gear_type == "set":
+        slots = [
+            slot for slot in all_slots
+            if slot in {
+                GearSlot.NECK.value,
+                GearSlot.WAIST.value,
+                GearSlot.HANDS.value,
+                GearSlot.FEET.value,
+                GearSlot.RING_1.value,
+                GearSlot.RING_2.value,
+                GearSlot.BRACER_1.value,
+                GearSlot.BRACER_2.value,
+            }
+        ]
+    else:
+        slots = all_slots
+    
+    return GearSlotsResponse(slots=slots)
 
 
 @router.get("/gear", response_model=GearListResponse)
