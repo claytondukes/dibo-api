@@ -11,6 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .auth.routes import router as auth_router
 from .core.config import Settings, get_settings
 from .routes import router as api_router
+from .models.game_data.data_manager import GameDataManager
 
 
 settings = get_settings()
@@ -32,7 +33,14 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
         settings.PROJECT_NAME,
         settings.ENVIRONMENT
     )
+    
+    # Initialize GameDataManager
+    base_path = settings.PROJECT_ROOT / "data" / "indexed"
+    logger.info(f"Initializing GameDataManager with base_path: {base_path}")
+    app.state.data_manager = GameDataManager(base_path=base_path)
+    
     yield
+    
     # Shutdown
     logger.info("Shutting down %s", settings.PROJECT_NAME)
 
