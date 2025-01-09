@@ -27,7 +27,7 @@ class GameDataManager:
     """Manages access to indexed game data with caching and version awareness."""
 
     CATEGORY_LOADERS = {
-        "gems": (GemData, "gems/gems.json"),
+        "gems": (GemData, "gems/gem_skillmap.json"),
         "equipment_sets": (EquipmentSets, "equipment/sets.json"),
         "stats": (GameStats, "stats.json"),
     }

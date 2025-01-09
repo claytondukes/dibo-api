@@ -1,7 +1,7 @@
 """Manager for loading and accessing game data."""
 import json
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, Optional, List, Tuple
 
 from pydantic import BaseModel, Field
 
@@ -22,6 +22,16 @@ class ClassEssence(BaseModel):
     gear_slot: str = Field(description="Gear slot this essence can be applied to")
     modifies_skill: str = Field(description="Skill that this essence modifies")
     effect: str = Field(description="Description of the essence's effect")
+    effect_type: Optional[str] = Field(None, description="Type of effect")
+    effect_tags: Optional[List[str]] = Field(None, description="Tags describing the effect")
+
+
+class GearItem(BaseModel):
+    """Model for gear items."""
+    
+    name: str = Field(description="Display name of the gear item")
+    slot: str = Field(description="Gear slot this item occupies")
+    stats: Dict[str, str] = Field(description="Stats provided by the gear item")
 
 
 class GameDataManager:
@@ -36,6 +46,7 @@ class GameDataManager:
         self.base_path = base_path
         self._equipment_sets: Optional[Dict[str, SetBonus]] = None
         self._class_essences: Dict[str, Dict[str, ClassEssence]] = {}
+        self._gear_items: Optional[Dict[str, Dict[str, GearItem]]] = None
     
     def get_equipment_sets(self) -> Dict[str, SetBonus]:
         """Get all equipment sets.
@@ -96,14 +107,38 @@ class GameDataManager:
             essences = {
                 id_: essence
                 for id_, essence in essences.items()
-                if essence.gear_slot == slot
+                if essence.gear_slot.lower() == slot.lower()
             }
         
         if skill:
             essences = {
                 id_: essence
                 for id_, essence in essences.items()
-                if essence.modifies_skill == skill
+                if essence.modifies_skill.lower() == skill.lower()
             }
         
         return essences
+
+    def get_gear_items(
+        self,
+        class_name: Optional[str] = None,
+        slot: Optional[str] = None,
+        page: int = 1,
+        per_page: int = 20
+    ) -> Tuple[List[Dict], int]:
+        """Get gear items with optional filtering and pagination.
+        
+        Args:
+            class_name: Optional class name to filter by
+            slot: Optional gear slot to filter by
+            page: Page number (1-based)
+            per_page: Items per page
+            
+        Returns:
+            Tuple of (list of gear items for the current page, total number of items)
+            
+        Raises:
+            FileNotFoundError: If required data files are missing
+        """
+        # Return empty list since gear.json doesn't exist yet
+        return [], 0

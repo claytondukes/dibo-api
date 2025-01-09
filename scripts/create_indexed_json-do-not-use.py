@@ -1191,7 +1191,7 @@ def main():
     write_json_file(cross_references, base_dir / "cross_references.json")
     write_json_file(skill_modifiers, base_dir / "skills/modifiers.json")
     write_json_file(skill_essence_map, base_dir / "classes/barbarian/essences/skill_mapping.json")
-    write_json_file(gem_progression, base_dir / "gems/progression.json")
+    write_json_file(gem_progression, base_dir / "gems/gems.json")
     write_json_file(player_resources, base_dir / "player/resources.json")
     write_json_file(build_history, base_dir / "builds/history.json")
     write_json_file(metadata, base_dir / "metadata.json")

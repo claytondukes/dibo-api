@@ -1,126 +1,161 @@
-"""Test configuration."""
+"""Test configuration and fixtures."""
+
+from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
 
 from api.core.config import Settings, get_settings
 from api.main import app
+from api.models.game_data.data_manager import GameDataManager
 
 
 def get_settings_override() -> Settings:
     """Override settings for testing."""
     return Settings(
-        PROJECT_NAME="Test API",
-        VERSION="0.1.0",
-        API_V1_STR="/api/v1",
-        PROJECT_ROOT="/Users/cdukes/sourcecode/dibo-api",
-        TESTING=True,
-        DEV_GITHUB_CLIENT_ID="test_client_id",
-        DEV_GITHUB_CLIENT_SECRET="test_client_secret",
-        DEV_GITHUB_CALLBACK_URL="http://localhost:8000/api/v1/auth/github"
+        app_name="Test API",
+        admin_email="test@example.com",
+        items_per_user=50,
+        database_url="sqlite:///./test.db",
+        redis_url="redis://localhost",
     )
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def test_settings() -> Settings:
     """Test settings fixture."""
     return get_settings_override()
 
 
+@pytest.fixture(scope="session")
+def data_dir() -> Path:
+    """Get the path to the indexed data directory."""
+    return Path(__file__).parent.parent / "data" / "indexed"
+
+
+@pytest.fixture(scope="session")
+def data_manager(data_dir: Path) -> GameDataManager:
+    """Create a GameDataManager instance with test data."""
+    return GameDataManager(data_dir)
+
+
 @pytest.fixture
-def client(test_settings: Settings) -> TestClient:
-    """Test client fixture."""
-    app.dependency_overrides[get_settings] = get_settings_override
+def client(data_manager, test_settings: Settings) -> TestClient:
+    """Create a test client with the data manager."""
+    app.dependency_overrides[get_settings] = lambda: test_settings
+    app.state.data_manager = data_manager
     return TestClient(app)
 
 
 @pytest.fixture
-def mock_token() -> str:
-    """Mock token fixture."""
-    return "mock.test.token"
-
-
-@pytest.fixture
-def mock_access_token() -> str:
-    """Mock GitHub access token."""
-    return "gho_mock_token"
-
-
-@pytest.fixture
-def mock_github_token_response() -> dict:
-    """Mock GitHub token response."""
+def sample_metadata():
+    """Sample metadata for testing."""
     return {
-        "access_token": "gho_mock_token",
-        "scope": "read:user,gist",
-        "token_type": "bearer"
+        "last_updated": "2025-01-05T16:49:39-05:00",
+        "version": "1.0",
+        "data_structure_version": "1.0"
     }
 
 
 @pytest.fixture
-def mock_github_user_response() -> dict:
-    """Mock GitHub user response."""
+def sample_gem():
+    """Sample gem data for testing."""
     return {
-        "login": "test_user",
-        "id": 12345,
-        "email": "test@example.com",
-        "avatar_url": "https://github.com/test_user.png",
-        "name": "Test User"
+        "Stars": 5,
+        "Name": "Blood-Soaked Jade",
+        "Base Effect": "Increases all damage you deal by up to 8%",
+        "Rank 10 Effect": "Increases all damage you deal by up to 24% while at full Life",
+        "Owned Rank": 10,
+        "Quality (if 5 star)": 5
     }
 
 
 @pytest.fixture
-def mock_github_gists_response() -> list:
-    """Mock GitHub gists response."""
-    return [{
-        "id": "gist123",
-        "html_url": "https://gist.github.com/test123",
-        "description": "DIBO Inventory",
-        "files": {
-            "builds.json": {
-                "filename": "builds.json",
-                "content": '{"version":"1.0","builds":[]}'
-            },
-            "profile.json": {
-                "filename": "profile.json",
-                "content": '{"version":"1.0","name":null}'
-            },
-            "gems.json": {
-                "filename": "gems.json",
-                "content": '{"version":"1.0","gems":[]}'
-            },
-            "sets.json": {
-                "filename": "sets.json",
-                "content": '{"version":"1.0","sets":[]}'
-            }
-        }
-    }]
-
-
-@pytest.fixture
-def mock_gist_create_response() -> dict:
-    """Mock gist creation response."""
+def sample_gems_data():
+    """Sample gems data for testing."""
     return {
-        "id": "test123",
-        "html_url": "https://gist.github.com/test123",
-        "files": {
-            "test.json": {
-                "filename": "test.json",
-                "content": '{"test": true}'
-            }
+        "gems_by_skill": {
+            "movement": [
+                {
+                    "Stars": 5,
+                    "Name": "Blood-Soaked Jade",
+                    "Base Effect": "Increases all damage you deal by up to 8%",
+                    "Rank 10 Effect": "Increases all damage you deal by up to 24% while at full Life",
+                    "Owned Rank": 10,
+                    "Quality (if 5 star)": 5
+                }
+            ],
+            "primary attack": [],
+            "attack": [],
+            "summon": [],
+            "channeled": []
         }
     }
 
 
 @pytest.fixture
-def mock_gist_update_response() -> dict:
-    """Mock gist update response."""
+def sample_equipment_set():
+    """Sample equipment set data for testing."""
     return {
-        "id": "test123",
-        "html_url": "https://gist.github.com/test123",
-        "files": {
-            "test.json": {
-                "filename": "test.json",
-                "content": '{"test": false, "updated": true}'
-            }
+        "pieces": 6,
+        "description": "A set focused on DoT damage",
+        "bonuses": {
+            "2": "Increases DoT damage by 15%",
+            "4": "Additional DoT damage",
+            "6": "Unleash lightning strikes"
         }
+    }
+
+
+@pytest.fixture
+def sample_equipment_sets_data():
+    """Sample equipment sets data for testing."""
+    return {
+        "sets": [
+            {
+                "name": "Grace of the Flagellant",
+                "pieces": 6,
+                "description": "A set focused on DoT damage",
+                "bonuses": {
+                    "2": "Increases DoT damage by 15%",
+                    "4": "Additional DoT damage",
+                    "6": "Unleash lightning strikes"
+                }
+            }
+        ]
+    }
+
+
+@pytest.fixture
+def sample_stat_value():
+    """Sample stat value data for testing."""
+    return {
+        "value": 15.0,
+        "unit": "percentage",
+        "scaling": False,
+        "conditions": []
+    }
+
+
+@pytest.fixture
+def sample_stat_source():
+    """Sample stat source data for testing."""
+    return {
+        "source": "Berserker's Eye",
+        "value": 15.0
+    }
+
+
+@pytest.fixture
+def sample_stats_data():
+    """Sample game stats data for testing."""
+    return {
+        "stats": [
+            {
+                "name": "Critical Hit Chance",
+                "description": "Chance to deal critical damage",
+                "base_value": 5.0,
+                "unit": "percentage"
+            }
+        ]
     }

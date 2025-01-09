@@ -5,15 +5,16 @@ import pytest
 from pydantic import ValidationError
 
 from api.models.game_data.schemas.gear import (
-    GearSlot,
-    GearAttributes,
+    PrimaryGearSlot,
+    SetGearSlot,
     EssenceSlot,
-    GearItem
+    PrimaryGearItem,
+    SetGearItem
 )
 
 
-def test_gear_slot_enum_values() -> None:
-    """Test that GearSlot enum contains all required gear slots."""
+def test_primary_gear_slot_enum_values() -> None:
+    """Test that PrimaryGearSlot enum contains all required gear slots."""
     expected_slots: Final[set[str]] = {
         "HEAD",
         "SHOULDERS",
@@ -25,39 +26,39 @@ def test_gear_slot_enum_values() -> None:
         "OFF_HAND_2",   # Secondary shield/off-hand
     }
     
-    actual_slots: set[str] = {slot.name for slot in GearSlot}
+    actual_slots: set[str] = {slot.name for slot in PrimaryGearSlot}
     assert actual_slots == expected_slots, \
-        f"GearSlot enum missing required slots. Expected {expected_slots}, got {actual_slots}"
+        f"PrimaryGearSlot enum missing required slots. Expected {expected_slots}, got {actual_slots}"
 
 
-def test_gear_slot_invalid_value() -> None:
-    """Test that invalid gear slot values raise ValueError."""
-    with pytest.raises(ValueError, match="'INVALID_SLOT' is not a valid GearSlot"):
-        GearSlot("INVALID_SLOT")
+def test_set_gear_slot_enum_values() -> None:
+    """Test that SetGearSlot enum contains all required gear slots."""
+    expected_slots: Final[set[str]] = {
+        "NECK",
+        "WAIST",
+        "HANDS",
+        "FEET",
+        "RING_1",
+        "RING_2",
+        "BRACER_1",
+        "BRACER_2"
+    }
+    
+    actual_slots: set[str] = {slot.name for slot in SetGearSlot}
+    assert actual_slots == expected_slots, \
+        f"SetGearSlot enum missing required slots. Expected {expected_slots}, got {actual_slots}"
 
 
-def test_gear_attributes_valid() -> None:
-    """Test that valid gear attributes are accepted."""
-    attrs = GearAttributes(
-        strength=100,
-        fortitude=150,
-        willpower=75
-    )
-    assert attrs.strength == 100
-    assert attrs.fortitude == 150
-    assert attrs.willpower == 75
+def test_primary_gear_slot_invalid_value() -> None:
+    """Test that invalid primary gear slot values raise ValueError."""
+    with pytest.raises(ValueError, match="'INVALID_SLOT' is not a valid PrimaryGearSlot"):
+        PrimaryGearSlot("INVALID_SLOT")
 
 
-def test_gear_attributes_invalid_negative() -> None:
-    """Test that negative attribute values are rejected."""
-    with pytest.raises(ValidationError, match="Input should be greater than or equal to 0"):
-        GearAttributes(strength=-1, fortitude=0, willpower=0)
-
-
-def test_gear_attributes_invalid_type() -> None:
-    """Test that non-integer attribute values are rejected."""
-    with pytest.raises(ValidationError):
-        GearAttributes(strength="invalid", fortitude=0, willpower=0)  # type: ignore
+def test_set_gear_slot_invalid_value() -> None:
+    """Test that invalid set gear slot values raise ValueError."""
+    with pytest.raises(ValueError, match="'INVALID_SLOT' is not a valid SetGearSlot"):
+        SetGearSlot("INVALID_SLOT")
 
 
 def test_essence_slot_empty() -> None:
@@ -69,9 +70,9 @@ def test_essence_slot_empty() -> None:
 
 def test_essence_slot_with_essence() -> None:
     """Test creation of an essence slot with an essence."""
-    slot = EssenceSlot(current_essence="Whirlwind")
+    slot = EssenceSlot(current_essence="Test Essence")
     assert slot.available is True
-    assert slot.current_essence == "Whirlwind"
+    assert slot.current_essence == "Test Essence"
 
 
 def test_essence_slot_unavailable() -> None:
@@ -83,42 +84,89 @@ def test_essence_slot_unavailable() -> None:
 
 def test_essence_slot_unavailable_with_essence() -> None:
     """Test that unavailable slots cannot have essences."""
-    with pytest.raises(ValidationError, match="Unavailable slots cannot have essences"):
-        EssenceSlot(available=False, current_essence="Whirlwind")
+    with pytest.raises(ValueError, match="Unavailable slots cannot have essences"):
+        EssenceSlot(available=False, current_essence="Test Essence")
 
 
-def test_gear_item_valid() -> None:
-    """Test creation of a valid gear item."""
-    item = GearItem(
-        name="Mighty Helm of the Bear",
-        slot=GearSlot.HEAD,
-        attributes=GearAttributes(strength=100, fortitude=150, willpower=75),
-        essence_slot=EssenceSlot(available=True, current_essence="Whirlwind")
+def test_primary_gear_item_valid() -> None:
+    """Test creation of a valid primary gear item."""
+    item = PrimaryGearItem(
+        name="Test Item",
+        slot=PrimaryGearSlot.HEAD,
+        attributes={
+            "strength": "100",
+            "fortitude": "150"
+        },
+        essence_slots=[
+            EssenceSlot(current_essence="Test Essence"),
+            EssenceSlot()
+        ]
     )
-    assert item.name == "Mighty Helm of the Bear"
-    assert item.slot == GearSlot.HEAD
-    assert item.attributes.strength == 100
-    assert item.essence_slot.current_essence == "Whirlwind"
+    assert item.name == "Test Item"
+    assert item.slot == PrimaryGearSlot.HEAD
+    assert len(item.essence_slots) == 2
+    assert item.essence_slots[0].current_essence == "Test Essence"
 
 
-def test_gear_item_minimal() -> None:
-    """Test creation of a gear item with minimal attributes."""
-    item = GearItem(
-        name="Basic Sword",
-        slot=GearSlot.MAIN_HAND_1,
-        attributes=GearAttributes(strength=0, fortitude=0, willpower=0)
+def test_set_gear_item_valid() -> None:
+    """Test creation of a valid set gear item."""
+    item = SetGearItem(
+        name="Test Set Item",
+        slot=SetGearSlot.NECK,
+        set_name="Test Set",
+        attributes={
+            "strength": "100",
+            "fortitude": "150"
+        }
     )
-    assert item.name == "Basic Sword"
-    assert item.slot == GearSlot.MAIN_HAND_1
-    assert item.essence_slot.available is True
-    assert item.essence_slot.current_essence is None
+    assert item.name == "Test Set Item"
+    assert item.slot == SetGearSlot.NECK
+    assert item.set_name == "Test Set"
 
 
-def test_gear_item_invalid_empty_name() -> None:
-    """Test that gear items must have a non-empty name."""
-    with pytest.raises(ValidationError, match="String should have at least 1 character"):
-        GearItem(
+def test_primary_gear_item_minimal() -> None:
+    """Test creation of a primary gear item with minimal attributes."""
+    item = PrimaryGearItem(
+        name="Test Item",
+        slot=PrimaryGearSlot.HEAD,
+        attributes={},
+        essence_slots=[]
+    )
+    assert item.name == "Test Item"
+    assert item.slot == PrimaryGearSlot.HEAD
+    assert len(item.essence_slots) == 0
+
+
+def test_set_gear_item_minimal() -> None:
+    """Test creation of a set gear item with minimal attributes."""
+    item = SetGearItem(
+        name="Test Set Item",
+        slot=SetGearSlot.NECK,
+        set_name="Test Set",
+        attributes={}
+    )
+    assert item.name == "Test Set Item"
+    assert item.slot == SetGearSlot.NECK
+    assert item.set_name == "Test Set"
+
+
+def test_primary_gear_item_invalid_empty_name() -> None:
+    """Test that primary gear items must have a non-empty name."""
+    with pytest.raises(ValidationError, match="String should have at least 1 characters"):
+        PrimaryGearItem(
             name="",
-            slot=GearSlot.HEAD,
-            attributes=GearAttributes(strength=0, fortitude=0, willpower=0)
+            slot=PrimaryGearSlot.HEAD,
+            attributes={},
+            essence_slots=[]
+        )
+
+
+def test_set_gear_item_invalid_empty_name() -> None:
+    """Test that set gear items must have a non-empty name."""
+    with pytest.raises(ValidationError, match="String should have at least 1 characters"):
+        SetGearItem(
+            name="",
+            slot=SetGearSlot.NECK,
+            set_name="Test Set",
+            attributes={}
         )

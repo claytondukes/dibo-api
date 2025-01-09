@@ -58,7 +58,7 @@ class DataService:
     def _load_data(self) -> None:
         """Load all game data from files."""
         # Load gems data
-        gems_file = self.data_dir / "gems" / "gems.json"
+        gems_file = self.data_dir / "gems" / "gem_skillmap.json"
         if not gems_file.exists():
             raise FileNotFoundError(f"Gems data file not found: {gems_file}")
         with open(gems_file, "r") as f:

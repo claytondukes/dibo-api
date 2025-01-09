@@ -6,7 +6,7 @@ import pytest
 from pydantic import ValidationError
 
 from api.models.game_data.data_manager import GameDataManager
-from api.models.game_data.schemas.gear import GearSlot
+from api.models.game_data.schemas.gear import PrimaryGearSlot
 
 
 @pytest.fixture
