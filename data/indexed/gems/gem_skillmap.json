@@ -1,0 +1,55 @@
+{
+  "gems_by_skill": {
+    "movement": [
+      "Blood-Soaked Jade",
+      "Lightning Core",
+      "Bottled Hope",
+      "The Abiding Curse",
+      "Grim Rhythm"
+    ],
+    "primary attack": [
+      "Ca'arsen's Invigoration",
+      "Lightning Core",
+      "Mocking Laughter",
+      "Power & Command",
+      "Howler's Call",
+      "Spiteful Blood",
+      "Gloom Cask"
+    ],
+    "attack": [
+      "Ca'arsen's Invigoration",
+      "Cutthroat's Grin",
+      "Kir Sling",
+      "Power & Command",
+      "The Abiding Curse"
+    ],
+    "damage": [
+      "Berserker's Eye",
+      "Cutthroat's Grin",
+      "Power & Command"
+    ],
+    "summon": [
+      "Follower's Burden",
+      "The Black Rose",
+      "Echoing Shade",
+      "Howler's Call"
+    ],
+    "defense": [
+      "Frozen Heart",
+      "Phoenix Ashes",
+      "Spiteful Blood"
+    ],
+    "channeling": [
+      "Trickshot Gem"
+    ],
+    "ultimate": [
+      "Zod Stone"
+    ],
+    "buff": [
+      "Bottled Hope"
+    ],
+    "dash": [
+      "Concentrated Will"
+    ]
+  }
+}

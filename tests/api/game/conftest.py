@@ -47,7 +47,7 @@ def test_data_dir(tmp_path):
             "channeled": []
         }
     }
-    with open(gems_dir / "gems.json", "w") as f:
+    with open(gems_dir / "gem_skillmap.json", "w") as f:
         json.dump(gems_data, f)
 
     # Create equipment sets data

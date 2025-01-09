@@ -190,7 +190,7 @@ def mock_data_dir(
     # Create gems directory and file
     gems_dir = base_dir / "gems"
     gems_dir.mkdir()
-    with open(gems_dir / "gems.json", "w") as f:
+    with open(gems_dir / "gem_skillmap.json", "w") as f:
         json.dump(sample_gems_data, f)
     
     # Create equipment directory and file

@@ -5,12 +5,10 @@ build-backend = "setuptools.build_meta"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
-addopts = "-ra -q"
-filterwarnings = [
-    "error"
-]
+filterwarnings = ["error"]
 asyncio_mode = "strict"
 asyncio_default_fixture_loop_scope = "function"
+addopts = "-v"
 
 [tool.mypy]
 python_version = "3.13"

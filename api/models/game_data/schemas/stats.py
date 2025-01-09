@@ -6,6 +6,17 @@ from typing import Dict, List, Optional, Union
 from pydantic import BaseModel, Field
 
 
+class StatInfo(BaseModel):
+    """Information about a specific stat."""
+    name: str = Field(description="Name of the stat")
+    description: str = Field(description="Description of what the stat does")
+    category: str = Field(description="Category of the stat (offensive, defensive, utility)")
+    unit: Optional[str] = Field(None, description="Unit of measurement (e.g., percentage, flat)")
+    min_value: Optional[float] = Field(None, description="Minimum possible value")
+    max_value: Optional[float] = Field(None, description="Maximum possible value")
+    sources: List[str] = Field(default_factory=list, description="Types of items that can provide this stat")
+
+
 class StatBlock(BaseModel):
     """Character stat allocation."""
     

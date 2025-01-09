@@ -35,10 +35,9 @@ class BuildService:
         "cross_references": "cross_references.json",
         
         # Gem data
-        "gems/progression": "gems/progression.json",
+        "gems/gems": "gems/gems.json",
         "gems/stat_boosts": "gems/stat_boosts.json",
         "gems/synergies": "gems/synergies.json",
-        "gems/gems": "gems/gems.json",
         
         # Skills data
         "skills": "skills.json",
@@ -117,10 +116,9 @@ class BuildService:
             
             # Store gem data
             self.gem_data = {
-                "progression": data_files["gems/progression"],
+                "gems": data_files["gems/gems"],
                 "stat_boosts": data_files["gems/stat_boosts"],
-                "synergies": data_files["gems/synergies"],
-                "gems": data_files["gems/gems"]
+                "synergies": data_files["gems/synergies"]
             }
             
             # Store equipment data
@@ -457,7 +455,7 @@ class BuildService:
         """
         # Get primary gem's star rating
         try:
-            progression_data = self.gem_data["progression"][primary_gem]
+            progression_data = self.gem_data["gems"][primary_gem]
             primary_star_rating = progression_data.get("star_rating")
             if not primary_star_rating:
                 return None
@@ -466,7 +464,7 @@ class BuildService:
         
         # Get all gems with matching star rating
         candidates = []
-        for gem_name, data in self.gem_data["progression"].items():
+        for gem_name, data in self.gem_data["gems"].items():
             if (
                 gem_name != primary_gem
                 and gem_name not in used_gems
