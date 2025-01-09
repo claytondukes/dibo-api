@@ -61,12 +61,49 @@ def sample_metadata():
 def sample_gem():
     """Sample gem data for testing."""
     return {
-        "Stars": 5,
+        "Stars": "5",
         "Name": "Blood-Soaked Jade",
-        "Base Effect": "Increases all damage you deal by up to 8%",
-        "Rank 10 Effect": "Increases all damage you deal by up to 24% while at full Life",
-        "Owned Rank": 10,
-        "Quality (if 5 star)": 5
+        "magic_find": "15",
+        "max_effect": "Increases all damage you deal by up to 24% while at full Life, with a minimum bonus of 12% while at low Life. Increases your Movement Speed by 10%. Additionally, take 8% decreased damage while below 50% Life.",
+        "max_rank": 10,
+        "ranks": {
+            "1": {
+                "effects": [
+                    {
+                        "type": "stat_effect",
+                        "text": "Increases all damage you deal by up to 8%",
+                        "conditions": []
+                    }
+                ],
+                "stats": {
+                    "damage_increase": [
+                        {
+                            "value": 8.0,
+                            "conditions": [],
+                            "context": "while at full Life"
+                        }
+                    ]
+                }
+            },
+            "10": {
+                "effects": [
+                    {
+                        "type": "stat_effect",
+                        "text": "Increases all damage you deal by up to 24%",
+                        "conditions": []
+                    }
+                ],
+                "stats": {
+                    "damage_increase": [
+                        {
+                            "value": 24.0,
+                            "conditions": [],
+                            "context": "while at full Life"
+                        }
+                    ]
+                }
+            }
+        }
     }
 
 
@@ -77,12 +114,49 @@ def sample_gems_data():
         "gems_by_skill": {
             "movement": [
                 {
-                    "Stars": 5,
+                    "Stars": "5",
                     "Name": "Blood-Soaked Jade",
-                    "Base Effect": "Increases all damage you deal by up to 8%",
-                    "Rank 10 Effect": "Increases all damage you deal by up to 24% while at full Life",
-                    "Owned Rank": 10,
-                    "Quality (if 5 star)": 5
+                    "magic_find": "15",
+                    "max_effect": "Increases all damage you deal by up to 24% while at full Life, with a minimum bonus of 12% while at low Life. Increases your Movement Speed by 10%. Additionally, take 8% decreased damage while below 50% Life.",
+                    "max_rank": 10,
+                    "ranks": {
+                        "1": {
+                            "effects": [
+                                {
+                                    "type": "stat_effect",
+                                    "text": "Increases all damage you deal by up to 8%",
+                                    "conditions": []
+                                }
+                            ],
+                            "stats": {
+                                "damage_increase": [
+                                    {
+                                        "value": 8.0,
+                                        "conditions": [],
+                                        "context": "while at full Life"
+                                    }
+                                ]
+                            }
+                        },
+                        "10": {
+                            "effects": [
+                                {
+                                    "type": "stat_effect",
+                                    "text": "Increases all damage you deal by up to 24%",
+                                    "conditions": []
+                                }
+                            ],
+                            "stats": {
+                                "damage_increase": [
+                                    {
+                                        "value": 24.0,
+                                        "conditions": [],
+                                        "context": "while at full Life"
+                                    }
+                                ]
+                            }
+                        }
+                    }
                 }
             ],
             "primary attack": [],
@@ -159,3 +233,9 @@ def sample_stats_data():
             }
         ]
     }
+
+
+@pytest.fixture
+def mock_token() -> str:
+    """Mock JWT token for testing."""
+    return "mock.jwt.token"

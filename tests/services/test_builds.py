@@ -23,8 +23,8 @@ def create_mock_gist():
             "armor": "plate_mail"
         },
         "gems": {
-            "socket_1": {"type": "strength", "level": 1},
-            "socket_2": {"type": "vitality", "level": 2}
+            "socket_1": {"name": "Strength Gem", "rank": 1},
+            "socket_2": {"name": "Vitality Gem", "rank": 2}
         },
         "stats": {
             "strength": 10,
@@ -62,8 +62,8 @@ def valid_build():
             EquipmentSlot.ARMOR: "plate_mail"
         },
         gems={
-            "socket_1": GemConfig(type="strength", level=1),
-            "socket_2": GemConfig(type="vitality", level=2)
+            "socket_1": GemConfig(name="Strength Gem", rank=1),
+            "socket_2": GemConfig(name="Vitality Gem", rank=2)
         },
         stats=StatBlock(
             strength=10,
@@ -101,13 +101,11 @@ def mock_gist_service():
     create_gist_mock = create_mock_gist()
     service.create_gist.return_value = create_gist_mock
     
-    # Configure update_gist mock
-    update_gist_mock = create_mock_gist()
-    service.update_gist.return_value = update_gist_mock
-    
     # Configure get_gist mock
-    get_gist_mock = create_mock_gist()
-    service.get_gist.return_value = get_gist_mock
+    service.get_gist.return_value = create_gist_mock
+    
+    # Configure update_gist mock
+    service.update_gist.return_value = create_gist_mock
     
     return service
 
@@ -143,7 +141,8 @@ async def test_validate_build_invalid_gem(build_service, valid_build, mock_data_
     mock_data_manager.gem_exists.return_value = False
     errors = await build_service.validate_build(valid_build)
     assert len(errors) == 2
-    assert "Invalid gem type" in errors[0]
+    assert "Invalid gem type:" in errors[0]
+    assert "Invalid gem type:" in errors[1]
 
 
 @pytest.mark.asyncio

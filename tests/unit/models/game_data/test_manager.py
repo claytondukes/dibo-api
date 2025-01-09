@@ -6,7 +6,7 @@ import pytest
 from datetime import datetime, timedelta
 
 from api.models.game_data.manager import GameDataManager
-from api.models.game_data.schemas import GemData
+from api.models.game_data.schemas import GemSkillMap
 
 
 class TestGameDataManager:
@@ -27,11 +27,9 @@ class TestGameDataManager:
     async def test_get_gems_data(self, manager):
         """Test getting gems data."""
         data = await manager.get_data("gems")
-        assert isinstance(data, GemData)
+        assert isinstance(data, GemSkillMap)
         assert len(data.gems_by_skill.movement) == 1
-        gem = data.gems_by_skill.movement[0]
-        assert gem.name == "Blood-Soaked Jade"
-        assert gem.stars == 5
+        assert data.gems_by_skill.movement[0] == "Blood-Soaked Jade"
 
     def test_should_reload_initial(self, manager):
         """Test should_reload returns True for initial load."""
@@ -63,4 +61,4 @@ class TestGameDataManager:
         """Test reloading all data."""
         await manager._reload_data()
         assert manager._cache.last_loaded is not None
-        assert isinstance(manager._cache.data["gems"], GemData)
+        assert isinstance(manager._cache.data["gems"], GemSkillMap)

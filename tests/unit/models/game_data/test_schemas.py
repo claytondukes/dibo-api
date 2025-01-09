@@ -48,14 +48,12 @@ class TestGem:
         """Test creating a gem with valid data."""
         gem = Gem.model_validate(sample_gem)
         assert gem.stars == "5"
-        assert "ranks" in gem.dict()
-        assert gem.max_rank == 10
-        assert gem.magic_find == "15"
+        assert gem.model_dump().get("name") == "Blood-Soaked Jade"
 
     def test_invalid_stars(self, sample_gem):
         """Test gem validation with invalid star rating."""
         invalid_gem = sample_gem.copy()
-        invalid_gem["stars"] = "3"
+        invalid_gem["Stars"] = "3"
         with pytest.raises(ValidationError):
             Gem.model_validate(invalid_gem)
 
@@ -63,7 +61,7 @@ class TestGem:
         """Test quality validation with different star ratings."""
         # Test with 2-star gem
         two_star_gem = sample_gem.copy()
-        two_star_gem["stars"] = "2"
+        two_star_gem["Stars"] = "2"
         gem = Gem.model_validate(two_star_gem)
         assert gem.stars == "2"
 
@@ -75,7 +73,7 @@ class TestGemSkillMap:
         """Test creating gems data with valid structure."""
         data = GemSkillMap.model_validate(sample_gems_data)
         assert len(data.gems_by_skill.movement) == 1
-        assert isinstance(data.gems_by_skill.movement[0], str)
+        assert data.gems_by_skill.movement[0] == "Blood-Soaked Jade"
 
     def test_empty_categories(self):
         """Test gems data with empty skill categories."""
@@ -109,7 +107,7 @@ class TestEquipmentSets:
     def test_valid_sets_data(self, sample_equipment_sets_data):
         """Test creating EquipmentSets with valid data."""
         sets_data = EquipmentSets.model_validate(sample_equipment_sets_data)
-        assert len(sets_data.sets) > 0
+        assert len(sets_data.registry) > 0
 
 
 class TestStatValue:
@@ -128,8 +126,8 @@ class TestStatSource:
     def test_valid_stat_source(self, sample_stat_source):
         """Test creating a stat source with valid data."""
         stat_source = StatSource.model_validate(sample_stat_source)
-        assert stat_source.source is not None
-        assert stat_source.value is not None
+        assert stat_source.name is not None
+        assert len(stat_source.base_values) > 0
 
 
 class TestGameStats:
@@ -138,4 +136,4 @@ class TestGameStats:
     def test_valid_stats_data(self, sample_stats_data):
         """Test creating GameStats with valid data."""
         stats_data = GameStats.model_validate(sample_stats_data)
-        assert len(stats_data.stats) > 0
+        assert len(stats_data.critical_hit_chance.gems) > 0

@@ -14,7 +14,7 @@ from typing import Any, Dict, Optional, TypeVar, Type
 from .schemas import (
     GameDataMetadata,
     GameDataCache,
-    GemData,
+    GemSkillMap,
     EquipmentSets,
     GameStats
 )
@@ -27,7 +27,7 @@ class GameDataManager:
     """Manages access to indexed game data with caching and version awareness."""
 
     CATEGORY_LOADERS = {
-        "gems": (GemData, "gems/gem_skillmap.json"),
+        "gems": (GemSkillMap, "gems/gem_skillmap.json"),
         "equipment_sets": (EquipmentSets, "equipment/sets.json"),
         "stats": (GameStats, "stats.json"),
     }

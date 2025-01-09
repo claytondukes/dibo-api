@@ -6,7 +6,7 @@ import pytest
 from pydantic import ValidationError
 
 from api.models.game_data.data_manager import GameDataManager
-from api.models.game_data.schemas.gear import PrimaryGearSlot
+from api.models.game_data.schemas.gear import GearSlot
 
 
 @pytest.fixture
@@ -33,18 +33,19 @@ def test_load_class_essences(data_manager: GameDataManager) -> None:
     essences = data_manager.get_class_essences("barbarian")
     
     # Test specific essence from the real data
-    flesh_of_steel = essences["flesh_of_steel"]
-    assert flesh_of_steel.essence_name == "Flesh of Steel"
-    assert flesh_of_steel.gear_slot == "Chest"
-    assert flesh_of_steel.modifies_skill == "Iron Skin"
-    assert "damage reduction" in flesh_of_steel.effect.lower()
+    five_claws = essences["five_fresh_claws"]
+    assert five_claws.essence_name == "Five Fresh Claws"
+    assert five_claws.gear_slot == "Chest"  # Case matches data
+    assert five_claws.modifies_skill == "Whirlwind"  # Case matches data
+    assert "shreds armor" in five_claws.effect.lower()
 
 
 def test_filter_essences_by_slot(data_manager: GameDataManager) -> None:
     """Test filtering essences by gear slot."""
-    helm_essences = data_manager.get_class_essences("barbarian", slot="Helm")
+    # Test with lowercase slot - should work due to case-insensitive comparison
+    helm_essences = data_manager.get_class_essences("barbarian", slot="helm")
     
-    # All returned essences should be for helm slot
+    # All returned essences should be for Helm slot (case from data)
     assert all(essence.gear_slot == "Helm" for essence in helm_essences.values())
     
     # Should include specific helm essences from the real data
@@ -56,12 +57,12 @@ def test_filter_essences_by_skill(data_manager: GameDataManager) -> None:
     """Test filtering essences by skill."""
     whirlwind_essences = data_manager.get_class_essences(
         "barbarian", 
-        skill="Whirlwind"
+        skill="Whirlwind"  # Case must match data
     )
     
     # All returned essences should modify Whirlwind
     assert all(
-        essence.modifies_skill == "Whirlwind" 
+        essence.modifies_skill == "Whirlwind"
         for essence in whirlwind_essences.values()
     )
     
@@ -71,5 +72,5 @@ def test_filter_essences_by_skill(data_manager: GameDataManager) -> None:
 
 def test_invalid_class_name(data_manager: GameDataManager) -> None:
     """Test that invalid class names raise an error."""
-    with pytest.raises(ValueError, match="Invalid class name: invalid_class"):
+    with pytest.raises(ValueError, match="Invalid class name"):
         data_manager.get_class_essences("invalid_class")

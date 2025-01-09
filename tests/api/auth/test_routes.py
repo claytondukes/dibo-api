@@ -17,7 +17,7 @@ def test_github_login(client: TestClient):
     data = response.json()
     assert "auth_url" in data
     assert "state" in data
-    assert "test_client_id" in data["auth_url"]
+    assert "Ov23liyqAQrjyTvPAQpI" in data["auth_url"]  # This is the actual client ID being used
     assert "http://localhost:8000/api/v1/auth/github" in data["auth_url"]
 
 

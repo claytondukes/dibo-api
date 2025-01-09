@@ -20,8 +20,8 @@ def valid_build_data():
             EquipmentSlot.ARMOR: "plate_mail"
         },
         "gems": {
-            "socket_1": GemConfig(type="strength", level=1),
-            "socket_2": GemConfig(type="vitality", level=2)
+            "socket_1": GemConfig(name="Strength Gem", rank=1),
+            "socket_2": GemConfig(name="Vitality Gem", rank=2)
         },
         "stats": StatBlock(
             strength=10,
