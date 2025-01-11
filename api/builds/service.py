@@ -46,13 +46,14 @@ class BuildService:
     # Required data files that must exist
     REQUIRED_FILES = {
         # Core data files
-        "synergies": "synergies.json",
+        "build_types": "build_types.json",
+        "stats": "gems/stat_boosts.json",  
         "constraints": "constraints.json",
-        "stats": "stats.json",
-        "cross_references": "cross_references.json",
+        "synergies": "synergies.json",
         
-        # Gem data
-        "gems/gems": "gems/gems.json",
+        # Gem-related files
+        "gems/skillmap": "gems/gem_skillmap.json",
+        "gems/data": "gems/gems.json",
         "gems/stat_boosts": "gems/stat_boosts.json",
         "gems/synergies": "gems/synergies.json",
         
@@ -60,7 +61,7 @@ class BuildService:
         "skills": "skills.json",
         
         # Equipment data
-        "equipment": "equipment.json",  # Update equipment data file
+        "equipment": "equipment.json",  
         
         # Class-specific data
         "classes/barbarian/essences": "classes/barbarian/essences.json",
@@ -69,7 +70,7 @@ class BuildService:
     }
     
     # Supported character classes
-    CHARACTER_CLASSES = {"barbarian"}  # Add more as they are implemented
+    CHARACTER_CLASSES: Set[str] = set()  
     
     def __init__(self, data_dir: Optional[Path] = None) -> None:
         """Initialize the build service.
@@ -90,7 +91,11 @@ class BuildService:
             )
             
         self.data_manager = GameDataManager(self.data_dir)
-
+        self._load_data()
+        
+        # Dynamically detect available character classes
+        self.CHARACTER_CLASSES = self._get_available_classes()
+        
     @classmethod
     async def create(cls, data_dir: Optional[Path] = None) -> 'BuildService':
         """Create and initialize a BuildService instance.
@@ -214,7 +219,7 @@ class BuildService:
             )
         
         # Validate equipment data structure
-        required_equipment_keys = {"metadata", "gear", "sets"}  # Update equipment data keys
+        required_equipment_keys = {"metadata", "gear", "sets"}  
         if not all(key in self.equipment_sets for key in required_equipment_keys):
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -868,7 +873,7 @@ class BuildService:
         """
         try:
             # Get available sets
-            available_sets = self.equipment_sets  # Update equipment data
+            available_sets = self.equipment_sets  
             
             # Calculate scores for each set
             set_scores = []
@@ -1083,7 +1088,7 @@ class BuildService:
         """
         try:
             pieces = []
-            set_data = self.equipment_sets[set_name]  # Update equipment data
+            set_data = self.equipment_sets[set_name]  
             
             # Sort pieces by their base stats
             sorted_pieces = sorted(
@@ -1637,7 +1642,7 @@ class BuildService:
             Selected Equipment piece
         """
         # Get gear data for slot
-        gear_data = self.equipment_sets.get("gear", {}).get(slot, {})  # Update equipment data
+        gear_data = self.equipment_sets.get("gear", {}).get(slot, {})  
         if not gear_data:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -1737,3 +1742,45 @@ class BuildService:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail=f"Failed to analyze build: {str(e)}"
             )
+
+    def _load_data(self) -> None:
+        """Load required data from data directory."""
+        # Load core data
+        self.stats = self._load_json_file("gems/stat_boosts.json")
+        self.build_types = self._load_json_file("build_types.json")
+        
+        # Load equipment data
+        self.equipment_sets = self._load_json_file("equipment.json")
+        
+        # Load gem data
+        self.gem_data = self._load_json_file("gems.json")
+        
+        # Load raw JSON files for other data
+        # Note: These will be migrated to proper schemas in future
+        self.constraints = self._load_json_file("constraints.json")
+        self.synergies = self._load_json_file("synergies.json")
+        self.cross_references = self._load_json_file("cross_references.json")
+        
+        # Load class-specific data
+        self.class_data = {}
+        self.class_constraints = {}
+        for class_name in self.CHARACTER_CLASSES:
+            self.class_data[class_name] = {
+                "essences": self._load_json_file(f"classes/{class_name}/essences.json"),
+                "base_skills": self._load_json_file(f"classes/{class_name}/base_skills.json")
+            }
+            self.class_constraints[class_name] = self._load_json_file(
+                f"classes/{class_name}/constraints.json"
+            )
+
+    def _get_available_classes(self) -> Set[str]:
+        """Get available character classes by scanning the classes directory.
+        
+        Returns:
+            Set of available character class names
+        """
+        classes_dir = self.data_dir / "classes"
+        if not classes_dir.exists():
+            return set()
+            
+        return {d.name for d in classes_dir.iterdir() if d.is_dir()}
