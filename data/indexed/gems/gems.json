@@ -6882,14 +6882,14 @@
             {
               "value": 12.0,
               "conditions": [],
-              "context": "iling rage for 6s, +12% Crit Chance, crits cause explosion dealing 36% base damage over 3s"
+              "context": "Enters roiling rage for 6s, +12% Crit Chance, crits cause explosion dealing 36% base damage over 3s"
             }
           ],
           "proc_chance": [
             {
               "value": 12.0,
               "conditions": [],
-              "context": "iling rage for 6s, +12% Crit Chance, crits cause explos"
+              "context": "Enters roiling rage for 6s, +12% Crit Chance, crits cause explos"
             }
           ]
         }

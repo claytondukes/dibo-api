@@ -342,9 +342,15 @@ def test_list_synergies(client: TestClient):
     data = response.json()
     assert "synergies" in data
     assert isinstance(data["synergies"], dict)
-    # Check for common synergy types
+    # Check for common synergy categories
     categories = data["synergies"].keys()
-    assert all(cat in categories for cat in ["gems", "essences", "skills"])
+    assert len(categories) > 0
+    # Each category should have gems, essences, skills, and conditions
+    for category in categories:
+        assert "gems" in data["synergies"][category]
+        assert "essences" in data["synergies"][category]
+        assert "skills" in data["synergies"][category]
+        assert "conditions" in data["synergies"][category]
 
 
 def test_get_synergy_details(client: TestClient):
@@ -353,12 +359,13 @@ def test_get_synergy_details(client: TestClient):
     response = client.get("/api/v1/game/synergies")
     assert response.status_code == 200
     data = response.json()
-    
-    # Get first synergy from gems category
-    first_synergy = data["synergies"]["gems"][0]
+
+    # Get first synergy category that has gems
+    synergy_categories = list(data["synergies"].keys())
+    assert len(synergy_categories) > 0
     
     # Get details for that synergy
-    response = client.get(f"/api/v1/game/synergies/{first_synergy}")
+    response = client.get(f"/api/v1/game/synergies/{synergy_categories[0]}")
     assert response.status_code == 200
     data = response.json()
     assert isinstance(data, dict)

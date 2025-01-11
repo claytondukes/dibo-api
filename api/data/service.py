@@ -78,7 +78,18 @@ class DataService:
                 skills_file = class_dir / "base_skills.json"
                 if skills_file.exists():
                     with open(skills_file, "r") as f:
-                        self.skills_data[class_dir.name] = json.load(f)
+                        class_data = json.load(f)
+                        # Convert cooldowns to float
+                        for skill in class_data["skills"]:
+                            if "cooldown" in skill:
+                                try:
+                                    skill["cooldown"] = float(skill["cooldown"])
+                                except (ValueError, TypeError):
+                                    logger.warning(
+                                        f"Invalid cooldown value for skill {skill['name']}: {skill['cooldown']}"
+                                    )
+                                    skill["cooldown"] = None
+                        self.skills_data[class_dir.name] = class_data
 
     def _paginate(
         self,
@@ -218,10 +229,21 @@ class DataService:
             if category and category.value not in skill_data["categories"]:
                 continue
 
+            # Ensure cooldown is a float or None
+            cooldown = skill_data.get("cooldown")
+            if cooldown is not None:
+                try:
+                    cooldown = float(cooldown)
+                except (ValueError, TypeError):
+                    logger.warning(
+                        f"Invalid cooldown value for skill {skill_data['name']}: {cooldown}"
+                    )
+                    cooldown = None
+
             skills.append(Skill(
                 name=skill_data["name"],
                 description=skill_data["description"],
-                cooldown=skill_data.get("cooldown"),
+                cooldown=cooldown,
                 categories=[
                     BuildCategory(cat)
                     for cat in skill_data["categories"]

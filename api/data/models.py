@@ -16,6 +16,7 @@ class BuildCategory(str, Enum):
     SUMMON = "summon"
     CHANNELED = "channeled"
     UTILITY = "utility"
+    WEAPON = "weapon"
 
 
 class GemBase(BaseModel):

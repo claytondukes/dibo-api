@@ -8,7 +8,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-from api.models.game_data.data_manager import GameDataManager
+from api.models.game_data.manager import GameDataManager
 from api.models.game_data.schemas.stats import StatInfo
 
 

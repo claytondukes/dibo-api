@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-10T14:11:48-05:00"
+  },
+  "build_types": {
+    "raid": {
+      "dps": {
+        "terms": [
+          "damage over time",
+          "persistent",
+          "continuous",
+          "area damage",
+          "nearby enemies",
+          "all enemies",
+          "boss damage",
+          "elite damage",
+          "rare damage",
+          "damage to elites",
+          "damage to bosses"
+        ],
+        "score_weights": {
+          "base_type_match": 0.5,
+          "second_type_match": 0.3,
+          "term_match": 0.2,
+          "cooldown": {
+            "threshold": 15,
+            "score": 0.2
+          }
+        }
+      },
+      "survival": {
+        "terms": [
+          "immune",
+          "invulnerable",
+          "cannot die",
+          "damage reduction",
+          "resist all"
+        ],
+        "score_weights": {
+          "base_type_match": 0.5,
+          "second_type_match": 0.3,
+          "term_match": 0.15
+        }
+      },
+      "buff": {
+        "terms": [
+          "party bonus",
+          "group bonus",
+          "allies",
+          "aura",
+          "emanate",
+          "radiate"
+        ],
+        "score_weights": {
+          "base_type_match": 0.5,
+          "second_type_match": 0.3,
+          "term_match": 0.15
+        }
+      }
+    },
+    "farm": {
+      "dps": {
+        "terms": [
+          "nearby enemies",
+          "all enemies",
+          "chain lightning",
+          "dark beast",
+          "hellfire blaze",
+          "blood spike",
+          "charging spirit"
+        ],
+        "score_weights": {
+          "base_type_match": 0.5,
+          "second_type_match": 0.3,
+          "term_match": 0.3,
+          "cooldown": {
+            "threshold": 8,
+            "threshold_medium": 12,
+            "score": 0.3,
+            "score_medium": 0.2
+          }
+        }
+      }
+    },
+    "pvp": {
+      "control": {
+        "terms": [
+          "stun",
+          "slow",
+          "chill",
+          "freeze",
+          "immobilize",
+          "weaken",
+          "decrease speed"
+        ],
+        "score_weights": {
+          "term_match": 0.25
+        }
+      },
+      "mobility": {
+        "terms": [
+          "movement speed",
+          "charge",
+          "dash",
+          "leap",
+          "teleport",
+          "increased speed"
+        ],
+        "score_weights": {
+          "base_type_match": 0.25,
+          "term_match": 0.25
+        }
+      }
+    }
+  }
+}

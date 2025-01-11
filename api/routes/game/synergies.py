@@ -6,7 +6,7 @@ from typing import Annotated, Dict, List, Optional
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from pydantic import BaseModel, Field
 
-from api.models.game_data.data_manager import GameDataManager
+from api.models.game_data.manager import GameDataManager
 from api.models.game_data.schemas.synergies import GameSynergies, SynergyGroup
 
 
@@ -16,8 +16,8 @@ logger = logging.getLogger(__name__)
 
 class SynergyListResponse(BaseModel):
     """Response model for synergy listing endpoint."""
-    synergies: Dict[str, List[str]] = Field(
-        description="Synergy types and their names"
+    synergies: Dict[str, SynergyGroup] = Field(
+        description="Map of synergy names to their groups"
     )
 
 
@@ -49,22 +49,7 @@ async def list_synergies(
         with open(synergies_file) as f:
             synergies_data = json.load(f)
             
-        # Group synergies by type based on what they affect
-        synergies_by_type = {
-            "gems": [],
-            "essences": [],
-            "skills": []
-        }
-        
-        for synergy_name, group in synergies_data.items():
-            if group["gems"]:
-                synergies_by_type["gems"].append(synergy_name)
-            if group["essences"]:
-                synergies_by_type["essences"].append(synergy_name)
-            if group["skills"]:
-                synergies_by_type["skills"].append(synergy_name)
-                    
-        return SynergyListResponse(synergies=synergies_by_type)
+        return SynergyListResponse(synergies=synergies_data["synergies"])
         
     except Exception as e:
         logger.error(f"Error listing synergies: {e}")
@@ -99,13 +84,13 @@ async def get_synergy_details(
         with open(synergies_file) as f:
             synergies_data = json.load(f)
             
-        if synergy_name not in synergies_data:
+        if synergy_name not in synergies_data["synergies"]:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Synergy not found: {synergy_name}"
             )
             
-        return synergies_data[synergy_name]
+        return synergies_data["synergies"][synergy_name]
         
     except HTTPException:
         raise

@@ -1,14 +1,13 @@
 """
-Base schema models for game data.
-"""
+Base models for game data structures."""
 
 from datetime import datetime
-from typing import Dict, List, Any, Optional
+from typing import Dict, Any, Optional, List
 from pydantic import BaseModel, Field, ConfigDict
 
 
 class GameDataModel(BaseModel):
-    """Base model for all game data entities."""
+    """Base model for all game data models."""
     
     model_config = ConfigDict(frozen=True, extra="forbid")
 
@@ -34,7 +33,7 @@ class GameDataMetadata(GameDataModel):
     )
 
 
-class GameDataCache(BaseModel):
+class GameDataCache(GameDataModel):
     """In-memory cache for game data."""
     
     metadata: GameDataMetadata = Field(
@@ -48,4 +47,12 @@ class GameDataCache(BaseModel):
     last_loaded: Optional[datetime] = Field(
         default=None,
         description="Timestamp when the cache was last loaded"
+    )
+
+
+class BuildTypes(GameDataModel):
+    """Model for build types configuration."""
+    
+    build_types: Dict[str, Dict[str, Any]] = Field(
+        description="Available build types and their configurations"
     )

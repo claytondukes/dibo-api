@@ -1,13 +1,13 @@
 """API routes for class-related operations."""
 
 import json
-from typing import Annotated, Dict, List, Optional
+from typing import Annotated, Dict, List, Optional, Any
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from pydantic import BaseModel, Field
 import logging
 
-from api.models.game_data.data_manager import GameDataManager
-from api.models.game_data.schemas.classes import ClassInfo, ClassSkill
+from api.models.game_data.manager import GameDataManager
+from api.models.game_data.schemas.classes import ClassInfo, ClassSkill, CharacterClass, ClassListResponse
 
 
 logger = logging.getLogger(__name__)
@@ -29,31 +29,8 @@ def get_data_manager(request: Request) -> GameDataManager:
 async def list_classes(
     data_manager: Annotated[GameDataManager, Depends(get_data_manager)]
 ) -> ClassListResponse:
-    """List all available character classes.
-
-    Args:
-        data_manager: Game data manager instance
-
-    Returns:
-        List of class names
-
-    Raises:
-        HTTPException: If classes data cannot be loaded
-    """
-    try:
-        classes_dir = data_manager.base_path / "classes"
-        if not classes_dir.exists():
-            raise FileNotFoundError("Classes directory not found")
-        
-        # Get class names from directory names
-        class_names = [d.name for d in classes_dir.iterdir() if d.is_dir()]
-        return ClassListResponse(classes=class_names)
-        
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e)
-        )
+    """List all available character classes."""
+    return ClassListResponse(classes=[c.value for c in CharacterClass])
 
 
 @router.get("/classes/{class_name}", response_model=ClassInfo)

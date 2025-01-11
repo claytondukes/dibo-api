@@ -19,10 +19,26 @@ class Settings(BaseSettings):
         default_factory=lambda: Path(__file__).parent.parent.parent
     )
     
+    # Data
+    DATA_DIR: Path = Field(
+        default_factory=lambda: Path(__file__).parent.parent.parent / "data/indexed",
+        description="Directory containing indexed game data"
+    )
+    
     # Environment
     ENVIRONMENT: str = Field(
         default="development",
         description="deployment environment"
+    )
+    
+    # Testing
+    TESTING: bool = Field(
+        default=False,
+        description="Whether the app is in testing mode"
+    )
+    TEST_DATA_DIR: Optional[str] = Field(
+        default=None,
+        description="Directory containing test data"
     )
     
     # CORS Settings

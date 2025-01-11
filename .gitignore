@@ -1,3 +1,6 @@
+# Windsurf specific
+chat_history/
+
 # Dependencies
 node_modules
 .pnp
