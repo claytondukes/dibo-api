@@ -7,12 +7,32 @@ from pydantic import BaseModel, Field
 
 
 class BuildType(str, Enum):
-    """Type of build to generate."""
+    """Build type enumeration.
     
+    Note: Build types are defined in build_types.json. This enum exists
+    for type safety and documentation purposes only. The actual available
+    build types are determined by the configuration file.
+    """
     RAID = "raid"
-    PVE = "pve"
-    PVP = "pvp"
     FARM = "farm"
+    PVP = "pvp"
+    
+    @classmethod
+    def _missing_(cls, value: str) -> None:
+        """Handle unknown build types.
+        
+        Args:
+            value: The build type string to convert
+            
+        Returns:
+            None to indicate invalid value
+            
+        Note:
+            This method intentionally returns None for unknown values.
+            The BuildService will validate build types against the configuration
+            and provide a proper error message if the type is not found.
+        """
+        return None
 
 
 class BuildFocus(str, Enum):
@@ -44,6 +64,7 @@ class Equipment(BaseModel):
     name: str
     slot: str
     attributes: List[str] = Field(default_factory=list)
+    essence: Optional[str] = None
 
 
 class BuildStats(BaseModel):

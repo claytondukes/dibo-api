@@ -2,18 +2,20 @@
 
 import json
 import logging
+from collections import defaultdict
 from pathlib import Path
-from typing import Dict, List, Optional, Set
+from typing import Dict, List, Optional, Set, Tuple, TypedDict, Union
 
 from fastapi import HTTPException, status
 
-from ..core.config import get_settings
+from ..core.config import get_settings, Settings
+from ..models.game_data.manager import GameDataManager
 from .models import (
     BuildFocus,
+    BuildRecommendation,
     BuildResponse,
     BuildStats,
     BuildType,
-    BuildRecommendation,
     Gem,
     Skill,
     Equipment
@@ -21,6 +23,21 @@ from .models import (
 
 
 logger = logging.getLogger(__name__)
+
+
+class ScoreWeights(TypedDict):
+    """Score weights for build type configuration."""
+    base_type_match: float
+    second_type_match: float
+    term_match: float
+    cooldown: Optional[Dict[str, Union[float, int]]]
+    utility_modifier: float
+
+
+class BuildTypeConfig(TypedDict):
+    """Build type configuration."""
+    terms: List[str]
+    score_weights: ScoreWeights
 
 
 class BuildService:
@@ -57,93 +74,108 @@ class BuildService:
     def __init__(self, data_dir: Optional[Path] = None) -> None:
         """Initialize the build service.
         
+        Note: This should not be called directly. Use create() instead.
+        
         Args:
             data_dir: Optional path to data directory. If not provided,
                      uses the default from settings.
-        
-        Raises:
-            HTTPException: If required data files are missing or invalid.
         """
         self.settings = get_settings()
-        self.data_dir = data_dir or Path(self.settings.PROJECT_ROOT) / "data" / "indexed"
+        self.data_dir = data_dir or self.settings.DATA_DIR
         
-        # Validate data directory exists
         if not self.data_dir.exists():
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail=f"Data directory not found: {self.data_dir}"
             )
+            
+        self.data_manager = GameDataManager(self.data_dir)
+
+    @classmethod
+    async def create(cls, data_dir: Optional[Path] = None) -> 'BuildService':
+        """Create and initialize a BuildService instance.
         
-        # Load all indexed data
+        Args:
+            data_dir: Optional path to data directory. If not provided,
+                     uses the default from settings.
+        
+        Returns:
+            Initialized BuildService instance
+            
+        Raises:
+            HTTPException: If initialization fails
+        """
+        instance = cls(data_dir)
+        await instance.initialize()
+        return instance
+
+    async def initialize(self) -> None:
+        """Initialize all required data from GameDataManager."""
         try:
-            # First try to load and parse all files
-            data_files = {}
+            # Load core data
+            self.stats = await self.data_manager.get_data("stats")
+            self.build_types = await self.data_manager.get_data("build_types")
             
-            # Load core files
-            core_files = {f for f in self.REQUIRED_FILES if not f.startswith("classes/")}
-            for filename in core_files:
-                file_path = self.data_dir / self.REQUIRED_FILES[filename]
-                if not file_path.exists():
-                    raise FileNotFoundError(
-                        f"Required data file not found: {file_path}"
-                    )
-                with open(file_path, "r") as f:
-                    data_files[filename] = json.load(f)
+            # Load equipment data
+            self.equipment_sets = await self.data_manager.get_data("equipment_sets")
             
-            # Load class-specific files
-            for class_name in self.CHARACTER_CLASSES:
-                class_files = {
-                    f for f in self.REQUIRED_FILES 
-                    if f.startswith(f"classes/{class_name}/")
-                }
-                for filename in class_files:
-                    file_path = self.data_dir / self.REQUIRED_FILES[filename]
-                    if not file_path.exists():
-                        raise FileNotFoundError(
-                            f"Required class data file not found: {file_path}"
-                        )
-                    with open(file_path, "r") as f:
-                        data_files[filename] = json.load(f)
+            # Load gem data
+            self.gem_data = await self.data_manager.get_data("gems")
             
-            # Store loaded data in instance variables
-            self.synergies = data_files["synergies"]
-            self.constraints = data_files["constraints"]
-            self.stats = data_files["stats"]
-            self.cross_references = data_files["cross_references"]
+            # Load raw JSON files for other data
+            # Note: These will be migrated to proper schemas in future
+            self.constraints = self._load_json_file("constraints.json")
+            self.synergies = self._load_json_file("synergies.json")
+            self.cross_references = self._load_json_file("cross_references.json")
             
-            # Store skills data
-            self.skills_data = data_files["skills"]
-            
-            # Store gem data
-            self.gem_data = {
-                "gems": data_files["gems/gems"],
-                "stat_boosts": data_files["gems/stat_boosts"],
-                "synergies": data_files["gems/synergies"]
-            }
-            
-            # Store equipment data
-            self.equipment_data = data_files["equipment"]  # Update equipment data
-            
-            # Store class-specific data
+            # Load class-specific data
             self.class_data = {}
             self.class_constraints = {}
             for class_name in self.CHARACTER_CLASSES:
                 self.class_data[class_name] = {
-                    "essences": data_files[f"classes/{class_name}/essences"],
-                    "base_skills": data_files[f"classes/{class_name}/base_skills"]
+                    "essences": self._load_json_file(f"classes/{class_name}/essences.json"),
+                    "base_skills": self._load_json_file(f"classes/{class_name}/base_skills.json")
                 }
-                self.class_constraints[class_name] = data_files[
-                    f"classes/{class_name}/constraints"
-                ]
+                self.class_constraints[class_name] = self._load_json_file(
+                    f"classes/{class_name}/constraints.json"
+                )
+            
+            # Validate loaded data
+            self._validate_data_structure()
             
         except Exception as e:
+            logger.error(f"Failed to initialize data: {str(e)}")
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=f"Error loading data files: {str(e)}"
+                detail=f"Failed to initialize data: {str(e)}"
             )
+            
+    def _load_json_file(self, relative_path: str) -> Dict:
+        """Load a JSON file from the data directory.
         
-        # Validate loaded data
-        self._validate_data_structure()
+        Args:
+            relative_path: Path relative to data directory
+            
+        Returns:
+            Loaded JSON data
+            
+        Raises:
+            HTTPException: If file not found or invalid
+        """
+        try:
+            file_path = self.data_dir / relative_path
+            if not file_path.exists():
+                raise FileNotFoundError(f"Required data file not found: {file_path}")
+                
+            with open(file_path, "r") as f:
+                return json.load(f)
+                
+        except Exception as e:
+            logger.error(f"Error loading {relative_path}: {str(e)}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Failed to load {relative_path}: {str(e)}"
+            )
     
     def _validate_data_structure(self) -> None:
         """Validate the structure of loaded data.
@@ -183,7 +215,7 @@ class BuildService:
         
         # Validate equipment data structure
         required_equipment_keys = {"metadata", "gear", "sets"}  # Update equipment data keys
-        if not all(key in self.equipment_data for key in required_equipment_keys):
+        if not all(key in self.equipment_sets for key in required_equipment_keys):
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Missing required keys in equipment data"
@@ -232,31 +264,21 @@ class BuildService:
                     status_code=status.HTTP_400_BAD_REQUEST,
                     detail=f"Invalid character class: {character_class}"
                 )
-                
-            # Validate inventory if provided
-            if inventory:
-                self._validate_inventory(inventory)
-                
-            # Select gems first
-            selected_gems = self._select_gems(build_type, focus, inventory)
             
-            # Select skills that work with the gems
-            try:
-                selected_skills = self._select_skills(
-                    build_type,
-                    focus,
-                    selected_gems,
-                    inventory,
-                    character_class
-                )
-            except HTTPException as e:
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=str(e.detail)
-                )
+            # Select gems based on build type and focus
+            selected_gems = await self._select_gems(build_type, focus, inventory)
             
-            # Select equipment that complements skills and gems
-            selected_equipment = self._select_equipment(
+            # Select skills that synergize with the build
+            selected_skills = await self._select_skills(
+                build_type,
+                focus,
+                selected_gems,
+                inventory,
+                character_class
+            )
+            
+            # Select equipment that complements the build
+            selected_equipment = await self._select_equipment(
                 build_type,
                 focus,
                 selected_gems,
@@ -265,15 +287,8 @@ class BuildService:
                 character_class
             )
             
-            # Calculate build stats
-            stats = self._calculate_stats(
-                selected_gems,
-                selected_skills,
-                selected_equipment
-            )
-            
-            # Generate recommendations
-            recommendations = self._generate_recommendations(
+            # Generate recommendations for improvement
+            recommendations = await self._generate_recommendations(
                 build_type,
                 focus,
                 selected_gems,
@@ -283,24 +298,24 @@ class BuildService:
                 character_class
             )
             
-            # Find synergies
-            synergies = self._find_synergies(
+            # Find synergies between selected items
+            synergies = await self._find_synergies(
                 selected_gems,
                 selected_skills,
-                list(selected_equipment.values())
+                selected_equipment
             )
             
             return BuildResponse(
+                build_type=build_type,
+                focus=focus,
+                character_class=character_class,
                 gems=selected_gems,
                 skills=selected_skills,
                 equipment=selected_equipment,
-                stats=stats,
                 recommendations=recommendations,
                 synergies=synergies
             )
             
-        except HTTPException:
-            raise
         except Exception as e:
             logger.error(f"Error generating build: {str(e)}")
             raise HTTPException(
@@ -342,7 +357,7 @@ class BuildService:
                     detail=f"Invalid owned_rank for item: {item_name}"
                 )
     
-    def _select_gems(
+    async def _select_gems(
         self,
         build_type: BuildType,
         focus: BuildFocus,
@@ -496,7 +511,7 @@ class BuildService:
         aux_scores.sort(key=lambda x: x[1], reverse=True)
         return aux_scores[0][0] if aux_scores else None
     
-    def _select_skills(
+    async def _select_skills(
         self,
         build_type: BuildType,
         focus: BuildFocus,
@@ -779,7 +794,7 @@ class BuildService:
         except (KeyError, TypeError):
             return False
     
-    def _select_equipment(
+    async def _select_equipment(
         self,
         build_type: BuildType,
         focus: BuildFocus,
@@ -810,7 +825,7 @@ class BuildService:
         ]
         
         # Select set pieces based on synergies
-        set_pieces = self._select_set_pieces(
+        set_pieces = await self._select_set_pieces(
             build_type=build_type,
             focus=focus,
             selected_gems=selected_gems,
@@ -831,7 +846,7 @@ class BuildService:
         
         return equipment
     
-    def _select_set_pieces(
+    async def _select_set_pieces(
         self,
         build_type: BuildType,
         focus: BuildFocus,
@@ -853,12 +868,12 @@ class BuildService:
         """
         try:
             # Get available sets
-            available_sets = self.equipment_data["sets"]  # Update equipment data
+            available_sets = self.equipment_sets  # Update equipment data
             
             # Calculate scores for each set
             set_scores = []
             for set_name, data in available_sets.items():
-                score = self._calculate_set_score(
+                score = await self._calculate_set_score(
                     set_name=set_name,
                     data=data,
                     build_type=build_type,
@@ -882,7 +897,7 @@ class BuildService:
                 
                 # Add 6 pieces from primary set
                 selected_pieces.extend(
-                    self._get_best_set_pieces(
+                    await self._get_best_set_pieces(
                         set_name=primary_set,
                         count=6,
                         inventory=inventory
@@ -891,7 +906,7 @@ class BuildService:
                 
                 # Add 2 pieces from secondary set
                 selected_pieces.extend(
-                    self._get_best_set_pieces(
+                    await self._get_best_set_pieces(
                         set_name=secondary_set,
                         count=2,
                         inventory=inventory
@@ -913,7 +928,7 @@ class BuildService:
                 for i in range(8)
             ]
     
-    def _calculate_equipment_score(
+    async def _calculate_equipment_score(
         self,
         equipment_name: str,
         slot: str,
@@ -990,7 +1005,7 @@ class BuildService:
         # Normalize score to 0-1 range
         return min(max(total_score / 100.0, 0.0), 1.0)
 
-    def _calculate_set_score(
+    async def _calculate_set_score(
         self,
         set_name: str,
         data: Dict,
@@ -1050,7 +1065,7 @@ class BuildService:
         # Normalize score to 0-1 range
         return min(max(total_score / 100.0, 0.0), 1.0)
     
-    def _get_best_set_pieces(
+    async def _get_best_set_pieces(
         self,
         set_name: str,
         count: int,
@@ -1068,7 +1083,7 @@ class BuildService:
         """
         try:
             pieces = []
-            set_data = self.equipment_data["sets"][set_name]  # Update equipment data
+            set_data = self.equipment_sets[set_name]  # Update equipment data
             
             # Sort pieces by their base stats
             sorted_pieces = sorted(
@@ -1138,7 +1153,7 @@ class BuildService:
             utility=0.0
         )
     
-    def _generate_recommendations(
+    async def _generate_recommendations(
         self,
         build_type: BuildType,
         focus: BuildFocus,
@@ -1165,7 +1180,7 @@ class BuildService:
         # TODO: Implement recommendation generation
         return []
     
-    def _find_synergies(
+    async def _find_synergies(
         self,
         selected_gems: List[Gem],
         selected_skills: List[Skill],
@@ -1599,7 +1614,7 @@ class BuildService:
         # Normalize score to 0-1 range
         return min(max(total_score, 0.0), 1.0)
 
-    def _select_gear_piece(
+    async def _select_gear_piece(
         self,
         slot: str,
         build_type: BuildType,
@@ -1622,7 +1637,7 @@ class BuildService:
             Selected Equipment piece
         """
         # Get gear data for slot
-        gear_data = self.equipment_data.get("gear", {}).get(slot, {})  # Update equipment data
+        gear_data = self.equipment_sets.get("gear", {}).get(slot, {})  # Update equipment data
         if not gear_data:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -1639,7 +1654,7 @@ class BuildService:
         # Score each piece
         piece_scores = []
         for piece_name, data in gear_data.items():
-            score = self._calculate_equipment_score(
+            score = await self._calculate_equipment_score(
                 equipment_name=piece_name,
                 slot=slot,
                 data=data,
@@ -1664,3 +1679,61 @@ class BuildService:
             slot=slot,
             set_name=gear_data[piece_name]["set"]
         )
+
+    async def analyze_build(
+        self,
+        build: BuildRecommendation,
+        character_class: str
+    ) -> BuildResponse:
+        """Analyze a specific build configuration.
+        
+        Args:
+            build: Build configuration to analyze
+            character_class: Character class
+            
+        Returns:
+            BuildResponse containing analysis results
+        """
+        try:
+            # Validate character class
+            if character_class not in self.CHARACTER_CLASSES:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail=f"Invalid character class: {character_class}"
+                )
+            
+            # Find synergies between items
+            synergies = await self._find_synergies(
+                build.gems,
+                build.skills,
+                build.equipment
+            )
+            
+            # Generate recommendations
+            recommendations = await self._generate_recommendations(
+                build.build_type,
+                build.focus,
+                build.gems,
+                build.skills,
+                build.equipment,
+                None,  # No inventory for analysis
+                character_class
+            )
+            
+            return BuildResponse(
+                build_type=build.build_type,
+                focus=build.focus,
+                character_class=character_class,
+                gems=build.gems,
+                skills=build.skills,
+                equipment=build.equipment,
+                recommendations=recommendations,
+                synergies=synergies
+            )
+            
+        except Exception as e:
+            logger.error(f"Error analyzing build: {str(e)}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Failed to analyze build: {str(e)}"
+            )

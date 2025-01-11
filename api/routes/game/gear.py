@@ -4,7 +4,7 @@ from typing import Annotated, List, Optional, Literal
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from pydantic import BaseModel, Field
 
-from api.models.game_data.data_manager import GameDataManager
+from api.models.game_data.manager import GameDataManager
 from api.models.game_data.schemas.gear import GearSlot
 
 

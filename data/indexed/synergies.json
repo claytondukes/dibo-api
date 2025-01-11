@@ -1,309 +1,315 @@
 {
-  "critical_hit": {
-    "gems": [
-      "Berserker's Eye",
-      "Cutthroat's Grin",
-      "Everlasting Torment",
-      "Lightning Core",
-      "Mother's Lament",
-      "Roiling Consequence",
-      "Starfire Shard"
-    ],
-    "essences": [],
-    "skills": [],
-    "conditions": {
-      "Cutthroat's Grin": [
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "(?:while |when )?behind"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "from behind"
-        },
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "(?:while |when )?behind"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "from behind"
-        },
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "(?:while |when )?behind"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "from behind"
-        }
-      ],
-      "Mother's Lament": [
-        {
-          "type": "state",
-          "state": "health_threshold",
-          "text": "below (\\d+)% (?:life|health)",
-          "threshold": 50.0
-        }
-      ]
-    }
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-09T20:30:57-05:00"
   },
-  "movement_speed": {
-    "gems": [
-      "Blessed Pebble",
-      "Blood-Soaked Jade",
-      "Bloody Reach",
-      "Bottled Hope",
-      "Grim Rhythm",
-      "Phoenix Ashes",
-      "Power & Command",
-      "The Abiding Curse",
-      "The Hunger"
-    ],
-    "essences": [],
-    "skills": [],
-    "conditions": {
-      "The Hunger": [
-        {
-          "type": "state",
-          "state": "health_threshold",
-          "text": "above (\\d+)% (?:life|health)",
-          "threshold": 75.0
-        }
-      ]
-    }
-  },
-  "damage_boost": {
-    "gems": [
-      "Battleguard",
-      "Berserker's Eye",
-      "Blessing of the Worthy",
-      "Blood-Soaked Jade",
-      "Bloody Reach",
-      "Bottled Hope",
-      "Ca'arsen's Invigoration",
-      "Chained Death",
-      "Chip of Stoned Flesh",
-      "Concentrated Will",
-      "Cutthroat's Grin",
-      "Echoing Shade",
-      "Everlasting Torment",
-      "Fervent Fang",
-      "Follower's Burden",
-      "Frozen Heart",
-      "Gloom Cask",
-      "Grim Rhythm",
-      "Hellfire Fragment",
-      "Howler's Call",
-      "Kir Sling",
-      "Lightning Core",
-      "Maw of the Deep",
-      "Mocking Laughter",
-      "Mother's Lament",
-      "Pain Clasp",
-      "Pain of Subjugation",
-      "Phoenix Ashes",
-      "Power & Command",
-      "Respite Stone",
-      "Roiling Consequence",
-      "Seeping Bile",
-      "Seled's Weakening",
-      "Spiteful Blood",
-      "Starfire Shard",
-      "Stormvault",
-      "The Abiding Curse",
-      "The Black Rose",
-      "The Hunger",
-      "Trickshot Gem",
-      "Unity Crystal",
-      "Viper's Bite",
-      "Void Spark",
-      "Volatility Shard",
-      "Zod Stone",
-      "Zwenson's Haunting"
-    ],
-    "essences": [],
-    "skills": [],
-    "conditions": {
-      "Cutthroat's Grin": [
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "(?:while |when )?behind"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "from behind"
-        },
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "(?:while |when )?behind"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "from behind"
-        },
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "(?:while |when )?behind"
-        },
-        {
-          "type": "state",
-          "state": "position",
-          "text": "from behind"
-        }
+  "synergies": {
+    "critical_hit": {
+      "gems": [
+        "Berserker's Eye",
+        "Cutthroat's Grin",
+        "Everlasting Torment",
+        "Lightning Core",
+        "Mother's Lament",
+        "Roiling Consequence",
+        "Starfire Shard"
       ],
-      "Kir Sling": [
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        },
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        }
+      "essences": [],
+      "skills": [],
+      "conditions": {
+        "Cutthroat's Grin": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "(?:while |when )?behind"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "from behind"
+          },
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "(?:while |when )?behind"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "from behind"
+          },
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "(?:while |when )?behind"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "from behind"
+          }
+        ],
+        "Mother's Lament": [
+          {
+            "type": "state",
+            "state": "health_threshold",
+            "text": "below (\\d+)% (?:life|health)",
+            "threshold": 50.0
+          }
+        ]
+      }
+    },
+    "movement_speed": {
+      "gems": [
+        "Blessed Pebble",
+        "Blood-Soaked Jade",
+        "Bloody Reach",
+        "Bottled Hope",
+        "Grim Rhythm",
+        "Phoenix Ashes",
+        "Power & Command",
+        "The Abiding Curse",
+        "The Hunger"
       ],
-      "Mother's Lament": [
-        {
-          "type": "state",
-          "state": "health_threshold",
-          "text": "below (\\d+)% (?:life|health)",
-          "threshold": 50.0
-        }
+      "essences": [],
+      "skills": [],
+      "conditions": {
+        "The Hunger": [
+          {
+            "type": "state",
+            "state": "health_threshold",
+            "text": "above (\\d+)% (?:life|health)",
+            "threshold": 75.0
+          }
+        ]
+      }
+    },
+    "damage_boost": {
+      "gems": [
+        "Battleguard",
+        "Berserker's Eye",
+        "Blessing of the Worthy",
+        "Blood-Soaked Jade",
+        "Bloody Reach",
+        "Bottled Hope",
+        "Ca'arsen's Invigoration",
+        "Chained Death",
+        "Chip of Stoned Flesh",
+        "Concentrated Will",
+        "Cutthroat's Grin",
+        "Echoing Shade",
+        "Everlasting Torment",
+        "Fervent Fang",
+        "Follower's Burden",
+        "Frozen Heart",
+        "Gloom Cask",
+        "Grim Rhythm",
+        "Hellfire Fragment",
+        "Howler's Call",
+        "Kir Sling",
+        "Lightning Core",
+        "Maw of the Deep",
+        "Mocking Laughter",
+        "Mother's Lament",
+        "Pain Clasp",
+        "Pain of Subjugation",
+        "Phoenix Ashes",
+        "Power & Command",
+        "Respite Stone",
+        "Roiling Consequence",
+        "Seeping Bile",
+        "Seled's Weakening",
+        "Spiteful Blood",
+        "Starfire Shard",
+        "Stormvault",
+        "The Abiding Curse",
+        "The Black Rose",
+        "The Hunger",
+        "Trickshot Gem",
+        "Unity Crystal",
+        "Viper's Bite",
+        "Void Spark",
+        "Volatility Shard",
+        "Zod Stone",
+        "Zwenson's Haunting"
       ],
-      "The Black Rose": [
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        }
+      "essences": [],
+      "skills": [],
+      "conditions": {
+        "Cutthroat's Grin": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "(?:while |when )?behind"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "from behind"
+          },
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "(?:while |when )?behind"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "from behind"
+          },
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "(?:while |when )?behind"
+          },
+          {
+            "type": "state",
+            "state": "position",
+            "text": "from behind"
+          }
+        ],
+        "Kir Sling": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          },
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          }
+        ],
+        "Mother's Lament": [
+          {
+            "type": "state",
+            "state": "health_threshold",
+            "text": "below (\\d+)% (?:life|health)",
+            "threshold": 50.0
+          }
+        ],
+        "The Black Rose": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          }
+        ],
+        "The Hunger": [
+          {
+            "type": "state",
+            "state": "health_threshold",
+            "text": "above (\\d+)% (?:life|health)",
+            "threshold": 75.0
+          }
+        ],
+        "Seled's Weakening": [
+          {
+            "type": "trigger",
+            "trigger": "on_kill",
+            "text": "after killing"
+          }
+        ],
+        "Spiteful Blood": [
+          {
+            "type": "state",
+            "state": "health_threshold",
+            "text": "below (\\d+)% (?:life|health)",
+            "threshold": 50.0
+          }
+        ]
+      }
+    },
+    "control": {
+      "gems": [
+        "Frozen Heart",
+        "Lightning Core",
+        "The Black Rose",
+        "Trickshot Gem"
       ],
-      "The Hunger": [
-        {
-          "type": "state",
-          "state": "health_threshold",
-          "text": "above (\\d+)% (?:life|health)",
-          "threshold": 75.0
-        }
+      "essences": [],
+      "skills": [],
+      "conditions": {
+        "The Black Rose": [
+          {
+            "type": "trigger",
+            "trigger": "on_attack",
+            "text": "when (?:you )?attack"
+          }
+        ]
+      }
+    },
+    "survival": {
+      "gems": [
+        "Battleguard",
+        "Blessing of the Worthy",
+        "Blood-Soaked Jade",
+        "Echoing Shade",
+        "Frozen Heart",
+        "Mother's Lament",
+        "Phoenix Ashes",
+        "Respite Stone",
+        "Spiteful Blood",
+        "The Hunger"
       ],
-      "Seled's Weakening": [
-        {
-          "type": "trigger",
-          "trigger": "on_kill",
-          "text": "after killing"
-        }
-      ],
-      "Spiteful Blood": [
-        {
-          "type": "state",
-          "state": "health_threshold",
-          "text": "below (\\d+)% (?:life|health)",
-          "threshold": 50.0
-        }
-      ]
-    }
-  },
-  "control": {
-    "gems": [
-      "Frozen Heart",
-      "Lightning Core",
-      "The Black Rose",
-      "Trickshot Gem"
-    ],
-    "essences": [],
-    "skills": [],
-    "conditions": {
-      "The Black Rose": [
-        {
-          "type": "trigger",
-          "trigger": "on_attack",
-          "text": "when (?:you )?attack"
-        }
-      ]
-    }
-  },
-  "survival": {
-    "gems": [
-      "Battleguard",
-      "Blessing of the Worthy",
-      "Blood-Soaked Jade",
-      "Echoing Shade",
-      "Frozen Heart",
-      "Mother's Lament",
-      "Phoenix Ashes",
-      "Respite Stone",
-      "Spiteful Blood",
-      "The Hunger"
-    ],
-    "essences": [],
-    "skills": [],
-    "conditions": {
-      "Mother's Lament": [
-        {
-          "type": "state",
-          "state": "health_threshold",
-          "text": "below (\\d+)% (?:life|health)",
-          "threshold": 50.0
-        }
-      ],
-      "The Hunger": [
-        {
-          "type": "state",
-          "state": "health_threshold",
-          "text": "above (\\d+)% (?:life|health)",
-          "threshold": 75.0
-        }
-      ],
-      "Spiteful Blood": [
-        {
-          "type": "state",
-          "state": "health_threshold",
-          "text": "below (\\d+)% (?:life|health)",
-          "threshold": 50.0
-        }
-      ]
+      "essences": [],
+      "skills": [],
+      "conditions": {
+        "Mother's Lament": [
+          {
+            "type": "state",
+            "state": "health_threshold",
+            "text": "below (\\d+)% (?:life|health)",
+            "threshold": 50.0
+          }
+        ],
+        "The Hunger": [
+          {
+            "type": "state",
+            "state": "health_threshold",
+            "text": "above (\\d+)% (?:life|health)",
+            "threshold": 75.0
+          }
+        ],
+        "Spiteful Blood": [
+          {
+            "type": "state",
+            "state": "health_threshold",
+            "text": "below (\\d+)% (?:life|health)",
+            "threshold": 50.0
+          }
+        ]
+      }
     }
   }
 }

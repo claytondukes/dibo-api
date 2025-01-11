@@ -16,7 +16,8 @@ from .schemas import (
     GameDataCache,
     GemSkillMap,
     EquipmentSets,
-    GameStats
+    GameStats,
+    BuildTypes
 )
 
 T = TypeVar("T")
@@ -30,6 +31,31 @@ class GameDataManager:
         "gems": (GemSkillMap, "gems/gem_skillmap.json"),
         "equipment_sets": (EquipmentSets, "equipment/sets.json"),
         "stats": (GameStats, "stats.json"),
+        "build_types": (BuildTypes, "build_types.json"),
+    }
+
+    # Static gear slots (right side of character)
+    GEAR_SLOTS = {
+        "HEAD": "Head",           # Helm slot
+        "CHEST": "Chest",        # Torso armor
+        "SHOULDERS": "Shoulders", # Shoulder armor
+        "LEGS": "Legs",          # Leg armor
+        "MAIN_HAND_1": "Main Hand (Set 1)",  # Primary weapon set 1
+        "OFF_HAND_1": "Off-Hand (Set 1)",    # Off-hand weapon/shield set 1
+        "MAIN_HAND_2": "Main Hand (Set 2)",  # Primary weapon set 2
+        "OFF_HAND_2": "Off-Hand (Set 2)"     # Off-hand weapon/shield set 2
+    }
+    
+    # Static set slots (left side of character)
+    SET_SLOTS = {
+        "NECK": "Neck",       # Necklace slot
+        "WAIST": "Waist",     # Belt slot
+        "HANDS": "Hands",     # Glove slot
+        "FEET": "Feet",       # Boot slot
+        "RING_1": "Ring 1",   # First ring slot
+        "RING_2": "Ring 2",   # Second ring slot
+        "BRACER_1": "Bracer 1", # First bracer slot
+        "BRACER_2": "Bracer 2"  # Second bracer slot
     }
 
     def __init__(self, data_dir: Path) -> None:
@@ -129,12 +155,20 @@ class GameDataManager:
         logger.info(f"Loading category with model {model.__name__} from {rel_path}")
         data = self._load_json_file(rel_path)
         try:
-            logger.info(f"Validating data with model {model.__name__}: {json.dumps(data, indent=2)}")
-            validated_data = model.model_validate(data)
+            logger.info(f"Validating data with model {model.__name__}")
+            validated_data = model.model_validate(
+                data,
+                strict=False,  # Allow coercion of values
+                from_attributes=True,  # Allow object conversion
+            )
             logger.info(f"Successfully validated data for {model.__name__}")
             return validated_data
         except Exception as e:
-            logger.error(f"Error validating data for {model.__name__}: {e}")
+            # Log the full error details
+            logger.error(f"Error validating data for {model.__name__}:")
+            logger.error(f"Error type: {type(e).__name__}")
+            logger.error(f"Error message: {str(e)}")
+            logger.error(f"Data sample: {str(data)[:1000]}")  # First 1000 chars
             raise
 
     async def _reload_data(self) -> None:

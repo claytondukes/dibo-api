@@ -1,7 +1,31 @@
 """Pydantic models for class-related data."""
 
+from enum import Enum
 from typing import Dict, List, Optional
+from pathlib import Path
 from pydantic import BaseModel, Field
+
+
+def get_available_classes() -> List[str]:
+    """Get list of available character classes."""
+    from api.core.config import get_settings
+    
+    classes_dir = get_settings().PROJECT_ROOT / "data" / "indexed" / "classes"
+    if not classes_dir.exists():
+        return ["barbarian"]  # Fallback default
+    return [d.name for d in classes_dir.iterdir() if d.is_dir()]
+
+
+# Create enum from available classes
+CharacterClass = Enum('CharacterClass', {
+    name.upper(): name.lower() 
+    for name in get_available_classes()
+})
+
+
+class ClassListResponse(BaseModel):
+    """Response model for class listing endpoint."""
+    classes: List[str] = Field(description="List of available class names")
 
 
 class ClassSkill(BaseModel):
@@ -9,7 +33,7 @@ class ClassSkill(BaseModel):
     name: str = Field(description="Name of the skill")
     description: str = Field(description="Description of the skill")
     type: str = Field(description="Type of skill (e.g., basic, core, ultimate)")
-    cooldown: Optional[str] = Field(None, description="Skill cooldown if applicable")
+    cooldown: Optional[float] = Field(None, description="Skill cooldown in seconds if applicable")
     damage_type: Optional[str] = Field(None, description="Type of damage dealt")
     resource_cost: Optional[str] = Field(None, description="Resource cost to use skill")
 

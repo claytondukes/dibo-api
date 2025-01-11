@@ -5,7 +5,7 @@ import logging
 from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 
-from api.models.game_data.data_manager import GameDataManager
+from api.models.game_data.manager import GameDataManager
 from api.models.game_data.schemas.constraints import GameConstraints
 
 

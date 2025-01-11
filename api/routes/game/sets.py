@@ -4,7 +4,7 @@ from typing import Annotated, Dict, List, Optional
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from pydantic import BaseModel, Field, Json
 
-from api.models.game_data.data_manager import GameDataManager
+from api.models.game_data.manager import GameDataManager
 
 
 router = APIRouter(tags=["game"])

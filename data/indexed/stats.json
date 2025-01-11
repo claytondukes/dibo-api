@@ -1,4 +1,7 @@
 {
+  "metadata": {
+    "version": "1.0.0"
+  },
   "critical_hit_chance": {
     "gems": [
       {

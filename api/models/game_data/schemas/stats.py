@@ -112,14 +112,10 @@ class StatSource(BaseModel):
 
 class StatCategory(BaseModel):
     """Collection of stat sources by type."""
-
+    
     gems: List[StatSource] = Field(
         default_factory=list,
         description="Gem sources for this stat"
-    )
-    essences: List[StatSource] = Field(
-        default_factory=list,
-        description="Essence sources for this stat"
     )
 
 

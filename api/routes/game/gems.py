@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import List, Optional, Dict
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 
-from api.models.game_data.data_manager import GameDataManager
+from api.models.game_data.manager import GameDataManager
 from api.models.game_data.schemas.gems import (
     Gem, GemSkillMap, GemsBySkill, GemStatValue,
     GemRank, GemEffect, GemRankStats

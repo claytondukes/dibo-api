@@ -2,7 +2,7 @@
 Game data schema models.
 """
 
-from .base import GameDataMetadata, GameDataCache
+from .base import GameDataMetadata, GameDataCache, BuildTypes
 from .gems import Gem, GemsBySkill, GemSkillMap
 from .equipment import (
     SetMetadata,
@@ -33,4 +33,5 @@ __all__ = [
     "StatSource",
     "StatCategory",
     "GameStats",
+    "BuildTypes",
 ]
