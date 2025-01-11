@@ -12,12 +12,15 @@ from pathlib import Path
 from typing import Any, Dict, Optional, TypeVar, Type
 
 from .schemas import (
+    BuildTypes,
+    Constraints,
+    SetBonusRegistry,  # Renamed from EquipmentSets
+    Gem,
+    GemSkillMap,
+    GameStats,
+    GameSynergies,
     GameDataMetadata,
     GameDataCache,
-    GemSkillMap,
-    EquipmentSets,
-    GameStats,
-    BuildTypes
 )
 
 T = TypeVar("T")
@@ -28,10 +31,13 @@ class GameDataManager:
     """Manages access to indexed game data with caching and version awareness."""
 
     CATEGORY_LOADERS = {
-        "gems": (GemSkillMap, "gems/gem_skillmap.json"),
-        "equipment_sets": (EquipmentSets, "equipment/sets.json"),
-        "stats": (GameStats, "gems/stat_boosts.json"),
         "build_types": (BuildTypes, "build_types.json"),
+        "constraints": (Constraints, "constraints.json"),
+        "sets": (SetBonusRegistry, "sets.json"),  # Renamed from equipment_sets
+        "gems/data": (Gem, "gems/gems.json"),
+        "gems/skillmap": (GemSkillMap, "gems/gem_skillmap.json"),
+        "gems/stat_boosts": (GameStats, "gems/stat_boosts.json"),
+        "gems/synergies": (GameSynergies, "gems/synergies.json"),
     }
 
     # Static gear slots (right side of character)

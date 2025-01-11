@@ -11,7 +11,7 @@ Implementation plan for refactoring and building the equipment system, following
 - Use ONLY real game data from `/data/indexed/` for all testing
 - Never create fictional or mock data
 - Available data sources:
-  - `/data/indexed/equipment/sets.json` - Set definitions
+  - `/data/indexed/sets.json` - Set definitions and bonuses
   - `/data/indexed/classes/{class_name}/essences.json` - Class-specific essences
   - `/data/indexed/classes/{class_name}/base_skills.json` - Base skills
   - `/data/indexed/classes/{class_name}/constraints.json` - Class constraints
@@ -119,10 +119,10 @@ Implementation plan for refactoring and building the equipment system, following
 
 **Implementation**:
 
-- Gear data loading
-- Set data loading
-- Essence data loading
-- Data validation logic
+- GameDataManager class
+- Version-aware data loading
+- Memory-efficient caching
+- Lazy loading of data
 
 #### 2.2 Data Access Layer
 

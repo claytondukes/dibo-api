@@ -1,5 +1,5 @@
 """
-Pydantic models for equipment-related data structures.
+Pydantic models for set bonus data structures.
 """
 
 from enum import Enum
@@ -7,19 +7,39 @@ from typing import Dict, List, Optional
 from pydantic import BaseModel, Field
 
 
-class EquipmentSlot(str, Enum):
-    """Valid equipment slot types."""
+class GearSlot(str, Enum):
+    """Valid gear slot types based on character equipment layout."""
     
-    WEAPON = "weapon"
-    ARMOR = "armor"
-    HELMET = "helmet"
-    GLOVES = "gloves"
-    BOOTS = "boots"
-    ACCESSORY = "accessory"
+    # Right side slots (normal gear)
+    HEAD = "Head"           # Helm slot
+    CHEST = "Chest"        # Torso armor
+    SHOULDERS = "Shoulders" # Shoulder armor 
+    LEGS = "Legs"          # Leg armor
+    MAIN_HAND_1 = "Main Hand (Set 1)"  # Primary weapon set 1
+    OFF_HAND_1 = "Off-Hand (Set 1)"    # Off-hand weapon/shield set 1
+    MAIN_HAND_2 = "Main Hand (Set 2)"  # Primary weapon set 2
+    OFF_HAND_2 = "Off-Hand (Set 2)"    # Off-hand weapon/shield set 2
+
+
+class SetSlot(str, Enum):
+    """Valid set item slots (left side)."""
+    
+    HEAD = "Head"           # Head piece
+    SHOULDERS = "Shoulders" # Shoulders piece
+    CHEST = "Chest"        # Chest piece
+    LEGS = "Legs"          # Legs piece
+    HANDS = "Hands"        # Gloves
+    FEET = "Feet"          # Boots
+    WAIST = "Waist"        # Belt
+    RING_1 = "Ring 1"      # First ring slot
+    RING_2 = "Ring 2"      # Second ring slot
+    NECK = "Neck"          # Necklace
+    BRACER_1 = "Bracer 1"  # First bracer slot
+    BRACER_2 = "Bracer 2"  # Second bracer slot
 
 
 class SetMetadata(BaseModel):
-    """Metadata for equipment sets."""
+    """Metadata for set bonuses."""
     
     bonus_thresholds: List[int] = Field(
         ...,
@@ -39,8 +59,8 @@ class SetBonuses(BaseModel):
     six: Optional[str] = Field(None, alias="6", description="6-piece set bonus")
 
 
-class EquipmentSet(BaseModel):
-    """Individual equipment set details."""
+class SetBonus(BaseModel):
+    """Individual set bonus details."""
     
     pieces: int = Field(
         ...,
@@ -60,14 +80,14 @@ class EquipmentSet(BaseModel):
     )
 
 
-class EquipmentSets(BaseModel):
-    """Collection of equipment sets."""
+class SetBonusRegistry(BaseModel):
+    """Collection of all set bonuses."""
     
     metadata: SetMetadata = Field(
         ...,
-        description="Global metadata for equipment sets"
+        description="Global metadata for set bonuses"
     )
-    registry: Dict[str, EquipmentSet] = Field(
+    registry: Dict[str, SetBonus] = Field(
         ...,
-        description="Registry of all equipment sets, keyed by set name"
+        description="Registry of all set bonuses, keyed by set name"
     )

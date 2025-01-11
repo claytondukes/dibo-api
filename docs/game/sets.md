@@ -35,20 +35,29 @@ Here's an example of the "Grace of the Flagellant" set:
 
 Each set consists of pieces that can be equipped in different slots:
 
-- Head
+### Right Side (Gear Slots)
+- Head (Helm)
 - Shoulders
-- Chest
+- Chest (Torso armor)
 - Legs
-- Hands
-- Feet
-- Waist
-- Rings (2 slots)
-- Neck
-- Bracers (2 slots)
+- Main Hand (Set 1) - Primary weapon
+- Off-Hand (Set 1) - Shield or off-hand weapon
+- Main Hand (Set 2) - Secondary weapon set
+- Off-Hand (Set 2) - Secondary shield/weapon
+
+### Left Side (Set Slots)
+- Neck (Necklace)
+- Waist (Belt)
+- Hands (Gloves)
+- Feet (Boots)
+- Ring 1
+- Ring 2
+- Bracer 1
+- Bracer 2
 
 ## Implementation Details
 
-Sets are defined in `data/indexed/equipment/sets.json` with the following structure:
+Sets are defined in `data/indexed/sets.json` with the following structure:
 
 ```json
 {

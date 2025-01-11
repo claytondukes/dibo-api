@@ -42,7 +42,8 @@ async def list_synergies(
         HTTPException: If synergies data cannot be loaded
     """
     try:
-        synergies_file = data_manager.base_path / "synergies.json"
+        logger.info("Getting all synergies")
+        synergies_file = data_manager.data_dir / "synergies.json"
         if not synergies_file.exists():
             raise FileNotFoundError("Synergies file not found")
             
@@ -77,7 +78,8 @@ async def get_synergy_details(
         HTTPException: If synergy is not found or data cannot be loaded
     """
     try:
-        synergies_file = data_manager.base_path / "synergies.json"
+        logger.info(f"Getting synergies for: {synergy_name}")
+        synergies_file = data_manager.data_dir / "synergies.json"
         if not synergies_file.exists():
             raise FileNotFoundError("Synergies file not found")
             

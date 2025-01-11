@@ -22,10 +22,13 @@ logger = logging.getLogger(__name__)
 
 async def get_data_manager() -> GameDataManager:
     """Dependency to get the game data manager instance."""
-    # TODO: In production, this should be a singleton or use dependency injection
-    base_path = settings.PROJECT_ROOT / "data" / "indexed"
-    logger.info(f"Creating GameDataManager with base_path: {base_path}")
-    return GameDataManager(base_path=base_path)
+    # TODO: Performance optimization needed - currently creates new GameDataManager
+    # instance per request. Should be singleton to:
+    # 1. Share cache across requests
+    # 2. Avoid redundant metadata loads
+    # 3. Prevent multiple instances during concurrent requests
+    logger.info(f"Creating GameDataManager with data_dir: {settings.DATA_DIR}")
+    return GameDataManager(data_dir=settings.DATA_DIR)
 
 
 def transform_gem_data(gem_dict: dict) -> dict:
@@ -138,7 +141,7 @@ async def list_gems(
         logger.info(f"Getting gem data with filters - skill_type: {skill_type}, stars: {stars}")
         
         # Load gems data
-        gems_file = data_manager.base_path / "gems" / "gems.json"
+        gems_file = data_manager.data_dir / "gems" / "gems.json"
         if not gems_file.exists():
             raise FileNotFoundError(f"Gems data file not found: {gems_file}")
             
@@ -146,7 +149,7 @@ async def list_gems(
             progression_data = json.load(f)
             
         # Load skill mapping
-        skillmap_file = data_manager.base_path / "gems" / "gem_skillmap.json"
+        skillmap_file = data_manager.data_dir / "gems" / "gem_skillmap.json"
         if not skillmap_file.exists():
             raise FileNotFoundError(f"Gem skill mapping file not found: {skillmap_file}")
             
@@ -205,7 +208,7 @@ async def list_gem_stats(
         logger.info("Getting all gem stat boosts")
         
         # Load gem stats data
-        stats_file = data_manager.base_path / "gems" / "stat_boosts.json"
+        stats_file = data_manager.data_dir / "gems" / "stat_boosts.json"
         if not stats_file.exists():
             raise FileNotFoundError(f"Gem stats file not found: {stats_file}")
             
@@ -238,7 +241,7 @@ async def list_gem_synergies(
         logger.info("Getting all gem synergies")
         
         # Load gem synergies data
-        synergies_file = data_manager.base_path / "gems" / "synergies.json"
+        synergies_file = data_manager.data_dir / "gems" / "synergies.json"
         if not synergies_file.exists():
             raise FileNotFoundError(f"Gem synergies file not found: {synergies_file}")
             
@@ -271,7 +274,7 @@ async def list_gem_skills(
         logger.info("Getting all gem skill types")
         
         # Load skill mapping
-        skillmap_file = data_manager.base_path / "gems" / "gem_skillmap.json"
+        skillmap_file = data_manager.data_dir / "gems" / "gem_skillmap.json"
         if not skillmap_file.exists():
             raise FileNotFoundError(f"Gem skill mapping file not found: {skillmap_file}")
             
@@ -309,7 +312,7 @@ async def get_gem(
         logger.info(f"Getting gem data for: {gem_name}")
         
         # Load gems data
-        gems_file = data_manager.base_path / "gems" / "gems.json"
+        gems_file = data_manager.data_dir / "gems" / "gems.json"
         if not gems_file.exists():
             raise FileNotFoundError(f"Gems data file not found: {gems_file}")
             
@@ -317,7 +320,7 @@ async def get_gem(
             progression_data = json.load(f)
             
         # Load skill mapping
-        skillmap_file = data_manager.base_path / "gems" / "gem_skillmap.json"
+        skillmap_file = data_manager.data_dir / "gems" / "gem_skillmap.json"
         if not skillmap_file.exists():
             raise FileNotFoundError(f"Gem skill mapping file not found: {skillmap_file}")
             
@@ -371,7 +374,7 @@ async def get_gem_stats(
         logger.info(f"Getting stats for gem: {gem_name}")
         
         # Load gem stats data
-        stats_file = data_manager.base_path / "gems" / "stat_boosts.json"
+        stats_file = data_manager.data_dir / "gems" / "stat_boosts.json"
         if not stats_file.exists():
             raise FileNotFoundError(f"Gem stats file not found: {stats_file}")
             
@@ -432,7 +435,7 @@ async def get_gem_synergies(
         logger.info(f"Getting synergies for gem: {gem_name}")
         
         # Load gem synergies data
-        synergies_file = data_manager.base_path / "gems" / "synergies.json"
+        synergies_file = data_manager.data_dir / "gems" / "synergies.json"
         if not synergies_file.exists():
             raise FileNotFoundError(f"Gem synergies file not found: {synergies_file}")
             
@@ -487,7 +490,7 @@ async def get_gem_progression(
         logger.info(f"Getting progression data for gem: {gem_name}")
         
         # Load gems data
-        gems_file = data_manager.base_path / "gems" / "gems.json"
+        gems_file = data_manager.data_dir / "gems" / "gems.json"
         if not gems_file.exists():
             raise FileNotFoundError(f"Gems data file not found: {gems_file}")
             

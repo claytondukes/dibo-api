@@ -108,7 +108,7 @@
    - PvP: Control, burst, survival
    - PvE: Sustained damage, AoE clear
    - Raid: Single target, survival
-   - Farm: Speed, efficiency
+   - Farm: Speed, efficiency, synergies
 
 2. **Required Functions**
    - Damage output
@@ -253,3 +253,333 @@
    - Verify mechanical interactions
    - Test alternate configurations
    - Consider edge cases
+
+## Build System Analysis
+
+### Overview
+
+The build system is responsible for generating and analyzing character builds based on various inputs and constraints. It integrates with the equipment, gem, and skill systems to create optimized character configurations.
+
+### Core Components
+
+#### 1. Build Service
+
+The `BuildService` class is the central component that:
+
+- Manages data loading and validation
+- Generates build recommendations
+- Analyzes build performance
+- Handles class-specific constraints
+
+```python
+class BuildService:
+    """Service for generating and analyzing builds."""
+    
+    REQUIRED_FILES = {
+        # Core data files
+        "build_types": "build_types.json",
+        "stats": "gems/stat_boosts.json",
+        "constraints": "constraints.json",
+        "synergies": "synergies.json",
+        
+        # Gem-related files
+        "gems/skillmap": "gems/gem_skillmap.json",
+        "gems/data": "gems/gems.json",
+        "gems/stat_boosts": "gems/stat_boosts.json",
+        "gems/synergies": "gems/synergies.json",
+        
+        # Equipment data
+        "sets": "sets.json",
+        
+        # Class-specific data
+        "classes/{class}/essences": "classes/{class}/essences.json"
+    }
+```
+
+#### 2. Data Models
+
+##### Build Types
+
+```python
+class BuildType(str, Enum):
+    """Build type enumeration."""
+    RAID = "raid"
+    FARM = "farm"
+    PVP = "pvp"
+```
+
+##### Build Focus
+
+```python
+class BuildFocus(str, Enum):
+    """Primary focus of the build."""
+    DPS = "dps"
+    SURVIVAL = "survival"
+    BUFF = "buff"
+```
+
+##### Component Models
+
+- `Gem`: Gem configuration with rank and quality
+- `Skill`: Skill configuration with optional essence
+- `Equipment`: Equipment configuration with attributes and essence
+- `BuildStats`: Performance metrics (DPS, survival, utility)
+- `BuildRecommendation`: Complete build configuration
+- `BuildResponse`: Full response including stats and URLs
+
+### Data Flow
+
+1. **Initialization**
+
+   ```python
+   @classmethod
+   async def create(cls, data_dir: Optional[Path] = None) -> 'BuildService':
+       instance = cls(data_dir)
+       await instance.initialize()
+       return instance
+   ```
+
+2. **Data Loading**
+   - Core data (build types, constraints)
+   - Set bonuses
+   - Gem data (skills, stats, synergies)
+   - Class-specific data (essences, base skills)
+
+3. **Build Generation**
+   - Input validation
+   - Constraint checking
+   - Equipment selection
+   - Gem optimization
+   - Skill configuration
+   - Performance analysis
+
+### Key Features
+
+#### 1. Equipment Integration
+
+- Supports both gear slots and set slots
+- Handles weapon swap mechanics
+- Integrates with essence system
+- Validates slot constraints
+
+#### 2. Build Analysis
+
+- DPS calculation
+- Survival metrics
+- Utility scoring
+- Synergy detection
+- Constraint validation
+
+#### 3. Recommendations
+
+- Equipment suggestions
+- Gem combinations
+- Skill configurations
+- Set bonus optimization
+- Alternative builds
+
+### Performance Considerations
+
+#### 1. Data Management
+
+- Efficient caching through GameDataManager
+- Lazy loading of class-specific data
+- Memory-optimized data structures
+
+#### 2. Computation
+
+- Score-based build ranking
+- Efficient constraint checking
+- Parallelized calculations where possible
+- Caching of intermediate results
+
+#### 3. Response Time
+
+- Asynchronous data loading
+- Optimized build generation
+- Efficient JSON serialization
+
+### Testing Strategy
+
+#### 1. Unit Tests
+
+- Build generation logic
+- Score calculation
+- Constraint validation
+- Data loading
+
+#### 2. Integration Tests
+
+- Equipment integration
+- Gem system interaction
+- Skill configuration
+- Full build generation
+
+#### 3. Performance Tests
+
+- Response time benchmarks
+- Memory usage monitoring
+- Cache effectiveness
+- Load testing
+
+### Error Handling
+
+#### 1. Data Validation
+
+```python
+def _validate_data_structure(self) -> None:
+    """Validate loaded data structure."""
+    # Validate build types
+    if not self.build_types:
+        raise ValueError("No build types defined")
+        
+    # Validate constraints
+    if not self.constraints:
+        raise ValueError("No constraints defined")
+        
+    # Validate class data
+    for class_name in self.CHARACTER_CLASSES:
+        if class_name not in self.class_data:
+            raise ValueError(f"Missing data for class: {class_name}")
+```
+
+#### 2. Runtime Errors
+
+- Invalid build requests
+- Missing data
+- Constraint violations
+- Performance issues
+
+#### 3. Response Format
+
+```python
+{
+    "error": str,
+    "detail": str,
+    "context": Optional[Dict],
+    "suggestions": List[str]
+}
+```
+
+### Future Improvements
+
+1. **Build Optimization**
+   - Enhanced scoring algorithms
+   - Machine learning integration
+   - Historical build analysis
+
+2. **Performance**
+   - Improved caching strategies
+   - Parallel build generation
+   - Optimized constraint checking
+
+3. **Features**
+   - Build comparison
+   - Build history
+   - Build sharing
+   - Build templates
+
+### TODO: Resonance Integration
+
+#### Build Generation Considerations
+
+Resonance importance varies by content type:
+
+1. **High Priority**
+   - Challenge Rifts
+     - Total resonance directly impacts clear potential
+     - Consider minimum resonance thresholds for target levels
+   - Raids
+     - Required resonance thresholds for different difficulties
+     - Balance between resonance and specific boss mechanics
+   - PvP
+     - Resonance affects matchmaking brackets
+     - Consider impact when using aux gems (trading resonance for effects)
+
+2. **Medium Priority**
+   - General PvE
+     - Resonance helps with damage output
+     - Less important than synergistic gem properties
+   - Farming
+     - Prioritize proc effects and synergies
+     - Lower star gems may outperform higher resonance
+     - Example: 2-star gem with strong proc > 5-star with just resonance
+     - Focus on:
+       - Clear speed mechanics
+       - AoE damage potential
+       - Proc frequency
+       - Build synergies
+       - Movement speed
+     - Resonance considered last after all synergies
+
+#### Implementation Tasks
+
+1. Add resonance calculation to build scoring:
+
+   ```python
+   def calculate_build_score(build: Build) -> float:
+       base_score = calculate_base_score(build)
+       
+       # Get content-specific weights
+       resonance_weight = get_resonance_weight(build.content_type)
+       synergy_weight = get_synergy_weight(build.content_type)
+       
+       # Calculate scores
+       resonance_score = calculate_resonance_score(build.gems)
+       synergy_score = calculate_synergy_score(build)
+       
+       # For farming, prioritize synergies
+       if build.content_type == ContentType.FARMING:
+           return base_score * (
+               1 + 
+               (synergy_score * synergy_weight) +
+               (resonance_score * resonance_weight * 0.1)  # Reduced resonance impact
+           )
+       
+       # For other content types
+       return base_score * (
+           1 + 
+           (resonance_score * resonance_weight) +
+           (synergy_score * synergy_weight)
+       )
+   ```
+
+2. Add content-specific resonance thresholds:
+
+   ```python
+   RESONANCE_THRESHOLDS = {
+       ContentType.CHALLENGE_RIFT: {
+           "tier_70": 1000,
+           "tier_100": 2000,
+           # Add more tiers
+       },
+       ContentType.RAID: {
+           "normal": 500,
+           "hell_1": 1000,
+           # Add more difficulties
+       },
+       ContentType.FARMING: {
+           # No strict thresholds
+           # Focus on synergy scores instead
+           "recommended": 0  # Any resonance acceptable
+       }
+   }
+   ```
+
+3. Consider aux gem tradeoffs:
+   - Track both primary and aux configurations
+   - Calculate effective power loss from aux substitution
+   - Weight against gained utility/effects
+   - For farming:
+     - Prioritize proc effects and synergies
+     - Consider downgrading to lower star gems for better effects
+     - Calculate effective clear speed impact
+
+4. Add resonance validation:
+   - Verify builds meet minimum requirements
+   - Warning for suboptimal resonance configurations
+   - Suggestions for resonance improvements
+   - For farming builds:
+     - Focus validation on synergies
+     - Only warn about resonance if extremely low
+     - Suggest gem alternatives based on effects

@@ -8,6 +8,31 @@ The build types configuration defines how different skills are scored based on t
 type, description, and mechanics. This allows for flexible adjustment of build
 generation without code changes.
 
+## TODO: Build System Enhancements
+
+### PvP Role Specialization
+Current build system needs expansion to support:
+1. **Role-Based Builds**
+   - Pure Support (healing, buffing, crowd control)
+   - Pure Damage (burst damage, sustained pressure)
+   - Balanced (moderate damage + survival)
+   - Survival Focus (high survival, utility)
+
+2. **Build Factors to Implement**
+   - Crowd control resistance
+   - Burst damage potential
+   - Healing output metrics
+   - Survival metrics (effective health, damage mitigation)
+   - Utility value (crowd control, buffs/debuffs)
+   - Mobility score
+   - Team synergy potential
+
+3. **Scoring System Updates**
+   - Add role-specific scoring weights
+   - Implement survival vs damage tradeoff calculations
+   - Add team composition considerations
+   - Factor in meta-specific requirements
+
 ### Dynamic Build Types
 
 The configuration supports dynamic build types, allowing users to define custom
@@ -15,15 +40,53 @@ build types beyond the standard raid, farm, and pvp types. For example:
 
 ```json
 {
-  "fast_farm": {
-    "dps": {
-      "terms": ["speed", "quick", "rapid", "swift"],
+  "pvp_support": {
+    "healing": {
+      "terms": ["heal", "restore", "regenerate", "mend"],
       "score_weights": {
         "base_type_match": 0.4,
         "term_match": 0.3,
-        "cooldown": {
-          "threshold": 5,
-          "score": 0.3
+        "utility": {
+          "cc_weight": 0.2,
+          "buff_weight": 0.3,
+          "mobility_weight": 0.1
+        }
+      }
+    },
+    "control": {
+      "terms": ["stun", "freeze", "slow", "immobilize"],
+      "score_weights": {
+        "base_type_match": 0.4,
+        "term_match": 0.3,
+        "utility": {
+          "cc_duration": 0.2,
+          "cc_reliability": 0.3
+        }
+      }
+    }
+  },
+  "pvp_damage": {
+    "burst": {
+      "terms": ["critical", "massive", "explosion", "burst"],
+      "score_weights": {
+        "base_type_match": 0.4,
+        "term_match": 0.3,
+        "damage": {
+          "burst_potential": 0.3,
+          "cooldown_sync": 0.2
+        }
+      }
+    }
+  },
+  "pvp_survival": {
+    "defensive": {
+      "terms": ["shield", "barrier", "protect", "reduce damage"],
+      "score_weights": {
+        "base_type_match": 0.4,
+        "term_match": 0.3,
+        "survival": {
+          "mitigation": 0.3,
+          "recovery": 0.2
         }
       }
     }
@@ -33,7 +96,7 @@ build types beyond the standard raid, farm, and pvp types. For example:
 
 When adding new build types:
 
-1. Choose a descriptive name (e.g., `fast_farm`, `boss_raid`, `group_pvp`)
+1. Choose a descriptive name (e.g., `fast_farm`, `boss_raid`, `pvp_support`)
 2. Define appropriate terms and weights
 3. Consider cooldown thresholds for the specific use case
 4. Document the new build type's purpose and scoring logic

@@ -47,7 +47,7 @@ class BuildService:
     REQUIRED_FILES = {
         # Core data files
         "build_types": "build_types.json",
-        "stats": "gems/stat_boosts.json",  
+        "stats": "gems/stat_boosts.json",
         "constraints": "constraints.json",
         "synergies": "synergies.json",
         
@@ -57,16 +57,35 @@ class BuildService:
         "gems/stat_boosts": "gems/stat_boosts.json",
         "gems/synergies": "gems/synergies.json",
         
-        # Skills data
-        "skills": "skills.json",
-        
         # Equipment data
-        "equipment": "equipment.json",  
+        "sets": "sets.json",
         
         # Class-specific data
         "classes/barbarian/essences": "classes/barbarian/essences.json",
-        "classes/barbarian/constraints": "classes/barbarian/constraints.json",
-        "classes/barbarian/base_skills": "classes/barbarian/base_skills.json"
+    }
+    
+    # Static gear slots (right side of character)
+    GEAR_SLOTS = {
+        "HEAD": "Head",           # Helm slot
+        "CHEST": "Chest",        # Torso armor
+        "SHOULDERS": "Shoulders", # Shoulder armor
+        "LEGS": "Legs",          # Leg armor
+        "MAIN_HAND_1": "Main Hand (Set 1)",  # Primary weapon set 1
+        "OFF_HAND_1": "Off-Hand (Set 1)",    # Off-hand weapon/shield set 1
+        "MAIN_HAND_2": "Main Hand (Set 2)",  # Primary weapon set 2
+        "OFF_HAND_2": "Off-Hand (Set 2)"     # Off-hand weapon/shield set 2
+    }
+    
+    # Static set slots (left side of character)
+    SET_SLOTS = {
+        "NECK": "Neck",       # Necklace slot
+        "WAIST": "Waist",     # Belt slot
+        "HANDS": "Hands",     # Gloves slot
+        "FEET": "Feet",       # Boot slot
+        "RING_1": "Ring 1",   # First ring slot
+        "RING_2": "Ring 2",   # Second ring slot
+        "BRACER_1": "Bracer 1", # First bracer slot
+        "BRACER_2": "Bracer 2"  # Second bracer slot
     }
     
     # Supported character classes
@@ -115,23 +134,20 @@ class BuildService:
         return instance
 
     async def initialize(self) -> None:
-        """Initialize all required data from GameDataManager."""
+        """Initialize the build service by loading required data."""
         try:
             # Load core data
-            self.stats = await self.data_manager.get_data("stats")
             self.build_types = await self.data_manager.get_data("build_types")
+            self.constraints = await self.data_manager.get_data("constraints")
             
-            # Load equipment data
-            self.equipment_sets = await self.data_manager.get_data("equipment_sets")
+            # Load set data
+            self.set_bonuses = await self.data_manager.get_data("sets")
             
             # Load gem data
-            self.gem_data = await self.data_manager.get_data("gems")
-            
-            # Load raw JSON files for other data
-            # Note: These will be migrated to proper schemas in future
-            self.constraints = self._load_json_file("constraints.json")
-            self.synergies = self._load_json_file("synergies.json")
-            self.cross_references = self._load_json_file("cross_references.json")
+            self.gem_data = await self.data_manager.get_data("gems/data")
+            self.gem_skillmap = await self.data_manager.get_data("gems/skillmap")
+            self.stat_boosts = await self.data_manager.get_data("gems/stat_boosts")
+            self.synergies = await self.data_manager.get_data("gems/synergies")
             
             # Load class-specific data
             self.class_data = {}
@@ -212,7 +228,7 @@ class BuildService:
         
         # Validate stats structure
         required_stats_keys = {"metadata", "stats"}
-        if not all(key in self.stats for key in required_stats_keys):
+        if not all(key in self.stat_boosts for key in required_stats_keys):
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Missing required keys in stats data"
@@ -220,7 +236,7 @@ class BuildService:
         
         # Validate equipment data structure
         required_equipment_keys = {"metadata", "gear", "sets"}  
-        if not all(key in self.equipment_sets for key in required_equipment_keys):
+        if not all(key in self.set_bonuses for key in required_equipment_keys):
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Missing required keys in equipment data"
@@ -823,12 +839,6 @@ class BuildService:
         """
         equipment = {}
         
-        # Get equipment slots
-        set_slots = [
-            "ring1", "ring2", "neck", "hands",
-            "waist", "feet", "bracer1", "bracer2"
-        ]
-        
         # Select set pieces based on synergies
         set_pieces = await self._select_set_pieces(
             build_type=build_type,
@@ -839,11 +849,11 @@ class BuildService:
         )
         
         # Assign set pieces to slots
-        for slot, piece in zip(set_slots, set_pieces):
+        for slot, piece in zip(self.SET_SLOTS.values(), set_pieces):
             equipment[slot] = piece
         
         # Validate equipment selection against class constraints
-        if not self._validate_weapon_selection(equipment["hands"], character_class):
+        if not self._validate_weapon_selection(equipment["Hands"], character_class):
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Invalid equipment selection for character class"
@@ -873,7 +883,7 @@ class BuildService:
         """
         try:
             # Get available sets
-            available_sets = self.equipment_sets  
+            available_sets = self.set_bonuses  
             
             # Calculate scores for each set
             set_scores = []
@@ -1088,7 +1098,7 @@ class BuildService:
         """
         try:
             pieces = []
-            set_data = self.equipment_sets[set_name]  
+            set_data = self.set_bonuses[set_name]  
             
             # Sort pieces by their base stats
             sorted_pieces = sorted(
@@ -1342,7 +1352,7 @@ class BuildService:
         
         # Get stat values for the gem
         try:
-            gem_stats = self.gem_data["stat_boosts"]
+            gem_stats = self.stat_boosts
             for category in categories:
                 if category in gem_stats:
                     # Get weight for this category
@@ -1642,7 +1652,7 @@ class BuildService:
             Selected Equipment piece
         """
         # Get gear data for slot
-        gear_data = self.equipment_sets.get("gear", {}).get(slot, {})  
+        gear_data = self.set_bonuses.get("gear", {}).get(slot, {})  
         if not gear_data:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -1749,17 +1759,15 @@ class BuildService:
         self.stats = self._load_json_file("gems/stat_boosts.json")
         self.build_types = self._load_json_file("build_types.json")
         
-        # Load equipment data
-        self.equipment_sets = self._load_json_file("equipment.json")
+        # Load set data
+        self.set_bonuses = self._load_json_file("sets.json")
         
         # Load gem data
-        self.gem_data = self._load_json_file("gems.json")
+        self.gem_data = self._load_json_file("gems/gems.json")
         
         # Load raw JSON files for other data
-        # Note: These will be migrated to proper schemas in future
         self.constraints = self._load_json_file("constraints.json")
         self.synergies = self._load_json_file("synergies.json")
-        self.cross_references = self._load_json_file("cross_references.json")
         
         # Load class-specific data
         self.class_data = {}

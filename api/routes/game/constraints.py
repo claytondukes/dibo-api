@@ -34,7 +34,8 @@ async def list_constraints(
         HTTPException: If constraints data cannot be loaded
     """
     try:
-        constraints_file = data_manager.base_path / "constraints.json"
+        logger.info("Getting game constraints")
+        constraints_file = data_manager.data_dir / "constraints.json"
         if not constraints_file.exists():
             raise FileNotFoundError("Constraints file not found")
             
