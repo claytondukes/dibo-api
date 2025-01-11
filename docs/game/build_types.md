@@ -11,7 +11,9 @@ generation without code changes.
 ## TODO: Build System Enhancements
 
 ### PvP Role Specialization
+
 Current build system needs expansion to support:
+
 1. **Role-Based Builds**
    - Pure Support (healing, buffing, crowd control)
    - Pure Damage (burst damage, sustained pressure)
