@@ -36,6 +36,7 @@ Here's an example of the "Grace of the Flagellant" set:
 Each set consists of pieces that can be equipped in different slots:
 
 ### Right Side (Gear Slots)
+
 - Head (Helm)
 - Shoulders
 - Chest (Torso armor)
@@ -46,6 +47,7 @@ Each set consists of pieces that can be equipped in different slots:
 - Off-Hand (Set 2) - Secondary shield/weapon
 
 ### Left Side (Set Slots)
+
 - Neck (Necklace)
 - Waist (Belt)
 - Hands (Gloves)
