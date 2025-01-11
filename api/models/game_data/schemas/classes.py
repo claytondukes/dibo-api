@@ -4,16 +4,20 @@ from enum import Enum
 from typing import Dict, List, Optional
 from pathlib import Path
 from pydantic import BaseModel, Field
-
+from api.core.config import get_settings
 
 def get_available_classes() -> List[str]:
-    """Get list of available character classes."""
-    from api.core.config import get_settings
+    """Get list of available character classes.
     
-    classes_dir = get_settings().PROJECT_ROOT / "data" / "indexed" / "classes"
+    Returns:
+        List of class names
+    """
+    settings = get_settings()
+    classes_dir = Path(settings.DATA_DIR) / "classes"
     if not classes_dir.exists():
-        return ["barbarian"]  # Fallback default
-    return [d.name for d in classes_dir.iterdir() if d.is_dir()]
+        return []
+        
+    return sorted(d.name for d in classes_dir.iterdir() if d.is_dir())
 
 
 # Create enum from available classes

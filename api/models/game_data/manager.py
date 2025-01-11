@@ -30,7 +30,7 @@ class GameDataManager:
     CATEGORY_LOADERS = {
         "gems": (GemSkillMap, "gems/gem_skillmap.json"),
         "equipment_sets": (EquipmentSets, "equipment/sets.json"),
-        "stats": (GameStats, "stats.json"),
+        "stats": (GameStats, "gems/stat_boosts.json"),
         "build_types": (BuildTypes, "build_types.json"),
     }
 

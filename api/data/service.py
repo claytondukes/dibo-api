@@ -265,7 +265,7 @@ class DataService:
         Raises:
             HTTPException: If stat specified but not found
         """
-        stats_file = self.data_dir / "stats.json"
+        stats_file = self.data_dir / "gems" / "stat_boosts.json"
         if not stats_file.exists():
             raise FileNotFoundError(f"Stats data file not found: {stats_file}")
 
