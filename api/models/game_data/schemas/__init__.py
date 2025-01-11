@@ -3,7 +3,17 @@ Game data schema models.
 """
 
 from .base import GameDataMetadata, GameDataCache, BuildTypes
-from .gems import Gem, GemsBySkill, GemSkillMap
+from .gems import (
+    Gem,
+    GemsBySkill,
+    GemSkillMap,
+    GemRegistry,
+    GemRank,
+    GemEffect,
+    GemRankStats,
+    GemStatValue,
+    GemCondition
+)
 from .equipment import (
     SetMetadata,
     SetBonuses,
@@ -19,7 +29,7 @@ from .stats import (
     StatCategory,
     GameStats
 )
-from .constraints import GameConstraints as Constraints
+from .constraints import GameConstraints
 from .synergies import GameSynergies
 
 __all__ = [
@@ -28,6 +38,12 @@ __all__ = [
     "Gem",
     "GemsBySkill",
     "GemSkillMap",
+    "GemRegistry",
+    "GemRank",
+    "GemEffect",
+    "GemRankStats",
+    "GemStatValue",
+    "GemCondition",
     "SetMetadata",
     "SetBonuses",
     "SetBonus",
@@ -40,6 +56,6 @@ __all__ = [
     "StatCategory",
     "GameStats",
     "BuildTypes",
-    "Constraints",
+    "GameConstraints",
     "GameSynergies",
 ]

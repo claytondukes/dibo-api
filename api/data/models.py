@@ -2,21 +2,44 @@
 
 from enum import Enum
 from typing import Dict, List, Optional, TypeVar, Generic
-
+import json
 from pydantic import BaseModel, Field, RootModel
-
+from your_module import get_settings, logger  # Import get_settings and logger from your module
 
 class BuildCategory(str, Enum):
     """Categories for game elements."""
-
-    MOVEMENT = "movement"
-    PRIMARY_ATTACK = "primary_attack"
-    ATTACK = "attack"
-    DEFENSE = "defense"
-    SUMMON = "summon"
-    CHANNELED = "channeled"
-    UTILITY = "utility"
-    WEAPON = "weapon"
+    
+    def __new__(cls):
+        # Get categories from build types data
+        data_dir = get_settings().DATA_DIR
+        build_types_path = data_dir / "build_types.json"
+        
+        if not build_types_path.is_file():
+            return super().__new__(cls, "UNKNOWN")
+            
+        try:
+            with build_types_path.open() as f:
+                data = json.load(f)
+                
+            # Extract unique categories from terms
+            categories = set()
+            for build_type in data.get("build_types", {}).values():
+                for focus_type in build_type.values():
+                    categories.update(
+                        term.split()[0].upper() 
+                        for term in focus_type.get("terms", [])
+                    )
+                    
+            # Create enum members
+            values = {}
+            for category in sorted(categories):
+                values[category] = category.lower()
+                
+            return str.__new__(cls, values)
+            
+        except Exception as e:
+            logger.error(f"Error loading build categories: {e}")
+            return super().__new__(cls, "UNKNOWN")
 
 
 class GemBase(BaseModel):

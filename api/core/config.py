@@ -21,9 +21,16 @@ class Settings(BaseSettings):
     
     # Data
     DATA_DIR: Path = Field(
-        default_factory=lambda: Path(__file__).parent.parent.parent / "data/indexed",
+        default="./data/indexed",
         description="Directory containing indexed game data"
     )
+
+    @property
+    def data_path(self) -> Path:
+        """Get absolute path to data directory."""
+        if self.DATA_DIR.is_absolute():
+            return self.DATA_DIR
+        return self.PROJECT_ROOT / self.DATA_DIR
     
     # Environment
     ENVIRONMENT: str = Field(

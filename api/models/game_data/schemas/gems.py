@@ -3,7 +3,7 @@ Pydantic models for gem-related data structures.
 """
 
 from typing import Dict, List, Optional, Union, Any
-from pydantic import BaseModel, Field, field_validator, ConfigDict
+from pydantic import BaseModel, Field, field_validator, model_validator, ConfigDict, RootModel
 from .base import GameDataModel
 
 
@@ -47,7 +47,7 @@ class Gem(BaseModel):
     """Represents a single gem in the game."""
     
     stars: str = Field(..., description="Star rating of the gem (1, 2, or 5)", alias="Stars")
-    name: str = Field(..., description="Name of the gem", alias="Name")
+    name: str = Field(..., description="Name of the gem")  
     ranks: Dict[str, GemRank] = Field(..., description="Effects at each rank")
     max_rank: int = Field(..., description="Maximum rank for this gem")
     magic_find: str = Field(..., description="Magic find value")
@@ -76,6 +76,34 @@ class Gem(BaseModel):
         json_schema_serialization_defaults_required=True,
         coerce_numbers_to_str=True
     )
+
+
+class GemRegistry(RootModel[Dict[str, Gem]]):
+    """Collection of all gems in the game."""
+
+    @model_validator(mode='before')
+    def set_gem_names(cls, values: Dict[str, Any]) -> Dict[str, Any]:
+        """Set the name field for each gem from its key."""
+        if not isinstance(values, dict):
+            return values
+        
+        for key, gem_data in values.items():
+            if isinstance(gem_data, dict):
+                gem_data['name'] = key
+        
+        return values
+
+    def __iter__(self):
+        """Iterate over all gems."""
+        return iter(self.root)
+
+    def __getitem__(self, key: str) -> Gem:
+        """Get a gem by name."""
+        return self.root[key]
+
+    def get(self, key: str, default: Any = None) -> Optional[Gem]:
+        """Get a gem by name with a default value."""
+        return self.root.get(key, default)
 
 
 class GemsBySkill(BaseModel):

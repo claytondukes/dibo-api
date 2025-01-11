@@ -11,27 +11,27 @@ from api.models.game_data.schemas.gear import GearSlot
 router = APIRouter(tags=["game"])
 
 
-# Standard gear slots that are consistent across all classes
+# Standard gear slots derived from GearSlot enum
 STANDARD_GEAR_SLOTS = {
     "primary": [
-        "head",
-        "chest",
-        "shoulders",
-        "legs",
-        "main_hand_1",
-        "off_hand_1",
-        "main_hand_2",
-        "off_hand_2"
+        GearSlot.HEAD.value,
+        GearSlot.CHEST.value,
+        GearSlot.SHOULDERS.value,
+        GearSlot.LEGS.value,
+        GearSlot.MAIN_HAND_1.value,
+        GearSlot.OFF_HAND_1.value,
+        GearSlot.MAIN_HAND_2.value,
+        GearSlot.OFF_HAND_2.value
     ],
     "set": [
-        "neck",
-        "waist",
-        "feet",
-        "hands",
-        "ring_1",
-        "ring_2",
-        "bracer_1",
-        "bracer_2"
+        GearSlot.NECK.value,
+        GearSlot.WAIST.value,
+        GearSlot.FEET.value,
+        GearSlot.HANDS.value,
+        GearSlot.RING_1.value,
+        GearSlot.RING_2.value,
+        GearSlot.BRACER_1.value,
+        GearSlot.BRACER_2.value
     ]
 }
 

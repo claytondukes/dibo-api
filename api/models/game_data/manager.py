@@ -8,14 +8,16 @@ with support for caching and version-aware loading.
 import json
 import logging
 from datetime import datetime
-from pathlib import Path
-from typing import Any, Dict, Optional, TypeVar, Type
+from typing import Dict, TypeVar, Type, Union, List
 
+from pydantic import BaseModel
+
+from api.core.config import Settings, get_settings
 from .schemas import (
     BuildTypes,
-    Constraints,
+    GameConstraints,
     SetBonusRegistry,  # Renamed from EquipmentSets
-    Gem,
+    GemRegistry,
     GemSkillMap,
     GameStats,
     GameSynergies,
@@ -23,7 +25,7 @@ from .schemas import (
     GameDataCache,
 )
 
-T = TypeVar("T")
+T = TypeVar("T", bound=BaseModel)
 logger = logging.getLogger(__name__)
 
 
@@ -32,9 +34,9 @@ class GameDataManager:
 
     CATEGORY_LOADERS = {
         "build_types": (BuildTypes, "build_types.json"),
-        "constraints": (Constraints, "constraints.json"),
+        "constraints": (GameConstraints, "constraints.json"),
         "sets": (SetBonusRegistry, "sets.json"),  # Renamed from equipment_sets
-        "gems/data": (Gem, "gems/gems.json"),
+        "gems/data": (GemRegistry, "gems/gems.json"),
         "gems/skillmap": (GemSkillMap, "gems/gem_skillmap.json"),
         "gems/stat_boosts": (GameStats, "gems/stat_boosts.json"),
         "gems/synergies": (GameSynergies, "gems/synergies.json"),
@@ -64,14 +66,14 @@ class GameDataManager:
         "BRACER_2": "Bracer 2"  # Second bracer slot
     }
 
-    def __init__(self, data_dir: Path) -> None:
+    def __init__(self, settings: Settings | None = None) -> None:
         """Initialize the game data manager.
 
         Args:
-            data_dir: Path to the indexed data directory
+            settings: Optional Settings instance. If not provided, will use default settings.
         """
-        logger.info(f"Initializing GameDataManager with data_dir: {data_dir}")
-        self.data_dir = data_dir
+        self.settings = settings or get_settings()
+        logger.info(f"Initializing GameDataManager with data_dir: {self.settings.data_path}")
         self._cache = GameDataCache(
             metadata=self._load_metadata(),
             data={},
@@ -84,21 +86,38 @@ class GameDataManager:
         Returns:
             GameDataMetadata: Current metadata for the indexed data
         """
-        metadata_path = self.data_dir / "metadata.json"
+        metadata_path = self.settings.data_path / "metadata.json"
         logger.info(f"Loading metadata from: {metadata_path}")
         with metadata_path.open() as f:
             metadata = json.load(f)
             logger.info(f"Loaded metadata: {metadata}")
             return GameDataMetadata.model_validate(metadata)
 
-    async def get_data(self, category: str) -> Any:
+    def _load_json_file(self, rel_path: str) -> Dict:
+        """Load a JSON file from the data directory.
+
+        Args:
+            rel_path: Relative path to the JSON file from data directory
+
+        Returns:
+            Dict: Loaded JSON data
+        """
+        file_path = self.settings.data_path / rel_path
+        logger.info(f"Loading JSON file from: {file_path}")
+        with file_path.open() as f:
+            data = json.load(f)
+            logger.info(f"Loaded JSON data: {data}")
+            return data
+
+    async def get_data(self, category: str) -> Union[BuildTypes, GameConstraints, SetBonusRegistry, 
+                                                    GemRegistry, GemSkillMap, GameStats, GameSynergies]:
         """Get data for a specific category, reloading if necessary.
 
         Args:
             category: The data category to retrieve
 
         Returns:
-            The requested data for the category
+            The requested data for the category, properly typed based on the category
 
         Raises:
             ValueError: If the category is not supported
@@ -127,22 +146,6 @@ class GameDataManager:
         should_reload = current_metadata.last_updated > self._cache.last_loaded
         logger.info(f"Should reload: {should_reload}")
         return should_reload
-
-    def _load_json_file(self, rel_path: str) -> Dict:
-        """Load a JSON file from the data directory.
-
-        Args:
-            rel_path: Relative path to the JSON file from data directory
-
-        Returns:
-            Dict: Loaded JSON data
-        """
-        file_path = self.data_dir / rel_path
-        logger.info(f"Loading JSON file from: {file_path}")
-        with file_path.open() as f:
-            data = json.load(f)
-            logger.info(f"Loaded JSON data: {data}")
-            return data
 
     def _load_category(
         self,
@@ -187,3 +190,64 @@ class GameDataManager:
         self._cache.metadata = self._load_metadata()
         self._cache.last_loaded = datetime.now()
         logger.info("Finished reloading data")
+
+    async def get_stat_categories(self) -> List[str]:
+        """Get available stat categories.
+
+        Returns:
+            List[str]: List of available stat categories
+        """
+        stats = await self.get_stat_boosts()
+        categories = set()
+        for stat in stats.values():
+            if isinstance(stat, dict) and "category" in stat:
+                categories.add(stat["category"])
+        return sorted(list(categories))
+
+    async def get_stat_boosts(self) -> Dict[str, dict[str, Union[str, List[str]]]]:
+        """Get stat boost data with categories.
+
+        Returns:
+            Dict[str, dict[str, Union[str, List[str]]]]: Stat boost data with categories
+        """
+        logger.info("Getting stat boosts")
+        data = await self.get_data("gems/stat_boosts")
+        if not data:
+            return {}
+        
+        # Convert to dict using Pydantic v2's model_dump
+        data_dict = data.model_dump(mode='json')
+        
+        stats: Dict[str, dict[str, Union[str, List[str]]]] = {}
+        for stat_name, stat_data in data_dict.items():
+            # Skip metadata fields
+            if stat_name == "metadata":
+                continue
+                
+            # Determine category based on stat effects
+            category = "utility"  # Default category
+            if any(term in stat_name for term in ["damage", "critical", "attack"]):
+                category = "offensive"
+            elif any(term in stat_name for term in ["life", "armor", "resistance", "defense"]):
+                category = "defensive"
+            
+            # Add category and other metadata
+            stats[stat_name] = {
+                "name": stat_name,
+                "description": stat_data.get("description", f"Increases {stat_name.replace('_', ' ')}"),
+                "category": category,
+                "gems": stat_data.get("gems", []),
+                "unit": "percentage"  # Most stats are percentages
+            }
+        
+        return stats
+
+    async def get_equipment_sets(self) -> dict[str, dict]:
+        """Get equipment set data.
+
+        Returns:
+            dict[str, dict]: Equipment set data
+        """
+        logger.info("Getting equipment sets")
+        data = await self.get_data("sets")
+        return data.model_dump(mode='json') if data else {}

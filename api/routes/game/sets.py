@@ -2,7 +2,7 @@
 
 from typing import Annotated, Dict, List, Optional
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
-from pydantic import BaseModel, Field, Json
+from pydantic import BaseModel, Field
 
 from api.models.game_data.manager import GameDataManager
 
@@ -52,10 +52,12 @@ def get_data_manager(request: Request) -> GameDataManager:
 @router.get("/sets/bonuses", response_model=SetBonusesResponse)
 async def get_active_set_bonuses(
     data_manager: Annotated[GameDataManager, Depends(get_data_manager)],
-    equipped_sets: str = Query(
-        ...,
-        description="JSON string of set names and number of pieces equipped, e.g., {'SetName': 4}"
-    )
+    equipped_sets: Annotated[str, Query(
+        ..., 
+        description="JSON string of set names and number of pieces equipped, e.g., {'SetName': 4}",
+        example='{"SetName": 4}',
+        openapi_extra={"type": "string", "format": "json"}
+    )]
 ) -> SetBonusesResponse:
     """Get active set bonuses based on equipped set pieces.
     
@@ -70,12 +72,14 @@ async def get_active_set_bonuses(
         HTTPException: If any sets are not found or invalid piece counts
     """
     try:
-        # Parse equipped_sets from JSON string
+        # Parse JSON string into Dict[str, int]
         import json
         sets_dict = json.loads(equipped_sets)
-        
-        # Get all sets data
-        sets_data = data_manager.get_equipment_sets()
+        if not isinstance(sets_dict, dict) or not all(isinstance(k, str) and isinstance(v, int) for k, v in sets_dict.items()):
+            raise ValueError("Invalid format: expected Dict[str, int]")
+
+        # Get all sets data using the convenience method
+        sets_data = await data_manager.get_equipment_sets()
         
         active_bonuses = {}
         for set_name, pieces in sets_dict.items():
@@ -86,7 +90,7 @@ async def get_active_set_bonuses(
                     detail=f"Set '{set_name}' not found"
                 )
                 
-            if pieces > set_data.pieces:
+            if pieces > set_data["pieces"]:
                 raise HTTPException(
                     status_code=status.HTTP_400_BAD_REQUEST,
                     detail=f"Invalid piece count for set '{set_name}'"
@@ -94,9 +98,9 @@ async def get_active_set_bonuses(
                 
             # Calculate active bonuses
             set_bonuses = []
-            for threshold in sorted(map(int, set_data.bonuses.keys())):
+            for threshold in sorted(map(int, set_data["bonuses"].keys())):
                 if pieces >= threshold:
-                    set_bonuses.append(set_data.bonuses[str(threshold)])
+                    set_bonuses.append(set_data["bonuses"][str(threshold)])
                     
             if set_bonuses:
                 active_bonuses[set_name] = set_bonuses
@@ -106,14 +110,8 @@ async def get_active_set_bonuses(
             total_sets=len(active_bonuses)
         )
         
-    except json.JSONDecodeError:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Invalid JSON format for equipped_sets"
-        )
-    except HTTPException:
-        raise
     except Exception as e:
+        logger.error(f"Error getting set bonuses: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e)
@@ -147,14 +145,15 @@ async def list_sets(
         HTTPException: If invalid parameters are provided
     """
     try:
-        sets_data = data_manager.get_equipment_sets()
+        # Get all sets data using the convenience method
+        sets_data = await data_manager.get_equipment_sets()
         
         # Filter by pieces if specified
         if pieces:
             sets_data = {
                 name: data
                 for name, data in sets_data.items()
-                if data.pieces == pieces
+                if data["pieces"] == pieces
             }
         
         # Calculate pagination
@@ -166,10 +165,10 @@ async def list_sets(
         sets = [
             SetInfo(
                 name=name,
-                pieces=data.pieces,
-                description=data.description,
-                bonuses=data.bonuses,
-                use_case=data.use_case
+                pieces=data["pieces"],
+                description=data["description"],
+                bonuses=data["bonuses"],
+                use_case=data["use_case"]
             )
             for name, data in paginated_sets
         ]
@@ -206,7 +205,8 @@ async def get_set_details(
         HTTPException: If set is not found
     """
     try:
-        sets_data = data_manager.get_equipment_sets()
+        # Get all sets data using the convenience method
+        sets_data = await data_manager.get_equipment_sets()
         set_data = sets_data.get(set_name)
         if not set_data:
             raise HTTPException(
@@ -216,10 +216,10 @@ async def get_set_details(
             
         return SetInfo(
             name=set_name,
-            pieces=set_data.pieces,
-            description=set_data.description,
-            bonuses=set_data.bonuses,
-            use_case=set_data.use_case
+            pieces=set_data["pieces"],
+            description=set_data["description"],
+            bonuses=set_data["bonuses"],
+            use_case=set_data["use_case"]
         )
         
     except HTTPException:

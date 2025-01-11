@@ -9,7 +9,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .auth.routes import router as auth_router
-from .core.config import Settings, get_settings
+from .core.config import get_settings
 from .routes import router as api_router
 from .models.game_data.manager import GameDataManager
 
@@ -35,9 +35,8 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     )
     
     # Initialize GameDataManager
-    data_dir = settings.PROJECT_ROOT / "data" / "indexed"
-    logger.info(f"Initializing GameDataManager with data_dir: {data_dir}")
-    app.state.data_manager = GameDataManager(data_dir=data_dir)
+    logger.info(f"Initializing GameDataManager with data_dir: {settings.data_path}")
+    app.state.data_manager = GameDataManager(settings=settings)
     
     yield
     
@@ -47,8 +46,6 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
 
 def create_app() -> FastAPI:
     """Create FastAPI application."""
-    settings = get_settings()
-    
     app = FastAPI(
         title=settings.PROJECT_NAME,
         description="Diablo Immortal Build Optimizer API",

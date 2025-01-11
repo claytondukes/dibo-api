@@ -3,7 +3,7 @@
 import json
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional, TypeVar, Generic, Union
+from typing import Dict, List, Optional, TypeVar, Union
 
 from fastapi import HTTPException, status
 

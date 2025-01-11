@@ -2,7 +2,7 @@
 Pydantic models for stat-related data structures.
 """
 
-from typing import Dict, List, Optional, Union
+from typing import List, Optional
 from pydantic import BaseModel, Field
 
 

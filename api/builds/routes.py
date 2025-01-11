@@ -1,6 +1,5 @@
 """Build routes."""
 
-from typing import Optional
 from fastapi import APIRouter, Depends, Query, HTTPException, status, Request
 from ..auth.service import AuthService, get_auth_service
 from ..core.config import get_settings

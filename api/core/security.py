@@ -1,7 +1,7 @@
 """Security utilities for authentication and authorization."""
 
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, Optional
+from typing import Optional
 
 from jose import JWTError, jwt
 from pydantic import BaseModel

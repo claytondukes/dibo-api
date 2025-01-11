@@ -88,9 +88,17 @@ class GearItem(BaseModel):
 class BuildTypes(BaseModel):
     """Model for build types configuration."""
     
+    metadata: Dict[str, str] = Field(description="Build types metadata")
     build_types: Dict[str, Dict[str, Any]] = Field(
         description="Available build types and their configurations"
     )
+    
+    model_config = {
+        "extra": "allow",
+        "arbitrary_types_allowed": True,
+        "populate_by_name": True,
+        "validate_assignment": False
+    }
 
 
 class StatCondition(BaseModel):

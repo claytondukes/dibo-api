@@ -4,10 +4,7 @@ This module provides functionality for managing character builds, including
 validation, storage, and retrieval using GitHub Gists as the storage backend.
 """
 
-import json
-from datetime import datetime
-from typing import Dict, List, Optional
-from pathlib import Path
+from typing import List
 
 from fastapi import HTTPException
 from pydantic import ValidationError
@@ -51,7 +48,7 @@ class BuildService:
         return errors
 
     async def save_build(
-        self, build: BuildConfig, description: Optional[str] = None
+        self, build: BuildConfig, description: str | None = None
     ) -> BuildSummary:
         """Save a build configuration to a gist.
         
@@ -76,9 +73,9 @@ class BuildService:
                 }
             )
 
-        # Create gist content
+        # Create gist content using Pydantic's json serialization
         gist_content = {
-            "build": build.model_dump(),
+            "build": build.model_dump_json(),
             "format_version": "1.0.0"
         }
 
@@ -87,7 +84,7 @@ class BuildService:
             gist = await self._gist_service.create_gist(
                 files={
                     "build.json": {
-                        "content": json.dumps(gist_content, indent=2)
+                        "content": gist_content
                     }
                 },
                 description=description or f"{build.name} - {build.class_type} Build",
@@ -143,18 +140,18 @@ class BuildService:
 
         # Parse build data
         try:
-            content = json.loads(build_file.content)
+            content = BuildConfig.model_validate_json(build_file.content)
             if "format_version" not in content or "build" not in content:
                 raise ValueError("Invalid build format")
             return BuildConfig.model_validate(content["build"])
-        except (json.JSONDecodeError, ValidationError) as e:
+        except ValidationError as e:
             raise HTTPException(
                 status_code=400,
                 detail=f"Invalid build format: {str(e)}"
             )
 
     async def update_build(
-        self, build_id: str, build: BuildConfig, description: Optional[str] = None
+        self, build_id: str, build: BuildConfig, description: str | None = None
     ) -> BuildSummary:
         """Update an existing build configuration.
         
@@ -191,7 +188,7 @@ class BuildService:
 
         # Update gist
         gist_content = {
-            "build": build.model_dump(),
+            "build": build.model_dump_json(),
             "format_version": "1.0.0"
         }
 
@@ -200,7 +197,7 @@ class BuildService:
                 gist_id=build_id,
                 files={
                     "build.json": {
-                        "content": json.dumps(gist_content, indent=2)
+                        "content": gist_content
                     }
                 },
                 description=description

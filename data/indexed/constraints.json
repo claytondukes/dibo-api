@@ -20,13 +20,13 @@
     "total_required": 8,
     "slots": {
       "Head": 1,
-      "Shoulder": 1,
+      "Shoulders": 1,
       "Chest": 1,
       "Legs": 1,
-      "Primary weapon": 1,
-      "Secondary weapon": 1,
-      "Off-hand weapon": 1,
-      "Off-hand secondary weapon": 1
+      "Main Hand (Set 1)": 1,
+      "Off-Hand (Set 1)": 1,
+      "Main Hand (Set 2)": 1,
+      "Off-Hand (Set 2)": 1
     }
   },
   "set_slots": {
@@ -40,37 +40,23 @@
       "Bracer": 2
     },
     "valid_combinations": [
-      [
-        6,
-        2
-      ],
-      [
-        4,
-        4
-      ],
-      [
-        4,
-        2,
-        2
-      ],
-      [
-        2,
-        2,
-        2,
-        2
-      ]
+      [6, 2],
+      [4, 4],
+      [4, 2, 2],
+      [2, 2, 2, 2]
     ]
   },
   "skill_slots": {
     "total_required": 4,
-    "slots": [
-      "skill1",
-      "skill2",
-      "skill3",
-      "skill4"
-    ]
+    "slots": ["skill1", "skill2", "skill3", "skill4"]
   },
   "weapon_slots": {
-    "total_required": 1
+    "total_required": 4,
+    "slots": {
+      "Main Hand (Set 1)": 1,
+      "Off-Hand (Set 1)": 1,
+      "Main Hand (Set 2)": 1,
+      "Off-Hand (Set 2)": 1
+    }
   }
 }

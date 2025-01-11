@@ -4,15 +4,12 @@ API routes for gem-related operations.
 
 import json
 import logging
-import re
-from pathlib import Path
-from typing import List, Optional, Dict
-from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
+from typing import List, Optional
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 
 from api.models.game_data.manager import GameDataManager
 from api.models.game_data.schemas.gems import (
-    Gem, GemSkillMap, GemsBySkill, GemStatValue,
-    GemRank, GemEffect, GemRankStats
+    Gem, GemSkillMap
 )
 from api.core.config import settings
 
@@ -27,8 +24,8 @@ async def get_data_manager() -> GameDataManager:
     # 1. Share cache across requests
     # 2. Avoid redundant metadata loads
     # 3. Prevent multiple instances during concurrent requests
-    logger.info(f"Creating GameDataManager with data_dir: {settings.DATA_DIR}")
-    return GameDataManager(data_dir=settings.DATA_DIR)
+    logger.info(f"Creating GameDataManager with data_dir: {settings.data_path}")
+    return GameDataManager(settings=settings)
 
 
 def transform_gem_data(gem_dict: dict) -> dict:
@@ -61,18 +58,10 @@ def get_gem_from_progression(gem_name: str, progression_data: dict) -> Optional[
 
 def convert_stats_to_pascal_case(stats: dict) -> dict:
     """Convert snake_case stat keys to PascalCase."""
-    key_map = {
-        "attack_speed": "AttackSpeed",
-        "critical_hit_chance": "CriticalHitChance",
-        "critical_hit_damage": "CriticalHitDamage",
-        "damage_increase": "DamageIncrease",
-        "movement_speed": "MovementSpeed",
-        "life": "Life"
-    }
-    
     result = {}
     for k, v in stats.items():
-        new_key = key_map.get(k, k)
+        # Convert snake_case to PascalCase dynamically
+        new_key = "".join(word.capitalize() for word in k.split("_"))
         
         # Convert gems to Gems
         if isinstance(v, dict) and "gems" in v:
@@ -313,18 +302,18 @@ async def get_gem(
         
         # Load gems data
         gems_file = data_manager.data_dir / "gems" / "gems.json"
-        if not gems_file.exists():
+        if not gems_file.is_file():
             raise FileNotFoundError(f"Gems data file not found: {gems_file}")
             
-        with open(gems_file) as f:
+        with gems_file.open() as f:
             progression_data = json.load(f)
             
         # Load skill mapping
         skillmap_file = data_manager.data_dir / "gems" / "gem_skillmap.json"
-        if not skillmap_file.exists():
+        if not skillmap_file.is_file():
             raise FileNotFoundError(f"Gem skill mapping file not found: {skillmap_file}")
             
-        with open(skillmap_file) as f:
+        with skillmap_file.open() as f:
             skillmap_data = json.load(f)
             
         # Search for gem by name

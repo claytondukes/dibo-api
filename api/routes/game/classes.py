@@ -1,13 +1,13 @@
 """API routes for class-related operations."""
 
 import json
-from typing import Annotated, Dict, List, Optional, Any
-from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
+from typing import Annotated, List
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from pydantic import BaseModel, Field
 import logging
 
 from api.models.game_data.manager import GameDataManager
-from api.models.game_data.schemas.classes import ClassInfo, ClassSkill, CharacterClass, ClassListResponse
+from api.models.game_data.schemas.classes import ClassInfo, CharacterClass
 
 
 logger = logging.getLogger(__name__)

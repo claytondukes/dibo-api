@@ -2,13 +2,13 @@
 
 import json
 import logging
-from collections import defaultdict
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple, TypedDict, Union
+from typing import Dict, List, Optional, Set, Union
 
 from fastapi import HTTPException, status
+from pydantic import BaseModel, Field
 
-from ..core.config import get_settings, Settings
+from ..core.config import get_settings
 from ..models.game_data.manager import GameDataManager
 from .models import (
     BuildFocus,
@@ -25,19 +25,22 @@ from .models import (
 logger = logging.getLogger(__name__)
 
 
-class ScoreWeights(TypedDict):
+class ScoreWeights(BaseModel):
     """Score weights for build type configuration."""
-    base_type_match: float
-    second_type_match: float
-    term_match: float
-    cooldown: Optional[Dict[str, Union[float, int]]]
-    utility_modifier: float
+    base_type_match: float = Field(description="Base type match weight")
+    second_type_match: float = Field(description="Secondary type match weight")
+    term_match: float = Field(description="Term match weight")
+    cooldown: Optional[Dict[str, Union[float, int]]] = Field(
+        default=None,
+        description="Optional cooldown configuration"
+    )
+    utility_modifier: float = Field(description="Utility modifier weight")
 
 
-class BuildTypeConfig(TypedDict):
+class BuildTypeConfig(BaseModel):
     """Build type configuration."""
-    terms: List[str]
-    score_weights: ScoreWeights
+    terms: List[str] = Field(description="List of terms for matching")
+    score_weights: ScoreWeights = Field(description="Score weights configuration")
 
 
 class BuildService:
@@ -1224,42 +1227,20 @@ class BuildService:
         Returns:
             True if category matches focus
         """
-        # Define category mappings for each focus
-        focus_categories = {
-            BuildFocus.DPS: {
-                "critical_hit",
-                "attack_speed",
-                "damage",
-                "penetration",
-                "area_damage",
-                "skill_damage",
-                "primary_attack",
-                "damage_over_time"
-            },
-            BuildFocus.SURVIVAL: {
-                "life",
-                "armor",
-                "resistance",
-                "block",
-                "healing",
-                "damage_reduction",
-                "shield",
-                "dodge"
-            },
-            BuildFocus.BUFF: {
-                "movement_speed",
-                "cooldown_reduction",
-                "crowd_control",
-                "resource_generation",
-                "buff_duration",
-                "proc_chance",
-                "area_effect",
-                "control_duration"
-            }
-        }
+        # Get focus categories from build types data
+        build_types = self.build_types
+        focus_categories = set()
         
-        return category in focus_categories.get(focus, set())
-    
+        # Extract categories from terms in build types data
+        for build_type in build_types.values():
+            if focus.value.lower() in build_type:
+                focus_data = build_type[focus.value.lower()]
+                focus_categories.update(
+                    term.split()[0] for term in focus_data.get("terms", [])
+                )
+        
+        return category in focus_categories
+
     def _calculate_gem_score(
         self,
         gem_name: str,

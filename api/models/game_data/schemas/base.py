@@ -56,3 +56,9 @@ class BuildTypes(GameDataModel):
     build_types: Dict[str, Dict[str, Any]] = Field(
         description="Available build types and their configurations"
     )
+    
+    class Config:
+        extra = "allow"
+        arbitrary_types_allowed = True
+        populate_by_name = True
+        validate_assignment = False

@@ -4,7 +4,6 @@
 import asyncio
 import json
 import os
-import webbrowser
 from pathlib import Path
 from typing import Dict, Any, List
 
@@ -22,12 +21,20 @@ API_BASE_URL = os.getenv('API_BASE_URL', 'http://localhost:8000')
 API_V1_STR = os.getenv('API_V1_STR', '/api/v1')
 API_BASE = f"{API_BASE_URL.rstrip('/')}{API_V1_STR}"
 
-OPENAPI_PATH = os.path.join(os.path.dirname(__file__), "../api/docs/openapi.json")
+# Get project paths
+project_root = Path(__file__).parent.parent
+openapi_path = project_root / "api/docs/openapi.json"
+if not openapi_path.exists():
+    raise FileNotFoundError(
+        f"OpenAPI spec not found at {openapi_path}. "
+        "Make sure the API server is running to generate the spec."
+    )
+
 console = Console()
 
 def load_endpoints_from_openapi() -> List[Dict[str, str]]:
     """Load all endpoints from the OpenAPI specification."""
-    with open(OPENAPI_PATH) as f:
+    with open(openapi_path) as f:
         spec = json.load(f)
     
     endpoints = []

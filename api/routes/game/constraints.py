@@ -1,6 +1,5 @@
 """API routes for game constraints."""
 
-import json
 import logging
 from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException, Request, status
@@ -28,21 +27,21 @@ async def list_constraints(
         data_manager: Game data manager instance
 
     Returns:
-        Map of constraint names to their values
+        Game constraints data
 
     Raises:
         HTTPException: If constraints data cannot be loaded
     """
     try:
         logger.info("Getting game constraints")
-        constraints_file = data_manager.data_dir / "constraints.json"
-        if not constraints_file.exists():
-            raise FileNotFoundError("Constraints file not found")
+        constraints = await data_manager.get_data("constraints")
+        if not constraints:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Constraints data not found"
+            )
             
-        with open(constraints_file) as f:
-            constraints_data = json.load(f)
-            
-        return GameConstraints(constraints=constraints_data)
+        return GameConstraints(constraints=constraints)
         
     except Exception as e:
         logger.error(f"Error listing constraints: {e}")

@@ -1,13 +1,12 @@
 """API routes for game synergies."""
 
-import json
 import logging
-from typing import Annotated, Dict, List, Optional
-from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
+from typing import Annotated, Dict
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from pydantic import BaseModel, Field
 
 from api.models.game_data.manager import GameDataManager
-from api.models.game_data.schemas.synergies import GameSynergies, SynergyGroup
+from api.models.game_data.schemas.synergies import SynergyGroup, GameSynergies
 
 
 router = APIRouter(tags=["game"])
@@ -47,10 +46,10 @@ async def list_synergies(
         if not synergies_file.exists():
             raise FileNotFoundError("Synergies file not found")
             
-        with open(synergies_file) as f:
-            synergies_data = json.load(f)
+        # Use Pydantic's model_validate_json instead of json.load
+        synergies_data = GameSynergies.model_validate_json(synergies_file.read_text())
             
-        return SynergyListResponse(synergies=synergies_data["synergies"])
+        return SynergyListResponse(synergies=synergies_data.synergies)
         
     except Exception as e:
         logger.error(f"Error listing synergies: {e}")
@@ -83,16 +82,16 @@ async def get_synergy_details(
         if not synergies_file.exists():
             raise FileNotFoundError("Synergies file not found")
             
-        with open(synergies_file) as f:
-            synergies_data = json.load(f)
+        # Use Pydantic's model_validate_json instead of json.load
+        synergies_data = GameSynergies.model_validate_json(synergies_file.read_text())
             
-        if synergy_name not in synergies_data["synergies"]:
+        if synergy_name not in synergies_data.synergies:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Synergy not found: {synergy_name}"
             )
             
-        return synergies_data["synergies"][synergy_name]
+        return synergies_data.synergies[synergy_name]
         
     except HTTPException:
         raise

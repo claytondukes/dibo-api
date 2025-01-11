@@ -1,7 +1,6 @@
 """API routes for game stats operations."""
 
-import json
-from typing import Annotated, Dict, List, Optional
+from typing import Annotated, Dict, List
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from pydantic import BaseModel, Field
 import logging
@@ -44,31 +43,16 @@ async def list_stats(
     """
     try:
         logger.info("Getting all stat boosts")
-        stats_file = data_manager.data_dir / "gems" / "stat_boosts.json"
-        if not stats_file.exists():
-            raise FileNotFoundError("Stats file not found")
+        stats_data = await data_manager.get_stat_boosts()
             
-        with open(stats_file) as f:
-            stats_data = json.load(f)
-            
-        # Map stats to categories based on their effects
-        stats_by_category = {
-            "offensive": [],
-            "defensive": [],
-            "utility": []
-        }
+        # Group stats by their categories
+        categories = await data_manager.get_stat_categories()
+        stats_by_category = {category: [] for category in categories}
         
-        # Categorize stats
-        offensive_stats = ["critical_hit_chance", "damage_increase", "attack_speed"]
-        defensive_stats = ["life", "armor", "resistance"]
-        
-        for stat_name in stats_data:
-            if stat_name in offensive_stats:
-                stats_by_category["offensive"].append(stat_name)
-            elif stat_name in defensive_stats:
-                stats_by_category["defensive"].append(stat_name)
-            else:
-                stats_by_category["utility"].append(stat_name)
+        # Categorize stats based on metadata
+        for stat_name, stat_info in stats_data.items():
+            category = stat_info["category"]
+            stats_by_category[category].append(stat_name)
             
         return StatListResponse(stats=stats_by_category)
         
@@ -99,50 +83,18 @@ async def get_stat_details(
     """
     try:
         logger.info(f"Getting stat boosts for: {stat_name}")
-        stats_file = data_manager.data_dir / "gems" / "stat_boosts.json"
-        if not stats_file.exists():
-            raise FileNotFoundError("Stats file not found")
-            
-        with open(stats_file) as f:
-            stats_data = json.load(f)
-            
-        if stat_name not in stats_data:
+        stats_data = await data_manager.get_stat_boosts()
+        if not stats_data or stat_name not in stats_data:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
-                detail=f"Stat not found: {stat_name}"
+                detail=f"Stat {stat_name} not found"
             )
             
-        # Get stat category
-        offensive_stats = ["critical_hit_chance", "damage_increase", "attack_speed"]
-        defensive_stats = ["life", "armor", "resistance"]
-        
-        if stat_name in offensive_stats:
-            category = "offensive"
-        elif stat_name in defensive_stats:
-            category = "defensive"
-        else:
-            category = "utility"
+        return StatInfo(
+            name=stat_name,
+            **stats_data[stat_name]
+        )
             
-        # Get sources that provide this stat
-        sources = []
-        if stats_data[stat_name].get("gems"):
-            sources.append("gems")
-        if stats_data[stat_name].get("essences"):
-            sources.append("essences")
-            
-        # Create stat info
-        stat_info = {
-            "name": stat_name,
-            "description": f"Increases {stat_name.replace('_', ' ')}",  # TODO: Add proper descriptions
-            "category": category,
-            "unit": "percentage",  # Most stats are percentages
-            "sources": sources
-        }
-            
-        return StatInfo(**stat_info)
-        
-    except HTTPException:
-        raise
     except Exception as e:
         logger.error(f"Error getting stat details: {e}")
         raise HTTPException(
