@@ -2,99 +2,231 @@
 
 ## Equipment Systems
 
-### Primary Gear (8 slots)
+### Primary Gear (Right Side)
 
-Primary gear pieces can have legendary gems socketed and skill modifications through essences:
+Primary gear pieces can have essences applied for skill modifications:
 
-- Head
+- Head (Helm)
 - Shoulders
-- Chest
+- Chest (Torso armor)
 - Legs
-- Main Hand (Slot 1) - Primary weapon
-- Off-Hand (Slot 1) - Primary shield/off-hand
-- Main Hand (Slot 2) - Secondary weapon
-- Off-Hand (Slot 2) - Secondary shield/off-hand
+- Main Hand (Set 1) - Primary weapon
+- Off-Hand (Set 1) - Shield or off-hand weapon
+- Main Hand (Set 2) - Secondary weapon set
+- Off-Hand (Set 2) - Secondary shield/weapon
 
-See [Gear](gear.md) for comprehensive documentation of gear systems.
+### Set Items (Left Side)
 
-### Set Items (8 slots)
+Set items provide bonuses when multiple pieces are equipped:
 
-See [Gear](gear.md) for comprehensive documentation of set items and their combinations.
+- Neck (Necklace)
+- Waist (Belt)
+- Hands (Gloves)
+- Feet (Boots)
+- Ring 1
+- Ring 2
+- Bracer 1
+- Bracer 2
 
-### Gem System
-
-8 total gem slots with Primary/Auxiliary (Aux) mechanics:
-
-#### Primary Gems
-
-- Provide base effects, resonance, and stats
-- Can be upgraded for increased power
-- Available in 1★, 2★, and 5★ variants
-
-#### Auxiliary (Aux) Gems
-
-- Can be inlaid into primary gems
-- Replace the primary gem's effect while keeping its resonance
-- Must match the star rating of the primary gem
-- Cannot duplicate any primary gem in use
-
-Example:
-> A Rank 10 Quality 5 Blood-Soaked Jade with Roiling as aux will have BSJ's resonance but Roiling's effect.
+See [Sets](sets.md) for comprehensive documentation of set bonuses.
 
 ## Build Types
 
-### Combat Specializations
+### Core Build Types
 
 #### Raid Builds
 
-Focused on single-target damage with:
+Optimized for boss encounters:
 
-- Required gems prioritize damage and defense
-- Minimal utility gem investment
-- No CC-dependent effects
-- Maximum uptime focus
-- High resonance priority
+- High single-target damage
+- Survival mechanics
+- Consistent DPS output
+- Minimal utility requirements
+
+**Key Features**:
+
+- Focus on sustained damage
+- Defensive cooldown management
+- Boss mechanic handling
+- Resource efficiency
 
 #### Farm Builds
 
-Optimized for area clearing with:
+Designed for efficient clearing:
 
-- Required gems focus on AoE and speed
-- Optional gems add utility and defense
-- Movement speed enhancement
-- DoT and proc effect scaling
+- Area damage focus
+- Movement speed
+- Resource generation
+- Clear speed optimization
+
+**Key Features**:
+
+- AoE damage prioritization
+- Speed enhancements
+- Pack clearing efficiency
+- Resource sustainability
 
 #### PvP Builds
 
-Balanced for player combat with:
+Balanced for player combat:
 
-- Required gems for damage and control
-- Defense gems for survival
-- Utility options for team support
+- Burst damage potential
+- Crowd control
+- Survivability
+- Team utility
+
+**Key Features**:
+
+- Burst windows
 - CC chain potential
+- Defensive cooldowns
+- Team synergies
 
-## Build Optimization
+## Build Focus
 
-### System Integration
+### DPS Focus
 
-Focus on synergies between:
+Damage-oriented builds prioritizing:
 
-- Required and optional gem combinations
-- Primary/Aux gem pairings (matching star ratings)
-- Set piece effects
-- Skill/Essence interactions
-- Proc conditions and uptimes
+- Direct damage output
+- Critical hit chance/damage
+- Attack speed
+- Skill damage modifiers
 
-### Build Synergy
+### Survival Focus
 
-Ensure alignment between:
+Defensive builds emphasizing:
 
-- Required gem effects
-- Optional gem choices
-- Essence effects
-- Enchantments
+- Health pools
+- Damage reduction
+- Recovery mechanics
+- Block/Dodge systems
+
+### Buff Focus
+
+Support builds centered on:
+
+- Team buffs
+- Debuff application
+- Resource generation
+- Utility effects
+
+## Equipment Integration
+
+### Essence System
+
+Modifies skill behavior through:
+
+- Skill alterations
+- Damage type changes
+- Mechanical adjustments
+- Special effects
+
+### Set Bonus Mechanics
+
+Provides power through:
+
+- 2-piece effects (basic)
+- 4-piece effects (intermediate)
+- 6-piece effects (powerful)
+
+**Bonus Types**:
+
+- Damage increases
+- Resource management
+- Special procs
+- Utility effects
+
+## Optimization Principles
+
+### 1. Synergy Focus
+
+Build for interactions between:
+
+- Equipment choices
 - Set bonuses
-- Curse effects
-- Reforge bonuses
-- Core playstyle (e.g., Primary Attack or DoT-based)
-- Content focus (PvE, PvP, Raid)
+- Skill modifications
+- Build focus
+
+### 2. Content Matching
+
+Align build with content:
+
+- Boss mechanics for raids
+- Clear speed for farming
+- Burst windows for PvP
+- Team composition needs
+
+### 3. Resource Management
+
+Optimize for:
+
+- Resource generation
+- Cooldown management
+- Uptime maximization
+- Rotation efficiency
+
+## Performance Analysis
+
+### Metrics
+
+1. **Damage Output**
+   - Direct damage
+   - DoT uptime
+   - Burst windows
+   - Sustained DPS
+
+2. **Survivability**
+   - Effective health
+   - Recovery rate
+   - Damage mitigation
+   - Avoidance mechanics
+
+3. **Utility Value**
+   - Team benefits
+   - Control effects
+   - Resource generation
+   - Movement capabilities
+
+### Build Validation
+
+Verify through:
+
+- Theoretical modeling
+- Practical testing
+- Comparative analysis
+- Content performance
+
+## Advanced Mechanics
+
+### Weapon Swap System
+
+Manage two weapon sets:
+
+1. **Set 1 (Primary)**
+   - Main hand weapon
+   - Off-hand item
+   - Core rotation skills
+
+2. **Set 2 (Secondary)**
+   - Alternate weapon
+   - Secondary off-hand
+   - Situational skills
+
+### Resource Systems
+
+Balance between:
+
+- Primary resource
+- Secondary mechanics
+- Cooldown management
+- Proc conditions
+
+### Status Effects
+
+Understand interactions:
+
+- Damage over time
+- Control effects
+- Debuff stacking
+- Proc conditions

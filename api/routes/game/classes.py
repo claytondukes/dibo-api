@@ -51,7 +51,8 @@ async def get_class_details(
         HTTPException: If class is not found or data cannot be loaded
     """
     try:
-        class_dir = data_manager.base_path / "classes" / class_name
+        logger.info(f"Getting class data for: {class_name}")
+        class_dir = data_manager.data_dir / "classes" / class_name
         if not class_dir.exists():
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,

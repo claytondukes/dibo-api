@@ -43,7 +43,8 @@ async def list_stats(
         HTTPException: If stats data cannot be loaded
     """
     try:
-        stats_file = data_manager.base_path / "gems" / "stat_boosts.json"
+        logger.info("Getting all stat boosts")
+        stats_file = data_manager.data_dir / "gems" / "stat_boosts.json"
         if not stats_file.exists():
             raise FileNotFoundError("Stats file not found")
             
@@ -97,7 +98,8 @@ async def get_stat_details(
         HTTPException: If stat is not found or data cannot be loaded
     """
     try:
-        stats_file = data_manager.base_path / "gems" / "stat_boosts.json"
+        logger.info(f"Getting stat boosts for: {stat_name}")
+        stats_file = data_manager.data_dir / "gems" / "stat_boosts.json"
         if not stats_file.exists():
             raise FileNotFoundError("Stats file not found")
             

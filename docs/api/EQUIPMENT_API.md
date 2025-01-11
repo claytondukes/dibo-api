@@ -1,28 +1,50 @@
 # Equipment System API
 
 ## Overview
+
 API endpoints for managing equipment, sets, and their interactions in the DIBO API system.
 
 ## Endpoints
 
 ### Primary Gear
 
+#### GET /game/gear/slots
+
+List available gear slots.
+
+**Query Parameters**:
+
+- `type` (optional): Filter by gear type ("primary" or "set")
+
+**Response**:
+
+```json
+{
+  "slots": ["head", "chest", "shoulders", "legs", "main_hand_1", "off_hand_1", "main_hand_2", "off_hand_2"]
+}
+```
+
 #### GET /game/gear
+
 List all available primary gear items.
 
 **Query Parameters**:
+
 - `class` (optional): Filter by class name
-- `slot` (optional): Filter by gear slot
+- `slot` (optional): Filter by gear slot (head, chest, shoulders, legs, main_hand_1, off_hand_1, main_hand_2, off_hand_2)
 - `page` (optional): Page number (default: 1)
 - `per_page` (optional): Items per page (default: 20, max: 100)
 
 **Response**:
+
 ```json
 {
   "items": [
     {
+      "id": "string",
       "name": "string",
       "slot": "string",
+      "level": "number",
       "attributes": {
         "strength": "number",
         "fortitude": "number",
@@ -41,28 +63,36 @@ List all available primary gear items.
 ```
 
 #### GET /game/gear/{class}/essences
+
 List available essences for a specific class.
 
 **Path Parameters**:
+
 - `class`: Class name (e.g., "barbarian")
 
 **Query Parameters**:
-- `slot` (optional): Filter by gear slot
+
+- `slot` (optional): Filter by gear slot (head, chest, shoulders, legs, main_hand_1, off_hand_1, main_hand_2, off_hand_2)
 - `skill` (optional): Filter by modified skill
 - `page` (optional): Page number (default: 1)
 - `per_page` (optional): Items per page (default: 20, max: 100)
 
 **Response**:
+
 ```json
 {
   "essences": [
     {
+      "id": "string",
       "name": "string",
       "gear_slot": "string",
       "modifies_skill": "string",
-      "effect": "string",
-      "effect_type": "string",
-      "effect_tags": ["string"]
+      "effect": {
+        "type": "string",
+        "value": "number",
+        "description": "string"
+      },
+      "tags": ["string"]
     }
   ],
   "page": "number",
@@ -74,14 +104,17 @@ List available essences for a specific class.
 ### Set Items
 
 #### GET /game/sets
+
 List all available equipment sets.
 
 **Query Parameters**:
+
 - `pieces` (optional): Filter by number of pieces (2, 4, or 6)
 - `page` (optional): Page number (default: 1)
 - `per_page` (optional): Items per page (default: 20, max: 100)
 
 **Response**:
+
 ```json
 {
   "sets": [
@@ -104,12 +137,15 @@ List all available equipment sets.
 ```
 
 #### GET /game/sets/{set_name}
+
 Get detailed information about a specific set.
 
 **Path Parameters**:
+
 - `set_name`: Name of the set
 
 **Response**:
+
 ```json
 {
   "name": "string",
@@ -124,38 +160,10 @@ Get detailed information about a specific set.
   "items": [
     {
       "slot": "string",
-      "attributes": {
-        "strength": "number",
-        "fortitude": "number",
-        "willpower": "number"
-      }
+      "name": "string",
+      "level": "number"
     }
   ]
-}
-```
-
-#### GET /game/sets/bonuses
-Calculate active set bonuses for equipped items.
-
-**Query Parameters**:
-- `equipped_sets`: List of equipped set pieces (format: "set_name:count")
-
-**Response**:
-```json
-{
-  "active_bonuses": [
-    {
-      "set_name": "string",
-      "pieces_equipped": "number",
-      "active_thresholds": ["number"],
-      "active_bonuses": {
-        "2": "string",
-        "4": "string",
-        "6": "string"
-      }
-    }
-  ],
-  "total_sets": "number"
 }
 ```
 
@@ -164,37 +172,36 @@ Calculate active set bonuses for equipped items.
 All endpoints may return the following errors:
 
 ### 400 Bad Request
+
 ```json
 {
-  "error": "string",
-  "message": "string",
-  "details": {}
+  "detail": {
+    "msg": "string",
+    "type": "validation_error",
+    "loc": ["string"],
+    "input": {}
+  }
 }
 ```
 
 ### 404 Not Found
+
 ```json
 {
-  "error": "NotFound",
-  "message": "Resource not found",
-  "details": {
-    "resource_type": "string",
-    "resource_id": "string"
+  "detail": {
+    "msg": "Resource not found",
+    "type": "not_found_error",
+    "resource": "string"
   }
 }
 ```
 
 ### 500 Internal Server Error
+
 ```json
 {
-  "error": "InternalError",
-  "message": "An internal error occurred",
-  "request_id": "string"
+  "detail": {
+    "msg": "Internal server error",
+    "type": "internal_error"
+  }
 }
-```
-
-## Rate Limiting
-
-All endpoints are subject to rate limiting:
-- 100 requests per minute per authenticated user
-- 20 requests per minute per IP for unauthenticated requests
