@@ -7,6 +7,8 @@ from pydantic import BaseModel, Field, ConfigDict, ValidationError
 from typing_extensions import Annotated
 
 from .service import AuthService, get_auth_service
+from .middleware import verify_token
+from api.core.config import Settings, get_settings
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -102,27 +104,21 @@ class GistUpdate(BaseModel):
     )
 
 
-async def get_token(authorization: str = Header(None)) -> str:
-    """Extract token from Authorization header."""
-    if not authorization:
+def get_token(
+    authorization: str = Header(None),
+    settings: Settings = Depends(get_settings)
+) -> str:
+    """Extract and verify token from Authorization header."""
+    if not authorization or not authorization.strip() or not authorization.startswith("Bearer "):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Missing authorization header"
+            detail="Missing or invalid authorization header"
         )
     
-    try:
-        scheme, token = authorization.split()
-        if scheme.lower() != "bearer":
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid authorization scheme"
-            )
-        return token
-    except ValueError:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid authorization header"
-        )
+    token = authorization.split(" ")[1]
+    # Verify token and get payload
+    verify_token(token, settings)
+    return token
 
 
 @router.get("/login", response_model=GitHubLoginResponse)
@@ -169,7 +165,7 @@ async def github_callback(
         )
 
 
-@router.post("/gists", response_model=Dict)
+@router.post("/gists", response_model=Dict, status_code=201)
 async def create_gist(
     gist_data: dict = Body(...),
     token: str = Depends(get_token),
@@ -203,24 +199,20 @@ async def create_gist(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail=str(e)
             )
-        
+
         return await auth_service.create_gist(
-            token,
-            gist.filename,
-            gist.content,
-            gist.description
+            access_token=token,  # Use GitHub token directly
+            filename=gist.filename,
+            content=gist.content,
+            description=gist.description
         )
+
     except HTTPException:
         raise
     except Exception as e:
-        if "401" in str(e).lower() or "unauthorized" in str(e).lower():
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid or expired token"
-            )
         raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to create gist: {str(e)}"
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Error creating gist: {str(e)}"
         )
 
 
@@ -267,11 +259,11 @@ async def update_gist(
             )
         
         return await auth_service.update_gist(
-            token,
-            gist_id,
-            gist.filename,
-            gist.content,
-            gist.description
+            access_token=token,  # Use GitHub token directly
+            gist_id=gist_id,
+            filename=gist.filename,
+            content=gist.content,
+            description=gist.description
         )
     except HTTPException:
         raise
@@ -299,7 +291,7 @@ async def get_gists(
 ) -> List[Dict]:
     """Get user's gists."""
     try:
-        return await auth_service.get_user_gists(token)
+        return await auth_service.get_user_gists(access_token=token)  # Use GitHub token directly
     except HTTPException:
         raise
     except Exception as e:
@@ -328,7 +320,7 @@ async def get_inventory(
                 detail="Gist ID is required"
             )
 
-        return await auth_service.get_generated_build(token, gist_id)
+        return await auth_service.get_generated_build(access_token=token, gist_id=gist_id)  # Use GitHub token directly
     except HTTPException:
         raise
     except Exception as e:

@@ -109,7 +109,6 @@ class StatCondition(BaseModel):
     trigger: Optional[str] = Field(None, description="Trigger pattern if type is trigger")
     description: str = Field(description="Text pattern to match")
     threshold: Optional[float] = Field(None, description="Threshold value if applicable")
-    text: Optional[str] = Field(None, description="Optional text pattern to match")
     
     model_config = {
         "extra": "allow",

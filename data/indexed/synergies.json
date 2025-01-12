@@ -21,54 +21,54 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "(?:while |when )?behind"
+            "description": "(?:while |when )?behind"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "from behind"
+            "description": "from behind"
           },
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "(?:while |when )?behind"
+            "description": "(?:while |when )?behind"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "from behind"
+            "description": "from behind"
           },
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "(?:while |when )?behind"
+            "description": "(?:while |when )?behind"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "from behind"
+            "description": "from behind"
           }
         ],
         "Mother's Lament": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "description": "below (\\d+)% (?:life|health)",
             "threshold": 50.0
           }
         ]
@@ -93,7 +93,7 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "above (\\d+)% (?:life|health)",
+            "description": "above (\\d+)% (?:life|health)",
             "threshold": 75.0
           }
         ]
@@ -155,66 +155,66 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "(?:while |when )?behind"
+            "description": "(?:while |when )?behind"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "from behind"
+            "description": "from behind"
           },
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "(?:while |when )?behind"
+            "description": "(?:while |when )?behind"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "from behind"
+            "description": "from behind"
           },
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "(?:while |when )?behind"
+            "description": "(?:while |when )?behind"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "from behind"
+            "description": "from behind"
           }
         ],
         "Kir Sling": [
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           },
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           }
         ],
         "Mother's Lament": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "description": "below (\\d+)% (?:life|health)",
             "threshold": 50.0
           }
         ],
@@ -222,14 +222,14 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           }
         ],
         "The Hunger": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "above (\\d+)% (?:life|health)",
+            "description": "above (\\d+)% (?:life|health)",
             "threshold": 75.0
           }
         ],
@@ -237,14 +237,14 @@
           {
             "type": "trigger",
             "trigger": "on_kill",
-            "text": "after killing"
+            "description": "after killing"
           }
         ],
         "Spiteful Blood": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "description": "below (\\d+)% (?:life|health)",
             "threshold": 50.0
           }
         ]
@@ -264,7 +264,7 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when (?:you )?attack"
+            "description": "when (?:you )?attack"
           }
         ]
       }
@@ -289,7 +289,7 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "description": "below (\\d+)% (?:life|health)",
             "threshold": 50.0
           }
         ],
@@ -297,7 +297,7 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "above (\\d+)% (?:life|health)",
+            "description": "above (\\d+)% (?:life|health)",
             "threshold": 75.0
           }
         ],
@@ -305,7 +305,7 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below (\\d+)% (?:life|health)",
+            "description": "below (\\d+)% (?:life|health)",
             "threshold": 50.0
           }
         ]

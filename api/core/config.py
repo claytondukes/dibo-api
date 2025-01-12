@@ -4,7 +4,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Optional, List
 
-from pydantic import AnyHttpUrl, Field
+from pydantic import AnyHttpUrl, Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -17,6 +17,20 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     PROJECT_ROOT: Path = Field(
         default_factory=lambda: Path(__file__).parent.parent.parent
+    )
+    
+    # JWT Settings
+    JWT_SECRET_KEY: SecretStr = Field(
+        default="your-secret-key-here",
+        description="Secret key for JWT token signing"
+    )
+    JWT_ALGORITHM: str = Field(
+        default="HS256",
+        description="Algorithm to use for JWT token signing"
+    )
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(
+        default=1440,  # 24 hours
+        description="Minutes until access token expires"
     )
     
     # Data

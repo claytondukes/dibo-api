@@ -60,7 +60,7 @@ class StatCondition(BaseModel):
     """A condition that must be met for a stat value to apply."""
 
     type: str = Field(description="Type of condition (trigger, state, etc.)")
-    text: str = Field(description="Human-readable description of the condition")
+    description: str = Field(description="Human-readable description of the condition")
     cooldown: Optional[float] = Field(None, description="Cooldown in seconds")
     threshold: Optional[float] = Field(None, description="Threshold value if applicable")
     
@@ -70,7 +70,7 @@ class StatCondition(BaseModel):
         json_schema_extra={
             "examples": [{
                 "type": "trigger",
-                "text": "On hit",
+                "description": "On hit",
                 "cooldown": 1.0,
                 "threshold": 0.5
             }]
