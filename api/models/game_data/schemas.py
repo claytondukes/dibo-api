@@ -107,9 +107,9 @@ class StatCondition(BaseModel):
     type: str = Field(description="Type of condition (state, trigger, etc)")
     state: Optional[str] = Field(None, description="State name if type is state")
     trigger: Optional[str] = Field(None, description="Trigger pattern if type is trigger")
-    text: str = Field(description="Text pattern to match")
+    description: str = Field(description="Text pattern to match")
     threshold: Optional[float] = Field(None, description="Threshold value if applicable")
-    description: Optional[str] = Field(None, description="Optional description of the condition")
+    text: Optional[str] = Field(None, description="Optional text pattern to match")
     
     model_config = {
         "extra": "allow",
@@ -132,9 +132,17 @@ class StatValue(BaseModel):
     
     @model_validator(mode='after')
     def validate_value_fields(self) -> 'StatValue':
-        """Ensure either value or min_value/max_value is present."""
-        if self.value is None and (self.min_value is None or self.max_value is None):
-            raise ValueError("Either value or both min_value and max_value must be set")
+        """Ensure either value or min/max values are set appropriately."""
+        if self.scaling:
+            if self.min_value is None or self.max_value is None:
+                raise ValueError("scaling stats must have both min_value and max_value set")
+            if self.value is not None:
+                raise ValueError("scaling stats cannot have value set")
+        else:
+            if self.value is None:
+                raise ValueError("non-scaling stats must have value set")
+            if self.min_value is not None or self.max_value is not None:
+                raise ValueError("non-scaling stats cannot have min_value or max_value set")
         return self
     
     model_config = {

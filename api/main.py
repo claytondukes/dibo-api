@@ -75,9 +75,9 @@ def create_app() -> FastAPI:
 app = create_app()
 
 
-@app.get("/")
+@app.get(f"{settings.API_V1_STR}/")
 async def root():
-    """Root endpoint."""
+    """API root endpoint."""
     return {
         "name": settings.PROJECT_NAME,
         "version": settings.VERSION,
@@ -90,9 +90,10 @@ def main():
     """Run application with uvicorn."""
     uvicorn.run(
         "api.main:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=True
+        host=settings.HOST,
+        port=settings.PORT,
+        reload=settings.RELOAD,
+        workers=settings.WORKERS
     )
 
 

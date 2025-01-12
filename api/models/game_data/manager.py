@@ -127,65 +127,77 @@ class GameDataManager:
             logger.error(f"Unsupported category: {category}")
             raise ValueError(f"Unsupported category: {category}")
 
-        if self._should_reload():
-            logger.info("Data needs to be reloaded")
-            await self._reload_data()
-        return self._cache.data.get(category)
+        try:
+            if self._should_reload():
+                logger.info("Data needs to be reloaded")
+                await self._reload_data()
+            return self._cache.data.get(category)
+        except Exception as e:
+            logger.error(f"Error getting data for category {category}: {e}")
+            raise ValueError(f"Failed to get data for category {category}: {e}") from e
 
     def _should_reload(self) -> bool:
-        """Check if the data should be reloaded.
-
-        Returns:
-            bool: True if data should be reloaded, False otherwise
-        """
+        """Check if data needs to be reloaded."""
+        if not self._cache or not self._cache.data:
+            logger.info("Cache has never been loaded")
+            return True
+        
+        # Check if cache is stale
         if not self._cache.last_loaded:
             logger.info("Cache has never been loaded")
             return True
+        
+        # Check if metadata has changed
+        try:
+            metadata = self._load_metadata()
+            if metadata.last_updated > self._cache.metadata.last_updated:
+                logger.info("Metadata has changed, reloading data")
+                return True
+        except Exception as e:
+            logger.error(f"Error checking metadata: {e}")
+            return True
+        
+        return False
 
-        current_metadata = self._load_metadata()
-        should_reload = current_metadata.last_updated > self._cache.last_loaded
-        logger.info(f"Should reload: {should_reload}")
-        return should_reload
-
-    def _load_category(
+    async def _load_category(
         self,
-        model: Type[T],
-        rel_path: str
+        category: str,
+        model_cls: Type[T],
+        file_path: str
     ) -> T:
-        """Load and validate data for a category.
+        """Load a category of game data.
 
         Args:
-            model: Pydantic model class for the category
-            rel_path: Relative path to the data file
+            category: The category name
+            model_cls: The model class to validate the data with
+            file_path: Relative path to the data file
 
         Returns:
-            Validated model instance
+            The loaded and validated data
         """
-        logger.info(f"Loading category with model {model.__name__} from {rel_path}")
-        data = self._load_json_file(rel_path)
+        logger.info(f"Loading category: {category}")
+        logger.info(f"Loading category with model {model_cls.__name__} from {file_path}")
+        
         try:
-            logger.info(f"Validating data with model {model.__name__}")
-            validated_data = model.model_validate(
-                data,
-                strict=False,  # Allow coercion of values
-                from_attributes=True,  # Allow object conversion
-            )
-            logger.info(f"Successfully validated data for {model.__name__}")
+            data = self._load_json_file(file_path)
+            logger.info(f"Loaded JSON data: {data}")
+            
+            logger.info(f"Validating data with model {model_cls.__name__}")
+            validated_data = model_cls.model_validate(data)
+            logger.info(f"Successfully validated data for {model_cls.__name__}")
+            
             return validated_data
+            
         except Exception as e:
-            # Log the full error details
-            logger.error(f"Error validating data for {model.__name__}:")
-            logger.error(f"Error type: {type(e).__name__}")
-            logger.error(f"Error message: {str(e)}")
-            logger.error(f"Data sample: {str(data)[:1000]}")  # First 1000 chars
-            raise
+            logger.error(f"Error loading category {category}: {e}")
+            raise ValueError(f"Failed to load category {category}: {e}") from e
 
     async def _reload_data(self) -> None:
         """Reload all game data into the cache."""
         logger.info("Reloading all game data")
         for category, (model, path) in self.CATEGORY_LOADERS.items():
             logger.info(f"Loading category: {category}")
-            self._cache.data[category] = self._load_category(model, path)
+            self._cache.data[category] = await self._load_category(category, model, path)
 
         self._cache.metadata = self._load_metadata()
         self._cache.last_loaded = datetime.now()
@@ -197,50 +209,28 @@ class GameDataManager:
         Returns:
             List[str]: List of available stat categories
         """
-        stats = await self.get_stat_boosts()
+        stats = await self.get_data("gems/stat_boosts")
         categories = set()
         for stat in stats.values():
             if isinstance(stat, dict) and "category" in stat:
                 categories.add(stat["category"])
         return sorted(list(categories))
 
-    async def get_stat_boosts(self) -> Dict[str, dict[str, Union[str, List[str]]]]:
+    async def get_stat_boosts(self) -> Dict[str, dict]:
         """Get stat boost data with categories.
 
         Returns:
-            Dict[str, dict[str, Union[str, List[str]]]]: Stat boost data with categories
+            Dict[str, dict]: Stat boost data with categories
         """
-        logger.info("Getting stat boosts")
-        data = await self.get_data("gems/stat_boosts")
-        if not data:
-            return {}
-        
-        # Convert to dict using Pydantic v2's model_dump
-        data_dict = data.model_dump(mode='json')
-        
-        stats: Dict[str, dict[str, Union[str, List[str]]]] = {}
-        for stat_name, stat_data in data_dict.items():
-            # Skip metadata fields
-            if stat_name == "metadata":
-                continue
-                
-            # Determine category based on stat effects
-            category = "utility"  # Default category
-            if any(term in stat_name for term in ["damage", "critical", "attack"]):
-                category = "offensive"
-            elif any(term in stat_name for term in ["life", "armor", "resistance", "defense"]):
-                category = "defensive"
-            
-            # Add category and other metadata
-            stats[stat_name] = {
-                "name": stat_name,
-                "description": stat_data.get("description", f"Increases {stat_name.replace('_', ' ')}"),
-                "category": category,
-                "gems": stat_data.get("gems", []),
-                "unit": "percentage"  # Most stats are percentages
-            }
-        
-        return stats
+        try:
+            stats = await self.get_data("gems/stat_boosts")
+            if not stats:
+                logger.error("Failed to get stat boosts data")
+                raise ValueError("Failed to get stat boosts data")
+            return stats
+        except Exception as e:
+            logger.error(f"Error getting stat boosts: {e}")
+            raise ValueError(f"Failed to get stat boosts: {e}") from e
 
     async def get_equipment_sets(self) -> dict[str, dict]:
         """Get equipment set data.

@@ -1,21 +1,29 @@
 """API routes for game modes and build types."""
 
-from fastapi import APIRouter
-from pydantic import BaseModel, Field
+from fastapi import APIRouter, status
+from pydantic import BaseModel, Field, ConfigDict
+from typing import Annotated, List
 
 from ...builds.models import BuildType, BuildFocus
 
 
 class GameModesResponse(BaseModel):
-    """Response model for game modes endpoint."""
+    """Response model for game modes."""
     
-    game_modes: list[str] = Field(
-        description="List of valid game modes",
-        example=["raid", "pve", "pvp", "farm"]
+    game_modes: List[str] = Field(
+        description="List of available game modes"
     )
-    build_types: list[str] = Field(
-        description="List of valid build types",
-        example=["dps", "survival", "buff"]
+    build_types: List[str] = Field(
+        description="List of available build types"
+    )
+    
+    model_config = ConfigDict(
+        json_schema_extra={
+            "examples": [{
+                "game_modes": ["raid", "pve", "pvp", "farm"],
+                "build_types": ["dps", "survival", "buff"]
+            }]
+        }
     )
 
 

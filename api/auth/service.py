@@ -102,7 +102,7 @@ class AuthService:
             response = await client.get(
                 "https://api.github.com/gists",
                 headers={
-                    "Authorization": f"Bearer {access_token}",
+                    "Authorization": f"token {access_token}",
                     "Accept": "application/vnd.github.v3+json"
                 }
             )
@@ -128,31 +128,49 @@ class AuthService:
         description: Optional[str] = None
     ) -> Dict:
         """Create a new GitHub gist."""
+        if not access_token:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Access token is required"
+            )
+        
         async with httpx.AsyncClient() as client:
-            response = await client.post(
-                "https://api.github.com/gists",
-                headers={
-                    "Authorization": f"Bearer {access_token}",
-                    "Accept": "application/vnd.github.v3+json"
-                },
-                json={
-                    "description": description,
-                    "public": False,
-                    "files": {
-                        filename: {
-                            "content": content
+            try:
+                response = await client.post(
+                    "https://api.github.com/gists",
+                    headers={
+                        "Authorization": f"token {access_token}",
+                        "Accept": "application/vnd.github.v3+json"
+                    },
+                    json={
+                        "description": description,
+                        "public": False,
+                        "files": {
+                            filename: {
+                                "content": content
+                            }
                         }
                     }
-                }
-            )
-
-            if response.status_code != 201:
-                raise HTTPException(
-                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                    detail="Failed to create gist"
                 )
 
-            return response.json()
+                if response.status_code == 401:
+                    raise HTTPException(
+                        status_code=status.HTTP_401_UNAUTHORIZED,
+                        detail="Invalid GitHub token"
+                    )
+                elif response.status_code != 201:
+                    error_data = response.json()
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail=f"Failed to create gist: {error_data.get('message', response.text)}"
+                    )
+
+                return response.json()
+            except httpx.RequestError as e:
+                raise HTTPException(
+                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    detail=f"Failed to connect to GitHub: {str(e)}"
+                )
 
     async def update_gist(
         self,
@@ -163,35 +181,59 @@ class AuthService:
         description: Optional[str] = None
     ) -> Dict:
         """Update an existing GitHub gist."""
+        if not access_token:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Access token is required"
+            )
+        
+        if not gist_id:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Gist ID is required"
+            )
+        
         async with httpx.AsyncClient() as client:
-            response = await client.patch(
-                f"https://api.github.com/gists/{gist_id}",
-                headers={
-                    "Authorization": f"Bearer {access_token}",
-                    "Accept": "application/vnd.github.v3+json"
-                },
-                json={
-                    "description": description,
-                    "files": {
-                        filename: {
-                            "content": content
+            try:
+                response = await client.patch(
+                    f"https://api.github.com/gists/{gist_id}",
+                    headers={
+                        "Authorization": f"token {access_token}",
+                        "Accept": "application/vnd.github.v3+json"
+                    },
+                    json={
+                        "description": description,
+                        "files": {
+                            filename: {
+                                "content": content
+                            }
                         }
                     }
-                }
-            )
-
-            if response.status_code == 404:
-                raise HTTPException(
-                    status_code=status.HTTP_404_NOT_FOUND,
-                    detail="Gist not found"
-                )
-            elif response.status_code != 200:
-                raise HTTPException(
-                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                    detail="Failed to update gist"
                 )
 
-            return response.json()
+                if response.status_code == 404:
+                    raise HTTPException(
+                        status_code=status.HTTP_404_NOT_FOUND,
+                        detail=f"Gist not found: {gist_id}"
+                    )
+                elif response.status_code == 401:
+                    raise HTTPException(
+                        status_code=status.HTTP_401_UNAUTHORIZED,
+                        detail="Invalid GitHub token"
+                    )
+                elif response.status_code != 200:
+                    error_data = response.json()
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail=f"Failed to update gist: {error_data.get('message', response.text)}"
+                    )
+
+                return response.json()
+            except httpx.RequestError as e:
+                raise HTTPException(
+                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    detail=f"Failed to connect to GitHub: {str(e)}"
+                )
 
     async def get_generated_build(self, access_token: str, gist_id: str) -> Dict:
         """Get a generated build from a gist."""
@@ -199,7 +241,7 @@ class AuthService:
             response = await client.get(
                 f"https://api.github.com/gists/{gist_id}",
                 headers={
-                    "Authorization": f"Bearer {access_token}",
+                    "Authorization": f"token {access_token}",
                     "Accept": "application/vnd.github.v3+json"
                 }
             )
@@ -212,7 +254,7 @@ class AuthService:
             elif response.status_code == 404:
                 raise HTTPException(
                     status_code=status.HTTP_404_NOT_FOUND,
-                    detail="Build not found"
+                    detail=f"Build not found: {gist_id}"
                 )
             elif response.status_code != 200:
                 raise HTTPException(
@@ -230,7 +272,6 @@ class AuthService:
             # Get the first file's content
             first_file = next(iter(gist_data["files"].values()))
             try:
-                import json
                 build_data = json.loads(first_file["content"])
                 return {"build": build_data}
             except json.JSONDecodeError:
@@ -245,7 +286,7 @@ class AuthService:
             response = await client.patch(
                 f"https://api.github.com/gists/{gist_id}",
                 headers={
-                    "Authorization": f"Bearer {access_token}",
+                    "Authorization": f"token {access_token}",
                     "Accept": "application/vnd.github.v3+json"
                 },
                 json={
@@ -265,7 +306,7 @@ class AuthService:
             elif response.status_code == 404:
                 raise HTTPException(
                     status_code=status.HTTP_404_NOT_FOUND,
-                    detail="Build not found"
+                    detail=f"Build not found: {gist_id}"
                 )
             elif response.status_code != 200:
                 raise HTTPException(
@@ -273,23 +314,7 @@ class AuthService:
                     detail="Failed to update build"
                 )
             
-            gist_data = response.json()
-            if not gist_data["files"]:
-                raise HTTPException(
-                    status_code=status.HTTP_404_NOT_FOUND,
-                    detail="Build file not found in gist"
-                )
-            
-            # Get the first file's content
-            first_file = next(iter(gist_data["files"].values()))
-            try:
-                updated_build = json.loads(first_file["content"])
-                return {"build": updated_build}
-            except json.JSONDecodeError:
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail="Invalid build data format"
-                )
+            return response.json()
 
 
 def get_auth_service(settings: Settings = Depends(get_settings)) -> AuthService:

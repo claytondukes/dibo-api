@@ -25,7 +25,7 @@
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "cannot occur more often than once every 20 seconds"
+                "description": "cannot occur more often than once every 20 seconds"
               }
             ],
             "value": 12.0,
@@ -39,7 +39,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -52,14 +52,14 @@
           {
             "type": "cooldown",
             "cooldown": 20.0,
-            "text": "cannot occur more often than once every 20 seconds"
+            "description": "cannot occur more often than once every 20 seconds"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below 50% Life",
+            "description": "below 50% Life",
             "threshold": 50.0
           }
         ]
@@ -74,17 +74,17 @@
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "when attack"
+                "description": "when attack"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "behind"
+                "description": "behind"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "from behind"
+                "description": "from behind"
               }
             ],
             "value": 4.0,
@@ -96,34 +96,34 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when attack"
+            "description": "when attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "behind"
+            "description": "behind"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "from behind"
+            "description": "from behind"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "when attack"
+            "description": "when attack"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "behind"
+            "description": "behind"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "from behind"
+            "description": "from behind"
           }
         ]
       },
@@ -223,12 +223,12 @@
               {
                 "type": "trigger",
                 "trigger": "on_hit",
-                "text": "When you take damage"
+                "description": "When you take damage"
               },
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               }
             ],
             "value": 20.0,
@@ -240,12 +240,12 @@
               {
                 "type": "trigger",
                 "trigger": "on_hit",
-                "text": "When you take damage"
+                "description": "When you take damage"
               },
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               }
             ],
             "value": 24.0,
@@ -258,12 +258,12 @@
           {
             "type": "trigger",
             "trigger": "on_hit",
-            "text": "When you take damage"
+            "description": "When you take damage"
           },
           {
             "type": "state",
             "state": "target_count",
-            "text": "all nearby enemies"
+            "description": "all nearby enemies"
           }
         ]
       },
@@ -282,37 +282,14 @@
           {
             "conditions": [
               {
-                "type": "trigger",
-                "trigger": "on_attack",
-                "text": "your attacks"
+                "type": "state",
+                "state": "health_threshold",
+                "description": "based on current Life"
               }
             ],
-            "value": 32.0,
-            "unit": "percentage",
-            "scaling": false
-          },
-          {
-            "conditions": [
-              {
-                "type": "trigger",
-                "trigger": "on_attack",
-                "text": "your attacks"
-              }
-            ],
-            "value": 16.0,
-            "unit": "percentage",
-            "scaling": false
-          },
-          {
-            "conditions": [
-              {
-                "type": "trigger",
-                "trigger": "on_attack",
-                "text": "your attacks"
-              }
-            ],
-            "max_value": 32.0,
-            "min_value": 16.0,
+            "value": 12.0,
+            "min_value": 12.0,
+            "max_value": 24.0,
             "unit": "percentage",
             "scaling": true
           }
@@ -320,9 +297,9 @@
         "conditions": [],
         "rank_10_conditions": [
           {
-            "type": "trigger",
-            "trigger": "on_attack",
-            "text": "your attacks"
+            "type": "state",
+            "state": "health_threshold",
+            "description": "based on current Life"
           }
         ]
       },
@@ -358,7 +335,7 @@
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ],
             "value": 4.5,
@@ -371,7 +348,7 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "your attacks"
+            "description": "your attacks"
           }
         ]
       },
@@ -406,7 +383,7 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "at 10 stacks",
+                "description": "at 10 stacks",
                 "threshold": 10.0
               }
             ],
@@ -421,12 +398,12 @@
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "at 10 stacks",
+                "description": "at 10 stacks",
                 "threshold": 10.0
               }
             ],
@@ -439,12 +416,12 @@
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "at 10 stacks",
+                "description": "at 10 stacks",
                 "threshold": 10.0
               }
             ],
@@ -457,7 +434,7 @@
           {
             "type": "state",
             "state": "stacks",
-            "text": "at 10 stacks",
+            "description": "at 10 stacks",
             "threshold": 10.0
           }
         ],
@@ -465,12 +442,12 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "your attacks"
+            "description": "your attacks"
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "at 10 stacks",
+            "description": "at 10 stacks",
             "threshold": 10.0
           }
         ]
@@ -528,7 +505,7 @@
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "cannot occur more often than once every 20 seconds"
+                "description": "cannot occur more often than once every 20 seconds"
               }
             ],
             "value": 20.0,
@@ -542,7 +519,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -555,7 +532,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -568,14 +545,14 @@
           {
             "type": "cooldown",
             "cooldown": 20.0,
-            "text": "cannot occur more often than once every 20 seconds"
+            "description": "cannot occur more often than once every 20 seconds"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below 50% Life",
+            "description": "below 50% Life",
             "threshold": 50.0
           }
         ]
@@ -694,7 +671,7 @@
               {
                 "type": "state",
                 "state": "position",
-                "text": "within 3 yards",
+                "description": "within 3 yards",
                 "threshold": 3.0
               }
             ],
@@ -708,7 +685,7 @@
           {
             "type": "state",
             "state": "position",
-            "text": "within 3 yards",
+            "description": "within 3 yards",
             "threshold": 3.0
           }
         ],
@@ -716,7 +693,7 @@
           {
             "type": "state",
             "state": "position",
-            "text": "within 3 yards",
+            "description": "within 3 yards",
             "threshold": 3.0
           }
         ]
@@ -766,7 +743,7 @@
               {
                 "type": "state",
                 "state": "position",
-                "text": "at 8 yards",
+                "description": "at 8 yards",
                 "threshold": 8.0
               }
             ],
@@ -780,7 +757,7 @@
           {
             "type": "state",
             "state": "position",
-            "text": "at 8 yards",
+            "description": "at 8 yards",
             "threshold": 8.0
           }
         ],
@@ -788,12 +765,12 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "Your attacks"
+            "description": "Your attacks"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "at 8 yards",
+            "description": "at 8 yards",
             "threshold": 8.0
           }
         ]
@@ -807,13 +784,13 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "stacking up to 10 times",
+                "description": "stacking up to 10 times",
                 "threshold": 10.0
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "While at full stacks"
+                "description": "While at full stacks"
               }
             ],
             "value": 0.8,
@@ -827,13 +804,13 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "stacking up to 10 times",
+                "description": "stacking up to 10 times",
                 "threshold": 10.0
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "While at full stacks"
+                "description": "While at full stacks"
               }
             ],
             "value": 2.4,
@@ -845,26 +822,26 @@
           {
             "type": "state",
             "state": "stacks",
-            "text": "stacking up to 10 times",
+            "description": "stacking up to 10 times",
             "threshold": 10.0
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "While at full stacks"
+            "description": "While at full stacks"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "stacks",
-            "text": "stacking up to 10 times",
+            "description": "stacking up to 10 times",
             "threshold": 10.0
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "While at full stacks"
+            "description": "While at full stacks"
           }
         ]
       },
@@ -877,7 +854,7 @@
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "cannot occur more often than once every 20 seconds"
+                "description": "cannot occur more often than once every 20 seconds"
               }
             ],
             "value": 30.0,
@@ -897,7 +874,7 @@
           {
             "type": "cooldown",
             "cooldown": 20.0,
-            "text": "cannot occur more often than once every 20 seconds"
+            "description": "cannot occur more often than once every 20 seconds"
           }
         ],
         "rank_10_conditions": []
@@ -911,7 +888,7 @@
               {
                 "type": "state",
                 "state": "position",
-                "text": "within 3 yards",
+                "description": "within 3 yards",
                 "threshold": 3.0
               }
             ],
@@ -925,7 +902,7 @@
           {
             "type": "state",
             "state": "position",
-            "text": "within 3 yards",
+            "description": "within 3 yards",
             "threshold": 3.0
           }
         ]
@@ -1138,13 +1115,13 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "stacking up to 10 times",
+                "description": "stacking up to 10 times",
                 "threshold": 10.0
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "While at full stacks"
+                "description": "While at full stacks"
               }
             ],
             "value": 0.8,
@@ -1157,13 +1134,13 @@
           {
             "type": "state",
             "state": "stacks",
-            "text": "stacking up to 10 times",
+            "description": "stacking up to 10 times",
             "threshold": 10.0
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "While at full stacks"
+            "description": "While at full stacks"
           }
         ]
       },
@@ -1190,7 +1167,7 @@
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "cannot occur more often than once every 20 seconds"
+                "description": "cannot occur more often than once every 20 seconds"
               }
             ],
             "value": 30.0,
@@ -1203,7 +1180,7 @@
           {
             "type": "cooldown",
             "cooldown": 20.0,
-            "text": "cannot occur more often than once every 20 seconds"
+            "description": "cannot occur more often than once every 20 seconds"
           }
         ]
       },
@@ -1216,13 +1193,13 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               },
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "cannot occur more often than once every 20 seconds"
+                "description": "cannot occur more often than once every 20 seconds"
               }
             ],
             "value": 50.0,
@@ -1234,13 +1211,13 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               },
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "cannot occur more often than once every 20 seconds"
+                "description": "cannot occur more often than once every 20 seconds"
               }
             ],
             "value": 30.0,
@@ -1254,7 +1231,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -1267,7 +1244,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -1280,7 +1257,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -1293,20 +1270,20 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below 50% Life",
+            "description": "below 50% Life",
             "threshold": 50.0
           },
           {
             "type": "cooldown",
             "cooldown": 20.0,
-            "text": "cannot occur more often than once every 20 seconds"
+            "description": "cannot occur more often than once every 20 seconds"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below 50% Life",
+            "description": "below 50% Life",
             "threshold": 50.0
           }
         ]
@@ -1341,7 +1318,7 @@
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "Your attacks"
+                "description": "Your attacks"
               }
             ],
             "value": 10.0,
@@ -1354,7 +1331,7 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "Your attacks"
+            "description": "Your attacks"
           }
         ]
       },
@@ -1367,13 +1344,13 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "stacking up to 10 times",
+                "description": "stacking up to 10 times",
                 "threshold": 10.0
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "While at full stacks"
+                "description": "While at full stacks"
               }
             ],
             "value": 0.8,
@@ -1387,13 +1364,13 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "stacking up to 10 times",
+                "description": "stacking up to 10 times",
                 "threshold": 10.0
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "While at full stacks"
+                "description": "While at full stacks"
               }
             ],
             "value": 2.4,
@@ -1405,26 +1382,26 @@
           {
             "type": "state",
             "state": "stacks",
-            "text": "stacking up to 10 times",
+            "description": "stacking up to 10 times",
             "threshold": 10.0
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "While at full stacks"
+            "description": "While at full stacks"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "stacks",
-            "text": "stacking up to 10 times",
+            "description": "stacking up to 10 times",
             "threshold": 10.0
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "While at full stacks"
+            "description": "While at full stacks"
           }
         ]
       },
@@ -1437,13 +1414,13 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "stacking up to 10 times",
+                "description": "stacking up to 10 times",
                 "threshold": 10.0
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "While at full stacks"
+                "description": "While at full stacks"
               }
             ],
             "value": 0.8,
@@ -1456,13 +1433,13 @@
           {
             "type": "state",
             "state": "stacks",
-            "text": "stacking up to 10 times",
+            "description": "stacking up to 10 times",
             "threshold": 10.0
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "While at full stacks"
+            "description": "While at full stacks"
           }
         ]
       }
@@ -1492,26 +1469,14 @@
         "base_values": [],
         "rank_10_values": [
           {
-            "conditions": [
-              {
-                "type": "trigger",
-                "trigger": "on_attack",
-                "text": "your attacks"
-              }
-            ],
-            "value": 20.0,
+            "conditions": [],
+            "value": 10.0,
             "unit": "percentage",
             "scaling": false
           }
         ],
         "conditions": [],
-        "rank_10_conditions": [
-          {
-            "type": "trigger",
-            "trigger": "on_attack",
-            "text": "your attacks"
-          }
-        ]
+        "rank_10_conditions": []
       },
       {
         "name": "Bottled Hope",
@@ -1552,7 +1517,7 @@
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "Your attacks"
+                "description": "Your attacks"
               }
             ],
             "value": 50.0,
@@ -1565,7 +1530,7 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "Your attacks"
+            "description": "Your attacks"
           }
         ]
       },
@@ -1579,12 +1544,12 @@
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "Your attacks"
+                "description": "Your attacks"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "at 8 yards",
+                "description": "at 8 yards",
                 "threshold": 8.0
               }
             ],
@@ -1597,7 +1562,7 @@
           {
             "type": "state",
             "state": "position",
-            "text": "at 8 yards",
+            "description": "at 8 yards",
             "threshold": 8.0
           }
         ],
@@ -1605,12 +1570,12 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "Your attacks"
+            "description": "Your attacks"
           },
           {
             "type": "state",
             "state": "position",
-            "text": "at 8 yards",
+            "description": "at 8 yards",
             "threshold": 8.0
           }
         ]
@@ -1624,13 +1589,13 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "stacking up to 10 times",
+                "description": "stacking up to 10 times",
                 "threshold": 10.0
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "While at full stacks"
+                "description": "While at full stacks"
               }
             ],
             "value": 9.0,
@@ -1644,13 +1609,13 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "stacking up to 10 times",
+                "description": "stacking up to 10 times",
                 "threshold": 10.0
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "While at full stacks"
+                "description": "While at full stacks"
               }
             ],
             "value": 12.0,
@@ -1662,26 +1627,26 @@
           {
             "type": "state",
             "state": "stacks",
-            "text": "stacking up to 10 times",
+            "description": "stacking up to 10 times",
             "threshold": 10.0
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "While at full stacks"
+            "description": "While at full stacks"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "stacks",
-            "text": "stacking up to 10 times",
+            "description": "stacking up to 10 times",
             "threshold": 10.0
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "While at full stacks"
+            "description": "While at full stacks"
           }
         ]
       },
@@ -1723,13 +1688,13 @@
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "stacking up to 10 times",
+                "description": "stacking up to 10 times",
                 "threshold": 10.0
               },
               {
                 "type": "state",
                 "state": "stacks",
-                "text": "While at full stacks"
+                "description": "While at full stacks"
               }
             ],
             "value": 9.0,
@@ -1742,13 +1707,13 @@
           {
             "type": "state",
             "state": "stacks",
-            "text": "stacking up to 10 times",
+            "description": "stacking up to 10 times",
             "threshold": 10.0
           },
           {
             "type": "state",
             "state": "stacks",
-            "text": "While at full stacks"
+            "description": "While at full stacks"
           }
         ]
       }
@@ -1767,12 +1732,12 @@
               {
                 "type": "trigger",
                 "trigger": "on_hit",
-                "text": "When you take damage"
+                "description": "When you take damage"
               },
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               }
             ],
             "value": 10.0,
@@ -1785,12 +1750,12 @@
           {
             "type": "trigger",
             "trigger": "on_hit",
-            "text": "When you take damage"
+            "description": "When you take damage"
           },
           {
             "type": "state",
             "state": "target_count",
-            "text": "all nearby enemies"
+            "description": "all nearby enemies"
           }
         ]
       },
@@ -1817,7 +1782,7 @@
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ],
             "value": 16.0,
@@ -1830,7 +1795,7 @@
           {
             "type": "trigger",
             "trigger": "on_attack",
-            "text": "your attacks"
+            "description": "your attacks"
           }
         ]
       },
@@ -1859,7 +1824,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -1872,14 +1837,14 @@
           {
             "type": "cooldown",
             "cooldown": 20.0,
-            "text": "cannot occur more often than once every 20 seconds"
+            "description": "cannot occur more often than once every 20 seconds"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below 50% Life",
+            "description": "below 50% Life",
             "threshold": 50.0
           }
         ]
@@ -1922,7 +1887,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "above 75% Life",
+                "description": "above 75% Life",
                 "threshold": 75.0
               }
             ],
@@ -1935,7 +1900,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "above 75% Life",
+                "description": "above 75% Life",
                 "threshold": 75.0
               }
             ],
@@ -1949,7 +1914,7 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "above 75% Life",
+            "description": "above 75% Life",
             "threshold": 75.0
           }
         ]
@@ -1964,7 +1929,7 @@
               {
                 "type": "state",
                 "state": "position",
-                "text": "within 3 yards",
+                "description": "within 3 yards",
                 "threshold": 3.0
               }
             ],
@@ -1977,7 +1942,7 @@
           {
             "type": "state",
             "state": "position",
-            "text": "within 3 yards",
+            "description": "within 3 yards",
             "threshold": 3.0
           }
         ],
@@ -1985,7 +1950,7 @@
           {
             "type": "state",
             "state": "position",
-            "text": "within 3 yards",
+            "description": "within 3 yards",
             "threshold": 3.0
           }
         ]
@@ -2020,7 +1985,7 @@
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ],
@@ -2033,25 +1998,59 @@
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below 50% Life",
+            "description": "below 50% Life",
             "threshold": 50.0
           },
           {
             "type": "cooldown",
             "cooldown": 20.0,
-            "text": "cannot occur more often than once every 20 seconds"
+            "description": "cannot occur more often than once every 20 seconds"
           }
         ],
         "rank_10_conditions": [
           {
             "type": "state",
             "state": "health_threshold",
-            "text": "below 50% Life",
+            "description": "below 50% Life",
             "threshold": 50.0
           }
         ]
       }
     ],
     "description": "Increases maximum life"
+  },
+  "damage_reduction": {
+    "gems": [
+      {
+        "name": "Blood-Soaked Jade",
+        "stars": "5",
+        "base_values": [],
+        "rank_10_values": [
+          {
+            "conditions": [
+              {
+                "type": "state",
+                "state": "health_threshold",
+                "description": "below 50% Life",
+                "threshold": 50.0
+              }
+            ],
+            "value": 8.0,
+            "unit": "percentage",
+            "scaling": false
+          }
+        ],
+        "conditions": [],
+        "rank_10_conditions": [
+          {
+            "type": "state",
+            "state": "health_threshold",
+            "description": "below 50% Life",
+            "threshold": 50.0
+          }
+        ]
+      }
+    ],
+    "description": "Reduces damage taken"
   }
 }

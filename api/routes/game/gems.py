@@ -5,7 +5,7 @@ API routes for gem-related operations.
 import json
 import logging
 from typing import List, Optional
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 
 from api.models.game_data.manager import GameDataManager
 from api.models.game_data.schemas.gems import (
@@ -17,15 +17,9 @@ router = APIRouter(prefix="/gems", tags=["gems"])
 logger = logging.getLogger(__name__)
 
 
-async def get_data_manager() -> GameDataManager:
-    """Dependency to get the game data manager instance."""
-    # TODO: Performance optimization needed - currently creates new GameDataManager
-    # instance per request. Should be singleton to:
-    # 1. Share cache across requests
-    # 2. Avoid redundant metadata loads
-    # 3. Prevent multiple instances during concurrent requests
-    logger.info(f"Creating GameDataManager with data_dir: {settings.data_path}")
-    return GameDataManager(settings=settings)
+async def get_data_manager(request: Request) -> GameDataManager:
+    """Get the GameDataManager instance from app state."""
+    return request.app.state.data_manager
 
 
 def transform_gem_data(gem_dict: dict) -> dict:
@@ -503,7 +497,7 @@ async def get_gem_progression(
             "Stars": gem_data["stars"],
             "Ranks": gem_data["ranks"],
             "MaxRank": 10,
-            "MaxEffect": gem_data["ranks"]["10"]["effects"][0]["text"]
+            "MaxEffect": gem_data["ranks"]["10"]["effects"][0]["description"]
         }
             
     except HTTPException:

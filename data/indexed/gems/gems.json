@@ -6,12 +6,12 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal by 5",
+            "description": "Increases all damage you deal by 5",
             "conditions": []
           },
           {
             "type": "stat_effect",
-            "text": "increases all damage you take by 5%",
+            "description": "increases all damage you take by 5%",
             "conditions": []
           }
         ],
@@ -29,7 +29,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 6.50%",
+            "description": "Damage increased by up to 6.50%",
             "conditions": []
           }
         ],
@@ -39,7 +39,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Critical Hit Chance increased by 0.5%",
+            "description": "Critical Hit Chance increased by 0.5%",
             "conditions": []
           }
         ],
@@ -49,7 +49,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 8.00%",
+            "description": "Damage increased by up to 8.00%",
             "conditions": []
           }
         ],
@@ -59,7 +59,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Critical Hit Chance increased by 1%",
+            "description": "Critical Hit Chance increased by 1%",
             "conditions": []
           }
         ],
@@ -69,7 +69,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 10.00%",
+            "description": "Damage increased by up to 10.00%",
             "conditions": []
           }
         ],
@@ -79,7 +79,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Critical Hit Chance increased by 1.5%",
+            "description": "Critical Hit Chance increased by 1.5%",
             "conditions": []
           }
         ],
@@ -89,7 +89,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 13.00%",
+            "description": "Damage increased by up to 13.00%",
             "conditions": []
           }
         ],
@@ -99,7 +99,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Critical Hit Chance increased by 2%",
+            "description": "Critical Hit Chance increased by 2%",
             "conditions": []
           }
         ],
@@ -109,7 +109,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 16.00%",
+            "description": "Damage increased by up to 16.00%",
             "conditions": []
           }
         ],
@@ -127,7 +127,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the duration of beneficial effects on you by 4",
+            "description": "Increases the duration of beneficial effects on you by 4",
             "conditions": []
           }
         ],
@@ -137,7 +137,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the duration of beneficial effects on you by 5",
+            "description": "Increases the duration of beneficial effects on you by 5",
             "conditions": []
           }
         ],
@@ -147,7 +147,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases Movement Speed by 2% for 3 seconds after gaining a beneficial effect",
+            "description": "Increases Movement Speed by 2% for 3 seconds after gaining a beneficial effect",
             "conditions": []
           }
         ],
@@ -157,7 +157,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the duration of beneficial effects on you by 6",
+            "description": "Increases the duration of beneficial effects on you by 6",
             "conditions": []
           }
         ],
@@ -167,7 +167,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases Movement Speed by 4% for 3 seconds after gaining a beneficial effect",
+            "description": "Increases Movement Speed by 4% for 3 seconds after gaining a beneficial effect",
             "conditions": []
           }
         ],
@@ -177,7 +177,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the duration of beneficial effects on you by 8%",
+            "description": "Increases the duration of beneficial effects on you by 8%",
             "conditions": []
           }
         ],
@@ -187,7 +187,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Increased Movement Speed by 6% for 3 seconds",
+            "description": "Increased Movement Speed by 6% for 3 seconds",
             "conditions": []
           }
         ],
@@ -197,7 +197,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Unknown",
+            "description": "Unknown",
             "conditions": []
           }
         ],
@@ -207,7 +207,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the duration of beneficial effects on you by 12%",
+            "description": "Increases the duration of beneficial effects on you by 12%",
             "conditions": []
           }
         ],
@@ -217,7 +217,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases Movement Speed by 8% for 3 seconds after gaining a beneficial effect",
+            "description": "Increases Movement Speed by 8% for 3 seconds after gaining a beneficial effect",
             "conditions": []
           }
         ],
@@ -235,7 +235,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the speed of your Primary Attack by 5",
+            "description": "Increases the speed of your Primary Attack by 5",
             "conditions": []
           }
         ],
@@ -245,7 +245,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Attack Speed bonus increased to 6.50%",
+            "description": "Attack Speed bonus increased to 6.50%",
             "conditions": []
           }
         ],
@@ -255,7 +255,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Primary Attack damage increased by 0.5%",
+            "description": "Primary Attack damage increased by 0.5%",
             "conditions": []
           }
         ],
@@ -265,7 +265,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Attack Speed bonus increased to 8.00%",
+            "description": "Attack Speed bonus increased to 8.00%",
             "conditions": []
           }
         ],
@@ -275,7 +275,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Primary Attack damage increased by 1%",
+            "description": "Primary Attack damage increased by 1%",
             "conditions": []
           }
         ],
@@ -285,7 +285,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Attack Speed bonus increased to 10.00%",
+            "description": "Attack Speed bonus increased to 10.00%",
             "conditions": []
           }
         ],
@@ -295,7 +295,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Primary Attack damage increased by 1.5%",
+            "description": "Primary Attack damage increased by 1.5%",
             "conditions": []
           }
         ],
@@ -305,7 +305,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Attack Speed bonus increased to 13.00%",
+            "description": "Attack Speed bonus increased to 13.00%",
             "conditions": []
           }
         ],
@@ -315,7 +315,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Primary Attack damage increased by 2%",
+            "description": "Primary Attack damage increased by 2%",
             "conditions": []
           }
         ],
@@ -325,7 +325,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Attack Speed bonus increased to 16.00%",
+            "description": "Attack Speed bonus increased to 16.00%",
             "conditions": []
           }
         ],
@@ -343,12 +343,12 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the damage of your attacks by 1",
+            "description": "Increases the damage of your attacks by 1",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           }
@@ -359,7 +359,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 1.70%",
+            "description": "Damage increased by up to 1.70%",
             "conditions": []
           }
         ],
@@ -369,7 +369,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases to a maximum of 4 targets",
+            "description": "increases to a maximum of 4 targets",
             "conditions": []
           }
         ],
@@ -379,7 +379,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 1.80%",
+            "description": "Damage increased to 1.80%",
             "conditions": []
           }
         ],
@@ -389,7 +389,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases to a maximum of 5 targets",
+            "description": "increases to a maximum of 5 targets",
             "conditions": []
           }
         ],
@@ -399,7 +399,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 2.00%",
+            "description": "Damage increased to 2.00%",
             "conditions": []
           }
         ],
@@ -409,7 +409,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases to a maximum of 6 targets",
+            "description": "increases to a maximum of 6 targets",
             "conditions": []
           }
         ],
@@ -419,7 +419,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 2.20%",
+            "description": "Damage increased by up to 2.20%",
             "conditions": []
           }
         ],
@@ -429,7 +429,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases to a maximum of 7 targets",
+            "description": "increases to a maximum of 7 targets",
             "conditions": []
           }
         ],
@@ -439,7 +439,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 2.50%",
+            "description": "Damage increased by up to 2.50%",
             "conditions": []
           }
         ],
@@ -457,17 +457,17 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Each time you Block an attack, you deal 64% base damage + 777 to all nearby enemies. Cannot occur more often than once every 20 seconds",
+            "description": "Each time you Block an attack, you deal 64% base damage + 777 to all nearby enemies. Cannot occur more often than once every 20 seconds",
             "conditions": [
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               },
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "Cannot occur more often than once every 20 seconds"
+                "description": "Cannot occur more often than once every 20 seconds"
               }
             ]
           }
@@ -480,12 +480,12 @@
                 {
                   "type": "state",
                   "state": "target_count",
-                  "text": "all nearby enemies"
+                  "description": "all nearby enemies"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": "an attack, you deal 64% base damage + 777 to all nearby"
@@ -497,7 +497,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 80% of base damage",
+            "description": "Damage is increased to 80% of base damage",
             "conditions": []
           }
         ],
@@ -515,7 +515,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage you take by 1.5% for 3 seconds after Blocking",
+            "description": "Decreases all damage you take by 1.5% for 3 seconds after Blocking",
             "conditions": []
           }
         ],
@@ -525,7 +525,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 96% of base damage",
+            "description": "Damage is increased to 96% of base damage",
             "conditions": []
           }
         ],
@@ -543,7 +543,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage you take by 3% for 3 seconds after Blocking",
+            "description": "Decreases all damage you take by 3% for 3 seconds after Blocking",
             "conditions": []
           }
         ],
@@ -553,7 +553,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 128% of base damage",
+            "description": "Damage is increased to 128% of base damage",
             "conditions": []
           }
         ],
@@ -571,7 +571,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage you take by 4.5% for 3 seconds after Blocking",
+            "description": "Decreases all damage you take by 4.5% for 3 seconds after Blocking",
             "conditions": []
           }
         ],
@@ -581,7 +581,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 160% of base damage",
+            "description": "Damage is increased to 160% of base damage",
             "conditions": []
           }
         ],
@@ -599,7 +599,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage you take by 6.0% for 3 seconds after Blocking",
+            "description": "Decreases all damage you take by 6.0% for 3 seconds after Blocking",
             "conditions": []
           }
         ],
@@ -609,7 +609,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 192% of base damage",
+            "description": "Damage is increased to 192% of base damage",
             "conditions": []
           }
         ],
@@ -635,12 +635,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your critical hits inflict agony, dealing 10% base damage + 122 every second for 6 seconds. Each enemy cannot be affected by this more often than once every 20 seconds",
+            "description": "Your critical hits inflict agony, dealing 10% base damage + 122 every second for 6 seconds. Each enemy cannot be affected by this more often than once every 20 seconds",
             "conditions": [
               {
                 "type": "target_restriction",
                 "cooldown": 20.0,
-                "text": "Each enemy cannot be affected by this more often than once every 20 seconds"
+                "description": "Each enemy cannot be affected by this more often than once every 20 seconds"
               }
             ]
           }
@@ -653,7 +653,7 @@
                 {
                   "type": "target_restriction",
                   "cooldown": 20.0,
-                  "text": "Each enemy cannot be affected by this more often than once every 20 seconds"
+                  "description": "Each enemy cannot be affected by this more often than once every 20 seconds"
                 }
               ],
               "context": "lict agony, dealing 10% base damage + 122 every second "
@@ -665,7 +665,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 12% of base damage",
+            "description": "Damage is increased to 12% of base damage",
             "conditions": []
           }
         ],
@@ -683,7 +683,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases your attack speed by 1",
+            "description": "Increases your attack speed by 1",
             "conditions": []
           }
         ],
@@ -693,7 +693,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 15% of base damage",
+            "description": "Damage is increased to 15% of base damage",
             "conditions": []
           }
         ],
@@ -711,7 +711,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases your attack speed by 3% for each nearby enemy afflicted with agony",
+            "description": "Increases your attack speed by 3% for each nearby enemy afflicted with agony",
             "conditions": []
           }
         ],
@@ -721,7 +721,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 20% of base damage",
+            "description": "Damage is increased to 20% of base damage",
             "conditions": []
           }
         ],
@@ -739,7 +739,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases your attack speed by 4",
+            "description": "Increases your attack speed by 4",
             "conditions": []
           }
         ],
@@ -749,7 +749,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 25% of base damage",
+            "description": "Damage is increased to 25% of base damage",
             "conditions": []
           }
         ],
@@ -767,7 +767,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases your attack speed by 6% for each nearby enemy afflicted with agony",
+            "description": "Increases your attack speed by 6% for each nearby enemy afflicted with agony",
             "conditions": []
           }
         ],
@@ -777,7 +777,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 30% of base damage",
+            "description": "Damage is increased to 30% of base damage",
             "conditions": []
           }
         ],
@@ -803,7 +803,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the duration of your summons by 8",
+            "description": "Increases the duration of your summons by 8",
             "conditions": []
           }
         ],
@@ -813,7 +813,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Summons duration increased by 10.00%",
+            "description": "Summons duration increased by 10.00%",
             "conditions": []
           }
         ],
@@ -823,7 +823,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the damage of your summons by 0",
+            "description": "Increases the damage of your summons by 0",
             "conditions": []
           }
         ],
@@ -833,7 +833,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Summons duration increased by 13.00%",
+            "description": "Summons duration increased by 13.00%",
             "conditions": []
           }
         ],
@@ -843,7 +843,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the damage of your summons by 1",
+            "description": "Increases the damage of your summons by 1",
             "conditions": []
           }
         ],
@@ -853,7 +853,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Summons duration increased by 16.00%",
+            "description": "Summons duration increased by 16.00%",
             "conditions": []
           }
         ],
@@ -863,7 +863,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the damage of your summons by 2",
+            "description": "Increases the damage of your summons by 2",
             "conditions": []
           }
         ],
@@ -873,7 +873,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Summons duration increased by 20.00%",
+            "description": "Summons duration increased by 20.00%",
             "conditions": []
           }
         ],
@@ -883,7 +883,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the damage of your summons by 3%",
+            "description": "Increases the damage of your summons by 3%",
             "conditions": []
           }
         ],
@@ -893,7 +893,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Summons duration increased by 24.00%",
+            "description": "Summons duration increased by 24.00%",
             "conditions": []
           }
         ],
@@ -911,7 +911,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb shields are increased by 16",
+            "description": "absorb shields are increased by 16",
             "conditions": []
           }
         ],
@@ -921,7 +921,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "Absorb shield durations increased to 20",
+            "description": "Absorb shield durations increased to 20",
             "conditions": []
           }
         ],
@@ -931,7 +931,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "Absorb shields also reduce the duration of Loss of Control effects by 6% while active",
+            "description": "Absorb shields also reduce the duration of Loss of Control effects by 6% while active",
             "conditions": []
           }
         ],
@@ -941,7 +941,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb shields are increased by 24%",
+            "description": "absorb shields are increased by 24%",
             "conditions": []
           }
         ],
@@ -951,7 +951,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "Absorb shields also reduce the duration of Loss of Control effects by 12% while active",
+            "description": "Absorb shields also reduce the duration of Loss of Control effects by 12% while active",
             "conditions": []
           }
         ],
@@ -961,7 +961,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb shields increased by 28%",
+            "description": "absorb shields increased by 28%",
             "conditions": []
           }
         ],
@@ -971,7 +971,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "Absorb shields also reduce the duration of Loss of Control effects by 18% while active",
+            "description": "Absorb shields also reduce the duration of Loss of Control effects by 18% while active",
             "conditions": []
           }
         ],
@@ -981,7 +981,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb shields increased by 32%",
+            "description": "absorb shields increased by 32%",
             "conditions": []
           }
         ],
@@ -991,7 +991,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "Absorb shields also reduce the duration of Loss of Control effects by 24% while active",
+            "description": "Absorb shields also reduce the duration of Loss of Control effects by 24% while active",
             "conditions": []
           }
         ],
@@ -1001,7 +1001,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb shields increased by 36%",
+            "description": "absorb shields increased by 36%",
             "conditions": []
           }
         ],
@@ -1019,17 +1019,17 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your Primary Attack Taunts non-Boss monsters, forcing them to attack you for 2.00 seconds. Each target cannot be affected more often than once every 20 seconds",
+            "description": "Your Primary Attack Taunts non-Boss monsters, forcing them to attack you for 2.00 seconds. Each target cannot be affected more often than once every 20 seconds",
             "conditions": [
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "cannot be affected more often than once every 20 seconds"
+                "description": "cannot be affected more often than once every 20 seconds"
               },
               {
                 "type": "target_restriction",
                 "cooldown": 20.0,
-                "text": "Each target cannot be affected more often than once every 20 seconds"
+                "description": "Each target cannot be affected more often than once every 20 seconds"
               }
             ]
           }
@@ -1040,7 +1040,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Taunt duration increased to 2.50 seconds",
+            "description": "Taunt duration increased to 2.50 seconds",
             "conditions": []
           }
         ],
@@ -1050,7 +1050,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decrease all damage you take by 2% from monsters affected by Mocking Laughter",
+            "description": "Decrease all damage you take by 2% from monsters affected by Mocking Laughter",
             "conditions": []
           }
         ],
@@ -1060,7 +1060,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Taunt duration increased to 3.00 seconds",
+            "description": "Taunt duration increased to 3.00 seconds",
             "conditions": []
           }
         ],
@@ -1070,7 +1070,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decrease all damage you take by 4% from monsters affected by Mocking Laughter",
+            "description": "Decrease all damage you take by 4% from monsters affected by Mocking Laughter",
             "conditions": []
           }
         ],
@@ -1080,7 +1080,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Taunt duration increased to 4.00 seconds",
+            "description": "Taunt duration increased to 4.00 seconds",
             "conditions": []
           }
         ],
@@ -1090,7 +1090,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decrease all damage you take by 6% from monsters affected by Mocking Laughter",
+            "description": "Decrease all damage you take by 6% from monsters affected by Mocking Laughter",
             "conditions": []
           }
         ],
@@ -1100,7 +1100,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Taunt duration increased to 5.00 seconds",
+            "description": "Taunt duration increased to 5.00 seconds",
             "conditions": []
           }
         ],
@@ -1110,7 +1110,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decrease all damage you take by 8% from monsters affected by Mocking Laughter",
+            "description": "Decrease all damage you take by 8% from monsters affected by Mocking Laughter",
             "conditions": []
           }
         ],
@@ -1120,7 +1120,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Taunt duration increased to 6.00 seconds",
+            "description": "Taunt duration increased to 6.00 seconds",
             "conditions": []
           }
         ],
@@ -1138,17 +1138,17 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You have a 10% chance when you defeat an enemy to cause other nearby enemies to flee in fear for 0.80 seconds. Cannot occur more often than once every 20 seconds",
+            "description": "You have a 10% chance when you defeat an enemy to cause other nearby enemies to flee in fear for 0.80 seconds. Cannot occur more often than once every 20 seconds",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "when you defeat"
+                "description": "when you defeat"
               },
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "Cannot occur more often than once every 20 seconds"
+                "description": "Cannot occur more often than once every 20 seconds"
               }
             ]
           }
@@ -1161,12 +1161,12 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "when you defeat"
+                  "description": "when you defeat"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": "You have a 10% chance when you defeat an "
@@ -1178,7 +1178,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Fear duration increased to 1.00 seconds",
+            "description": "Fear duration increased to 1.00 seconds",
             "conditions": []
           }
         ],
@@ -1188,7 +1188,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to targets afflicted with Fear by 2%",
+            "description": "Increases all damage you deal to targets afflicted with Fear by 2%",
             "conditions": []
           }
         ],
@@ -1198,7 +1198,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Fear duration increased to 1.20 seconds",
+            "description": "Fear duration increased to 1.20 seconds",
             "conditions": []
           }
         ],
@@ -1208,7 +1208,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to targets afflicted with Fear by 4%",
+            "description": "Increases all damage you deal to targets afflicted with Fear by 4%",
             "conditions": []
           }
         ],
@@ -1218,7 +1218,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Fear duration increased to 1.60 seconds",
+            "description": "Fear duration increased to 1.60 seconds",
             "conditions": []
           }
         ],
@@ -1228,7 +1228,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to targets afflicted with Fear by 6%",
+            "description": "Increases all damage you deal to targets afflicted with Fear by 6%",
             "conditions": []
           }
         ],
@@ -1238,7 +1238,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Fear duration increased to 2.00 seconds",
+            "description": "Fear duration increased to 2.00 seconds",
             "conditions": []
           }
         ],
@@ -1248,7 +1248,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to targets afflicted with Fear by 8%",
+            "description": "Increases all damage you deal to targets afflicted with Fear by 8%",
             "conditions": []
           }
         ],
@@ -1258,7 +1258,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Fear duration increased to 2.40 seconds",
+            "description": "Fear duration increased to 2.40 seconds",
             "conditions": []
           }
         ],
@@ -1276,7 +1276,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You deal 5.5% increased damage to enemies suffering loss of control",
+            "description": "You deal 5.5% increased damage to enemies suffering loss of control",
             "conditions": []
           }
         ],
@@ -1294,7 +1294,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 6.50%",
+            "description": "Damage increased by up to 6.50%",
             "conditions": []
           }
         ],
@@ -1304,7 +1304,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage you take by 1% while suffering loss of control of your character",
+            "description": "Decreases all damage you take by 1% while suffering loss of control of your character",
             "conditions": []
           }
         ],
@@ -1314,7 +1314,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 8.00%",
+            "description": "Damage increased by up to 8.00%",
             "conditions": []
           }
         ],
@@ -1324,7 +1324,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage you take by 2% while suffering loss of control of your character",
+            "description": "Decreases all damage you take by 2% while suffering loss of control of your character",
             "conditions": []
           }
         ],
@@ -1334,7 +1334,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 10.00%",
+            "description": "Damage increased by up to 10.00%",
             "conditions": []
           }
         ],
@@ -1344,7 +1344,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage you take by 3% while suffering loss of control of your character",
+            "description": "Decreases all damage you take by 3% while suffering loss of control of your character",
             "conditions": []
           }
         ],
@@ -1354,7 +1354,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 13.00%",
+            "description": "Damage increased by up to 13.00%",
             "conditions": []
           }
         ],
@@ -1364,7 +1364,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage you take by 4% while suffering loss of control of your character",
+            "description": "Decreases all damage you take by 4% while suffering loss of control of your character",
             "conditions": []
           }
         ],
@@ -1374,7 +1374,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 16.00%",
+            "description": "Damage increased by up to 16.00%",
             "conditions": []
           }
         ],
@@ -1392,7 +1392,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You take 0.55% decreased damage for every 10% your Life is below maximum, up to a maximum decrease of 0.55 * 10%",
+            "description": "You take 0.55% decreased damage for every 10% your Life is below maximum, up to a maximum decrease of 0.55 * 10%",
             "conditions": []
           }
         ],
@@ -1417,7 +1417,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 0.65%",
+            "description": "Damage decrease bonus increased to 0.65%",
             "conditions": []
           }
         ],
@@ -1427,7 +1427,7 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain 1",
+            "description": "Gain 1",
             "conditions": []
           }
         ],
@@ -1445,7 +1445,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 0.80%",
+            "description": "Damage decrease bonus increased to 0.80%",
             "conditions": []
           }
         ],
@@ -1455,7 +1455,7 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain 3% increased Armor while your Life is below 50%",
+            "description": "Gain 3% increased Armor while your Life is below 50%",
             "conditions": []
           }
         ],
@@ -1473,7 +1473,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 1.00%",
+            "description": "Damage decrease bonus increased to 1.00%",
             "conditions": []
           }
         ],
@@ -1483,7 +1483,7 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain 4",
+            "description": "Gain 4",
             "conditions": []
           }
         ],
@@ -1501,7 +1501,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 1.30%",
+            "description": "Damage decrease bonus increased to 1.30%",
             "conditions": []
           }
         ],
@@ -1511,7 +1511,7 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain 6% increased Armor while your Life is below 50%",
+            "description": "Gain 6% increased Armor while your Life is below 50%",
             "conditions": []
           }
         ],
@@ -1529,7 +1529,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 1.60%",
+            "description": "Damage decrease bonus increased to 1.60%",
             "conditions": []
           }
         ],
@@ -1547,7 +1547,7 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain 6",
+            "description": "Gain 6",
             "conditions": []
           }
         ],
@@ -1559,7 +1559,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "after killing"
+                  "description": "after killing"
                 }
               ],
               "context": "Gain 6.00% increased damage for 60 seconds afte"
@@ -1571,7 +1571,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 8.00%",
+            "description": "Damage increased by up to 8.00%",
             "conditions": []
           }
         ],
@@ -1581,7 +1581,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to Elite monsters by 1%",
+            "description": "Increases all damage you deal to Elite monsters by 1%",
             "conditions": []
           }
         ],
@@ -1591,7 +1591,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 10.00%",
+            "description": "Damage increased by up to 10.00%",
             "conditions": []
           }
         ],
@@ -1601,7 +1601,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to Elite monsters by 2%",
+            "description": "Increases all damage you deal to Elite monsters by 2%",
             "conditions": []
           }
         ],
@@ -1611,7 +1611,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 12.50%",
+            "description": "Damage increased by up to 12.50%",
             "conditions": []
           }
         ],
@@ -1621,7 +1621,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to Elite monsters by 3%",
+            "description": "Increases all damage you deal to Elite monsters by 3%",
             "conditions": []
           }
         ],
@@ -1631,7 +1631,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 15.25%",
+            "description": "Damage increased by up to 15.25%",
             "conditions": []
           }
         ],
@@ -1641,7 +1641,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to Elite monsters by 4%",
+            "description": "Increases all damage you deal to Elite monsters by 4%",
             "conditions": []
           }
         ],
@@ -1651,7 +1651,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 18.00%",
+            "description": "Damage increased by up to 18.00%",
             "conditions": []
           }
         ],
@@ -1669,17 +1669,17 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to summon vines that Immobilize the attacker for 1",
+            "description": "chance to summon vines that Immobilize the attacker for 1",
             "conditions": []
           },
           {
             "type": "summon_effect",
-            "text": "summon vines that Immobilize the attacker for 1",
+            "description": "summon vines that Immobilize the attacker for 1",
             "conditions": []
           },
           {
             "type": "control_effect",
-            "text": "Immobilize the attacker for 1",
+            "description": "Immobilize the attacker for 1",
             "conditions": []
           }
         ],
@@ -1691,7 +1691,7 @@
                 {
                   "type": "target_restriction",
                   "cooldown": 20.0,
-                  "text": "Each enemy cannot be affected by this more often than once every 20 seconds"
+                  "description": "Each enemy cannot be affected by this more often than once every 20 seconds"
                 }
               ],
               "context": "ttacked, you have a 10% chance to summon vines tha"
@@ -1703,7 +1703,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Immobilize duration increased to 1",
+            "description": "Immobilize duration increased to 1",
             "conditions": []
           }
         ],
@@ -1713,12 +1713,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "Chance to summon vines increased to 13",
+            "description": "Chance to summon vines increased to 13",
             "conditions": []
           },
           {
             "type": "summon_effect",
-            "text": "summon vines increased to 13",
+            "description": "summon vines increased to 13",
             "conditions": []
           }
         ],
@@ -1728,7 +1728,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Immobilize duration increased to 1",
+            "description": "Immobilize duration increased to 1",
             "conditions": []
           }
         ],
@@ -1738,12 +1738,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "Chance to summon vines increased to 17%",
+            "description": "Chance to summon vines increased to 17%",
             "conditions": []
           },
           {
             "type": "summon_effect",
-            "text": "summon vines increased to 17%",
+            "description": "summon vines increased to 17%",
             "conditions": []
           }
         ],
@@ -1753,7 +1753,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Immobilize duration increased to 2",
+            "description": "Immobilize duration increased to 2",
             "conditions": []
           }
         ],
@@ -1763,12 +1763,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "Chance to summon vines increased to 20",
+            "description": "Chance to summon vines increased to 20",
             "conditions": []
           },
           {
             "type": "summon_effect",
-            "text": "summon vines increased to 20",
+            "description": "summon vines increased to 20",
             "conditions": []
           }
         ],
@@ -1778,7 +1778,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Immobilize duration increased to 2",
+            "description": "Immobilize duration increased to 2",
             "conditions": []
           }
         ],
@@ -1788,12 +1788,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "Chance to summon vines increased to 24",
+            "description": "Chance to summon vines increased to 24",
             "conditions": []
           },
           {
             "type": "summon_effect",
-            "text": "summon vines increased to 24",
+            "description": "summon vines increased to 24",
             "conditions": []
           }
         ],
@@ -1803,7 +1803,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Immobilize duration increased to 3",
+            "description": "Immobilize duration increased to 3",
             "conditions": []
           }
         ],
@@ -1821,7 +1821,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your Channeled skills consume energy 8.00% slower",
+            "description": "Your Channeled skills consume energy 8.00% slower",
             "conditions": []
           }
         ],
@@ -1831,7 +1831,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your Channeled skills consume energy 10.50% slower",
+            "description": "Your Channeled skills consume energy 10.50% slower",
             "conditions": []
           }
         ],
@@ -1841,7 +1841,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decrease all damage you take by 0.5% while using a Channel skill",
+            "description": "Decrease all damage you take by 0.5% while using a Channel skill",
             "conditions": []
           }
         ],
@@ -1851,7 +1851,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your Channeled skills consume energy 13.50% slower",
+            "description": "Your Channeled skills consume energy 13.50% slower",
             "conditions": []
           }
         ],
@@ -1861,7 +1861,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decrease all damage you take by 1.0% while using a Channel skill",
+            "description": "Decrease all damage you take by 1.0% while using a Channel skill",
             "conditions": []
           }
         ],
@@ -1871,7 +1871,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your Channeled skills consume energy 17.00% slower",
+            "description": "Your Channeled skills consume energy 17.00% slower",
             "conditions": []
           }
         ],
@@ -1881,7 +1881,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decrease all damage you take by 1.5% while using a Channel skill",
+            "description": "Decrease all damage you take by 1.5% while using a Channel skill",
             "conditions": []
           }
         ],
@@ -1891,7 +1891,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your Channeled skills consume energy 20.50% slower",
+            "description": "Your Channeled skills consume energy 20.50% slower",
             "conditions": []
           }
         ],
@@ -1901,7 +1901,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decrease all damage you take by 2% while using a Channel skill",
+            "description": "Decrease all damage you take by 2% while using a Channel skill",
             "conditions": []
           }
         ],
@@ -1911,7 +1911,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your Channeled skills consume energy 24.00% slower",
+            "description": "Your Channeled skills consume energy 24.00% slower",
             "conditions": []
           }
         ],
@@ -1929,7 +1929,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases the duration of your Ultimate Skills by 16",
+            "description": "Increases the duration of your Ultimate Skills by 16",
             "conditions": []
           }
         ],
@@ -1939,7 +1939,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Duration bonus increased to 20.00%",
+            "description": "Duration bonus increased to 20.00%",
             "conditions": []
           }
         ],
@@ -1949,7 +1949,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases damage done by your Ultimate Skills by 1",
+            "description": "Increases damage done by your Ultimate Skills by 1",
             "conditions": []
           }
         ],
@@ -1959,7 +1959,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Duration bonus increased to 24.00%",
+            "description": "Duration bonus increased to 24.00%",
             "conditions": []
           }
         ],
@@ -1969,7 +1969,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases damage done by your Ultimate Skills by 3%",
+            "description": "Increases damage done by your Ultimate Skills by 3%",
             "conditions": []
           }
         ],
@@ -1979,7 +1979,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Duration bonus increased to 32.00%",
+            "description": "Duration bonus increased to 32.00%",
             "conditions": []
           }
         ],
@@ -1989,7 +1989,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases damage done by your Ultimate Skills by 4",
+            "description": "Increases damage done by your Ultimate Skills by 4",
             "conditions": []
           }
         ],
@@ -1999,7 +1999,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Duration bonus increased to 40.00%",
+            "description": "Duration bonus increased to 40.00%",
             "conditions": []
           }
         ],
@@ -2009,7 +2009,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases damage done by your Ultimate Skills by 6%",
+            "description": "Increases damage done by your Ultimate Skills by 6%",
             "conditions": []
           }
         ],
@@ -2019,7 +2019,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Duration bonus increased to 48.00%",
+            "description": "Duration bonus increased to 48.00%",
             "conditions": []
           }
         ],
@@ -2037,12 +2037,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all melee damage you take by 8.00% from enemies within 3 yards",
+            "description": "Decreases all melee damage you take by 8.00% from enemies within 3 yards",
             "conditions": [
               {
                 "type": "state",
                 "state": "position",
-                "text": "within 3 yards",
+                "description": "within 3 yards",
                 "threshold": 3.0
               }
             ]
@@ -2054,7 +2054,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease increased to 10.50%",
+            "description": "Damage decrease increased to 10.50%",
             "conditions": []
           }
         ],
@@ -2064,7 +2064,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You move unhindered through enemies while your Life is below 15%",
+            "description": "You move unhindered through enemies while your Life is below 15%",
             "conditions": []
           }
         ],
@@ -2074,7 +2074,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease increased to 13.50%",
+            "description": "Damage decrease increased to 13.50%",
             "conditions": []
           }
         ],
@@ -2084,7 +2084,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You move unhindered through enemies while your Life is below 30%",
+            "description": "You move unhindered through enemies while your Life is below 30%",
             "conditions": []
           }
         ],
@@ -2094,7 +2094,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease increased to 17.00%",
+            "description": "Damage decrease increased to 17.00%",
             "conditions": []
           }
         ],
@@ -2104,7 +2104,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You move unhindered through enemies while your Life is below 45%",
+            "description": "You move unhindered through enemies while your Life is below 45%",
             "conditions": []
           }
         ],
@@ -2114,7 +2114,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease increased to 20.5%",
+            "description": "Damage decrease increased to 20.5%",
             "conditions": []
           }
         ],
@@ -2124,7 +2124,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You move unhindered through enemies while your Life is below 60%",
+            "description": "You move unhindered through enemies while your Life is below 60%",
             "conditions": []
           }
         ],
@@ -2134,7 +2134,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease increased to 24%",
+            "description": "Damage decrease increased to 24%",
             "conditions": []
           }
         ],
@@ -2152,7 +2152,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal by 2",
+            "description": "Increases all damage you deal by 2",
             "conditions": []
           }
         ],
@@ -2162,7 +2162,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 2.70%",
+            "description": "Damage increased by up to 2.70%",
             "conditions": []
           }
         ],
@@ -2172,7 +2172,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds",
+            "description": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds",
             "conditions": []
           }
         ],
@@ -2184,7 +2184,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 0.3% chance to decrease enemy attack and movement speeds by 35% for 3 secon"
@@ -2197,7 +2197,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 0.3% chance to decrease enemy a"
@@ -2209,7 +2209,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 3.40%",
+            "description": "Damage increased by up to 3.40%",
             "conditions": []
           }
         ],
@@ -2219,7 +2219,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds",
+            "description": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds",
             "conditions": []
           }
         ],
@@ -2231,7 +2231,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 0.6% chance to decrease enemy attack and movement speeds by 35% for 3 secon"
@@ -2244,7 +2244,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 0.6% chance to decrease enemy a"
@@ -2256,7 +2256,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 4.20%",
+            "description": "Damage increased by up to 4.20%",
             "conditions": []
           }
         ],
@@ -2266,7 +2266,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds",
+            "description": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds",
             "conditions": []
           }
         ],
@@ -2278,7 +2278,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 0.9% chance to decrease enemy attack and movement speeds by 35% for 3 secon"
@@ -2291,7 +2291,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 0.9% chance to decrease enemy a"
@@ -2303,7 +2303,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 5.00%",
+            "description": "Damage increased by up to 5.00%",
             "conditions": []
           }
         ],
@@ -2313,7 +2313,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds",
+            "description": "chance to decrease enemy attack and movement speeds by 35% for 3 seconds",
             "conditions": []
           }
         ],
@@ -2325,7 +2325,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 1.2% chance to decrease enemy attack and movement speeds by 35% for 3 secon"
@@ -2338,7 +2338,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 1.2% chance to decrease enemy a"
@@ -2350,7 +2350,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 6.00%",
+            "description": "Damage increased by up to 6.00%",
             "conditions": []
           }
         ],
@@ -2368,7 +2368,7 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain 8",
+            "description": "Gain 8",
             "conditions": []
           }
         ],
@@ -2380,17 +2380,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "when attack"
+                  "description": "when attack"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "behind"
+                  "description": "behind"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "from behind"
+                  "description": "from behind"
                 }
               ],
               "context": "Gain 8.00% increased Critical Hit Chance when attacki"
@@ -2403,17 +2403,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "when attack"
+                  "description": "when attack"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "behind"
+                  "description": "behind"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "from behind"
+                  "description": "from behind"
                 }
               ],
               "context": "Gain 8.00% increased Critical Hit Chance when attacking from"
@@ -2425,7 +2425,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Critical Hit Chance increased to 10.50%",
+            "description": "Critical Hit Chance increased to 10.50%",
             "conditions": []
           }
         ],
@@ -2435,22 +2435,22 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Deal 1% increased damage when attacking from behind",
+            "description": "Deal 1% increased damage when attacking from behind",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "when attack"
+                "description": "when attack"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "behind"
+                "description": "behind"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "from behind"
+                "description": "from behind"
               }
             ]
           }
@@ -2463,17 +2463,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "when attack"
+                  "description": "when attack"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "behind"
+                  "description": "behind"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "from behind"
+                  "description": "from behind"
                 }
               ],
               "context": "Deal 1% increased damage when attacking from"
@@ -2485,7 +2485,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Critical Hit Chance increased to 13.50%",
+            "description": "Critical Hit Chance increased to 13.50%",
             "conditions": []
           }
         ],
@@ -2495,22 +2495,22 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Deal 2% increased damage when attacking from behind",
+            "description": "Deal 2% increased damage when attacking from behind",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "when attack"
+                "description": "when attack"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "behind"
+                "description": "behind"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "from behind"
+                "description": "from behind"
               }
             ]
           }
@@ -2523,17 +2523,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "when attack"
+                  "description": "when attack"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "behind"
+                  "description": "behind"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "from behind"
+                  "description": "from behind"
                 }
               ],
               "context": "Deal 2% increased damage when attacking from"
@@ -2545,7 +2545,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Critical Hit Chance increased to 17.00%",
+            "description": "Critical Hit Chance increased to 17.00%",
             "conditions": []
           }
         ],
@@ -2555,22 +2555,22 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Deal 3% increased damage when attacking from behind",
+            "description": "Deal 3% increased damage when attacking from behind",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "when attack"
+                "description": "when attack"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "behind"
+                "description": "behind"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "from behind"
+                "description": "from behind"
               }
             ]
           }
@@ -2583,17 +2583,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "when attack"
+                  "description": "when attack"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "behind"
+                  "description": "behind"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "from behind"
+                  "description": "from behind"
                 }
               ],
               "context": "Deal 3% increased damage when attacking from"
@@ -2605,7 +2605,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Critical Hit Chance increased to 20.5%",
+            "description": "Critical Hit Chance increased to 20.5%",
             "conditions": []
           }
         ],
@@ -2615,22 +2615,22 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Deal 4% increased damage when attacking from behind",
+            "description": "Deal 4% increased damage when attacking from behind",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "when attack"
+                "description": "when attack"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "behind"
+                "description": "behind"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "from behind"
+                "description": "from behind"
               }
             ]
           }
@@ -2643,17 +2643,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "when attack"
+                  "description": "when attack"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "behind"
+                  "description": "behind"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "from behind"
+                  "description": "from behind"
                 }
               ],
               "context": "Deal 4% increased damage when attacking from"
@@ -2665,7 +2665,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Critical Hit Chance increased to 24.00%",
+            "description": "Critical Hit Chance increased to 24.00%",
             "conditions": []
           }
         ],
@@ -2683,7 +2683,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increase of 8",
+            "description": "increase of 8",
             "conditions": []
           }
         ],
@@ -2695,12 +2695,12 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "your attacks"
+                  "description": "your attacks"
                 },
                 {
                   "type": "state",
                   "state": "stacks",
-                  "text": "at 10 stacks",
+                  "description": "at 10 stacks",
                   "threshold": 10.0
                 }
               ],
@@ -2713,7 +2713,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increase per attack increased by 1",
+            "description": "increase per attack increased by 1",
             "conditions": []
           }
         ],
@@ -2723,7 +2723,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "All damage you deal to Elite monsters increased by 1.5%",
+            "description": "All damage you deal to Elite monsters increased by 1.5%",
             "conditions": []
           }
         ],
@@ -2733,7 +2733,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increase per attack increased to 1",
+            "description": "increase per attack increased to 1",
             "conditions": []
           }
         ],
@@ -2743,7 +2743,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "All damage you deal to Elite monsters increased by 3%",
+            "description": "All damage you deal to Elite monsters increased by 3%",
             "conditions": []
           }
         ],
@@ -2753,7 +2753,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increase per attack increased to 1",
+            "description": "increase per attack increased to 1",
             "conditions": []
           }
         ],
@@ -2763,7 +2763,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "All damage you deal to Elite monsters increased by 4.5%",
+            "description": "All damage you deal to Elite monsters increased by 4.5%",
             "conditions": []
           }
         ],
@@ -2773,7 +2773,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increase per attack increased to 2",
+            "description": "increase per attack increased to 2",
             "conditions": []
           }
         ],
@@ -2783,7 +2783,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "All damage you deal to Elite monsters increased by 6.0%",
+            "description": "All damage you deal to Elite monsters increased by 6.0%",
             "conditions": []
           }
         ],
@@ -2793,7 +2793,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increase per attack increased to 2",
+            "description": "increase per attack increased to 2",
             "conditions": []
           }
         ],
@@ -2811,17 +2811,17 @@
         "effects": [
           {
             "type": "summon_effect",
-            "text": "summon you control, up to a maximum increase of 6%",
+            "description": "summon you control, up to a maximum increase of 6%",
             "conditions": []
           },
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal by 1",
+            "description": "Increases all damage you deal by 1",
             "conditions": []
           },
           {
             "type": "stat_effect",
-            "text": "increase of 6%",
+            "description": "increase of 6%",
             "conditions": []
           }
         ],
@@ -2831,7 +2831,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage bonus increased to 1.30%",
+            "description": "Damage bonus increased to 1.30%",
             "conditions": []
           }
         ],
@@ -2841,7 +2841,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage taken by your summons by 1.5%",
+            "description": "Decreases all damage taken by your summons by 1.5%",
             "conditions": []
           }
         ],
@@ -2851,7 +2851,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage bonus increased to 1.70%",
+            "description": "Damage bonus increased to 1.70%",
             "conditions": []
           }
         ],
@@ -2861,7 +2861,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage taken by your summons by 3%",
+            "description": "Decreases all damage taken by your summons by 3%",
             "conditions": []
           }
         ],
@@ -2871,7 +2871,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage bonus increased to 2.10%",
+            "description": "Damage bonus increased to 2.10%",
             "conditions": []
           }
         ],
@@ -2881,7 +2881,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage taken by your summons by 4.5%",
+            "description": "Decreases all damage taken by your summons by 4.5%",
             "conditions": []
           }
         ],
@@ -2891,7 +2891,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage bonus increased to 2.50%",
+            "description": "Damage bonus increased to 2.50%",
             "conditions": []
           }
         ],
@@ -2901,7 +2901,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases all damage taken by your summons by 6%",
+            "description": "Decreases all damage taken by your summons by 6%",
             "conditions": []
           }
         ],
@@ -2911,7 +2911,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage bonus increased to 3%",
+            "description": "Damage bonus increased to 3%",
             "conditions": []
           }
         ],
@@ -2929,12 +2929,12 @@
         "effects": [
           {
             "type": "damage_effect",
-            "text": "burst of light that Blinds all nearby enemies, reducing their vision and causing total loss of control for 1",
+            "description": "burst of light that Blinds all nearby enemies, reducing their vision and causing total loss of control for 1",
             "conditions": [
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               }
             ]
           }
@@ -2947,17 +2947,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "when attack"
+                  "description": "when attack"
                 },
                 {
                   "type": "state",
                   "state": "target_count",
-                  "text": "all nearby enemies"
+                  "description": "all nearby enemies"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": "You have a 15% chance when attacked to re"
@@ -2969,7 +2969,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Blind duration increased to 1",
+            "description": "Blind duration increased to 1",
             "conditions": []
           }
         ],
@@ -2979,7 +2979,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Deal 3.5% increased damage to Blinded enemies",
+            "description": "Deal 3.5% increased damage to Blinded enemies",
             "conditions": []
           }
         ],
@@ -2997,7 +2997,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Blind duration increased to 2",
+            "description": "Blind duration increased to 2",
             "conditions": []
           }
         ],
@@ -3007,7 +3007,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Deal 7% increased damage to Blinded enemies",
+            "description": "Deal 7% increased damage to Blinded enemies",
             "conditions": []
           }
         ],
@@ -3025,7 +3025,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Blind duration increased to 2",
+            "description": "Blind duration increased to 2",
             "conditions": []
           }
         ],
@@ -3035,7 +3035,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Deal 10.5% increased damage to Blinded enemies",
+            "description": "Deal 10.5% increased damage to Blinded enemies",
             "conditions": []
           }
         ],
@@ -3053,7 +3053,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Blind duration increased to 3",
+            "description": "Blind duration increased to 3",
             "conditions": []
           }
         ],
@@ -3063,7 +3063,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Deal 14% increased damage to Blinded enemies",
+            "description": "Deal 14% increased damage to Blinded enemies",
             "conditions": []
           }
         ],
@@ -3081,7 +3081,7 @@
         "effects": [
           {
             "type": "control_effect",
-            "text": "Blind duration increased to 4 seconds",
+            "description": "Blind duration increased to 4 seconds",
             "conditions": []
           }
         ],
@@ -3099,17 +3099,17 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your Primary Attacks and movement slowly charge you up with electricity. When fully-charged, your next Primary Attack will release chain lightning, dealing 90% base damage + 1134 to nearby enemies. Cannot occur more often than once every 20 seconds",
+            "description": "Your Primary Attacks and movement slowly charge you up with electricity. When fully-charged, your next Primary Attack will release chain lightning, dealing 90% base damage + 1134 to nearby enemies. Cannot occur more often than once every 20 seconds",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "Your Primary Attacks"
+                "description": "Your Primary Attacks"
               },
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "Cannot occur more often than once every 20 seconds"
+                "description": "Cannot occur more often than once every 20 seconds"
               }
             ]
           }
@@ -3122,12 +3122,12 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your Primary Attacks"
+                  "description": "Your Primary Attacks"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " lightning, dealing 90% base damage + 1134 to nearby en"
@@ -3139,7 +3139,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 120% of base damage",
+            "description": "Damage is increased to 120% of base damage",
             "conditions": []
           }
         ],
@@ -3157,7 +3157,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal by 3% for 3 seconds after calling chain lightning",
+            "description": "Increases all damage you deal by 3% for 3 seconds after calling chain lightning",
             "conditions": []
           }
         ],
@@ -3167,7 +3167,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 150% of base damage",
+            "description": "Damage is increased to 150% of base damage",
             "conditions": []
           }
         ],
@@ -3185,7 +3185,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal by 6% for 3 seconds after calling chain lightning",
+            "description": "Increases all damage you deal by 6% for 3 seconds after calling chain lightning",
             "conditions": []
           }
         ],
@@ -3195,7 +3195,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 190% of base damage",
+            "description": "Damage is increased to 190% of base damage",
             "conditions": []
           }
         ],
@@ -3213,7 +3213,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal by 9% for 3 seconds after calling chain lightning",
+            "description": "Increases all damage you deal by 9% for 3 seconds after calling chain lightning",
             "conditions": []
           }
         ],
@@ -3223,7 +3223,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 235% of base damage",
+            "description": "Damage is increased to 235% of base damage",
             "conditions": []
           }
         ],
@@ -3241,7 +3241,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal by 12% for 3 seconds after calling chain lightning",
+            "description": "Increases all damage you deal by 12% for 3 seconds after calling chain lightning",
             "conditions": []
           }
         ],
@@ -3251,7 +3251,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 280% of base damage",
+            "description": "Damage is increased to 280% of base damage",
             "conditions": []
           }
         ],
@@ -3277,12 +3277,12 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases your Primary Attack damage by 8%",
+            "description": "increases your Primary Attack damage by 8%",
             "conditions": []
           },
           {
             "type": "stat_effect",
-            "text": "increases all other skill damage by 10",
+            "description": "increases all other skill damage by 10",
             "conditions": []
           }
         ],
@@ -3300,7 +3300,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 10.50%",
+            "description": "Damage increased by up to 10.50%",
             "conditions": []
           }
         ],
@@ -3310,7 +3310,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to dispel a negative effect on you each time Power and Command states alternate",
+            "description": "chance to dispel a negative effect on you each time Power and Command states alternate",
             "conditions": []
           }
         ],
@@ -3328,7 +3328,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 13.50%",
+            "description": "Damage increased by up to 13.50%",
             "conditions": []
           }
         ],
@@ -3338,7 +3338,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to dispel a negative effect on you each time Power and Command states alternate",
+            "description": "chance to dispel a negative effect on you each time Power and Command states alternate",
             "conditions": []
           }
         ],
@@ -3356,7 +3356,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 17.00%",
+            "description": "Damage increased by up to 17.00%",
             "conditions": []
           }
         ],
@@ -3366,7 +3366,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to dispel a negative effect on you each time Power and Command states alternate",
+            "description": "chance to dispel a negative effect on you each time Power and Command states alternate",
             "conditions": []
           }
         ],
@@ -3384,7 +3384,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 20.50%",
+            "description": "Damage increased by up to 20.50%",
             "conditions": []
           }
         ],
@@ -3394,7 +3394,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to dispel a negative effect on you each time Power and Command states alternate",
+            "description": "chance to dispel a negative effect on you each time Power and Command states alternate",
             "conditions": []
           }
         ],
@@ -3412,7 +3412,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 24%",
+            "description": "Damage increased by up to 24%",
             "conditions": []
           }
         ],
@@ -3430,7 +3430,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to curse enemies, reducing their Attack and Movement Speeds by 35% for 2",
+            "description": "chance to curse enemies, reducing their Attack and Movement Speeds by 35% for 2",
             "conditions": []
           }
         ],
@@ -3442,7 +3442,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 15% chance to curse enemies, reducing their Attack and Movement Speeds by 35% for 2.50 se"
@@ -3455,7 +3455,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 15% chance to curse enemies, r"
@@ -3467,7 +3467,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Curse duration increased to 3.50 seconds",
+            "description": "Curse duration increased to 3.50 seconds",
             "conditions": []
           }
         ],
@@ -3477,7 +3477,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage dealt to cursed targets increased by 2.5%",
+            "description": "Damage dealt to cursed targets increased by 2.5%",
             "conditions": []
           }
         ],
@@ -3487,7 +3487,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Curse duration increased to 4.50 seconds",
+            "description": "Curse duration increased to 4.50 seconds",
             "conditions": []
           }
         ],
@@ -3497,7 +3497,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage dealt to cursed targets increased by 5.0%",
+            "description": "Damage dealt to cursed targets increased by 5.0%",
             "conditions": []
           }
         ],
@@ -3507,7 +3507,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Curse duration increased to 5.50 seconds",
+            "description": "Curse duration increased to 5.50 seconds",
             "conditions": []
           }
         ],
@@ -3517,7 +3517,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage dealt to cursed targets increased by 7.5%",
+            "description": "Damage dealt to cursed targets increased by 7.5%",
             "conditions": []
           }
         ],
@@ -3527,7 +3527,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Curse duration increased to 6.50 seconds",
+            "description": "Curse duration increased to 6.50 seconds",
             "conditions": []
           }
         ],
@@ -3537,7 +3537,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage dealt to cursed targets increased by 10.0%",
+            "description": "Damage dealt to cursed targets increased by 10.0%",
             "conditions": []
           }
         ],
@@ -3547,12 +3547,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Cursed enemies also take 10% increased damage from your attacks",
+            "description": "Cursed enemies also take 10% increased damage from your attacks",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           }
@@ -3565,7 +3565,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "your attacks"
+                  "description": "your attacks"
                 }
               ],
               "context": "d enemies also take 10% increased damage from your attacks."
@@ -3585,12 +3585,12 @@
         "effects": [
           {
             "type": "healing_effect",
-            "text": "heal for 40% of your base damage + 567 total Life, when you defeat an enemy",
+            "description": "heal for 40% of your base damage + 567 total Life, when you defeat an enemy",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "when you defeat"
+                "description": "when you defeat"
               }
             ]
           }
@@ -3603,12 +3603,12 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "when you defeat"
+                  "description": "when you defeat"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": "Instantly heal for 40% of your base damage + 567 total Life, w"
@@ -3621,12 +3621,12 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "when you defeat"
+                  "description": "when you defeat"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": "Instantly heal for 40% of your base damage + 567 total Life, when you defeat an"
@@ -3638,7 +3638,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Healing increased to 60%",
+            "description": "Healing increased to 60%",
             "conditions": []
           }
         ],
@@ -3648,12 +3648,12 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increase your attack speed by 4% for 3 seconds after defeating an enemy",
+            "description": "Increase your attack speed by 4% for 3 seconds after defeating an enemy",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "after defeating"
+                "description": "after defeating"
               }
             ]
           }
@@ -3664,7 +3664,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Healing increased to 80%",
+            "description": "Healing increased to 80%",
             "conditions": []
           }
         ],
@@ -3674,12 +3674,12 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increase your attack speed by 8% for 3 seconds after defeating an enemy",
+            "description": "Increase your attack speed by 8% for 3 seconds after defeating an enemy",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "after defeating"
+                "description": "after defeating"
               }
             ]
           }
@@ -3690,7 +3690,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Healing increased to 100%",
+            "description": "Healing increased to 100%",
             "conditions": []
           }
         ],
@@ -3700,12 +3700,12 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increase your attack speed by 12% for 3 seconds after defeating an enemy",
+            "description": "Increase your attack speed by 12% for 3 seconds after defeating an enemy",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "after defeating"
+                "description": "after defeating"
               }
             ]
           }
@@ -3716,7 +3716,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Healing increased to 120%",
+            "description": "Healing increased to 120%",
             "conditions": []
           }
         ],
@@ -3726,12 +3726,12 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increase your attack speed by 16% for 3 seconds after defeating an enemy",
+            "description": "Increase your attack speed by 16% for 3 seconds after defeating an enemy",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "after defeating"
+                "description": "after defeating"
               }
             ]
           }
@@ -3742,7 +3742,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Healing increased to 140%",
+            "description": "Healing increased to 140%",
             "conditions": []
           }
         ],
@@ -3760,12 +3760,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You and all party members within 6 yards take 0.50% reduced damage for each nearby party member",
+            "description": "You and all party members within 6 yards take 0.50% reduced damage for each nearby party member",
             "conditions": [
               {
                 "type": "state",
                 "state": "position",
-                "text": "within 6 yards",
+                "description": "within 6 yards",
                 "threshold": 6.0
               }
             ]
@@ -3779,7 +3779,7 @@
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "within 6 yards",
+                  "description": "within 6 yards",
                   "threshold": 6.0
                 }
               ],
@@ -3792,7 +3792,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 0.70%",
+            "description": "Damage decrease bonus increased to 0.70%",
             "conditions": []
           }
         ],
@@ -3802,7 +3802,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases damage done by all party members by 0",
+            "description": "increases damage done by all party members by 0",
             "conditions": []
           }
         ],
@@ -3812,7 +3812,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 0.90%",
+            "description": "Damage decrease bonus increased to 0.90%",
             "conditions": []
           }
         ],
@@ -3822,7 +3822,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases damage done by all party members by 0",
+            "description": "increases damage done by all party members by 0",
             "conditions": []
           }
         ],
@@ -3832,7 +3832,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 1.10%",
+            "description": "Damage decrease bonus increased to 1.10%",
             "conditions": []
           }
         ],
@@ -3842,7 +3842,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases damage done by all party members by 0",
+            "description": "increases damage done by all party members by 0",
             "conditions": []
           }
         ],
@@ -3852,7 +3852,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 1.30%",
+            "description": "Damage decrease bonus increased to 1.30%",
             "conditions": []
           }
         ],
@@ -3862,7 +3862,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases damage done by all party members by 1",
+            "description": "increases damage done by all party members by 1",
             "conditions": []
           }
         ],
@@ -3872,7 +3872,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage decrease bonus increased to 1.50%",
+            "description": "Damage decrease bonus increased to 1.50%",
             "conditions": []
           }
         ],
@@ -3890,22 +3890,22 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "When you defeat an enemy you trigger a volatile explosion dealing 30% base damage + 365 to all nearby enemies. Cannot occur more often than once every 6 seconds",
+            "description": "When you defeat an enemy you trigger a volatile explosion dealing 30% base damage + 365 to all nearby enemies. Cannot occur more often than once every 6 seconds",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "When you defeat"
+                "description": "When you defeat"
               },
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               },
               {
                 "type": "cooldown",
                 "cooldown": 6.0,
-                "text": "Cannot occur more often than once every 6 seconds"
+                "description": "Cannot occur more often than once every 6 seconds"
               }
             ]
           }
@@ -3918,17 +3918,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "When you defeat"
+                  "description": "When you defeat"
                 },
                 {
                   "type": "state",
                   "state": "target_count",
-                  "text": "all nearby enemies"
+                  "description": "all nearby enemies"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 6.0,
-                  "text": "Cannot occur more often than once every 6 seconds"
+                  "description": "Cannot occur more often than once every 6 seconds"
                 }
               ],
               "context": "e explosion dealing 30% base damage + 365 to all nearby"
@@ -3940,7 +3940,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 40% of base damage",
+            "description": "Damage is increased to 40% of base damage",
             "conditions": []
           }
         ],
@@ -3958,7 +3958,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased by 2% for 2 seconds after an explosion occurs",
+            "description": "Damage is increased by 2% for 2 seconds after an explosion occurs",
             "conditions": []
           }
         ],
@@ -3968,7 +3968,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 50% of base damage",
+            "description": "Damage is increased to 50% of base damage",
             "conditions": []
           }
         ],
@@ -3986,7 +3986,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased by 4% for 2 seconds",
+            "description": "Damage is increased by 4% for 2 seconds",
             "conditions": []
           }
         ],
@@ -3996,7 +3996,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Unknown",
+            "description": "Unknown",
             "conditions": []
           }
         ],
@@ -4006,7 +4006,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased by 6% for 2 seconds",
+            "description": "Damage is increased by 6% for 2 seconds",
             "conditions": []
           }
         ],
@@ -4016,7 +4016,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 75% of base damage",
+            "description": "Damage is increased to 75% of base damage",
             "conditions": []
           }
         ],
@@ -4034,7 +4034,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 8% for 2 seconds",
+            "description": "Damage is increased to 8% for 2 seconds",
             "conditions": []
           }
         ],
@@ -4044,7 +4044,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 90% of base damage",
+            "description": "Damage is increased to 90% of base damage",
             "conditions": []
           }
         ],
@@ -4070,23 +4070,23 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to unleash retribution on all nearby enemies, dealing damage equal to 12% of your maximum Life",
+            "description": "chance to unleash retribution on all nearby enemies, dealing damage equal to 12% of your maximum Life",
             "conditions": [
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               }
             ]
           },
           {
             "type": "damage_effect",
-            "text": "unleash retribution on all nearby enemies, dealing damage equal to 12% of your maximum Life",
+            "description": "unleash retribution on all nearby enemies, dealing damage equal to 12% of your maximum Life",
             "conditions": [
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               }
             ]
           }
@@ -4099,17 +4099,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_hit",
-                  "text": "When you take damage"
+                  "description": "When you take damage"
                 },
                 {
                   "type": "state",
                   "state": "target_count",
-                  "text": "all nearby enemies"
+                  "description": "all nearby enemies"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage, you have a 20% chance to unleash retribution on all nearby enemies, dealing damage equal to 12% of you"
@@ -4122,17 +4122,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_hit",
-                  "text": "When you take damage"
+                  "description": "When you take damage"
                 },
                 {
                   "type": "state",
                   "state": "target_count",
-                  "text": "all nearby enemies"
+                  "description": "all nearby enemies"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage, you have a 20% chance to unleash retribution on all nearby enemies, dealing damage equal to 12% of your maximum Life. Cannot occur more "
@@ -4145,17 +4145,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_hit",
-                  "text": "When you take damage"
+                  "description": "When you take damage"
                 },
                 {
                   "type": "state",
                   "state": "target_count",
-                  "text": "all nearby enemies"
+                  "description": "all nearby enemies"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage, you have a 20% chance to unleash retribut"
@@ -4167,7 +4167,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 14%",
+            "description": "Damage increased to 14%",
             "conditions": []
           }
         ],
@@ -4177,7 +4177,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "For 6 seconds after unleashing divine retribution, you take 4% decreased damage",
+            "description": "For 6 seconds after unleashing divine retribution, you take 4% decreased damage",
             "conditions": []
           }
         ],
@@ -4195,7 +4195,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 17.5%",
+            "description": "Damage increased to 17.5%",
             "conditions": []
           }
         ],
@@ -4205,7 +4205,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "For 6 seconds after unleashing divine retribution, you take 8% decreased damage",
+            "description": "For 6 seconds after unleashing divine retribution, you take 8% decreased damage",
             "conditions": []
           }
         ],
@@ -4223,7 +4223,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 21%",
+            "description": "Damage increased to 21%",
             "conditions": []
           }
         ],
@@ -4233,7 +4233,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "For 6 seconds after unleashing divine retribution, you take 12% decreased damage",
+            "description": "For 6 seconds after unleashing divine retribution, you take 12% decreased damage",
             "conditions": []
           }
         ],
@@ -4251,7 +4251,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 24.5%",
+            "description": "Damage increased to 24.5%",
             "conditions": []
           }
         ],
@@ -4261,7 +4261,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "For 6 seconds after unleashing divine retribution, you take 16% decreased damage",
+            "description": "For 6 seconds after unleashing divine retribution, you take 16% decreased damage",
             "conditions": []
           }
         ],
@@ -4279,7 +4279,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 28%",
+            "description": "Damage increased to 28%",
             "conditions": []
           }
         ],
@@ -4297,23 +4297,23 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal by up to 8% while at full Life, with a minimum bonus of 8",
+            "description": "Increases all damage you deal by up to 8% while at full Life, with a minimum bonus of 8",
             "conditions": [
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "while at full Life"
+                "description": "while at full Life"
               },
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "while at full Life"
+                "description": "while at full Life"
               }
             ]
           },
           {
             "type": "stat_effect",
-            "text": "Increases your Movement Speed by 10%",
+            "description": "Increases your Movement Speed by 10%",
             "conditions": []
           }
         ],
@@ -4325,12 +4325,12 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "while at full Life"
+                  "description": "while at full Life"
                 },
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "while at full Life"
+                  "description": "while at full Life"
                 }
               ],
               "context": "e you deal by up to 8% while at full Life, with a minimum bonus of 8.00 * 0.5% while at low Life. Increases your Mov"
@@ -4343,12 +4343,12 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "while at full Life"
+                  "description": "while at full Life"
                 },
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "while at full Life"
+                  "description": "while at full Life"
                 }
               ],
               "context": "e you deal by up to 8% while at full Life, with a minimum bonus of 8.00 * 0.5% while at low Life. Increases your Movement Speed by 10%."
@@ -4360,7 +4360,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 10.50%",
+            "description": "Damage increased by up to 10.50%",
             "conditions": []
           }
         ],
@@ -4370,12 +4370,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Take 2% decreased damage while below 50% Life",
+            "description": "Take 2% decreased damage while below 50% Life",
             "conditions": [
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ]
@@ -4389,7 +4389,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -4403,7 +4403,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -4416,7 +4416,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 13.50%",
+            "description": "Damage increased by up to 13.50%",
             "conditions": []
           }
         ],
@@ -4426,12 +4426,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Take 4% decreased damage while below 50% Life",
+            "description": "Take 4% decreased damage while below 50% Life",
             "conditions": [
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ]
@@ -4445,7 +4445,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -4459,7 +4459,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -4472,7 +4472,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 17.00%",
+            "description": "Damage increased by up to 17.00%",
             "conditions": []
           }
         ],
@@ -4482,12 +4482,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Take 6% decreased damage while below 50% Life",
+            "description": "Take 6% decreased damage while below 50% Life",
             "conditions": [
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ]
@@ -4501,7 +4501,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -4515,7 +4515,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -4528,7 +4528,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 20.50%",
+            "description": "Damage increased by up to 20.50%",
             "conditions": []
           }
         ],
@@ -4538,12 +4538,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Take 8% decreased damage while below 50% Life",
+            "description": "Take 8% decreased damage while below 50% Life",
             "conditions": [
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ]
@@ -4557,7 +4557,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -4571,7 +4571,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -4584,7 +4584,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased by up to 24.00%",
+            "description": "Damage increased by up to 24.00%",
             "conditions": []
           }
         ],
@@ -4602,7 +4602,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increase the damage and Movement Speed of the target by 8",
+            "description": "increase the damage and Movement Speed of the target by 8",
             "conditions": []
           }
         ],
@@ -4612,7 +4612,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage and Movement Speed bonsuses increased to 10.50%",
+            "description": "Damage and Movement Speed bonsuses increased to 10.50%",
             "conditions": []
           }
         ],
@@ -4622,7 +4622,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases the cooldown on all your skills by 1.5%",
+            "description": "Decreases the cooldown on all your skills by 1.5%",
             "conditions": []
           }
         ],
@@ -4632,7 +4632,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage and Movement Speed bonuses increased to 13.50%",
+            "description": "Damage and Movement Speed bonuses increased to 13.50%",
             "conditions": []
           }
         ],
@@ -4642,7 +4642,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases the cooldown on all your skills by 3%",
+            "description": "Decreases the cooldown on all your skills by 3%",
             "conditions": []
           }
         ],
@@ -4652,7 +4652,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage and Movement Speed bonuses increased to 17.00%",
+            "description": "Damage and Movement Speed bonuses increased to 17.00%",
             "conditions": []
           }
         ],
@@ -4662,7 +4662,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases the cooldown on all your skills by 4.5%",
+            "description": "Decreases the cooldown on all your skills by 4.5%",
             "conditions": []
           }
         ],
@@ -4672,7 +4672,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage and Movement Speed bonuses increased to 20.50%",
+            "description": "Damage and Movement Speed bonuses increased to 20.50%",
             "conditions": []
           }
         ],
@@ -4682,7 +4682,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Decreases the cooldown on all your skills by 6%",
+            "description": "Decreases the cooldown on all your skills by 6%",
             "conditions": []
           }
         ],
@@ -4692,7 +4692,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage and Movement Speed bonuses increased to 24.00%",
+            "description": "Damage and Movement Speed bonuses increased to 24.00%",
             "conditions": []
           }
         ],
@@ -4710,7 +4710,7 @@
         "effects": [
           {
             "type": "damage_effect",
-            "text": "explode for 45% of all damage taken during its duration, up to a maximum of 150",
+            "description": "explode for 45% of all damage taken during its duration, up to a maximum of 150",
             "conditions": []
           }
         ],
@@ -4735,7 +4735,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Explosion damage bonus increased to 210.00%",
+            "description": "Explosion damage bonus increased to 210.00%",
             "conditions": []
           }
         ],
@@ -4745,7 +4745,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to enemies afflicted with the explosive curse by 6%",
+            "description": "Increases all damage you deal to enemies afflicted with the explosive curse by 6%",
             "conditions": []
           }
         ],
@@ -4755,7 +4755,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Explosion damage bonus increased to 270.00%",
+            "description": "Explosion damage bonus increased to 270.00%",
             "conditions": []
           }
         ],
@@ -4765,7 +4765,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to enemies afflicted with the explosive curse by 12%",
+            "description": "Increases all damage you deal to enemies afflicted with the explosive curse by 12%",
             "conditions": []
           }
         ],
@@ -4775,7 +4775,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Explosion damage bonus increased to 330.00%",
+            "description": "Explosion damage bonus increased to 330.00%",
             "conditions": []
           }
         ],
@@ -4785,7 +4785,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to enemies afflicted with the explosive curse by 18%",
+            "description": "Increases all damage you deal to enemies afflicted with the explosive curse by 18%",
             "conditions": []
           }
         ],
@@ -4795,7 +4795,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Explosion damage bonus increased to 390.00%",
+            "description": "Explosion damage bonus increased to 390.00%",
             "conditions": []
           }
         ],
@@ -4805,7 +4805,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases all damage you deal to enemies afflicted with the explosive curse by 24%",
+            "description": "Increases all damage you deal to enemies afflicted with the explosive curse by 24%",
             "conditions": []
           }
         ],
@@ -4815,7 +4815,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Explosion damage bonus increased to 450.00%",
+            "description": "Explosion damage bonus increased to 450.00%",
             "conditions": []
           }
         ],
@@ -4833,7 +4833,7 @@
         "effects": [
           {
             "type": "damage_effect",
-            "text": "blast of holy light in your direction dealing 55% base damage + 547 to all enemies in the path",
+            "description": "blast of holy light in your direction dealing 55% base damage + 547 to all enemies in the path",
             "conditions": []
           }
         ],
@@ -4845,12 +4845,12 @@
                 {
                   "type": "trigger",
                   "trigger": "on_skill",
-                  "text": "Using a Dash skill"
+                  "description": "Using a Dash skill"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 6.0,
-                  "text": "Cannot occur more often than once every 6 seconds"
+                  "description": "Cannot occur more often than once every 6 seconds"
                 }
               ],
               "context": "r direction dealing 55% base damage + 547 to all enemie"
@@ -4862,7 +4862,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 65% of base damage",
+            "description": "Damage is increased to 65% of base damage",
             "conditions": []
           }
         ],
@@ -4880,7 +4880,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "When the guardian angel returns to the high heavens it blesses you, increasing your damage and movement speed by 4% for 2 seconds",
+            "description": "When the guardian angel returns to the high heavens it blesses you, increasing your damage and movement speed by 4% for 2 seconds",
             "conditions": []
           }
         ],
@@ -4890,7 +4890,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 80% of base damage",
+            "description": "Damage is increased to 80% of base damage",
             "conditions": []
           }
         ],
@@ -4908,7 +4908,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "When the guardian angel returns to the high heavens it blesses you, increasing your damage and movement speed by 8% for 2 seconds",
+            "description": "When the guardian angel returns to the high heavens it blesses you, increasing your damage and movement speed by 8% for 2 seconds",
             "conditions": []
           }
         ],
@@ -4918,7 +4918,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 100% of base damage",
+            "description": "Damage is increased to 100% of base damage",
             "conditions": []
           }
         ],
@@ -4936,7 +4936,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "When the guardian angel returns to the high heavens it blesses you, increasing your damage and movement speed by 12% for 2 seconds",
+            "description": "When the guardian angel returns to the high heavens it blesses you, increasing your damage and movement speed by 12% for 2 seconds",
             "conditions": []
           }
         ],
@@ -4946,7 +4946,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 115% of base damage",
+            "description": "Damage is increased to 115% of base damage",
             "conditions": []
           }
         ],
@@ -4964,7 +4964,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "When the guardian angel returns to the high heavens it blesses you, increasing your damage and movement speed by 16% for 2 seconds",
+            "description": "When the guardian angel returns to the high heavens it blesses you, increasing your damage and movement speed by 16% for 2 seconds",
             "conditions": []
           }
         ],
@@ -4974,7 +4974,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 135% of base damage",
+            "description": "Damage is increased to 135% of base damage",
             "conditions": []
           }
         ],
@@ -5000,12 +5000,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to summon a shadow clone for 8",
+            "description": "chance to summon a shadow clone for 8",
             "conditions": []
           },
           {
             "type": "summon_effect",
-            "text": "summon a shadow clone for 8",
+            "description": "summon a shadow clone for 8",
             "conditions": []
           }
         ],
@@ -5017,7 +5017,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 15% chance to summon a shadow "
@@ -5029,7 +5029,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Shadow clone duration increased to 10.00 seconds",
+            "description": "Shadow clone duration increased to 10.00 seconds",
             "conditions": []
           }
         ],
@@ -5039,7 +5039,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You can now have up to 2 shadow clones at one time",
+            "description": "You can now have up to 2 shadow clones at one time",
             "conditions": []
           }
         ],
@@ -5049,7 +5049,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Shadow clone duration increased to 12.00 seconds",
+            "description": "Shadow clone duration increased to 12.00 seconds",
             "conditions": []
           }
         ],
@@ -5059,7 +5059,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You can now have up to 2 shadow cones at one time, and their life is increased by 50%",
+            "description": "You can now have up to 2 shadow cones at one time, and their life is increased by 50%",
             "conditions": []
           }
         ],
@@ -5069,7 +5069,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Shadow clone duration increased to 14.00 seconds",
+            "description": "Shadow clone duration increased to 14.00 seconds",
             "conditions": []
           }
         ],
@@ -5079,7 +5079,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You can now have up to 3 shadow clones at one time, and their Life is increased by 50%",
+            "description": "You can now have up to 3 shadow clones at one time, and their Life is increased by 50%",
             "conditions": []
           }
         ],
@@ -5089,7 +5089,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Shadow clone duration increased to 17.00 seconds",
+            "description": "Shadow clone duration increased to 17.00 seconds",
             "conditions": []
           }
         ],
@@ -5099,7 +5099,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "You can now have up to 3 shadow clones at one time, and their Life is increased by 100%",
+            "description": "You can now have up to 3 shadow clones at one time, and their Life is increased by 100%",
             "conditions": []
           }
         ],
@@ -5109,7 +5109,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Shadow clone duration increased to 20.00 seconds",
+            "description": "Shadow clone duration increased to 20.00 seconds",
             "conditions": []
           }
         ],
@@ -5127,17 +5127,17 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "gain Frigid Shield more often than once every 20 seconds",
+            "description": "gain Frigid Shield more often than once every 20 seconds",
             "conditions": []
           },
           {
             "type": "defensive_effect",
-            "text": "Shield for 6 seconds that Chills enemy attackers and absorbs damage equal to 150% of your base damage + 1458",
+            "description": "Shield for 6 seconds that Chills enemy attackers and absorbs damage equal to 150% of your base damage + 1458",
             "conditions": []
           },
           {
             "type": "defensive_effect",
-            "text": "Shield more often than once every 20 seconds",
+            "description": "Shield more often than once every 20 seconds",
             "conditions": []
           }
         ],
@@ -5149,7 +5149,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_hit",
-                  "text": "When you take damage"
+                  "description": "When you take damage"
                 }
               ],
               "context": "rbs damage equal to 150% of your base damage + 1458. Cannot gain"
@@ -5161,7 +5161,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb value increased to 180%",
+            "description": "absorb value increased to 180%",
             "conditions": []
           }
         ],
@@ -5171,34 +5171,34 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to chill enemies",
+            "description": "chance to chill enemies",
             "conditions": []
           },
           {
             "type": "buff_effect",
-            "text": "grants your attacks at 15% chance to chill enemies",
+            "description": "grants your attacks at 15% chance to chill enemies",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           },
           {
             "type": "defensive_effect",
-            "text": "Shield grants your attacks at 15% chance to chill enemies",
+            "description": "Shield grants your attacks at 15% chance to chill enemies",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           },
           {
             "type": "control_effect",
-            "text": "chill enemies",
+            "description": "chill enemies",
             "conditions": []
           }
         ],
@@ -5210,7 +5210,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "your attacks"
+                  "description": "your attacks"
                 }
               ],
               "context": "nts your attacks at 15% chance to chill enemies."
@@ -5222,7 +5222,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage absorption increased to 220%",
+            "description": "Damage absorption increased to 220%",
             "conditions": []
           }
         ],
@@ -5232,34 +5232,34 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to Chill enemies",
+            "description": "chance to Chill enemies",
             "conditions": []
           },
           {
             "type": "buff_effect",
-            "text": "grants your attacks a 30% chance to Chill enemies",
+            "description": "grants your attacks a 30% chance to Chill enemies",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           },
           {
             "type": "defensive_effect",
-            "text": "Shield grants your attacks a 30% chance to Chill enemies",
+            "description": "Shield grants your attacks a 30% chance to Chill enemies",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           },
           {
             "type": "control_effect",
-            "text": "Chill enemies",
+            "description": "Chill enemies",
             "conditions": []
           }
         ],
@@ -5271,7 +5271,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "your attacks"
+                  "description": "your attacks"
                 }
               ],
               "context": "ants your attacks a 30% chance to Chill enemies."
@@ -5283,7 +5283,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage absorption value increased to 260%",
+            "description": "Damage absorption value increased to 260%",
             "conditions": []
           }
         ],
@@ -5293,34 +5293,34 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to Chill enemies",
+            "description": "chance to Chill enemies",
             "conditions": []
           },
           {
             "type": "buff_effect",
-            "text": "grants your attacks a 45% chance to Chill enemies",
+            "description": "grants your attacks a 45% chance to Chill enemies",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           },
           {
             "type": "defensive_effect",
-            "text": "Shield grants your attacks a 45% chance to Chill enemies",
+            "description": "Shield grants your attacks a 45% chance to Chill enemies",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           },
           {
             "type": "control_effect",
-            "text": "Chill enemies",
+            "description": "Chill enemies",
             "conditions": []
           }
         ],
@@ -5332,7 +5332,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "your attacks"
+                  "description": "your attacks"
                 }
               ],
               "context": "ants your attacks a 45% chance to Chill enemies."
@@ -5344,7 +5344,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb value increased to 310%",
+            "description": "absorb value increased to 310%",
             "conditions": []
           }
         ],
@@ -5354,34 +5354,34 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to Chill enemies",
+            "description": "chance to Chill enemies",
             "conditions": []
           },
           {
             "type": "buff_effect",
-            "text": "grants your attacks a 60% chance to Chill enemies",
+            "description": "grants your attacks a 60% chance to Chill enemies",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           },
           {
             "type": "defensive_effect",
-            "text": "Shield also grants your attacks a 60% chance to Chill enemies",
+            "description": "Shield also grants your attacks a 60% chance to Chill enemies",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your attacks"
+                "description": "your attacks"
               }
             ]
           },
           {
             "type": "control_effect",
-            "text": "Chill enemies",
+            "description": "Chill enemies",
             "conditions": []
           }
         ],
@@ -5393,7 +5393,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "your attacks"
+                  "description": "your attacks"
                 }
               ],
               "context": "ants your attacks a 60% chance to Chill enemies."
@@ -5405,7 +5405,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb value increased to 360%",
+            "description": "absorb value increased to 360%",
             "conditions": []
           }
         ],
@@ -5423,28 +5423,28 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Using a skill conjures 3 hellfire blazes around you to seek out enemies within 6 yards, exploding on them dealing 45% base damage + 510 to all nearby enemies. Cannot occur more often than once every 20 seconds",
+            "description": "Using a skill conjures 3 hellfire blazes around you to seek out enemies within 6 yards, exploding on them dealing 45% base damage + 510 to all nearby enemies. Cannot occur more often than once every 20 seconds",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_skill",
-                "text": "Using a skill"
+                "description": "Using a skill"
               },
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               },
               {
                 "type": "state",
                 "state": "position",
-                "text": "within 6 yards",
+                "description": "within 6 yards",
                 "threshold": 6.0
               },
               {
                 "type": "cooldown",
                 "cooldown": 20.0,
-                "text": "Cannot occur more often than once every 20 seconds"
+                "description": "Cannot occur more often than once every 20 seconds"
               }
             ]
           }
@@ -5457,23 +5457,23 @@
                 {
                   "type": "trigger",
                   "trigger": "on_skill",
-                  "text": "Using a skill"
+                  "description": "Using a skill"
                 },
                 {
                   "type": "state",
                   "state": "target_count",
-                  "text": "all nearby enemies"
+                  "description": "all nearby enemies"
                 },
                 {
                   "type": "state",
                   "state": "position",
-                  "text": "within 6 yards",
+                  "description": "within 6 yards",
                   "threshold": 6.0
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": "ing on them dealing 45% base damage + 510 to all nearby"
@@ -5485,7 +5485,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 54% of base damage",
+            "description": "Damage is increased to 54% of base damage",
             "conditions": []
           }
         ],
@@ -5503,7 +5503,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Enemies struck by multiple Hellfire Blazes take 12.5% additional damage from subsequent hits",
+            "description": "Enemies struck by multiple Hellfire Blazes take 12.5% additional damage from subsequent hits",
             "conditions": []
           }
         ],
@@ -5521,7 +5521,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 67% of base damage",
+            "description": "Damage is increased to 67% of base damage",
             "conditions": []
           }
         ],
@@ -5539,7 +5539,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Enemies struck by multiple Hellfire Blazes take 25% additional damage from subsequent hits",
+            "description": "Enemies struck by multiple Hellfire Blazes take 25% additional damage from subsequent hits",
             "conditions": []
           }
         ],
@@ -5557,7 +5557,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 80% of base damage",
+            "description": "Damage is increased to 80% of base damage",
             "conditions": []
           }
         ],
@@ -5575,7 +5575,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Enemies struck by multiple Hellfire Blazes take 37.5% additional damage from subsequent hits",
+            "description": "Enemies struck by multiple Hellfire Blazes take 37.5% additional damage from subsequent hits",
             "conditions": []
           }
         ],
@@ -5593,7 +5593,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 94% of base damage",
+            "description": "Damage is increased to 94% of base damage",
             "conditions": []
           }
         ],
@@ -5611,7 +5611,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Enemies struck by multiple Hellfire Blazes take 50% additional damage from subsequent hits",
+            "description": "Enemies struck by multiple Hellfire Blazes take 50% additional damage from subsequent hits",
             "conditions": []
           }
         ],
@@ -5629,7 +5629,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 108% of base damage",
+            "description": "Damage is increased to 108% of base damage",
             "conditions": []
           }
         ],
@@ -5655,12 +5655,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to conjure a charging spirit wolf that inflicts 150% base damage + 1458 to all enemies in its path",
+            "description": "chance to conjure a charging spirit wolf that inflicts 150% base damage + 1458 to all enemies in its path",
             "conditions": []
           },
           {
             "type": "summon_effect",
-            "text": "conjure a charging spirit wolf that inflicts 150% base damage + 1458 to all enemies in its path",
+            "description": "conjure a charging spirit wolf that inflicts 150% base damage + 1458 to all enemies in its path",
             "conditions": []
           }
         ],
@@ -5672,7 +5672,7 @@
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": "rimary Attack has a 10% chance to conjure a charging spirit wolf that inflicts 150% base damage + 1458 to all enemi"
@@ -5685,7 +5685,7 @@
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "Cannot occur more often than once every 20 seconds"
+                  "description": "Cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": "rimary Attack has a 10% chance to conjure a chargi"
@@ -5697,7 +5697,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 180%",
+            "description": "Damage increased to 180%",
             "conditions": []
           }
         ],
@@ -5707,12 +5707,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to Stun enemies for 3 seconds",
+            "description": "chance to Stun enemies for 3 seconds",
             "conditions": []
           },
           {
             "type": "control_effect",
-            "text": "Stun enemies for 3 seconds",
+            "description": "Stun enemies for 3 seconds",
             "conditions": []
           }
         ],
@@ -5730,7 +5730,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 220%",
+            "description": "Damage increased to 220%",
             "conditions": []
           }
         ],
@@ -5740,12 +5740,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to Stun enemies for 3 seconds",
+            "description": "chance to Stun enemies for 3 seconds",
             "conditions": []
           },
           {
             "type": "control_effect",
-            "text": "Stun enemies for 3 seconds",
+            "description": "Stun enemies for 3 seconds",
             "conditions": []
           }
         ],
@@ -5763,7 +5763,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 260%",
+            "description": "Damage increased to 260%",
             "conditions": []
           }
         ],
@@ -5773,12 +5773,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to Stun enemies for 3 seconds",
+            "description": "chance to Stun enemies for 3 seconds",
             "conditions": []
           },
           {
             "type": "control_effect",
-            "text": "Stun enemies for 3 seconds",
+            "description": "Stun enemies for 3 seconds",
             "conditions": []
           }
         ],
@@ -5796,7 +5796,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 310%",
+            "description": "Damage increased to 310%",
             "conditions": []
           }
         ],
@@ -5806,12 +5806,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to Stun enemies for 3 seconds",
+            "description": "chance to Stun enemies for 3 seconds",
             "conditions": []
           },
           {
             "type": "control_effect",
-            "text": "Stun enemies for 3 seconds",
+            "description": "Stun enemies for 3 seconds",
             "conditions": []
           }
         ],
@@ -5829,7 +5829,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage increased to 360%",
+            "description": "Damage increased to 360%",
             "conditions": []
           }
         ],
@@ -5847,12 +5847,12 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "grants a shield for 6 seconds that absorbs damage equal to 450% of your base damage",
+            "description": "grants a shield for 6 seconds that absorbs damage equal to 450% of your base damage",
             "conditions": []
           },
           {
             "type": "defensive_effect",
-            "text": "shield for 6 seconds that absorbs damage equal to 450% of your base damage",
+            "description": "shield for 6 seconds that absorbs damage equal to 450% of your base damage",
             "conditions": []
           }
         ],
@@ -5864,7 +5864,7 @@
                 {
                   "type": "cooldown",
                   "cooldown": 180.0,
-                  "text": "Cannot occur more often than once every 180 seconds"
+                  "description": "Cannot occur more often than once every 180 seconds"
                 }
               ],
               "context": "rbs damage equal to 450% of your base damage. Cannot occur more "
@@ -5876,7 +5876,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb value increased to 530%",
+            "description": "absorb value increased to 530%",
             "conditions": []
           }
         ],
@@ -5886,12 +5886,12 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "shield expires, heal for 20% of the remaining value",
+            "description": "shield expires, heal for 20% of the remaining value",
             "conditions": []
           },
           {
             "type": "healing_effect",
-            "text": "heal for 20% of the remaining value",
+            "description": "heal for 20% of the remaining value",
             "conditions": []
           }
         ],
@@ -5901,7 +5901,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb value increased to 660%",
+            "description": "absorb value increased to 660%",
             "conditions": []
           }
         ],
@@ -5911,12 +5911,12 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "shield expires, heal for 40% of the remaining value",
+            "description": "shield expires, heal for 40% of the remaining value",
             "conditions": []
           },
           {
             "type": "healing_effect",
-            "text": "heal for 40% of the remaining value",
+            "description": "heal for 40% of the remaining value",
             "conditions": []
           }
         ],
@@ -5926,7 +5926,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb value increased to 790%",
+            "description": "absorb value increased to 790%",
             "conditions": []
           }
         ],
@@ -5936,12 +5936,12 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "shield expires, heal for 60% of the remaining value",
+            "description": "shield expires, heal for 60% of the remaining value",
             "conditions": []
           },
           {
             "type": "healing_effect",
-            "text": "heal for 60% of the remaining value",
+            "description": "heal for 60% of the remaining value",
             "conditions": []
           }
         ],
@@ -5951,7 +5951,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb value increased to 920%",
+            "description": "absorb value increased to 920%",
             "conditions": []
           }
         ],
@@ -5961,12 +5961,12 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "shield expires, heal for 80% of the remaining value",
+            "description": "shield expires, heal for 80% of the remaining value",
             "conditions": []
           },
           {
             "type": "healing_effect",
-            "text": "heal for 80% of the remaining value",
+            "description": "heal for 80% of the remaining value",
             "conditions": []
           }
         ],
@@ -5976,7 +5976,7 @@
         "effects": [
           {
             "type": "defensive_effect",
-            "text": "absorb value increased to 1050%",
+            "description": "absorb value increased to 1050%",
             "conditions": []
           }
         ],
@@ -5994,7 +5994,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to poison enemies, inflicting 25% base damage + 263 every second for 6 seconds",
+            "description": "chance to poison enemies, inflicting 25% base damage + 263 every second for 6 seconds",
             "conditions": []
           }
         ],
@@ -6006,7 +6006,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 4% chance to poison enemies, inflicting 25% base damage + 263 every second "
@@ -6019,7 +6019,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "Your attacks have a 4% chance to poison enemies, "
@@ -6031,7 +6031,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 30% of base damage",
+            "description": "Damage is increased to 30% of base damage",
             "conditions": []
           }
         ],
@@ -6049,7 +6049,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "This poison also decreases enemy movement speed by 6%",
+            "description": "This poison also decreases enemy movement speed by 6%",
             "conditions": []
           }
         ],
@@ -6059,7 +6059,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 35% of base damage",
+            "description": "Damage is increased to 35% of base damage",
             "conditions": []
           }
         ],
@@ -6077,7 +6077,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "This poison also decreases enemy movement speed by 12%",
+            "description": "This poison also decreases enemy movement speed by 12%",
             "conditions": []
           }
         ],
@@ -6087,7 +6087,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 45% of base damage",
+            "description": "Damage is increased to 45% of base damage",
             "conditions": []
           }
         ],
@@ -6105,7 +6105,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "This poison also decreases enemy movement speed by 18%",
+            "description": "This poison also decreases enemy movement speed by 18%",
             "conditions": []
           }
         ],
@@ -6115,7 +6115,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 55% of base damage",
+            "description": "Damage is increased to 55% of base damage",
             "conditions": []
           }
         ],
@@ -6133,7 +6133,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "This poison also decreases enemy movement speed by 24%",
+            "description": "This poison also decreases enemy movement speed by 24%",
             "conditions": []
           }
         ],
@@ -6143,7 +6143,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage is increased to 65% of base damage",
+            "description": "Damage is increased to 65% of base damage",
             "conditions": []
           }
         ],
@@ -6169,22 +6169,22 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "When you defeat an enemy, a dark beast attacks nearby enemies, dealing 50% base damage + 486 to all nearby enemies. Cannot occur more often than once every 6 seconds",
+            "description": "When you defeat an enemy, a dark beast attacks nearby enemies, dealing 50% base damage + 486 to all nearby enemies. Cannot occur more often than once every 6 seconds",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "When you defeat"
+                "description": "When you defeat"
               },
               {
                 "type": "state",
                 "state": "target_count",
-                "text": "all nearby enemies"
+                "description": "all nearby enemies"
               },
               {
                 "type": "cooldown",
                 "cooldown": 6.0,
-                "text": "Cannot occur more often than once every 6 seconds"
+                "description": "Cannot occur more often than once every 6 seconds"
               }
             ]
           }
@@ -6197,17 +6197,17 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "When you defeat"
+                  "description": "When you defeat"
                 },
                 {
                   "type": "state",
                   "state": "target_count",
-                  "text": "all nearby enemies"
+                  "description": "all nearby enemies"
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 6.0,
-                  "text": "Cannot occur more often than once every 6 seconds"
+                  "description": "Cannot occur more often than once every 6 seconds"
                 }
               ],
               "context": "by enemies, dealing 50% base damage + 486 to all nearby"
@@ -6219,7 +6219,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage multiplier increased to 60%",
+            "description": "Damage multiplier increased to 60%",
             "conditions": []
           }
         ],
@@ -6229,12 +6229,12 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain a 7% chance for a dark beast to attack nearby enemies after defeating an enemy",
+            "description": "Gain a 7% chance for a dark beast to attack nearby enemies after defeating an enemy",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "after defeating"
+                "description": "after defeating"
               }
             ]
           }
@@ -6247,7 +6247,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "after defeating"
+                  "description": "after defeating"
                 }
               ],
               "context": "Gain a 7% chance for a dark beast to"
@@ -6259,7 +6259,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage multiplier increased to 75%",
+            "description": "Damage multiplier increased to 75%",
             "conditions": []
           }
         ],
@@ -6269,12 +6269,12 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain a 14% chance for a dark beast to attack nearby enemies after defeating an enemy",
+            "description": "Gain a 14% chance for a dark beast to attack nearby enemies after defeating an enemy",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "after defeating"
+                "description": "after defeating"
               }
             ]
           }
@@ -6287,7 +6287,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "after defeating"
+                  "description": "after defeating"
                 }
               ],
               "context": "Gain a 14% chance for a dark beast to"
@@ -6299,7 +6299,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage multiplier increased to 90%",
+            "description": "Damage multiplier increased to 90%",
             "conditions": []
           }
         ],
@@ -6309,12 +6309,12 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain a 21% chance for a dark beast to attack nearby enemies after defeating an enemy",
+            "description": "Gain a 21% chance for a dark beast to attack nearby enemies after defeating an enemy",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "after defeating"
+                "description": "after defeating"
               }
             ]
           }
@@ -6327,7 +6327,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "after defeating"
+                  "description": "after defeating"
                 }
               ],
               "context": "Gain a 21% chance for a dark beast to"
@@ -6339,7 +6339,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage multiplier increased to 105%",
+            "description": "Damage multiplier increased to 105%",
             "conditions": []
           }
         ],
@@ -6349,12 +6349,12 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "Gain a 28% chance for a dark beast to attack nearby enemies after defeating an enemy",
+            "description": "Gain a 28% chance for a dark beast to attack nearby enemies after defeating an enemy",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_kill",
-                "text": "after defeating"
+                "description": "after defeating"
               }
             ]
           }
@@ -6367,7 +6367,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_kill",
-                  "text": "after defeating"
+                  "description": "after defeating"
                 }
               ],
               "context": "Gain a 28% chance for a dark beast to"
@@ -6379,7 +6379,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Damage multiplier increased to 120%",
+            "description": "Damage multiplier increased to 120%",
             "conditions": []
           }
         ],
@@ -6397,12 +6397,12 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds",
+            "description": "chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds",
             "conditions": []
           },
           {
             "type": "buff_effect",
-            "text": "gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds",
+            "description": "gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds",
             "conditions": []
           }
         ],
@@ -6414,7 +6414,7 @@
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "cannot occur more often than once every 20 seconds"
+                  "description": "cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage, you have a 20% chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds. This effect cannot occur more often than once every 20 seconds. When Maternal Disdain ends, you release a blood spike toward nearby enemies, dealing base damage and causing them to"
@@ -6427,7 +6427,7 @@
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "cannot occur more often than once every 20 seconds"
+                  "description": "cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage, you have a 20% chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6"
@@ -6440,7 +6440,7 @@
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "cannot occur more often than once every 20 seconds"
+                  "description": "cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage, you have a 20% chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 second"
@@ -6452,12 +6452,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Taking damage while below 50% Life causes Maternal Disdain, increasing your Critical Hit Chance by 20% for 6 seconds. When Maternal Disdain ends, you release a blood spike toward nearby enemies, dealing 300% base damage and causing them to Bleed for 50% base damage over 5 seconds",
+            "description": "Taking damage while below 50% Life causes Maternal Disdain, increasing your Critical Hit Chance by 20% for 6 seconds. When Maternal Disdain ends, you release a blood spike toward nearby enemies, dealing 300% base damage and causing them to Bleed for 50% base damage over 5 seconds",
             "conditions": [
               {
                 "type": "state",
                 "state": "health_threshold",
-                "text": "below 50% Life",
+                "description": "below 50% Life",
                 "threshold": 50.0
               }
             ]
@@ -6471,7 +6471,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -6485,7 +6485,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -6499,7 +6499,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -6513,7 +6513,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -6534,7 +6534,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases damage dealt by 8",
+            "description": "Increases damage dealt by 8",
             "conditions": []
           }
         ],
@@ -6552,7 +6552,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "Increases damage dealt by 16% to enemies suffering from a continuous damage effect",
+            "description": "Increases damage dealt by 16% to enemies suffering from a continuous damage effect",
             "conditions": []
           }
         ],
@@ -6578,7 +6578,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Inflicts Viper's Venom dealing 16% base damage + 120 every second for 6 seconds",
+            "description": "Inflicts Viper's Venom dealing 16% base damage + 120 every second for 6 seconds",
             "conditions": []
           }
         ],
@@ -6596,12 +6596,12 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Your attacks poison enemies, dealing 32% base damage + 480 every second for 6 seconds. Additionally, poisoned enemies have their Attack Speed reduced by 10%",
+            "description": "Your attacks poison enemies, dealing 32% base damage + 480 every second for 6 seconds. Additionally, poisoned enemies have their Attack Speed reduced by 10%",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "Your attacks"
+                "description": "Your attacks"
               }
             ]
           }
@@ -6614,7 +6614,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "on enemies, dealing 32% base damage + 480 every second "
@@ -6627,7 +6627,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your attacks"
+                  "description": "Your attacks"
                 }
               ],
               "context": "on enemies, dealing 32% base damage + 480 every second for 6 seconds. Additionally, poisoned enemies have their Attack Speed reduced by 10%."
@@ -6647,7 +6647,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases your Attack Speed by 0",
+            "description": "increases your Attack Speed by 0",
             "conditions": []
           }
         ],
@@ -6659,13 +6659,13 @@
                 {
                   "type": "state",
                   "state": "stacks",
-                  "text": "stacking up to 10 times",
+                  "description": "stacking up to 10 times",
                   "threshold": 10.0
                 },
                 {
                   "type": "state",
                   "state": "stacks",
-                  "text": "While at full stacks"
+                  "description": "While at full stacks"
                 }
               ],
               "context": "our Attack Speed by 0.8% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 9%."
@@ -6677,7 +6677,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases your Attack Speed by 2",
+            "description": "increases your Attack Speed by 2",
             "conditions": []
           }
         ],
@@ -6689,13 +6689,13 @@
                 {
                   "type": "state",
                   "state": "stacks",
-                  "text": "stacking up to 10 times",
+                  "description": "stacking up to 10 times",
                   "threshold": 10.0
                 },
                 {
                   "type": "state",
                   "state": "stacks",
-                  "text": "While at full stacks"
+                  "description": "While at full stacks"
                 }
               ],
               "context": "our Attack Speed by 2.4% for 3 seconds, stacking up to 10 times. While at full stacks, your Movement Speed is increased by 12%"
@@ -6715,7 +6715,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to rain meteorites in an area, dealing 200% base damage in total",
+            "description": "chance to rain meteorites in an area, dealing 200% base damage in total",
             "conditions": []
           }
         ],
@@ -6727,7 +6727,7 @@
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "cannot occur more often than once every 20 seconds"
+                  "description": "cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage, you have a 30% chance to rain meteorites in an area, dealing 200% base damage in total. This effe"
@@ -6740,7 +6740,7 @@
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "cannot occur more often than once every 20 seconds"
+                  "description": "cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage, you have a 30% chance to rain meteorites "
@@ -6752,7 +6752,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to call down meteorites, dealing 400% base damage to all enemies in the area",
+            "description": "chance to call down meteorites, dealing 400% base damage to all enemies in the area",
             "conditions": []
           }
         ],
@@ -6785,7 +6785,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Conjures pursuing storm for 6s dealing 22.5% base damage + 203 every 0.5s",
+            "description": "Conjures pursuing storm for 6s dealing 22.5% base damage + 203 every 0.5s",
             "conditions": []
           }
         ],
@@ -6803,7 +6803,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Conjures a storm that deals 40% base damage per second to enemies within its radius. Additionally, lightning strikes periodically hit enemies, dealing 100% base damage",
+            "description": "Conjures a storm that deals 40% base damage per second to enemies within its radius. Additionally, lightning strikes periodically hit enemies, dealing 100% base damage",
             "conditions": []
           }
         ],
@@ -6829,7 +6829,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Creates whirlpool that pulls enemies, sea monster erupts for 140% base damage + 1701",
+            "description": "Creates whirlpool that pulls enemies, sea monster erupts for 140% base damage + 1701",
             "conditions": []
           }
         ],
@@ -6847,7 +6847,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Conjures a whirlpool that pulls enemies into its center, dealing 200% base damage over 3 seconds. Additionally, the whirlpool summons a sea monster dealing 400% base damage to enemies within its radius",
+            "description": "Conjures a whirlpool that pulls enemies into its center, dealing 200% base damage over 3 seconds. Additionally, the whirlpool summons a sea monster dealing 400% base damage to enemies within its radius",
             "conditions": []
           }
         ],
@@ -6873,7 +6873,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Enters roiling rage for 6s, +12% Crit Chance, crits cause explosion dealing 36% base damage over 3s",
+            "description": "Enters roiling rage for 6s, +12% Crit Chance, crits cause explosion dealing 36% base damage over 3s",
             "conditions": []
           }
         ],
@@ -6898,7 +6898,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "text": "increases your Critical Hit Chance by 16% for 6 seconds",
+            "description": "increases your Critical Hit Chance by 16% for 6 seconds",
             "conditions": []
           }
         ],
@@ -6931,12 +6931,12 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "gain an absorb shield equal to 160% of your base damage",
+            "description": "gain an absorb shield equal to 160% of your base damage",
             "conditions": []
           },
           {
             "type": "defensive_effect",
-            "text": "absorb shield equal to 160% of your base damage",
+            "description": "absorb shield equal to 160% of your base damage",
             "conditions": []
           }
         ],
@@ -6948,13 +6948,13 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "cannot occur more often than once every 20 seconds"
+                  "description": "cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage while below 50% Life causes Spiteful Blood to surge through you for 4 seconds, increasing your damage done by 30% and making you invulnerable to Primary Attacks from other players. Additionally, when Spiteful Blood triggers, you gain an absorb shield equal to 160% of your base damage. This effect cannot"
@@ -6967,13 +6967,13 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 },
                 {
                   "type": "cooldown",
                   "cooldown": 20.0,
-                  "text": "cannot occur more often than once every 20 seconds"
+                  "description": "cannot occur more often than once every 20 seconds"
                 }
               ],
               "context": " damage while below 50% Life causes Spiteful Blo"
@@ -6985,12 +6985,12 @@
         "effects": [
           {
             "type": "buff_effect",
-            "text": "gain an absorb shield equal to 200% of your base damage while the effect is active",
+            "description": "gain an absorb shield equal to 200% of your base damage while the effect is active",
             "conditions": []
           },
           {
             "type": "defensive_effect",
-            "text": "absorb shield equal to 200% of your base damage while the effect is active",
+            "description": "absorb shield equal to 200% of your base damage while the effect is active",
             "conditions": []
           }
         ],
@@ -7002,7 +7002,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -7016,7 +7016,7 @@
                 {
                   "type": "state",
                   "state": "health_threshold",
-                  "text": "below 50% Life",
+                  "description": "below 50% Life",
                   "threshold": 50.0
                 }
               ],
@@ -7037,7 +7037,7 @@
         "effects": [
           {
             "type": "proc_effect",
-            "text": "chance to chain lightning to 8 enemies dealing 45% base damage + 446",
+            "description": "chance to chain lightning to 8 enemies dealing 45% base damage + 446",
             "conditions": []
           }
         ],
@@ -7070,7 +7070,7 @@
         "effects": [
           {
             "type": "generic_effect",
-            "text": "Primary Attack unleashes Aspect of Gloom for 6s, triggering gloom blades dealing 30% base damage + 275",
+            "description": "Primary Attack unleashes Aspect of Gloom for 6s, triggering gloom blades dealing 30% base damage + 275",
             "conditions": []
           }
         ],
@@ -7088,12 +7088,12 @@
         "effects": [
           {
             "type": "damage_effect",
-            "text": "unleash an Aspect of Gloom that lasts 10 seconds, during which your Primary Attacks deal 60% additional AoE damage",
+            "description": "unleash an Aspect of Gloom that lasts 10 seconds, during which your Primary Attacks deal 60% additional AoE damage",
             "conditions": [
               {
                 "type": "trigger",
                 "trigger": "on_attack",
-                "text": "your Primary Attacks"
+                "description": "your Primary Attacks"
               }
             ]
           }
@@ -7106,7 +7106,7 @@
                 {
                   "type": "trigger",
                   "trigger": "on_attack",
-                  "text": "Your Primary Attacks"
+                  "description": "Your Primary Attacks"
                 }
               ],
               "context": "rimary Attacks deal 60% additional AoE damage."
