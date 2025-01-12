@@ -173,33 +173,32 @@ async def list_sets(
     try:
         # Get all sets data
         sets_data = await data_manager.get_equipment_sets()
-        if not sets_data:
+        if not sets_data or "registry" not in sets_data:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to load equipment sets data"
             )
         
         # Filter by pieces if specified
-        if pieces:
-            sets_data = {
-                name: data
-                for name, data in sets_data.registry.items()
-                if data.pieces == pieces
-            }
+        filtered_sets = {}
+        for name, data in sets_data["registry"].items():
+            if not pieces or data["pieces"] == pieces:
+                filtered_sets[name] = data
         
         # Calculate pagination
+        all_sets = list(filtered_sets.items())
         start_idx = (page - 1) * per_page
         end_idx = start_idx + per_page
-        paginated_sets = list(sets_data.items())[start_idx:end_idx]
+        paginated_sets = all_sets[start_idx:end_idx]
         
         # Convert to response format
         sets = [
             SetInfo(
                 name=name,
-                pieces=data.pieces,
-                description=data.description,
-                bonuses=data.bonuses,
-                use_case=data.use_case
+                pieces=data["pieces"],
+                description=data["description"],
+                bonuses=data["bonuses"],
+                use_case=data["use_case"]
             )
             for name, data in paginated_sets
         ]
@@ -208,9 +207,9 @@ async def list_sets(
             sets=sets,
             page=page,
             per_page=per_page,
-            total=len(sets_data)
+            total=len(filtered_sets)
         )
-        
+
     except HTTPException:
         raise
     except Exception as e:
@@ -241,25 +240,25 @@ async def get_set_details(
     try:
         # Get all sets data
         sets_data = await data_manager.get_equipment_sets()
-        if not sets_data:
+        if not sets_data or "registry" not in sets_data:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to load equipment sets data"
             )
         
-        set_data = sets_data.registry.get(set_name)
+        set_data = sets_data["registry"].get(set_name)
         if not set_data:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Set '{set_name}' not found"
             )
-            
+        
         return SetInfo(
             name=set_name,
-            pieces=set_data.pieces,
-            description=set_data.description,
-            bonuses=set_data.bonuses,
-            use_case=set_data.use_case
+            pieces=set_data["pieces"],
+            description=set_data["description"],
+            bonuses=set_data["bonuses"],
+            use_case=set_data["use_case"]
         )
         
     except HTTPException:
