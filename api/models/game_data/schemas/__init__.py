@@ -31,6 +31,7 @@ from .stats import (
 )
 from .constraints import GameConstraints
 from .synergies import GameSynergies
+from .essences import ClassEssences, EssenceData
 
 __all__ = [
     "GameDataMetadata",
@@ -58,4 +59,6 @@ __all__ = [
     "BuildTypes",
     "GameConstraints",
     "GameSynergies",
+    "ClassEssences",
+    "EssenceData",
 ]

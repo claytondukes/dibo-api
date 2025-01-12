@@ -8,7 +8,8 @@ with support for caching and version-aware loading.
 import json
 import logging
 from datetime import datetime
-from typing import Dict, TypeVar, Type, Union, List
+from pathlib import Path
+from typing import Dict, TypeVar, Type, Union, List, Optional
 
 from pydantic import BaseModel
 
@@ -24,6 +25,7 @@ from .schemas import (
     GameDataMetadata,
     GameDataCache,
 )
+from .schemas.essences import ClassEssences, EssenceData
 
 T = TypeVar("T", bound=BaseModel)
 logger = logging.getLogger(__name__)
@@ -79,6 +81,7 @@ class GameDataManager:
             data={},
             last_loaded=None
         )
+        self._essence_cache: Dict[str, ClassEssences] = {}
 
     def _load_metadata(self) -> GameDataMetadata:
         """Load metadata from the indexed data directory.
@@ -241,3 +244,57 @@ class GameDataManager:
         logger.info("Getting equipment sets")
         data = await self.get_data("sets")
         return data.model_dump(mode='json') if data else {}
+
+    def get_class_essences(
+        self,
+        class_name: str,
+        slot: Optional[str] = None,
+        skill: Optional[str] = None
+    ) -> Dict[str, EssenceData]:
+        """Get essences for a specific class.
+
+        Args:
+            class_name: Name of the class
+            slot: Optional gear slot to filter by
+            skill: Optional skill name to filter by
+
+        Returns:
+            Dict[str, EssenceData]: Dictionary of essence data
+
+        Raises:
+            ValueError: If the class is not found or essence data is invalid
+        """
+        logger.info(f"Getting essences for class: {class_name}")
+        try:
+            # Check if we have the essences in cache
+            if class_name not in self._essence_cache:
+                # Load essences from file
+                essence_path = self.settings.data_path / "classes" / class_name / "essences.json"
+                if not essence_path.exists():
+                    logger.error(f"Essence file not found for class {class_name}")
+                    raise ValueError(f"No essences found for class {class_name}")
+
+                with essence_path.open() as f:
+                    essence_data = json.load(f)
+                    self._essence_cache[class_name] = ClassEssences.model_validate(essence_data)
+
+            essences = self._essence_cache[class_name].essences
+
+            # Apply filters
+            if slot:
+                essences = {
+                    k: v for k, v in essences.items()
+                    if v.gear_slot.lower() == slot.lower()
+                }
+
+            if skill:
+                essences = {
+                    k: v for k, v in essences.items()
+                    if v.modifies_skill.lower() == skill.lower()
+                }
+
+            return essences
+
+        except Exception as e:
+            logger.error(f"Error getting essences for class {class_name}: {e}")
+            raise ValueError(f"Failed to get essences for class {class_name}: {e}") from e
