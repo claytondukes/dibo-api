@@ -16,81 +16,81 @@
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "behind"
+          "description": "behind"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "from behind"
+          "description": "from behind"
         },
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "behind"
+          "description": "behind"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "from behind"
+          "description": "from behind"
         },
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "behind"
+          "description": "behind"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "from behind"
+          "description": "from behind"
         }
       ],
       "Everlasting Torment": [
         {
           "type": "target_restriction",
           "cooldown": 6.0,
-          "text": "Each enemy cannot be affected by this more often than once every 6 seconds"
+          "description": "Each enemy cannot be affected by this more often than once every 6 seconds"
         }
       ],
       "Lightning Core": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your Primary Attacks"
+          "description": "Your Primary Attacks"
         }
       ],
       "Mother's Lament": [
         {
           "type": "state",
           "state": "health_threshold",
-          "text": "below 50% Life",
+          "description": "below 50% Life",
           "threshold": 50.0
         },
         {
           "type": "cooldown",
           "cooldown": 20.0,
-          "text": "cannot occur more often than once every 20 seconds"
+          "description": "cannot occur more often than once every 20 seconds"
         }
       ],
       "Starfire Shard": [
         {
           "type": "cooldown",
           "cooldown": 20.0,
-          "text": "cannot occur more often than once every 20 seconds"
+          "description": "cannot occur more often than once every 20 seconds"
         }
       ]
     }
@@ -114,14 +114,14 @@
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "your attacks"
+          "description": "your attacks"
         }
       ],
       "The Hunger": [
         {
           "type": "state",
           "state": "health_threshold",
-          "text": "above 75% Life",
+          "description": "above 75% Life",
           "threshold": 75.0
         }
       ],
@@ -129,19 +129,19 @@
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your attacks"
+          "description": "Your attacks"
         }
       ],
       "Bloody Reach": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your attacks"
+          "description": "Your attacks"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "at 8 yards",
+          "description": "at 8 yards",
           "threshold": 8.0
         }
       ],
@@ -149,24 +149,24 @@
         {
           "type": "state",
           "state": "stacks",
-          "text": "stacking up to 10 times",
+          "description": "stacking up to 10 times",
           "threshold": 10.0
         },
         {
           "type": "state",
           "state": "stacks",
-          "text": "While at full stacks"
+          "description": "While at full stacks"
         },
         {
           "type": "state",
           "state": "stacks",
-          "text": "stacking up to 10 times",
+          "description": "stacking up to 10 times",
           "threshold": 10.0
         },
         {
           "type": "state",
           "state": "stacks",
-          "text": "While at full stacks"
+          "description": "While at full stacks"
         }
       ]
     }
@@ -227,92 +227,92 @@
         {
           "type": "trigger",
           "trigger": "on_hit",
-          "text": "When you take damage"
+          "description": "When you take damage"
         },
         {
           "type": "state",
           "state": "target_count",
-          "text": "all nearby enemies"
+          "description": "all nearby enemies"
         }
       ],
       "Blood-Soaked Jade": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "your attacks"
+          "description": "your attacks"
         }
       ],
       "Chained Death": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "your attacks"
+          "description": "your attacks"
         }
       ],
       "Cutthroat's Grin": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "behind"
+          "description": "behind"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "from behind"
+          "description": "from behind"
         },
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "behind"
+          "description": "behind"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "from behind"
+          "description": "from behind"
         },
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "behind"
+          "description": "behind"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "from behind"
+          "description": "from behind"
         }
       ],
       "Everlasting Torment": [
         {
           "type": "target_restriction",
           "cooldown": 6.0,
-          "text": "Each enemy cannot be affected by this more often than once every 6 seconds"
+          "description": "Each enemy cannot be affected by this more often than once every 6 seconds"
         }
       ],
       "Fervent Fang": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "your attacks"
+          "description": "your attacks"
         },
         {
           "type": "state",
           "state": "stacks",
-          "text": "at 10 stacks",
+          "description": "at 10 stacks",
           "threshold": 10.0
         }
       ],
@@ -320,79 +320,79 @@
         {
           "type": "trigger",
           "trigger": "on_skill",
-          "text": "Using a skill"
+          "description": "Using a skill"
         },
         {
           "type": "state",
           "state": "target_count",
-          "text": "all nearby enemies"
+          "description": "all nearby enemies"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "within 6 yards",
+          "description": "within 6 yards",
           "threshold": 6.0
         },
         {
           "type": "cooldown",
           "cooldown": 20.0,
-          "text": "Cannot occur more often than once every 20 seconds"
+          "description": "Cannot occur more often than once every 20 seconds"
         }
       ],
       "Kir Sling": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         },
         {
           "type": "state",
           "state": "target_count",
-          "text": "all nearby enemies"
+          "description": "all nearby enemies"
         },
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         }
       ],
       "Lightning Core": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your Primary Attacks"
+          "description": "Your Primary Attacks"
         }
       ],
       "Mother's Lament": [
         {
           "type": "state",
           "state": "health_threshold",
-          "text": "below 50% Life",
+          "description": "below 50% Life",
           "threshold": 50.0
         },
         {
           "type": "cooldown",
           "cooldown": 20.0,
-          "text": "cannot occur more often than once every 20 seconds"
+          "description": "cannot occur more often than once every 20 seconds"
         }
       ],
       "The Black Rose": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         },
         {
           "type": "target_restriction",
           "cooldown": 20.0,
-          "text": "Each enemy cannot be affected by this more often than once every 20 seconds"
+          "description": "Each enemy cannot be affected by this more often than once every 20 seconds"
         }
       ],
       "The Hunger": [
         {
           "type": "state",
           "state": "health_threshold",
-          "text": "above 75% Life",
+          "description": "above 75% Life",
           "threshold": 75.0
         }
       ],
@@ -400,27 +400,27 @@
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your attacks"
+          "description": "Your attacks"
         }
       ],
       "Seled's Weakening": [
         {
           "type": "trigger",
           "trigger": "on_kill",
-          "text": "after killing"
+          "description": "after killing"
         }
       ],
       "Battleguard": [
         {
           "type": "state",
           "state": "position",
-          "text": "within 3 yards",
+          "description": "within 3 yards",
           "threshold": 3.0
         },
         {
           "type": "state",
           "state": "position",
-          "text": "within 3 yards",
+          "description": "within 3 yards",
           "threshold": 3.0
         }
       ],
@@ -428,26 +428,26 @@
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your attacks"
+          "description": "Your attacks"
         }
       ],
       "The Abiding Curse": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your attacks"
+          "description": "Your attacks"
         }
       ],
       "Bloody Reach": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your attacks"
+          "description": "Your attacks"
         },
         {
           "type": "state",
           "state": "position",
-          "text": "at 8 yards",
+          "description": "at 8 yards",
           "threshold": 8.0
         }
       ],
@@ -455,49 +455,49 @@
         {
           "type": "state",
           "state": "stacks",
-          "text": "stacking up to 10 times",
+          "description": "stacking up to 10 times",
           "threshold": 10.0
         },
         {
           "type": "state",
           "state": "stacks",
-          "text": "While at full stacks"
+          "description": "While at full stacks"
         },
         {
           "type": "state",
           "state": "stacks",
-          "text": "stacking up to 10 times",
+          "description": "stacking up to 10 times",
           "threshold": 10.0
         },
         {
           "type": "state",
           "state": "stacks",
-          "text": "While at full stacks"
+          "description": "While at full stacks"
         }
       ],
       "Starfire Shard": [
         {
           "type": "cooldown",
           "cooldown": 20.0,
-          "text": "cannot occur more often than once every 20 seconds"
+          "description": "cannot occur more often than once every 20 seconds"
         },
         {
           "type": "cooldown",
           "cooldown": 20.0,
-          "text": "cannot occur more often than once every 20 seconds"
+          "description": "cannot occur more often than once every 20 seconds"
         }
       ],
       "Unity Crystal": [
         {
           "type": "state",
           "state": "position",
-          "text": "within 6 yards",
+          "description": "within 6 yards",
           "threshold": 6.0
         },
         {
           "type": "state",
           "state": "position",
-          "text": "within 6 yards",
+          "description": "within 6 yards",
           "threshold": 6.0
         }
       ],
@@ -505,53 +505,53 @@
         {
           "type": "trigger",
           "trigger": "on_kill",
-          "text": "When you defeat"
+          "description": "When you defeat"
         },
         {
           "type": "state",
           "state": "target_count",
-          "text": "all nearby enemies"
+          "description": "all nearby enemies"
         }
       ],
       "Echoing Shade": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your attacks"
+          "description": "Your attacks"
         }
       ],
       "Concentrated Will": [
         {
           "type": "trigger",
           "trigger": "on_skill",
-          "text": "Using a Dash skill"
+          "description": "Using a Dash skill"
         }
       ],
       "Zwenson's Haunting": [
         {
           "type": "trigger",
           "trigger": "on_kill",
-          "text": "after defeating"
+          "description": "after defeating"
         }
       ],
       "Spiteful Blood": [
         {
           "type": "state",
           "state": "health_threshold",
-          "text": "below 50% Life",
+          "description": "below 50% Life",
           "threshold": 50.0
         },
         {
           "type": "cooldown",
           "cooldown": 20.0,
-          "text": "cannot occur more often than once every 20 seconds"
+          "description": "cannot occur more often than once every 20 seconds"
         }
       ],
       "Gloom Cask": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your Primary Attacks"
+          "description": "Your Primary Attacks"
         }
       ]
     }
@@ -570,19 +570,19 @@
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your Primary Attacks"
+          "description": "Your Primary Attacks"
         }
       ],
       "The Black Rose": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "when attack"
+          "description": "when attack"
         },
         {
           "type": "target_restriction",
           "cooldown": 20.0,
-          "text": "Each enemy cannot be affected by this more often than once every 20 seconds"
+          "description": "Each enemy cannot be affected by this more often than once every 20 seconds"
         }
       ]
     }
@@ -607,39 +607,39 @@
         {
           "type": "trigger",
           "trigger": "on_hit",
-          "text": "When you take damage"
+          "description": "When you take damage"
         },
         {
           "type": "state",
           "state": "target_count",
-          "text": "all nearby enemies"
+          "description": "all nearby enemies"
         }
       ],
       "Blood-Soaked Jade": [
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "your attacks"
+          "description": "your attacks"
         }
       ],
       "Mother's Lament": [
         {
           "type": "state",
           "state": "health_threshold",
-          "text": "below 50% Life",
+          "description": "below 50% Life",
           "threshold": 50.0
         },
         {
           "type": "cooldown",
           "cooldown": 20.0,
-          "text": "cannot occur more often than once every 20 seconds"
+          "description": "cannot occur more often than once every 20 seconds"
         }
       ],
       "The Hunger": [
         {
           "type": "state",
           "state": "health_threshold",
-          "text": "above 75% Life",
+          "description": "above 75% Life",
           "threshold": 75.0
         }
       ],
@@ -647,7 +647,7 @@
         {
           "type": "state",
           "state": "position",
-          "text": "within 3 yards",
+          "description": "within 3 yards",
           "threshold": 3.0
         }
       ],
@@ -655,20 +655,20 @@
         {
           "type": "trigger",
           "trigger": "on_attack",
-          "text": "Your attacks"
+          "description": "Your attacks"
         }
       ],
       "Spiteful Blood": [
         {
           "type": "state",
           "state": "health_threshold",
-          "text": "below 50% Life",
+          "description": "below 50% Life",
           "threshold": 50.0
         },
         {
           "type": "cooldown",
           "cooldown": 20.0,
-          "text": "cannot occur more often than once every 20 seconds"
+          "description": "cannot occur more often than once every 20 seconds"
         }
       ]
     }

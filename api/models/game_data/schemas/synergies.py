@@ -10,7 +10,7 @@ class SynergyCondition(BaseModel):
     type: str = Field(description="Type of condition")
     state: Optional[str] = Field(None, description="State for the condition")
     trigger: Optional[str] = Field(None, description="Trigger for the condition")
-    text: str = Field(description="Text description of the condition")
+    description: str = Field(description="Description of the condition")
     cooldown: Optional[float] = Field(None, description="Cooldown in seconds if applicable")
     threshold: Optional[float] = Field(None, description="Threshold value if applicable")
     
@@ -20,7 +20,7 @@ class SynergyCondition(BaseModel):
                 "type": "trigger",
                 "state": None,
                 "trigger": "on_hit",
-                "text": "On hit",
+                "description": "On hit",
                 "cooldown": 1.0,
                 "threshold": None
             }]
@@ -50,7 +50,7 @@ class SynergyGroup(BaseModel):
                         "type": "trigger",
                         "state": None,
                         "trigger": "on_hit",
-                        "text": "On hit",
+                        "description": "On hit",
                         "cooldown": 1.0,
                         "threshold": None
                     }]
@@ -142,7 +142,7 @@ class GameSynergies(BaseModel):
                             "type": "trigger",
                             "state": None,
                             "trigger": "on_hit",
-                            "text": "On hit",
+                            "description": "On hit",
                             "cooldown": 1.0,
                             "threshold": None
                         }]

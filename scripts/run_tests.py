@@ -2,6 +2,7 @@
 """Script to run API tests."""
 
 import os
+import sys
 import pytest
 from pathlib import Path
 from rich.console import Console
@@ -17,10 +18,13 @@ def main() -> None:
     os.environ["TESTING"] = "1"
     os.environ["DATA_PATH"] = str(project_root / "data/indexed")
     
+    # Get test path from command line argument or use all tests
+    test_path = sys.argv[1] if len(sys.argv) > 1 else str(project_root / "tests")
+    
     # Run tests
-    console.print("\n[yellow]Running API tests...[/yellow]")
+    console.print(f"\n[yellow]Running tests from: {test_path}[/yellow]")
     pytest.main([
-        str(project_root / "tests"),
+        test_path,
         "-v",
         "--capture=no",
         "--log-cli-level=INFO"
