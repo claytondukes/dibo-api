@@ -42,20 +42,13 @@ async def list_synergies(
     """
     try:
         logger.info("Getting all synergies")
-        synergies_file = data_manager.data_dir / "synergies.json"
-        if not synergies_file.exists():
-            raise FileNotFoundError("Synergies file not found")
-            
-        # Use Pydantic's model_validate_json instead of json.load
-        synergies_data = GameSynergies.model_validate_json(synergies_file.read_text())
-            
-        return SynergyListResponse(synergies=synergies_data.synergies)
-        
+        synergies_data = await data_manager.get_synergies()
+        return SynergyListResponse(synergies=synergies_data.registry)
     except Exception as e:
-        logger.error(f"Error listing synergies: {e}")
+        logger.error(f"Error loading synergies: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e)
+            detail="Error loading synergies data"
         )
 
 
@@ -78,26 +71,18 @@ async def get_synergy_details(
     """
     try:
         logger.info(f"Getting synergies for: {synergy_name}")
-        synergies_file = data_manager.data_dir / "synergies.json"
-        if not synergies_file.exists():
-            raise FileNotFoundError("Synergies file not found")
-            
-        # Use Pydantic's model_validate_json instead of json.load
-        synergies_data = GameSynergies.model_validate_json(synergies_file.read_text())
-            
-        if synergy_name not in synergies_data.synergies:
+        synergies_data = await data_manager.get_synergies()
+        if synergy_name not in synergies_data.registry:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Synergy not found: {synergy_name}"
             )
-            
-        return synergies_data.synergies[synergy_name]
-        
+        return synergies_data.registry[synergy_name]
     except HTTPException:
         raise
     except Exception as e:
         logger.error(f"Error getting synergy details: {e}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e)
+            detail="Error loading synergy data"
         )

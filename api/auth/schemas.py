@@ -1,7 +1,9 @@
 """Authentication schemas."""
 
 from typing import Dict, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
+from datetime import datetime
+import json
 
 
 class GitHubLoginResponse(BaseModel):
@@ -19,22 +21,77 @@ class GitHubCallbackResponse(BaseModel):
 
 class GistFile(BaseModel):
     """Schema for a gist file."""
-    filename: str = Field(examples=["test.json"])
-    content: str = Field(examples=['{"test": "data"}'])
+    filename: str = Field(
+        description="Name of the gist file",
+        min_length=1,
+        max_length=255,
+        pattern=r"^[\w\-. ]+$"
+    )
+    content: str = Field(
+        description="Content of the gist",
+        min_length=1
+    )
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [{
+                "filename": "test.json",
+                "content": "{}"
+            }]
+        }
+    }
 
 
 class GistCreate(BaseModel):
     """Schema for creating a gist."""
-    filename: str = Field(examples=["test.json"])
-    content: str = Field(examples=['{"test": "data"}'])
-    description: Optional[str] = Field(default=None, examples=["Test gist"])
+    filename: str = Field(
+        description="Name of the gist file",
+        min_length=1,
+        max_length=255,
+        pattern=r"^[\w\-. ]+$"
+    )
+    content: str = Field(
+        description="Content of the gist",
+        min_length=1
+    )
+    description: Optional[str] = Field(
+        default=None,
+        description="Optional gist description",
+        max_length=1000
+    )
+
+    @field_validator("content")
+    def validate_json_content(cls, v, values):
+        """Validate that content is valid JSON if filename ends with .json."""
+        if "filename" in values and values["filename"].endswith(".json"):
+            try:
+                json.loads(v)
+            except json.JSONDecodeError:
+                raise ValueError("Content must be valid JSON for .json files")
+        return v
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [{
+                "filename": "test.json",
+                "content": "{}",
+                "description": "Test gist"
+            }]
+        }
+    }
 
 
-class GistUpdate(BaseModel):
+class GistUpdate(GistCreate):
     """Schema for updating a gist."""
-    filename: str = Field(examples=["test.json"])
-    content: str = Field(examples=['{"test": "data"}'])
-    description: Optional[str] = Field(default=None, examples=["Updated test gist"])
+    model_config = {
+        "json_schema_extra": {
+            "examples": [{
+                "filename": "test.json",
+                "content": "{}",
+                "description": "Updated test gist"
+            }]
+        }
+    }
 
 
 class GistResponse(BaseModel):
@@ -42,6 +99,25 @@ class GistResponse(BaseModel):
     id: str = Field(description="Gist ID")
     html_url: str = Field(description="Gist URL")
     files: Dict[str, GistFile] = Field(description="Gist files")
+    created_at: datetime = Field(description="Creation timestamp")
+    updated_at: datetime = Field(description="Last update timestamp")
+
+    model_config = {
+        "json_schema_extra": {
+            "examples": [{
+                "id": "abc123",
+                "html_url": "https://gist.github.com/user/abc123",
+                "files": {
+                    "test.json": {
+                        "filename": "test.json",
+                        "content": "{}"
+                    }
+                },
+                "created_at": "2025-01-11T19:38:01-05:00",
+                "updated_at": "2025-01-11T19:38:01-05:00"
+            }]
+        }
+    }
 
 
 class BuildCreate(BaseModel):
