@@ -1,5 +1,6 @@
 """Build routes."""
 
+import logging
 from fastapi import APIRouter, Depends, Query, HTTPException, status, Request
 from ..auth.service import AuthService, get_auth_service
 from ..core.config import get_settings
@@ -10,9 +11,9 @@ from ..models.game_data.manager import GameDataManager
 from ..models.game_data.schemas.classes import CharacterClass
 from pathlib import Path
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/builds", tags=["builds"])
 
-# Initialize build service lazily
 async def get_build_service(request: Request = None):
     """Get build service instance."""
     if request is None:
@@ -21,7 +22,7 @@ async def get_build_service(request: Request = None):
             detail="Request context not available"
         )
     settings = get_settings()
-    return await BuildService.create(data_dir=settings.DATA_DIR)
+    return await BuildService.create()  # Let it use settings.data_path
 
 # Global instance for singleton pattern
 _build_service = None
@@ -36,7 +37,7 @@ async def get_service(request: Request = None) -> BuildService:
                 detail="Request context not available"
             )
         settings = get_settings()
-        _build_service = await BuildService.create(data_dir=settings.DATA_DIR)
+        _build_service = await BuildService.create()  # Let it use settings.data_path
     return _build_service
 
 async def validate_character_class(
@@ -66,42 +67,49 @@ async def generate_build(
     request: Request = None
 ) -> BuildResponse:
     """Generate a build based on specified criteria."""
-    # Get user's inventory if requested
-    inventory = None
-    if use_inventory:
-        token = request.headers.get("Authorization")
-        if not token or not token.startswith("Bearer "):
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Authorization required to use inventory"
-            )
-        token = token.split(" ")[1]
-        inventory = await auth_service.get_inventory_gist(token)
+    try:
+        # Get user's inventory if requested
+        inventory = None
+        if use_inventory:
+            token = request.headers.get("Authorization")
+            if not token or not token.startswith("Bearer "):
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Authorization required to use inventory"
+                )
+            token = token.split(" ")[1]
+            inventory = await auth_service.get_inventory_gist(token)
 
-    # Generate build
-    build = await build_service.generate_build(
-        build_type=build_type,
-        focus=focus,
-        character_class=character_class,
-        inventory=inventory
-    )
+        # Generate build
+        build = await build_service.generate_build(
+            build_type=build_type,
+            focus=focus,
+            character_class=character_class,
+            inventory=inventory
+        )
 
-    # Save build if requested
-    if save:
-        token = request.headers.get("Authorization")
-        if not token or not token.startswith("Bearer "):
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Authorization required to save build"
-            )
-        token = token.split(" ")[1]
-        
-        # Save to a new gist
-        gist_data = await auth_service.save_generated_build(token, build.dict())
-        build.gist_url = gist_data["url"]
-        build.raw_url = gist_data["raw_url"]
+        # Save build if requested
+        if save:
+            token = request.headers.get("Authorization")
+            if not token or not token.startswith("Bearer "):
+                raise HTTPException(
+                    status_code=status.HTTP_401_UNAUTHORIZED,
+                    detail="Authorization required to save build"
+                )
+            token = token.split(" ")[1]
+            
+            # Save to a new gist
+            gist_data = await auth_service.save_generated_build(token, build.dict())
+            build.gist_url = gist_data["url"]
+            build.raw_url = gist_data["raw_url"]
 
-    return build
+        return build
+    except Exception as e:
+        logger.error(f"Error generating build: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e)
+        )
 
 
 @router.post(
@@ -116,13 +124,20 @@ async def analyze_build(
     request: Request = None
 ) -> BuildResponse:
     """Analyze a specific build configuration."""
-    if build_service is None:
+    try:
+        if build_service is None:
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail="Build service not available"
+            )
+        
+        return await build_service.analyze_build(build)
+    except Exception as e:
+        logger.error(f"Error analyzing build: {str(e)}")
         raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail="Build service not available"
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e)
         )
-    
-    return await build_service.analyze_build(build)
 
 
 @router.get(
@@ -137,18 +152,25 @@ async def get_build(
     auth_service: AuthService = Depends(get_auth_service)
 ) -> BuildResponse:
     """Get a previously saved build."""
-    # Get token from request
-    token = request.headers.get("Authorization")
-    if not token or not token.startswith("Bearer "):
+    try:
+        # Get token from request
+        token = request.headers.get("Authorization")
+        if not token or not token.startswith("Bearer "):
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Authorization required to fetch build"
+            )
+        token = token.split(" ")[1]
+        
+        # Get the build
+        build_data = await auth_service.get_generated_build(token, gist_id)
+        return BuildResponse(**build_data["build"])
+    except Exception as e:
+        logger.error(f"Error getting build: {str(e)}")
         raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Authorization required to fetch build"
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e)
         )
-    token = token.split(" ")[1]
-    
-    # Get the build
-    build_data = await auth_service.get_generated_build(token, gist_id)
-    return BuildResponse(**build_data["build"])
 
 
 @router.put(
@@ -164,26 +186,33 @@ async def update_build(
     auth_service: AuthService = Depends(get_auth_service)
 ) -> BuildResponse:
     """Update a previously saved build."""
-    # Get token from request
-    token = request.headers.get("Authorization")
-    if not token or not token.startswith("Bearer "):
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Authorization required to update build"
+    try:
+        # Get token from request
+        token = request.headers.get("Authorization")
+        if not token or not token.startswith("Bearer "):
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Authorization required to update build"
+            )
+        token = token.split(" ")[1]
+        
+        # Update the build
+        gist_data = await auth_service.save_generated_build(
+            token, 
+            gist_id,
+            build_update.dict()
         )
-    token = token.split(" ")[1]
-    
-    # Update the build
-    gist_data = await auth_service.save_generated_build(
-        token, 
-        gist_id,
-        build_update.dict()
-    )
-    
-    # Return updated build with URLs
-    build_dict = build_update.dict()
-    build_dict.update({
-        "gist_url": f"https://gist.github.com/{gist_id}",
-        "raw_url": f"https://gist.githubusercontent.com/raw/{gist_id}/build.json"
-    })
-    return BuildResponse(**build_dict)
+        
+        # Return updated build with URLs
+        build_dict = build_update.dict()
+        build_dict.update({
+            "gist_url": f"https://gist.github.com/{gist_id}",
+            "raw_url": f"https://gist.githubusercontent.com/raw/{gist_id}/build.json"
+        })
+        return BuildResponse(**build_dict)
+    except Exception as e:
+        logger.error(f"Error updating build: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e)
+        )

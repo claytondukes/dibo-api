@@ -94,63 +94,45 @@ class BuildService:
     # Supported character classes
     CHARACTER_CLASSES: Set[str] = set()  
     
-    def __init__(self, data_dir: Optional[Path] = None) -> None:
+    def __init__(self) -> None:
         """Initialize the build service.
         
         Note: This should not be called directly. Use create() instead.
-        
-        Args:
-            data_dir: Optional path to data directory. If not provided,
-                     uses the default from settings.
         """
         self.settings = get_settings()
-        self.data_dir = data_dir or self.settings.DATA_DIR
-        
-        if not self.data_dir.exists():
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=f"Data directory not found: {self.data_dir}"
-            )
-            
-        self.data_manager = GameDataManager(self.data_dir)
+        self.data_dir = self.settings.data_path
+        self.data_manager = GameDataManager(settings=self.settings)
         self._load_data()
-        
-        # Dynamically detect available character classes
-        self.CHARACTER_CLASSES = self._get_available_classes()
-        
+
     @classmethod
-    async def create(cls, data_dir: Optional[Path] = None) -> 'BuildService':
-        """Create and initialize a BuildService instance.
-        
-        Args:
-            data_dir: Optional path to data directory. If not provided,
-                     uses the default from settings.
+    async def create(cls) -> "BuildService":
+        """Create a new build service instance.
         
         Returns:
-            Initialized BuildService instance
+            BuildService: The initialized build service
             
         Raises:
-            HTTPException: If initialization fails
+            HTTPException: If required data files are missing
         """
-        instance = cls(data_dir)
-        await instance.initialize()
-        return instance
+        service = cls()
+        await service._verify_data_files()
+        return service
 
-    async def initialize(self) -> None:
-        """Initialize the build service by loading required data."""
+    def _load_data(self) -> None:
+        """Load required data from data directory."""
         try:
             # Load core data
-            self.build_types = await self.data_manager.get_data("build_types")
-            self.constraints = await self.data_manager.get_data("constraints")
+            self.build_types = self._load_json_file("build_types.json")
+            self.constraints = self._load_json_file("constraints.json")
             
             # Load set data
-            self.set_bonuses = await self.data_manager.get_data("sets")
+            self.set_bonuses = self._load_json_file("sets.json")
             
             # Load gem data
-            self.gem_data = await self.data_manager.get_data("gems/data")
-            self.gem_skillmap = await self.data_manager.get_data("gems/skillmap")
-            self.stat_boosts = await self.data_manager.get_data("gems/stat_boosts")
-            self.synergies = await self.data_manager.get_data("gems/synergies")
+            self.gem_data = self._load_json_file("gems/data.json")
+            self.gem_skillmap = self._load_json_file("gems/gem_skillmap.json")
+            self.stat_boosts = self._load_json_file("gems/stat_boosts.json")
+            self.synergies = self._load_json_file("gems/synergies.json")
             
             # Load class-specific data
             self.class_data = {}
@@ -163,17 +145,17 @@ class BuildService:
                 self.class_constraints[class_name] = self._load_json_file(
                     f"classes/{class_name}/constraints.json"
                 )
-            
+                
             # Validate loaded data
             self._validate_data_structure()
             
         except Exception as e:
-            logger.error(f"Failed to initialize data: {str(e)}")
+            logger.error(f"Error loading data: {str(e)}")
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=f"Failed to initialize data: {str(e)}"
+                detail=f"Error loading data: {str(e)}"
             )
-            
+
     def _load_json_file(self, relative_path: str) -> Dict:
         """Load a JSON file from the data directory.
         
@@ -1733,43 +1715,3 @@ class BuildService:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail=f"Failed to analyze build: {str(e)}"
             )
-
-    def _load_data(self) -> None:
-        """Load required data from data directory."""
-        # Load core data
-        self.stats = self._load_json_file("gems/stat_boosts.json")
-        self.build_types = self._load_json_file("build_types.json")
-        
-        # Load set data
-        self.set_bonuses = self._load_json_file("sets.json")
-        
-        # Load gem data
-        self.gem_data = self._load_json_file("gems/gems.json")
-        
-        # Load raw JSON files for other data
-        self.constraints = self._load_json_file("constraints.json")
-        self.synergies = self._load_json_file("synergies.json")
-        
-        # Load class-specific data
-        self.class_data = {}
-        self.class_constraints = {}
-        for class_name in self.CHARACTER_CLASSES:
-            self.class_data[class_name] = {
-                "essences": self._load_json_file(f"classes/{class_name}/essences.json"),
-                "base_skills": self._load_json_file(f"classes/{class_name}/base_skills.json")
-            }
-            self.class_constraints[class_name] = self._load_json_file(
-                f"classes/{class_name}/constraints.json"
-            )
-
-    def _get_available_classes(self) -> Set[str]:
-        """Get available character classes by scanning the classes directory.
-        
-        Returns:
-            Set of available character class names
-        """
-        classes_dir = self.data_dir / "classes"
-        if not classes_dir.exists():
-            return set()
-            
-        return {d.name for d in classes_dir.iterdir() if d.is_dir()}

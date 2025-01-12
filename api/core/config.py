@@ -1,5 +1,6 @@
 """Core configuration module."""
 
+import logging
 from functools import lru_cache
 from pathlib import Path
 from typing import Optional, List
@@ -24,6 +25,7 @@ class Settings(BaseSettings):
         default="your-secret-key-here",
         description="Secret key for JWT token signing"
     )
+    # TODO: Clean these up, JWT is not needed/used
     JWT_ALGORITHM: str = Field(
         default="HS256",
         description="Algorithm to use for JWT token signing"
@@ -96,6 +98,17 @@ class Settings(BaseSettings):
         if not self.BACKEND_CORS_ORIGINS:
             return []
         return [origin.strip() for origin in self.BACKEND_CORS_ORIGINS.split(",") if origin.strip()]
+    
+    # Logging Settings
+    LOG_LEVEL: str = Field(
+        default="INFO",
+        description="Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)"
+    )
+    
+    @property
+    def log_level(self) -> int:
+        """Get the logging level as a logging module constant."""
+        return getattr(logging, self.LOG_LEVEL.upper())
 
     # Allow credentials in CORS requests
     ALLOW_CREDENTIALS: bool = Field(
