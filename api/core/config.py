@@ -48,6 +48,28 @@ class Settings(BaseSettings):
         description="Directory containing test data"
     )
     
+    # Server Settings
+    HOST: str = Field(
+        default="0.0.0.0",
+        description="Host to bind the server to"
+    )
+    PORT: int = Field(
+        default=8000,
+        description="Port to bind the server to"
+    )
+    DEBUG: bool = Field(
+        default=True,
+        description="Enable debug mode"
+    )
+    RELOAD: bool = Field(
+        default=True,
+        description="Enable auto-reload on code changes"
+    )
+    WORKERS: int = Field(
+        default=1,
+        description="Number of worker processes"
+    )
+    
     # CORS Settings
     BACKEND_CORS_ORIGINS: str = Field(
         default="",
