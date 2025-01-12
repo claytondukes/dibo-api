@@ -198,12 +198,20 @@ class GameDataManager:
     async def _reload_data(self) -> None:
         """Reload all game data into the cache."""
         logger.info("Reloading all game data")
+        new_data = {}
+        
+        # Load all categories
         for category, (model, path) in self.CATEGORY_LOADERS.items():
             logger.info(f"Loading category: {category}")
-            self._cache.data[category] = await self._load_category(category, model, path)
-
-        self._cache.metadata = self._load_metadata()
-        self._cache.last_loaded = datetime.now()
+            new_data[category] = await self._load_category(category, model, path)
+        
+        # Create a new cache instance with updated data
+        metadata = self._load_metadata()
+        self._cache = GameDataCache(
+            metadata=metadata,
+            data=new_data,
+            last_loaded=datetime.now()
+        )
         logger.info("Finished reloading data")
 
     async def get_stat_categories(self) -> List[str]:
@@ -239,11 +247,18 @@ class GameDataManager:
         """Get equipment set data.
 
         Returns:
-            dict[str, dict]: Equipment set data
+            dict[str, dict]: Equipment set data with registry and metadata
         """
         logger.info("Getting equipment sets")
-        data = await self.get_data("sets")
-        return data.model_dump(mode='json') if data else {}
+        try:
+            data = await self.get_data("sets")
+            if not data:
+                logger.error("No equipment sets data found")
+                return {}
+            return data.model_dump()
+        except Exception as e:
+            logger.error(f"Error getting equipment sets: {e}")
+            return {}
 
     def get_class_essences(
         self,
