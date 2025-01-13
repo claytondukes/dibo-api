@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:05:36-05:00"
+  },
+  "gems": [
+    {
+      "name": "Blessed Pebble",
+      "stars": "1",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Blood-Soaked Jade",
+      "stars": "5",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 10.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Bottled Hope",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 12.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "The Abiding Curse",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 35.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "Your attacks"
+            }
+          ],
+          "value": 50.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks"
+        }
+      ]
+    },
+    {
+      "name": "Bloody Reach",
+      "stars": "2",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "Your attacks"
+            },
+            {
+              "type": "state",
+              "state": "position",
+              "description": "at 8 yards",
+              "threshold": 8.0
+            }
+          ],
+          "value": 35.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "position",
+          "description": "at 8 yards",
+          "threshold": 8.0
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "at 8 yards",
+          "threshold": 8.0
+        }
+      ]
+    },
+    {
+      "name": "Grim Rhythm",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "stacking up to 10 times",
+              "threshold": 10.0
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "While at full stacks"
+            }
+          ],
+          "value": 9.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "stacking up to 10 times",
+              "threshold": 10.0
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "While at full stacks"
+            }
+          ],
+          "value": 12.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "threshold": 10.0
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "While at full stacks"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "threshold": 10.0
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "While at full stacks"
+        }
+      ]
+    },
+    {
+      "name": "The Abiding Curse",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 35.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Phoenix Ashes",
+      "stars": "5",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 20.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Grim Rhythm",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "stacking up to 10 times",
+              "threshold": 10.0
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "While at full stacks"
+            }
+          ],
+          "value": 9.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "threshold": 10.0
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "While at full stacks"
+        }
+      ]
+    }
+  ],
+  "description": "Increases movement speed"
+}

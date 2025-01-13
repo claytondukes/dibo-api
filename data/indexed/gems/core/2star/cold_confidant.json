@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Cold Confidant",
+  "stars": "2",
+  "type": "summon_damage",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Dealing damage summons a pillar of ice at the enemy's location with Life equal to 300% of your maximum Life. Enemies near the pillar are Chilled and dealt 15% base Damage + 344 each second. The pillar persists for 6 seconds or until destroyed. Cannot occur more often than 20 seconds",
+          "conditions": [
+            "on_damage_dealt",
+            "cooldown_restriction",
+            "chill"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Dealing damage summons a pillar of ice at the enemy's location with Life equal to 300% of your maximum Life. The pillar persists for 6 seconds or until destroyed. Cannot occur more often than 20 seconds",
+          "conditions": [
+            "on_damage_dealt",
+            "cooldown_restriction",
+            "chill"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Dealing damage summons a pillar of ice at the enemy's location with Life equal to 350% of your maximum Life. The pillar persists for 6 seconds or until destroyed. Cannot occur more often than 20 seconds",
+          "conditions": [
+            "on_damage_dealt",
+            "cooldown_restriction",
+            "chill"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    }
+  },
+  "max_rank": 10,
+  "magic_find": "5",
+  "max_effect": "TODO: Max effect information needed (ranks 4-10 unknown)",
+  "categories": [
+    "damage_boost",
+    "control"
+  ],
+  "synergy_categories": [
+    "damage_boost",
+    "control"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Gloom Cask",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Primary Attack unleashes Aspect of Gloom for 6s, triggering gloom blades dealing 30% base damage + 275",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "damage_effect",
+          "description": "unleash an Aspect of Gloom that lasts 10 seconds, during which your Primary Attacks deal 60% additional AoE damage",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T01:20:31-05:00"
+  },
+  "categories": {
+    "critical_hit": {
+      "description": "Affects critical hit chance or damage",
+      "gems": [
+        "Cutthroat's Grin",
+        "Mother's Lament",
+        "Roiling Consequence",
+        "Starfire Shard",
+        "Trickshot Gem",
+        "Lo's Focused Gaze"
+      ]
+    },
+    "damage_boost": {
+      "description": "Increases damage output",
+      "gems": [
+        "Berserker's Eye",
+        "Blood-Soaked Jade",
+        "Bloody Reach",
+        "Bottled Hope",
+        "Concentrated Will",
+        "Cutthroat's Grin",
+        "Echoing Shade",
+        "Fervent Fang",
+        "Lightning Core",
+        "Power & Command",
+        "Tear of the Comet",
+        "Eye of the Unyielding",
+        "Mossthorn",
+        "Pain of Subjugation",
+        "Chained Death",
+        "Spiteful Blood",
+        "Havoc Bearer",
+        "Lo's Focused Gaze"
+      ]
+    },
+    "control": {
+      "description": "Controls enemy movement and actions",
+      "gems": [
+        "Chip of Stoned Flesh",
+        "Frozen Heart",
+        "Howler's Call",
+        "Mocking Laughter",
+        "Lucent Watcher",
+        "Ca'arsen's Invigoration",
+        "Unity Crystal",
+        "Viper's Bite",
+        "Gloom Cask",
+        "Misery Elixir",
+        "Nightmare Wreath",
+        "Kir Sling"
+      ]
+    },
+    "survival": {
+      "description": "Improves survivability and defense",
+      "gems": [
+        "Battleguard",
+        "Blessing of the Worthy",
+        "Blood-Soaked Jade",
+        "Everlasting Torment",
+        "Freedom and Devotion",
+        "Phoenix Ashes",
+        "Respite Stone",
+        "Unity Crystal",
+        "Exigent Echo",
+        "Eye of the Unyielding",
+        "Lucent Watcher",
+        "Shield of Zen",
+        "Black Rose",
+        "Defiant Soul",
+        "Golden Firmament",
+        "Hearthstone",
+        "Zod Stone"
+      ]
+    },
+    "attack_speed": {
+      "description": "Increases attack speed or provides haste effects",
+      "gems": [
+        "Grim Rhythm",
+        "Unity Crystal",
+        "The Hunger",
+        "Ca'arsen's Invigoration",
+        "Bottled Hope"
+      ]
+    },
+    "direct_damage": {
+      "description": "Deals direct damage to enemies",
+      "gems": [
+        "Concentrated Will",
+        "Echoing Shade",
+        "Hellfire Fragment",
+        "Maw of the Deep",
+        "Void Spark",
+        "Lightning Core",
+        "Defiant Soul",
+        "Zwenson's Haunting",
+        "Wulfheort",
+        "Kir Sling"
+      ]
+    },
+    "damage_over_time": {
+      "description": "Deals damage over time effects",
+      "gems": [
+        "Mossthorn",
+        "Igneous Scorn",
+        "Seeping Bile",
+        "Everlasting Torment",
+        "Pain of Subjugation",
+        "Viper's Bite",
+        "Mourneskull"
+      ]
+    },
+    "counter_damage": {
+      "description": "Reflects or converts incoming damage",
+      "gems": [
+        "Blessing of the Worthy",
+        "Chip of Stoned Flesh",
+        "Blood-Soaked Jade",
+        "Seled's Weakening",
+        "Power & Command"
+      ]
+    },
+    "mobility": {
+      "description": "Enhances movement or positioning",
+      "gems": [
+        "Bottled Hope",
+        "Freedom and Devotion",
+        "Unity Crystal"
+      ]
+    },
+    "area_damage": {
+      "description": "Deals damage to multiple targets",
+      "gems": [
+        "Lightning Core",
+        "Defiant Soul",
+        "Chained Death",
+        "Howler's Call",
+        "Seeping Bile",
+        "Stormvault",
+        "Entropic Well"
+      ]
+    }
+  }
+}

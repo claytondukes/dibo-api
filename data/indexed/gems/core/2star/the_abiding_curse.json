@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "The Abiding Curse",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to curse enemies, reducing their Attack and Movement Speeds by 35% for 2",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Cursed enemies also take 10% increased damage from your attacks",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Curse duration increased to 3.50 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage dealt to cursed targets increased by 2.5%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Curse duration increased to 4.50 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage dealt to cursed targets increased by 5.0%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Curse duration increased to 5.50 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage dealt to cursed targets increased by 7.5%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Curse duration increased to 6.50 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage dealt to cursed targets increased by 10.0%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    }
+  }
+}

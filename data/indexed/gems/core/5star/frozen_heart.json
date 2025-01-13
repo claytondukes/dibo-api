@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Frozen Heart",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "gain Frigid Shield more often than once every 20 seconds",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "defensive_effect",
+          "description": "Shield for 6 seconds that Chills enemy attackers and absorbs damage equal to 150% of your base damage + 1458",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "defensive_effect",
+          "description": "Shield more often than once every 20 seconds",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 360%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 180%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "buff_effect",
+          "description": "grants your attacks at 15% chance to chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "defensive_effect",
+          "description": "Shield grants your attacks at 15% chance to chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "control_effect",
+          "description": "chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 220%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "buff_effect",
+          "description": "grants your attacks a 30% chance to Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "defensive_effect",
+          "description": "Shield grants your attacks a 30% chance to Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "control_effect",
+          "description": "Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 260%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "buff_effect",
+          "description": "grants your attacks a 45% chance to Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "defensive_effect",
+          "description": "Shield grants your attacks a 45% chance to Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "control_effect",
+          "description": "Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 310%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "buff_effect",
+          "description": "grants your attacks a 60% chance to Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "defensive_effect",
+          "description": "Shield also grants your attacks a 60% chance to Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "control_effect",
+          "description": "Chill enemies",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    }
+  }
+}

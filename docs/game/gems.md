@@ -90,6 +90,53 @@ Each gem consists of:
 - Combat Rating
 - Rank-specific effects and stats
 
+### Effect Types
+
+Gems can have multiple effect types:
+
+- stat_effect: Direct stat modifications (e.g., damage reduction)
+- proc_effect: Triggered effects (e.g., on critical hit)
+- generic_effect: General gameplay effects
+- control_effect: Crowd control effects (stun, slow, etc.)
+
+### Conditions
+
+Effects can be conditional based on:
+
+- Movement state (e.g., while moving)
+- Health thresholds (e.g., below 50% life)
+- Combat triggers (e.g., on critical hit)
+- Skill usage (e.g., after using ultimate)
+- Status effects (e.g., while stunned)
+
+## Build Generation
+
+The DiBO API uses an intelligent system to dynamically generate optimal gem builds based on:
+
+### Core Factors
+
+- Player class and level
+- Content type (PvE/PvP)
+- Team composition
+- Enemy types and mechanics
+- Current meta state
+- Player playstyle preferences
+- Combat Rating requirements
+
+### Dynamic Optimization
+
+Instead of using static templates, the system:
+
+1. Analyzes gem synergies in real-time
+2. Considers current game state
+3. Adapts to meta changes
+4. Accounts for unique player circumstances
+5. Optimizes for specific content challenges
+
+### Historical Reference
+
+For reference purposes, example build templates can be found in [Build Templates Reference](../reference/build_templates/README.md).
+
 ## Content Impact
 
 ### 1. Challenge Rifts
@@ -130,18 +177,72 @@ class Gem(BaseModel):
     combat_rating: Dict[str, int] # Combat Rating per rank/quality
 ```
 
-### Resonance Calculation
+### Rank Data Coverage
+
+The gem data includes rank information from 1-10 for all gems. Each gem has a complete set of effects and values for every rank:
+
+#### Effect Scaling Patterns
+
+1. Common Scaling Types
+   - Linear Damage Scaling: Effects increase by fixed percentage between ranks
+
+     ```text
+     Example: Defiant Soul damage scaling
+     Rank 1: 64% base damage
+     Rank 2: 80% base damage
+     Rank 4: 96% base damage
+     Rank 6: 128% base damage
+     Rank 8: 160% base damage
+     Rank 10: 192% base damage
+     ```
+
+   - Stepped Stat Bonuses: Additional effects at key ranks
+
+     ```text
+     Example: Ca'arsen's Invigoration
+     Rank 1: 5% Attack Speed
+     Rank 3: +0.5% Primary Attack damage
+     Rank 5: Primary Attack damage to 1%
+     Rank 7: Primary Attack damage to 1.5%
+     Rank 9: Primary Attack damage to 2%
+     ```
+
+2. Effect Progression Guidelines
+   - Damage effects: Linear scaling between ranks
+   - Cooldowns: Major reductions at ranks 3, 6, and 9
+   - Proc chances: Increases at ranks 3, 5, 7, and 9
+   - Stat bonuses: Small increases at odd ranks
+   - Duration bonuses: Usually at ranks 4, 7, and 10
+
+### File Structure
+
+```text
+data/indexed/gems/
+├── core/                # Individual gem files
+│   ├── 1star/          # 1-star gems
+│   ├── 2star/          # 2-star gems
+│   └── 5star/          # 5-star gems
+└── metadata/           # Shared metadata
+    ├── conditions.json  # Effect conditions
+    ├── effect_details.json  # Effect specifics
+    ├── gem_skillmap.json    # Skill associations
+    └── stat_boosts/    # Stat boost data
+```
+
+### Effect Processing
 
 ```python
-def calculate_resonance(
-    gem_star: int,
-    gem_rank: int,
-    gem_quality: Optional[int] = None
-) -> int:
-    """Calculate gem resonance based on stats."""
-    if gem_star == 5 and gem_quality:
-        return RESONANCE_TABLE_5STAR[gem_quality][gem_rank]
-    return RESONANCE_TABLE[gem_star][gem_rank]
+def process_gem_effects(
+    gem: Gem,
+    rank: int,
+    conditions: Dict[str, Any]
+) -> List[Effect]:
+    """Process gem effects for given rank and conditions."""
+    effects = []
+    for effect in gem.ranks[str(rank)].effects:
+        if meets_conditions(effect.conditions, conditions):
+            effects.append(process_effect(effect))
+    return effects
 ```
 
 ## Strategic Considerations
@@ -199,18 +300,16 @@ def calculate_resonance(
 - Verify resonance calculations
 - Test scaling formulas
 - Validate stat contributions
-- Check aux system rules
+- Check condition triggers
+- Confirm effect stacking
 
-### 2. Build Testing
+### 2. Data Integrity
 
-- DPS with resonance
-- Survival scaling
-- Content thresholds
-- Bracket verification
+- Validate gem file structure
+- Check metadata consistency
+- Test condition mappings
+- Verify effect references
 
-### 3. Integration Testing
+## Last Updated
 
-- Full build scaling
-- Team composition impact
-- Content performance
-- System interactions
+2025-01-12 23:59:46 EST

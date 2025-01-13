@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Hearthstone",
+  "stars": "1",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb shields are increased by 16",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb shields increased by 36%",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "Absorb shield durations increased to 20",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "Absorb shields also reduce the duration of Loss of Control effects by 6% while active",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb shields are increased by 24%",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "Absorb shields also reduce the duration of Loss of Control effects by 12% while active",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb shields increased by 28%",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "Absorb shields also reduce the duration of Loss of Control effects by 18% while active",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb shields increased by 32%",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "Absorb shields also reduce the duration of Loss of Control effects by 24% while active",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1125 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:05:36-05:00"
+  },
+  "gems": [
+    {
+      "name": "Berserker's Eye",
+      "stars": "1",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 5.5,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 5.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 16.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 5.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Blessing of the Worthy",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 12.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_hit",
+              "description": "When you take damage"
+            },
+            {
+              "type": "state",
+              "state": "target_count",
+              "description": "all nearby enemies"
+            }
+          ],
+          "value": 20.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_hit",
+              "description": "When you take damage"
+            },
+            {
+              "type": "state",
+              "state": "target_count",
+              "description": "all nearby enemies"
+            }
+          ],
+          "value": 24.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_hit",
+          "description": "When you take damage"
+        },
+        {
+          "type": "state",
+          "state": "target_count",
+          "description": "all nearby enemies"
+        }
+      ]
+    },
+    {
+      "name": "Blood-Soaked Jade",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 4.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "based on current Life"
+            }
+          ],
+          "value": 12.0,
+          "min_value": 12.0,
+          "max_value": 24.0,
+          "unit": "percentage",
+          "scaling": true
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "based on current Life"
+        }
+      ]
+    },
+    {
+      "name": "Ca'arsen's Invigoration",
+      "stars": "1",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 2.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Chained Death",
+      "stars": "1",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 1.5,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "your attacks"
+            }
+          ],
+          "value": 4.5,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "your attacks"
+        }
+      ]
+    },
+    {
+      "name": "Chip of Stoned Flesh",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 150.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 10.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Fervent Fang",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "at 10 stacks",
+              "threshold": 10.0
+            }
+          ],
+          "value": 0.8,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "your attacks"
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "at 10 stacks",
+              "threshold": 10.0
+            }
+          ],
+          "value": 2.4,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "your attacks"
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "at 10 stacks",
+              "threshold": 10.0
+            }
+          ],
+          "value": 24.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "at 10 stacks",
+          "threshold": 10.0
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "your attacks"
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "at 10 stacks",
+          "threshold": 10.0
+        }
+      ]
+    },
+    {
+      "name": "Follower's Burden",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 1.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 3.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Frozen Heart",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 150.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 32.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Mother's Lament",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "cooldown",
+              "cooldown": 20.0,
+              "description": "cannot occur more often than once every 20 seconds"
+            }
+          ],
+          "value": 20.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            }
+          ],
+          "value": 50.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            }
+          ],
+          "value": 50.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "threshold": 50.0
+        }
+      ]
+    },
+    {
+      "name": "Pain Clasp",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 16.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Pain of Subjugation",
+      "stars": "1",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 2.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Power & Command",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 16.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 16.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Respite Stone",
+      "stars": "1",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 10.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 5.5,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 16.5,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Battleguard",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "position",
+              "description": "within 3 yards",
+              "threshold": 3.0
+            }
+          ],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "position",
+          "description": "within 3 yards",
+          "threshold": 3.0
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "position",
+          "description": "within 3 yards",
+          "threshold": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Bottled Hope",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 12.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Follower's Burden",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 1.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Bloody Reach",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "position",
+              "description": "at 8 yards",
+              "threshold": 8.0
+            }
+          ],
+          "value": 2.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "position",
+          "description": "at 8 yards",
+          "threshold": 8.0
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "at 8 yards",
+          "threshold": 8.0
+        }
+      ]
+    },
+    {
+      "name": "Grim Rhythm",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "stacking up to 10 times",
+              "threshold": 10.0
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "While at full stacks"
+            }
+          ],
+          "value": 0.8,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "stacking up to 10 times",
+              "threshold": 10.0
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "While at full stacks"
+            }
+          ],
+          "value": 2.4,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "threshold": 10.0
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "While at full stacks"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "threshold": 10.0
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "While at full stacks"
+        }
+      ]
+    },
+    {
+      "name": "Starfire Shard",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "cooldown",
+              "cooldown": 20.0,
+              "description": "cannot occur more often than once every 20 seconds"
+            }
+          ],
+          "value": 30.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 50.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds"
+        }
+      ],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Battleguard",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "position",
+              "description": "within 3 yards",
+              "threshold": 3.0
+            }
+          ],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "position",
+          "description": "within 3 yards",
+          "threshold": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Chained Death",
+      "stars": "1",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 1.5,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Stormvault",
+      "stars": "5",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 100.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Follower's Burden",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 1.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Pain Clasp",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Phoenix Ashes",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 450.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 800.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Power & Command",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Blessing of the Worthy",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 12.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Blood-Soaked Jade",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 4.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Follower's Burden",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 1.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Howler's Call",
+      "stars": "5",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 10.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Roiling Consequence",
+      "stars": "5",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 16.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Blessing of the Worthy",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 12.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Frozen Heart",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 150.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Grim Rhythm",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "stacking up to 10 times",
+              "threshold": 10.0
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "While at full stacks"
+            }
+          ],
+          "value": 0.8,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "threshold": 10.0
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "While at full stacks"
+        }
+      ]
+    },
+    {
+      "name": "Phoenix Ashes",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 450.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Starfire Shard",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "cooldown",
+              "cooldown": 20.0,
+              "description": "cannot occur more often than once every 20 seconds"
+            }
+          ],
+          "value": 30.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": [
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds"
+        }
+      ]
+    },
+    {
+      "name": "Spiteful Blood",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            },
+            {
+              "type": "cooldown",
+              "cooldown": 20.0,
+              "description": "cannot occur more often than once every 20 seconds"
+            }
+          ],
+          "value": 50.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            },
+            {
+              "type": "cooldown",
+              "cooldown": 20.0,
+              "description": "cannot occur more often than once every 20 seconds"
+            }
+          ],
+          "value": 30.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            }
+          ],
+          "value": 50.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            }
+          ],
+          "value": 40.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            }
+          ],
+          "value": 200.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "threshold": 50.0
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "threshold": 50.0
+        }
+      ]
+    }
+  ],
+  "description": "Increases all damage dealt"
+}

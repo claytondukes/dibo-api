@@ -42,6 +42,7 @@ class GameDataManager:
         "gems/skillmap": (GemSkillMap, "gems/gem_skillmap.json"),
         "gems/stat_boosts": (GameStats, "gems/stat_boosts.json"),
         "gems/synergies": (GameSynergies, "gems/synergies.json"),
+        "synergies": (GameSynergies, "synergies.json"),  # Root level synergies
     }
 
     # Static gear slots (right side of character)

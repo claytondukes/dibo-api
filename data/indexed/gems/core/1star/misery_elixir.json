@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Misery Elixir",
+  "stars": "1",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 8%",
+          "conditions": [
+            "harmful"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 24%. Affected enemies take 8% increased damage",
+          "conditions": [
+            "harmful",
+            "affected"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 10%",
+          "conditions": [
+            "harmful"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 10%. Affected enemies take 2% increased damage",
+          "conditions": [
+            "harmful",
+            "affected"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 12%. Affected enemies take 2% increased damage",
+          "conditions": [
+            "harmful",
+            "affected"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 12%. Affected enemies take 4% increased damage",
+          "conditions": [
+            "harmful",
+            "affected"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 16%. Affected enemies take 4% increased damage",
+          "conditions": [
+            "harmful",
+            "affected"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 16%. Affected enemies take 6% increased damage",
+          "conditions": [
+            "harmful",
+            "affected"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 20%. Affected enemies take 6% increased damage",
+          "conditions": [
+            "harmful",
+            "affected"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Duration of harmful effects you apply is increased by 20%. Affected enemies take 8% increased damage",
+          "conditions": [
+            "harmful",
+            "affected"
+          ]
+        }
+      ]
+    }
+  }
+}

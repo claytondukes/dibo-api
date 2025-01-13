@@ -1,0 +1,16 @@
+{
+  "Berserker's Eye": {
+    "skill_types": {
+      "attack": {
+        "score": 0.9,
+        "description": "Direct damage skills benefit most from increased damage",
+        "build_types": ["PVE", "PVP"]
+      },
+      "critical": {
+        "score": 0.8,
+        "description": "Skills with critical hit bonuses synergize with critical hit chance increase",
+        "build_types": ["PVE", "PVP"]
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Maw of the Deep",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Creates whirlpool that pulls enemies, sea monster erupts for 140% base damage + 1701",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Conjures a whirlpool that pulls enemies into its center, dealing 200% base damage over 3 seconds. Additionally, the whirlpool summons a sea monster dealing 400% base damage to enemies within its radius",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

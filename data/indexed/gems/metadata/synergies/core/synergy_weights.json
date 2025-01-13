@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:46:42-05:00"
+  },
+  "synergy_types": {
+    "damage_amplification": {
+      "description": "Direct increases to damage output",
+      "base_weight": 1.0,
+      "build_type_modifiers": {
+        "dps": 1.2,
+        "raid": 1.1,
+        "farm": 0.9,
+        "pvp": 1.0
+      }
+    },
+    "survival_mechanics": {
+      "description": "Defensive and survival-focused interactions",
+      "base_weight": 0.9,
+      "build_type_modifiers": {
+        "survival": 1.2,
+        "pvp": 1.1,
+        "raid": 1.0,
+        "dps": 0.7
+      }
+    },
+    "dot_effects": {
+      "description": "Damage over time interactions",
+      "base_weight": 0.85,
+      "build_type_modifiers": {
+        "dot": 1.2,
+        "pvp": 1.1,
+        "dps": 0.9,
+        "farm": 0.7
+      }
+    },
+    "area_effects": {
+      "description": "Area of effect damage and control",
+      "base_weight": 0.85,
+      "build_type_modifiers": {
+        "aoe": 1.2,
+        "farm": 1.1,
+        "raid": 0.8,
+        "pvp": 0.9
+      }
+    },
+    "support_effects": {
+      "description": "Buff and team support interactions",
+      "base_weight": 0.8,
+      "build_type_modifiers": {
+        "support": 1.2,
+        "raid": 1.0,
+        "pvp": 0.9,
+        "farm": 0.7
+      }
+    },
+    "farming_efficiency": {
+      "description": "Resource and item farming synergies",
+      "base_weight": 0.8,
+      "build_type_modifiers": {
+        "farm": 1.2,
+        "dps": 0.8,
+        "support": 0.7,
+        "pvp": 0.5
+      }
+    }
+  },
+  "combination_rules": {
+    "stacking_types": {
+      "multiplicative": ["damage_amplification", "critical_damage"],
+      "additive": ["dot_effects", "area_effects"],
+      "highest": ["movement_speed", "attack_speed"]
+    },
+    "diminishing_returns": {
+      "threshold": 3,
+      "reduction_per_additional": 0.1,
+      "minimum_value": 0.5
+    }
+  }
+}

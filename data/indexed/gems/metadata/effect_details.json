@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:03:57-05:00"
+  },
+  "effect_details": {
+    "control_effects": {
+      "Howler's Call": {
+        "stun": {
+          "chance": 48,
+          "duration": 3,
+          "cooldown": 20
+        }
+      },
+      "Maw of the Deep": {
+        "pull": {
+          "description": "pulls enemies into its center"
+        }
+      },
+      "Unrefined Passage": {
+        "slow_immunity": {
+          "description": "chance to be immune to slow effects"
+        }
+      }
+    },
+    "health_thresholds": {
+      "Spiteful Blood": {
+        "below": 50
+      },
+      "The Hunger": {
+        "above": 75
+      }
+    },
+    "cooldowns": {
+      "Frozen Heart": 20,
+      "Howler's Call": 20,
+      "Starfire Shard": 20,
+      "Spiteful Blood": 20
+    },
+    "dot_effects": {
+      "Seeping Bile": {
+        "duration": 6,
+        "type": "poison"
+      }
+    }
+  }
+}

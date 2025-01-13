@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Zwenson's Haunting",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "When you defeat an enemy, a dark beast attacks nearby enemies, dealing 50% base damage + 486 to all nearby enemies. Cannot occur more often than once every 6 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage multiplier increased to 120%",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage multiplier increased to 60%",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "Gain a 7% chance for a dark beast to attack nearby enemies after defeating an enemy",
+          "conditions": [
+            "on_defeat"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage multiplier increased to 75%",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "Gain a 14% chance for a dark beast to attack nearby enemies after defeating an enemy",
+          "conditions": [
+            "on_defeat"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage multiplier increased to 90%",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "Gain a 21% chance for a dark beast to attack nearby enemies after defeating an enemy",
+          "conditions": [
+            "on_defeat"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage multiplier increased to 105%",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "Gain a 28% chance for a dark beast to attack nearby enemies after defeating an enemy",
+          "conditions": [
+            "on_defeat"
+          ]
+        }
+      ]
+    }
+  }
+}

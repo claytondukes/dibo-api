@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T01:20:31-05:00"
+  },
+  "templates": {
+    "control_specialist": {
+      "name": "Crowd Control Specialist",
+      "description": "Maximizes control duration and frequency while maintaining pressure",
+      "primary_type": "pvp",
+      "role_type": "control",
+      "pvp_notes": {
+        "scaling": "Control effects are very powerful in PvP",
+        "strategy": "Chain CC while maintaining constant pressure",
+        "flexibility": "Can be combined with survival or damage gems based on needs"
+      },
+      "gem_sets": {
+        "primary_set": {
+          "gems": [
+            {
+              "gem": "Chip of Stoned Flesh",
+              "priority": 1,
+              "reason": "Primary control gem",
+              "pvp_effect": "Core CC effect, essential for control builds"
+            },
+            {
+              "gem": "Frozen Heart",
+              "priority": 1,
+              "reason": "Secondary control",
+              "pvp_effect": "Additional CC layer for chaining"
+            },
+            {
+              "gem": "Kir Sling",
+              "priority": 1,
+              "reason": "Vision control",
+              "pvp_effect": "Blind effect for total control"
+            },
+            {
+              "gem": "Seeping Bile",
+              "priority": 1,
+              "reason": "Pressure during control",
+              "pvp_effect": "Maintains damage while controlling"
+            },
+            {
+              "gem": "Ca'arsen's Invigoration",
+              "priority": 1,
+              "reason": "Attack speed for CC application",
+              "pvp_effect": "Faster CC chains"
+            },
+            {
+              "gem": "Howler's Call",
+              "priority": 2,
+              "reason": "Area control",
+              "pvp_effect": "Additional CC proc chance"
+            },
+            {
+              "gem": "Blood-Soaked Jade",
+              "priority": 2,
+              "reason": "Damage while controlling",
+              "pvp_effect": "Pressure during CC chains"
+            },
+            {
+              "gem": "Power & Command",
+              "priority": 2,
+              "reason": "Consistent damage boost",
+              "pvp_effect": "Damage amplification during control"
+            },
+            {
+              "gem": "Bottled Hope",
+              "priority": 2,
+              "reason": "Movement for positioning",
+              "pvp_effect": "Better CC positioning"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Chip of Stoned Flesh", "Frozen Heart", "Kir Sling"],
+              "effect": "Maximum control chain potential",
+              "score": 0.95,
+              "pvp_notes": "Core CC combination with vision control"
+            },
+            {
+              "gems": ["Seeping Bile", "Blood-Soaked Jade", "Power & Command"],
+              "effect": "Damage during control phases",
+              "score": 0.9,
+              "pvp_notes": "Pressure while controlling"
+            },
+            {
+              "gems": ["Howler's Call", "Bottled Hope", "Chip of Stoned Flesh"],
+              "effect": "Mobile control",
+              "score": 0.85,
+              "pvp_notes": "Chase and control"
+            }
+          ]
+        }
+      },
+      "stat_priorities": {
+        "primary": [
+          {
+            "stat": "potency",
+            "weight": 1.0,
+            "pvp_note": "Essential for CC landing"
+          },
+          {
+            "stat": "cooldown_reduction",
+            "weight": 0.9,
+            "pvp_note": "More frequent control"
+          },
+          {
+            "stat": "attack_speed",
+            "weight": 0.8,
+            "pvp_note": "Faster CC application"
+          }
+        ],
+        "secondary": [
+          {
+            "stat": "movement_speed",
+            "weight": 0.7,
+            "pvp_note": "Positioning for CC"
+          },
+          {
+            "stat": "damage_increase",
+            "weight": 0.6,
+            "pvp_note": "Pressure during control"
+          }
+        ]
+      }
+    }
+  },
+  "pvp_considerations": {
+    "battlegrounds": {
+      "key_gems": ["Chip of Stoned Flesh", "Frozen Heart", "Ca'arsen's Invigoration"],
+      "strategy": "Control key targets in team fights",
+      "notes": "Coordinate CC with team damage"
+    },
+    "duels": {
+      "key_gems": ["Chip of Stoned Flesh", "Frozen Heart", "Blood-Soaked Jade"],
+      "strategy": "CC chain single target",
+      "notes": "Maximize lockdown duration"
+    }
+  }
+}

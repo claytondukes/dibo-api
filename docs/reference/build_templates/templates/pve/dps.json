@@ -1,0 +1,338 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:57:51-05:00"
+  },
+  "templates": {
+    "pure_dps": {
+      "name": "Maximum Damage Output",
+      "description": "Focused on achieving the highest possible damage output",
+      "primary_type": "pve",
+      "role_type": "dps",
+      "gem_sets": {
+        "primary_set": {
+          "gems": [
+            {
+              "gem": "Berserker's Eye",
+              "priority": 1,
+              "reason": "Primary damage amplification"
+            },
+            {
+              "gem": "Power & Command",
+              "priority": 1,
+              "reason": "Consistent damage boost"
+            },
+            {
+              "gem": "Blood-Soaked Jade",
+              "priority": 1,
+              "reason": "High health damage bonus"
+            },
+            {
+              "gem": "Fervent Fang",
+              "priority": 1,
+              "reason": "Vulnerability stacking"
+            },
+            {
+              "gem": "Seeping Bile",
+              "priority": 2,
+              "reason": "DOT and chain reactions"
+            },
+            {
+              "gem": "Everlasting Torment",
+              "priority": 2,
+              "reason": "Additional DOT and crit"
+            },
+            {
+              "gem": "Phoenix Ashes",
+              "priority": 3,
+              "reason": "Survival insurance"
+            },
+            {
+              "gem": "Bottled Hope",
+              "priority": 3,
+              "reason": "Buff enhancement"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Berserker's Eye", "Power & Command", "Blood-Soaked Jade", "Fervent Fang"],
+              "effect": "Maximum multiplicative damage",
+              "score": 0.95
+            },
+            {
+              "gems": ["Seeping Bile", "Everlasting Torment", "Fervent Fang"],
+              "effect": "DOT amplification chain",
+              "score": 0.9
+            },
+            {
+              "gems": ["Bottled Hope", "Blood-Soaked Jade", "Phoenix Ashes"],
+              "effect": "Survival and buff enhancement",
+              "score": 0.85
+            }
+          ]
+        },
+        "alternative_set": {
+          "gems": [
+            {
+              "gem": "Berserker's Eye",
+              "priority": 1,
+              "reason": "Primary damage"
+            },
+            {
+              "gem": "Power & Command",
+              "priority": 1,
+              "reason": "Damage boost"
+            },
+            {
+              "gem": "Blood-Soaked Jade",
+              "priority": 1,
+              "reason": "Health bonus damage"
+            },
+            {
+              "gem": "Echoing Shade",
+              "priority": 1,
+              "reason": "Multiple damage sources"
+            },
+            {
+              "gem": "Chip of Stoned Flesh",
+              "priority": 2,
+              "reason": "Control and damage"
+            },
+            {
+              "gem": "Phoenix Ashes",
+              "priority": 2,
+              "reason": "Survival"
+            },
+            {
+              "gem": "Unity Crystal",
+              "priority": 2,
+              "reason": "Protection"
+            },
+            {
+              "gem": "Bottled Hope",
+              "priority": 2,
+              "reason": "Buff enhancement"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Berserker's Eye", "Power & Command", "Blood-Soaked Jade"],
+              "effect": "Core damage amplification",
+              "score": 0.95
+            },
+            {
+              "gems": ["Echoing Shade", "Chip of Stoned Flesh", "Unity Crystal"],
+              "effect": "Control and multi-source damage",
+              "score": 0.9
+            }
+          ]
+        }
+      },
+      "stat_priorities": {
+        "primary": [
+          {
+            "stat": "damage_increase",
+            "weight": 1.0
+          },
+          {
+            "stat": "critical_hit_damage",
+            "weight": 0.9
+          },
+          {
+            "stat": "attack_speed",
+            "weight": 0.8
+          }
+        ],
+        "secondary": [
+          {
+            "stat": "critical_hit_chance",
+            "weight": 0.7
+          },
+          {
+            "stat": "penetration",
+            "weight": 0.6
+          }
+        ]
+      }
+    },
+    "crit_focused": {
+      "name": "Critical Hit Specialist",
+      "description": "Maximizes critical hit chance and damage",
+      "primary_type": "pve",
+      "role_type": "dps",
+      "gem_sets": {
+        "primary_set": {
+          "gems": [
+            {
+              "gem": "Cutthroat's Grin",
+              "priority": 1,
+              "reason": "Critical hit damage"
+            },
+            {
+              "gem": "Igneous Scorn",
+              "priority": 1,
+              "reason": "Critical explosions"
+            },
+            {
+              "gem": "Power & Command",
+              "priority": 1,
+              "reason": "Damage amplification"
+            },
+            {
+              "gem": "Blood-Soaked Jade",
+              "priority": 1,
+              "reason": "Damage while healthy"
+            },
+            {
+              "gem": "Berserker's Eye",
+              "priority": 2,
+              "reason": "Additional damage"
+            },
+            {
+              "gem": "Everlasting Torment",
+              "priority": 2,
+              "reason": "Critical chance"
+            },
+            {
+              "gem": "Phoenix Ashes",
+              "priority": 2,
+              "reason": "Survival"
+            },
+            {
+              "gem": "Bottled Hope",
+              "priority": 2,
+              "reason": "Buff enhancement"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Cutthroat's Grin", "Igneous Scorn", "Power & Command", "Blood-Soaked Jade"],
+              "effect": "Maximum critical damage chain",
+              "score": 0.95
+            },
+            {
+              "gems": ["Berserker's Eye", "Everlasting Torment", "Blood-Soaked Jade"],
+              "effect": "Additional damage amplification",
+              "score": 0.9
+            },
+            {
+              "gems": ["Phoenix Ashes", "Bottled Hope", "Blood-Soaked Jade"],
+              "effect": "Survival and enhancement",
+              "score": 0.85
+            }
+          ]
+        },
+        "alternative_set": {
+          "gems": [
+            {
+              "gem": "Cutthroat's Grin",
+              "priority": 1,
+              "reason": "Critical damage"
+            },
+            {
+              "gem": "Igneous Scorn",
+              "priority": 1,
+              "reason": "Critical explosions"
+            },
+            {
+              "gem": "Seeping Bile",
+              "priority": 1,
+              "reason": "DOT pressure"
+            },
+            {
+              "gem": "Everlasting Torment",
+              "priority": 1,
+              "reason": "Additional DOT"
+            },
+            {
+              "gem": "Blood-Soaked Jade",
+              "priority": 2,
+              "reason": "Damage boost"
+            },
+            {
+              "gem": "Power & Command",
+              "priority": 2,
+              "reason": "Damage amplification"
+            },
+            {
+              "gem": "Phoenix Ashes",
+              "priority": 2,
+              "reason": "Survival"
+            },
+            {
+              "gem": "Unity Crystal",
+              "priority": 3,
+              "reason": "Protection"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Cutthroat's Grin", "Igneous Scorn", "Blood-Soaked Jade"],
+              "effect": "Critical damage core",
+              "score": 0.95
+            },
+            {
+              "gems": ["Seeping Bile", "Everlasting Torment", "Power & Command"],
+              "effect": "DOT and damage boost",
+              "score": 0.9
+            }
+          ]
+        }
+      },
+      "stat_priorities": {
+        "primary": [
+          {
+            "stat": "critical_hit_chance",
+            "weight": 1.0
+          },
+          {
+            "stat": "critical_hit_damage",
+            "weight": 1.0
+          },
+          {
+            "stat": "damage_increase",
+            "weight": 0.8
+          }
+        ],
+        "secondary": [
+          {
+            "stat": "attack_speed",
+            "weight": 0.7
+          },
+          {
+            "stat": "penetration",
+            "weight": 0.6
+          }
+        ]
+      }
+    }
+  },
+  "content_considerations": {
+    "dungeons": {
+      "preferred_set": "pure_dps.primary_set",
+      "reason": "Maximum sustained damage"
+    },
+    "world_bosses": {
+      "preferred_set": "pure_dps.alternative_set",
+      "reason": "Balance of damage and survival"
+    },
+    "challenge_rifts": {
+      "preferred_set": "crit_focused.primary_set",
+      "reason": "Burst damage potential"
+    }
+  },
+  "party_synergies": {
+    "solo": {
+      "preferred_set": "pure_dps.alternative_set",
+      "reason": "Self-sufficient damage"
+    },
+    "group": {
+      "preferred_set": "pure_dps.primary_set",
+      "reason": "Maximum group damage"
+    },
+    "support_present": {
+      "preferred_set": "crit_focused.primary_set",
+      "reason": "Amplified by support buffs"
+    }
+  }
+}

@@ -1,0 +1,385 @@
+{
+  "Berserker's Eye": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases all damage you deal by 5",
+            "conditions": []
+          },
+          {
+            "type": "stat_effect",
+            "description": "increases all damage you take by 5%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 5.5,
+              "conditions": [],
+              "context": " damage you deal by 5.5%, but also increases all damage you take by 5%."
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 10,
+    "magic_find": "5",
+    "max_effect": "Increases all damage you deal by 16.00% and increases your Critical Hit Chance by 2%, but also increases all damage you take by 5%."
+  },
+  "Unrefined Passage": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 5%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 5.0,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 5%"
+            }
+          ]
+        }
+      },
+      "2": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 6%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 6.0,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 6%"
+            }
+          ]
+        }
+      },
+      "3": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 6%. You have a 1% chance to be immune to an attempt to Slow you",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 6.0,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 6%"
+            }
+          ],
+          "immunity_chance": [
+            {
+              "value": 1.0,
+              "conditions": [
+                {
+                  "type": "effect_type",
+                  "effect_type": "slow",
+                  "description": "immune to an attempt to Slow you"
+                }
+              ],
+              "context": "1% chance to be immune to an attempt to Slow you"
+            }
+          ]
+        }
+      },
+      "4": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 7.5%. You have a 1% chance to be immune to an attempt to Slow you",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 7.5,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 7.5%"
+            }
+          ],
+          "immunity_chance": [
+            {
+              "value": 1.0,
+              "conditions": [
+                {
+                  "type": "effect_type",
+                  "effect_type": "slow",
+                  "description": "immune to an attempt to Slow you"
+                }
+              ],
+              "context": "1% chance to be immune to an attempt to Slow you"
+            }
+          ]
+        }
+      },
+      "5": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 7.5%. You have a 2% chance to be immune to an attempt to Slow you",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 7.5,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 7.5%"
+            }
+          ],
+          "immunity_chance": [
+            {
+              "value": 2.0,
+              "conditions": [
+                {
+                  "type": "effect_type",
+                  "effect_type": "slow",
+                  "description": "immune to an attempt to Slow you"
+                }
+              ],
+              "context": "2% chance to be immune to an attempt to Slow you"
+            }
+          ]
+        }
+      },
+      "6": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 9%. You have a 2% chance to be immune to an attempt to Slow you",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 9.0,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 9%"
+            }
+          ],
+          "immunity_chance": [
+            {
+              "value": 2.0,
+              "conditions": [
+                {
+                  "type": "effect_type",
+                  "effect_type": "slow",
+                  "description": "immune to an attempt to Slow you"
+                }
+              ],
+              "context": "2% chance to be immune to an attempt to Slow you"
+            }
+          ]
+        }
+      },
+      "7": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 9%. You have a 3% chance to be immune to an attempt to Slow you",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 9.0,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 9%"
+            }
+          ],
+          "immunity_chance": [
+            {
+              "value": 3.0,
+              "conditions": [
+                {
+                  "type": "effect_type",
+                  "effect_type": "slow",
+                  "description": "immune to an attempt to Slow you"
+                }
+              ],
+              "context": "3% chance to be immune to an attempt to Slow you"
+            }
+          ]
+        }
+      },
+      "8": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 11%. You have a 3% chance to be immune to an attempt to Slow you",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 11.0,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 11%"
+            }
+          ],
+          "immunity_chance": [
+            {
+              "value": 3.0,
+              "conditions": [
+                {
+                  "type": "effect_type",
+                  "effect_type": "slow",
+                  "description": "immune to an attempt to Slow you"
+                }
+              ],
+              "context": "3% chance to be immune to an attempt to Slow you"
+            }
+          ]
+        }
+      },
+      "9": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 11%. You have a 4% chance to be immune to an attempt to Slow you",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 11.0,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 11%"
+            }
+          ],
+          "immunity_chance": [
+            {
+              "value": 4.0,
+              "conditions": [
+                {
+                  "type": "effect_type",
+                  "effect_type": "slow",
+                  "description": "immune to an attempt to Slow you"
+                }
+              ],
+              "context": "4% chance to be immune to an attempt to Slow you"
+            }
+          ]
+        }
+      },
+      "10": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Damage you take while moving is reduced by 13%. You have a 4% chance to be immune to an attempt to Slow you",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_reduction": [
+            {
+              "value": 13.0,
+              "conditions": [
+                {
+                  "type": "player_state",
+                  "state": "moving",
+                  "description": "while moving"
+                }
+              ],
+              "context": "Damage you take while moving is reduced by 13%"
+            }
+          ],
+          "immunity_chance": [
+            {
+              "value": 4.0,
+              "conditions": [
+                {
+                  "type": "effect_type",
+                  "effect_type": "slow",
+                  "description": "immune to an attempt to Slow you"
+                }
+              ],
+              "context": "4% chance to be immune to an attempt to Slow you"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 10,
+    "magic_find": "5",
+    "max_effect": "Damage you take while moving is reduced by 13%. You have a 4% chance to be immune to an attempt to Slow you."
+  }
+}

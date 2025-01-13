@@ -2,13 +2,13 @@
 
 import json
 import logging
-from pathlib import Path
+import os
 from typing import Dict, List, Optional, Set, Union
 
 from fastapi import HTTPException, status
 from pydantic import BaseModel, Field
 
-from ..core.config import get_settings
+from ..core.config import get_settings, Settings
 from ..models.game_data.manager import GameDataManager
 from .models import (
     BuildFocus,
@@ -46,27 +46,6 @@ class BuildTypeConfig(BaseModel):
 class BuildService:
     """Service for generating and analyzing builds."""
     
-    # Required data files that must exist
-    REQUIRED_FILES = {
-        # Core data files
-        "build_types": "build_types.json",
-        "stats": "gems/stat_boosts.json",
-        "constraints": "constraints.json",
-        "synergies": "synergies.json",
-        
-        # Gem-related files
-        "gems/skillmap": "gems/gem_skillmap.json",
-        "gems/data": "gems/gems.json",
-        "gems/stat_boosts": "gems/stat_boosts.json",
-        "gems/synergies": "gems/synergies.json",
-        
-        # Equipment data
-        "sets": "sets.json",
-        
-        # Class-specific data
-        "classes/barbarian/essences": "classes/barbarian/essences.json",
-    }
-    
     # Static gear slots (right side of character)
     GEAR_SLOTS = {
         "HEAD": "Head",           # Helm slot
@@ -90,19 +69,28 @@ class BuildService:
         "BRACER_1": "Bracer 1", # First bracer slot
         "BRACER_2": "Bracer 2"  # Second bracer slot
     }
-    
-    # Supported character classes
-    CHARACTER_CLASSES: Set[str] = set()  
-    
-    def __init__(self) -> None:
+
+    def __init__(self, settings: Optional[Settings] = None):
         """Initialize the build service.
         
-        Note: This should not be called directly. Use create() instead.
+        Args:
+            settings: Optional Settings instance. If not provided, will use default settings.
+            
+        Note:
+            This should not be called directly. Use create() instead.
         """
-        self.settings = get_settings()
-        self.data_dir = self.settings.data_path
+        self.settings = get_settings() if settings is None else settings
         self.data_manager = GameDataManager(settings=self.settings)
-        self._load_data()
+        self.CHARACTER_CLASSES = self._get_available_classes()
+        # Data will be loaded by create()
+        self.build_types = None
+        self.constraints = None
+        self.synergies = None  # Root level synergies
+        self.gem_synergies = None  # Gem-specific synergies
+        self.gems = None
+        self.gem_skillmap = None
+        self.stat_boosts = None
+        self.sets = None
 
     @classmethod
     async def create(cls) -> "BuildService":
@@ -115,37 +103,46 @@ class BuildService:
             HTTPException: If required data files are missing
         """
         service = cls()
-        await service._verify_data_files()
+        await service._load_data()
         return service
 
-    def _load_data(self) -> None:
+    def _get_available_classes(self) -> Set[str]:
+        """Get list of available character classes from data directory.
+        
+        Returns:
+            Set[str]: Set of available character class names
+            
+        Note:
+            Classes are determined by subdirectories in the classes/ directory
+        """
+        try:
+            classes_dir = os.path.join(self.settings.data_path, "classes")
+            if not os.path.exists(classes_dir):
+                logger.warning(f"Classes directory not found: {classes_dir}")
+                return set()
+            return {d for d in os.listdir(classes_dir) 
+                   if os.path.isdir(os.path.join(classes_dir, d))}
+        except Exception as e:
+            logger.error(f"Error getting available classes: {e}")
+            return set()
+
+    async def _load_data(self) -> None:
         """Load required data from data directory."""
         try:
             # Load core data
-            self.build_types = self._load_json_file("build_types.json")
-            self.constraints = self._load_json_file("constraints.json")
-            
-            # Load set data
-            self.set_bonuses = self._load_json_file("sets.json")
+            self.build_types = await self.data_manager.get_data("build_types")
+            self.constraints = await self.data_manager.get_data("constraints")
+            self.synergies = await self.data_manager.get_data("synergies")  # Root level synergies
             
             # Load gem data
-            self.gem_data = self._load_json_file("gems/data.json")
-            self.gem_skillmap = self._load_json_file("gems/gem_skillmap.json")
-            self.stat_boosts = self._load_json_file("gems/stat_boosts.json")
-            self.synergies = self._load_json_file("gems/synergies.json")
+            self.gems = await self.data_manager.get_data("gems/data")
+            self.gem_skillmap = await self.data_manager.get_data("gems/skillmap")
+            self.stat_boosts = await self.data_manager.get_data("gems/stat_boosts")
+            self.gem_synergies = await self.data_manager.get_data("gems/synergies")  # Gem-specific synergies
             
-            # Load class-specific data
-            self.class_data = {}
-            self.class_constraints = {}
-            for class_name in self.CHARACTER_CLASSES:
-                self.class_data[class_name] = {
-                    "essences": self._load_json_file(f"classes/{class_name}/essences.json"),
-                    "base_skills": self._load_json_file(f"classes/{class_name}/base_skills.json")
-                }
-                self.class_constraints[class_name] = self._load_json_file(
-                    f"classes/{class_name}/constraints.json"
-                )
-                
+            # Load equipment data
+            self.sets = await self.data_manager.get_data("sets")
+            
             # Validate loaded data
             self._validate_data_structure()
             
@@ -169,8 +166,8 @@ class BuildService:
             HTTPException: If file not found or invalid
         """
         try:
-            file_path = self.data_dir / relative_path
-            if not file_path.exists():
+            file_path = os.path.join(self.settings.data_path, relative_path)
+            if not os.path.exists(file_path):
                 raise FileNotFoundError(f"Required data file not found: {file_path}")
                 
             with open(file_path, "r") as f:
@@ -221,7 +218,7 @@ class BuildService:
         
         # Validate equipment data structure
         required_equipment_keys = {"metadata", "gear", "sets"}  
-        if not all(key in self.set_bonuses for key in required_equipment_keys):
+        if not all(key in self.sets for key in required_equipment_keys):
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Missing required keys in equipment data"
@@ -268,7 +265,7 @@ class BuildService:
             if character_class not in self.CHARACTER_CLASSES:
                 raise HTTPException(
                     status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=f"Invalid character class: {character_class}"
+                    detail=f"Invalid character class: {character_class}. Available classes: {', '.join(sorted(self.CHARACTER_CLASSES))}"
                 )
             
             # Select gems based on build type and focus
@@ -523,7 +520,7 @@ class BuildService:
         focus: BuildFocus,
         selected_gems: List[Gem],
         inventory: Optional[Dict] = None,
-        character_class: str = "barbarian"
+        character_class: str = None
     ) -> List[Skill]:
         """Select skills that synergize with the build.
         
@@ -538,8 +535,13 @@ class BuildService:
             List of selected skills
             
         Raises:
-            HTTPException: If unable to select valid skills
+            ValueError: If character_class is not specified or invalid
         """
+        if not character_class:
+            raise ValueError("character_class must be specified")
+        if character_class not in self.CHARACTER_CLASSES:
+            raise ValueError(f"Invalid character class: {character_class}. Available classes: {', '.join(sorted(self.CHARACTER_CLASSES))}")
+        
         # Get available skills and weapons from constraints
         class_constraints = self.class_constraints[character_class]
         available_skills = class_constraints["skill_slots"]["available_skills"]
@@ -807,7 +809,7 @@ class BuildService:
         selected_gems: List[Gem],
         selected_skills: List[Skill],
         inventory: Optional[Dict] = None,
-        character_class: str = "barbarian"
+        character_class: str = None
     ) -> Dict[str, Equipment]:
         """Select equipment that complements the build.
         
@@ -821,7 +823,15 @@ class BuildService:
             
         Returns:
             Dict mapping slot names to selected equipment
+            
+        Raises:
+            ValueError: If character_class is not specified or invalid
         """
+        if not character_class:
+            raise ValueError("character_class must be specified")
+        if character_class not in self.CHARACTER_CLASSES:
+            raise ValueError(f"Invalid character class: {character_class}. Available classes: {', '.join(sorted(self.CHARACTER_CLASSES))}")
+        
         equipment = {}
         
         # Select set pieces based on synergies
@@ -868,7 +878,7 @@ class BuildService:
         """
         try:
             # Get available sets
-            available_sets = self.set_bonuses  
+            available_sets = self.sets  
             
             # Calculate scores for each set
             set_scores = []
@@ -1083,7 +1093,7 @@ class BuildService:
         """
         try:
             pieces = []
-            set_data = self.set_bonuses[set_name]  
+            set_data = self.sets[set_name]  
             
             # Sort pieces by their base stats
             sorted_pieces = sorted(
@@ -1161,7 +1171,7 @@ class BuildService:
         selected_skills: List[Skill],
         selected_equipment: Dict[str, Equipment],
         inventory: Optional[Dict] = None,
-        character_class: str = "barbarian"
+        character_class: str = None
     ) -> List[str]:
         """Generate recommendations for build improvement.
         
@@ -1176,7 +1186,15 @@ class BuildService:
             
         Returns:
             List of recommendations
+            
+        Raises:
+            ValueError: If character_class is not specified or invalid
         """
+        if not character_class:
+            raise ValueError("character_class must be specified")
+        if character_class not in self.CHARACTER_CLASSES:
+            raise ValueError(f"Invalid character class: {character_class}. Available classes: {', '.join(sorted(self.CHARACTER_CLASSES))}")
+        
         # TODO: Implement recommendation generation
         return []
     
@@ -1615,7 +1633,7 @@ class BuildService:
             Selected Equipment piece
         """
         # Get gear data for slot
-        gear_data = self.set_bonuses.get("gear", {}).get(slot, {})  
+        gear_data = self.sets.get("gear", {}).get(slot, {})  
         if not gear_data:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -1677,7 +1695,7 @@ class BuildService:
             if character_class not in self.CHARACTER_CLASSES:
                 raise HTTPException(
                     status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=f"Invalid character class: {character_class}"
+                    detail=f"Invalid character class: {character_class}. Available classes: {', '.join(sorted(self.CHARACTER_CLASSES))}"
                 )
             
             # Find synergies between items

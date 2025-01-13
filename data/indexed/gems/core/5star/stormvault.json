@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Stormvault",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Conjures pursuing storm for 6s dealing 22.5% base damage + 203 every 0.5s",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Conjures a storm that deals 40% base damage per second to enemies within its radius. Additionally, lightning strikes periodically hit enemies, dealing 100% base damage",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

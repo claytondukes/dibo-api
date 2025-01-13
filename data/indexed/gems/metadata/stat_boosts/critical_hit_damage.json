@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:08:58-05:00"
+  },
+  "gems": [
+    {
+      "name": "Cutthroat's Grin",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "when attacking"
+            }
+          ],
+          "value": 20.0,
+          "unit": "percentage",
+          "scaling": true
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "when attacking"
+            }
+          ],
+          "value": 50.0,
+          "unit": "percentage",
+          "scaling": true
+        }
+      ]
+    },
+    {
+      "name": "Igneous Scorn",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_crit",
+              "description": "on critical hit"
+            },
+            {
+              "type": "cooldown",
+              "description": "with cooldown"
+            }
+          ],
+          "value": 40.0,
+          "unit": "percentage",
+          "scaling": true,
+          "additional_effect": "explosion damage to nearby enemies"
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_crit",
+              "description": "on critical hit"
+            },
+            {
+              "type": "cooldown",
+              "description": "with cooldown"
+            }
+          ],
+          "value": 100.0,
+          "unit": "percentage",
+          "scaling": true,
+          "additional_effect": "explosion damage to nearby enemies"
+        }
+      ]
+    }
+  ],
+  "description": "Increases the damage dealt by critical hits and provides critical hit related effects"
+}

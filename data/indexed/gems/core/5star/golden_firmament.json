@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Golden Firmament",
+  "stars": "5",
+  "type": "defensive_damage",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Dealing damage grants you Ascendance for 6 seconds, causing you to unleash 3 blasts of wind at random nearby enemies every second, dealing 45% base damage + 486 to enemies they hit. Enemies struck by multiple blasts take 75% reduced damage from subsequent hits",
+          "conditions": [
+            "on_damage_dealt",
+            "cooldown_restriction",
+            "damage_reduction_stacking"
+          ]
+        },
+        {
+          "type": "stat_effect",
+          "description": "Increases Resonance by 30",
+          "conditions": [
+            "resonance"
+          ]
+        },
+        {
+          "type": "stat_effect",
+          "description": "+12 Combat Rating",
+          "conditions": [
+            "combat_rating"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Dealing damage grants you Ascendance for 6 seconds, increasing your Evasion Rating by 12% and causing you to unleash 3 blasts of wind at random nearby enemies every second, dealing 110% base damage + 486 to enemies they hit. Enemies struck by multiple blasts take 75% reduced damage from subsequent hits",
+          "conditions": [
+            "on_damage_dealt",
+            "cooldown_restriction",
+            "damage_reduction_stacking"
+          ]
+        }
+      ]
+    }
+  },
+  "max_rank": 10,
+  "magic_find": "5",
+  "max_effect": "Dealing damage grants you Ascendance for 6 seconds, increasing your Evasion Rating by 12% and causing you to unleash 3 blasts of wind at random nearby enemies every second, dealing 110% base damage + 486 to enemies they hit. Enemies struck by multiple blasts take 75% reduced damage from subsequent hits. Cannot occur more often than once every 20 seconds",
+  "categories": [
+    "damage_boost",
+    "defense"
+  ],
+  "synergy_categories": [
+    "damage_boost",
+    "defense"
+  ]
+}

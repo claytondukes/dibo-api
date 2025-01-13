@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Viper's Bite",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Inflicts Viper's Venom dealing 16% base damage + 120 every second for 6 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Your attacks poison enemies, dealing 32% base damage + 480 every second for 6 seconds. Additionally, poisoned enemies have their Attack Speed reduced by 10%",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

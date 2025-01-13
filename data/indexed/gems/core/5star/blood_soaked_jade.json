@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Blood-Soaked Jade",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases all damage you deal by up to 8% while at full Life, with a minimum bonus of 8",
+          "conditions": [
+            "on_attack"
+          ]
+        },
+        {
+          "type": "stat_effect",
+          "description": "Increases your Movement Speed by 10%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 24.00%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 10.50%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Take 2% decreased damage while below 50% Life",
+          "conditions": [
+            "on_attack",
+            "health_threshold"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 13.50%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Take 4% decreased damage while below 50% Life",
+          "conditions": [
+            "on_attack",
+            "health_threshold"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 17.00%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Take 6% decreased damage while below 50% Life",
+          "conditions": [
+            "on_attack",
+            "health_threshold"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 20.50%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Take 8% decreased damage while below 50% Life",
+          "conditions": [
+            "on_attack",
+            "health_threshold"
+          ]
+        }
+      ]
+    }
+  }
+}

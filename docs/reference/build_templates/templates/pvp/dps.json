@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T01:08:43-05:00"
+  },
+  "templates": {
+    "burst_damage": {
+      "name": "Burst Damage Specialist",
+      "description": "Focuses on maximum burst damage potential",
+      "primary_type": "pvp",
+      "role_type": "dps",
+      "pvp_notes": {
+        "scaling": "Burst damage crucial for securing kills in PvP",
+        "strategy": "Maximize damage windows",
+        "flexibility": "Can be enhanced with mobility or control"
+      },
+      "gem_sets": {
+        "primary_set": {
+          "gems": [
+            {
+              "gem": "Blood-Soaked Jade",
+              "priority": 1,
+              "reason": "Core damage amplification",
+              "pvp_effect": "Primary damage boost"
+            },
+            {
+              "gem": "Power & Command",
+              "priority": 1,
+              "reason": "Consistent damage boost",
+              "pvp_effect": "Reliable damage increase"
+            },
+            {
+              "gem": "Ca'arsen's Invigoration",
+              "priority": 1,
+              "reason": "Attack speed boost",
+              "pvp_effect": "Faster damage output"
+            },
+            {
+              "gem": "Fervent Fang",
+              "priority": 1,
+              "reason": "Vulnerability stacking",
+              "pvp_effect": "Increased damage taken"
+            },
+            {
+              "gem": "Berserker's Eye",
+              "priority": 2,
+              "reason": "Damage at cost of defense",
+              "pvp_effect": "Pure damage boost"
+            },
+            {
+              "gem": "Bottled Hope",
+              "priority": 2,
+              "reason": "Buff enhancement",
+              "pvp_effect": "Damage window boost"
+            },
+            {
+              "gem": "Trickshot Gem",
+              "priority": 2,
+              "reason": "Critical hit enhancement",
+              "pvp_effect": "Burst potential"
+            },
+            {
+              "gem": "Chained Death",
+              "priority": 2,
+              "reason": "Chain damage boost",
+              "pvp_effect": "Multi-target damage"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Blood-Soaked Jade", "Power & Command", "Ca'arsen's Invigoration", "Fervent Fang"],
+              "effect": "Maximum burst potential",
+              "score": 0.95,
+              "pvp_notes": "Core damage combination"
+            },
+            {
+              "gems": ["Berserker's Eye", "Trickshot Gem", "Bottled Hope"],
+              "effect": "Critical damage chain",
+              "score": 0.9,
+              "pvp_notes": "Burst window amplification"
+            }
+          ]
+        }
+      },
+      "stat_priorities": {
+        "primary": [
+          {
+            "stat": "damage_increase",
+            "weight": 1.0,
+            "pvp_note": "Core damage stat"
+          },
+          {
+            "stat": "critical_hit_damage",
+            "weight": 0.9,
+            "pvp_note": "Burst potential"
+          },
+          {
+            "stat": "attack_speed",
+            "weight": 0.8,
+            "pvp_note": "Faster damage output"
+          }
+        ],
+        "secondary": [
+          {
+            "stat": "critical_hit_chance",
+            "weight": 0.7,
+            "pvp_note": "Consistent crits"
+          },
+          {
+            "stat": "movement_speed",
+            "weight": 0.6,
+            "pvp_note": "Target acquisition"
+          }
+        ]
+      }
+    }
+  },
+  "pvp_considerations": {
+    "battlegrounds": {
+      "key_gems": ["Blood-Soaked Jade", "Power & Command", "Chained Death"],
+      "strategy": "Focus key targets in team fights",
+      "notes": "Coordinate burst with team CC"
+    },
+    "duels": {
+      "key_gems": ["Blood-Soaked Jade", "Fervent Fang", "Berserker's Eye"],
+      "strategy": "Maximum single target burst",
+      "notes": "Time burst windows carefully"
+    }
+  }
+}

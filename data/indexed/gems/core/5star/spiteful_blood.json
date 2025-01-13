@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Spiteful Blood",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "gain an absorb shield equal to 160% of your base damage",
+          "conditions": []
+        },
+        {
+          "type": "defensive_effect",
+          "description": "absorb shield equal to 160% of your base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "gain an absorb shield equal to 200% of your base damage while the effect is active",
+          "conditions": []
+        },
+        {
+          "type": "defensive_effect",
+          "description": "absorb shield equal to 200% of your base damage while the effect is active",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

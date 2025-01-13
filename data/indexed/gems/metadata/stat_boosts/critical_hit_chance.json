@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:05:36-05:00"
+  },
+  "gems": [
+    {
+      "name": "Berserker's Eye",
+      "stars": "1",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 2.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Mother's Lament",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "cooldown",
+              "cooldown": 20.0,
+              "description": "cannot occur more often than once every 20 seconds"
+            }
+          ],
+          "value": 12.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            }
+          ],
+          "value": 20.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "threshold": 50.0
+        }
+      ]
+    },
+    {
+      "name": "Cutthroat's Grin",
+      "stars": "2",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "when attack"
+            },
+            {
+              "type": "state",
+              "state": "position",
+              "description": "behind"
+            },
+            {
+              "type": "state",
+              "state": "position",
+              "description": "from behind"
+            }
+          ],
+          "value": 4.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "when attack"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "behind"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "from behind"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "when attack"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "behind"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "from behind"
+        }
+      ]
+    },
+    {
+      "name": "Roiling Consequence",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 36.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 16.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Roiling Consequence",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 36.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    }
+  ],
+  "description": "Increases the chance to deal critical hits"
+}

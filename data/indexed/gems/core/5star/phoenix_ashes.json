@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:02:49-05:00"
+  },
+  "name": "Phoenix Ashes",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "grants a shield for 6 seconds that absorbs damage equal to 450% of your base damage",
+          "conditions": []
+        },
+        {
+          "type": "defensive_effect",
+          "description": "shield for 6 seconds that absorbs damage equal to 450% of your base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 1050%",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 530%",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "shield expires, heal for 20% of the remaining value",
+          "conditions": []
+        },
+        {
+          "type": "healing_effect",
+          "description": "heal for 20% of the remaining value",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 660%",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "shield expires, heal for 40% of the remaining value",
+          "conditions": []
+        },
+        {
+          "type": "healing_effect",
+          "description": "heal for 40% of the remaining value",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 790%",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "shield expires, heal for 60% of the remaining value",
+          "conditions": []
+        },
+        {
+          "type": "healing_effect",
+          "description": "heal for 60% of the remaining value",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "absorb value increased to 920%",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "defensive_effect",
+          "description": "shield expires, heal for 80% of the remaining value",
+          "conditions": []
+        },
+        {
+          "type": "healing_effect",
+          "description": "heal for 80% of the remaining value",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

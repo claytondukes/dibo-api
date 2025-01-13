@@ -1,0 +1,303 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:05:36-05:00"
+  },
+  "gems": [
+    {
+      "name": "Blessing of the Worthy",
+      "stars": "5",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_hit",
+              "description": "When you take damage"
+            },
+            {
+              "type": "state",
+              "state": "target_count",
+              "description": "all nearby enemies"
+            }
+          ],
+          "value": 10.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_hit",
+          "description": "When you take damage"
+        },
+        {
+          "type": "state",
+          "state": "target_count",
+          "description": "all nearby enemies"
+        }
+      ]
+    },
+    {
+      "name": "Blood-Soaked Jade",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 4.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 10.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "your attacks"
+            }
+          ],
+          "value": 16.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "your attacks"
+        }
+      ]
+    },
+    {
+      "name": "Frozen Heart",
+      "stars": "5",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 50.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Mother's Lament",
+      "stars": "2",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            }
+          ],
+          "value": 20.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "threshold": 50.0
+        }
+      ]
+    },
+    {
+      "name": "Respite Stone",
+      "stars": "1",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 5.5,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [],
+          "value": 16.5,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 50.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "The Hunger",
+      "stars": "2",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "above 75% Life",
+              "threshold": 75.0
+            }
+          ],
+          "value": 75.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "above 75% Life",
+              "threshold": 75.0
+            }
+          ],
+          "value": 10.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "above 75% Life",
+          "threshold": 75.0
+        }
+      ]
+    },
+    {
+      "name": "Battleguard",
+      "stars": "2",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "position",
+              "description": "within 3 yards",
+              "threshold": 3.0
+            }
+          ],
+          "value": 60.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "position",
+          "description": "within 3 yards",
+          "threshold": 3.0
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "position",
+          "description": "within 3 yards",
+          "threshold": 3.0
+        }
+      ]
+    },
+    {
+      "name": "Blood-Soaked Jade",
+      "stars": "5",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 4.0,
+          "unit": "percentage",
+          "scaling": false
+        },
+        {
+          "conditions": [],
+          "value": 10.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": []
+    },
+    {
+      "name": "Spiteful Blood",
+      "stars": "5",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            }
+          ],
+          "value": 40.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "threshold": 50.0
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "threshold": 50.0
+        }
+      ]
+    }
+  ],
+  "description": "Increases maximum life"
+}

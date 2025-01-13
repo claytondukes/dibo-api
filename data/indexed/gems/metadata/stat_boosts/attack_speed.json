@@ -1,0 +1,159 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:05:36-05:00"
+  },
+  "gems": [
+    {
+      "name": "Ca'arsen's Invigoration",
+      "stars": "1",
+      "base_values": [
+        {
+          "conditions": [],
+          "value": 5.5,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": [],
+      "rank_10_conditions": []
+    },
+    {
+      "name": "Viper's Bite",
+      "stars": "2",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "trigger",
+              "trigger": "on_attack",
+              "description": "Your attacks"
+            }
+          ],
+          "value": 10.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks"
+        }
+      ]
+    },
+    {
+      "name": "Grim Rhythm",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "stacking up to 10 times",
+              "threshold": 10.0
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "While at full stacks"
+            }
+          ],
+          "value": 0.8,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "stacking up to 10 times",
+              "threshold": 10.0
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "While at full stacks"
+            }
+          ],
+          "value": 2.4,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "threshold": 10.0
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "While at full stacks"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "threshold": 10.0
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "While at full stacks"
+        }
+      ]
+    },
+    {
+      "name": "Grim Rhythm",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "stacking up to 10 times",
+              "threshold": 10.0
+            },
+            {
+              "type": "state",
+              "state": "stacks",
+              "description": "While at full stacks"
+            }
+          ],
+          "value": 0.8,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "rank_10_values": [],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "threshold": 10.0
+        },
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "While at full stacks"
+        }
+      ]
+    }
+  ],
+  "description": "Increases attack speed"
+}
