@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-01-13T00:03:57-05:00"
+    "last_updated": "2025-01-13T10:16:01-05:00"
   },
   "effect_details": {
     "control_effects": {
@@ -42,6 +42,77 @@
         "duration": 6,
         "type": "poison"
       }
+    }
+  },
+  "effect_types": {
+    "stat_effect": {
+      "description": "Direct stat modifications",
+      "examples": [
+        "Increases attack speed by X%",
+        "Reduces damage taken by X%"
+      ]
+    },
+    "proc_effect": {
+      "description": "Triggered effects with conditions",
+      "examples": [
+        "On critical hit, deal X% damage",
+        "When taking damage, gain X shield"
+      ]
+    },
+    "generic_effect": {
+      "description": "General gameplay effects",
+      "examples": [
+        "Your skills deal X% more damage",
+        "Increases all damage by X%"
+      ]
+    },
+    "control_effect": {
+      "description": "Crowd control effects",
+      "examples": [
+        "Stun enemies for X seconds",
+        "Slow enemies by X%"
+      ]
+    }
+  },
+  "scaling_patterns": {
+    "linear": {
+      "description": "Effect increases by fixed amounts between ranks",
+      "examples": [
+        "Damage: 40% → 50% → 60%",
+        "Duration: 2s → 3s → 4s"
+      ]
+    },
+    "stepped": {
+      "description": "Effect improves at specific ranks",
+      "examples": [
+        "Cooldown reduction at ranks 3, 6, 9",
+        "New effects added at ranks 5, 8"
+      ]
+    },
+    "percentage": {
+      "description": "Effect scales by percentage increases",
+      "examples": [
+        "Base +10% per rank",
+        "Multiplicative scaling"
+      ]
+    }
+  },
+  "effect_categories": {
+    "damage": {
+      "types": ["direct", "area", "dot"],
+      "scaling": "linear"
+    },
+    "defense": {
+      "types": ["reduction", "shield", "heal"],
+      "scaling": "percentage"
+    },
+    "utility": {
+      "types": ["speed", "cooldown", "resource"],
+      "scaling": "stepped"
+    },
+    "control": {
+      "types": ["stun", "slow", "knockback"],
+      "scaling": "stepped"
     }
   }
 }

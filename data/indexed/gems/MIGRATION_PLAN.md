@@ -51,7 +51,7 @@ data/indexed/gems/
 
 ## Implementation Plan
 
-### Phase 1: Data Validation 
+### Phase 1: Data Validation
 
 1. Verify all gem files are properly split and located
 2. Check for missing rank information
