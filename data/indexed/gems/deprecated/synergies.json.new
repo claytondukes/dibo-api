@@ -1,0 +1,978 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-12T12:12:18-05:00"
+  },
+  "critical_hit": {
+    "gems": [
+      "Cutthroat's Grin",
+      "Mother's Lament",
+      "Roiling Consequence",
+      "Starfire Shard"
+    ],
+    "conditions": {
+      "Cutthroat's Grin": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "when attack",
+          "pattern": "when (?:you )?attack"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "behind",
+          "pattern": "(?:while |when )?behind"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "from behind",
+          "pattern": "from behind"
+        }
+      ],
+      "Mother's Lament": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "pattern": "below (\\d+)% (?:life|health)",
+          "threshold": 50.0
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds",
+          "pattern": "cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Roiling Consequence": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Starfire Shard": [
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds",
+          "pattern": "cannot occur more often than once every (\\d+) seconds"
+        }
+      ]
+    }
+  },
+  "movement_speed": {
+    "gems": [
+      "Blessed Pebble",
+      "Blood-Soaked Jade",
+      "Bottled Hope",
+      "Concentrated Will",
+      "Phoenix Ashes",
+      "Power & Command",
+      "The Abiding Curse",
+      "The Hunger"
+    ],
+    "conditions": {
+      "Blood-Soaked Jade": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "your attacks",
+          "pattern": "your attacks"
+        }
+      ],
+      "Concentrated Will": [
+        {
+          "type": "trigger",
+          "trigger": "on_dash",
+          "description": "Using a Dash skill",
+          "pattern": "Using a Dash skill"
+        }
+      ],
+      "The Abiding Curse": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks",
+          "pattern": "Your attacks"
+        }
+      ],
+      "The Hunger": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "above 75% Life",
+          "pattern": "above (\\d+)% (?:life|health)",
+          "threshold": 75.0
+        }
+      ]
+    }
+  },
+  "damage_boost": {
+    "gems": [
+      "Berserker's Eye",
+      "Blood-Soaked Jade",
+      "Bloody Reach",
+      "Bottled Hope",
+      "Ca'arsen's Invigoration",
+      "Chained Death",
+      "Concentrated Will",
+      "Cutthroat's Grin",
+      "Defiant Soul",
+      "Eye of the Unyielding",
+      "Everlasting Torment",
+      "Fervent Fang",
+      "Freedom and Devotion",
+      "Gloom Cask",
+      "Hearthstone",
+      "Kir Sling",
+      "Lightning Core",
+      "Lo's Focused Gaze",
+      "Lucent Watcher",
+      "Maw of the Deep",
+      "Misery Elixir",
+      "Mocking Laughter",
+      "Pain Clasp",
+      "Pain of Subjugation",
+      "Power & Command",
+      "Respite Stone",
+      "Seled's Weakening",
+      "Spiteful Blood",
+      "Starfire Shard",
+      "The Abiding Curse",
+      "The Black Rose",
+      "The Hunger",
+      "Trickshot Gem",
+      "Unity Crystal",
+      "Void Spark",
+      "Volatility Shard",
+      "Zod Stone",
+      "Zwenson's Haunting"
+    ],
+    "conditions": {
+      "Berserker's Eye": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Blessing of the Worthy": [
+        {
+          "type": "trigger",
+          "trigger": "on_hit",
+          "description": "When you take damage",
+          "pattern": "when (?:you )?take damage"
+        },
+        {
+          "type": "state",
+          "state": "target_count",
+          "description": "all nearby enemies",
+          "pattern": "(?:all )?nearby enemies"
+        }
+      ],
+      "Blood-Soaked Jade": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "your attacks",
+          "pattern": "your attacks"
+        }
+      ],
+      "Bottled Hope": [
+        {
+          "type": "trigger",
+          "trigger": "on_buff",
+          "description": "When you use a skill to grant yourself a beneficial effect",
+          "pattern": "when (?:you )?use a skill to grant (?:yourself )?a beneficial effect"
+        }
+      ],
+      "Ca'arsen's Invigoration": [
+        {
+          "type": "trigger",
+          "trigger": "on_movement",
+          "description": "While moving",
+          "pattern": "while moving"
+        }
+      ],
+      "Chained Death": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Concentrated Will": [
+        {
+          "type": "trigger",
+          "trigger": "on_dash",
+          "description": "Using a Dash skill",
+          "pattern": "Using a Dash skill"
+        }
+      ],
+      "Cutthroat's Grin": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "when attack",
+          "pattern": "when (?:you )?attack"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "behind",
+          "pattern": "(?:while |when )?behind"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "from behind",
+          "pattern": "from behind"
+        }
+      ],
+      "Defiant Soul": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Everlasting Torment": [
+        {
+          "type": "trigger",
+          "trigger": "on_crit",
+          "description": "Critical Hits",
+          "pattern": "Critical Hits"
+        }
+      ],
+      "Eye of the Unyielding": [
+        {
+          "type": "damage_type",
+          "damage_type": "continual",
+          "description": "Continual damage",
+          "pattern": "Continual damage"
+        }
+      ],
+      "Fervent Fang": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Freedom and Devotion": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Gloom Cask": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Hearthstone": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Kir Sling": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Lightning Core": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Lo's Focused Gaze": [
+        {
+          "type": "skill_type",
+          "skill_type": "charge",
+          "description": "Charge skills",
+          "pattern": "Charge skills"
+        }
+      ],
+      "Lucent Watcher": [
+        {
+          "type": "effect_category",
+          "effect_category": "loss_of_control",
+          "description": "loss of control effects",
+          "pattern": "loss of control effects"
+        }
+      ],
+      "Maw of the Deep": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Misery Elixir": [
+        {
+          "type": "effect_category",
+          "effect_category": "harmful",
+          "description": "harmful effects you apply",
+          "pattern": "harmful effects you apply"
+        },
+        {
+          "type": "target_state",
+          "target_state": "affected",
+          "description": "Affected enemies",
+          "pattern": "Affected enemies"
+        }
+      ],
+      "Mocking Laughter": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Pain Clasp": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Pain of Subjugation": [
+        {
+          "type": "trigger",
+          "trigger": "on_control_effect",
+          "description": "While enemies are controlled",
+          "pattern": "while enemies are controlled"
+        }
+      ],
+      "Power & Command": [
+        {
+          "type": "trigger",
+          "trigger": "on_buff",
+          "description": "When you use a skill to grant yourself a beneficial effect",
+          "pattern": "when (?:you )?use a skill to grant (?:yourself )?a beneficial effect"
+        }
+      ],
+      "Respite Stone": [
+        {
+          "type": "trigger",
+          "trigger": "on_buff",
+          "description": "When you use a skill to grant yourself a beneficial effect",
+          "pattern": "when (?:you )?use a skill to grant (?:yourself )?a beneficial effect"
+        }
+      ],
+      "Seled's Weakening": [
+        {
+          "type": "trigger",
+          "trigger": "on_control_effect",
+          "description": "When you control an enemy",
+          "pattern": "when (?:you )?control an enemy"
+        }
+      ],
+      "Spiteful Blood": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "pattern": "below (\\d+)% (?:life|health)",
+          "threshold": 50.0
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds",
+          "pattern": "cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Starfire Shard": [
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds",
+          "pattern": "cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "The Abiding Curse": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks",
+          "pattern": "Your attacks"
+        }
+      ],
+      "The Black Rose": [
+        {
+          "type": "trigger",
+          "trigger": "on_control_effect",
+          "description": "When you control an enemy",
+          "pattern": "when (?:you )?control an enemy"
+        }
+      ],
+      "The Hunger": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "above 75% Life",
+          "pattern": "above (\\d+)% (?:life|health)",
+          "threshold": 75.0
+        }
+      ],
+      "Trickshot Gem": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Unity Crystal": [
+        {
+          "type": "trigger",
+          "trigger": "on_buff",
+          "description": "When you use a skill to grant yourself a beneficial effect",
+          "pattern": "when (?:you )?use a skill to grant (?:yourself )?a beneficial effect"
+        }
+      ],
+      "Void Spark": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "chain lightning",
+          "pattern": "chain lightning"
+        }
+      ],
+      "Volatility Shard": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Zod Stone": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Zwenson's Haunting": [
+        {
+          "type": "trigger",
+          "trigger": "on_defeat",
+          "description": "after defeating an enemy",
+          "pattern": "after defeating an enemy"
+        }
+      ]
+    }
+  },
+  "control": {
+    "gems": [
+      "Blessing of the Worthy",
+      "Bloody Reach",
+      "Chip of Stoned Flesh",
+      "Frozen Heart",
+      "Howler's Call",
+      "Lightning Core",
+      "Lucent Watcher",
+      "Maw of the Deep",
+      "Misery Elixir",
+      "Pain of Subjugation",
+      "Seled's Weakening",
+      "Seeping Bile",
+      "Stormvault",
+      "The Black Rose"
+    ],
+    "conditions": {
+      "Frozen Heart": [
+        {
+          "type": "trigger",
+          "trigger": "on_hit",
+          "description": "When you take damage",
+          "pattern": "when (?:you )?take damage"
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds",
+          "pattern": "cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Howler's Call": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attack",
+          "pattern": "Your Primary Attack"
+        },
+        {
+          "type": "control_effect",
+          "effect": "stun",
+          "description": "48% chance to Stun enemies for 3 seconds",
+          "pattern": "(\\d+)% chance to Stun enemies for (\\d+) seconds"
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "Cannot occur more often than once every 20 seconds",
+          "pattern": "Cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Lightning Core": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        }
+      ],
+      "Maw of the Deep": [
+        {
+          "type": "control_effect",
+          "effect": "pull",
+          "description": "pulls enemies into its center",
+          "pattern": "pulls enemies into its center"
+        }
+      ],
+      "Pain of Subjugation": [
+        {
+          "type": "trigger",
+          "trigger": "on_control_effect",
+          "description": "While enemies are controlled",
+          "pattern": "while enemies are controlled"
+        }
+      ],
+      "Seled's Weakening": [
+        {
+          "type": "trigger",
+          "trigger": "on_control_effect",
+          "description": "When you control an enemy",
+          "pattern": "when (?:you )?control an enemy"
+        }
+      ],
+      "Seeping Bile": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks have a chance",
+          "pattern": "Your attacks have a chance"
+        },
+        {
+          "type": "state",
+          "state": "dot",
+          "description": "poison damage over 6 seconds",
+          "pattern": "poison damage over (\\d+) seconds"
+        }
+      ],
+      "Stormvault": [
+        {
+          "type": "trigger",
+          "trigger": "on_control_effect",
+          "description": "While enemies are controlled",
+          "pattern": "while enemies are controlled"
+        }
+      ],
+      "The Black Rose": [
+        {
+          "type": "trigger",
+          "trigger": "on_control_effect",
+          "description": "When you control an enemy",
+          "pattern": "when (?:you )?control an enemy"
+        }
+      ]
+    }
+  },
+  "survival": {
+    "gems": [
+      "Battleguard",
+      "Blessing of the Worthy",
+      "Blood-Soaked Jade",
+      "Bottled Hope",
+      "Concentrated Will",
+      "Echoing Shade",
+      "Exigent Echo",
+      "Eye of the Unyielding",
+      "Frozen Heart",
+      "Lucent Watcher",
+      "Mother's Lament",
+      "Phoenix Ashes",
+      "Power and Command",
+      "Seeping Bile",
+      "Trickshot Gem",
+      "Unrefined Passage",
+      "Unity Crystal"
+    ],
+    "conditions": {
+      "Battleguard": [
+        {
+          "type": "state",
+          "state": "position",
+          "description": "within 3 yards",
+          "pattern": "within (\\d+) yards",
+          "threshold": 3.0
+        }
+      ],
+      "Blessing of the Worthy": [
+        {
+          "type": "trigger",
+          "trigger": "on_hit",
+          "description": "When you take damage",
+          "pattern": "when (?:you )?take damage"
+        },
+        {
+          "type": "state",
+          "state": "target_count",
+          "description": "all nearby enemies",
+          "pattern": "(?:all )?nearby enemies"
+        },
+        {
+          "type": "effect",
+          "effect": "life_recovery",
+          "description": "Life recovery rate is increased by 10%",
+          "pattern": "Life recovery rate is increased by (\\d+)%",
+          "threshold": 10.0
+        }
+      ],
+      "Blood-Soaked Jade": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "your attacks heal you",
+          "pattern": "your attacks heal you"
+        }
+      ],
+      "Echoing Shade": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks",
+          "pattern": "Your attacks"
+        }
+      ],
+      "Exigent Echo": [
+        {
+          "type": "trigger",
+          "trigger": "on_crit_received",
+          "description": "when you receive a Critical Hit",
+          "pattern": "when you receive a Critical Hit"
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "Cannot occur more often than once every 20 seconds",
+          "pattern": "Cannot occur more often than once every (\\d+) seconds"
+        },
+        {
+          "type": "state",
+          "state": "blocking",
+          "description": "when blocking",
+          "pattern": "when blocking"
+        }
+      ],
+      "Frozen Heart": [
+        {
+          "type": "trigger",
+          "trigger": "on_hit",
+          "description": "When you take damage",
+          "pattern": "when (?:you )?take damage"
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds",
+          "pattern": "cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Mother's Lament": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "pattern": "below (\\d+)% (?:life|health)",
+          "threshold": 50.0
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds",
+          "pattern": "cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Spiteful Blood": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "pattern": "below (\\d+)% (?:life|health)",
+          "threshold": 50.0
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "cannot occur more often than once every 20 seconds",
+          "pattern": "cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "The Hunger": [
+        {
+          "type": "trigger",
+          "trigger": "on_defeat",
+          "description": "each time you defeat an enemy",
+          "pattern": "each time you defeat an enemy"
+        },
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "above 75% Life",
+          "pattern": "above (\\d+)% (?:life|health)",
+          "threshold": 75.0
+        }
+      ],
+      "Unrefined Passage": [
+        {
+          "type": "state",
+          "state": "moving",
+          "description": "while moving",
+          "pattern": "while moving"
+        },
+        {
+          "type": "effect_type",
+          "effect_type": "slow",
+          "description": "Slow effects",
+          "pattern": "Slow effects"
+        }
+      ]
+    }
+  },
+  "attack_speed": {
+    "gems": [
+      "Grim Rhythm",
+      "Unity Crystal",
+      "The Hunger"
+    ],
+    "conditions": {
+      "Grim Rhythm": [
+        {
+          "type": "state",
+          "state": "stacks",
+          "description": "stacking up to 10 times",
+          "pattern": "stacking up to (\\d+) times",
+          "threshold": 10.0
+        }
+      ],
+      "Unity Crystal": [
+        {
+          "type": "state",
+          "state": "target_count",
+          "description": "each nearby enemy afflicted with agony",
+          "pattern": "each nearby enemy afflicted with agony"
+        }
+      ],
+      "The Hunger": [
+        {
+          "type": "trigger",
+          "trigger": "on_kill",
+          "description": "after defeating an enemy",
+          "pattern": "after defeating an enemy"
+        }
+      ]
+    }
+  },
+  "direct_damage": {
+    "gems": [
+      "Concentrated Will",
+      "Echoing Shade",
+      "Hellfire Fragment",
+      "Howler's Call",
+      "Lightning Core",
+      "Mother's Lament",
+      "Seeping Bile",
+      "Stormvault",
+      "Zwenson's Haunting"
+    ],
+    "conditions": {
+      "Blessing of the Worthy": [
+        {
+          "type": "trigger",
+          "trigger": "on_hit",
+          "description": "When you take damage",
+          "pattern": "when (?:you )?take damage"
+        },
+        {
+          "type": "state",
+          "state": "target_count",
+          "description": "all nearby enemies",
+          "pattern": "(?:all )?nearby enemies"
+        }
+      ],
+      "Bloody Reach": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks",
+          "pattern": "Your attacks"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "at 8 yards",
+          "pattern": "at (\\d+) yards",
+          "threshold": 8.0
+        }
+      ],
+      "Concentrated Will": [
+        {
+          "type": "trigger",
+          "trigger": "on_dash",
+          "description": "Using a Dash skill",
+          "pattern": "Using a Dash skill"
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 6.0,
+          "description": "Cannot occur more often than once every 6 seconds",
+          "pattern": "Cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Echoing Shade": [
+        {
+          "type": "trigger",
+          "trigger": "on_summon",
+          "description": "summons a mirror image",
+          "pattern": "summons? a mirror image"
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "Cannot occur more often than once every 20 seconds",
+          "pattern": "Cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Hellfire Fragment": [
+        {
+          "type": "trigger",
+          "trigger": "on_skill",
+          "description": "Using a skill",
+          "pattern": "Using a skill"
+        },
+        {
+          "type": "state",
+          "state": "position",
+          "description": "within 6 yards",
+          "pattern": "within (\\d+) yards",
+          "threshold": 6.0
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "Cannot occur more often than once every 20 seconds",
+          "pattern": "Cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Howler's Call": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Primary Attack has a 10% chance",
+          "pattern": "Primary Attack has a (\\d+)% chance"
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "Cannot occur more often than once every 20 seconds",
+          "pattern": "Cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Lightning Core": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your Primary Attacks",
+          "pattern": "Your Primary Attacks"
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "Cannot occur more often than once every 20 seconds",
+          "pattern": "Cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Mother's Lament": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "pattern": "below (\\d+)% (?:life|health)",
+          "threshold": 50.0
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 20.0,
+          "description": "Cannot occur more often than once every 20 seconds",
+          "pattern": "Cannot occur more often than once every (\\d+) seconds"
+        }
+      ],
+      "Seeping Bile": [
+        {
+          "type": "trigger",
+          "trigger": "on_attack",
+          "description": "Your attacks have a chance",
+          "pattern": "Your attacks have a chance"
+        },
+        {
+          "type": "state",
+          "state": "dot",
+          "description": "poison damage over 6 seconds",
+          "pattern": "poison damage over (\\d+) seconds"
+        }
+      ],
+      "Stormvault": [
+        {
+          "type": "trigger",
+          "trigger": "on_control_effect",
+          "description": "While enemies are controlled",
+          "pattern": "while enemies are controlled"
+        }
+      ],
+      "Zwenson's Haunting": [
+        {
+          "type": "trigger",
+          "trigger": "on_defeat",
+          "description": "When you defeat an enemy",
+          "pattern": "When you defeat an enemy"
+        },
+        {
+          "type": "cooldown",
+          "cooldown": 6.0,
+          "description": "Cannot occur more often than once every 6 seconds",
+          "pattern": "Cannot occur more often than once every (\\d+) seconds"
+        }
+      ]
+    }
+  }
+}

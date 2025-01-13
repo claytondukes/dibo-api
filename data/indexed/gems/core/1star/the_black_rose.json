@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "The Black Rose",
+  "stars": "1",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to summon vines that Immobilize the attacker for 1",
+          "conditions": []
+        },
+        {
+          "type": "summon_effect",
+          "description": "summon vines that Immobilize the attacker for 1",
+          "conditions": []
+        },
+        {
+          "type": "control_effect",
+          "description": "Immobilize the attacker for 1",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "control_effect",
+          "description": "Immobilize duration increased to 3",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "control_effect",
+          "description": "Immobilize duration increased to 1",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Chance to summon vines increased to 13",
+          "conditions": []
+        },
+        {
+          "type": "summon_effect",
+          "description": "summon vines increased to 13",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "control_effect",
+          "description": "Immobilize duration increased to 1",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Chance to summon vines increased to 17%",
+          "conditions": []
+        },
+        {
+          "type": "summon_effect",
+          "description": "summon vines increased to 17%",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "control_effect",
+          "description": "Immobilize duration increased to 2",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Chance to summon vines increased to 20",
+          "conditions": []
+        },
+        {
+          "type": "summon_effect",
+          "description": "summon vines increased to 20",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "control_effect",
+          "description": "Immobilize duration increased to 2",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Chance to summon vines increased to 24",
+          "conditions": []
+        },
+        {
+          "type": "summon_effect",
+          "description": "summon vines increased to 24",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

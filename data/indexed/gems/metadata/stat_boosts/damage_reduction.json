@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:03:57-05:00"
+  },
+  "gems": [
+    {
+      "name": "Blood-Soaked Jade",
+      "stars": "5",
+      "base_values": [],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "health_threshold",
+              "description": "below 50% Life",
+              "threshold": 50.0
+            }
+          ],
+          "value": 8.0,
+          "unit": "percentage",
+          "scaling": false
+        }
+      ],
+      "conditions": [],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "health_threshold",
+          "description": "below 50% Life",
+          "threshold": 50.0
+        }
+      ]
+    },
+    {
+      "name": "Unrefined Passage",
+      "stars": "2",
+      "base_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "movement",
+              "description": "while moving"
+            }
+          ],
+          "value": 5.0,
+          "unit": "percentage",
+          "scaling": true
+        }
+      ],
+      "rank_10_values": [
+        {
+          "conditions": [
+            {
+              "type": "state",
+              "state": "movement",
+              "description": "while moving"
+            }
+          ],
+          "value": 15.0,
+          "unit": "percentage",
+          "scaling": true
+        }
+      ],
+      "conditions": [
+        {
+          "type": "state",
+          "state": "movement",
+          "description": "while moving"
+        }
+      ],
+      "rank_10_conditions": [
+        {
+          "type": "state",
+          "state": "movement",
+          "description": "while moving"
+        }
+      ]
+    }
+  ],
+  "description": "Reduces damage taken"
+}

@@ -1,0 +1,362 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T01:19:17-05:00"
+  },
+  "templates": {
+    "dot_pressure": {
+      "name": "DOT Pressure Specialist",
+      "description": "Focuses on maximum damage over time pressure and spread",
+      "primary_type": "pvp",
+      "role_type": "dot",
+      "pvp_notes": {
+        "scaling": "DOTs are effective in PvP due to healing pressure",
+        "strategy": "Apply and spread DOTs while kiting",
+        "flexibility": "Can be enhanced with mobility or control"
+      },
+      "gem_sets": {
+        "primary_set": {
+          "gems": [
+            {
+              "gem": "Seeping Bile",
+              "priority": 1,
+              "reason": "Primary DOT source",
+              "pvp_effect": "Core spreading poison"
+            },
+            {
+              "gem": "Everlasting Torment",
+              "priority": 1,
+              "reason": "Secondary DOT",
+              "pvp_effect": "Additional constant pressure"
+            },
+            {
+              "gem": "Pain of Subjugation",
+              "priority": 1,
+              "reason": "DOT amplification",
+              "pvp_effect": "Increases all DOT damage"
+            },
+            {
+              "gem": "Viper's Bite",
+              "priority": 1,
+              "reason": "Additional DOT and control",
+              "pvp_effect": "Poison + attack speed reduction"
+            },
+            {
+              "gem": "Fervent Fang",
+              "priority": 1,
+              "reason": "Vulnerability stacking",
+              "pvp_effect": "Increases DOT damage taken"
+            },
+            {
+              "gem": "Bloody Reach",
+              "priority": 2,
+              "reason": "Range damage bonus",
+              "pvp_effect": "Safe DOT application"
+            },
+            {
+              "gem": "Cutthroat's Grin",
+              "priority": 2,
+              "reason": "Damage to wounded",
+              "pvp_effect": "More damage on DOT'd targets"
+            },
+            {
+              "gem": "Bottled Hope",
+              "priority": 2,
+              "reason": "Movement speed",
+              "pvp_effect": "Kiting while DOTs tick"
+            },
+            {
+              "gem": "Ca'arsen's Invigoration",
+              "priority": 2,
+              "reason": "Attack speed",
+              "pvp_effect": "Faster DOT application"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Seeping Bile", "Everlasting Torment", "Pain of Subjugation", "Viper's Bite"],
+              "effect": "Maximum DOT pressure",
+              "score": 0.95,
+              "pvp_notes": "Core DOT combination with attack speed control"
+            },
+            {
+              "gems": ["Bloody Reach", "Cutthroat's Grin", "Bottled Hope"],
+              "effect": "Ranged DOT application",
+              "score": 0.9,
+              "pvp_notes": "Safe pressure application"
+            }
+          ]
+        }
+      },
+      "stat_priorities": {
+        "primary": [
+          {
+            "stat": "damage_over_time",
+            "weight": 1.0,
+            "pvp_note": "Core DOT damage"
+          },
+          {
+            "stat": "damage_increase",
+            "weight": 0.9,
+            "pvp_note": "Overall damage boost"
+          },
+          {
+            "stat": "attack_speed",
+            "weight": 0.8,
+            "pvp_note": "DOT application speed"
+          }
+        ],
+        "secondary": [
+          {
+            "stat": "movement_speed",
+            "weight": 0.7,
+            "pvp_note": "Kiting mobility"
+          },
+          {
+            "stat": "potency",
+            "weight": 0.6,
+            "pvp_note": "DOT application chance"
+          }
+        ]
+      }
+    },
+    "dot_control": {
+      "name": "DOT Control Specialist",
+      "description": "Combines DOTs with control effects",
+      "primary_type": "pvp",
+      "role_type": "dot_control",
+      "pvp_notes": {
+        "scaling": "Control effects enhance DOT uptime",
+        "strategy": "Control targets while DOTs tick",
+        "flexibility": "Balance between control and DOT pressure"
+      },
+      "gem_sets": {
+        "primary_set": {
+          "gems": [
+            {
+              "gem": "Seeping Bile",
+              "priority": 1,
+              "reason": "Primary DOT",
+              "pvp_effect": "Core DOT pressure"
+            },
+            {
+              "gem": "Viper's Bite",
+              "priority": 1,
+              "reason": "DOT and control",
+              "pvp_effect": "Poison and attack speed reduction"
+            },
+            {
+              "gem": "Chip of Stoned Flesh",
+              "priority": 1,
+              "reason": "Control effect",
+              "pvp_effect": "Keep targets in DOT range"
+            },
+            {
+              "gem": "Everlasting Torment",
+              "priority": 1,
+              "reason": "Secondary DOT",
+              "pvp_effect": "Additional DOT layer"
+            },
+            {
+              "gem": "Pain of Subjugation",
+              "priority": 1,
+              "reason": "DOT amplification",
+              "pvp_effect": "Increased DOT damage"
+            },
+            {
+              "gem": "Frozen Heart",
+              "priority": 2,
+              "reason": "Additional control",
+              "pvp_effect": "More DOT uptime"
+            },
+            {
+              "gem": "Cutthroat's Grin",
+              "priority": 2,
+              "reason": "Damage to wounded",
+              "pvp_effect": "Damage on controlled targets"
+            },
+            {
+              "gem": "Howler's Call",
+              "priority": 2,
+              "reason": "Area control",
+              "pvp_effect": "Keep groups in DOT range"
+            },
+            {
+              "gem": "Ca'arsen's Invigoration",
+              "priority": 2,
+              "reason": "Attack speed",
+              "pvp_effect": "Faster application"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Seeping Bile", "Viper's Bite", "Chip of Stoned Flesh", "Pain of Subjugation"],
+              "effect": "Control and DOT core",
+              "score": 0.95,
+              "pvp_notes": "Primary control-DOT combo with attack speed reduction"
+            },
+            {
+              "gems": ["Everlasting Torment", "Frozen Heart", "Howler's Call"],
+              "effect": "Area control and pressure",
+              "score": 0.9,
+              "pvp_notes": "Zone control with DOTs"
+            }
+          ]
+        }
+      },
+      "stat_priorities": {
+        "primary": [
+          {
+            "stat": "damage_over_time",
+            "weight": 1.0,
+            "pvp_note": "Core DOT damage"
+          },
+          {
+            "stat": "potency",
+            "weight": 0.9,
+            "pvp_note": "Control effect chance"
+          },
+          {
+            "stat": "cooldown_reduction",
+            "weight": 0.8,
+            "pvp_note": "More frequent control"
+          }
+        ],
+        "secondary": [
+          {
+            "stat": "damage_increase",
+            "weight": 0.7,
+            "pvp_note": "Overall damage"
+          },
+          {
+            "stat": "attack_speed",
+            "weight": 0.6,
+            "pvp_note": "Application speed"
+          }
+        ]
+      }
+    },
+    "aoe_dot": {
+      "name": "AOE DOT Specialist",
+      "description": "Maximizes DOT spread and area pressure",
+      "primary_type": "pvp",
+      "role_type": "dot_aoe",
+      "pvp_notes": {
+        "scaling": "AOE DOTs excel in group combat",
+        "strategy": "Spread DOTs to multiple targets while maintaining area control",
+        "flexibility": "Can be enhanced with mobility or additional control"
+      },
+      "gem_sets": {
+        "primary_set": {
+          "gems": [
+            {
+              "gem": "Seeping Bile",
+              "priority": 1,
+              "reason": "Primary spreading DOT",
+              "pvp_effect": "Core AOE poison spread"
+            },
+            {
+              "gem": "Chained Death",
+              "priority": 1,
+              "reason": "Chain damage boost",
+              "pvp_effect": "Enhanced multi-target damage"
+            },
+            {
+              "gem": "Pain of Subjugation",
+              "priority": 1,
+              "reason": "DOT amplification",
+              "pvp_effect": "Increases all DOT damage"
+            },
+            {
+              "gem": "Howler's Call",
+              "priority": 1,
+              "reason": "Area control",
+              "pvp_effect": "Groups targets for DOT spread"
+            },
+            {
+              "gem": "Everlasting Torment",
+              "priority": 2,
+              "reason": "Additional DOT",
+              "pvp_effect": "Extra pressure layer"
+            },
+            {
+              "gem": "Lightning Core",
+              "priority": 2,
+              "reason": "Chain lightning",
+              "pvp_effect": "Additional AOE spread"
+            },
+            {
+              "gem": "Defiant Soul",
+              "priority": 2,
+              "reason": "Area damage",
+              "pvp_effect": "AOE pressure"
+            },
+            {
+              "gem": "Freedom and Devotion",
+              "priority": 2,
+              "reason": "Survival and speed",
+              "pvp_effect": "Positioning for spreads"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Seeping Bile", "Chained Death", "Pain of Subjugation", "Howler's Call"],
+              "effect": "Maximum AOE DOT spread",
+              "score": 0.95,
+              "pvp_notes": "Core AOE DOT combination"
+            },
+            {
+              "gems": ["Lightning Core", "Defiant Soul", "Everlasting Torment"],
+              "effect": "Additional AOE pressure",
+              "score": 0.9,
+              "pvp_notes": "Supplementary area damage"
+            }
+          ]
+        }
+      },
+      "stat_priorities": {
+        "primary": [
+          {
+            "stat": "damage_over_time",
+            "weight": 1.0,
+            "pvp_note": "Core DOT damage"
+          },
+          {
+            "stat": "area_damage",
+            "weight": 0.9,
+            "pvp_note": "AOE effectiveness"
+          },
+          {
+            "stat": "cooldown_reduction",
+            "weight": 0.8,
+            "pvp_note": "More frequent spreads"
+          }
+        ],
+        "secondary": [
+          {
+            "stat": "movement_speed",
+            "weight": 0.7,
+            "pvp_note": "Positioning for spreads"
+          },
+          {
+            "stat": "potency",
+            "weight": 0.6,
+            "pvp_note": "DOT application chance"
+          }
+        ]
+      }
+    }
+  },
+  "pvp_considerations": {
+    "battlegrounds": {
+      "key_gems": ["Seeping Bile", "Pain of Subjugation", "Howler's Call"],
+      "strategy": "Spread DOTs in team fights",
+      "notes": "Focus on multi-target pressure"
+    },
+    "duels": {
+      "key_gems": ["Seeping Bile", "Everlasting Torment", "Chip of Stoned Flesh"],
+      "strategy": "Single target DOT stacking",
+      "notes": "Maintain constant pressure while kiting"
+    }
+  }
+}

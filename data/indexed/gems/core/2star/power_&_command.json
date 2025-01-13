@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Power & Command",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "increases your Primary Attack damage by 8",
+          "conditions": []
+        },
+        {
+          "type": "stat_effect",
+          "description": "increases all other skill damage by 10",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 24%",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 10.50%",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to dispel a negative effect on you each time Power and Command states alternate",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 13.50%",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to dispel a negative effect on you each time Power and Command states alternate",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 17.00%",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to dispel a negative effect on you each time Power and Command states alternate",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 20.50%",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to dispel a negative effect on you each time Power and Command states alternate",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

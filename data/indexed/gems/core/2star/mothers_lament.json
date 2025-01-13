@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Mother's Lament",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds",
+          "conditions": []
+        },
+        {
+          "type": "buff_effect",
+          "description": "gain Maternal Disdain, increasing your Critical Hit Chance by 12% for 6 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Taking damage while below 50% Life causes Maternal Disdain, increasing your Critical Hit Chance by 20% for 6 seconds. When Maternal Disdain ends, you release a blood spike toward nearby enemies, dealing 300% base damage and causing them to Bleed for 50% base damage over 5 seconds",
+          "conditions": [
+            "health_threshold"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Blessed Pebble",
+  "stars": "1",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases the duration of beneficial effects on you by 4",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases Movement Speed by 8% for 3 seconds after gaining a beneficial effect",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases the duration of beneficial effects on you by 5",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases Movement Speed by 2% for 3 seconds after gaining a beneficial effect",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases the duration of beneficial effects on you by 6",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases Movement Speed by 4% for 3 seconds after gaining a beneficial effect",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases the duration of beneficial effects on you by 8%",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Increased Movement Speed by 6% for 3 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Unknown",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases the duration of beneficial effects on you by 12%",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

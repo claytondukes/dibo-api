@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Hellfire Fragment",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Using a skill conjures 3 hellfire blazes around you to seek out enemies within 6 yards, exploding on them dealing 45% base damage + 510 to all nearby enemies. Cannot occur more often than once every 20 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 108% of base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 54% of base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Enemies struck by multiple Hellfire Blazes take 12.5% additional damage from subsequent hits",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 67% of base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Enemies struck by multiple Hellfire Blazes take 25% additional damage from subsequent hits",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 80% of base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Enemies struck by multiple Hellfire Blazes take 37.5% additional damage from subsequent hits",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 94% of base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Enemies struck by multiple Hellfire Blazes take 50% additional damage from subsequent hits",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

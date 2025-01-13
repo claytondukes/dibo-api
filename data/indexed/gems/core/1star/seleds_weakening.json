@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Seled's Weakening",
+  "stars": "1",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "Gain 6",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 18.00%",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 8.00%",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases all damage you deal to Elite monsters by 1%",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 10.00%",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases all damage you deal to Elite monsters by 2%",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 12.50%",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases all damage you deal to Elite monsters by 3%",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased by up to 15.25%",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases all damage you deal to Elite monsters by 4%",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

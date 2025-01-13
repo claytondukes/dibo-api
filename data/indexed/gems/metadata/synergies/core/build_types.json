@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:46:42-05:00"
+  },
+  "build_types": {
+    "primary_types": {
+      "pve": {
+        "description": "Player versus Environment focused builds",
+        "compatible_with": ["dps", "survival", "farm", "raid", "aoe", "support", "dot"],
+        "key_stats": ["damage_increase", "damage_reduction", "critical_hit"],
+        "priority_weight": 1.0
+      },
+      "pvp": {
+        "description": "Player versus Player focused builds",
+        "compatible_with": ["dps", "survival", "dot", "support"],
+        "key_stats": ["burst_damage", "damage_reduction", "crowd_control"],
+        "priority_weight": 1.0
+      }
+    },
+    "role_types": {
+      "dps": {
+        "description": "Maximum damage output focus",
+        "key_stats": ["damage_increase", "critical_hit", "attack_speed"],
+        "synergy_preference": ["damage_amplification", "critical_damage"],
+        "priority_weight": 1.0
+      },
+      "survival": {
+        "description": "Focused on staying alive and damage mitigation",
+        "key_stats": ["damage_reduction", "life", "armor"],
+        "synergy_preference": ["defense_stacking", "healing"],
+        "priority_weight": 0.9
+      },
+      "farm": {
+        "description": "Optimized for farming resources and items",
+        "key_stats": ["magic_find", "damage_increase", "movement_speed"],
+        "synergy_preference": ["aoe_damage", "speed_boost"],
+        "priority_weight": 0.8
+      },
+      "raid": {
+        "description": "Specialized for raid boss encounters",
+        "key_stats": ["boss_damage", "damage_reduction", "critical_hit"],
+        "synergy_preference": ["boss_damage", "survival_mechanics"],
+        "priority_weight": 0.9
+      },
+      "aoe": {
+        "description": "Area of Effect damage specialization",
+        "key_stats": ["area_damage", "damage_increase", "cooldown_reduction"],
+        "synergy_preference": ["area_effect", "crowd_control"],
+        "priority_weight": 0.85
+      },
+      "support": {
+        "description": "Team support and buff focus",
+        "key_stats": ["buff_duration", "cooldown_reduction", "effect_radius"],
+        "synergy_preference": ["buff_enhancement", "team_utility"],
+        "priority_weight": 0.8
+      },
+      "dot": {
+        "description": "Damage over Time focus",
+        "key_stats": ["dot_damage", "dot_duration", "damage_increase"],
+        "synergy_preference": ["dot_stacking", "duration_extension"],
+        "priority_weight": 0.85
+      }
+    },
+    "scoring_rules": {
+      "hybrid_calculation": {
+        "description": "Rules for calculating hybrid build scores",
+        "primary_weight": 0.6,
+        "secondary_weight": 0.4,
+        "diminishing_returns": {
+          "enabled": true,
+          "factor": 0.8
+        }
+      },
+      "compatibility_rules": {
+        "max_role_types": 3,
+        "primary_type_required": true,
+        "minimum_score_threshold": 0.5,
+        "role_stacking_penalty": 0.1
+      }
+    },
+    "stat_weights": {
+      "damage_increase": {
+        "dps": 1.0,
+        "farm": 0.8,
+        "raid": 0.9,
+        "aoe": 0.85,
+        "dot": 0.7
+      },
+      "critical_hit": {
+        "dps": 0.9,
+        "raid": 0.85,
+        "dot": 0.6
+      },
+      "damage_reduction": {
+        "survival": 1.0,
+        "raid": 0.8,
+        "pvp": 0.9
+      }
+    }
+  }
+}

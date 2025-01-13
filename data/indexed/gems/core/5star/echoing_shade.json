@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Echoing Shade",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to summon a shadow clone for 8",
+          "conditions": []
+        },
+        {
+          "type": "summon_effect",
+          "description": "summon a shadow clone for 8",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Shadow clone duration increased to 20.00 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Shadow clone duration increased to 10.00 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "You can now have up to 2 shadow clones at one time",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Shadow clone duration increased to 12.00 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "You can now have up to 2 shadow cones at one time, and their life is increased by 50%",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Shadow clone duration increased to 14.00 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "You can now have up to 3 shadow clones at one time, and their Life is increased by 50%",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Shadow clone duration increased to 17.00 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "You can now have up to 3 shadow clones at one time, and their Life is increased by 100%",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

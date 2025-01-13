@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Starfire Shard",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to rain meteorites in an area, dealing 200% base damage in total",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to call down meteorites, dealing 400% base damage to all enemies in the area",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:39:13-05:00"
+  },
+  "pairs": {
+    "Berserker's Eye": {
+      "Power & Command": {
+        "score": 0.8,
+        "description": "Power & Command's damage boost amplifies Berserker's Eye's increased damage",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS"]
+      },
+      "Bloody Reach": {
+        "score": 0.7,
+        "description": "Distance damage bonus from Bloody Reach stacks with Berserker's Eye's damage increase",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS"]
+      },
+      "Fervent Fang": {
+        "score": 0.85,
+        "description": "Fervent Fang's stacking damage bonus multiplies with Berserker's Eye's damage increase",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "Boss"]
+      },
+      "Blood-Soaked Jade": {
+        "score": 0.85,
+        "description": "Blood-Soaked Jade's full life damage bonus stacks multiplicatively with Berserker's Eye",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS", "Burst"]
+      }
+    },
+    "Cutthroat's Grin": {
+      "Igneous Scorn": {
+        "score": 0.9,
+        "description": "Cutthroat's Grin increases critical hit damage, which directly amplifies Igneous Scorn's critical hit explosions",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "AOE"]
+      },
+      "Seeping Bile": {
+        "score": 0.8,
+        "description": "Critical hits from behind with increased damage from Cutthroat's Grin have higher chance to apply Seeping Bile's poison",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS", "DOT"]
+      },
+      "Power & Command": {
+        "score": 0.85,
+        "description": "Power & Command's damage boost increases the effectiveness of Cutthroat's Grin's critical hits",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS", "Burst"]
+      },
+      "Mourneskull": {
+        "score": 0.85,
+        "description": "Mourneskull's Royal Dominion damage boost amplifies Cutthroat's Grin's critical hits",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "AOE"]
+      }
+    },
+    "Seeping Bile": {
+      "Pain of Subjugation": {
+        "score": 0.85,
+        "description": "Pain of Subjugation's damage increase to controlled enemies stacks with Seeping Bile's poison damage",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "Control"]
+      },
+      "Bloody Reach": {
+        "score": 0.75,
+        "description": "Bloody Reach allows applying Seeping Bile's poison from a safe distance",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS", "Safety"]
+      },
+      "Fervent Fang": {
+        "score": 0.8,
+        "description": "Fervent Fang's stacking damage bonus amplifies Seeping Bile's poison damage over time",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "Boss", "DOT"]
+      },
+      "Everlasting Torment": {
+        "score": 0.9,
+        "description": "Everlasting Torment's bleed effect stacks with Seeping Bile's poison for powerful DOT combinations",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS", "DOT"]
+      }
+    },
+    "Bottled Hope": {
+      "Ca'arsen's Invigoration": {
+        "score": 0.9,
+        "description": "Ca'arsen's Invigoration triggers beneficial effects that are amplified by Bottled Hope",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS", "Support"]
+      },
+      "Freedom and Devotion": {
+        "score": 0.85,
+        "description": "Freedom and Devotion's beneficial effects are enhanced by Bottled Hope's buff boost",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["Support", "Control"]
+      },
+      "Echoing Shade": {
+        "score": 0.8,
+        "description": "Bottled Hope's buff enhancement increases the damage output of Echoing Shade's shadow clones",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "Summon"]
+      },
+      "Blood-Soaked Jade": {
+        "score": 0.85,
+        "description": "Bottled Hope amplifies Blood-Soaked Jade's movement speed bonus for enhanced mobility",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS", "Mobility"]
+      }
+    },
+    "Phoenix Ashes": {
+      "Blessing of the Worthy": {
+        "score": 0.9,
+        "description": "Phoenix Ashes provides a second chance while Blessing of the Worthy turns incoming damage into outgoing damage",
+        "build_types": ["PVP"],
+        "focus": ["Survival", "Counter"]
+      },
+      "Unity Crystal": {
+        "score": 0.8,
+        "description": "Unity Crystal's beneficial effects help maintain survival until Phoenix Ashes can activate",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["Survival", "Support"]
+      },
+      "Chip of Stoned Flesh": {
+        "score": 0.85,
+        "description": "Chip of Stoned Flesh's explosion damage is preserved through Phoenix Ashes' revival, creating a powerful death trigger",
+        "build_types": ["PVP"],
+        "focus": ["Survival", "Counter"]
+      },
+      "Frozen Heart": {
+        "score": 0.9,
+        "description": "Frozen Heart's shield provides extra protection while waiting for Phoenix Ashes to become available again",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["Survival", "Defense"]
+      }
+    },
+    "Echoing Shade": {
+      "Power & Command": {
+        "score": 0.85,
+        "description": "Power & Command's damage boost affects both you and your shadow clones from Echoing Shade",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "Summon"]
+      },
+      "Fervent Fang": {
+        "score": 0.8,
+        "description": "Shadow clones from Echoing Shade help stack Fervent Fang's damage bonus faster",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "Boss", "Summon"]
+      },
+      "Mourneskull": {
+        "score": 0.85,
+        "description": "Mourneskull's Royal Dominion affects shadow clones, and clones help maintain enemy count for maximum bonus",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "AOE", "Summon"]
+      }
+    },
+    "Chip of Stoned Flesh": {
+      "Blessing of the Worthy": {
+        "score": 0.9,
+        "description": "Blessing of the Worthy's damage reflection synergizes with Chip of Stoned Flesh's explosion for massive counter damage",
+        "build_types": ["PVP"],
+        "focus": ["Counter", "Burst"]
+      },
+      "Unity Crystal": {
+        "score": 0.75,
+        "description": "Unity Crystal helps survive long enough to maximize Chip of Stoned Flesh's stored damage",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["Survival", "Counter"]
+      },
+      "Frozen Heart": {
+        "score": 0.85,
+        "description": "Frozen Heart's shield allows safely storing more damage for Chip of Stoned Flesh's explosion",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["Defense", "Counter"]
+      }
+    },
+    "Blood-Soaked Jade": {
+      "Unity Crystal": {
+        "score": 0.8,
+        "description": "Unity Crystal helps maintain full life to maximize Blood-Soaked Jade's damage bonus",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS", "Survival"]
+      },
+      "Frozen Heart": {
+        "score": 0.85,
+        "description": "Frozen Heart's shield protects against damage that would reduce Blood-Soaked Jade's effectiveness",
+        "build_types": ["PVE", "PVP"],
+        "focus": ["DPS", "Defense"]
+      }
+    },
+    "Mourneskull": {
+      "Pain of Subjugation": {
+        "score": 0.85,
+        "description": "Pain of Subjugation's damage boost to controlled enemies combines with Mourneskull's Royal Dominion for massive damage",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "Control"]
+      },
+      "Everlasting Torment": {
+        "score": 0.8,
+        "description": "Mourneskull's Vile Spirits help apply Everlasting Torment's bleed effect to multiple targets",
+        "build_types": ["PVE"],
+        "focus": ["DPS", "DOT", "AOE"]
+      }
+    }
+  }
+}

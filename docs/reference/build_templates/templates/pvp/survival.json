@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T01:08:43-05:00"
+  },
+  "templates": {
+    "pure_survival": {
+      "name": "Maximum Survival",
+      "description": "Focuses purely on survival mechanics and damage mitigation",
+      "primary_type": "pvp",
+      "role_type": "survival",
+      "pvp_notes": {
+        "scaling": "PvP has normalized scaling, focus on survival mechanics",
+        "strategy": "Maximize survival and protection effects",
+        "flexibility": "Can be combined with control or damage based on needs"
+      },
+      "gem_sets": {
+        "primary_set": {
+          "gems": [
+            {
+              "gem": "Phoenix Ashes",
+              "priority": 1,
+              "reason": "Core survival mechanic",
+              "pvp_effect": "Second life essential for survival"
+            },
+            {
+              "gem": "Unity Crystal",
+              "priority": 1,
+              "reason": "Protection and damage sharing",
+              "pvp_effect": "Team-wide damage mitigation"
+            },
+            {
+              "gem": "Shield of Zen",
+              "priority": 1,
+              "reason": "Direct damage reduction",
+              "pvp_effect": "Constant mitigation"
+            },
+            {
+              "gem": "Freedom and Devotion",
+              "priority": 1,
+              "reason": "Additional protection",
+              "pvp_effect": "Periodic shield"
+            },
+            {
+              "gem": "Everlasting Torment",
+              "priority": 2,
+              "reason": "Healing received bonus",
+              "pvp_effect": "Enhanced healing"
+            },
+            {
+              "gem": "Seled's Weakening",
+              "priority": 2,
+              "reason": "Enemy damage reduction",
+              "pvp_effect": "Reduced incoming damage"
+            },
+            {
+              "gem": "Black Rose",
+              "priority": 2,
+              "reason": "Life drain",
+              "pvp_effect": "Sustain mechanic"
+            },
+            {
+              "gem": "Blessing of the Worthy",
+              "priority": 2,
+              "reason": "Damage reduction",
+              "pvp_effect": "Additional mitigation"
+            }
+          ],
+          "synergy_groups": [
+            {
+              "gems": ["Phoenix Ashes", "Unity Crystal", "Shield of Zen", "Freedom and Devotion"],
+              "effect": "Maximum survival core",
+              "score": 0.95,
+              "pvp_notes": "Primary survival chain"
+            },
+            {
+              "gems": ["Everlasting Torment", "Black Rose", "Seled's Weakening"],
+              "effect": "Sustained protection",
+              "score": 0.9,
+              "pvp_notes": "Secondary survival layer"
+            }
+          ]
+        }
+      },
+      "stat_priorities": {
+        "primary": [
+          {
+            "stat": "damage_reduction",
+            "weight": 1.0,
+            "pvp_note": "Core survival stat"
+          },
+          {
+            "stat": "life",
+            "weight": 0.9,
+            "pvp_note": "Raw health pool"
+          },
+          {
+            "stat": "armor",
+            "weight": 0.8,
+            "pvp_note": "Physical mitigation"
+          }
+        ],
+        "secondary": [
+          {
+            "stat": "resistance",
+            "weight": 0.7,
+            "pvp_note": "Magical mitigation"
+          },
+          {
+            "stat": "healing_received",
+            "weight": 0.6,
+            "pvp_note": "Improved healing"
+          }
+        ]
+      }
+    }
+  },
+  "pvp_considerations": {
+    "battlegrounds": {
+      "key_gems": ["Unity Crystal", "Phoenix Ashes", "Shield of Zen"],
+      "strategy": "Team-wide protection focus",
+      "notes": "Coordinate defensive cooldowns"
+    },
+    "duels": {
+      "key_gems": ["Phoenix Ashes", "Black Rose", "Everlasting Torment"],
+      "strategy": "Self-sustain focus",
+      "notes": "Maximize personal survival"
+    }
+  }
+}

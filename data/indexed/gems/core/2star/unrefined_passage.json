@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:02:49-05:00"
+  },
+  "name": "Unrefined Passage",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 5%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 0% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 6%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 0% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 6%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 1% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 7.5%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 1% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 7.5%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 2% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 10%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 2% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 10%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 3% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 12.5%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 3% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 12.5%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 4% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Damage you take while moving is reduced by 15%",
+          "conditions": ["while_moving"]
+        },
+        {
+          "type": "stat_effect",
+          "description": "You have a 4% chance to be immune to an attempt to Slow you",
+          "conditions": ["on_slow_attempt"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Cutthroat's Grin",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "buff_effect",
+          "description": "Gain 8",
+          "conditions": [
+            "on_attack"
+          ]
+        },
+        {
+          "type": "stat_effect",
+          "description": "Critical Hit Damage increased by 20%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Critical Hit Chance increased to 24.00%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Critical Hit Chance increased to 10.50%",
+          "conditions": [
+            "on_attack"
+          ]
+        },
+        {
+          "type": "stat_effect",
+          "description": "Critical Hit Damage increased by 25%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Deal 1% increased damage when attacking from behind",
+          "conditions": [
+            "on_attack",
+            "position"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Critical Hit Chance increased to 13.50%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Deal 2% increased damage when attacking from behind",
+          "conditions": [
+            "on_attack",
+            "position"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Critical Hit Chance increased to 17.00%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Deal 3% increased damage when attacking from behind",
+          "conditions": [
+            "on_attack",
+            "position"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Critical Hit Chance increased to 20.5%",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Deal 4% increased damage when attacking from behind",
+          "conditions": [
+            "on_attack",
+            "position"
+          ]
+        }
+      ]
+    }
+  }
+}

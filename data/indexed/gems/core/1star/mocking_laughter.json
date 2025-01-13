@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Mocking Laughter",
+  "stars": "1",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Your Primary Attack Taunts non-Boss monsters, forcing them to attack you for 2.00 seconds. Each target cannot be affected more often than once every 20 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Taunt duration increased to 6.00 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Taunt duration increased to 2.50 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decrease all damage you take by 2% from monsters affected by Mocking Laughter",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Taunt duration increased to 3.00 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decrease all damage you take by 4% from monsters affected by Mocking Laughter",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Taunt duration increased to 4.00 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decrease all damage you take by 6% from monsters affected by Mocking Laughter",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Taunt duration increased to 5.00 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decrease all damage you take by 8% from monsters affected by Mocking Laughter",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    }
+  }
+}

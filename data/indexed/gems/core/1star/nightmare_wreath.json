@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Nightmare Wreath",
+  "stars": "1",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "You have a 10% chance when you defeat an enemy to cause other nearby enemies to flee in fear for 0.80 seconds. Cannot occur more often than once every 20 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Fear duration increased to 2.40 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Fear duration increased to 1.00 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases all damage you deal to targets afflicted with Fear by 2%",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Fear duration increased to 1.20 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases all damage you deal to targets afflicted with Fear by 4%",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Fear duration increased to 1.60 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases all damage you deal to targets afflicted with Fear by 6%",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Fear duration increased to 2.00 seconds",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases all damage you deal to targets afflicted with Fear by 8%",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

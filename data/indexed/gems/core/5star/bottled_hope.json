@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Bottled Hope",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "increase the damage and Movement Speed of the target by 8",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage and Movement Speed bonuses increased to 24.00%",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage and Movement Speed bonsuses increased to 10.50%",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decreases the cooldown on all your skills by 1.5%",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage and Movement Speed bonuses increased to 13.50%",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decreases the cooldown on all your skills by 3%",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage and Movement Speed bonuses increased to 17.00%",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decreases the cooldown on all your skills by 4.5%",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage and Movement Speed bonuses increased to 20.50%",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decreases the cooldown on all your skills by 6%",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

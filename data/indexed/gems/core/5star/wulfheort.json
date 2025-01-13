@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Wulfheort",
+  "stars": "5",
+  "type": "stacking_damage",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Dealing damage grants you Savage Heart for 6 seconds, causing your attacks to mark enemies. At 5 stacks the marks are consumed and slash the heart of the enemy, dealing 40% base damage + 385. Marks can be applied and stacked again on the same enemy",
+          "conditions": [
+            "on_damage_dealt",
+            "stacking_buff",
+            "mark_consumption"
+          ]
+        },
+        {
+          "type": "stat_effect",
+          "description": "Increases Resonance by 30",
+          "conditions": [
+            "resonance"
+          ]
+        },
+        {
+          "type": "stat_effect",
+          "description": "+12 Combat Rating",
+          "conditions": [
+            "combat_rating"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    }
+  },
+  "max_rank": 10,
+  "magic_find": "5",
+  "max_effect": "TODO: Max effect information needed (ranks 2-10 unknown). Known ranges: Resonance [30-100], Combat Rating [12-24]",
+  "categories": [
+    "damage_boost",
+    "mark"
+  ],
+  "synergy_categories": [
+    "damage_boost",
+    "mark"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Tear of the Comet",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Every second you maintain a Channeled skill, you launch 2 arcane missiles that deal 10% base damage + 120 to random enemies",
+          "conditions": [
+            "on_channel"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 12% of base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Arcane missiles have a 10% chance to explode on impact, dealing 50% of their damage to nearby enemies",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 15% of base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Arcane missiles have a 20% chance to explode on impact, dealing 50% of their damage to nearby enemies",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 20% of base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Arcane missiles have a 30% chance to explode on impact, dealing 50% of their damage to nearby enemies",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 25% of base damage",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Arcane missiles have a 40% chance to explode on impact, dealing 50% of their damage to nearby enemies",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 30% of base damage",
+          "conditions": []
+        }
+      ]
+    }
+  },
+  "max_rank": 10,
+  "magic_find": "5",
+  "max_effect": "Every second you maintain a Channeled skill, you launch 2 arcane missiles that deal 30% base damage + 120 to random enemies. Arcane missiles have a 40% chance to explode on impact, dealing 50% of their damage to nearby enemies."
+}

@@ -164,6 +164,29 @@ Use semantic commit messages with the following prefixes:
 - `wip:` Work in progress
 - `release:` Release preparation
 
+## TODOs
+
+### Missing Gem Ranks
+
+1. **Igneous Scorn**
+   - Only have rank 10 data:
+     ```
+     Your critical hits cause explosions that deal 120% base damage +486 to nearby enemies. 
+     These explosions cannot occur more often than once every 6 seconds. 
+     After triggering an explosion, your damage is increased by 10% for 2 seconds.
+     ```
+   - Need to find ranks 1-9
+
+2. **Mossthorn**
+   - Only have rank 10 data (Two-Star Gem):
+     ```
+     Taking damage activates Mossthorn for 6 seconds. While active, each attack you receive 
+     triggers a retaliatory piercing thorn (no more than once every 0.5 seconds), dealing 
+     50% base damage + 201 to enemies. Cannot activate more often than once every 20 seconds. 
+     While Mossthorn is active, damage you take is reduced by 8%
+     ```
+   - Need to find ranks 1-9
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

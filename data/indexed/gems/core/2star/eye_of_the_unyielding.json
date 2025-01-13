@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Eye of the Unyielding",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Continual damage done is increased by 6%",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Continual damage done is increased by 7%",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Continual damage taken is reduced by 1%",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Continual damage done is increased by 8.5%",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Continual damage taken is reduced by 2%",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Continual damage done is increased by 11%",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Continual damage taken is reduced by 3%",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Continual damage done is increased by 14%",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Continual damage taken is reduced by 4%",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Continual damage done is increased by 16%",
+          "conditions": []
+        }
+      ]
+    }
+  },
+  "max_rank": 10,
+  "magic_find": "5",
+  "max_effect": "Continual damage done is increased by 16% and continual damage taken is reduced by 4%"
+}

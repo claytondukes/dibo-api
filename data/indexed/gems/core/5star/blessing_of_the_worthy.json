@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Blessing of the Worthy",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to unleash retribution on all nearby enemies, dealing damage equal to 12% of your maximum Life",
+          "conditions": [
+            "on_hit"
+          ]
+        },
+        {
+          "type": "damage_effect",
+          "description": "unleash retribution on all nearby enemies, dealing damage equal to 12% of your maximum Life",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased to 28%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased to 14%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "For 6 seconds after unleashing divine retribution, you take 4% decreased damage",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased to 17.5%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "For 6 seconds after unleashing divine retribution, you take 8% decreased damage",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased to 21%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "For 6 seconds after unleashing divine retribution, you take 12% decreased damage",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage increased to 24.5%",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "For 6 seconds after unleashing divine retribution, you take 16% decreased damage",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1012,6 +1012,114 @@
     "magic_find": "5",
     "max_effect": "The duration of your absorb shields are increased by 36% and they also reduce the duration of Loss of Control effects by 24% while active."
   },
+  "Hearthstone": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "absorb shields are increased by 16",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "2": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "Absorb shield durations increased to 20",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "3": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "Absorb shields also reduce the duration of Loss of Control effects by 6% while active",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "4": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "absorb shields are increased by 24%",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "5": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "Absorb shields also reduce the duration of Loss of Control effects by 12% while active",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "6": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "absorb shields increased by 28%",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "7": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "Absorb shields also reduce the duration of Loss of Control effects by 18% while active",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "8": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "absorb shields increased by 32%",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "9": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "Absorb shields also reduce the duration of Loss of Control effects by 24% while active",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      },
+      "10": {
+        "effects": [
+          {
+            "type": "defensive_effect",
+            "description": "absorb shields increased by 36%",
+            "conditions": []
+          }
+        ],
+        "stats": {}
+      }
+    },
+    "max_rank": 10,
+    "magic_find": "5",
+    "max_effect": "The duration of your absorb shields are increased by 36% and they also reduce the duration of Loss of Control effects by 24% while active."
+  },
   "Mocking Laughter": {
     "stars": "1",
     "ranks": {
@@ -3277,7 +3385,7 @@
         "effects": [
           {
             "type": "stat_effect",
-            "description": "increases your Primary Attack damage by 8%",
+            "description": "increases your Primary Attack damage by 8",
             "conditions": []
           },
           {
@@ -4850,9 +4958,9 @@
                 {
                   "type": "cooldown",
                   "cooldown": 6.0,
-                  "description": "Cannot occur more often than once every 6 seconds"
-                }
-              ],
+                "description": "Cannot occur more often than once every 6 seconds"
+              }
+            ],
               "context": "r direction dealing 55% base damage + 547 to all enemie"
             }
           ]
@@ -5221,8 +5329,8 @@
       "4": {
         "effects": [
           {
-            "type": "generic_effect",
-            "description": "Damage absorption increased to 220%",
+            "type": "defensive_effect",
+            "description": "absorb value increased to 220%",
             "conditions": []
           }
         ],
@@ -5282,8 +5390,8 @@
       "6": {
         "effects": [
           {
-            "type": "generic_effect",
-            "description": "Damage absorption value increased to 260%",
+            "type": "defensive_effect",
+            "description": "absorb value increased to 260%",
             "conditions": []
           }
         ],
@@ -5656,11 +5764,6 @@
           {
             "type": "proc_effect",
             "description": "chance to conjure a charging spirit wolf that inflicts 150% base damage + 1458 to all enemies in its path",
-            "conditions": []
-          },
-          {
-            "type": "summon_effect",
-            "description": "conjure a charging spirit wolf that inflicts 150% base damage + 1458 to all enemies in its path",
             "conditions": []
           }
         ],
@@ -6160,7 +6263,7 @@
     },
     "max_rank": 10,
     "magic_find": "15",
-    "max_effect": "Your attacks have a 4% chance to poison enemies, inflicting 65% base damage +263 every second over 6 seconds and decreasing Movement Speed by 24%. This poison spreads to nearby enemies if the victim dies. Cannot affect the same target more often than once every 20 seconds."
+    "max_effect": "Your attacks have a 4% chance to poison enemies, inflicting 65% base damage +263 every second over 6 seconds and decreasing Movement Speed by 24%. This poison spreads to nearby enemies if the victim dies. Cannot affect the same target more than once every 20 seconds."
   },
   "Zwenson's Haunting": {
     "stars": "5",
@@ -7118,5 +7221,661 @@
     "max_rank": 10,
     "magic_find": "0",
     "max_effect": "Your Primary Attacks unleash an Aspect of Gloom that lasts 10 seconds, during which your Primary Attacks deal 60% additional AoE damage."
+  },
+  "Lo's Focused Gaze": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 8%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 8.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 8%"
+            }
+          ]
+        }
+      },
+      "2": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 10%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 10.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 10%"
+            }
+          ]
+        }
+      },
+      "3": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 10%, Charging speed increased by 8%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 10.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 10%"
+            }
+          ],
+          "charge_speed": [
+            {
+              "value": 8.0,
+              "conditions": [],
+              "context": "Charging speed increased by 8%"
+            }
+          ]
+        }
+      },
+      "4": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 12%, Charging speed increased by 8%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 12.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 12%"
+            }
+          ],
+          "charge_speed": [
+            {
+              "value": 8.0,
+              "conditions": [],
+              "context": "Charging speed increased by 8%"
+            }
+          ]
+        }
+      },
+      "5": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 12%, Charging speed increased by 16%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 12.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 12%"
+            }
+          ],
+          "charge_speed": [
+            {
+              "value": 16.0,
+              "conditions": [],
+              "context": "Charging speed increased by 16%"
+            }
+          ]
+        }
+      },
+      "6": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 14%, Charging speed increased by 16%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 14.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 14%"
+            }
+          ],
+          "charge_speed": [
+            {
+              "value": 16.0,
+              "conditions": [],
+              "context": "Charging speed increased by 16%"
+            }
+          ]
+        }
+      },
+      "7": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 14%, Charging speed increased by 24%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 14.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 14%"
+            }
+          ],
+          "charge_speed": [
+            {
+              "value": 24.0,
+              "conditions": [],
+              "context": "Charging speed increased by 24%"
+            }
+          ]
+        }
+      },
+      "8": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 16%, Charging speed increased by 24%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 16.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 16%"
+            }
+          ],
+          "charge_speed": [
+            {
+              "value": 24.0,
+              "conditions": [],
+              "context": "Charging speed increased by 24%"
+            }
+          ]
+        }
+      },
+      "9": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 16%, Charging speed increased by 32%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 16.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 16%"
+            }
+          ],
+          "charge_speed": [
+            {
+              "value": 32.0,
+              "conditions": [],
+              "context": "Charging speed increased by 32%"
+            }
+          ]
+        }
+      },
+      "10": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Increases damage done by your Charge skills by 20%, Charging speed increased by 32%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "damage_increase": [
+            {
+              "value": 20.0,
+              "conditions": [
+                {
+                  "type": "skill_type",
+                  "skill_type": "charge",
+                  "description": "Charge skills"
+                }
+              ],
+              "context": "Increases damage done by your Charge skills by 20%"
+            }
+          ],
+          "charge_speed": [
+            {
+              "value": 32.0,
+              "conditions": [],
+              "context": "Charging speed increased by 32%"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 10,
+    "magic_find": "5",
+    "max_effect": "Increases damage done by your Charge skills by 20%. Charging speed is increased by 32%."
+  },
+  "Misery Elixir": {
+    "stars": "1",
+    "ranks": {
+      "1": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 8%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 8.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 8%"
+            }
+          ]
+        }
+      },
+      "2": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 10%",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 10.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 10%"
+            }
+          ]
+        }
+      },
+      "3": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 10%. Affected enemies take 2% increased damage",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 10.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 10%"
+            }
+          ],
+          "damage_increase": [
+            {
+              "value": 2.0,
+              "conditions": [
+                {
+                  "type": "target_state",
+                  "target_state": "affected",
+                  "description": "Affected enemies"
+                }
+              ],
+              "context": "Affected enemies take 2% increased damage"
+            }
+          ]
+        }
+      },
+      "4": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 12%. Affected enemies take 2% increased damage",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 12.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 12%"
+            }
+          ],
+          "damage_increase": [
+            {
+              "value": 2.0,
+              "conditions": [
+                {
+                  "type": "target_state",
+                  "target_state": "affected",
+                  "description": "Affected enemies"
+                }
+              ],
+              "context": "Affected enemies take 2% increased damage"
+            }
+          ]
+        }
+      },
+      "5": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 12%. Affected enemies take 4% increased damage",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 12.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 12%"
+            }
+          ],
+          "damage_increase": [
+            {
+              "value": 4.0,
+              "conditions": [
+                {
+                  "type": "target_state",
+                  "target_state": "affected",
+                  "description": "Affected enemies"
+                }
+              ],
+              "context": "Affected enemies take 4% increased damage"
+            }
+          ]
+        }
+      },
+      "6": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 16%. Affected enemies take 4% increased damage",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 16.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 16%"
+            }
+          ],
+          "damage_increase": [
+            {
+              "value": 4.0,
+              "conditions": [
+                {
+                  "type": "target_state",
+                  "target_state": "affected",
+                  "description": "Affected enemies"
+                }
+              ],
+              "context": "Affected enemies take 4% increased damage"
+            }
+          ]
+        }
+      },
+      "7": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 16%. Affected enemies take 6% increased damage",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 16.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 16%"
+            }
+          ],
+          "damage_increase": [
+            {
+              "value": 6.0,
+              "conditions": [
+                {
+                  "type": "target_state",
+                  "target_state": "affected",
+                  "description": "Affected enemies"
+                }
+              ],
+              "context": "Affected enemies take 6% increased damage"
+            }
+          ]
+        }
+      },
+      "8": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 20%. Affected enemies take 6% increased damage",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 20.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 20%"
+            }
+          ],
+          "damage_increase": [
+            {
+              "value": 6.0,
+              "conditions": [
+                {
+                  "type": "target_state",
+                  "target_state": "affected",
+                  "description": "Affected enemies"
+                }
+              ],
+              "context": "Affected enemies take 6% increased damage"
+            }
+          ]
+        }
+      },
+      "9": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 20%. Affected enemies take 8% increased damage",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 20.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 20%"
+            }
+          ],
+          "damage_increase": [
+            {
+              "value": 8.0,
+              "conditions": [
+                {
+                  "type": "target_state",
+                  "target_state": "affected",
+                  "description": "Affected enemies"
+                }
+              ],
+              "context": "Affected enemies take 8% increased damage"
+            }
+          ]
+        }
+      },
+      "10": {
+        "effects": [
+          {
+            "type": "stat_effect",
+            "description": "Duration of harmful effects you apply is increased by 24%. Affected enemies take 8% increased damage",
+            "conditions": []
+          }
+        ],
+        "stats": {
+          "effect_duration": [
+            {
+              "value": 24.0,
+              "conditions": [
+                {
+                  "type": "effect_category",
+                  "effect_category": "harmful",
+                  "description": "harmful effects you apply"
+                }
+              ],
+              "context": "Duration of harmful effects you apply is increased by 24%"
+            }
+          ],
+          "damage_increase": [
+            {
+              "value": 8.0,
+              "conditions": [
+                {
+                  "type": "target_state",
+                  "target_state": "affected",
+                  "description": "Affected enemies"
+                }
+              ],
+              "context": "Affected enemies take 8% increased damage"
+            }
+          ]
+        }
+      }
+    },
+    "max_rank": 10,
+    "magic_find": "5",
+    "max_effect": "Duration of harmful effects you apply is increased by 24%. Affected enemies take 8% increased damage."
   }
 }

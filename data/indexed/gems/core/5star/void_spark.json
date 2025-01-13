@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Void Spark",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "chance to chain lightning to 8 enemies dealing 45% base damage + 446",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    }
+  }
+}

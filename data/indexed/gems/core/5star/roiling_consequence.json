@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Roiling Consequence",
+  "stars": "5",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Enters roiling rage for 6s, +12% Crit Chance, crits cause explosion dealing 36% base damage over 3s",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "increases your Critical Hit Chance by 16% for 6 seconds",
+          "conditions": [
+            "on_hit"
+          ]
+        }
+      ]
+    }
+  }
+}

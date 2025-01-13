@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Lucent Watcher",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Reduces the duration of loss of control effects on you by 8%",
+          "conditions": []
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Reduces the duration of loss of control effects on you by 10%",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "While suffering loss of control, the damage you take is reduced by 1%",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Reduces the duration of loss of control effects on you by 12%",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "While suffering loss of control, the damage you take is reduced by 2%",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Reduces the duration of loss of control effects on you by 16%",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "While suffering loss of control, the damage you take is reduced by 3%",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Reduces the duration of loss of control effects on you by 20%",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "While suffering loss of control, the damage you take is reduced by 4%",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Reduces the duration of loss of control effects on you by 24%",
+          "conditions": []
+        }
+      ]
+    }
+  },
+  "max_rank": 10,
+  "magic_find": "5",
+  "max_effect": "Reduces the duration of loss of control effects on you by 24%. While suffering loss of control, the damage you take is reduced by 4%"
+}

@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Trickshot Gem",
+  "stars": "1",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Your Channeled skills consume energy 8.00% slower",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Your Channeled skills consume energy 24.00% slower",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Your Channeled skills consume energy 10.50% slower",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decrease all damage you take by 0.5% while using a Channel skill",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Your Channeled skills consume energy 13.50% slower",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decrease all damage you take by 1.0% while using a Channel skill",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Your Channeled skills consume energy 17.00% slower",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decrease all damage you take by 1.5% while using a Channel skill",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Your Channeled skills consume energy 20.50% slower",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Decrease all damage you take by 2% while using a Channel skill",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Volatility Shard",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "When you defeat an enemy you trigger a volatile explosion dealing 30% base damage + 365 to all nearby enemies. Cannot occur more often than once every 6 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 90% of base damage",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 40% of base damage",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased by 2% for 2 seconds after an explosion occurs",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 50% of base damage",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased by 4% for 2 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Unknown",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased by 6% for 2 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 75% of base damage",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Damage is increased to 8% for 2 seconds",
+          "conditions": [
+            "on_attack"
+          ]
+        }
+      ]
+    }
+  }
+}

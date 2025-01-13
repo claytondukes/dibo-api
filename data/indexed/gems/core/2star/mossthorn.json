@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Mossthorn",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Taking damage activates Mossthorn for 6 seconds. While active, each attack you receive triggers a retaliatory piercing thorn (no more than once every 0.5 seconds), dealing 17% base damage + 201 to enemies",
+          "conditions": [
+            "on_damage_taken",
+            "cooldown_restriction"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Retaliatory thorn damage increased to 22% base damage + 201",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "While Mossthorn is active, damage you take is reduced by 2%",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Retaliatory thorn damage increased to 28% base damage + 201",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "While Mossthorn is active, damage you take is reduced by 4%",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Taking damage activates Mossthorn for 6 seconds. While active, each attack you receive triggers a retaliatory piercing thorn (no more than once every 0.5 seconds), dealing 50% base damage + 201 to enemies. While Mossthorn is active, damage you take is reduced by 8%",
+          "conditions": [
+            "on_damage_taken",
+            "cooldown_restriction"
+          ]
+        }
+      ]
+    }
+  },
+  "max_rank": 10,
+  "magic_find": "5",
+  "max_effect": "Taking damage activates Mossthorn for 6 seconds. While active, each attack you receive triggers a retaliatory piercing thorn (no more than once every 0.5 seconds), dealing 50% base damage + 201 to enemies. Cannot activate more often than once every 20 seconds. While Mossthorn is active, damage you take is reduced by 8%"
+}

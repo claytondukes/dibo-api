@@ -1,11 +1,16 @@
 {
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:03:57-05:00"
+  },
   "gems_by_skill": {
     "movement": [
       "Blood-Soaked Jade",
       "Lightning Core",
       "Bottled Hope",
       "The Abiding Curse",
-      "Grim Rhythm"
+      "Grim Rhythm",
+      "Unrefined Passage"
     ],
     "primary attack": [
       "Ca'arsen's Invigoration",
@@ -37,7 +42,8 @@
     "defense": [
       "Frozen Heart",
       "Phoenix Ashes",
-      "Spiteful Blood"
+      "Spiteful Blood",
+      "Unrefined Passage"
     ],
     "channeling": [
       "Trickshot Gem"

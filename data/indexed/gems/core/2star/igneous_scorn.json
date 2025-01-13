@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Igneous Scorn",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Your Critical Hits cause explosions that deal 40% base damage +486 to nearby enemies",
+          "conditions": [
+            "on_crit",
+            "cooldown_restriction"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "generic_effect",
+          "description": "Explosion damage increased to 50% base damage +486",
+          "conditions": []
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "proc_effect",
+          "description": "Your critical hits cause explosions that deal 120% base damage +486 to nearby enemies. After triggering an explosion, your damage is increased by 10% for 2 seconds",
+          "conditions": [
+            "on_crit",
+            "cooldown_restriction"
+          ]
+        }
+      ]
+    }
+  },
+  "max_rank": 10,
+  "magic_find": "5",
+  "max_effect": "Your critical hits cause explosions that deal 120% base damage +486 to nearby enemies. These explosions cannot occur more often than once every 6 seconds. After triggering an explosion, your damage is increased by 10% for 2 seconds"
+}

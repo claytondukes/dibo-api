@@ -477,7 +477,8 @@ def _validate_data_structure(self) -> None:
    - Build comparison
    - Build history
    - Build sharing
-   - Build templates
+   - Dynamic build generation (replacing static templates)
+   - Build optimization based on game dynamics
 
 ### TODO: Resonance Integration
 

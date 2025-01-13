@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Grim Rhythm",
+  "stars": "2",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "increases your Attack Speed by 0",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "increases your Attack Speed by 2",
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

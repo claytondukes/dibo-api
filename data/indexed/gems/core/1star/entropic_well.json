@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-13T00:13:37-05:00"
+  },
+  "name": "Entropic Well",
+  "stars": "1",
+  "type": "skill_damage",
+  "ranks": {
+    "1": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases Skill damage by 6%",
+          "conditions": [
+            "skill_damage"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases Skill damage by 8%",
+          "conditions": [
+            "skill_damage"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases Skill damage by 8%. Increases Skill Attack Speed by 1%",
+          "conditions": [
+            "skill_damage",
+            "attack_speed"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases Skill damage by 10%. Increases Skill Attack Speed by 1%",
+          "conditions": [
+            "skill_damage",
+            "attack_speed"
+          ]
+        }
+      ]
+    },
+    "5": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases Skill damage by 10%. Increases Skill Attack Speed by 2%",
+          "conditions": [
+            "skill_damage",
+            "attack_speed"
+          ]
+        }
+      ]
+    },
+    "6": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "7": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "8": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "9": {
+      "effects": [
+        {
+          "type": "todo",
+          "description": "TODO: Rank information needed",
+          "conditions": []
+        }
+      ]
+    },
+    "10": {
+      "effects": [
+        {
+          "type": "stat_effect",
+          "description": "Increases Skill damage by 18%. Increases Skill Attack Speed by 4%",
+          "conditions": [
+            "skill_damage",
+            "attack_speed"
+          ]
+        },
+        {
+          "type": "stat_effect",
+          "description": "Increases Resonance by 150",
+          "conditions": [
+            "resonance"
+          ]
+        },
+        {
+          "type": "stat_effect",
+          "description": "+44 Combat Rating",
+          "conditions": [
+            "combat_rating"
+          ]
+        }
+      ]
+    }
+  },
+  "max_rank": 10,
+  "magic_find": "5",
+  "max_effect": "Increases Skill damage by 18%. Increases Skill Attack Speed by 4%. Increases Resonance by 150. +44 Combat Rating",
+  "categories": [
+    "damage_boost"
+  ],
+  "synergy_categories": [
+    "damage_boost"
+  ]
+}

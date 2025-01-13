@@ -10,7 +10,8 @@ class SynergyCondition(BaseModel):
     type: str = Field(description="Type of condition")
     state: Optional[str] = Field(None, description="State for the condition")
     trigger: Optional[str] = Field(None, description="Trigger for the condition")
-    description: str = Field(description="Description of the condition")
+    description: str = Field(description="Human-readable description of the condition")
+    pattern: Optional[str] = Field(None, description="Regex pattern for parsing the condition")
     cooldown: Optional[float] = Field(None, description="Cooldown in seconds if applicable")
     threshold: Optional[float] = Field(None, description="Threshold value if applicable")
     
@@ -20,7 +21,8 @@ class SynergyCondition(BaseModel):
                 "type": "trigger",
                 "state": None,
                 "trigger": "on_hit",
-                "description": "On hit",
+                "description": "when you take damage",
+                "pattern": "when (?:you )?take damage",
                 "cooldown": 1.0,
                 "threshold": None
             }]
@@ -31,26 +33,23 @@ class SynergyCondition(BaseModel):
 class SynergyGroup(BaseModel):
     """A group of items that share synergies."""
     
-    gems: List[str] = Field(default_factory=list, description="Gems in this synergy")
-    essences: List[str] = Field(default_factory=list, description="Essences in this synergy")
-    skills: List[str] = Field(default_factory=list, description="Skills in this synergy")
+    gems: List[str] = Field(description="Gems in this synergy")
     conditions: Dict[str, List[SynergyCondition]] = Field(
         default_factory=dict,
-        description="Conditions for each item"
+        description="Conditions for each gem"
     )
     
     model_config = ConfigDict(
         json_schema_extra={
             "examples": [{
                 "gems": ["ruby", "sapphire"],
-                "essences": ["fire", "water"],
-                "skills": ["fireball", "ice_bolt"],
                 "conditions": {
                     "ruby": [{
                         "type": "trigger",
                         "state": None,
                         "trigger": "on_hit",
-                        "description": "On hit",
+                        "description": "when you take damage",
+                        "pattern": "when (?:you )?take damage",
                         "cooldown": 1.0,
                         "threshold": None
                     }]
@@ -135,8 +134,6 @@ class GameSynergies(BaseModel):
             "examples": [{
                 "critical_hit": {
                     "gems": ["ruby", "sapphire"],
-                    "essences": ["fire", "water"],
-                    "skills": ["fireball", "ice_bolt"],
                     "conditions": {
                         "ruby": [{
                             "type": "trigger",
