@@ -10,7 +10,7 @@
       "effects": [
         {
           "type": "stat_effect",
-          "description": "Increases all damage you deal by 5",
+          "description": "Increases all damage you deal by 5%",
           "conditions": [
             "on_attack"
           ]

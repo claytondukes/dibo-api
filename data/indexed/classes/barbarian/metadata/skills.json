@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-17T13:19:26-05:00",
+  "skills": {
+    "Demoralize": {
+      "description": "A shout that terrifies and damages enemies",
+      "essence_count": 12
+    },
+    "Sprint": {
+      "description": "Increases movement speed and can be modified for offensive capabilities",
+      "essence_count": 11
+    },
+    "Ground Stomp": {
+      "description": "A powerful ground-based attack that can stun enemies",
+      "essence_count": 9
+    },
+    "Whirlwind": {
+      "description": "A spinning attack that deals continuous damage to nearby enemies",
+      "essence_count": 17
+    },
+    "Iron Skin": {
+      "description": "A defensive ability that increases armor and can provide additional effects",
+      "essence_count": 5
+    },
+    "Leap": {
+      "description": "A mobility skill that can be enhanced for offensive capabilities",
+      "essence_count": 7
+    },
+    "War Cry": {
+      "description": "A buff that enhances the Barbarian and nearby allies",
+      "essence_count": 3
+    },
+    "Wrath of the Berserker": {
+      "description": "Ultimate ability that greatly enhances combat capabilities",
+      "essence_count": 13
+    },
+    "Undying Rage": {
+      "description": "A powerful defensive cooldown that prevents death",
+      "essence_count": 3
+    },
+    "Cleave": {
+      "description": "A sweeping attack that hits multiple enemies",
+      "essence_count": 8
+    },
+    "Frenzy": {
+      "description": "Builds up attack speed with consecutive hits",
+      "essence_count": 1
+    },
+    "Hammer of the Ancients": {
+      "description": "A powerful hammer strike that deals heavy damage",
+      "essence_count": 3
+    },
+    "Furious Charge": {
+      "description": "A charging attack that deals damage to enemies in its path",
+      "essence_count": 2
+    },
+    "Chained Spear": {
+      "description": "A spear attack that damages and pulls in enemies",
+      "essence_count": 4
+    }
+  }
+}

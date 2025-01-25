@@ -4,15 +4,13 @@
 
 ### 1.1 Equipment Structure
 
-- **Primary Gear (8 slots)**
+- **Primary Gear (6 slots)**
   - Head
   - Shoulders
   - Chest
   - Legs
-  - Main Hand (Set 1)
-  - Off-Hand (Set 1)
-  - Main Hand (Set 2)
-  - Off-Hand (Set 2)
+  - Main Hand
+  - Off-Hand
   - Each slot can hold one essence modification
 
 - **Set Items (8 slots)**
@@ -49,18 +47,27 @@
 ### 1.4 Essence System
 
 - **Purpose:** Modifies skill behavior
+- **Data Structure:**
+  - Organized by class and slot
+  - Each slot has dedicated essence file
+  - Metadata describes skills and mechanics
+  - Indexes for efficient lookup
 - **Constraints:**
   - One essence per primary gear slot
   - Must modify an equipped skill to be useful
   - Specific essences tied to specific slots
+- **Effect Types:**
+  - Damage: Direct increases, new effects
+  - Utility: Cooldowns, resources, control
+  - Defense: Mitigation, healing, shields
 
 ## 2. Data Analysis Process
 
 ### 2.1 Build Foundation
 
 1. **Analyze Available Data**
-   - Review all JSON files for complete picture
-   - Check constraints.json for system limits
+   - Review class-specific essence files
+   - Check essence counts by slot
    - Map available modifications and synergies
 
 2. **Skill Selection**
@@ -71,9 +78,9 @@
      - Work together mechanically
 
 3. **Essence Mapping**
-   - List all available essences by slot
-   - Map which skills have essences in which slots
-   - Ensure chosen skills can utilize all 8 gear slots
+   - Use by_slot.json for slot availability
+   - Use by_skill.json for skill modifications
+   - Use by_effect.json for effect types
    - Consider essence effect synergies
 
 ### 2.2 Build Optimization
@@ -143,7 +150,7 @@
            for slot in gear_slots:
                if essence_map[skill][slot]:
                    covered_slots.add(slot)
-       return len(covered_slots) == 8
+       return len(covered_slots) == 6
    ```
 
 ### 3.3 Synergy Evaluation

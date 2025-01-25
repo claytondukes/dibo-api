@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-17T13:19:26-05:00",
+    "slot": "main_hand",
+    "essence_count": 26
+  },
+  "essences": {
+    "ancestral_charge": {
+      "essence_name": "Ancestral Charge",
+      "modifies_skill": "Furious Charge",
+      "effect": "Furious Charge summons an Ancient warrior who charges with you. Furious Charge Damage +18.0%",
+      "effect_type": "damage",
+      "tags": ["summon", "damage_boost"]
+    },
+    "battle_fervor": {
+      "essence_name": "Battle Fervor",
+      "modifies_skill": "War Cry",
+      "effect": "War Cry grants 20% Attack Speed for 4.8s",
+      "effect_type": "utility",
+      "tags": ["attack_speed", "buff"]
+    },
+    "blood_rage": {
+      "essence_name": "Blood Rage",
+      "modifies_skill": "Frenzy",
+      "effect": "Frenzy deals 5% increased damage per stack. Maximum 5 stacks",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "stacking"]
+    },
+    "bold_chieftain": {
+      "essence_name": "Bold Chieftain",
+      "modifies_skill": "War Cry",
+      "effect": "War Cry's radius is increased by 25%. Duration +1.2s",
+      "effect_type": "utility",
+      "tags": ["range", "duration"]
+    },
+    "breaker_of_shields": {
+      "essence_name": "Breaker of Shields",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp destroys enemy shields and deals 50% increased damage to them",
+      "effect_type": "damage",
+      "tags": ["shield_break", "damage_boost"]
+    },
+    "deathless_fury": {
+      "essence_name": "Deathless Fury",
+      "modifies_skill": "Undying Rage",
+      "effect": "While Undying Rage is active, you deal 25% increased damage",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional"]
+    },
+    "eager_maelstrom": {
+      "essence_name": "Eager Maelstrom",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind's Energy cost is reduced by 20% while Berserking",
+      "effect_type": "utility",
+      "tags": ["resource", "conditional"]
+    },
+    "earthen_might": {
+      "essence_name": "Earthen Might",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp generates 25 Fury for each enemy hit",
+      "effect_type": "utility",
+      "tags": ["resource", "fury"]
+    },
+    "endless_death": {
+      "essence_name": "Endless Death",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave's Bleed duration is increased by 3s",
+      "effect_type": "damage",
+      "tags": ["bleed", "duration"]
+    },
+    "flesh_rending": {
+      "essence_name": "Flesh Rending",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave's Bleed damage is increased by 30%",
+      "effect_type": "damage",
+      "tags": ["bleed", "damage_boost"]
+    },
+    "furious_impulse": {
+      "essence_name": "Furious Impulse",
+      "modifies_skill": "Furious Charge",
+      "effect": "Furious Charge's cooldown is reduced by 1s for each enemy hit",
+      "effect_type": "utility",
+      "tags": ["cooldown", "conditional"]
+    },
+    "guttural_roar": {
+      "essence_name": "Guttural Roar",
+      "modifies_skill": "War Cry",
+      "effect": "War Cry also increases your damage by 15% for 4.8s",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "buff"]
+    },
+    "hammer_of_the_ancients": {
+      "essence_name": "Hammer of the Ancients",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "Hammer of the Ancients has a 15% chance to summon an Ancient warrior who attacks with you",
+      "effect_type": "damage",
+      "tags": ["summon", "proc"]
+    },
+    "heavy_handed": {
+      "essence_name": "Heavy Handed",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "Hammer of the Ancients deals 40% increased damage but attacks 20% slower",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "attack_speed"]
+    },
+    "mighty_swing": {
+      "essence_name": "Mighty Swing",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave's arc is increased by 100%",
+      "effect_type": "utility",
+      "tags": ["range", "aoe"]
+    },
+    "perpetual_stamina": {
+      "essence_name": "Perpetual Stamina",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint's Fury cost is reduced by 50%",
+      "effect_type": "utility",
+      "tags": ["resource", "cost_reduction"]
+    },
+    "power_in_numbers": {
+      "essence_name": "Power in Numbers",
+      "modifies_skill": "War Cry",
+      "effect": "War Cry's effect is increased by 5% for each affected ally",
+      "effect_type": "utility",
+      "tags": ["buff", "conditional"]
+    },
+    "rage_of_the_berserker": {
+      "essence_name": "Rage of the Berserker",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "While Berserking, your Critical Strike Chance is increased by 25%",
+      "effect_type": "damage",
+      "tags": ["critical_strike", "conditional"]
+    },
+    "ramaladnis_magnum_opus": {
+      "essence_name": "Ramaladni's Magnum Opus",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "Hammer of the Ancients always Critical Strikes but deals 25% less damage",
+      "effect_type": "damage",
+      "tags": ["critical_strike", "damage_reduction"]
+    },
+    "swiftness": {
+      "essence_name": "Swiftness",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint's Movement Speed bonus is increased by 25%",
+      "effect_type": "utility",
+      "tags": ["movement_speed"]
+    },
+    "tearing_whirlwind": {
+      "essence_name": "Tearing Whirlwind",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind deals 30% increased damage to Bleeding enemies",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional", "bleed"]
+    },
+    "the_butchers_cleaver": {
+      "essence_name": "The Butcher's Cleaver",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave has a 20% chance to cause enemies to explode on death",
+      "effect_type": "damage",
+      "tags": ["explosion", "proc"]
+    },
+    "the_slayers_strength": {
+      "essence_name": "The Slayer's Strength",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave deals 40% increased damage to enemies below 30% Life",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional"]
+    },
+    "unconstrained_rage": {
+      "essence_name": "Unconstrained Rage",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "Wrath of the Berserker's duration is increased by 2s",
+      "effect_type": "utility",
+      "tags": ["duration"]
+    },
+    "violent_rupture": {
+      "essence_name": "Violent Rupture",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp creates an earthquake that deals 100% weapon damage over 3s",
+      "effect_type": "damage",
+      "tags": ["dot", "aoe"]
+    },
+    "warriors_rancor": {
+      "essence_name": "Warrior's Rancor",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "While Berserking, your damage is increased by 2% for each 10 Fury spent",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional", "fury"]
+    }
+  }
+}

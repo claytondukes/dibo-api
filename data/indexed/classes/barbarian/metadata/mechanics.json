@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-17T13:19:26-05:00",
+  "effect_types": {
+    "damage": "Increases damage output or adds new damage effects",
+    "defense": "Provides defensive benefits like damage reduction or shields",
+    "utility": "Offers utility effects like movement speed, resource management, or crowd control",
+    "hybrid": "Combines multiple effect types",
+    "pvp": "Provides effects that are focused on player versus player combat"
+  },
+  "tags": {
+    "damage_boost": "Increases damage output",
+    "healing": "Provides healing effects",
+    "resource": "Affects resource management",
+    "cooldown": "Modifies cooldown timers",
+    "duration": "Changes effect duration",
+    "aoe": "Area of effect damage or abilities",
+    "debuff": "Applies negative effects to enemies",
+    "buff": "Applies positive effects to self",
+    "ally_buff": "Applies positive effects to allies",
+    "mobility": "Affects movement capabilities",
+    "armor": "Modifies armor values",
+    "armor_reduction": "Reduces enemy armor",
+    "knockback": "Pushes enemies away",
+    "stun": "Stuns or immobilizes enemies",
+    "bleed": "Applies bleeding damage over time"
+  }
+}

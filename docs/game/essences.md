@@ -12,97 +12,94 @@ The Essence system in Diablo Immortal allows players to modify their skills thro
 - Extracted essences can be applied to other items in the same slot
 - Each gear piece can hold one essence effect
 - Effects are class-specific and skill-specific
+- Each unique essence can only be used once across all slots
+- Duplicate essences are not allowed, even across different weapon sets
 
 ### Gear Slots
 
 Essences can be found on and transferred between:
 
-- Helm
-- Chest
-- Shoulders
-- Legs
-- Main Hand weapons
-- Off-Hand items
-
-## Class Implementation
-
-### Barbarian Example
-
-Total Essences: 72
-
-Skills with Essence Modifications:
-
-1. Demoralize (11 variations)
-   - Crowd control and damage modifications
-   - Example: "Demoralize now pulls in all nearby enemies"
-
-2. Sprint (7 variations)
-   - Movement and offensive capabilities
-   - Example: "Sprint increases Critical Hit Chance by 19% while moving"
-
-3. Ground Stomp (9 variations)
-   - Area control and damage
-   - Example: "Ground Stomp rips open the ground, dealing damage; max 2 charges"
-
-4. Whirlwind (10 variations)
-   - Sustained damage and effects
-   - Example: "Whirlwind shreds armor, +2% damage taken per hit (stack up to 5x)"
-
-5. Iron Skin (5 variations)
-   - Defensive modifications
-   - Example: "Iron Skin grants 20% increased damage reduction"
-
-6. Leap (7 variations)
-   - Mobility and offensive capabilities
-   - Example modifications for landing effects and damage
+- Helm (25 essences)
+- Chest (20 essences)
+- Shoulders (25 essences)
+- Legs (24 essences)
+- Main Hand weapons (26 essences)
+- Off-Hand items (24 essences)
 
 ## Data Structure
 
-### Static Data (in indexed/)
+The essence data is organized in a hierarchical structure:
 
-Located in `data/indexed/classes/<class_name>/essences.json`:
+```text
+/data/indexed/classes/{class_name}/
+  ├── essences/
+  │   ├── helm.json
+  │   ├── chest.json
+  │   ├── shoulder.json
+  │   ├── legs.json
+  │   ├── main_hand.json
+  │   └── off_hand.json
+  ├── metadata/
+  │   ├── skills.json      # Skill descriptions and essence counts
+  │   └── mechanics.json   # Effect types and tags
+  └── indexes/
+      ├── by_slot.json     # Quick lookup by equipment slot
+      ├── by_skill.json    # Quick lookup by modified skill
+      └── by_effect.json   # Quick lookup by effect type
+```
+
+### File Format
+
+Each essence file follows this structure:
 
 ```json
 {
   "metadata": {
-    "version": "1.0.0",
-    "class": "ClassName",
-    "total_essences": N
+    "version": "1.0",
+    "last_updated": "YYYY-MM-DDThh:mm:ss-05:00",
+    "slot": "slot_name",
+    "essence_count": N
   },
   "essences": {
     "essence_id": {
-      "essence_name": "Name",
-      "gear_slot": "Slot",
-      "modifies_skill": "SkillName",
-      "effect": "Description"
-    }
-  },
-  "indexes": {
-    "by_slot": {
-      "Slot": ["essence_ids"]
+      "essence_name": "Display Name",
+      "modifies_skill": "Skill Name",
+      "effect": "Effect Description",
+      "effect_type": "damage|utility|defense",
+      "tags": ["tag1", "tag2"]
     }
   }
 }
 ```
 
-### Dynamic Data (in GitHub Gists)
+## Class Implementation
 
-Player-specific essence data includes:
+### Barbarian
 
-- Extracted essences collection
-- Currently applied essences
-- Essence transfer history
+Total Essences: 144
 
-## API Implementation Notes
+Distribution by Slot:
 
-When implementing essence-related endpoints:
+- Helm: 25 essences
+- Chest: 20 essences
+- Shoulders: 25 essences
+- Legs: 24 essences
+- Main Hand: 26 essences
+- Off-Hand: 24 essences
 
-1. Query available essences from indexed data
-2. Track player's extracted essences
-3. Validate essence transfer rules:
-   - Same slot requirement
-   - Class restrictions
-   - One essence per item
-4. Handle extraction and application operations
-5. Update player's essence collection
-6. Consider essence effects in build calculations
+Effect Types:
+
+- Damage: Direct damage increases, new damage effects
+- Utility: Cooldown reduction, resource generation, crowd control
+- Defense: Damage reduction, healing, shields
+
+Common Tags:
+
+- damage_boost
+- cooldown
+- resource
+- aoe
+- dot
+- proc
+- movement_speed
+- conditional

@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-25T12:02:59-05:00",
+    "slot": "legs",
+    "essence_count": 25
+  },
+  "essences": {
+    "chitinous_greaves": {
+      "essence_name": "Chitinous Greaves",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp also applies a 60% slow for 2.4s. Ground Stomp Cooldown -3.6%",
+      "effect_type": "utility",
+      "tags": ["slow", "cooldown"]
+    },
+    "compromise_is_loss": {
+      "essence_name": "Compromise is Loss",
+      "modifies_skill": "Leap",
+      "effect": "Leap now creates a shockwave on landing that deals 18% weapon damage",
+      "effect_type": "damage",
+      "tags": ["aoe", "damage_boost"]
+    },
+    "determination": {
+      "essence_name": "Determination",
+      "modifies_skill": "Furious Charge",
+      "effect": "Furious Charge can now be charged to increase its range and damage. Furious Charge Damage increased by 18.0%",
+      "effect_type": "hybrid",
+      "tags": ["charge", "range", "damage_boost"]
+    },
+    "earthstriker": {
+      "essence_name": "Earthstriker",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp creates fissures that deal additional damage. Ground Stomp Damage +18.0%",
+      "effect_type": "damage",
+      "tags": ["aoe", "damage_boost"]
+    },
+    "hundred_blows": {
+      "essence_name": "Hundred Blows",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp hits twice. Ground Stomp Damage +18.0%",
+      "effect_type": "damage",
+      "tags": ["multi_hit", "damage_boost"]
+    },
+    "iron_barbs": {
+      "essence_name": "Iron Barbs",
+      "modifies_skill": "Iron Skin",
+      "effect": "Iron Skin reflects 30% of damage taken back to attackers",
+      "effect_type": "damage",
+      "tags": ["reflect", "thorns"]
+    },
+    "iron_blood_greaves": {
+      "essence_name": "Iron Blood Greaves",
+      "modifies_skill": "Iron Skin",
+      "effect": "Iron Skin increases your Movement Speed by 25%",
+      "effect_type": "utility",
+      "tags": ["movement_speed"]
+    },
+    "iron_warrior": {
+      "essence_name": "Iron Warrior",
+      "modifies_skill": "Iron Skin",
+      "effect": "Iron Skin increases your Armor by 30%",
+      "effect_type": "defense",
+      "tags": ["armor"]
+    },
+    "jump_the_pit": {
+      "essence_name": "Jump the Pit",
+      "modifies_skill": "Leap",
+      "effect": "Leap's cooldown is reduced by 2s",
+      "effect_type": "utility",
+      "tags": ["cooldown"]
+    },
+    "mighty_leap": {
+      "essence_name": "Mighty Leap",
+      "modifies_skill": "Leap",
+      "effect": "Leap's damage is increased by 40%",
+      "effect_type": "damage",
+      "tags": ["damage_boost"]
+    },
+    "momentum": {
+      "essence_name": "Momentum",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint's duration is increased by 1s for each enemy passed through",
+      "effect_type": "utility",
+      "tags": ["duration", "conditional"]
+    },
+    "plummet_proudly": {
+      "essence_name": "Plummet Proudly",
+      "modifies_skill": "Leap",
+      "effect": "Leap now creates a crater that deals 50% weapon damage per second for 3s",
+      "effect_type": "damage",
+      "tags": ["aoe", "dot"]
+    },
+    "rage_of_harrogath": {
+      "essence_name": "Rage of Harrogath",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp generates 5 Fury for each enemy hit",
+      "effect_type": "utility",
+      "tags": ["resource", "fury"]
+    },
+    "rapid_charge": {
+      "essence_name": "Rapid Charge",
+      "modifies_skill": "Furious Charge",
+      "effect": "Furious Charge's cooldown recharges 50% faster",
+      "effect_type": "utility",
+      "tags": ["cooldown"]
+    },
+    "rattling": {
+      "essence_name": "Rattling",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp has a 25% chance to Stun enemies for an additional 2s",
+      "effect_type": "utility",
+      "tags": ["stun", "proc"]
+    },
+    "rending_leap": {
+      "essence_name": "Rending Leap",
+      "modifies_skill": "Leap",
+      "effect": "Enemies hit by Leap take 25% increased damage for 4s",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "debuff"]
+    },
+    "seismic_shift": {
+      "essence_name": "Seismic Shift",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp creates tremors that deal 25% weapon damage over 3s",
+      "effect_type": "damage",
+      "tags": ["dot", "aoe"]
+    },
+    "shattered_ground": {
+      "essence_name": "Shattered Ground",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp creates cracks in the ground that Slow enemies by 60%",
+      "effect_type": "utility",
+      "tags": ["slow", "terrain"]
+    },
+    "storm_breach": {
+      "essence_name": "Storm Breach",
+      "modifies_skill": "Leap",
+      "effect": "Landing from Leap has a 25% chance to call down lightning",
+      "effect_type": "damage",
+      "tags": ["lightning", "proc"]
+    },
+    "swift_skipping": {
+      "essence_name": "Swift Skipping",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint no longer has a cooldown but costs 25% more Fury",
+      "effect_type": "utility",
+      "tags": ["cooldown", "resource"]
+    },
+    "trampled_earth": {
+      "essence_name": "Trampled Earth",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint creates fissures that deal 25% weapon damage to enemies",
+      "effect_type": "damage",
+      "tags": ["aoe", "damage"]
+    },
+    "unrestrained": {
+      "essence_name": "Unrestrained",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint's Movement Speed bonus is increased by 20%",
+      "effect_type": "utility",
+      "tags": ["movement_speed"]
+    },
+    "unstoppable_force": {
+      "essence_name": "Unstoppable Force",
+      "modifies_skill": "Sprint",
+      "effect": "While Sprinting, you are Unstoppable",
+      "effect_type": "utility",
+      "tags": ["unstoppable"]
+    },
+    "violent_whirlwind": {
+      "essence_name": "Violent Whirlwind",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind deals 30% increased damage but costs 20% more Energy",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "resource"]
+    },
+    "wrathful_charge": {
+      "essence_name": "Wrathful Charge",
+      "modifies_skill": "Furious Charge",
+      "effect": "Furious Charge deals 40% increased damage to the first enemy hit",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional"]
+    }
+  }
+}

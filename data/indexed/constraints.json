@@ -18,6 +18,7 @@
   },
   "essence_slots": {
     "total_required": 8,
+    "unique": true,
     "slots": {
       "Head": 1,
       "Shoulders": 1,

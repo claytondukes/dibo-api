@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-25T11:52:46-05:00",
+    "slot": "chest",
+    "essence_count": 25
+  },
+  "essences": {
+    "armor_caste": {
+      "essence_name": "Armor Caste",
+      "modifies_skill": "Furious Charge",
+      "effect": "Creates shock waves when colliding with walls, dealing 8,500 damage and Stunning enemies for 1s",
+      "effect_type": "damage",
+      "tags": ["stun", "damage", "wall_collision"]
+    },
+    "broken_ire": {
+      "essence_name": "Broken Ire",
+      "modifies_skill": "Sunder",
+      "effect": "Primary Attacks extend Sunder's duration by 1.6s each (up to 4.8s), also boosting its damage bonus by 3% per stack (max 9%)",
+      "effect_type": "damage",
+      "tags": ["duration", "damage_boost", "stacking"]
+    },
+    "charred_iron": {
+      "essence_name": "Charred Iron",
+      "modifies_skill": "Chained Spear",
+      "effect": "Hurls 3 flaming spears, each leaving a burning trail. Damage +18.0%",
+      "effect_type": "damage",
+      "tags": ["fire", "damage_boost", "dot"]
+    },
+    "cold_temper": {
+      "essence_name": "Cold Temper",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "Shatters Frozen enemies for 34,512 extra damage, applying Chill",
+      "effect_type": "damage",
+      "tags": ["chill", "frozen", "conditional"]
+    },
+    "cracklefell": {
+      "essence_name": "Cracklefell",
+      "modifies_skill": "Chained Spear",
+      "effect": "Hurls 3 electrified spears that damage and immobilize enemies. Damage +18.0%",
+      "effect_type": "hybrid",
+      "tags": ["lightning", "immobilize", "damage_boost"]
+    },
+    "crusher_rig": {
+      "essence_name": "Crusher Rig",
+      "modifies_skill": "Chained Spear",
+      "effect": "Hurls giant rocks, damaging all enemies in their path. Chained Spear Damage +18.0%",
+      "effect_type": "damage",
+      "tags": ["aoe", "damage_boost"]
+    },
+    "davins_legacy": {
+      "essence_name": "Davin's Legacy",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "+1 max charge for HotA; Hammer of the Ancients cooldown reduced by 3.6%",
+      "effect_type": "utility",
+      "tags": ["charges", "cooldown"]
+    },
+    "death_awaits": {
+      "essence_name": "Death Awaits",
+      "modifies_skill": "Furious Charge",
+      "effect": "Also shatters enemies' armor, increasing damage they take by 19% for 3s",
+      "effect_type": "damage",
+      "tags": ["debuff", "armor_reduction"]
+    },
+    "direct_diplomacy": {
+      "essence_name": "Direct Diplomacy",
+      "modifies_skill": "Grab",
+      "effect": "Grab shatters the enemy's armor, causing them to take +19% damage for 3s",
+      "effect_type": "damage",
+      "tags": ["debuff", "armor_reduction"]
+    },
+    "ferocious_gale": {
+      "essence_name": "Ferocious Gale",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind occasionally spawns tornadoes (8,415 dmg)",
+      "effect_type": "damage",
+      "tags": ["proc", "tornado"]
+    },
+    "five_fresh_claws": {
+      "essence_name": "Five Fresh Claws",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind shreds armor, +2% damage taken per hit (stack up to 5x). Whirlwind Energy Consumption -3.6%",
+      "effect_type": "damage",
+      "tags": ["armor_reduction", "stacking", "resource"]
+    },
+    "hearth_hook": {
+      "essence_name": "Hearth Hook",
+      "modifies_skill": "Chained Spear",
+      "effect": "Now throws a piercing spear that applies a stacking Bleed. Damage +18.0%",
+      "effect_type": "damage",
+      "tags": ["bleed", "pierce", "damage_boost"]
+    },
+    "impalers_breath": {
+      "essence_name": "Impaler's Breath",
+      "modifies_skill": "Chained Spear",
+      "effect": "Hurls 3 harpoons that knock enemies away and Stun them. Damage +18.0%",
+      "effect_type": "hybrid",
+      "tags": ["knockback", "stun", "damage_boost"]
+    },
+    "indignant_survivor": {
+      "essence_name": "Indignant Survivor",
+      "modifies_skill": "Whirlwind",
+      "effect": "Each time you're attacked, Whirlwind's Critical Hit Chance +12% for 2s (up to +36%)",
+      "effect_type": "damage",
+      "tags": ["critical_strike", "stacking", "conditional"]
+    },
+    "lumber_cords": {
+      "essence_name": "Lumber-cords",
+      "modifies_skill": "Furious Charge",
+      "effect": "Decreases all damage you take by 5% for 3s per enemy hit, stacking up to 6 times. Furious Charge Cooldown -3.6%",
+      "effect_type": "defense",
+      "tags": ["damage_reduction", "stacking", "cooldown"]
+    },
+    "manifold_gore": {
+      "essence_name": "Manifold Gore",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind damage +19% per Bleed on the enemy, up to +57%",
+      "effect_type": "damage",
+      "tags": ["bleed", "damage_boost", "conditional"]
+    },
+    "renitent_rage": {
+      "essence_name": "Renitent Rage",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "For each negative condition on an enemy, HotA damage +19% (up to +76%)",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional"]
+    },
+    "scallop_shell_armor": {
+      "essence_name": "Scallop Shell Armor",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "HotA deals up to +76% additional damage the farther away enemies are",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "range"]
+    },
+    "shackled_fate": {
+      "essence_name": "Shackled Fate",
+      "modifies_skill": "Chained Spear",
+      "effect": "Chained Spear now conjures a Spirit of the Ancients for a short time, that repeatedly casts Chained Spear, damaging, Slowing and pulling in nearby enemies. Chained Spear Damage Increased by 18.0%",
+      "effect_type": "hybrid",
+      "tags": ["spirit", "slow", "pull", "damage_boost"]
+    },
+    "temple_of_battle": {
+      "essence_name": "Temple of Battle",
+      "modifies_skill": "Chained Spear",
+      "effect": "Sweeps spears from left/right, gathering enemies in a cluster in front of you. Chained Spear damage +18.0%",
+      "effect_type": "hybrid",
+      "tags": ["pull", "damage_boost"]
+    },
+    "the_gathering": {
+      "essence_name": "The Gathering",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind pulls in all enemies it hits. Whirlwind Energy Consumption -3.6%",
+      "effect_type": "utility",
+      "tags": ["pull", "resource"]
+    },
+    "trackers_rage": {
+      "essence_name": "Tracker's Rage",
+      "modifies_skill": "Furious Charge",
+      "effect": "All damage you deal is increased by +19% after activating Furious Charge",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional"]
+    },
+    "truss_of_stolen_skin": {
+      "essence_name": "Truss of Stolen Skin",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "After using HotA, gain +20% Attack Speed for 6.4 seconds",
+      "effect_type": "damage",
+      "tags": ["attack_speed", "conditional"]
+    },
+    "umble_drape": {
+      "essence_name": "Umble Drape",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "When HotA hits an enemy, drop additional hammers (50% damage), once every 3s",
+      "effect_type": "damage",
+      "tags": ["proc", "damage"]
+    },
+    "widow_in_waiting": {
+      "essence_name": "Widow in Waiting",
+      "modifies_skill": "Furious Charge",
+      "effect": "Furious Charge now also reduces enemies' Movement Speed by 50% for 6.4s",
+      "effect_type": "utility",
+      "tags": ["slow", "duration"]
+    }
+  }
+}

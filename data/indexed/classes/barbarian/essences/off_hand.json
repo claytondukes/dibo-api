@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-25T11:27:52-05:00",
+    "slot": "off_hand",
+    "essence_count": 25
+  },
+  "essences": {
+    "bergbreaker": {
+      "essence_name": "Bergbreaker",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp creates a ring of spikes that deal 75% weapon damage",
+      "effect_type": "damage",
+      "tags": ["aoe", "damage_boost"]
+    },
+    "bonegyre": {
+      "essence_name": "Bonegyre",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind launches bone projectiles that deal 25% weapon damage",
+      "effect_type": "damage",
+      "tags": ["projectile", "damage_boost"]
+    },
+    "broken_tusk": {
+      "essence_name": "Broken Tusk",
+      "modifies_skill": "Furious Charge",
+      "effect": "Furious Charge leaves behind a trail of spikes dealing 50% weapon damage",
+      "effect_type": "damage",
+      "tags": ["dot", "aoe"]
+    },
+    "cut_to_the_bone": {
+      "essence_name": "Cut to the Bone",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave's Bleed damage is increased by 50% against Stunned or Immobilized enemies",
+      "effect_type": "damage",
+      "tags": ["bleed", "conditional"]
+    },
+    "deathblow": {
+      "essence_name": "Deathblow",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave has a 15% chance to instantly kill enemies below 10% Life",
+      "effect_type": "damage",
+      "tags": ["execute", "proc"]
+    },
+    "earthstriker_aspect": {
+      "essence_name": "Earthstriker Aspect",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp's radius is increased by 25%",
+      "effect_type": "utility",
+      "tags": ["range", "aoe"]
+    },
+    "edgewalker": {
+      "essence_name": "Edgewalker",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind gains 5% increased damage for each second spent spinning",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "stacking"]
+    },
+    "fresh_whirl": {
+      "essence_name": "Fresh Whirl",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind's damage is increased by 30% for the first 2 seconds after casting",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional"]
+    },
+    "galesong": {
+      "essence_name": "Galesong",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind increases your Movement Speed by 15% while active",
+      "effect_type": "utility",
+      "tags": ["movement_speed", "conditional"]
+    },
+    "goreseeker": {
+      "essence_name": "Goreseeker",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave causes enemies to explode for 75% weapon damage when they die while Bleeding",
+      "effect_type": "damage",
+      "tags": ["explosion", "bleed"]
+    },
+    "hammer_of_the_ancients_aspect": {
+      "essence_name": "Hammer of the Ancients Aspect",
+      "modifies_skill": "Hammer of the Ancients",
+      "effect": "Hammer of the Ancients has a 25% chance to create a shockwave",
+      "effect_type": "damage",
+      "tags": ["proc", "aoe"]
+    },
+    "mighty_slam": {
+      "essence_name": "Mighty Slam",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp's damage is increased by 40% but its cooldown is increased by 2s",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "cooldown"]
+    },
+    "oathkeeper": {
+      "essence_name": "Oathkeeper",
+      "modifies_skill": "War Cry",
+      "effect": "War Cry grants a shield absorbing damage equal to 20% of your maximum Life",
+      "effect_type": "defense",
+      "tags": ["shield", "life"]
+    },
+    "perpetual_charge": {
+      "essence_name": "Perpetual Charge",
+      "modifies_skill": "Furious Charge",
+      "effect": "Furious Charge's cooldown is reduced by 0.5s for each enemy hit",
+      "effect_type": "utility",
+      "tags": ["cooldown", "conditional"]
+    },
+    "quick_impulse": {
+      "essence_name": "Quick Impulse",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint's cooldown is reduced by 2s",
+      "effect_type": "utility",
+      "tags": ["cooldown"]
+    },
+    "rage_of_harrogath_aspect": {
+      "essence_name": "Rage of Harrogath Aspect",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "While Berserking, your Critical Strike Damage is increased by 25%",
+      "effect_type": "damage",
+      "tags": ["critical_hit_damage", "conditional"]
+    },
+    "relentless_fury": {
+      "essence_name": "Relentless Fury",
+      "modifies_skill": "Frenzy",
+      "effect": "Frenzy's Attack Speed bonus is increased by 10%",
+      "effect_type": "utility",
+      "tags": ["attack_speed"]
+    },
+    "roar_of_persuasion": {
+      "essence_name": "Roar of Persuasion",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "Thirsting Berserker: Wrath of the Berserker no longer increases Attack and Movement Speed, instead it now increases Critical Hit Damage and gives you Life Drain. Wrath of the Berserker Cooldown Reduced by 7.2%",
+      "effect_type": "damage",
+      "tags": ["critical_hit_damage", "life_drain", "cooldown"]
+    },
+    "slaking_aspect": {
+      "essence_name": "Slaking Aspect",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint generates 5 Fury per second while active",
+      "effect_type": "utility",
+      "tags": ["resource", "fury"]
+    },
+    "the_butchers_cleaver_aspect": {
+      "essence_name": "The Butcher's Cleaver Aspect",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave has a 15% chance to hit twice",
+      "effect_type": "damage",
+      "tags": ["proc", "multi_hit"]
+    },
+    "the_last_wail": {
+      "essence_name": "The Last Wail",
+      "modifies_skill": "War Cry",
+      "effect": "War Cry deals 100% weapon damage to nearby enemies",
+      "effect_type": "damage",
+      "tags": ["aoe", "damage"]
+    },
+    "the_startler": {
+      "essence_name": "The Startler",
+      "modifies_skill": "War Cry",
+      "effect": "War Cry Stuns enemies for 2s",
+      "effect_type": "utility",
+      "tags": ["stun", "cc"]
+    },
+    "thunderstrike": {
+      "essence_name": "Thunderstrike",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp has a 25% chance to call down lightning dealing 150% weapon damage",
+      "effect_type": "damage",
+      "tags": ["proc", "lightning"]
+    },
+    "upheaval": {
+      "essence_name": "Upheaval",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp launches enemies into the air",
+      "effect_type": "utility",
+      "tags": ["knockup", "cc"]
+    },
+    "wind_striker": {
+      "essence_name": "Wind Striker",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint leaves behind a trail of wind that increases ally Movement Speed by 15%",
+      "effect_type": "utility",
+      "tags": ["movement_speed", "ally_buff"]
+    }
+  }
+}

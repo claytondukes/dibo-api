@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-25T12:11:28-05:00",
+  "effects": {
+    "damage": [
+      "animal_instinct",
+      "battlemasters_helm",
+      "bloodguzzle",
+      "crusher_rig",
+      "drop_by_drop",
+      "hells_legacy",
+      "impending_slaughter",
+      "oxs_horns",
+      "roar_of_persuasion",
+      "spartusk",
+      "tearing_whirlwind",
+      "visage_of_the_living_ancients",
+      "weight_of_war",
+      "yowl_of_execration"
+    ],
+    "defense": [
+      "broken_grasp",
+      "iron_blood",
+      "iron_warrior",
+      "pot_metal",
+      "wreckfall"
+    ],
+    "shield": [
+      "loathsome_lamina"
+    ],
+    "utility": [
+      "ancestors_stele",
+      "broken_calling",
+      "doom_of_the_cowed",
+      "dread_desecration",
+      "hatreds_reach",
+      "hunters_sight",
+      "routfinder",
+      "second_breath",
+      "spiritbreaker"
+    ],
+    "hybrid": [
+      "determination",
+      "grimroost",
+      "grinning_effigy",
+      "natures_temper",
+      "terror_unburdened"
+    ]
+  },
+  "tags": {
+    "damage_boost": [
+      "battlemasters_helm",
+      "bloodguzzle",
+      "crusher_rig",
+      "determination",
+      "hells_legacy",
+      "tearing_whirlwind"
+    ],
+    "healing": [
+      "grimroost",
+      "iron_blood"
+    ],
+    "resource": [
+      "grimroost",
+      "perpetual_stamina"
+    ],
+    "cooldown": [
+      "ancestors_stele",
+      "broken_grasp",
+      "doom_of_the_cowed",
+      "dread_desecration",
+      "drop_by_drop",
+      "roar_of_persuasion"
+    ],
+    "armor": [
+      "iron_warrior",
+      "pot_metal"
+    ],
+    "armor_reduction": [
+      "death_awaits",
+      "skull_motte"
+    ],
+    "bleed": [
+      "drop_by_drop",
+      "oxs_horns"
+    ],
+    "shield": [
+      "loathsome_lamina"
+    ],
+    "life_drain": [
+      "roar_of_persuasion"
+    ],
+    "critical_hit_damage": [
+      "roar_of_persuasion"
+    ]
+  }
+}

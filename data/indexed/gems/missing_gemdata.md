@@ -1,6 +1,6 @@
 # Missing Gem Data Report
 
-Last Updated: 2025-01-13T00:22:06-05:00
+Last Updated: 2025-01-17T13:33:16-05:00
 
 This document tracks missing or incomplete data in gem files.
 
@@ -15,13 +15,13 @@ Primary Attack unleashes Aspect of Gloom for 6s, triggering gloom blades dealing
 | 1    | 30  | 275 |
 | 2    | ?   | ?   |
 | 3    | ?   | ?   |
-| 4    | ?   | ?   |
+| 4    | 42  | 275 |
 | 5    | ?   | ?   |
 | 6    | ?   | ?   |
 | 7    | ?   | ?   |
 | 8    | ?   | ?   |
 | 9    | ?   | ?   |
-| 10   | ?   | ?   |
+| 10   | 68  | 275 |
 
 ### Golden Firmament
 
@@ -49,7 +49,7 @@ Dealing damage conjures 5 flying swords to follow you for 10 seconds, during whi
 | 1    | 50  | 506 |
 | 2    | ?   | ?   |
 | 3    | ?   | ?   |
-| 4    | ?   | ?   |
+| 4    | 75  | 506 |
 | 5    | ?   | ?   |
 | 6    | ?   | ?   |
 | 7    | ?   | ?   |
@@ -65,7 +65,7 @@ Creates whirlpool that pulls enemies, sea monster erupts for X% base damage + Y
 |------|-----|-----|
 | 1    | 140 | 1701 |
 | 2    | ?   | ?   |
-| 3    | ?   | ?   |
+| 3    | 180 | 1701 |
 | 4    | ?   | ?   |
 | 5    | ?   | ?   |
 | 6    | ?   | ?   |
@@ -110,48 +110,54 @@ gain an absorb shield equal to 160% of your base damage
 
 ### Starfire Shard
 
-chance to rain meteorites in an area, dealing 200% base damage in total
+Chance to rain meteorites in an area, dealing X% base damage + Y to all enemies in the area
 
-| Rank | X   | Y   |
-|------|-----|-----|
-| 1    | ?   | ?   |
-| 2    | ?   | ?   |
-| 3    | ?   | ?   |
-| 4    | ?   | ?   |
-| 5    | ?   | ?   |
-| 6    | ?   | ?   |
-| 7    | ?   | ?   |
-| 8    | ?   | ?   |
-| 9    | ?   | ?   |
-| 10   | ?   | ?   |
+Note: Current description shows different mechanics. Needs verification.
+Current description: chance to rain meteorites in an area, dealing 200% base damage in total
+
+| Rank | X   | Y    |
+|------|-----|------|
+| 1    | 200 | 0    |
+| 2    | ?   | ?    |
+| 3    | ?   | ?    |
+| 4    | ?   | ?    |
+| 5    | ?   | ?    |
+| 6    | ?   | ?    |
+| 7    | ?   | ?    |
+| 8    | ?   | ?    |
+| 9    | ?   | ?    |
+| 10   | 500 | 2026 |
 
 ### Stormvault
 
-Conjures pursuing storm for 6s dealing 22.X% base damage + Y every 0.5s
+Conjures pursuing storm for 6s dealing X% base damage + Y every 0.5s
 
-| Rank | X   | Y   |
-|------|-----|-----|
-| 1    | 5   | 203 |
-| 2    | ?   | ?   |
-| 3    | ?   | ?   |
-| 4    | ?   | ?   |
-| 5    | ?   | ?   |
-| 6    | ?   | ?   |
-| 7    | ?   | ?   |
-| 8    | ?   | ?   |
-| 9    | ?   | ?   |
-| 10   | 40  | 100 |
+Note: Current description shows storm damage over time. New data suggests different damage values.
+Current description at rank 10: Conjures a storm that deals 40% base damage per second to enemies within its radius. Additionally, lightning strikes periodically hit enemies, dealing 100% base damage
+
+| Rank | X     | Y   |
+|------|-------|-----|
+| 1    | 22.5  | 203 |
+| 2    | ?     | ?   |
+| 3    | ?     | ?   |
+| 4    | 32.5  | 203 |
+| 5    | ?     | ?   |
+| 6    | ?     | ?   |
+| 7    | ?     | ?   |
+| 8    | ?     | ?   |
+| 9    | ?     | ?   |
+| 10   | ?     | ?   |
 
 ### Void Spark
 
-chance to chain lightning to 8 enemies dealing X% base damage + Y
+Chance to chain lightning to 8 enemies dealing X% base damage + Y
 
 | Rank | X   | Y   |
 |------|-----|-----|
 | 1    | 45  | 446 |
 | 2    | ?   | ?   |
 | 3    | ?   | ?   |
-| 4    | ?   | ?   |
+| 4    | 65  | 446 |
 | 5    | ?   | ?   |
 | 6    | ?   | ?   |
 | 7    | ?   | ?   |
@@ -162,6 +168,8 @@ chance to chain lightning to 8 enemies dealing X% base damage + Y
 ### Wulfheort
 
 Dealing damage grants you Savage Heart for 6 seconds, causing your attacks to mark enemies. At 5 stacks the marks are consumed and slash the heart of the enemy, dealing X% base damage + Y. Marks can be applied and stacked again on the same enemy
+
+Note: Current description shows stacking damage mechanics. New data suggests different damage values.
 
 | Rank | X   | Y   |
 |------|-----|-----|
@@ -174,7 +182,7 @@ Dealing damage grants you Savage Heart for 6 seconds, causing your attacks to ma
 | 7    | ?   | ?   |
 | 8    | ?   | ?   |
 | 9    | ?   | ?   |
-| 10   | ?   | ?   |
+| 10   | 95  | 385 |
 
 ## 2★ Gems
 

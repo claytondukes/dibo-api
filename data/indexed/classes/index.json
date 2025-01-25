@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-17T13:19:26-05:00",
+  "classes": {
+    "barbarian": {
+      "name": "Barbarian",
+      "description": "A fierce warrior who uses brute force and mighty weapons to crush enemies",
+      "total_essences": 155,
+      "essence_slots": {
+        "helm": 25,
+        "shoulder": 25,
+        "chest": 25,
+        "legs": 25,
+        "main_hand": 26,
+        "off_hand": 25
+      }
+    }
+  }
+}

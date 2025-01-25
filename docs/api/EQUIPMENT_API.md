@@ -20,7 +20,7 @@ List available gear slots.
 
 ```json
 {
-  "slots": ["head", "chest", "shoulders", "legs", "main_hand_1", "off_hand_1", "main_hand_2", "off_hand_2"]
+  "slots": ["head", "chest", "shoulders", "legs", "main_hand", "off_hand"]
 }
 ```
 
@@ -31,7 +31,7 @@ List all available primary gear items.
 **Query Parameters**:
 
 - `class` (optional): Filter by class name
-- `slot` (optional): Filter by gear slot (head, chest, shoulders, legs, main_hand_1, off_hand_1, main_hand_2, off_hand_2)
+- `slot` (optional): Filter by gear slot (head, chest, shoulders, legs, main_hand, off_hand)
 - `page` (optional): Page number (default: 1)
 - `per_page` (optional): Items per page (default: 20, max: 100)
 
@@ -50,30 +50,34 @@ List all available primary gear items.
         "fortitude": "number",
         "willpower": "number"
       },
-      "essence_slot": {
-        "available": "boolean",
-        "current_essence": "string | null"
+      "essence": {
+        "id": "string",
+        "name": "string",
+        "modifies_skill": "string",
+        "effect": "string",
+        "effect_type": "string",
+        "tags": ["string"]
       }
     }
   ],
+  "total": "number",
   "page": "number",
-  "per_page": "number",
-  "total": "number"
+  "per_page": "number"
 }
 ```
 
-#### GET /game/gear/{class}/essences
+### Essences
 
-List available essences for a specific class.
+#### GET /game/essences
 
-**Path Parameters**:
-
-- `class`: Class name (e.g., "barbarian")
+List all available essences.
 
 **Query Parameters**:
 
-- `slot` (optional): Filter by gear slot (head, chest, shoulders, legs, main_hand_1, off_hand_1, main_hand_2, off_hand_2)
+- `class` (required): Filter by class name
+- `slot` (optional): Filter by gear slot
 - `skill` (optional): Filter by modified skill
+- `effect_type` (optional): Filter by effect type (damage, utility, defense)
 - `page` (optional): Page number (default: 1)
 - `per_page` (optional): Items per page (default: 20, max: 100)
 
@@ -81,89 +85,55 @@ List available essences for a specific class.
 
 ```json
 {
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-17T13:23:54-05:00"
+  },
   "essences": [
     {
       "id": "string",
-      "name": "string",
-      "gear_slot": "string",
+      "essence_name": "string",
+      "slot": "string",
       "modifies_skill": "string",
-      "effect": {
-        "type": "string",
-        "value": "number",
-        "description": "string"
-      },
+      "effect": "string",
+      "effect_type": "string",
       "tags": ["string"]
     }
   ],
+  "total": "number",
   "page": "number",
-  "per_page": "number",
-  "total": "number"
+  "per_page": "number"
 }
 ```
 
-### Set Items
+#### GET /game/essences/{class}/{slot}
 
-#### GET /game/sets
-
-List all available equipment sets.
-
-**Query Parameters**:
-
-- `pieces` (optional): Filter by number of pieces (2, 4, or 6)
-- `page` (optional): Page number (default: 1)
-- `per_page` (optional): Items per page (default: 20, max: 100)
-
-**Response**:
-
-```json
-{
-  "sets": [
-    {
-      "name": "string",
-      "pieces": "number",
-      "description": "string",
-      "bonuses": {
-        "2": "string",
-        "4": "string",
-        "6": "string"
-      },
-      "use_case": "string"
-    }
-  ],
-  "page": "number",
-  "per_page": "number",
-  "total": "number"
-}
-```
-
-#### GET /game/sets/{set_name}
-
-Get detailed information about a specific set.
+Get all essences for a specific class and slot.
 
 **Path Parameters**:
 
-- `set_name`: Name of the set
+- `class` (required): Class name
+- `slot` (required): Gear slot
 
 **Response**:
 
 ```json
 {
-  "name": "string",
-  "pieces": "number",
-  "description": "string",
-  "bonuses": {
-    "2": "string",
-    "4": "string",
-    "6": "string"
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-17T13:23:54-05:00",
+    "slot": "string",
+    "essence_count": "number"
   },
-  "use_case": "string",
-  "items": [
-    {
-      "slot": "string",
-      "name": "string",
-      "level": "number"
+  "essences": {
+    "essence_id": {
+      "essence_name": "string",
+      "modifies_skill": "string",
+      "effect": "string",
+      "effect_type": "string",
+      "tags": ["string"]
     }
-  ]
+  }
 }
 ```
 

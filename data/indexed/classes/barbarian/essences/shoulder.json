@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-25T11:58:42-05:00",
+    "slot": "shoulder",
+    "essence_count": 25
+  },
+  "essences": {
+    "animal_instinct": {
+      "essence_name": "Animal Instinct",
+      "modifies_skill": "Leap",
+      "effect": "Leap can be charged to increase range/damage. Leap Damage +18.0%",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "range"]
+    },
+    "bloodguzzle": {
+      "essence_name": "Bloodguzzle",
+      "modifies_skill": "Cleave",
+      "effect": "Each time Cleave hits an enemy within 2s, it gains +19% damage vs. that enemy, up to +57%",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "stacking"]
+    },
+    "broken_calling": {
+      "essence_name": "Broken Calling",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "WotB also makes you immune to knockback effects for 4.75s",
+      "effect_type": "utility",
+      "tags": ["knockback_immunity"]
+    },
+    "broken_grasp": {
+      "essence_name": "Broken Grasp",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint also increases your Dodge Chance by 20%. Cooldown -3.6%",
+      "effect_type": "defense",
+      "tags": ["dodge", "cooldown"]
+    },
+    "doom_of_the_cowed": {
+      "essence_name": "Doom of the Cowed",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "Activating WotB immediately reduces nearby enemies' Move Speed by 80% for 2s. WotB Cooldown -3.6%",
+      "effect_type": "utility",
+      "tags": ["slow", "cooldown"]
+    },
+    "dread_desecration": {
+      "essence_name": "Dread Desecration",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave can be used while suffering loss of control or knockback effects, and grants brief immunity to those effects. Cleave Cooldown -3.6%",
+      "effect_type": "utility",
+      "tags": ["cc_immunity", "cooldown"]
+    },
+    "drop_by_drop": {
+      "essence_name": "Drop by Drop",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave's Bleed now spreads to 2 nearby enemies when it expires. Cleave Cooldown -3.6%",
+      "effect_type": "damage",
+      "tags": ["bleed", "spread", "cooldown"]
+    },
+    "grimroost": {
+      "essence_name": "Grimroost",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind heals you for 3% of damage done. Whirlwind Energy Consumption Reduced by 3.6%",
+      "effect_type": "hybrid",
+      "tags": ["healing", "resource"]
+    },
+    "hatreds_reach": {
+      "essence_name": "Hatred's Reach",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave range increased by 29%",
+      "effect_type": "utility",
+      "tags": ["range"]
+    },
+    "hells_legacy": {
+      "essence_name": "Hell's Legacy",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint leaves a trail of flames dealing 19,040 dmg over 4s. Damage +90.0%",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "dot"]
+    },
+    "law_of_the_wild": {
+      "essence_name": "Law of the Wild",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave deals +47.5% damage to Slowed enemies",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional", "slow"]
+    },
+    "loathsome_lamina": {
+      "essence_name": "Loathsome Lamina",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "Wrath of the Berserker also grants you a shield for 6 seconds that absorbs 42,700 damage. Shield Effect Increased by 54.0%",
+      "effect_type": "defense",
+      "tags": ["shield", "absorb", "wotb_modifier"]
+    },
+    "lonecastle": {
+      "essence_name": "Lonecastle",
+      "modifies_skill": "Whirlwind",
+      "effect": "+50% chance to block projectiles during Whirlwind; Whirlwind Energy Consumption -3.6%",
+      "effect_type": "defense",
+      "tags": ["block", "projectile", "resource"]
+    },
+    "natures_temper": {
+      "essence_name": "Nature's Temper",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "WotB causes Primary Attacks to consume 1% Life, dealing +13,601 damage each strike. Damage +90.0%",
+      "effect_type": "hybrid",
+      "tags": ["life_cost", "damage_boost", "wotb_modifier"]
+    },
+    "oxs_horns": {
+      "essence_name": "Ox's Horns",
+      "modifies_skill": "Whirlwind",
+      "effect": "Striking the same enemy 3 times with Whirlwind causes them to Bleed for 18,936 dmg/s over 2.5s. Damage +90.0%",
+      "effect_type": "damage",
+      "tags": ["bleed", "stacking", "damage_boost"]
+    },
+    "ramshackle_fight": {
+      "essence_name": "Ramshackle Fight",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "During WotB, each Critical Hit reduces its cooldown by 0.6s, up to 3.6s total",
+      "effect_type": "utility",
+      "tags": ["cooldown", "critical", "wotb_modifier"]
+    },
+    "routfinder": {
+      "essence_name": "Routfinder",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint leaves a wind tunnel letting allies pass through for +30% Move Speed (2s). Sprint Cooldown -3.6%",
+      "effect_type": "utility",
+      "tags": ["movement_speed", "aura", "cooldown"]
+    },
+    "shocking_chaos": {
+      "essence_name": "Shocking Chaos",
+      "modifies_skill": "Leap",
+      "effect": "Leap is electrified, Stunning all nearby enemies on landing. Leap Damage +18.0%",
+      "effect_type": "hybrid",
+      "tags": ["stun", "damage_boost", "lightning"]
+    },
+    "silver_flash": {
+      "essence_name": "Silver Flash",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave's knockback can now affect enemy players (once every 2s). Cleave Cooldown reduced by 3.6%",
+      "effect_type": "utility",
+      "tags": ["knockback", "pvp", "cooldown"]
+    },
+    "skull_motte": {
+      "essence_name": "Skull Motte",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave tears armor, increasing damage enemies take by 11.4% for 3s, up to 34.2%",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "stacking", "armor_break"]
+    },
+    "the_coming_storm": {
+      "essence_name": "The Coming Storm",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "WotB cooldown decreased by 18.6%",
+      "effect_type": "utility",
+      "tags": ["cooldown", "wotb_modifier"]
+    },
+    "weight_of_war": {
+      "essence_name": "Weight of War",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind makes enemies more vulnerable, increasing Crit Chance against them by 4.8% for 3s, up to 24%",
+      "effect_type": "damage",
+      "tags": ["critical", "stacking", "vulnerability"]
+    },
+    "wreckfall": {
+      "essence_name": "Wreckfall",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind reduces all damage you take by 20% while channeling. Whirlwind Energy Consumption -3.6%",
+      "effect_type": "defense",
+      "tags": ["damage_reduction", "resource"]
+    },
+    "writhing_mantle": {
+      "essence_name": "Writhing Mantle",
+      "modifies_skill": "Cleave",
+      "effect": "Cleave damage +29% vs. Chilled enemies, +50% vs. Frozen",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional", "chill", "frozen"]
+    },
+    "ydamas_cyclone": {
+      "essence_name": "Ydama's Cyclone",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind pulls in enemies it damages. Whirlwind Energy Consumption -3.6%",
+      "effect_type": "utility",
+      "tags": ["pull", "resource"]
+    }
+  }
+}

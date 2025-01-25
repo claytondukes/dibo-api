@@ -1,17 +1,17 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "last_updated": "2025-01-04",
+    "last_updated": "2025-01-25T11:58:42-05:00",
     "class": "Barbarian",
-    "total_essences": 72,
+    "total_essences": 156,
     "skills": {
       "Demoralize": {
         "description": "A shout that terrifies and damages enemies",
-        "essence_count": 11
+        "essence_count": 12
       },
       "Sprint": {
         "description": "Increases movement speed and can be modified for offensive capabilities",
-        "essence_count": 7
+        "essence_count": 11
       },
       "Ground Stomp": {
         "description": "A powerful ground-based attack that can stun enemies",
@@ -19,7 +19,7 @@
       },
       "Whirlwind": {
         "description": "A spinning attack that deals continuous damage to nearby enemies",
-        "essence_count": 10
+        "essence_count": 17
       },
       "Iron Skin": {
         "description": "A defensive ability that increases armor and can provide additional effects",
@@ -35,7 +35,7 @@
       },
       "Wrath of the Berserker": {
         "description": "Ultimate ability that greatly enhances combat capabilities",
-        "essence_count": 7
+        "essence_count": 13
       },
       "Undying Rage": {
         "description": "A powerful defensive cooldown that prevents death",
@@ -43,7 +43,7 @@
       },
       "Cleave": {
         "description": "A sweeping attack that hits multiple enemies",
-        "essence_count": 2
+        "essence_count": 8
       },
       "Frenzy": {
         "description": "Builds up attack speed with consecutive hits",
@@ -55,15 +55,163 @@
       },
       "Furious Charge": {
         "description": "A charging attack that deals damage to enemies in its path",
-        "essence_count": 1
+        "essence_count": 2
+      },
+      "Chained Spear": {
+        "description": "A spear attack that damages and pulls in enemies",
+        "essence_count": 4
       }
     },
     "effect_types": {
       "damage": "Increases damage output or adds new damage effects",
       "defense": "Provides defensive benefits like damage reduction or shields",
       "utility": "Offers utility effects like movement speed, resource management, or crowd control",
-      "hybrid": "Combines multiple effect types"
-    }
+      "hybrid": "Combines multiple effect types",
+      "pvp": "Provides effects that are focused on player versus player combat"
+    },
+    "helm_essences": [
+      "ancestors_stele",
+      "battlemasters_helm",
+      "berserkers_sanity",
+      "bestial_threat",
+      "brace_of_ancestors",
+      "grinning_effigy",
+      "heartless_terror",
+      "horns_of_harrogath",
+      "hunters_sight",
+      "impending_slaughter",
+      "krubasks_sneer",
+      "lasting_hate",
+      "oustlak_helmet",
+      "pot_metal",
+      "second_breath",
+      "spartusk",
+      "spiritbreaker",
+      "splitting_outbreak",
+      "squirmskull",
+      "sullen_vow",
+      "terror_unburdened",
+      "the_trembling",
+      "visage_of_the_living_ancients",
+      "weighted_brow",
+      "yowl_of_execration"
+    ],
+    "shoulder_essences": [
+      "animal_instinct",
+      "bloodguzzle",
+      "broken_calling",
+      "broken_grasp",
+      "doom_of_the_cowed",
+      "dread_desecration",
+      "drop_by_drop",
+      "grimroost",
+      "hatreds_reach",
+      "hells_legacy",
+      "law_of_the_wild",
+      "loathsome_lamina",
+      "lonecastle",
+      "natures_temper",
+      "oxs_horns",
+      "ramshackle_fight",
+      "routfinder",
+      "shocking_chaos",
+      "silver_flash",
+      "skull_motte",
+      "the_coming_storm",
+      "weight_of_war",
+      "wreckfall",
+      "writhing_mantle",
+      "ydamas_cyclone"
+    ],
+    "chest_essences": [
+      "armor_caste",
+      "broken_ire",
+      "charred_iron",
+      "cold_temper",
+      "cracklefell",
+      "crusher_rig",
+      "davins_legacy",
+      "death_awaits",
+      "direct_diplomacy",
+      "ferocious_gale",
+      "five_fresh_claws",
+      "hearth_hook",
+      "impalers_breath",
+      "indignant_survivor",
+      "lumber_cords",
+      "manifold_gore",
+      "renitent_rage",
+      "scallop_shell_armor",
+      "shackled_fate",
+      "temple_of_battle",
+      "the_gathering",
+      "trackers_rage",
+      "truss_of_stolen_skin",
+      "umble_drape",
+      "widow_in_waiting"
+    ],
+    "legs_essences": [
+      "chitinous_greaves",
+      "compromise_is_loss",
+      "earthstriker",
+      "hundred_blows",
+      "iron_barbs",
+      "iron_blood_greaves",
+      "iron_warrior",
+      "jump_the_pit",
+      "mighty_leap",
+      "momentum",
+      "plummet_proudly",
+      "rage_of_harrogath",
+      "rapid_charge",
+      "rattling",
+      "rending_leap",
+      "seismic_shift",
+      "shattered_ground",
+      "storm_breach",
+      "swift_skipping",
+      "trampled_earth",
+      "unrestrained",
+      "unstoppable_force",
+      "violent_whirlwind",
+      "wrathful_charge"
+    ],
+    "main_hand_essences": [
+      "ancestral_charge",
+      "battle_fervor",
+      "blood_rage",
+      "bold_chieftain",
+      "breaker_of_shields",
+      "deathless_fury",
+      "eager_maelstrom",
+      "earthen_might",
+      "endless_death",
+      "flesh_rending",
+      "furious_impulse",
+      "guttural_roar",
+      "hammer_of_the_ancients",
+      "heavy_handed",
+      "mighty_swing",
+      "perpetual_stamina",
+      "power_in_numbers",
+      "rage_of_the_berserker",
+      "ramaladnis_magnum_opus",
+      "swiftness",
+      "tearing_whirlwind",
+      "the_butchers_cleaver",
+      "the_slayers_strength",
+      "unconstrained_rage",
+      "violent_rupture",
+      "warriors_rancor"
+    ],
+    "off_hand_essences": [
+      "bergbreaker",
+      "bonegyre",
+      "burden_of_nothingness",
+      "dishonored_blade",
+      "roar_of_persuasion",
+      "the_remembered"
+    ]
   },
   "essences": {
     "visage_of_the_living_ancients": {
@@ -142,14 +290,13 @@
       "essence_name": "Battlemaster's Helm",
       "gear_slot": "Helm",
       "modifies_skill": "Demoralize",
-      "effect": "Demoralize replaced with a war cry that increases all damage you and nearby allies inflict. Cooldown -7.2%",
-      "effect_type": "damage",
-      "effect_tags": [
-        "damage"
-      ]
+      "effect": "Demoralize replaced with a war cry that increases all damage you and nearby allies inflict.",
+      "effect_type": "utility",
+      "effect_amount": 7.2,
+      "effect_unit": "percent"
     },
-    "lion\u2019s_mane": {
-      "essence_name": "Lion\u2019s Mane",
+    "lions_mane": {
+      "essence_name": "Lions Mane",
       "gear_slot": "Main Hand",
       "modifies_skill": "Demoralize",
       "effect": "Demoralize also detonates DoTs on nearby enemies instantly. Demoralize Cooldown -3.6%",
@@ -172,7 +319,7 @@
       "essence_name": "Burden of Nothingness",
       "gear_slot": "Off-Hand",
       "modifies_skill": "Demoralize",
-      "effect": "Also grants a Demoralizing Aura for 3s, reducing nearby enemies\u2019 damage by 19%.",
+      "effect": "Also grants a Demoralizing Aura for 3s, reducing nearby enemies damage by 19%.",
       "effect_type": "damage",
       "effect_tags": [
         "damage"
@@ -418,6 +565,62 @@
         "damage"
       ]
     },
+    "swiftwing": {
+      "essence_name": "Swiftwing",
+      "gear_slot": "Legs",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint now also increases movement speed of nearby allies. Sprint Cooldown Reduced by 7.2%",
+      "effect_type": "utility",
+      "effect_tags": [
+        "utility",
+        "movement"
+      ]
+    },
+    "juggernaut_plan": {
+      "essence_name": "Juggernaut's Plan",
+      "gear_slot": "Legs",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint now causes you to run continuously, knocking away and damaging enemies in your path. Sprint Damage Increased by 18.0%",
+      "effect_type": "hybrid",
+      "effect_tags": [
+        "damage",
+        "utility",
+        "movement"
+      ]
+    },
+    "scalesunder": {
+      "essence_name": "Scalesunder",
+      "gear_slot": "Legs",
+      "modifies_skill": "Chained Spear",
+      "effect": "Chained Spear now also shatters armor, increasing all damage enemies take by 8% for 4.8 seconds.",
+      "effect_type": "damage",
+      "effect_tags": [
+        "damage",
+        "debuff"
+      ]
+    },
+    "tempo_change": {
+      "essence_name": "Tempo Change",
+      "gear_slot": "Legs",
+      "modifies_skill": "Chained Spear",
+      "effect": "Chained Spear maximum charges increased by 1. Chained Spear Cooldown Reduced by 3.6%",
+      "effect_type": "utility",
+      "effect_tags": [
+        "utility"
+      ]
+    },
+    "snowdrifter": {
+      "essence_name": "Snowdrifter",
+      "gear_slot": "Legs",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint is now Sleet Sprint, increasing Movement Speed and continuously Chilling nearby enemies. Sprint Cooldown Reduced by 7.2%",
+      "effect_type": "hybrid",
+      "effect_tags": [
+        "utility",
+        "control",
+        "movement"
+      ]
+    },
     "horns_of_harrogath": {
       "essence_name": "Horns of Harrogath",
       "gear_slot": "Helm",
@@ -602,10 +805,11 @@
       "essence_name": "Silver Flash",
       "gear_slot": "Shoulder",
       "modifies_skill": "Cleave",
-      "effect": "Cleave range increased by 29%.",
-      "effect_type": "damage",
+      "effect": "Cleave's knockback may now affect enemy players but can only affect the same player once every 2 seconds. Cleave Cooldown Reduced by 3.6%",
+      "effect_type": "pvp",
       "effect_tags": [
-        "damage"
+        "pvp",
+        "control"
       ]
     },
     "wreckfall": {
@@ -757,6 +961,76 @@
       "effect_tags": [
         "damage"
       ]
+    },
+    "shackled_fate": {
+      "essence_name": "Shackled Fate",
+      "gear_slot": "Chest",
+      "modifies_skill": "Chained Spear",
+      "effect": "Chained Spear now conjures a Spirit of the Ancients for a short time, that repeatedly casts Chained Spear, damaging, Slowing and pulling in nearby enemies. Chained Spear Damage Increased by 18.0%",
+      "effect_type": "hybrid",
+      "effect_tags": [
+        "damage",
+        "utility",
+        "crowd_control"
+      ]
+    },
+    "terror_unburdened": {
+      "essence_name": "Terror Unburdened",
+      "gear_slot": "Helm",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralize now sends you into a blinding rage that lessens your pain, reducing the damage you take while you remorselessly assault nearby enemies.",
+      "effect_type": "damage",
+      "effect_amount": 18.0,
+      "effect_unit": "percent"
+    },
+    "oustlak_helmet": {
+      "essence_name": "Oustlak Helmet",
+      "gear_slot": "Helm",
+      "modifies_skill": "Sprint",
+      "effect": "While Sprint is active, your skills with projectile attacks are empowered with wind allowing them to trigger Firestorm and deal increased damage.",
+      "effect_type": "damage",
+      "effect_amount": 38,
+      "effect_unit": "percent"
+    },
+    "grimroost": {
+      "essence_name": "Grimroost",
+      "gear_slot": "Shoulder",
+      "modifies_skill": "Whirlwind",
+      "effect": "Whirlwind heals you for 3% of damage done. Whirlwind Energy Consumption Reduced by 3.6%",
+      "effect_type": "hybrid",
+      "tags": ["healing", "resource"]
+    },
+    "death_awaits": {
+      "essence_name": "Death Awaits",
+      "gear_slot": "Chest",
+      "modifies_skill": "Furious Charge",
+      "effect": "Furious Charge also shatters enemies' armor, increasing the amount of damage they take by 19% for 3 seconds.",
+      "effect_type": "damage",
+      "tags": ["debuff", "armor_reduction"]
+    },
+    "crusher_rig": {
+      "essence_name": "Crusher Rig",
+      "gear_slot": "Chest",
+      "modifies_skill": "Chained Spear",
+      "effect": "Chained Spear now hurls giant rocks, inflicting damage on all enemies in its path. Chained Spear Damage Increased by 18.0%",
+      "effect_type": "damage",
+      "tags": ["aoe", "damage_boost"]
+    },
+    "loathsome_lamina": {
+      "essence_name": "Loathsome Lamina",
+      "gear_slot": "Shoulder",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "Wrath of the Berserker also grants you a shield for 6 seconds that absorbs 42,700 damage. Shield Effect Increased by 54.0%",
+      "effect_type": "shield",
+      "effect_tags": ["shield", "absorb", "wotb_modifier"]
+    },
+    "roar_of_persuasion": {
+      "essence_name": "Roar of Persuasion",
+      "gear_slot": "Off-Hand",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "Thirsting Berserker: Wrath of the Berserker no longer increases Attack and Movement Speed, instead it now increases Critical Hit Damage and gives you Life Drain. Wrath of the Berserker Cooldown Reduced by 7.2%",
+      "effect_type": "damage",
+      "tags": ["critical_hit_damage", "life_drain", "cooldown"]
     }
   },
   "indexes": {
@@ -774,6 +1048,7 @@
         "impending_slaughter",
         "krubasks_sneer",
         "lasting_hate",
+        "oustlak_helmet",
         "pot_metal",
         "second_breath",
         "spartusk",
@@ -781,31 +1056,38 @@
         "splitting_outbreak",
         "squirmskull",
         "sullen_vow",
+        "terror_unburdened",
         "the_trembling",
         "visage_of_the_living_ancients",
         "weighted_brow",
         "yowl_of_execration"
       ],
       "Chest": [
-        "battle_voice",
-        "dire_whirlwind",
-        "dust_devils_wake",
+        "armor_caste",
+        "broken_ire",
+        "charred_iron",
+        "cold_temper",
+        "cracklefell",
+        "crusher_rig",
+        "davins_legacy",
+        "death_awaits",
+        "direct_diplomacy",
         "ferocious_gale",
         "five_fresh_claws",
-        "flesh_of_steel",
-        "impervious_hide",
-        "iron_blood",
+        "hearth_hook",
+        "impalers_breath",
+        "indignant_survivor",
+        "lumber_cords",
         "manifold_gore",
-        "metallic_flesh",
-        "rallying_cry",
-        "relentless_whirlwind",
-        "steadfast_iron",
-        "tempest_roar",
+        "renitent_rage",
+        "scallop_shell_armor",
+        "shackled_fate",
+        "temple_of_battle",
         "the_gathering",
         "trackers_rage",
         "truss_of_stolen_skin",
-        "veterans_call",
-        "windlasher"
+        "umble_drape",
+        "widow_in_waiting"
       ],
       "Legs": [
         "chitinous_greaves",
@@ -815,15 +1097,20 @@
         "earthshaker",
         "giants_fall",
         "indiscriminate_heat",
+        "juggernaut_plan",
         "kars_defiance",
         "mighty_leap",
         "pit_of_ursus",
         "rockspike",
-        "shattered_ground"
+        "scalesunder",
+        "shattered_ground",
+        "snowdrifter",
+        "swiftwing",
+        "tempo_change"
       ],
       "Main Hand": [
         "borrowed_might",
-        "lion\u2019s_mane",
+        "lions_mane",
         "selleinas_iron",
         "the_maddening"
       ],
@@ -832,15 +1119,35 @@
         "bonegyre",
         "burden_of_nothingness",
         "dishonored_blade",
+        "roar_of_persuasion",
         "the_remembered"
       ],
       "Shoulder": [
         "animal_instinct",
+        "bloodguzzle",
+        "broken_calling",
         "broken_grasp",
+        "doom_of_the_cowed",
+        "dread_desecration",
+        "drop_by_drop",
+        "grimroost",
+        "hatreds_reach",
         "hells_legacy",
+        "law_of_the_wild",
+        "loathsome_lamina",
+        "lonecastle",
+        "natures_temper",
+        "oxs_horns",
+        "ramshackle_fight",
         "routfinder",
+        "shocking_chaos",
         "silver_flash",
-        "wreckfall"
+        "skull_motte",
+        "the_coming_storm",
+        "weight_of_war",
+        "wreckfall",
+        "writhing_mantle",
+        "ydamas_cyclone"
       ]
     },
     "by_skill": {
@@ -851,9 +1158,10 @@
         "dishonored_blade",
         "heartless_terror",
         "impending_slaughter",
-        "lion\u2019s_mane",
+        "lions_mane",
         "pot_metal",
         "spartusk",
+        "terror_unburdened",
         "visage_of_the_living_ancients",
         "yowl_of_execration"
       ],
@@ -862,6 +1170,7 @@
         "dust_devils_wake",
         "ferocious_gale",
         "five_fresh_claws",
+        "grimroost",
         "manifold_gore",
         "relentless_whirlwind",
         "tempest_roar",
@@ -873,10 +1182,13 @@
         "broken_grasp",
         "hells_legacy",
         "hunters_sight",
+        "juggernaut_plan",
+        "oustlak_helmet",
         "routfinder",
         "second_breath",
-        "spiritbreaker",
-        "squirmskull"
+        "squirmskull",
+        "swiftwing",
+        "spiritbreaker"
       ],
       "Ground Stomp": [
         "chitinous_greaves",
@@ -896,6 +1208,8 @@
         "horns_of_harrogath",
         "krubasks_sneer",
         "lasting_hate",
+        "loathsome_lamina",
+        "roar_of_persuasion",
         "sullen_vow"
       ],
       "Undying Rage": [
@@ -937,7 +1251,14 @@
         "truss_of_stolen_skin"
       ],
       "Furious Charge": [
+        "death_awaits",
         "trackers_rage"
+      ],
+      "Chained Spear": [
+        "crusher_rig",
+        "scalesunder",
+        "shackled_fate",
+        "tempo_change"
       ]
     }
   }

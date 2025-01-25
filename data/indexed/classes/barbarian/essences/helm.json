@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-01-17T13:19:26-05:00",
+    "slot": "helm",
+    "essence_count": 25
+  },
+  "essences": {
+    "ancestors_stele": {
+      "essence_name": "Ancestors' Stele",
+      "modifies_skill": "Undying Rage",
+      "effect": "Undying Rage duration +1 second, Cooldown -3.6%",
+      "effect_type": "utility",
+      "tags": ["duration", "cooldown"]
+    },
+    "battlemasters_helm": {
+      "essence_name": "Battlemaster's Helm",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralize replaced with a war cry that increases all damage you and nearby allies inflict. Cooldown -7.2%",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "ally_buff"]
+    },
+    "berserkers_sanity": {
+      "essence_name": "Berserker's Sanity",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "While Berserking, gain 25% increased Movement Speed",
+      "effect_type": "utility",
+      "tags": ["movement_speed", "conditional"]
+    },
+    "bestial_threat": {
+      "essence_name": "Bestial Threat",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralize deals 30% increased damage to Stunned enemies",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "conditional"]
+    },
+    "brace_of_ancestors": {
+      "essence_name": "Brace of Ancestors",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "While Berserking, gain 20% increased Armor",
+      "effect_type": "defense",
+      "tags": ["armor", "conditional"]
+    },
+    "grinning_effigy": {
+      "essence_name": "Grinning Effigy",
+      "modifies_skill": "Undying Rage",
+      "effect": "When Undying Rage ends, heal for 25% of your maximum Life",
+      "effect_type": "hybrid",
+      "tags": ["healing", "life"]
+    },
+    "heartless_terror": {
+      "essence_name": "Heartless Terror",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralized enemies take 15% increased damage from all sources",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "debuff"]
+    },
+    "horns_of_harrogath": {
+      "essence_name": "Horns of Harrogath",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "While Berserking, your Critical Strike Damage is increased by 20%",
+      "effect_type": "damage",
+      "tags": ["critical_damage", "conditional"]
+    },
+    "hunters_sight": {
+      "essence_name": "Hunter's Sight",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint reveals hidden enemies within 20 yards",
+      "effect_type": "utility",
+      "tags": ["detection"]
+    },
+    "impending_slaughter": {
+      "essence_name": "Impending Slaughter",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralize pulls enemies towards you before dealing damage",
+      "effect_type": "utility",
+      "tags": ["pull", "control"]
+    },
+    "krubasks_sneer": {
+      "essence_name": "Krubask's Sneer",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "While Berserking, your attacks have a 10% chance to Stun enemies for 2s",
+      "effect_type": "utility",
+      "tags": ["stun", "proc"]
+    },
+    "lasting_hate": {
+      "essence_name": "Lasting Hate",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "Wrath of the Berserker's duration is increased by 2s",
+      "effect_type": "utility",
+      "tags": ["duration"]
+    },
+    "oustlak_helmet": {
+      "essence_name": "Oustlak Helmet",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint now leaves a trail of fire dealing 75% weapon damage per second",
+      "effect_type": "damage",
+      "tags": ["dot", "fire"]
+    },
+    "pot_metal": {
+      "essence_name": "Pot Metal",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralize increases your Armor by 25% for 4s",
+      "effect_type": "defense",
+      "tags": ["armor", "buff"]
+    },
+    "second_breath": {
+      "essence_name": "Second Breath",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint's cooldown is reduced by 2s",
+      "effect_type": "utility",
+      "tags": ["cooldown"]
+    },
+    "spartusk": {
+      "essence_name": "Spartusk",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralize damage increased by 40% but radius reduced by 25%",
+      "effect_type": "damage",
+      "tags": ["damage_boost", "range"]
+    },
+    "spiritbreaker": {
+      "essence_name": "Spiritbreaker",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint breaks enemy shields when colliding with them",
+      "effect_type": "utility",
+      "tags": ["shield_break"]
+    },
+    "splitting_outbreak": {
+      "essence_name": "Splitting Outbreak",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp creates additional shockwaves in random directions",
+      "effect_type": "damage",
+      "tags": ["aoe", "random"]
+    },
+    "squirmskull": {
+      "essence_name": "Squirmskull",
+      "modifies_skill": "Sprint",
+      "effect": "Sprint now causes bleeding for 50% weapon damage over 3s",
+      "effect_type": "damage",
+      "tags": ["bleed", "dot"]
+    },
+    "sullen_vow": {
+      "essence_name": "Sullen Vow",
+      "modifies_skill": "Wrath of the Berserker",
+      "effect": "While Berserking, gain 15% Life Steal",
+      "effect_type": "defense",
+      "tags": ["life_steal", "conditional"]
+    },
+    "terror_unburdened": {
+      "essence_name": "Terror Unburdened",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralize grants you 15% Movement Speed for each enemy hit",
+      "effect_type": "hybrid",
+      "tags": ["movement_speed", "stacking"]
+    },
+    "the_trembling": {
+      "essence_name": "The Trembling",
+      "modifies_skill": "Undying Rage",
+      "effect": "When Undying Rage triggers, release a shockwave dealing 100% weapon damage",
+      "effect_type": "damage",
+      "tags": ["aoe", "proc"]
+    },
+    "visage_of_the_living_ancients": {
+      "essence_name": "Visage of the Living Ancients",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralize summons an Ancient warrior who fights alongside you for 6s",
+      "effect_type": "damage",
+      "tags": ["summon", "duration"]
+    },
+    "weighted_brow": {
+      "essence_name": "Weighted Brow",
+      "modifies_skill": "Ground Stomp",
+      "effect": "Ground Stomp's Stun duration is increased by 1s",
+      "effect_type": "utility",
+      "tags": ["stun", "duration"]
+    },
+    "yowl_of_execration": {
+      "essence_name": "Yowl of Execration",
+      "modifies_skill": "Demoralize",
+      "effect": "Demoralize has a 15% chance to Fear enemies for 3s",
+      "effect_type": "utility",
+      "tags": ["fear", "proc"]
+    }
+  }
+}

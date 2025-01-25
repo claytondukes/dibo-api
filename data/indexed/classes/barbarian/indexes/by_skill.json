@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-01-25T12:11:28-05:00",
+  "skills": {
+    "Cleave": [
+      "bloodguzzle",
+      "dread_desecration",
+      "drop_by_drop",
+      "hatreds_reach",
+      "law_of_the_wild",
+      "silver_flash",
+      "skull_motte",
+      "writhing_mantle"
+    ],
+    "Demoralize": [
+      "battlemasters_helm",
+      "bestial_threat",
+      "heartless_terror",
+      "impending_slaughter",
+      "pot_metal",
+      "spartusk",
+      "terror_unburdened",
+      "visage_of_the_living_ancients",
+      "yowl_of_execration"
+    ],
+    "Sprint": [
+      "broken_grasp",
+      "hells_legacy",
+      "hunters_sight",
+      "oustlak_helmet",
+      "routfinder",
+      "second_breath",
+      "spiritbreaker",
+      "squirmskull"
+    ],
+    "Whirlwind": [
+      "dire_whirlwind",
+      "dust_devils_wake",
+      "eager_maelstrom",
+      "ferocious_gale",
+      "five_fresh_claws",
+      "fresh_whirl",
+      "grimroost",
+      "lonecastle",
+      "manifold_gore",
+      "oxs_horns",
+      "relentless_whirlwind",
+      "tearing_whirlwind",
+      "tempest_roar",
+      "violent_whirlwind",
+      "weight_of_war",
+      "wreckfall",
+      "ydamas_cyclone"
+    ],
+    "Wrath of the Berserker": [
+      "berserkers_sanity",
+      "brace_of_ancestors",
+      "broken_calling",
+      "doom_of_the_cowed",
+      "horns_of_harrogath",
+      "krubasks_sneer",
+      "lasting_hate",
+      "loathsome_lamina",
+      "natures_temper",
+      "ramshackle_fight",
+      "sullen_vow",
+      "the_coming_storm"
+    ],
+    "Undying Rage": [
+      "ancestors_stele",
+      "grinning_effigy",
+      "the_trembling"
+    ],
+    "Ground Stomp": [
+      "splitting_outbreak",
+      "weighted_brow"
+    ],
+    "Leap": [
+      "animal_instinct",
+      "mighty_leap",
+      "plummet_proudly",
+      "rending_leap",
+      "shocking_chaos"
+    ],
+    "Furious Charge": [
+      "death_awaits",
+      "determination",
+      "trackers_rage"
+    ],
+    "Chained Spear": [
+      "crusher_rig",
+      "scalesunder",
+      "shackled_fate",
+      "tempo_change"
+    ]
+  }
+}
